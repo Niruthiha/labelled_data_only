@@ -1,0 +1,544 @@
+{
+  "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+  "repository_info": {
+    "repo": "IntelligenzaArtificiale/Free-Auto-GPT",
+    "stars": 2499,
+    "language": "Python",
+    "description": "Free Auto GPT with NO paids API is a repository that offers a simple version of Auto GPT, an autonomous AI agent capable of performing tasks independently. Unlike other versions, our implementation do",
+    "url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT",
+    "topics": [
+      "ai",
+      "auto-gpt",
+      "autogpt",
+      "autogpt-no-paid-api",
+      "chatgpt",
+      "chatgpt-api",
+      "chatgpt-free",
+      "democratize-ai",
+      "free-autogpt",
+      "gpt-4",
+      "gpt-4-api",
+      "gpt4",
+      "open-source-auto-gpt",
+      "open-source-gpt",
+      "openai",
+      "python",
+      "reverse-engineering"
+    ],
+    "created_at": "2023-04-19T07:12:11Z",
+    "updated_at": "2025-06-19T06:04:05Z",
+    "search_query": "openai api language:python stars:>1 created:>2023-01-01",
+    "total_issues_estimate": 168,
+    "labeled_issues_estimate": 7,
+    "labeling_rate": 4.7,
+    "sample_labeled": 2,
+    "sample_total": 43,
+    "has_issues": true,
+    "repo_id": 629860517,
+    "default_branch": "main",
+    "size": 36267
+  },
+  "extraction_date": "2025-06-22T00:46:07.502354",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 10,
+  "issues": [
+    {
+      "issue_number": 25,
+      "title": "Run with Local LLM Models ",
+      "body": "We tried many local models like LLAMA, VICUNA, OPENASSIST, GPT4ALL in their 7b versions. None seem to give results like the CHATGPT API. \r\n\r\nwe would like to try to test new models, which can be loaded in a maximum of 16gm of RAM, to allow accessibility to anyone without discrimination. \r\n\r\nAny advice for LLM models with fine tuning for high performance instructions? ",
+      "state": "open",
+      "author": "IntelligenzaArtificiale",
+      "author_type": "User",
+      "created_at": "2023-04-29T22:03:00Z",
+      "updated_at": "2024-04-03T02:27:59Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 14,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/25/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "New release 🎁👨‍💻",
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/25",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/25",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:03.740564",
+      "comments": [
+        {
+          "author": "wingeva1986",
+          "body": "Does this project support third-party OpenAI interfaces (such as poe.com)? If it does, are there any other requirements for these interfaces, such as message format, context memory, and number of conversations?",
+          "created_at": "2023-04-30T08:09:14Z"
+        },
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "@wingeva1986  Previously this repository was based on the API provided by xtkkey/gpt4free . The problem was that (rightly so) some API went down every day. And our repository was flooded with issues not related to the project but to the cracked xtekky API. At the moment the solution based on Free an",
+          "created_at": "2023-04-30T10:41:53Z"
+        },
+        {
+          "author": "HirCoir",
+          "body": "> We tried many local models like LLAMA, VICUNA, OPENASSIST, GPT4ALL in their 7b versions. None seem to give results like the CHATGPT API.\r\n> \r\n> we would like to try to test new models, which can be loaded in a maximum of 16gm of RAM, to allow accessibility to anyone without discrimination.\r\n> \r\n> ",
+          "created_at": "2023-05-03T16:56:33Z"
+        },
+        {
+          "author": "HirCoir",
+          "body": "> We tried many local models like LLAMA, VICUNA, OPENASSIST, GPT4ALL in their 7b versions. None seem to give results like the CHATGPT API.\r\n> \r\n> we would like to try to test new models, which can be loaded in a maximum of 16gm of RAM, to allow accessibility to anyone without discrimination.\r\n> \r\n> ",
+          "created_at": "2023-05-03T17:02:07Z"
+        },
+        {
+          "author": "Therealkorris",
+          "body": "Have you tested mosaicml/mpt-7b-chat, or mosaicml/mpt-7b-instruct? Seems promising ",
+          "created_at": "2023-05-07T23:18:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 88,
+      "title": "Getting issues related to content length limit on `python AutoGPT.py`",
+      "body": "Token indices sequence length is longer than the specified maximum sequence length for this model (nnnn > 1024). Running this sequence through the model will result in indexing errors.",
+      "state": "open",
+      "author": "ab0099",
+      "author_type": "User",
+      "created_at": "2023-05-08T02:19:48Z",
+      "updated_at": "2023-07-17T00:01:41Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/88/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/88",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/88",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:03.984312",
+      "comments": [
+        {
+          "author": "xRiddin",
+          "body": "same here \r\n<img width=\"936\" alt=\"image\" src=\"https://user-images.githubusercontent.com/126014676/236870083-c2f63bac-1f9d-4167-bb1d-38f4080216eb.png\">\r\n",
+          "created_at": "2023-05-08T15:50:21Z"
+        },
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "> same here <img alt=\"image\" width=\"936\" src=\"https://user-images.githubusercontent.com/126014676/236870083-c2f63bac-1f9d-4167-bb1d-38f4080216eb.png\">\r\n\r\n@Jeevaraz @ab0099 We are aware of this issue and are working to resolve it. ",
+          "created_at": "2023-05-08T15:52:35Z"
+        },
+        {
+          "author": "quanmanss11",
+          "body": "https://conturata.com/ai/chunker",
+          "created_at": "2023-05-15T08:53:15Z"
+        },
+        {
+          "author": "gameuser1982",
+          "body": "I am seeing this error as well. How does this affect operations? Does it end up cutting off the prompt?",
+          "created_at": "2023-05-20T21:23:10Z"
+        },
+        {
+          "author": "gameuser1982",
+          "body": "> https://conturata.com/ai/chunker\r\n\r\nHow do use this chunker with AutoGPT? Just use it to determine if you comply with token length?",
+          "created_at": "2023-05-23T06:50:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 14,
+      "title": "NEW UPDATE with free official CHATGPT API",
+      "body": "I have fixed the repository, please try now to [redownload](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)\r\n\r\nOpen an issue if you have any problems. Please don't be aggressive, I'm working hard to allow you to develop or use AI AGENTS without paying for OPENAI, PINECONE or other APIs. THANK YOU. ",
+      "state": "open",
+      "author": "IntelligenzaArtificiale",
+      "author_type": "User",
+      "created_at": "2023-04-27T20:26:25Z",
+      "updated_at": "2023-05-24T18:36:27Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 15,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/14/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "New release 🎁👨‍💻",
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/14",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/14",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:04.323922",
+      "comments": [
+        {
+          "author": "FlamingFury00",
+          "body": "Ciao, per caso non hai ancora aggiunto il file AUTOGPT.py perchè nel README è menzionato ma nella repository non esiste.",
+          "created_at": "2023-04-27T20:29:10Z"
+        },
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "> Ciao, per caso non hai ancora aggiunto il file AUTOGPT.py perchè nel README è menzionato ma nella repository non esiste.\r\n\r\nEccolo aggiunto ora scusa 👍🏻  [https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/blob/main/AUTOGPT.py](https://github.com/IntelligenzaArtificiale/Free-AUTOG",
+          "created_at": "2023-04-27T20:44:33Z"
+        },
+        {
+          "author": "FlamingFury00",
+          "body": "Grazie, un'altra cosa. Quando viene scaricata la repository c'è un conflitto di nomi fra i due file BabyAGI e BABYAGI. Siccome l'ultimo è quello utilizzato, mentre l'altro è deprecato si potrebbe eliminare BabyAGI per non confondere?",
+          "created_at": "2023-04-27T20:55:26Z"
+        },
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "> Grazie, un'altra cosa. Quando viene scaricata la repository c'è un conflitto di nomi fra i due file BabyAGI e BABYAGI. Siccome l'ultimo è quello utilizzato, mentre l'altro è deprecato si potrebbe eliminare BabyAGI per non confondere?\r\n\r\nGrazie lo ho appena rimosso, non sai da quante ISSUE mi hai a",
+          "created_at": "2023-04-27T21:00:31Z"
+        },
+        {
+          "author": "FlamingFury00",
+          "body": "Di nulla, se posso aiutare faccio con piacere! Ho trovato un altro problema: il modulo 'spawn' della libreria pexpect non funziona su Windows. Potresti specificare nel README di utilizzare il WSL (Sottosistema Linux per Windows) per superarlo. Altra cosa, ho aggiunto nel file AUTOGPT.py un comando i",
+          "created_at": "2023-04-27T21:30:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 39,
+      "title": "We need help to run on Colab",
+      "body": "### We have a problem when try to run new solution on colab . \r\n\r\n\r\n**Open the colab and try to resolve error** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PvDORq_LoF90xXQyiMDgdHm1KXUQMwo5?usp=sharing)\r\n\r\n![image](https://user-images.githubusercontent.com/108482353/235515553-7486ee5c-55d9-4fb0-92b2-5a92f8b9d0bd.png)\r\n\r\nIt seems that openAI doesn't like requests from colab servers :(\r\n\r\nDoes anyone know how to bypass the problem?\r\n\r\n**Please help us to democratize AI**\r\n\r\n",
+      "state": "closed",
+      "author": "IntelligenzaArtificiale",
+      "author_type": "User",
+      "created_at": "2023-05-01T19:28:07Z",
+      "updated_at": "2023-05-11T13:53:37Z",
+      "closed_at": "2023-05-11T13:53:37Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/39/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/39",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/39",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:04.624694",
+      "comments": []
+    },
+    {
+      "issue_number": 69,
+      "title": "AUTOGPT model attempts to write a file but no success",
+      "body": "I tried asking autogpt to create a sample.py that prints \"Hello\" and then let it run for about an hour.\r\n\r\nit kept trying to write the file using write\\_file. There was time it thought it had created the file successfully and then attempted to write the file or search the internet on how to write a python file again.\r\n\r\nIt was stuck in the loop.... 'attempting to write the file' --->'thinking it has written a file successfully' --->'search the internet'--->'back to writing the file again'\r\n\r\nI use Docker/Visual Studio Code to run the script.",
+      "state": "closed",
+      "author": "averagenewbie2023",
+      "author_type": "User",
+      "created_at": "2023-05-05T16:18:24Z",
+      "updated_at": "2023-05-06T08:59:33Z",
+      "closed_at": "2023-05-06T08:59:32Z",
+      "labels": [
+        "duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/69/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/69",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/69",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:04.624721",
+      "comments": [
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "Duplicate [https://github.com/IntelligenzaArtificiale/Free-AUTO-GPT-with-NO-API/issues/56#issue-1693190540](https://github.com/IntelligenzaArtificiale/Free-AUTO-GPT-with-NO-API/issues/56#issue-1693190540)",
+          "created_at": "2023-05-06T08:59:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 65,
+      "title": "BING CHAT has too many limitations and ethics",
+      "body": "We have recently implemented the BING CHAT API. \r\n\r\nThe problem is that unlike ChatGPT it refuses to perform tasks, or to play role-playing games. \r\n\r\nWith AUTOGPT.PY he sometimes works very well, almost scary, other times he refuses to perform tasks (such as writing articles or other tasks that he deems not suitable for him) \r\n\r\nInstead on BabyAGI and Camel , it refuses to perform the tasks. Because they are based on role-playing PromptTemplate . And bingchat is set to not execute these role-play task.\r\n\r\nAny suggestions to buy pass the problem? ",
+      "state": "open",
+      "author": "IntelligenzaArtificiale",
+      "author_type": "User",
+      "created_at": "2023-05-04T17:08:15Z",
+      "updated_at": "2023-05-04T23:05:09Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/65/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "New release 🎁👨‍💻",
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/65",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/65",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:04.821259",
+      "comments": [
+        {
+          "author": "mithras666",
+          "body": "Hmm, I've heard that Bing reacts negatively to messages with accusative/imperative tone (Using \"you must\" or \"do this\"). \r\n\r\nI wonder if we could add some sort of randomized jailbreak prompt to the default Bing prompts. \r\n\r\nBe careful with that though because Microsoft is banning people for using th",
+          "created_at": "2023-05-04T23:05:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "Loop issue with AutoGPT",
+      "body": "Hello.\r\nThe loop issue continues even after the updates. The model creates every single time another chat now. I will search for a solution myself, but in the meantime i will leave this issue open if someone knows how to solve this.\r\n\r\n\r\n![Screenshot 2023-04-30 192030](https://user-images.githubusercontent.com/119819259/235367140-11648a5e-ad60-495e-a106-39328eb05b9f.png)\r\n\r\n---\r\n\r\nCiao.\r\nIl problema del loop continua anche dopo gli aggiornamenti. Il modello crea ogni volta un'altra chat ora. Cercherò io stesso una soluzione, ma nel frattempo lascerò aperto questo issue se qualcuno sa come risolverlo.",
+      "state": "open",
+      "author": "FlamingFury00",
+      "author_type": "User",
+      "created_at": "2023-04-30T17:23:13Z",
+      "updated_at": "2023-05-02T14:47:16Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/31/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "New release 🎁👨‍💻",
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/31",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/31",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:06.488771",
+      "comments": [
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "We have added the possibility to start from existing conversation .\r\n\r\n\r\n```python\r\nfrom FreeLLM import ChatGPTAPI \r\n\r\n# Instantiate a ChatGPT object with your token\r\nllm = ChatGPTAPI.ChatGPT((token=\"YOURTOKEN\")  #for start new chat\r\n\r\n# or if if u would to start from an existing chat \r\n# llm = Chat",
+          "created_at": "2023-05-01T10:08:12Z"
+        },
+        {
+          "author": "FlamingFury00",
+          "body": "I saw this method in the README, but i didn't try that yet and i don't really like it. I feel like it's too \"manual\" if you know what I mean. I will find other ways and I'll let you know. I would like if it will be able to start a new chat and then associate the id automatically with that chat.\r\nIf ",
+          "created_at": "2023-05-01T11:11:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 27,
+      "title": "Question about Creating and Managing Conversations",
+      "body": "Hello,\r\n\r\nI have a few questions about how to properly use the chat functionality in the `revChatGPT` package.\r\n\r\n1. **Creating a New Chat:** I am looking to create a new chat and ensure that the conversation stays within this specific chat session. I noticed that there's a `conversation_id` argument when initializing the `Chatbot` class, but I'm not entirely clear on how to use it. Could you provide an example or further explanation on how to create a new chat and keep the conversation within that particular chat session?\r\n\r\n2. **Managing Existing Chats:** Additionally, I would like to know how to retrieve a list of existing conversations and how to join an existing conversation. Is there a method to fetch all active `conversation_id`s? And once I have a `conversation_id`, how can I join that conversation and continue the chat?\r\n\r\nAny help would be greatly appreciated. Thank you in advance!\r\n\r\n",
+      "state": "closed",
+      "author": "epodak",
+      "author_type": "User",
+      "created_at": "2023-04-30T02:36:54Z",
+      "updated_at": "2023-05-01T09:26:01Z",
+      "closed_at": "2023-05-01T09:26:01Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/27/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/27",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/27",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:06.742769",
+      "comments": [
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "We have added the possibility to start from existing conversation .\r\n\r\n\r\n```python\r\nfrom FreeLLM import ChatGPTAPI \r\n\r\n# Instantiate a ChatGPT object with your token\r\nllm = ChatGPTAPI.ChatGPT((token=\"YOURTOKEN\")  #for start new chat\r\n\r\n# or if if u would to start from an existing chat \r\n# llm = Chat",
+          "created_at": "2023-04-30T14:56:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 19,
+      "title": "Loop e non salvataggio di file in AutoGPT",
+      "body": "Ciao.\r\nCome vedi dal titolo ci sono due problemi che sto riscontrando:\r\n1- A volte quando deve cercare delle cose utilizzando Duck Search, va in loop cercando sempre le stesse cose. Probabilmente è dovuto al modello o all'implementazione di OpenAI.\r\n2- Quando deve scrivere dei file, non riesce. Prima mi ha anche detto che non ha i permessi necessari per farlo. Questo probabilmente è dovuto all'integrazione in Windows (non sono sicuro).\r\n\r\nHo cercato di provare in vari modi, creando anche un'immagine Docker e mettendo il tutto lì dentro ma niente. Se avete dei suggerimenti, lo apprezzerei davvero.",
+      "state": "closed",
+      "author": "FlamingFury00",
+      "author_type": "User",
+      "created_at": "2023-04-28T22:11:13Z",
+      "updated_at": "2023-04-29T21:54:32Z",
+      "closed_at": "2023-04-29T21:54:32Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/19/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/19",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/19",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:06.923758",
+      "comments": [
+        {
+          "author": "FlamingFury00",
+          "body": "Ciao di nuovo, ho trovato l'errore e l'ho sistemato per il fatto dei file. Ora farò una push request se ti va bene.",
+          "created_at": "2023-04-29T19:11:50Z"
+        },
+        {
+          "author": "FlamingFury00",
+          "body": "Ho creato la pull request. Il problema del loop c'è ancora, perciò lascerò aperto l'issue. Il problema sembrerebbe essere la creazione di più istanze di chat su OpenAI, facendo ricominciare daccapo il \"ragionamento\" del modello.",
+          "created_at": "2023-04-29T19:41:56Z"
+        },
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "Prima di tutto Grazie, probabilmente ne l italia ne il mondo si rende conto delle causa per cui sia noi che te stiamo lottando. Piano piano qualcosa inizia a prendere forma. \r\n\r\nGrazie anche al tuo aiuto finalmente siamo su [GITHUB TREND](https://github.com/trending)  . \r\n\r\nGrazie ancora davvero per",
+          "created_at": "2023-04-29T21:54:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 4,
+      "title": "KeyError: 'message'",
+      "body": "Hey man thank you verry much for doing this project.\r\nI did everything to set it up and installed requirements, but if i try to do teh same like you on in the sample video, i get the following error:\r\n\r\nKeyError: 'message'\r\nTraceback:\r\nFile \"C:\\Users\\Christian\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\streamlit\\runtime\\scriptrunner\\script_runner.py\", line 565, in _run_script\r\n    exec(code, module.__dict__)\r\nFile \"C:\\Users\\Christian\\Desktop\\Free-AUTOGPT-with-NO-API\\Camel.py\", line 112, in <module>\r\n    specified_task_msg = task_specify_agent.step(task_specifier_msg)\r\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\Desktop\\Free-AUTOGPT-with-NO-API\\Camel.py\", line 65, in step\r\n    output_message = self.model(str(input_message.content))\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\langchain\\llms\\base.py\", line 246, in __call__\r\n    return self.generate([prompt], stop=stop).generations[0][0].text\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\langchain\\llms\\base.py\", line 140, in generate\r\n    raise e\r\nFile \"C:\\Users\\Christian\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\langchain\\llms\\base.py\", line 137, in generate\r\n    output = self._generate(prompts, stop=stop)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\langchain\\llms\\base.py\", line 324, in _generate\r\n    text = self._call(prompt, stop=stop)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\Desktop\\Free-AUTOGPT-with-NO-API\\writesonicAPI.py\", line 23, in _call\r\n    response =  writesonic.Completion.create(api_key= self.token.key,\r\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFile \"C:\\Users\\Christian\\Desktop\\Free-AUTOGPT-with-NO-API\\writesonic\\__init__.py\", line 147, in create\r\n    'text'          : response['message'],\r\n                     ~~~~~~~~^^^^^^^^^^^",
+      "state": "closed",
+      "author": "ChristianErdtmann",
+      "author_type": "User",
+      "created_at": "2023-04-22T10:07:05Z",
+      "updated_at": "2023-04-23T12:09:32Z",
+      "closed_at": "2023-04-22T16:01:22Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/4/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/IntelligenzaArtificiale/Free-Auto-GPT/issues/4",
+      "api_url": "https://api.github.com/repos/IntelligenzaArtificiale/Free-Auto-GPT/issues/4",
+      "repository": "IntelligenzaArtificiale/Free-Auto-GPT",
+      "extraction_date": "2025-06-22T00:46:07.226616",
+      "comments": [
+        {
+          "author": "IntelligenzaArtificiale",
+          "body": "writesonic is down retry now ",
+          "created_at": "2023-04-22T15:59:51Z"
+        },
+        {
+          "author": "ChristianErdtmann",
+          "body": " its still the same error",
+          "created_at": "2023-04-23T12:09:21Z"
+        }
+      ]
+    }
+  ]
+}

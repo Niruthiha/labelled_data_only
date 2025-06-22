@@ -1,0 +1,779 @@
+{
+  "repository": "MervinPraison/PraisonAI",
+  "repository_info": {
+    "repo": "MervinPraison/PraisonAI",
+    "stars": 4902,
+    "language": "Python",
+    "description": "PraisonAI is a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex challenges. It provides a low-code solution ",
+    "url": "https://github.com/MervinPraison/PraisonAI",
+    "topics": [
+      "agents",
+      "ai",
+      "ai-agent-framework",
+      "ai-agent-sdk",
+      "ai-agents",
+      "ai-agents-framework",
+      "ai-agents-sdk",
+      "ai-framwork",
+      "aiagent",
+      "aiagentframework",
+      "aiagents",
+      "aiagentsframework",
+      "framework",
+      "multi-agent",
+      "multi-agent-collaboration",
+      "multi-agent-system",
+      "multi-agent-systems",
+      "multi-agents",
+      "multi-ai-agent",
+      "multi-ai-agents"
+    ],
+    "created_at": "2024-03-19T16:45:25Z",
+    "updated_at": "2025-06-22T01:40:17Z",
+    "search_query": "ai agent language:python stars:>3 -framework",
+    "total_issues_estimate": 50,
+    "labeled_issues_estimate": 11,
+    "labeling_rate": 23.1,
+    "sample_labeled": 3,
+    "sample_total": 13,
+    "has_issues": true,
+    "repo_id": 774497032,
+    "default_branch": "main",
+    "size": 25029
+  },
+  "extraction_date": "2025-06-22T00:40:12.806241",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 16,
+  "issues": [
+    {
+      "issue_number": 66,
+      "title": "Allow Input variable values",
+      "body": "Allow Input variable values",
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2024-07-02T09:28:46Z",
+      "updated_at": "2025-06-21T06:19:37Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/66/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/66",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/66",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:03.693641",
+      "comments": [
+        {
+          "author": "malv-c",
+          "body": "this one work :\nfrom praisonaiagents import Agent, Task, PraisonAIAgents\nfrom praisonaiagents.tools import duckduckgo\nt=input(\"ddg:\")\n# Create search agentttt\nsearch_agent = Agent(\n    name=\"WebSearcher\",\n    role=\"Search Specialist\",\n    goal=\"Find accurate information about specified topics.\",\n   ",
+          "created_at": "2025-06-21T06:19:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 664,
+      "title": "Sub Tasks",
+      "body": "https://cognition.ai/blog/dont-build-multi-agents\nhttps://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-06-16T22:24:27Z",
+      "updated_at": "2025-06-16T22:24:27Z",
+      "closed_at": null,
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/664/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/664",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/664",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:03.898989",
+      "comments": []
+    },
+    {
+      "issue_number": 603,
+      "title": "wp",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-06-04T21:08:32Z",
+      "updated_at": "2025-06-16T09:37:22Z",
+      "closed_at": null,
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 20,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/603/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/603",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/603",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:03.899008",
+      "comments": [
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this",
+          "created_at": "2025-06-15T05:41:15Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this",
+          "created_at": "2025-06-15T05:42:23Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this",
+          "created_at": "2025-06-15T05:43:59Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this",
+          "created_at": "2025-06-16T06:13:18Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this",
+          "created_at": "2025-06-16T06:18:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 579,
+      "title": "Open Telemetry",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-06-03T06:18:49Z",
+      "updated_at": "2025-06-07T00:57:36Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/579/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/579",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/579",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:04.114429",
+      "comments": [
+        {
+          "author": "MervinPraison",
+          "body": "@claude\n\nwhy i am not seeing the telemetry posted to posthog ? \npreviously it was working and nwo its not working\n\n```\n❯ python telemetry_minimal.py\n01:54:02 - LiteLLM:DEBUG: http_handler.py:530 - Using AiohttpTransport...\n[01:54:02] DEBUG    [01:54:02] http_handler.py:530 DEBUG Using  http_handler.",
+          "created_at": "2025-06-07T00:55:10Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @MervinPraison's task in 2m 5s** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15502491328) • [`claude/issue-579-20250607_005524`](https://github.com/MervinPraison/PraisonAI/tree/claude/issue-579-20250607_005524) • [Create PR ➔](https://github.com/MervinPrai",
+          "created_at": "2025-06-07T00:55:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 488,
+      "title": "Create Guardrails",
+      "body": null,
+      "state": "closed",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-23T16:53:07Z",
+      "updated_at": "2025-06-06T07:09:34Z",
+      "closed_at": "2025-06-06T07:09:34Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/488/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/488",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/488",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:04.305774",
+      "comments": []
+    },
+    {
+      "issue_number": 612,
+      "title": "duplicate response when using litellm with memory",
+      "body": "The Task and Response are getting printed twice. Identify the issue and fix it with minimal code changes \n\n```\n❯ python memory1.py\n22:27:18 - LiteLLM:DEBUG: http_handler.py:530 - Using AiohttpTransport...\n[22:27:18] DEBUG    [22:27:18] http_handler.py:530 DEBUG Using        http_handler.py:530\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:554 - Creating AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:554 DEBUG Creating     http_handler.py:554\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:530 - Using AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:530 DEBUG Using        http_handler.py:530\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:554 - Creating AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:554 DEBUG Creating     http_handler.py:554\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: litellm_logging.py:169 - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm_enterprise'\n           DEBUG    [22:27:18] litellm_logging.py:169 DEBUG        litellm_logging.py:169\n                    [Non-Blocking] Unable to import                                      \n                    GenericAPILogger - LiteLLM Enterprise Feature                        \n                    - No module named 'litellm_enterprise'                               \n22:27:18 - LiteLLM:DEBUG: transformation.py:17 - [Non-Blocking] Unable to import _ENTERPRISE_ResponsesSessionHandler - LiteLLM Enterprise Feature - No module named 'litellm_enterprise'\n           DEBUG    [22:27:18] transformation.py:17 DEBUG            transformation.py:17\n                    [Non-Blocking] Unable to import                                      \n                    _ENTERPRISE_ResponsesSessionHandler - LiteLLM                        \n                    Enterprise Feature - No module named                                 \n                    'litellm_enterprise'                                                 \n22:27:18 - LiteLLM:DEBUG: http_handler.py:530 - Using AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:530 DEBUG Using        http_handler.py:530\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:554 - Creating AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:554 DEBUG Creating     http_handler.py:554\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:530 - Using AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:530 DEBUG Using        http_handler.py:530\n                    AiohttpTransport...                                                  \n22:27:18 - LiteLLM:DEBUG: http_handler.py:554 - Creating AiohttpTransport...\n           DEBUG    [22:27:18] http_handler.py:554 DEBUG Creating     http_handler.py:554\n                    AiohttpTransport...                                                  \n[22:27:19] DEBUG    [22:27:19] process.py:21 DEBUG === Initializing Process process.py:21\n                    ===                                                                  \n           DEBUG    [22:27:19] process.py:22 DEBUG Number of tasks: 1       process.py:22\n           DEBUG    [22:27:19] process.py:23 DEBUG Number of agents: 1      process.py:23\n           DEBUG    [22:27:19] process.py:24 DEBUG Manager LLM: gpt-4o      process.py:24\n           DEBUG    [22:27:19] process.py:25 DEBUG Verbose mode: 0          process.py:25\n           DEBUG    [22:27:19] process.py:26 DEBUG Max iterations: 10       process.py:26\n[22:27:20] DEBUG    [22:27:20] agent.py:1050 DEBUG Agent.chat parameters: { agent.py:1050\n                      \"prompt\": \"\\nYou need to do the following task: Write              \n                    a blog post about AI trends in 1 paragraph.\\nExpected                \n                    Outpu...\",                                                           \n                      \"temperature\": 0.2,                                                \n                      \"tools\": null,                                                     \n                      \"output_json\": null,                                               \n                      \"output_pydantic\": null,                                           \n                      \"reasoning_steps\": false,                                          \n                      \"agent_name\": \"Agent\",                                             \n                      \"agent_role\": \"Blog Writer\",                                       \n                      \"agent_goal\": \"Write a blog post about AI\"                         \n                    }                                                                    \n           INFO     [22:27:20] llm.py:296 INFO Getting response from           llm.py:296\n                    openai/gpt-4o-mini                                                   \n           DEBUG    [22:27:20] llm.py:324 DEBUG LLM instance configuration: {  llm.py:324\n                      \"model\": \"openai/gpt-4o-mini\",                                     \n                      \"timeout\": null,                                                   \n                      \"temperature\": 0.7,                                                \n                      \"top_p\": null,                                                     \n                      \"n\": null,                                                         \n                      \"max_tokens\": 2000,                                                \n                      \"presence_penalty\": null,                                          \n                      \"frequency_penalty\": null,                                         \n                      \"logit_bias\": null,                                                \n                      \"response_format\": null,                                           \n                      \"seed\": null,                                                      \n                      \"logprobs\": null,                                                  \n                      \"top_logprobs\": null,                                              \n                      \"api_version\": null,                                               \n                      \"stop_phrases\": null,                                              \n                      \"api_key\": \"***\",                                                  \n                      \"base_url\": null,                                                  \n                      \"verbose\": true,                                                   \n                      \"markdown\": true,                                                  \n                      \"self_reflect\": false,                                             \n                      \"max_reflect\": 3,                                                  \n                      \"min_reflect\": 1,                                                  \n                      \"reasoning_steps\": false                                           \n                    }                                                                    \n           DEBUG    [22:27:20] llm.py:345 DEBUG get_response parameters: {     llm.py:345\n                      \"prompt\": \"\\nYou need to do the following task: Write a            \n                    blog post about AI trends in 1 paragraph.\\nExpected                  \n                    Outpu...\",                                                           \n                      \"system_prompt\": \"Expert at writing blog posts\\n\\nYour             \n                    Role: Blog Writer\\n\\nYour Goal: Write a blog post about              \n                    AI\",                                                                 \n                      \"chat_history\": null,                                              \n                      \"temperature\": 0.2,                                                \n                      \"tools\": null,                                                     \n                      \"output_json\": null,                                               \n                      \"output_pydantic\": null,                                           \n                      \"verbose\": true,                                                   \n                      \"markdown\": true,                                                  \n                      \"self_reflect\": false,                                             \n                      \"max_reflect\": 3,                                                  \n                      \"min_reflect\": 1,                                                  \n                      \"agent_name\": \"Agent\",                                             \n                      \"agent_role\": \"Blog Writer\",                                       \n                      \"agent_tools\": [],                                                 \n                      \"kwargs\": \"{'reasoning_steps': False}\"                             \n                    }                                                                    \n╭─ Agent Info ──────────────────────────────────────────────────────────────────────────╮\n│                                                                                       │\n│  👤 Agent: Agent                                                                      │\n│  Role: Blog Writer                                                                    │\n│                                                                                       │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\n╭───────────────────────────────────── Instruction ─────────────────────────────────────╮\n│ Agent Agent is processing prompt:                                                     │\n│ You need to do the following task: Write a blog post about AI trends in 1 paragraph.  │\n│ Expected Output: Well-written blog post about AI trends.                              │\n│                                                                                       │\n│                                                                                       │\n│ Relevant memory context:                                                              │\n│ Short-term Memory Context                                                             │\n│ =========================                                                             │\n│                                                                                       │\n│  • As we move further into 2024, several key trends in artificial intelligence are    │\n│ shaping the landscape of technology and business. One of the most...                  │\n│                                                                                       │\n│ Long-term Memory Context                                                              │\n│ ========================                                                              │\n│                                                                                       │\n│  • As we move further into 2024, several key trends in artificial intelligence are    │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work. (Memory record: As we move further into 2024,       │\n│ several key trends in artificial intelligence are shaping the landscape of technology │\n│ and business. One of the most significant trends is the rise of generative AI, which  │\n│ is revolutionizing content creation across various mediums, from text and images to   │\n│ music and video, thereby enhancing creativity and efficiency for businesses.          │\n│ Additionally, the focus on AI ethics and governance is intensifying, with             │\n│ organizations prioritizing responsible practices to mitigate bias and ensure          │\n│ transparency in AI applications. The integration of AI with edge computing is also    │\n│ gaining traction, facilitating real-time data processing and decision-making at the   │\n│ source, particularly beneficial for IoT applications. Furthermore, advancements in    │\n│ natural language processing are making AI more conversational and accessible, leading │\n│ to improved customer interactions and support systems. As these trends continue to    │\n│ evolve, they promise to redefine industries and enhance the way we live and           │\n│ work.)Please provide only the final result of your work. Do not add any conversation  │\n│ or extra explanation.                                                                 │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\n           DEBUG    [22:27:20] main.py:224 DEBUG Empty content in             main.py:224\n                    display_generating, returning early                                  \n╭───────────────────────────────── Generating... 2.8s ──────────────────────────────────╮\n│ As we move further into 2024, several key trends in artificial intelligence are       │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work.                                                     │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\nResponse generated in 5.4s\n╭──────────────────────────────────────── Task ─────────────────────────────────────────╮\n│ You need to do the following task: Write a blog post about AI trends in 1 paragraph.  │\n│ Expected Output: Well-written blog post about AI trends.                              │\n│                                                                                       │\n│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │\n│ ┃                Relevant memory context: Short-term Memory Context                 ┃ │\n│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │\n│                                                                                       │\n│ • As we move further into 2024, several key trends in artificial intelligence are     │\n│ shaping the landscape of technology and business. One of the most...                  │\n│                                                                                       │\n│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │\n│ ┃                             Long-term Memory Context                              ┃ │\n│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │\n│                                                                                       │\n│ • As we move further into 2024, several key trends in artificial intelligence are     │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work. (Memory record: As we move further into 2024,       │\n│ several key trends in artificial intelligence are shaping the landscape of technology │\n│ and business. One of the most significant trends is the rise of generative AI, which  │\n│ is revolutionizing content creation across various mediums, from text and images to   │\n│ music and video, thereby enhancing creativity and efficiency for businesses.          │\n│ Additionally, the focus on AI ethics and governance is intensifying, with             │\n│ organizations prioritizing responsible practices to mitigate bias and ensure          │\n│ transparency in AI applications. The integration of AI with edge computing is also    │\n│ gaining traction, facilitating real-time data processing and decision-making at the   │\n│ source, particularly beneficial for IoT applications. Furthermore, advancements in    │\n│ natural language processing are making AI more conversational and accessible, leading │\n│ to improved customer interactions and support systems. As these trends continue to    │\n│ evolve, they promise to redefine industries and enhance the way we live and           │\n│ work.)Please provide only the final result of your work. Do not add any conversation  │\n│ or extra explanation.                                                                 │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\n╭────────────────────────────────────── Response ───────────────────────────────────────╮\n│ As we move further into 2024, several key trends in artificial intelligence are       │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work.                                                     │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\nResponse generated in 5.4s\n╭──────────────────────────────────────── Task ─────────────────────────────────────────╮\n│ You need to do the following task: Write a blog post about AI trends in 1 paragraph.  │\n│ Expected Output: Well-written blog post about AI trends.                              │\n│                                                                                       │\n│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │\n│ ┃                Relevant memory context: Short-term Memory Context                 ┃ │\n│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │\n│                                                                                       │\n│ • As we move further into 2024, several key trends in artificial intelligence are     │\n│ shaping the landscape of technology and business. One of the most...                  │\n│                                                                                       │\n│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │\n│ ┃                             Long-term Memory Context                              ┃ │\n│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │\n│                                                                                       │\n│ • As we move further into 2024, several key trends in artificial intelligence are     │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work. (Memory record: As we move further into 2024,       │\n│ several key trends in artificial intelligence are shaping the landscape of technology │\n│ and business. One of the most significant trends is the rise of generative AI, which  │\n│ is revolutionizing content creation across various mediums, from text and images to   │\n│ music and video, thereby enhancing creativity and efficiency for businesses.          │\n│ Additionally, the focus on AI ethics and governance is intensifying, with             │\n│ organizations prioritizing responsible practices to mitigate bias and ensure          │\n│ transparency in AI applications. The integration of AI with edge computing is also    │\n│ gaining traction, facilitating real-time data processing and decision-making at the   │\n│ source, particularly beneficial for IoT applications. Furthermore, advancements in    │\n│ natural language processing are making AI more conversational and accessible, leading │\n│ to improved customer interactions and support systems. As these trends continue to    │\n│ evolve, they promise to redefine industries and enhance the way we live and           │\n│ work.)Please provide only the final result of your work. Do not add any conversation  │\n│ or extra explanation.                                                                 │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\n╭────────────────────────────────────── Response ───────────────────────────────────────╮\n│ As we move further into 2024, several key trends in artificial intelligence are       │\n│ shaping the landscape of technology and business. One of the most significant trends  │\n│ is the rise of generative AI, which is revolutionizing content creation across        │\n│ various mediums, from text and images to music and video, thereby enhancing           │\n│ creativity and efficiency for businesses. Additionally, the focus on AI ethics and    │\n│ governance is intensifying, with organizations prioritizing responsible practices to  │\n│ mitigate bias and ensure transparency in AI applications. The integration of AI with  │\n│ edge computing is also gaining traction, facilitating real-time data processing and   │\n│ decision-making at the source, particularly beneficial for IoT applications.          │\n│ Furthermore, advancements in natural language processing are making AI more           │\n│ conversational and accessible, leading to improved customer interactions and support  │\n│ systems. As these trends continue to evolve, they promise to redefine industries and  │\n│ enhance the way we live and work.                                                     │\n╰───────────────────────────────────────────────────────────────────────────────────────╯\n[22:27:25] DEBUG    [22:27:25] agent.py:1120 DEBUG Agent.chat completed in  agent.py:1120\n                    5.39 seconds                                                    \n❯ \n\n\n\n output showed above , its using llm.py when using litellm \n\nlitellm or llm_config \n\nCode below\n\nfrom praisonaiagents import Agent, Task, PraisonAIAgents\nimport os\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\nllm_config = {\n    \"model\": \"openai/gpt-4o-mini\",\n    \"api_key\": os.getenv('OPENAI_API_KEY'),\n    \"temperature\": 0.7,\n    \"max_tokens\": 2000\n}\n\nblog_agent = Agent(\n    role=\"Blog Writer\",\n    goal=\"Write a blog post about AI\",\n    backstory=\"Expert at writing blog posts\",\n    llm=llm_config,\n)\n\nblog_task = Task(\n    description=\"Write a blog post about AI trends in 1 paragraph\",\n    expected_output=\"Well-written blog post about AI trends\",\n    agent=blog_agent\n)\n\nagents = PraisonAIAgents(\n    agents=[blog_agent],\n    tasks=[blog_task],\n    memory=True\n)\n\nresult = agents.start()\n\n\n\n```\n\n",
+      "state": "closed",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-06-05T21:35:06Z",
+      "updated_at": "2025-06-06T06:24:33Z",
+      "closed_at": "2025-06-06T06:24:33Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/612/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/612",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/612",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:04.305799",
+      "comments": [
+        {
+          "author": "MervinPraison",
+          "body": "@claude The Task and Response are getting printed twice. Identify the issue and fix it with minimal code changes, with backward compatibility ",
+          "created_at": "2025-06-05T21:35:24Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @MervinPraison's task in 10m 49s** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15477778040) • [`claude/issue-612-20250605_213542`](https://github.com/MervinPraison/PraisonAI/tree/claude/issue-612-20250605_213542) • [Create PR ➔](https://github.com/MervinPr",
+          "created_at": "2025-06-05T21:35:41Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude this is causing llm.py to no display the task and response \n\n```\n❯ python test.py\n[06:42:50] INFO     [06:42:50] llm.py:297 INFO Getting response from openai/gpt-4o-mini              llm.py:297\n╭─ Agent Info ────────────────────────────────────────────────────────────────────────────────────",
+          "created_at": "2025-06-06T05:47:31Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude encountered an error after 9m 28s** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15483741241)\n\n---\nI'll analyze and fix the duplicate display issue when using litellm with memory. Let me revert my previous changes and find the real root cause. <img src=\"https://gith",
+          "created_at": "2025-06-06T05:47:44Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude finish the pending task make change and implement the fix. Also verify if its the correct fix. ",
+          "created_at": "2025-06-06T06:09:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 516,
+      "title": "Computer Use",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-27T04:37:08Z",
+      "updated_at": "2025-06-03T14:06:02Z",
+      "closed_at": null,
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/516/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/516",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/516",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:04.534869",
+      "comments": [
+        {
+          "author": "AndresRojoInteracso",
+          "body": "It can also be Magentic-UI\nhttps://www.microsoft.com/en-us/research/blog/magentic-ui-an-experimental-human-centered-web-agent/",
+          "created_at": "2025-06-03T14:05:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 580,
+      "title": "Litellm Double Tool Call",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-06-03T06:23:01Z",
+      "updated_at": "2025-06-03T06:23:01Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/580/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/580",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/580",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:06.633728",
+      "comments": []
+    },
+    {
+      "issue_number": 130,
+      "title": "Boost praisonai Tools Adoption: Please Add Docker Support!",
+      "body": "Hi Mervin,\r\n\r\nI’ve been working with the praisonai code tool and found it immensely helpful for coding with a large context base. Great work on developing such a robust tool! I have a couple of enhancements to propose that could streamline the user experience and repo organization:\r\n\r\n- **Directory Management**:\r\n  - Currently, files like `chainlit.md` and the `.chainlit` directory are placed in the root of the repository upon startup. The `public` directory also adds to the clutter.\r\n  - It would be more efficient to relocate these to `~/.praison/`, alongside `database.sqlite`. This would help keep the root directory clean and organized.\r\n\r\n- **Docker Integration**:\r\n  - Adding Docker support could significantly simplify setting up and running the tool across different environments.\r\n  - Dockerization would ensure a more isolated and consistent operational environment, facilitating easier deployment and scalability.\r\n  - **Increased Adoption**: Dockerizing the application can lower the barrier to entry for new users, enabling more developers to test the tool. This increased user base can provide more feedback, potentially increase your follower base, and further enhance the toolset through community contributions.\r\n\r\nThese changes could help maintain the tool’s efficiency while improving its usability and setup process.\r\n\r\nThanks for considering these suggestions. Looking forward to your thoughts!\r\n",
+      "state": "closed",
+      "author": "leonsgithub",
+      "author_type": "User",
+      "created_at": "2024-08-04T15:54:21Z",
+      "updated_at": "2025-05-30T12:54:38Z",
+      "closed_at": "2025-05-30T12:54:11Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/130/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/130",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/130",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:06.633759",
+      "comments": [
+        {
+          "author": "MervinPraison",
+          "body": "@leonsgithub Thank you very much for your suggestion. Definitely will get it added to the list of things to do.  ",
+          "created_at": "2024-08-06T08:31:13Z"
+        },
+        {
+          "author": "igor-elbert",
+          "body": "I second this request. I'm getting multiple dependency errors after install.\r\n\r\nThe most prevalent one is:\r\npydantic.errors.PydanticUserError: The `__modify_schema__` method is not supported in Pydantic v2. Use `__get_pydantic_json_schema__` instead in class `SecretStr`.",
+          "created_at": "2024-12-02T20:37:23Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude\n\nImplement this. Also review all the docker files in the docker folder and propose changes if required. \nAlso add ability to release it as a praisonaiagents public package via github ",
+          "created_at": "2025-05-30T10:54:15Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @MervinPraison's task** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15345183160) • [`claude/issue-130-20250530_105428`](https://github.com/MervinPraison/PraisonAI/tree/claude/issue-130-20250530_105428) • [Create PR ➔](https://github.com/MervinPraison/Prais",
+          "created_at": "2025-05-30T10:54:27Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@leonsgithub Thanks for your suggestion and contribution. This has been implemented. ",
+          "created_at": "2025-05-30T12:54:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 499,
+      "title": "Agentos Update",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-24T13:57:57Z",
+      "updated_at": "2025-05-24T13:57:57Z",
+      "closed_at": null,
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/499/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/499",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/499",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:08.845384",
+      "comments": []
+    },
+    {
+      "issue_number": 410,
+      "title": "Agent calling tool calls always expects strings even if its integer",
+      "body": null,
+      "state": "closed",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-03-10T18:26:59Z",
+      "updated_at": "2025-05-24T06:30:43Z",
+      "closed_at": "2025-05-24T06:30:43Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/410/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/410",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/410",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:08.845409",
+      "comments": [
+        {
+          "author": "MervinPraison",
+          "body": "@claude review this error and propose a fix. minimal code change",
+          "created_at": "2025-05-24T05:50:09Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @MervinPraison's task** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15224051144) • [`claude/issue-410-20250524_055025`](https://github.com/MervinPraison/PraisonAI/tree/claude/issue-410-20250524_055025) • [Create PR ➔](https://github.com/MervinPraison/Prais",
+          "created_at": "2025-05-24T05:50:24Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "@claude move this test test_type_casting.py  in to this folder tests/xxxtest/\n\nxxx means unit or functional or ... you name it accordingly ",
+          "created_at": "2025-05-24T06:02:11Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @MervinPraison's task** —— [View job](https://github.com/MervinPraison/PraisonAI/actions/runs/15224127974) • [`claude/issue-410-20250524_060223`](https://github.com/MervinPraison/PraisonAI/tree/claude/issue-410-20250524_060223) • [Create PR ➔](https://github.com/MervinPraison/Prais",
+          "created_at": "2025-05-24T06:02:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 491,
+      "title": "Agents handing off to agents",
+      "body": "[a-practical-guide-to-building-agents.pdf](https://github.com/user-attachments/files/20415518/a-practical-guide-to-building-agents.pdf)",
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-23T16:54:47Z",
+      "updated_at": "2025-05-23T16:56:03Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/491/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/491",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/491",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:09.022010",
+      "comments": []
+    },
+    {
+      "issue_number": 490,
+      "title": "Agents as Tools",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-23T16:54:26Z",
+      "updated_at": "2025-05-23T16:54:26Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/490/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/490",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/490",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:09.022036",
+      "comments": []
+    },
+    {
+      "issue_number": 489,
+      "title": "Create State",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-05-23T16:53:23Z",
+      "updated_at": "2025-05-23T16:53:23Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/489/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/489",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/489",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:09.022045",
+      "comments": []
+    },
+    {
+      "issue_number": 295,
+      "title": "Image Output",
+      "body": null,
+      "state": "open",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-01-14T06:10:33Z",
+      "updated_at": "2025-02-04T09:46:58Z",
+      "closed_at": null,
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/295/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/295",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/295",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:10.734049",
+      "comments": [
+        {
+          "author": "malv-c",
+          "body": "images, sounds, songs, videos.\nto start well add llama.cpp, nexa-sdk and the ability to auto-add python codes to the framework\ndeepseek+memory+knowledge+python-base\n\"add a mixture of what you find on internet to control my desktop,  learn how to use it in ~/swm (my kbd is fr) please agent\"\n=> yes us",
+          "created_at": "2025-02-04T09:46:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 296,
+      "title": "PraisonAI Agents Input",
+      "body": null,
+      "state": "closed",
+      "author": "MervinPraison",
+      "author_type": "User",
+      "created_at": "2025-01-14T06:10:44Z",
+      "updated_at": "2025-01-21T04:06:49Z",
+      "closed_at": "2025-01-21T04:06:19Z",
+      "labels": [
+        "features"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 11,
+      "reactions": {
+        "url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/296/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/MervinPraison/PraisonAI/issues/296",
+      "api_url": "https://api.github.com/repos/MervinPraison/PraisonAI/issues/296",
+      "repository": "MervinPraison/PraisonAI",
+      "extraction_date": "2025-06-22T00:40:10.967989",
+      "comments": [
+        {
+          "author": "GauravKasat",
+          "body": "Hey @MervinPraison  when will this feature be added? Not able to pass custom input.",
+          "created_at": "2025-01-16T11:01:52Z"
+        },
+        {
+          "author": "GauravKasat",
+          "body": "v = input('Company name that you want to analyze: ')\nx = input('Industry name: ')\n\nresult = agents.start(\"Analyze competitor for the company {v} in {x} industry\")\n\n\ngiving error of \nTypeError: PraisonAIAgents.start() takes 1 positional argument but 2 were given\n",
+          "created_at": "2025-01-16T11:05:20Z"
+        },
+        {
+          "author": "MervinPraison",
+          "body": "`pip install -U praisonai duckduckgo_search`\n\n```\nfrom praisonaiagents import Agent, Tools\n\nagent = Agent(instructions=\"You are an Analyst.\", tools=[Tools.internet_search])\nv = input('Company name that you want to analyze: ')\nresult = agent.start(f\"Analyze competitor for the company {v}\")\n```\n\nThis ",
+          "created_at": "2025-01-16T13:11:01Z"
+        },
+        {
+          "author": "GauravKasat",
+          "body": "@MervinPraison   i dont have a single agent . I have team of agents. The code you have given is running for a single agent not for team of agents.\n\nagents = PraisonAIAgents(\n    agents=all_agents,\n    tasks=all_tasks + [report_compilation_task],\n    verbose=True,\n    process='sequential'\n)\n\nv = inpu",
+          "created_at": "2025-01-16T18:10:40Z"
+        },
+        {
+          "author": "GauravKasat",
+          "body": "@MervinPraison  can you please help",
+          "created_at": "2025-01-17T07:29:20Z"
+        }
+      ]
+    }
+  ]
+}

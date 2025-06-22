@@ -1,0 +1,1943 @@
+{
+  "repository": "CatchTheTornado/text-extract-api",
+  "repository_info": {
+    "repo": "CatchTheTornado/text-extract-api",
+    "stars": 2617,
+    "language": "Python",
+    "description": "Document (PDF, Word, PPTX ...) extraction and parse API using state of the art modern OCRs + Ollama supported models. Anonymize documents. Remove PII. Convert any document or picture to structured JSO",
+    "url": "https://github.com/CatchTheTornado/text-extract-api",
+    "topics": [
+      "anonymization",
+      "api",
+      "extract",
+      "json",
+      "llm",
+      "ocr",
+      "ocr-python",
+      "pdf",
+      "pii"
+    ],
+    "created_at": "2024-10-23T09:27:19Z",
+    "updated_at": "2025-06-21T10:49:41Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 134,
+    "labeled_issues_estimate": 58,
+    "labeling_rate": 43.6,
+    "sample_labeled": 17,
+    "sample_total": 39,
+    "has_issues": true,
+    "repo_id": 877212130,
+    "default_branch": "main",
+    "size": 5315
+  },
+  "extraction_date": "2025-06-22T00:46:00.848715",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 45,
+  "issues": [
+    {
+      "issue_number": 116,
+      "title": "Improvement of static code analysis",
+      "body": "As far as I can see you are not using pre-commit checks, how about adding them to the project?\nAlso in this step checking with `mypy` can be added and also `ruff` as formater code, as it is much faster.\nThis can prevent many potential errors 😄  ",
+      "state": "open",
+      "author": "jakubziebin",
+      "author_type": "User",
+      "created_at": "2025-04-23T09:26:06Z",
+      "updated_at": "2025-05-05T20:10:40Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/116/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/116",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/116",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.047194",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "That's cool idea! Could you help us implementing it?",
+          "created_at": "2025-04-27T03:45:25Z"
+        },
+        {
+          "author": "jakubziebin",
+          "body": "Sure! I can prepare it this week",
+          "created_at": "2025-04-27T13:39:31Z"
+        },
+        {
+          "author": "jakubziebin",
+          "body": "Ok, so since the introduction of both `mypy` and `ruff` will require some changes (with ruff mainly formatting, since I run ` ruff` locally, I haven't tried `mypy` yet) I propose to split the changes into two pull requests:\nThe first replacing `isort`, `black` and `flake8` with `ruff` and introducin",
+          "created_at": "2025-04-29T18:48:09Z"
+        },
+        {
+          "author": "choinek",
+          "body": "Sounds great to me! ",
+          "created_at": "2025-04-30T19:40:35Z"
+        },
+        {
+          "author": "jakubziebin",
+          "body": "First part ready, waiting for review!",
+          "created_at": "2025-05-05T20:10:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 54,
+      "title": "[feat] Add `docling` support",
+      "body": "https://github.com/DS4SD/docling?tab=readme-ov-file\n\n- [x] Change `ocr_strategies` to `strategies` (same for strategy)\n- [x] Install docling \n- [x] PoC research integration - convert one format example\n- [x] Docling Strategy\n- [x] Universal Document (which will have DoclingDocument)\n- [ ] ... tbd",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-08T10:31:55Z",
+      "updated_at": "2025-04-29T01:51:12Z",
+      "closed_at": "2025-04-29T01:51:12Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/54/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [
+        "choinek"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/54",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/54",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.242796",
+      "comments": []
+    },
+    {
+      "issue_number": 102,
+      "title": "[feat] minicpm-v support",
+      "body": "https://ollama.com/library/minicpm-v\n\nI'ts like `llama_vision` but could be faster and have better accuracy on English for some cases",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-19T17:03:15Z",
+      "updated_at": "2025-01-20T10:02:48Z",
+      "closed_at": "2025-01-20T10:02:48Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/102/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/102",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/102",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.242819",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Implemented in: #103 ",
+          "created_at": "2025-01-19T17:49:54Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Closed via #103 ",
+          "created_at": "2025-01-20T10:02:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 81,
+      "title": "[feat] Redirect / to docs page",
+      "body": "@ngpollock the reason for the \"not found\" errors is that you're trying to access localhost:8000/, but currently, there's nothing running on that endpoint (/.\r\n\r\nYou should use the endpoints provided in the documentation, like /ocr/request\r\n\r\nhttps://github.com/CatchTheTornado/text-extract-api\r\n![image](https://github.com/user-attachments/assets/68cc1ce1-faa2-4258-a4bb-d455f9a161f1)\r\n\r\n@pkarw  this leads me to consider that it might be worth route / to docs page, or if its not easy in FastAPI then do redirect from / to docs ;)\r\n\r\n_Originally posted by @choinek in https://github.com/CatchTheTornado/text-extract-api/discussions/78#discussioncomment-11821392_",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-13T15:33:03Z",
+      "updated_at": "2025-01-19T16:55:24Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/81/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/81",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/81",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439212",
+      "comments": []
+    },
+    {
+      "issue_number": 79,
+      "title": "[feat] Implement poetry - PEP 517/518 compatible package manager",
+      "body": "Research and compare to our setup\r\n\r\nhttps://python-poetry.org/\r\n\r\nIt replaces pip/venv",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-13T00:35:25Z",
+      "updated_at": "2025-01-19T16:55:23Z",
+      "closed_at": null,
+      "labels": [
+        "maitenance"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/79/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/79",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/79",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439233",
+      "comments": []
+    },
+    {
+      "issue_number": 73,
+      "title": "[refactor] make, run, cli",
+      "body": "I just found out about github discussions :) so moved it here https://github.com/CatchTheTornado/text-extract-api/discussions/77\r\n\r\nAnd i'm leaving task just for \"waiting in queue\" purposes.",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-12T06:00:21Z",
+      "updated_at": "2025-01-19T16:55:23Z",
+      "closed_at": null,
+      "labels": [
+        "refactor"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/73/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/73",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/73",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439241",
+      "comments": []
+    },
+    {
+      "issue_number": 61,
+      "title": "[feat] support JSON output chunking",
+      "body": "The Marker OCR supports now pretty nice JSON output chunking including document structure: https://github.com/VikParuchuri/marker we could support it. The same thing is for `docling` (#54 ) -> https://ds4sd.github.io/docling/usage/#chunking",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-09T17:12:50Z",
+      "updated_at": "2025-01-19T16:55:21Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/61/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/61",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/61",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439249",
+      "comments": []
+    },
+    {
+      "issue_number": 57,
+      "title": "[feat] Enhance PDF Text Extraction with Combined Embedded Text and OCR",
+      "body": "Improve the PDF text extraction pipeline by leveraging both embedded text from PDFs and text generated via OCR. \r\n\r\nThe workflow should extract embedded text, process the PDF pages with OCR, and combine the outputs intelligently to produce an enriched result that retains structure (e.g., Markdown from OCR) and ensures accuracy (by validating against embedded text).\r\n\r\n- [ ] Investigate libraries for extracting embedded text, such as PyPDF2\r\n- [ ] Decide on the library to use and integrate it into the project\r\n- [ ] Add utility function extract_embedded_text(pdf_bytes) to handle text extraction\r\n- [ ] Use it in LM strategies combined with OCR results to improve the quality of the output - ask AI to check if there is something missing :) ",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-08T22:53:43Z",
+      "updated_at": "2025-01-19T16:55:21Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/57/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/57",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/57",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439255",
+      "comments": []
+    },
+    {
+      "issue_number": 55,
+      "title": "[feat] Add `markitdown` support",
+      "body": "https://github.com/microsoft/markitdown\r\n\r\nIt can be added as another OCR strategy\r\n",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-08T10:32:31Z",
+      "updated_at": "2025-01-19T16:55:21Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/55/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/55",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/55",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439261",
+      "comments": []
+    },
+    {
+      "issue_number": 51,
+      "title": "[feat] colpali support",
+      "body": "https://medium.com/@simeon.emanuilov/colpali-revolutionizing-multimodal-document-retrieval-324eab1cf480\n\nIt would be great to add colpali support as a OCR driver",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-02T11:37:24Z",
+      "updated_at": "2025-01-19T16:55:20Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/51/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/51",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/51",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439267",
+      "comments": []
+    },
+    {
+      "issue_number": 92,
+      "title": "[feat] add marker strategy as a separate repo + example how to load it",
+      "body": "As with the #91 - the `marker` strategy has been officially removed along with all dependencies to `surya-ocr` and `marker` - as the packages imply the `GPL3` license. We changed the license to MIT. `marker`, `surya`, `tabled` and other GPL licensed products still might be used BUT only as a 3rd party libraries - included at the local-deployment level and not in the core product.\n\nLooking forward for someone willing to add it as a 3rd party plugin/example",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-17T13:34:44Z",
+      "updated_at": "2025-01-19T16:54:36Z",
+      "closed_at": null,
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "feature"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/92/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/92",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/92",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439273",
+      "comments": []
+    },
+    {
+      "issue_number": 88,
+      "title": "[feat] handle Ollama's endpoint \"Delete a Model\"",
+      "body": "Handle endpoint:\r\n```\r\nDELETE /api/delete\r\n```\r\n\r\nIt will be very useful for automated functional tests of llm-pull.",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-14T21:02:48Z",
+      "updated_at": "2025-01-19T16:54:35Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/88/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/88",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/88",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439279",
+      "comments": []
+    },
+    {
+      "issue_number": 86,
+      "title": "[feat] Set a simple, independent version file for the current dynamic development and potential environment incompatibilities",
+      "body": "+ @pkarw I'm wondering if we shouldn't add some temporary `VERSION` file in which we will change the version when some important things change... and then during the application run, inform the user that he has an incompatible version and should check his `.env` files, because the user - even now - won't know that we added some configurations, etc., and his `.env` will be old. Of course, we should keep backward compatibility, but I think that we can't predict everything, and before we publish the official package, we should go with something like:\r\n- Push to `VERSION` something like (...) 3 (I would go with int, it's not about semver here and we won't update it every time).\r\n- Push to `INCOMPATIBLE_CHANGES` a simplified changelog which has a structure like:\r\n```\r\n--2--\r\n(incompatible changes between 1 and 2)\r\n--1--\r\n(incompatible changes between non version and 1 version)\r\n```\r\n- After comparing, we will show messages to the user.\r\n- Push to `.env.example` `TEXT_EXTRACT_API_VERSION=3`.\r\n- Push to `.env.localhost.example` `TEXT_EXTRACT_API_VERSION=3`.\r\n- In the run scripts, check:\r\n  - If `.env` or `.env.localhost` exists, check both of them:\r\n    - Missing `TEXT_EXTRACT_API_VERSION` -> old.\r\n    - Lower than `.repository_version` -> old.\r\n  - If not, then do nothing.\r\n\r\nAnd in case of finding an old version:\r\n- Ask the user to update his `.env` file based on `.env.dist` (we should change the name from `example` to `dist` because it's like variables that the user should acknowledge).\r\n- Ask the user to clean up his `.venv` (usually done with `make`).\r\n- Tell the user about possible changes.",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-14T06:01:06Z",
+      "updated_at": "2025-01-19T16:54:35Z",
+      "closed_at": null,
+      "labels": [
+        "feature",
+        "maitenance"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/86/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/86",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/86",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.439286",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "This is a great idea, however, I'd rather go with `semver` to not make a mess - I mean, we'll be releasing new versions of the API using `semwer` anyway, so it would be great to have it coherent.\r\n\r\nThe other option would be to check the `os.getenv` against keys defined in `.env.dist` to make sure a",
+          "created_at": "2025-01-14T08:05:40Z"
+        },
+        {
+          "author": "choinek",
+          "body": "I'm not sure if Semantic Versioning (semver) will resolve my issue – semver operates at the application level (e.g., for endpoints) and needs to be updated every time a new version is released.\r\n\r\nIn this case, the versioning is strictly for the environment. It should only change when something sign",
+          "created_at": "2025-01-14T15:37:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 96,
+      "title": "[bug] Strategy cache hash should not depend solely on the file itself",
+      "body": "Changing the strategy in request obviously doesn't change anything when the cache is used (even if OCR was performed using a different strategy).\n\n- [ ] Analyze which fields could critically interfere with the results (I guess it's `file_hash + strategy_name + language`).\n- [ ] Combine them (it's not necessary to hash them after proper validation; it could be `language:strategy_name:file_hash`).\n",
+      "state": "open",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-19T05:27:19Z",
+      "updated_at": "2025-01-19T06:53:46Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/96/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/96",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/96",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.643814",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "This is certainly a good one ☝️ ",
+          "created_at": "2025-01-19T06:53:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 63,
+      "title": "[refactor] Clean namespaces - change main applicaiton directory, set it as package and create consistent modules",
+      "body": "I researched the most popular repositories regarding code standards and came across two important points:\r\n\r\nFirst, we don’t have the main folder prepared as a package, which means we can only use relative namespaces (or set them globally in the init files).\r\n\r\nSecond, our main folder is currently named app, but a better practice would be to name it text-extract-api.\r\n\r\nhttps://github.com/conda/conda\r\nhttps://github.com/django/django\r\nhttps://github.com/arrow-py/arrow\r\nhttps://github.com/apache/superset",
+      "state": "closed",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-10T01:45:32Z",
+      "updated_at": "2025-01-18T07:14:48Z",
+      "closed_at": "2025-01-18T07:14:48Z",
+      "labels": [
+        "refactor"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/63/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "choinek"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/63",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/63",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:55.841725",
+      "comments": [
+        {
+          "author": "choinek",
+          "body": "@pkarw \r\n I acknowledged great document with coding structure/standards:\r\nhttps://docs.python-guide.org/writing/structure/#further-reading\r\n\r\nAnd great organized project:\r\nhttps://github.com/apache/superset\r\n\r\nI'll convert our setup to that \r\n\r\nI'll do my best to not lost files history",
+          "created_at": "2025-01-11T00:23:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 87,
+      "title": "[cleanup] Remove `Tesseract` support after adding `easyOCR`",
+      "body": "Tesseract quality is pretty poor comparing to modern OCRs, let's remove it with all dependencies after implementing the #56 ",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-14T08:31:34Z",
+      "updated_at": "2025-01-18T06:49:38Z",
+      "closed_at": "2025-01-18T06:49:38Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/87/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "pkarw"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/87",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/87",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.003300",
+      "comments": []
+    },
+    {
+      "issue_number": 62,
+      "title": "[feat] Change license to MIT by removing dependency to `marker`",
+      "body": "The `marker` OCR requires us to keep the `GPL3` license. I'd preffer to change to MIT.\r\n\r\nLet's remove the dependency to marker, change the `marker_strategy` just as an example (not enabled by default) + add to docs how to add it if someone really has to.\r\n\r\nLet's switch to `easyOCR` which Docling is using by default - as an alternate option (#56)",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-09T17:19:51Z",
+      "updated_at": "2025-01-18T06:49:37Z",
+      "closed_at": "2025-01-18T06:49:37Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/62/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "pkarw"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/62",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/62",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.003320",
+      "comments": []
+    },
+    {
+      "issue_number": 56,
+      "title": "[feat] Add EasyOCR strategy",
+      "body": "https://github.com/JaidedAI/EasyOCR?tab=readme-ov-file",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2025-01-08T11:00:07Z",
+      "updated_at": "2025-01-18T06:49:37Z",
+      "closed_at": "2025-01-18T06:49:37Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/56/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "pkarw"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/56",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/56",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.003328",
+      "comments": []
+    },
+    {
+      "issue_number": 59,
+      "title": "[feat] Unified multi-format support with conversion architecture and strategy standardization",
+      "body": "1. **Support for Multiple File Formats**:\r\n    - Ensure support for various file types (e.g., **images, PDFs, etc.**) by implementing fully typed and modular format definitions.\r\n    - Refine file-handling components to ensure compatibility and scalability for future formats.\r\n    **-> File Format**\r\n\r\n2. **Proposed Conversion Architecture**:\r\n    - Design a consistent and extensible architecture for handling file format conversions.\r\n    - Implement interface definitions and foundational converters for tasks like `PDF to JPEG`, `Image to Text`, etc.\r\n    - Consolidate logic to ensure reusability and decoupling between format-specific transformations.\r\n    **- -> Converters**\r\n\r\n3. **Strategy Unification**:\r\n    - Refactor **OCR strategies** by implementing a unified file interface to simplify the integration of multiple OCR tools \r\n    - Update the strategy pattern to allow future extensions while maintaining type safety and structure.\r\n     **-> Use common interface**\r\n\r\n",
+      "state": "closed",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-09T06:13:33Z",
+      "updated_at": "2025-01-17T22:56:07Z",
+      "closed_at": "2025-01-17T22:55:47Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/59/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "choinek"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/59",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/59",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.003336",
+      "comments": [
+        {
+          "author": "choinek",
+          "body": "Damn @pkarw I have just come across Pythonic coding standards ( :( ), didn't know about it earlier but I love it.\r\n\r\nSo I'll refactor, another time,  file_format as it will be the most important file, and maintaining backward compatibility later will be challenging. :D \r\n\r\nDoing it right now, it wil",
+          "created_at": "2025-01-12T02:57:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 85,
+      "title": "[feat][refactor] dev docker-compose upgrade/new version bugfixes",
+      "body": "**I'm creating a dedicated task to have a separate number for commits** - committing constantly to 59 and 63 despite a lot of other refactors was not good, and now I would prefer them to be marked separately as refactors, but it's a lesson for the future. :)\r\n\r\nI finally started working on this project with Docker to verify its functionality more thoroughly with refactors, and unfortunately, I came across many areas that need polishing/optimization and even total fixes, which, as a result of #63, were unfortunately necessary to do so that after a large merge nothing hangs by a thread.\r\n\r\nAt first glance, it worked after minor fixes, but the more I looked into it, the more worrying things started happening.\r\n\r\nAnd running the environment almost completely rebuilt because the cache only included the first 5 steps (that's not a problem, but I spend a lot of time rebuilding images and waiting so I optimized it to speed up my work).\r\n\r\nWith that preliminary word, let's get to the meat:\r\n- [x] Remove pip installation from image building - and we mount the volume on `.` anyway.\r\n  - eliminate the separate volume for storage and storage profiles - it will be like working locally\r\n    - i keep symlink `ln -sfn /storage /app/storage` for people with copied `.env`\r\n  - this allows the Docker image to actually cache and not build almost every time (and now it was building because any files changed; at the same time, we only required dependencies to be downloaded, so...)\r\n- [x] Dependencies will be downloaded and installed in the virtual environment just like when working locally\r\n  - although at first glance this might seem like a strange move because Docker is inherently an isolated environment, it... ensures consistency between local and Docker environments, and the developer has access to packages and their typings/classes since they are placed normally in the project folder\r\n- [x] (!) Adding hash calculation for `pyproject.toml` to check if we need to install dependencies when setting up the project, thereby speeding up the restart of the development environment even more\r\n- [x] Adding an entrypoint with the application type - celery/fastapi, and the container will only runu with the appropriate one\r\n- [x] Changing package installation to use the next step from `pyproject` instead of `require` (that was the \"old mode\");\r\n  - // the next step in Poetry is still ahead of us\r\n- [x] Fixing the README\r\n- [x] Adding Docker setup to the Makefile (now I understood what @pkarw meant with copying `.env.example`, I mixed it with the local `run.sh`)\r\n- [x] Adding hash handling to run as well\r\n- [x] Setting a shared volume in compose instead of assigning separately\r\n- [x] Renaming Docker files to `dev.Dockerfile` and `dev.gpu.Dockerfile` (the second one is important for validation - the previous name caused syntax highlighting not to work in the IDE; the whole point is to indicate that these are not production builds; production builds will use different commands, etc., to run, so even in the previous version they would have to be done separately\r\n- [x] Remove container names making docker-compose usable across few directories\r\n- [x] Customize redis host port \r\n- [x] Build docker gpu with diffrent project name\r\n- [x] + allow user to disable ollama \r\n",
+      "state": "closed",
+      "author": "choinek",
+      "author_type": "User",
+      "created_at": "2025-01-14T03:42:57Z",
+      "updated_at": "2025-01-17T00:50:56Z",
+      "closed_at": "2025-01-17T00:50:55Z",
+      "labels": [
+        "bug",
+        "feature",
+        "maitenance"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/85/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "choinek"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/85",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/85",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.209696",
+      "comments": [
+        {
+          "author": "choinek",
+          "body": "Resolved with https://github.com/CatchTheTornado/text-extract-api/releases/tag/v0.1.0",
+          "created_at": "2025-01-17T00:50:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "[feat] support returning images",
+      "body": "Marker sometimes leaves like `![1_image_0.png](1_image_0.png)`in the text - would be great to return these images + bounding boxes as another option as well",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-15T11:23:31Z",
+      "updated_at": "2025-01-12T17:01:55Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/37/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/37",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/37",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.436166",
+      "comments": [
+        {
+          "author": "kaushalWa",
+          "body": "@pkarw is there any way to get bounding boxes of the elements of a pdf using this pdf-extract-api library?\r\nThanks\r\n",
+          "created_at": "2025-01-08T09:56:25Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Hey @kaushalWa at this moment it’s not supported, I think we can add it to some of the OCR strategies like easyOCR and marker",
+          "created_at": "2025-01-12T17:01:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 49,
+      "title": "[feat] Check Paddle OCR",
+      "body": "https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-12-01T18:03:05Z",
+      "updated_at": "2025-01-09T17:20:49Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/49/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/49",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/49",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.703304",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "probably it should be used via: https://github.com/opendatalab/MinerU",
+          "created_at": "2024-12-01T18:06:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 44,
+      "title": "[feat] Check the QWEN-VL model as OCR provider",
+      "body": "https://qwenlm.github.io/",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-21T17:48:30Z",
+      "updated_at": "2025-01-09T17:20:48Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/44/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/44",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/44",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.891825",
+      "comments": []
+    },
+    {
+      "issue_number": 43,
+      "title": "[feat] Add Python API client",
+      "body": "We now have the official typescript API Client - https://github.com/CatchTheTornado/pdf-extract-api-client - so the idea is to create a  similar lib but for python",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-20T14:29:25Z",
+      "updated_at": "2025-01-09T17:20:48Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/43/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/43",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/43",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.891849",
+      "comments": []
+    },
+    {
+      "issue_number": 41,
+      "title": "[feat] Test `pixtral` as a OCR strategy",
+      "body": "https://mistral.ai/news/pixtral-12b/",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-18T12:18:15Z",
+      "updated_at": "2025-01-09T17:20:47Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/41/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/41",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/41",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.891857",
+      "comments": []
+    },
+    {
+      "issue_number": 46,
+      "title": "pydantic_core.ValidationError",
+      "body": "I'm using windows and installed the docker with `docker-compose -f docker-compose.gpu.yml up --build` \r\nThen installed the requirements on wsl kali:\r\n```\r\npip install -r app/requirements.txt\r\npip install -r client/requirements.txt\r\n```\r\n\r\nAnd then tried to run, and I get this error:\r\n```\r\npython3 client/cli.py ocr_upload --file /mnt/d/test.pdf --ocr_cache\r\n\r\nNamespace(command='ocr_upload', file='/mnt/d/test.pdf', ocr_cache=True, disable_ocr_cache=True, prompt=None, prompt_file=None, model='llama3.1', strategy='llama_vision', print_progress=True, storage_profile='default', storage_filename=None)\r\nOCR cache disabled.\r\nFile uploaded successfully. Task Id: 3531f216-eff4-4651-9364-45e9ee64d833 Waiting for the result...\r\n{'state': 'PENDING', 'status': 'Task is pending...'}\r\n{'state': 'FAILURE', 'status': \"<class 'pydantic_core._pydantic_core.ValidationError'>([])\"}\r\nOCR task failed.\r\n```",
+      "state": "closed",
+      "author": "ronen1n",
+      "author_type": "User",
+      "created_at": "2024-11-27T19:26:37Z",
+      "updated_at": "2024-11-28T14:16:03Z",
+      "closed_at": "2024-11-28T14:16:02Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/46/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/46",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/46",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:56.891866",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Hey @ronen1n it reads like something went bad with the input validation for the `ocr` endpoint.\r\n\r\nThe validation rules:\r\n\r\n```python\r\n    strategy: str = Field(..., description=\"OCR strategy to use\")\r\n    prompt: Optional[str] = Field(None, description=\"Prompt for the Ollama model\")\r\n    model: str",
+          "created_at": "2024-11-28T11:27:50Z"
+        },
+        {
+          "author": "ronen1n",
+          "body": "> Hey @ronen1n it reads like something went bad with the input validation for the `ocr` endpoint.\r\n> \r\n> The validation rules:\r\n> \r\n> ```python\r\n>     strategy: str = Field(..., description=\"OCR strategy to use\")\r\n>     prompt: Optional[str] = Field(None, description=\"Prompt for the Ollama model\")\r\n",
+          "created_at": "2024-11-28T11:41:13Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Thanks for raising this issue in the first place! It was a bug with how the newest Ollama client handles attachments. Fixed + merged to main with https://github.com/CatchTheTornado/pdf-extract-api/pull/48",
+          "created_at": "2024-11-28T14:16:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 33,
+      "title": "Challenges with LLMs Not Respecting Provided Fields in JSON Outputs",
+      "body": "When utilizing Large Language Models to extract data from documents such as invoices and generate structured outputs like JSON files, a common issue arises: the LLM does not always adhere strictly to the provided fields and sometimes invents new ones. This behavior poses significant challenges for applications that require exact data formats for database integration and other automated processes.",
+      "state": "closed",
+      "author": "kreativitat",
+      "author_type": "User",
+      "created_at": "2024-11-13T01:22:29Z",
+      "updated_at": "2024-11-25T12:18:22Z",
+      "closed_at": "2024-11-25T12:18:22Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/33/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/33",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/33",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.099430",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Hey! Definitely. I think one thing is a optimized prompt - for example including json schema which from my exp. reduces this situation significantly \n\nThe second option I guess would be to add some output validator (eg using pydantic)?\n\nDo you see any actionable items you'd like to see next out of t",
+          "created_at": "2024-11-13T08:51:37Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Context: https://www.reddit.com/r/LocalLLaMA/comments/1eqayuq/how_to_force_llama31_to_respond_with_json_only/?rdt=44352",
+          "created_at": "2024-11-13T08:52:21Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "The other option is to add output format parameter: https://github.com/ollama/ollama/blob/main/docs/api.md#generate-a-completion\n\nIt supports json.\n\nPlease maybe try this out and create a PR or FR?\n\nI think we could just add proxy parameter output_format to the API and CLI to be used along when prom",
+          "created_at": "2024-11-13T08:54:55Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "I've just tried the following one and it worked pretty well:\r\n\r\n\r\n```bash\r\n(.venv) piotrkarwatka@Piotrs-MacBook-Pro-2 pdf-extract-api % python client/cli.py ocr_request --file examples/example-mri.pdf --ocr_cache --prompt \"Return only JSON format\"\r\n/Users/piotrkarwatka/Projects/pdf-extract-api/clien",
+          "created_at": "2024-11-13T11:20:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 27,
+      "title": "[feat] Test and add Llama 3.2-vision as OCR strategy",
+      "body": "https://ollama.com/library/llama3.2-vision",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-08T13:47:35Z",
+      "updated_at": "2024-11-18T12:58:48Z",
+      "closed_at": "2024-11-18T12:58:48Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/27/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/27",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/27",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.307311",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "In that case we need to convert PDF to images first - before sending it to llama3.2\r\n",
+          "created_at": "2024-11-08T13:48:16Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Tested. Works really great:\r\n\r\n<img width=\"1214\" alt=\"image\" src=\"https://github.com/user-attachments/assets/819cd635-8166-4118-ae54-31d55495372e\">\r\n",
+          "created_at": "2024-11-08T13:59:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 15,
+      "title": "[feat] Add S3 storage strategy",
+      "body": "Add another storage strategy for output files - related to #10 ",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-04T11:18:06Z",
+      "updated_at": "2024-11-18T11:08:11Z",
+      "closed_at": "2024-11-18T11:08:10Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/15/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/15",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/15",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.524982",
+      "comments": []
+    },
+    {
+      "issue_number": 32,
+      "title": "Investigate and test pdf-extract-kit models",
+      "body": "https://github.com/opendatalab/PDF-Extract-Kit?tab=readme-ov-file",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-12T18:46:57Z",
+      "updated_at": "2024-11-14T11:19:43Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/32/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/32",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/32",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.525001",
+      "comments": []
+    },
+    {
+      "issue_number": 30,
+      "title": "[feat] Add another endpoint where files could be send via JSON body not form fields",
+      "body": null,
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-12T14:02:04Z",
+      "updated_at": "2024-11-12T14:02:05Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/30/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/30",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/30",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.525007",
+      "comments": []
+    },
+    {
+      "issue_number": 2,
+      "title": "[feat] Add GPU support in `docker-compose`",
+      "body": "Add GPU support for `docker-compose` - it should probably be another `docker-compose.gpu.yml`",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-29T14:42:56Z",
+      "updated_at": "2024-11-12T13:43:36Z",
+      "closed_at": "2024-11-12T13:43:36Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/2/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/2",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/2",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.525012",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Done + added native run docs",
+          "created_at": "2024-11-12T13:43:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 8,
+      "title": "[feat] Add Storage module with different storage strategies",
+      "body": "The goal is to build an archive of OCRed documents - for example, it could be a storage strategy for local files where they're sorted into subfolder archive of markdown files - easy to use with Obsidian or others #4 \r\n\r\nAnother strategy can be a Postgres etc.\r\n\r\nThe strategies should be instantiated via `StorageProfiles` - and storage profile to be selected via request parameter",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-31T10:22:17Z",
+      "updated_at": "2024-11-12T13:43:16Z",
+      "closed_at": "2024-11-12T13:43:16Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/8/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/8",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/8",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.746274",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Implemented in #10 ",
+          "created_at": "2024-10-31T13:16:04Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Closed with #10",
+          "created_at": "2024-11-12T13:43:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "[feat] ChatGPT, Claude and other LLM strategies support",
+      "body": "At the moment we support all the [models supported by Ollama](https://ollama.com/library) which is great - however we could add similar strategies like we do have with OCR for supporting ChatGPT or other providers",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-08T13:47:02Z",
+      "updated_at": "2024-11-08T13:47:02Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/26/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/26",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/26",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.985051",
+      "comments": []
+    },
+    {
+      "issue_number": 23,
+      "title": "Use Local Ollama Instance Instead of Docker-Compose Instance",
+      "body": "Hi,\r\n\r\nI have already hosted Ollama on my local machine and would like to use that instance instead of the one created through the Docker Compose setup.\r\n\r\nCould you please guide me on how I can configure the system to point to my local Ollama instance rather than using the Docker Compose-created instance?\r\n\r\nDetails:\r\nI have Ollama running locally and accessible via [localhost:11434].\r\nCurrently, Docker Compose creates a separate instance, and I would prefer to use my local instance for efficiency.\r\n\r\nWhat I've tried so far:\r\nI have checked the Docker Compose configuration, but I'm unsure where to modify the settings to switch to my local instance.\r\n\r\nAny guidance would be much appreciated!\r\n\r\nThanks in advance!",
+      "state": "closed",
+      "author": "madhankumar2211",
+      "author_type": "User",
+      "created_at": "2024-11-07T08:09:05Z",
+      "updated_at": "2024-11-07T17:11:59Z",
+      "closed_at": "2024-11-07T13:57:16Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/23/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/23",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/23",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:57.985070",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Hey! Thanks for this issue, it might be really usefull - especially on Apple hardware which is not 100% supported by Docker! This is my first approach to this: https://github.com/CatchTheTornado/pdf-extract-api/pull/25/ check if it works for you, for me - I've got locally some problem with unexpecte",
+          "created_at": "2024-11-07T12:53:33Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Done with #25 - merged into master, please try it and let me know if works for you",
+          "created_at": "2024-11-07T13:57:14Z"
+        },
+        {
+          "author": "madhankumar2211",
+          "body": "Hey @pkarw,\r\n\r\nThanks so much for your quick response and for addressing the issue with the potential Docker Compose workaround!\r\n\r\nI’ve gone ahead and tested the changes you merged in #25 , and I wanted to confirm that they’re actually doing what I needed.\r\n\r\nThanks again for your help - I really a",
+          "created_at": "2024-11-07T14:58:11Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "That's great to hear! Thanks!",
+          "created_at": "2024-11-07T17:11:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 24,
+      "title": "[feat] Related to #23 - describe how to run the app natively to support Apple GPUs etc",
+      "body": "Docker is not supporting Apple GPUs, describe how to configure the app to run locally",
+      "state": "closed",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-07T11:55:44Z",
+      "updated_at": "2024-11-07T13:55:40Z",
+      "closed_at": "2024-11-07T13:55:39Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/24/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/24",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/24",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:58.194206",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Related to #23 ",
+          "created_at": "2024-11-07T11:55:51Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Closed with #25 ",
+          "created_at": "2024-11-07T13:55:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 6,
+      "title": "Cannot re-initialize CUDA in forked subprocess",
+      "body": "Trying to run docker-compose -f docker-compose.gpu.yml up -d --build\r\n\r\nHave this output:\r\n\r\npython client/cli.py ocr --file test.pdf --prompt_file .\\examples\\parse-table.txt\r\nNamespace(command='ocr', file='test.pdf', ocr_cache=True, prompt=None, prompt_file='.\\\\examples\\\\parse-table.txt', model='llama3.1', strategy='marker', print_progress=True)\r\nFile uploaded successfully. Task Id: f1c9c412-cc9e-4299-ae66-31cd47de785d Waiting for the result...\r\n{'state': 'PROGRESS', 'status': 'Extracting text from PDF', 'info': {'progress': 30, 'status': 'Extracting text from PDF', 'elapsed_time': 0.8517706394195557}}\r\n{'state': 'FAILURE', 'status': \"Cannot re-initialize CUDA in forked subprocess. To use CUDA with multiprocessing, you must use the 'spawn' start method\"}\r\nOCR task failed.",
+      "state": "closed",
+      "author": "Nasa1423",
+      "author_type": "User",
+      "created_at": "2024-10-30T21:21:34Z",
+      "updated_at": "2024-11-07T13:55:28Z",
+      "closed_at": "2024-11-07T13:55:27Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/6/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/6",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/6",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:58.394576",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "Thanks! We need to check it out 🙏",
+          "created_at": "2024-10-30T22:52:01Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "After short investigation I guess to fix it we need to add:\n\n```python\n\nimport multiprocessing\n\nmultiprocessing.set_start_method(\"spawn\")\n\n```\n\nIn the `app/celery_config.py`\n\n",
+          "created_at": "2024-10-31T06:39:40Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Probably fixed with https://github.com/CatchTheTornado/pdf-extract-api/pull/9 - please confirm @Nasa1423 ",
+          "created_at": "2024-10-31T10:33:09Z"
+        },
+        {
+          "author": "PoleGeogry",
+          "body": "This solution has been added to the latest branch pulled, but this problem still occurs in actual use.\r\noutput: RuntimeError: Cannot re-initialize CUDA in forked subprocess. To use CUDA with multiprocessing, you must use the 'spawn' start method\r\n\r\napp/celery_config.py:\r\nfrom celery import Celery\r\n\r",
+          "created_at": "2024-11-07T01:26:08Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Hey @PoleGeogry! You were right. Fixed with #25 check it please + I've added an instruction on how to run it locally for other GPU support (which are not supported by Docker yet)",
+          "created_at": "2024-11-07T13:55:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 11,
+      "title": "ocr curl",
+      "body": "```\r\nC:\\Users\\user>curl -X POST \"http://localhost:8000/ocr\" -F \"file=C:\\Users\\user\\Downloads\\Telegram Desktop\\0a6ce636600e1723a71ff95348cd07abdc035118.pdf\" -F \"strategy=marker\" -F \"ocr_cache=true\"\r\n{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"prompt\"],\"msg\":\"Field required\",\"input\":null},{\"type\":\"missing\",\"loc\":[\"body\",\"model\"],\"msg\":\"Field required\",\"input\":null},{\"type\":\"value_error\",\"loc\":[\"body\",\"file\"],\"msg\":\"Value error, Expected UploadFile, received: <class 'str'>\",\"input\":\"C:\\\\Users\\\\user\\\\Downloads\\\\Telegram Desktop\\\\0a6ce636600e1723a71ff95348cd07abdc035118.pdf\",\"ctx\":{\"error\":{}}}]}\r\n```",
+      "state": "closed",
+      "author": "Marcelas751",
+      "author_type": "User",
+      "created_at": "2024-11-01T13:12:28Z",
+      "updated_at": "2024-11-07T13:54:34Z",
+      "closed_at": "2024-11-07T13:54:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/11/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/11",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/11",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:58.597776",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "OK, on it",
+          "created_at": "2024-11-04T11:49:54Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "I think it's fixed with https://github.com/CatchTheTornado/pdf-extract-api/pull/17 @Marcelas751 please do check if it works for you now",
+          "created_at": "2024-11-04T12:11:08Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Check the code from master branch please",
+          "created_at": "2024-11-04T12:22:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 12,
+      "title": "Pulling model from cli",
+      "body": "root@DESKTOP-5T7CRRP:/mnt/c/Users/user/pdf-extract-api# python3 client/cli.py llm_pull --model llama3.1\r\nFailed to pull the model: Internal Server Error\r\n\r\nOn \"server side\":\r\n```\r\nfastapi_app    | INFO:     172.18.0.1:37452 - \"POST /llm_pull HTTP/1.1\" 500 Internal Server Error\r\nfastapi_app    | ERROR:    Exception in ASGI application\r\nfastapi_app    | Traceback (most recent call last):\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py\", line 72, in map_httpcore_exceptions\r\nfastapi_app    |     yield\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py\", line 236, in handle_request\r\nfastapi_app    |     resp = self._pool.handle_request(req)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py\", line 216, in handle_request\r\nfastapi_app    |     raise exc from None\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py\", line 196, in handle_request\r\nfastapi_app    |     response = connection.handle_request(\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection.py\", line 99, in handle_request\r\nfastapi_app    |     raise exc\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection.py\", line 76, in handle_request\r\nfastapi_app    |     stream = self._connect(request)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection.py\", line 122, in _connect\r\nfastapi_app    |     stream = self._network_backend.connect_tcp(**kwargs)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_backends/sync.py\", line 205, in connect_tcp\r\nfastapi_app    |     with map_exceptions(exc_map):\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/contextlib.py\", line 153, in __exit__\r\nfastapi_app    |     self.gen.throw(typ, value, traceback)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpcore/_exceptions.py\", line 14, in map_exceptions\r\nfastapi_app    |     raise to_exc(exc) from exc\r\nfastapi_app    | httpcore.ConnectError: [Errno 111] Connection refused\r\nfastapi_app    |\r\nfastapi_app    | The above exception was the direct cause of the following exception:\r\nfastapi_app    |\r\nfastapi_app    | Traceback (most recent call last):\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py\", line 401, in run_asgi\r\nfastapi_app    |     result = await app(  # type: ignore[func-returns-value]\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py\", line 60, in __call__\r\nfastapi_app    |     return await self.app(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/fastapi/applications.py\", line 1054, in __call__\r\nfastapi_app    |     await super().__call__(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/applications.py\", line 113, in __call__\r\nfastapi_app    |     await self.middleware_stack(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py\", line 187, in __call__\r\nfastapi_app    |     raise exc\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py\", line 165, in __call__\r\nfastapi_app    |     await self.app(scope, receive, _send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py\", line 62, in __call__\r\nfastapi_app    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\r\nfastapi_app    |     raise exc\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\r\nfastapi_app    |     await app(scope, receive, sender)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/routing.py\", line 715, in __call__\r\nfastapi_app    |     await self.middleware_stack(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/routing.py\", line 735, in app\r\nfastapi_app    |     await route.handle(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/routing.py\", line 288, in handle\r\nfastapi_app    |     await self.app(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/routing.py\", line 76, in app\r\nfastapi_app    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\r\nfastapi_app    |     raise exc\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\r\nfastapi_app    |     await app(scope, receive, sender)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/starlette/routing.py\", line 73, in app\r\nfastapi_app    |     response = await f(request)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/fastapi/routing.py\", line 301, in app\r\nfastapi_app    |     raw_response = await run_endpoint_function(\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/fastapi/routing.py\", line 212, in run_endpoint_function\r\nfastapi_app    |     return await dependant.call(**values)\r\nfastapi_app    |   File \"/app/main.py\", line 91, in pull_llama\r\nfastapi_app    |     response = ollama.pull(request.model)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/ollama/_client.py\", line 319, in pull\r\nfastapi_app    |     return self._request_stream(\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/ollama/_client.py\", line 99, in _request_stream\r\nfastapi_app    |     return self._stream(*args, **kwargs) if stream else self._request(*args, **kwargs).json()\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/ollama/_client.py\", line 70, in _request\r\nfastapi_app    |     response = self._client.request(method, url, **kwargs)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_client.py\", line 837, in request\r\nfastapi_app    |     return self.send(request, auth=auth, follow_redirects=follow_redirects)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_client.py\", line 926, in send\r\nfastapi_app    |     response = self._send_handling_auth(\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_client.py\", line 954, in _send_handling_auth\r\nfastapi_app    |     response = self._send_handling_redirects(\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_client.py\", line 991, in _send_handling_redirects\r\nfastapi_app    |     response = self._send_single_request(request)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_client.py\", line 1027, in _send_single_request\r\nfastapi_app    |     response = transport.handle_request(request)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py\", line 235, in handle_request\r\nfastapi_app    |     with map_httpcore_exceptions():\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/contextlib.py\", line 153, in __exit__\r\nfastapi_app    |     self.gen.throw(typ, value, traceback)\r\nfastapi_app    |   File \"/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py\", line 89, in map_httpcore_exceptions\r\nfastapi_app    |     raise mapped_exc(message) from exc\r\nfastapi_app    | httpx.ConnectError: [Errno 111] Connection refused\r\n```",
+      "state": "closed",
+      "author": "Marcelas751",
+      "author_type": "User",
+      "created_at": "2024-11-01T13:15:33Z",
+      "updated_at": "2024-11-07T13:29:30Z",
+      "closed_at": "2024-11-07T13:29:30Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/12/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/12",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/12",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:45:58.843503",
+      "comments": [
+        {
+          "author": "bitdeep",
+          "body": "Any solution for this? It keep shitting itself all time.",
+          "created_at": "2024-11-02T21:04:03Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "@Marcelas751 @bitdeep I think this is something with env variables, checking out ...",
+          "created_at": "2024-11-04T11:07:31Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "There was a typo in the `docker-compose.yml` :/ Guys please check https://github.com/CatchTheTornado/pdf-extract-api/pull/17",
+          "created_at": "2024-11-04T12:09:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 13,
+      "title": "ollama healthcheck",
+      "body": "Ollama image with latest tag don't have /health path for healthcheck. For this - use root path that returns \"Ollama is running\"",
+      "state": "closed",
+      "author": "Marcelas751",
+      "author_type": "User",
+      "created_at": "2024-11-01T13:19:56Z",
+      "updated_at": "2024-11-04T12:09:09Z",
+      "closed_at": "2024-11-04T12:09:09Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/13/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/13",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/13",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.454842",
+      "comments": [
+        {
+          "author": "Marcelas751",
+          "body": "But my opinion using \"latest\" tag is badly because you don't know about latest changes in your dependences",
+          "created_at": "2024-11-01T13:21:37Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Thanks! PR fixing it will be more than welcome to:)",
+          "created_at": "2024-11-01T14:52:01Z"
+        },
+        {
+          "author": "pkarw",
+          "body": "Fixed with https://github.com/CatchTheTornado/pdf-extract-api/pull/17",
+          "created_at": "2024-11-04T12:09:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 16,
+      "title": "[feat] Add MetaData LLM call",
+      "body": "If we add another, optional LLM call - for example for getting the tags and summary of the file generated in the main LLM call - we could use these data as a naming strategy for the storage adapters - related to #10 \r\n\r\nIf anyone is interested in making this feature happen - let me know I can specify the details",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-11-04T11:19:21Z",
+      "updated_at": "2024-11-04T11:19:22Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/16/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/16",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/16",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.645207",
+      "comments": []
+    },
+    {
+      "issue_number": 5,
+      "title": "[feat] Add support to `doc`, `rtf` and other formats",
+      "body": "As an inspiration from https://github.com/getomni-ai/zerox/tree/main - it's pretty easy to add the support for other formats using LibreOffice conversion to PDF first ",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-30T12:40:39Z",
+      "updated_at": "2024-10-30T12:40:39Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/5/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/5",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/5",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.645232",
+      "comments": []
+    },
+    {
+      "issue_number": 4,
+      "title": "[feat] Obsidian plugin",
+      "body": "It would be great to have this as an Obsidian plugin - https://obsidian.md/",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-30T10:25:17Z",
+      "updated_at": "2024-10-30T10:26:21Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/4/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/4",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/4",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.645240",
+      "comments": [
+        {
+          "author": "pkarw",
+          "body": "https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin",
+          "created_at": "2024-10-30T10:26:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 3,
+      "title": "[feat] Add support for `tabled`",
+      "body": "`marker-pdf` is sometimes mismatching the rows/cols - would be great to alternatively add a support for https://github.com/VikParuchuri/tabled",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-29T19:06:55Z",
+      "updated_at": "2024-10-29T19:06:56Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/3/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/3",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/3",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.848483",
+      "comments": []
+    },
+    {
+      "issue_number": 1,
+      "title": "[feat] Support `sync` mode + streaming",
+      "body": "Right now every task is run asynchronously. While you can get the results and status with the `/ocr/result` it would be nice to have a synchronous way of `/ocr` which returns the JSON chunks of progress (for both OCR and LLM parts of the process)",
+      "state": "open",
+      "author": "pkarw",
+      "author_type": "User",
+      "created_at": "2024-10-29T13:44:44Z",
+      "updated_at": "2024-10-29T13:44:45Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/1/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/CatchTheTornado/text-extract-api/issues/1",
+      "api_url": "https://api.github.com/repos/CatchTheTornado/text-extract-api/issues/1",
+      "repository": "CatchTheTornado/text-extract-api",
+      "extraction_date": "2025-06-22T00:46:00.848498",
+      "comments": []
+    }
+  ]
+}

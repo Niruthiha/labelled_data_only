@@ -1,0 +1,1046 @@
+{
+  "repository": "truefoundry/cognita",
+  "repository_info": {
+    "repo": "truefoundry/cognita",
+    "stars": 4112,
+    "language": "Python",
+    "description": "RAG (Retrieval Augmented Generation) Framework for building modular, open source applications for production by TrueFoundry ",
+    "url": "https://github.com/truefoundry/cognita",
+    "topics": [
+      "agent",
+      "ai",
+      "application",
+      "data",
+      "deep-learning",
+      "fine-tuning",
+      "framework",
+      "generative-ai",
+      "llm",
+      "llm-ops",
+      "llmops",
+      "machine-learning",
+      "mlops",
+      "model-deployment",
+      "python",
+      "rag",
+      "retrieval-augmented-generation",
+      "typescript"
+    ],
+    "created_at": "2023-07-26T13:08:54Z",
+    "updated_at": "2025-06-21T21:34:19Z",
+    "search_query": "RAG retrieval augmented language:python stars:>3",
+    "total_issues_estimate": 50,
+    "labeled_issues_estimate": 21,
+    "labeling_rate": 42.9,
+    "sample_labeled": 6,
+    "sample_total": 14,
+    "has_issues": true,
+    "repo_id": 671064065,
+    "default_branch": "main",
+    "size": 52821
+  },
+  "extraction_date": "2025-06-22T00:40:25.057614",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 20,
+  "issues": [
+    {
+      "issue_number": 300,
+      "title": "Use prisma transactions for write queries to correctly automatically rollback in error situations",
+      "body": "See: https://prisma-client-py.readthedocs.io/en/stable/reference/transactions/#usage",
+      "state": "open",
+      "author": "chiragjn",
+      "author_type": "User",
+      "created_at": "2024-08-11T11:54:25Z",
+      "updated_at": "2025-06-02T11:05:40Z",
+      "closed_at": null,
+      "labels": [
+        "good first issue",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/300/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/300",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/300",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:15.624047",
+      "comments": [
+        {
+          "author": "jalotra",
+          "body": "This is a good one, giving some context for dev working on this : \r\nCreation of a collection is 3 step process : \r\n```\r\n1. Create a postgres row in table : \"collections\"\r\n2. Create a vector document in vector db, defaults : \"qdrant\"\r\n3. Then Associate the collection created with associated data sour",
+          "created_at": "2024-09-08T12:30:15Z"
+        },
+        {
+          "author": "ayeankit",
+          "body": "hello @chiragjn  I want to work on this issue. Can you please assign me this issue?",
+          "created_at": "2025-06-02T11:05:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 402,
+      "title": "Add support for Gemini models",
+      "body": "- [x]  Models and providers should be configurable from `models_config.yaml` -> No extra work needed. Ref [here](https://github.com/truefoundry/cognita/issues/402#issuecomment-2597449098) \n- [x] Add support to inference servers that are not `OpenAI` compatible. -> Not needed. Ref [here](https://github.com/truefoundry/cognita/issues/402#issuecomment-2597449098)\n- [ ] Support all modes of authentication to communicate with Gemini models via OpenAI API",
+      "state": "open",
+      "author": "mnvsk97",
+      "author_type": "User",
+      "created_at": "2024-11-01T08:18:20Z",
+      "updated_at": "2025-02-09T05:00:45Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "llm integration"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/402/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/402",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/402",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:15.825283",
+      "comments": [
+        {
+          "author": "AbhishekRP2002",
+          "body": "hi @mnvsk97 if this is not taken up yet by anyone, I would love to take this up and contribute.\r\n- I think for the first point we have to update `model_gateway.py` and `model_config.sample.yaml`\r\n- for the second one, can u please explain a little more ?",
+          "created_at": "2024-12-23T14:51:39Z"
+        },
+        {
+          "author": "AbhishekRP2002",
+          "body": "any updates on this ? @mnvsk97 \r\n\r\ncc: @chiragjn ",
+          "created_at": "2025-01-01T14:38:34Z"
+        },
+        {
+          "author": "AbhishekRP2002",
+          "body": "Hi @mnvsk97 @chiragjn please lemme know if this **enhancement** is still in the roadmap. \nWould be super grateful if given the chance to contribute",
+          "created_at": "2025-01-17T03:13:44Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Hey @AbhishekRP2002 , sorry I didn't get chance to reply earlier.\nI am wondering, now that Gemini has a openai compatible API (https://ai.google.dev/gemini-api/docs/openai), is this still needed? \n\n---\n\nI know accessing Gemini without API Key via some service account will need separate work",
+          "created_at": "2025-01-17T05:12:18Z"
+        },
+        {
+          "author": "AbhishekRP2002",
+          "body": "> Hey [@AbhishekRP2002](https://github.com/AbhishekRP2002) , sorry I didn't get chance to reply earlier. I am wondering, now that Gemini has a openai compatible API (https://ai.google.dev/gemini-api/docs/openai), is this still needed?\n> \n> I know accessing Gemini without API Key via some service acc",
+          "created_at": "2025-01-17T14:39:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 230,
+      "title": "dependency failed to start: container infinity is unhealthy",
+      "body": "Trying to set it up with docker-compose but it seems that infinity container is not working correctly\r\n\r\nCurrently under windows \r\n\r\n![image](https://github.com/truefoundry/cognita/assets/165772908/3c3183a7-97e6-4ae3-9f10-46ad1e936f25)\r\n",
+      "state": "closed",
+      "author": "j-pielen",
+      "author_type": "User",
+      "created_at": "2024-06-19T19:32:13Z",
+      "updated_at": "2025-01-16T13:11:01Z",
+      "closed_at": "2024-06-27T06:05:21Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/230/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/230",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/230",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:16.077605",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Can you restart and check? Also your RAM usage, if you have enough space?",
+          "created_at": "2024-06-20T10:21:09Z"
+        },
+        {
+          "author": "j-pielen",
+          "body": "You were right, there was not enough RAM. I managed to get all containers up and running. Thanks!\r\nHowever when i want to create a new collection there is no embedding model option in the dropdown ? \r\n![image](https://github.com/truefoundry/cognita/assets/165772908/9cad214e-11e6-43c9-acf7-3360bb1b42",
+          "created_at": "2024-06-21T06:26:07Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "can you check swagger for infinity service at :7997, and see the list of available models ? ",
+          "created_at": "2024-06-24T05:30:56Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "There are two different issues\r\n1. infinity container shown as unhealthy - This should resolve within few minutes of starting. infinity can take some time to start - sometimes longer than docker compose up might be willing to wait. This is fine, it should get healthy in another minute or two (You ca",
+          "created_at": "2024-06-24T10:26:43Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Please try from latest main, we have fixed a bunch of issues\r\nJust adding steps as we have changed models_config now to be a yaml spec\r\n\r\n```\r\ngit pull origin main\r\ncp models_config.sample.yaml models_config.yaml\r\ndocker compose --env-file compose.env --profile '*' down\r\ndocker compose --env-file co",
+          "created_at": "2024-06-24T16:54:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 288,
+      "title": "Add MongoDB as a vector database",
+      "body": "In addition to other Vector Stores, can MongoDB be added as another vector store",
+      "state": "closed",
+      "author": "rajeshvinayagam-lab",
+      "author_type": "User",
+      "created_at": "2024-07-28T13:52:40Z",
+      "updated_at": "2025-01-07T04:39:58Z",
+      "closed_at": "2025-01-07T04:39:58Z",
+      "labels": [
+        "enhancement",
+        "vector db integration"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/288/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/288",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/288",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:16.397769",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Users can add a new vectorstore by inheriting from the base vector class, would love to have your contribution for the same.",
+          "created_at": "2024-08-12T11:37:20Z"
+        },
+        {
+          "author": "rajeshvinayagam-lab",
+          "body": "Sure have started working on the mongodb as a vector database will raise a pull request soon with the changes",
+          "created_at": "2024-08-28T07:59:54Z"
+        },
+        {
+          "author": "mnvsk97",
+          "body": "Hello, we have recently added MongoDB as a vector store. Feel free to try it out and let us know if you see any improvements. Thanks !",
+          "created_at": "2025-01-07T04:39:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 327,
+      "title": "Unstructured parser api calls should be async (httpx / aiohttp)",
+      "body": "Currently unstructured parser api calls are sync calls made with requests library. We should just use httpx / aiohttp to make them async. ",
+      "state": "closed",
+      "author": "chiragjn",
+      "author_type": "User",
+      "created_at": "2024-09-06T20:43:48Z",
+      "updated_at": "2024-11-26T17:31:48Z",
+      "closed_at": "2024-11-26T17:31:48Z",
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/327/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Blakeinstein"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/327",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/327",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:16.609442",
+      "comments": [
+        {
+          "author": "Blakeinstein",
+          "body": "Taking this up as well!",
+          "created_at": "2024-09-06T22:25:27Z"
+        },
+        {
+          "author": "mnvsk97",
+          "body": "Let's use their official python sdk: https://github.com/Unstructured-IO/unstructured-python-client",
+          "created_at": "2024-10-30T18:08:30Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "I was thinking, should we instead get rid of async everywhere and let fastapi starlette threadpool handle the concurrency?\r\nAnyway indexing is offloaded to another process / external worker",
+          "created_at": "2024-10-30T18:55:16Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Closing this because this has been addressed to a decent extent now - we are in the process of removing async from many places",
+          "created_at": "2024-11-26T17:31:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 401,
+      "title": "Add Neo4J as a vector database",
+      "body": null,
+      "state": "open",
+      "author": "mnvsk97",
+      "author_type": "User",
+      "created_at": "2024-11-01T08:08:49Z",
+      "updated_at": "2024-11-05T04:58:41Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "vector db integration"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/401/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/401",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/401",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:16.834031",
+      "comments": []
+    },
+    {
+      "issue_number": 305,
+      "title": "The backend API (http://localhost:8000) stop responding with the error \"upstream request timeout\"",
+      "body": "Hi,\r\n\r\nI'm running Cognita with the latest commit on my local machine using Docker Compose. Everything appears to be functioning normally, with no obvious errors in the logs. I was able to create a Data Source and successfully upload PDF files to the backend. However, when I attempt to create a new collection, the API at http://localhost:8000 stops responding and returns an \"upstream request timeout\" error. The API only resumes functioning once the backend has finished parsing the files and completes the collection creation process.\r\n\r\nWhile this isn't a major issue in a testing environment, where I can do other tasks while waiting, it becomes problematic in a production environment. Multiple users might be accessing the portal simultaneously to perform different tasks, and when the API freezes, much of the portal becomes unusable, as most of its features rely on the APIs.\r\n\r\nAdditionally, when attempting to parse a larger batch of files, the process takes so long that it fails the health check, causing the orchestrator (e.g. AKS, ECS, Kubernetes) to restart the container.\r\n\r\nIs this behavior expected, or is there something I might have missed?\r\n\r\nThanks,\r\nClive",
+      "state": "closed",
+      "author": "clive97",
+      "author_type": "User",
+      "created_at": "2024-08-15T21:57:06Z",
+      "updated_at": "2024-09-19T20:26:59Z",
+      "closed_at": "2024-09-19T20:26:59Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/305/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/305",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/305",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:16.834059",
+      "comments": [
+        {
+          "author": "chiragjn",
+          "body": "Hey Clive, thanks for reporting this. This is strange, the backend server should still keep working even if there is something processing. It is possible that recent changes have started blocking the event loop. We'll take a look and plan changes for this\r\n\r\nThere are a bunch of call sites that are ",
+          "created_at": "2024-08-22T06:34:34Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Addressed by #321 ",
+          "created_at": "2024-09-10T08:07:04Z"
+        },
+        {
+          "author": "clive97",
+          "body": "Thank you for the follow up.  It fixed now.\n\n-Clive",
+          "created_at": "2024-09-10T21:12:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 326,
+      "title": "Make vector store implementations async",
+      "body": "Currently vector stores use blocking implementations. Although not a major problem because most calls are quick but still has impact on concurrency. It would be great to use async implementations. \r\nFortunately langchain already has done all the hardwork of actually using async clients",
+      "state": "closed",
+      "author": "chiragjn",
+      "author_type": "User",
+      "created_at": "2024-09-06T20:41:15Z",
+      "updated_at": "2024-09-19T20:26:30Z",
+      "closed_at": "2024-09-19T20:26:29Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/326/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/326",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/326",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:17.075508",
+      "comments": []
+    },
+    {
+      "issue_number": 330,
+      "title": "Event loop closed while updating indexing status",
+      "body": "hi dev, I am not able to understand the indexing flow, any reasoning why fastApi's process pool is re-used ?\r\nthese are logs : \r\n```\r\ncognita-backend   | DEBUG:    2024-09-08 12:43:44,504 - indexer:ingest_data:342 - Starting ingestion for data source fqn: localdir::/app/user_data/law-pdf\r\ncognita-backend   | INFO:     192.168.65.1:33019 - \"POST /v1/collections/ingest HTTP/1.1\" 201 Created\r\ncognita-backend   | INFO:     192.168.65.1:33019 - \"GET /v1/collections/law-pdf-machine HTTP/1.1\" 200 OK\r\ncognita-backend   | INFO:     192.168.65.1:33019 - \"POST /v1/collections/data_ingestion_runs/list HTTP/1.1\" 200 OK\r\ncognita-backend   | ERROR:    2024-09-08 12:43:44,617 - prismastore:aupdate_data_ingestion_run_status:551 - Failed to update data ingestion run status: Event loop is closed\r\ncognita-backend   | Traceback (most recent call last):\r\ncognita-backend   |   File \"/app/backend/modules/metadata_store/prismastore.py\", line 538, in aupdate_data_ingestion_run_status\r\ncognita-backend   |     ] = await self.db.ingestionruns.update(\r\n```\r\n\r\nwhen I look at what `/v1/collections/ingest` does is this : \r\n```\r\ntry:\r\n        process_pool = request.app.state.process_pool\r\n    except AttributeError:\r\n        process_pool = None\r\n  ```\r\n  \r\n  The issue I think looks like this : \r\n1. If anything breaks in previous runs, the event loop `breaks out` and then successive runs are not possible\r\n\r\nstack : \r\n```\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py\", line 216, in handle_async_request\r\ncognita-backend   |     raise exc from None\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py\", line 189, in handle_async_request\r\ncognita-backend   |     await self._close_connections(closing)\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py\", line 305, in _close_connections\r\ncognita-backend   |     await connection.aclose()\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_async/connection.py\", line 171, in aclose\r\ncognita-backend   |     await self._connection.aclose()\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_async/http11.py\", line 265, in aclose\r\ncognita-backend   |     await self._network_stream.aclose()\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/httpcore/_backends/anyio.py\", line 55, in aclose\r\ncognita-backend   |     await self._stream.aclose()\r\ncognita-backend   |   File \"/virtualenvs/venv/lib/python3.11/site-packages/anyio/_backends/_asyncio.py\", line 1202, in aclose\r\ncognita-backend   |     self._transport.close()\r\ncognita-backend   |   File \"/usr/local/lib/python3.11/asyncio/selector_events.py\", line 864, in close\r\ncognita-backend   |     self._loop.call_soon(self._call_connection_lost, None)\r\ncognita-backend   |   File \"/usr/local/lib/python3.11/asyncio/base_events.py\", line 762, in call_soon\r\ncognita-backend   |     self._check_closed()\r\ncognita-backend   |   File \"/usr/local/lib/python3.11/asyncio/base_events.py\", line 520, in _check_closed\r\ncognita-backend   |     raise RuntimeError('Event loop is closed')\r\n```\r\n  ",
+      "state": "closed",
+      "author": "jalotra",
+      "author_type": "User",
+      "created_at": "2024-09-08T13:14:47Z",
+      "updated_at": "2024-09-19T09:40:21Z",
+      "closed_at": "2024-09-19T09:40:20Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/330/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/330",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/330",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:17.075527",
+      "comments": [
+        {
+          "author": "chiragjn",
+          "body": "We are not using FastAPI's pool, the pool attached to `request.app.state` is created in app init. \r\nEvent loop closing is unexpected. We'll try and reproduce and fix this",
+          "created_at": "2024-09-10T08:06:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 329,
+      "title": "Ingestion Status broken when multiple ingestions are started for a collection in LOCAL  ",
+      "body": "Steps to reproduce:\r\n1. Create a collection\r\n2. Link 2 data sources to it.\r\n\r\nExcepted Behaviour:\r\n\r\n- when one of the data sources has completed ingestion, its status changes to COMPLETED\r\n\r\nObserved Behaviour:\r\n\r\n- in the attached screenshots, one of the data source has completed ingestion (see unstructured_api CPU usage, it was 200% when both were running) , but both have a status of DATA_INGESTION_STARTED. \r\n![image](https://github.com/user-attachments/assets/0cca176c-a63b-4572-9d1f-a2bf4fca5c04)\r\n![image](https://github.com/user-attachments/assets/d527b540-24e5-4f75-8582-b83e7c12f97c)\r\n\r\n- when both are completed, the status for both of them is set to COMPLETED\r\n![image](https://github.com/user-attachments/assets/afbe9c11-4b47-45b9-8083-2b67ecf38487)\r\n\r\n",
+      "state": "open",
+      "author": "kunwar31",
+      "author_type": "User",
+      "created_at": "2024-09-07T11:39:25Z",
+      "updated_at": "2024-09-10T12:00:59Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/329/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/329",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/329",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:18.940538",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Yes, actually same error occurs in deployed version as well, we shall check on this.",
+          "created_at": "2024-09-10T12:00:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 307,
+      "title": "Failed to Add Document to Collection ",
+      "body": "Hi,\r\n\r\nI’m encountering an issue while trying to add documents to existing Collections using the \"Add Data Source\" feature. The error message I’m seeing is:\r\n\r\nERROR:    2024-08-16 18:13:33,350 - prismastore:aassociate_data_source_with_collection:254 - Error: 'dict' object has no attribute 'dict'\r\ncognita-backend   | Traceback (most recent call last):\r\ncognita-backend   |   File \"/app/backend/modules/metadata_store/prismastore.py\", line 245, in aassociate_data_source_with_collection\r\ncognita-backend   |     associated_data_sources[data_source_fqn] = data_source.dict()\r\ncognita-backend   |                                                ^^^^^^^^^^^^^^^^\r\ncognita-backend   | AttributeError: 'dict' object has no attribute 'dict'\r\n\r\nIt looks like there is an attempt to call the dict() method on a dictionary object, which is causing this error.  Any advice or suggestions on how to resolve this would be greatly appreciated.\r\n\r\nThanks,\r\nClive",
+      "state": "closed",
+      "author": "clive97",
+      "author_type": "User",
+      "created_at": "2024-08-16T18:21:40Z",
+      "updated_at": "2024-08-23T04:33:35Z",
+      "closed_at": "2024-08-23T04:33:35Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/307/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/307",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/307",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:19.218504",
+      "comments": [
+        {
+          "author": "chiragjn",
+          "body": "Hey clive97,\r\nCan you please try with the latest code on main branch?\r\n\r\nWe recently moved to pydantic v2 and your traceback seems to reference older code. It is possible there is some mismatch in dependencies and code in your instance.\r\n\r\n",
+          "created_at": "2024-08-22T06:37:41Z"
+        },
+        {
+          "author": "clive97",
+          "body": "Thanks so much for the help!  It is resolved now by redeploying the platform with the latest commit in main.\r\n\r\n-Clive",
+          "created_at": "2024-08-22T23:39:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 276,
+      "title": "Its not allowed to add a web data source to the collection",
+      "body": "![image](https://github.com/user-attachments/assets/d4e03f1f-7e64-492c-bfd5-61c60a439cbf)\r\nas its shown in paragraph we cant add it, how could I use it !",
+      "state": "closed",
+      "author": "AtmehEsraa",
+      "author_type": "User",
+      "created_at": "2024-07-16T05:39:56Z",
+      "updated_at": "2024-08-14T15:53:19Z",
+      "closed_at": "2024-08-14T15:53:19Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/276/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/276",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/276",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:19.499394",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Can you pull the latest commit and let us know what is the error from backend logs? Also try building the frontend image, it does not seem to be updated.",
+          "created_at": "2024-07-21T14:14:34Z"
+        },
+        {
+          "author": "AtmehEsraa",
+          "body": "@S1LV3RJ1NX  now its work, but I cant add more than one web source inside a one collection, why ? ",
+          "created_at": "2024-08-01T09:39:29Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "You can add, once the collection is created you can add multiple data sources.",
+          "created_at": "2024-08-01T09:42:55Z"
+        },
+        {
+          "author": "AtmehEsraa",
+          "body": "@S1LV3RJ1NX  yes but not a web source, could you please try ? ",
+          "created_at": "2024-08-01T09:51:24Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Can you check if you have registered a new web data source? Then you can add it to the collection.",
+          "created_at": "2024-08-01T09:56:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 219,
+      "title": "Port pydantic v1 models to pydantic v2",
+      "body": null,
+      "state": "closed",
+      "author": "chiragjn",
+      "author_type": "User",
+      "created_at": "2024-06-14T08:00:25Z",
+      "updated_at": "2024-08-11T11:54:50Z",
+      "closed_at": "2024-08-11T11:54:50Z",
+      "labels": [
+        "enhancement",
+        "in-progress"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/219/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/219",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/219",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:19.716270",
+      "comments": [
+        {
+          "author": "abhinavk454",
+          "body": "I want to work with this issue..",
+          "created_at": "2024-06-14T08:05:45Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Awesome, I suppose the first order of business is to update requirements to install pydantic v2, change all imports to `pydantic.v1` and ensure things are working fine\r\n\r\nFortunately we don't have many files that reference pydantic\r\nhttps://github.com/search?q=repo%3Atruefoundry%2Fcognita+%22from+py",
+          "created_at": "2024-06-14T08:13:22Z"
+        },
+        {
+          "author": "cocobeach",
+          "body": "Maybe I can help a bit\r\nPydantic v1 to v2 errors:\r\n\r\n1. pydantic-settings\r\n/python3.11/site-packages/pydantic/_migration.py\", line 296, in wrapper\r\n    raise PydanticImportError(\r\npydantic.errors.PydanticImportError: `BaseSettings` has been moved to the `pydantic-settings` package. See https://docs.",
+          "created_at": "2024-06-14T17:49:09Z"
+        },
+        {
+          "author": "abhinavk454",
+          "body": "After Upgrading To V2 getting this\r\n\r\n![image](https://github.com/truefoundry/cognita/assets/32016468/20d265db-b230-4a4f-830f-14e3db4c89e3)\r\n\r\nbackend/settings.py\r\n\r\n```py\r\nimport os\r\nfrom typing import Optional,ClassVar\r\n\r\nimport orjson\r\n\r\nfrom backend.types import EmbeddingCacheConfig, MetadataSto",
+          "created_at": "2024-06-17T11:35:14Z"
+        },
+        {
+          "author": "chiragjn",
+          "body": "Can we look at your changes somewhere? Would be good to have them on a branch that we can checkout and resolve this.\r\nFrom the surface looks like some dependencies are missing ",
+          "created_at": "2024-06-17T14:57:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 227,
+      "title": "Data Sources are Empty",
+      "body": "Hello,\r\n  I have seen this issue being raised in other threads without any resolution, so please don't close this until resolved. I have been trying to get this working for hours and despite of setting VITE_QA_FOUNDRY_URL=http://localhost:8000 and local.metadata.yaml , the data sources are still empty. I was trying to review this tool for my channel and its quite off-putting to waste hours on this. Could I request you to fix this basic functionality of RAG before even making this project public? Thanks \r\n",
+      "state": "closed",
+      "author": "fahdmirza",
+      "author_type": "User",
+      "created_at": "2024-06-18T21:33:36Z",
+      "updated_at": "2024-06-27T06:05:39Z",
+      "closed_at": "2024-06-27T06:05:39Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/227/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/227",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/227",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:19.907298",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Hello @fahdmirza , Apologies for the inconvenience, we are working on revamping and fixing the UI and backend for data sources creation. The PR is in progress and be released soon. \r\n\r\nAlso, can you check the docker-compose logs and let us know what issue you are facing, cause we are not able to re-",
+          "created_at": "2024-06-19T09:14:06Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "@fahdmirza , can you take the latest pull from main and check, your issue must have been resolved now.",
+          "created_at": "2024-06-20T11:09:02Z"
+        },
+        {
+          "author": "fahdmirza",
+          "body": "Thank you, let me try it out shortly. ",
+          "created_at": "2024-06-21T00:24:08Z"
+        },
+        {
+          "author": "fahdmirza",
+          "body": "Still doesn't work . \r\n\r\n`(cognita) Ubuntu@0068-kci-prxmx10127:~/cognita$ docker compose --env-file compose.env up --build\r\nWARN[0000] /home/Ubuntu/cognita/docker-compose.yaml: `version` is obsolete\r\n[+] Building 0.8s (33/33) FINISHED                                                               doc",
+          "created_at": "2024-06-21T01:30:18Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "The error says the version of docker-compose / docker is obsolete. Can you check what version you are using? Also, maybe for linux systems you might have to  change the `DOCKER_HOST` env variable. I'll check if I can add you to an internal slack and help you debug the issue. Until then please check ",
+          "created_at": "2024-06-21T02:58:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 244,
+      "title": "Error: P1001: Can't reach database server at `host.docker.internal`:`5432`",
+      "body": "Hello\r\n\r\nI'm getting the following error when attempting to start using `docker compose --env-file compose.env up`:\r\n\r\n\r\n```\r\ncognita-backend   | Installing Prisma CLI\r\ncognita-backend   |  * Install prebuilt node (22.3.0) ..... done.\r\ncognita-backend   | Prisma schema loaded from backend/database/schema.prisma\r\ncognita-backend   | Datasource \"db\": PostgreSQL database \"cognita-config\", schema \"public\" at \"host.docker.internal:5432\"\r\ncognita-backend   | \r\ncognita-backend   | Error: P1001: Can't reach database server at `host.docker.internal`:`5432`\r\ncognita-backend   | \r\ncognita-backend   | Please make sure your database server is running at `host.docker.internal`:`5432`.\r\nGracefully stopping... (press Ctrl+C again to force)\r\ndependency failed to start: container cognita-backend is unhealthy\r\n```\r\n\r\n\r\n# Versions\r\n\r\n- Docker Compose version v2.27.1\r\n\r\nClient: Docker Engine - Community\r\n Version:           26.1.4\r\n API version:       1.44 (downgraded from 1.45)\r\n Go version:        go1.21.11\r\n Git commit:        5650f9b\r\n Built:             Wed Jun  5 11:28:57 2024\r\n OS/Arch:           linux/amd64\r\n Context:           rootless\r\n\r\nServer: Docker Engine - Community\r\n Engine:\r\n  Version:          25.0.2\r\n  API version:      1.44 (minimum version 1.24)\r\n  Go version:       go1.21.6\r\n  Git commit:       fce6e0c\r\n  Built:            Thu Feb  1 00:23:03 2024\r\n  OS/Arch:          linux/amd64\r\n  Experimental:     false\r\n containerd:\r\n  Version:          1.6.28\r\n  GitCommit:        ae07eda36dd25f8a1b98dfbf587313b99c0190bb\r\n runc:\r\n  Version:          1.1.12\r\n  GitCommit:        v1.1.12-0-g51d5e94\r\n docker-init:\r\n  Version:          0.19.0\r\n  GitCommit:        de40ad0\r\n rootlesskit:\r\n  Version:          2.0.0\r\n  ApiVersion:       1.1.1\r\n  NetworkDriver:    slirp4netns\r\n  PortDriver:       builtin\r\n  StateDir:         /run/user/1000/dockerd-rootless\r\n slirp4netns:\r\n  Version:          1.1.8\r\n  GitCommit:        unknown\r\n\r\n\r\nOS - Ubuntu 24.04 LTS",
+      "state": "closed",
+      "author": "magick93",
+      "author_type": "User",
+      "created_at": "2024-06-23T21:16:16Z",
+      "updated_at": "2024-06-27T06:04:44Z",
+      "closed_at": "2024-06-27T06:04:44Z",
+      "labels": [
+        "fixed-awaiting-confirmation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 11,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/244/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/244",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/244",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:20.204944",
+      "comments": [
+        {
+          "author": "magick93",
+          "body": "If I modify the `compose.env` file to `DOCKER_HOST=db.cognita_cognita-docker` I'm able to pass the above error. \r\n\r\nHowever, I then get:\r\n\r\n```\r\n[+] Running 4/4\r\n ✔ Container cognita-postgres  Running                                                                                                    ",
+          "created_at": "2024-06-23T21:46:47Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "The readme is in process, you need to create a `models_config.json` from `models_config.sample.json` providing the necessary API keys. \r\n\r\nAlso, how did you arrive at `DOCKER_HOST` url? actually the reason for me keeping it there was only that, I was not able to access the db service. Cause I tried ",
+          "created_at": "2024-06-24T05:25:57Z"
+        },
+        {
+          "author": "magick93",
+          "body": "> how did you arrive at DOCKER_HOST url? \r\n\r\nFrom inspecting any of the running contains you can see the name of the network, and the service name is what is specified in the docker compose file. ",
+          "created_at": "2024-06-24T05:30:09Z"
+        },
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Can you try DOCKER_HOST=db?",
+          "created_at": "2024-06-24T05:33:12Z"
+        },
+        {
+          "author": "magick93",
+          "body": "Yes I tried that but it didnt work.",
+          "created_at": "2024-06-24T08:01:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 214,
+      "title": "infinity suggestions",
+      "body": "Cool work! Might feature it on Social Media / Twitter.\r\n\r\nI recently added multi-model deployments that default to the ENV variables. Aka you can set the default env variable \r\n-> `--port` -> `INFINITY_PORT` or `--batch-size` -> `INFINITY_BATCH_SIZE`. Multiple args can be separated with `;`, which works if the cli arg can be overloaded. \r\n\r\n```bash\r\n--model-id ${INFINITY_EMBEDDING_MODEL} --model-id ${INFINITY_RERANKING_MODEL}\r\n```\r\n\r\n```bash\r\nINFINITY_MODEL_ID=mixedbread-ai/mxbai-embed-large-v1;mixedbread-ai/mxbai-rerank-xsmall-v1;\r\n```\r\n\r\nhttps://huggingface.co/spaces/michaelfeil/infinity/tree/305b1c2b583e9968aa153c45e8e50555af1d9575",
+      "state": "closed",
+      "author": "michaelfeil",
+      "author_type": "User",
+      "created_at": "2024-06-11T01:07:43Z",
+      "updated_at": "2024-06-11T02:45:35Z",
+      "closed_at": "2024-06-11T02:45:34Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/214/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 1,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/214",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/214",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:22.376827",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "Thanks for the suggestion, we shall check this and implement!",
+          "created_at": "2024-06-11T02:45:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 190,
+      "title": "Switch from `pip` based dependency management to `poetry`",
+      "body": "For small projects `pip` is great, but for larger projects like this whose (flattened) dependency list is long and will surely keep growing more, it is better to move to `poetry`.\r\n\r\nConda can be a contender but is a very heavy option. \r\n\r\nAs the main target audience profile for this project is an AI Engineers and `poetry` is more suitable and it is perfect for robust dependency management, as well as environment management.  \r\n\r\nAnd `poetry` also helps with publishing of your package - I really hope you do that soon. \r\n- I added a request on that line : https://github.com/truefoundry/cognita/issues/191 \r\n\r\nReferences of why Poetry over Pip\r\n- https://realpython.com/dependency-management-python-poetry/\r\n- https://itheo.tech/pip-vs-poetry-a-comprehensive-comparison\r\n- https://unbiased-coder.com/python-poetry-vs-pip/\r\n- https://www.exxactcorp.com/blog/Deep-Learning/managing-python-dependencies-with-poetry-vs-conda-pip",
+      "state": "open",
+      "author": "avibathula",
+      "author_type": "User",
+      "created_at": "2024-05-30T03:29:45Z",
+      "updated_at": "2024-06-04T08:55:56Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/190/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/190",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/190",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:22.559523",
+      "comments": [
+        {
+          "author": "chiragjn",
+          "body": "Thanks for brining this up,\r\nWe have it on our plans to do start using poetry and publish cognita\r\nThat will also make installing extra optional packages straighforward and allow use to depend on ranges of packages\r\n\r\nWe were mostly waiting to reach a stable state on our interfaces before we start b",
+          "created_at": "2024-05-30T05:44:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 191,
+      "title": "Feature Request: Publish Cognita as a package to pypi",
+      "body": "For higher adoption, you have to have stable releases of Cognita and publish it as a package to `pypi`\r\n\r\nThis is another aspect [SchiPhi's R2R](https://github.com/SciPhi-AI/R2R/tree/main) is taking a lead w.r.t meeting developer expectations.\r\n\r\nAnd please publish a roadmap with prioritized items.",
+      "state": "open",
+      "author": "avibathula",
+      "author_type": "User",
+      "created_at": "2024-05-30T03:44:16Z",
+      "updated_at": "2024-06-04T08:55:44Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/191/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/191",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/191",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:22.743110",
+      "comments": []
+    },
+    {
+      "issue_number": 172,
+      "title": "CrossEncoder of Sentence Transformers uses best device type available on machine leading to error ",
+      "body": "Hi Team!!\r\n\r\nWhile I was trying to explore Cognita, I have found an error trying to run the retrieval augmented generation locally using ./local/run.py\r\nThe machine I am using is MacBook Air, Apple M1 chip, macOS 13.1 (22C65) which has mps\r\n\r\nAs the CrossEncoder from sentence_transformers library uses below function which returns 'mps' on my machine\r\n```\r\ndef get_device_name() -> Literal[\"mps\", \"cuda\", \"npu\", \"hpu\", \"cpu\"]:\r\n    if torch.cuda.is_available():\r\n        return \"cuda\"\r\n    elif torch.backends.mps.is_available():\r\n        return \"mps\"\r\n    elif is_torch_npu_available():\r\n        return \"npu\"\r\n    elif importlib.util.find_spec(\"habana_frameworks\") is not None:\r\n        import habana_frameworks.torch.hpu as hthpu\r\n\r\n        if hthpu.is_available():\r\n            return \"hpu\"\r\n    return \"cpu\"\r\n```\r\nI am encountering this error\r\n```\r\nERROR:    2024-05-28 01:23:19,041 - controller:answer:336 - Operation 'sign_out_mps()' does not support input type 'int64' in MPS backend.\r\nTraceback (most recent call last):\r\n  File \"/Users/malyala/Desktop/cognita/backend/modules/query_controllers/example/controller.py\", line 312, in answer\r\n    outputs = await rag_chain_with_source.ainvoke(request.query)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/base.py\", line 2109, in ainvoke\r\n    input = await step.ainvoke(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/base.py\", line 2739, in ainvoke\r\n    results = await asyncio.gather(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 157, in ainvoke\r\n    return await self.aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 300, in aget_relevant_documents\r\n    raise e\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 293, in aget_relevant_documents\r\n    result = await self._aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/multi_query.py\", line 104, in _aget_relevant_documents\r\n    documents = await self.aretrieve_documents(queries, run_manager)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/multi_query.py\", line 137, in aretrieve_documents\r\n    document_lists = await asyncio.gather(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 300, in aget_relevant_documents\r\n    raise e\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 293, in aget_relevant_documents\r\n    result = await self._aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/contextual_compression.py\", line 74, in _aget_relevant_documents\r\n    compressed_docs = await self.base_compressor.acompress_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/document_compressors/base.py\", line 31, in acompress_documents\r\n    return await run_in_executor(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/config.py\", line 493, in run_in_executor\r\n    return await asyncio.get_running_loop().run_in_executor(\r\n  File \"/opt/homebrew/Cellar/python@3.10/3.10.10_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/thread.py\", line 58, in run\r\n    result = self.fn(*self.args, **self.kwargs)\r\n  File \"/Users/malyala/Desktop/cognita/backend/modules/reranker/mxbai_reranker.py\", line 27, in compress_documents\r\n    reranked_docs = model.rank(query, docs, return_documents=True, top_k=self.top_k)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py\", line 419, in rank\r\n    scores = self.predict(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py\", line 332, in predict\r\n    model_predictions = self.model(**features, return_dict=True)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 1296, in forward\r\n    outputs = self.deberta(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 1066, in forward\r\n    encoder_outputs = self.encoder(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 484, in forward\r\n    relative_pos = self.get_rel_pos(hidden_states, query_states, relative_pos)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 460, in get_rel_pos\r\n    relative_pos = build_relative_position(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 583, in build_relative_position\r\n    rel_pos_ids = make_log_bucket_position(rel_pos_ids, bucket_size, max_position)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 546, in make_log_bucket_position\r\n    sign = torch.sign(relative_pos)\r\nTypeError: Operation 'sign_out_mps()' does not support input type 'int64' in MPS backend.\r\nTraceback (most recent call last):\r\n  File \"/Users/malyala/Desktop/cognita/backend/modules/query_controllers/example/controller.py\", line 312, in answer\r\n    outputs = await rag_chain_with_source.ainvoke(request.query)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/base.py\", line 2109, in ainvoke\r\n    input = await step.ainvoke(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/base.py\", line 2739, in ainvoke\r\n    results = await asyncio.gather(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 157, in ainvoke\r\n    return await self.aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 300, in aget_relevant_documents\r\n    raise e\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 293, in aget_relevant_documents\r\n    result = await self._aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/multi_query.py\", line 104, in _aget_relevant_documents\r\n    documents = await self.aretrieve_documents(queries, run_manager)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/multi_query.py\", line 137, in aretrieve_documents\r\n    document_lists = await asyncio.gather(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 300, in aget_relevant_documents\r\n    raise e\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/retrievers.py\", line 293, in aget_relevant_documents\r\n    result = await self._aget_relevant_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/contextual_compression.py\", line 74, in _aget_relevant_documents\r\n    compressed_docs = await self.base_compressor.acompress_documents(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain/retrievers/document_compressors/base.py\", line 31, in acompress_documents\r\n    return await run_in_executor(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/langchain_core/runnables/config.py\", line 493, in run_in_executor\r\n    return await asyncio.get_running_loop().run_in_executor(\r\n  File \"/opt/homebrew/Cellar/python@3.10/3.10.10_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/thread.py\", line 58, in run\r\n    result = self.fn(*self.args, **self.kwargs)\r\n  File \"/Users/malyala/Desktop/cognita/backend/modules/reranker/mxbai_reranker.py\", line 27, in compress_documents\r\n    reranked_docs = model.rank(query, docs, return_documents=True, top_k=self.top_k)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py\", line 419, in rank\r\n    scores = self.predict(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py\", line 332, in predict\r\n    model_predictions = self.model(**features, return_dict=True)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 1296, in forward\r\n    outputs = self.deberta(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 1066, in forward\r\n    encoder_outputs = self.encoder(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1194, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 484, in forward\r\n    relative_pos = self.get_rel_pos(hidden_states, query_states, relative_pos)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 460, in get_rel_pos\r\n    relative_pos = build_relative_position(\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 583, in build_relative_position\r\n    rel_pos_ids = make_log_bucket_position(rel_pos_ids, bucket_size, max_position)\r\n  File \"/Users/malyala/Desktop/env/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py\", line 546, in make_log_bucket_position\r\n    sign = torch.sign(relative_pos)\r\nTypeError: Operation 'sign_out_mps()' does not support input type 'int64' in MPS backend.\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"/Users/malyala/Desktop/cognita/./local/run.py\", line 41, in <module>\r\n    answer = asyncio.run(controller.answer(ExampleQueryInput(**request)))\r\n  File \"/opt/homebrew/Cellar/python@3.10/3.10.10_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py\", line 44, in run\r\n    return loop.run_until_complete(main)\r\n  File \"/opt/homebrew/Cellar/python@3.10/3.10.10_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py\", line 649, in run_until_complete\r\n    return future.result()\r\n  File \"/Users/malyala/Desktop/cognita/backend/modules/query_controllers/example/controller.py\", line 337, in answer\r\n    raise HTTPException(status_code=500, detail=str(exp))\r\nfastapi.exceptions.HTTPException\r\n```\r\n\r\nLooks like there are some operations(torch.sign) in deberta_v2 model which do not support on some data types (int64). Shouldn't there be a env variable to handle device type to use while running locally or deploying RAG on any system?",
+      "state": "closed",
+      "author": "ghost",
+      "author_type": "User",
+      "created_at": "2024-05-27T20:24:21Z",
+      "updated_at": "2024-06-04T07:52:48Z",
+      "closed_at": "2024-06-04T07:52:39Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/172/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/172",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/172",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:22.743125",
+      "comments": [
+        {
+          "author": "chiragjn",
+          "body": "Thanks for reporting this\r\nWe have added fallback to cpu if cuda is not available\r\n\r\nLater down the line we will add device control using argument or env variable as you suggested.",
+          "created_at": "2024-05-29T12:51:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 179,
+      "title": "Provide a docker compose file",
+      "body": "In order to make it easy to Cognita, it would be awesome to offer & document a quick setup with docker compose and prebuilt docker containers.",
+      "state": "closed",
+      "author": "flobaader",
+      "author_type": "User",
+      "created_at": "2024-05-29T13:44:46Z",
+      "updated_at": "2024-06-02T15:10:52Z",
+      "closed_at": "2024-06-02T13:28:51Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/truefoundry/cognita/issues/179/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/truefoundry/cognita/issues/179",
+      "api_url": "https://api.github.com/repos/truefoundry/cognita/issues/179",
+      "repository": "truefoundry/cognita",
+      "extraction_date": "2025-06-22T00:40:22.938087",
+      "comments": [
+        {
+          "author": "S1LV3RJ1NX",
+          "body": "@flobaader this is now done.",
+          "created_at": "2024-06-02T13:28:51Z"
+        },
+        {
+          "author": "flobaader",
+          "body": "Awesome! Thanks.\r\nAre you also planning to build & publish the docker images to the github or docker registry?",
+          "created_at": "2024-06-02T15:10:51Z"
+        }
+      ]
+    }
+  ]
+}

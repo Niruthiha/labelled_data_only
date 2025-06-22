@@ -1,0 +1,981 @@
+{
+  "repository": "hegelai/prompttools",
+  "repository_info": {
+    "repo": "hegelai/prompttools",
+    "stars": 2883,
+    "language": "Python",
+    "description": "Open-source tools for prompt testing and experimentation, with support for both LLMs (e.g. OpenAI, LLaMA) and vector databases (e.g. Chroma, Weaviate, LanceDB).",
+    "url": "https://github.com/hegelai/prompttools",
+    "topics": [
+      "deep-learning",
+      "developer-tools",
+      "embeddings",
+      "large-language-models",
+      "llms",
+      "machine-learning",
+      "prompt-engineering",
+      "python",
+      "vector-search"
+    ],
+    "created_at": "2023-06-25T19:33:00Z",
+    "updated_at": "2025-06-21T23:03:15Z",
+    "search_query": "chroma openai language:python stars:>2",
+    "total_issues_estimate": 86,
+    "labeled_issues_estimate": 6,
+    "labeling_rate": 7.7,
+    "sample_labeled": 2,
+    "sample_total": 26,
+    "has_issues": true,
+    "repo_id": 658453192,
+    "default_branch": "main",
+    "size": 34054
+  },
+  "extraction_date": "2025-06-22T00:44:49.763375",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 20,
+  "issues": [
+    {
+      "issue_number": 69,
+      "title": "Robustness evaluation",
+      "body": "### 🚀 The feature\n\nRequest from potential user: \"There are two main aspects, 1) adjusting prompts that changing semantic words does not trigger hallucination, 2) the prompt itself is such that LLM doesnt slip away from instruction\"\r\n\r\nIdea: for (1) use prompt templates to substitute words, run evals to check semantic similarity of all results. For (2) use auto-evaluation given instruction, prompt, and response to determine if the LLM followed instructions.\r\n\n\n### Motivation, pitch\n\nWe got this request from a potential user, and also robustness is a common concern in LLM evaluation\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-08-10T02:45:28Z",
+      "updated_at": "2023-12-26T05:34:35Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/69/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/69",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/69",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:45.559004",
+      "comments": [
+        {
+          "author": "RigvedRocks",
+          "body": "Hey, I am working on the issue and I have generated 2 sample scripts - one involving prompt substitution and the other for auto evaluation. I am using Promptbench in both scripts. Can you please guide me as to how to integrate the scripts into your experiments? I am joining your discord group wherei",
+          "created_at": "2023-12-26T05:34:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 83,
+      "title": "Is it possible to evaluate using models from Azure OpenAI Service?",
+      "body": "### ⁉️ Discussion/Question\n\nI have a model currently available via Azure OpenAI, is it possible to run a prompt through it passing AZURE_OPENAI_API_KEY instead of OPENAI_API_KEY for instance?",
+      "state": "closed",
+      "author": "ayrtondenner",
+      "author_type": "User",
+      "created_at": "2023-08-21T22:34:00Z",
+      "updated_at": "2023-09-17T04:35:42Z",
+      "closed_at": "2023-09-17T04:35:41Z",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/83/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/83",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/83",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:45.817019",
+      "comments": [
+        {
+          "author": "NivekT",
+          "body": "Hi @ayrtondenner, that definitely is a use case that we'd like to support.\r\n\r\nI will look into it, but if someone wants to try implementing this, feel free to comment here. Two things I think we will need:\r\n\r\n- [x] Support for Azure OpenAI in code/notebook\r\n- [ ] Support for Azure OpenAI in Playgrou",
+          "created_at": "2023-08-22T00:54:54Z"
+        },
+        {
+          "author": "ayrtondenner",
+          "body": "Hi @NivekT , thanks for the answer.\r\n\r\nIn our case, we are looking to use prompttools via code, since our wish is to integrate it with an automatic pipeline to test our prompts before putting into production. So the idea here is to test a new prompt and check if it will break any known chat case.",
+          "created_at": "2023-08-23T16:00:17Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "@ayrtondenner We have updated our [`OpenAICompletionExperiment` API](https://github.com/hegelai/prompttools/blob/main/prompttools/experiment/experiments/openai_completion_experiment.py) to support Azure. Here is a [code example](https://github.com/hegelai/prompttools/blob/main/examples/notebooks/Azu",
+          "created_at": "2023-08-25T17:16:50Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "@ayrtondenner  I can confirm that we have added support for Azure in both chat and text completion. Let me know if it is working for you. We would also love to chat about your use cases.",
+          "created_at": "2023-08-27T06:51:23Z"
+        },
+        {
+          "author": "ayrtondenner",
+          "body": "Is that already added in the pip library? I just tried it in a new Colab notebook but it didn't work:\r\n\r\n```python\r\nTypeError: OpenAICompletionExperiment.__init__() got an unexpected keyword argument 'azure_openai_service_configs'\r\n```",
+          "created_at": "2023-08-28T11:23:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 5,
+      "title": "LangChain Support",
+      "body": "Add Harnesses and Experiments to support testing LangChains natively.\r\n\r\nComponents will include:\r\n* Low level chain and agent experiments\r\n* Chain and agent harnesses\r\n* Step-by-step visualizations, and support for evaluating intermediate outputs",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-05T20:39:25Z",
+      "updated_at": "2023-08-26T01:24:22Z",
+      "closed_at": "2023-08-26T01:24:22Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/5/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "AAbbhishekk"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/5",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/5",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:46.035192",
+      "comments": [
+        {
+          "author": "AAbbhishekk",
+          "body": "I can collaborate on it.",
+          "created_at": "2023-07-25T17:38:22Z"
+        },
+        {
+          "author": "steventkrawczyk",
+          "body": "@AAbbhishekk Awesome! I've added you to the issue. Feel free to raise a PR to get started, or ask any questions you have on this issue / in the discord: https://discord.gg/72a9xh5Z7P",
+          "created_at": "2023-07-25T17:59:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 47,
+      "title": "Add support for Qdrant",
+      "body": "### 🚀 The feature\r\n\r\n[Qdrant](https://github.com/qdrant/qdrant) is a popular vector similarity search engine and vector database.\r\n\r\n### Motivation, pitch\r\n\r\nWe can integrate with its APIs to allow experimentation on various configurations and look at its performance.\r\n\r\n### Alternatives\r\n\r\n_No response_\r\n\r\n### Additional context\r\n\r\nYou can have a look at the Chroma or Weaviate for inspiration. If you would like to work on this, comment and let us know! We will be more than happy to support you.",
+      "state": "closed",
+      "author": "NivekT",
+      "author_type": "User",
+      "created_at": "2023-08-01T21:47:29Z",
+      "updated_at": "2023-08-25T18:25:01Z",
+      "closed_at": "2023-08-25T18:25:00Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/47/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "kacperlukawski"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/47",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/47",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:46.283814",
+      "comments": [
+        {
+          "author": "NivekT",
+          "body": "Quote from @rafidude from #52:\r\n```\r\nWe are using Qdrant and found its performance much better than other Vector DBs.\r\n\r\nPlease see the benchmarks at https://qdrant.tech/benchmarks/.\r\n```",
+          "created_at": "2023-08-02T19:25:58Z"
+        },
+        {
+          "author": "kacperlukawski",
+          "body": "@NivekT I'm already working on the integration. ",
+          "created_at": "2023-08-03T08:37:03Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "Wonderful!",
+          "created_at": "2023-08-03T08:43:06Z"
+        },
+        {
+          "author": "kacperlukawski",
+          "body": "The PR is open, but still in progress: #54",
+          "created_at": "2023-08-03T15:29:44Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "Closed by #54 \r\nThank you @kacperlukawski !",
+          "created_at": "2023-08-25T18:25:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 76,
+      "title": "Error in experiment.evaluate() in introductory example OpenAIChatExperiment.ipynb",
+      "body": "Hi folks, thanks for creating this tool.\r\n\r\nI'm trying out `prompttools` and was following the introductory example (OpenAIChatExperiment.ipynb) listed on the [quickstart](https://prompttools.readthedocs.io/en/latest/quickstart.html) page and encountered this error. I can reproduce the error locally and on the provided [Colab notebook](https://colab.research.google.com/drive/1YVcpBew8EqbhXFN8P5NaFrOIqc1FKWeS?usp=sharing#scrollTo=e80dfeec)\r\n\r\n### 🐛 Describe the bug\r\n\r\nThis is the line that raises an error:\r\n```\r\nexperiment.evaluate(\"similar_to_expected\", similarity.evaluate, expected=\"George Washington\")\r\n```\r\n\r\nAnd this is the error: `TypeError: evaluate() missing 2 required positional arguments: 'response' and 'metadata'`\r\n\r\n<img width=\"1573\" alt=\"image\" src=\"https://github.com/hegelai/prompttools/assets/49261334/7db06c25-ddca-4dc9-b857-0cd4d9ae4f2f\">",
+      "state": "closed",
+      "author": "davidtan-tw",
+      "author_type": "User",
+      "created_at": "2023-08-16T01:12:13Z",
+      "updated_at": "2023-08-16T04:27:05Z",
+      "closed_at": "2023-08-16T04:27:04Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/76/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "steventkrawczyk"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/76",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/76",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:46.472203",
+      "comments": [
+        {
+          "author": "davidtan-tw",
+          "body": "Managed to fix error by importing the right function (`semantic_similarity`) from the right package (`prompttools.utils`). See fix:\r\n\r\n<img width=\"1397\" alt=\"image\" src=\"https://github.com/hegelai/prompttools/assets/49261334/722d6f67-4616-4cae-b202-4fdd9248561b\">\r\n\r\nWould it be right to say that the",
+          "created_at": "2023-08-16T01:32:43Z"
+        },
+        {
+          "author": "davidtan-tw",
+          "body": "And as an aside, why is the semantic similarity between \"George Washington\" and \"George Washinton\" ranging between `0.14` to `0.35`? I would expected something like `0.99` or even `1.0`\r\n\r\n<img width=\"926\" alt=\"image\" src=\"https://github.com/hegelai/prompttools/assets/49261334/13009d94-3dfb-4ef4-a05",
+          "created_at": "2023-08-16T01:35:23Z"
+        },
+        {
+          "author": "davidtan-tw",
+          "body": "Alright, so it turns out that was because I should have passed in a `List` of expected results (`expected=[\"George Washington\"] * 4`) instead of a string: \r\n<img width=\"959\" alt=\"image\" src=\"https://github.com/hegelai/prompttools/assets/49261334/f9e12691-2147-42a0-932c-14ab09f140c2\">\r\n\r\nI think it w",
+          "created_at": "2023-08-16T01:41:08Z"
+        },
+        {
+          "author": "steventkrawczyk",
+          "body": "Hey David, thanks for trying prompttools and mentioning these issues. I believe everything's up to date for that example on the HEAD of `main`\r\n\r\nhttps://github.com/hegelai/prompttools/blob/main/examples/notebooks/OpenAIChatExperiment.ipynb\r\n\r\nWe'll make the error handling better. ",
+          "created_at": "2023-08-16T04:27:04Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 50,
+      "title": "Add common benchmarks",
+      "body": "### 🚀 The feature\n\nWe need to add benchmark test sets so folks can run on models / embeddings / systems\r\n\r\nA few essentials:\r\n* BEIR for information retrieval\r\n* MTEB for embeddings\r\n* Some stuff from HELM (e.g. ROGUE, BLEU) for LLMs\n\n### Motivation, pitch\n\nUsers have told us that they want to run academic benchmarks as \"smoke tests\" on new models.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-08-01T22:56:10Z",
+      "updated_at": "2023-08-14T05:51:45Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/50/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "LuvvAggarwal"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/50",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/50",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:46.700034",
+      "comments": [
+        {
+          "author": "LuvvAggarwal",
+          "body": "Can I work on this?",
+          "created_at": "2023-08-04T18:04:47Z"
+        },
+        {
+          "author": "steventkrawczyk",
+          "body": "@LuvvAggarwal Sure thing. The scope of this one is a bit large because we currently don't have any common benchmarks. I think a simple case would be the following \r\n\r\n* Add a new `benchmarks` directory to `prompttools`\r\n* Add a python file to read in a test dataset given some filepath (probably from",
+          "created_at": "2023-08-04T18:16:11Z"
+        },
+        {
+          "author": "LuvvAggarwal",
+          "body": "Thanks @steventkrawczyk for the guidance, based on my initial research I have found a package \"Evaluate:\" that can provide the methods for evaluating the model \r\nLink to package: https://huggingface.co/docs/evaluate/index\r\nI was thinking to use it. \r\n\r\nPlease free to suggest better ways as I am new ",
+          "created_at": "2023-08-05T08:23:32Z"
+        },
+        {
+          "author": "LuvvAggarwal",
+          "body": "@steventkrawczyk, can we use the \"Datasets\" library for loading metrics dataset instead of creating a separate directory\r\nLink to the library: https://github.com/huggingface/datasets\r\n\r\nAnd it can also be used for quick tests on a prebuilt dataset",
+          "created_at": "2023-08-06T08:40:58Z"
+        },
+        {
+          "author": "steventkrawczyk",
+          "body": "@LuvvAggarwal using datasets sounds like a good start. As far as using evaluate, we want to write our own eval methods that support more than just huggingface (e.g. OpenAI, Anthropic)",
+          "created_at": "2023-08-06T19:33:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 48,
+      "title": "Add support for LanceDB",
+      "body": "### 🚀 The feature\n\n[LanceDB](https://lancedb.com/) is a developer-friendly, serverless vector database.\n\n### Motivation, pitch\n\nWe can integrate with its APIs to allow experimentation on various configurations and look at its performance.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\nYou can have a look at the Chroma or Weaviate for inspiration. If you would like to work on this, comment and let us know! We will be more than happy to support you.",
+      "state": "closed",
+      "author": "NivekT",
+      "author_type": "User",
+      "created_at": "2023-08-01T21:53:06Z",
+      "updated_at": "2023-08-13T07:19:16Z",
+      "closed_at": "2023-08-13T07:19:08Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/48/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "NivekT"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/48",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/48",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:46.901799",
+      "comments": [
+        {
+          "author": "HashemAlsaket",
+          "body": "Heads up- need to have `Rust` installed. It's a dependency for `tantivy-py` which is a dependency for `LanceDB`.",
+          "created_at": "2023-08-09T18:08:14Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "This is being worked on by myself and @AyushExel from LanceDB",
+          "created_at": "2023-08-11T01:27:24Z"
+        },
+        {
+          "author": "AyushExel",
+          "body": "Thanks for the PR\r\n@HashemAlsaket @NivekT tantivy is not a compulsory requirement. Lancedb doesn't require any extra setup or auth other than `pip install lancedb` \r\n",
+          "created_at": "2023-08-11T02:52:36Z"
+        },
+        {
+          "author": "HashemAlsaket",
+          "body": "I was unable to search a table without `tantivy`:\r\n![image](https://github.com/hegelai/prompttools/assets/17466553/0b4382f0-1619-486d-9aca-cbb72c744997)\r\n",
+          "created_at": "2023-08-11T03:10:33Z"
+        },
+        {
+          "author": "AyushExel",
+          "body": "You're using FTS. FTS requires tantivy, vector search doesn't. FTS is an add-on feature for now",
+          "created_at": "2023-08-11T03:24:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 68,
+      "title": "Support for OSS Models behind an API?",
+      "body": "### 🚀 The feature\n\nRight now mainly proprietary LLMs are supported. Would be great to also support DIY/OSS LLMs - for instance, hosted in [Databricks Model Serving](https://docs.databricks.com/en/machine-learning/model-serving/index.html) endpoints. Or more holistically, LLMs deployed behind a Web API running in a container, for instance.\n\n### Motivation, pitch\n\nI think this will be super useful for people or companies who are willing to do prompt engineering with Open Source LLMs. Also happy to work on this feature.\n\n### Alternatives\n\nCould also allow for testing prompts targetting models that are running on the local machine\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "rafaelvp-db",
+      "author_type": "User",
+      "created_at": "2023-08-09T12:32:17Z",
+      "updated_at": "2023-08-10T03:06:20Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/68/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "rafaelvp-db"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/68",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/68",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.190970",
+      "comments": [
+        {
+          "author": "NivekT",
+          "body": "Hi @rafaelvp-db,\r\n\r\nThanks for opening this issue! That sounds like a great integration for us to add! If you or anyone else would like to open a PR, we would be more than happy to review it or support you in any way.\r\n\r\nWe are also happy to discuss other potential integration with Databricks [on ou",
+          "created_at": "2023-08-09T21:28:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 2,
+      "title": "Function Calling Experiment Support",
+      "body": "Add support for function calling, evaluating functions, chaining LLM call with function calls, etc.\r\n\r\nSome components will include:\r\n* Low level function calling experiment\r\n* Function calling experiment harness\r\n* Eval functions for structured outputs\r\n* Prompttest support for function calling\r\n* Experiments across function calls and tools",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-05T20:34:43Z",
+      "updated_at": "2023-08-09T02:35:02Z",
+      "closed_at": "2023-08-09T02:35:02Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/2/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/2",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/2",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.467533",
+      "comments": []
+    },
+    {
+      "issue_number": 44,
+      "title": "Add support for other models in AutoEval",
+      "body": "### 🚀 The feature\r\n\r\nThis is a good task for a new contributor\r\n\r\nWe have a few utility functions to perform AutoEval:\r\n\r\nhttps://github.com/hegelai/prompttools/blob/main/prompttools/utils/autoeval.py\r\nhttps://github.com/hegelai/prompttools/blob/main/prompttools/utils/autoeval_scoring.py\r\nhttps://github.com/hegelai/prompttools/blob/main/prompttools/utils/expected.py\r\n\r\nCurrently, they tend to only support one model each. Someone can re-factor the code for each of them to support multiple models. I would recommend making sure they all support for the best known models such as GPT-4 and Claude 2.\r\n\r\nWe can even consider LlaMA but that is less urgent.\r\n\r\nTasks\r\n- [ ]  Update this [file](https://github.com/hegelai/prompttools/blob/main/prompttools/utils/autoeval.py) such that `autoeval_binary_scoring` can take in `model` as an argument. Let's make sure `gpt-4` and `claude-2` are both accepted and invoke the right completion function.\r\n- [ ] Same as the above but for this [file](https://github.com/hegelai/prompttools/blob/main/prompttools/utils/autoeval_scoring.py) and the function `autoeval_scoring`. OpenAI needs to added here.\r\n- [ ] Same as the above but for this [file](https://github.com/hegelai/prompttools/blob/main/prompttools/utils/expected.py) and the function `compute_similarity_against_model`\r\n- [ ] Allow auto evaluation by multiple models (e.g. both `gpt-4` and `claude-2`) at the same time\r\n\r\n### Motivation, pitch\r\n\r\nAllow people to auto-evaluate with different best models would be ideal\r\n\r\n### Alternatives\r\n\r\n_No response_\r\n\r\n### Additional context\r\n\r\n_No response_",
+      "state": "open",
+      "author": "NivekT",
+      "author_type": "User",
+      "created_at": "2023-08-01T07:30:30Z",
+      "updated_at": "2023-08-08T21:00:43Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/44/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Divij97"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/44",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/44",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.467554",
+      "comments": [
+        {
+          "author": "rachittshah",
+          "body": "@NivekT i think if we add this with [#31 ](https://github.com/hegelai/prompttools/issues/31), it might be faster and we can build on top of [Llama-index's evals](https://github.com/hegelai/prompttools/issues/31).\r\n\r\nWhat do you think?",
+          "created_at": "2023-08-01T14:39:06Z"
+        },
+        {
+          "author": "divij9",
+          "body": "So we want to accept an array of models and evaluate against all of them, right?\r\n",
+          "created_at": "2023-08-01T14:53:50Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "@rachittshah We can consider add LlamaIndex's eval if it integrates well with the pattern we have here. Feel free to propose something and we can have a look.\r\n\r\n@divij9 That can be part of it, but for each of the eval function linked above, they currently only support OpenAI or Anthropic.\r\n\r\nI will",
+          "created_at": "2023-08-02T01:00:26Z"
+        },
+        {
+          "author": "NivekT",
+          "body": "I have updated the ask to be bite-size. Feel free to comment if anything is unclear!",
+          "created_at": "2023-08-02T01:05:27Z"
+        },
+        {
+          "author": "Divij97",
+          "body": "I think I understand what our goal is. Can you please assign this to me?\r\n",
+          "created_at": "2023-08-02T19:09:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 57,
+      "title": "Streamlit playground support for localLLMs",
+      "body": "### 🚀 The feature\n\nSupport local llm by connecting streamlit playground with the local dev container\r\nUser can run the llm locally and provide endpoint to connect LLM with Streamlit or we can provide a wrapper function for LLM to connect with Streamlit\n\n### Motivation, pitch\n\nMotivation behind this is Colab where we can connect the notebook with local machine what if we can do same for streamlit playground\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "LuvvAggarwal",
+      "author_type": "User",
+      "created_at": "2023-08-04T18:23:10Z",
+      "updated_at": "2023-08-07T03:20:31Z",
+      "closed_at": null,
+      "labels": [
+        "playground"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/57/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "LuvvAggarwal"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/57",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/57",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.695608",
+      "comments": [
+        {
+          "author": "steventkrawczyk",
+          "body": "This is an awesome idea by the way! If you implement this we will definitely land it",
+          "created_at": "2023-08-04T21:48:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 66,
+      "title": "Improve link sharing",
+      "body": "### 🚀 The feature\n\nToday, we only support link sharing for 1 instruction and 1 prompt, and we don't capture configuration like temperature and other variables. \r\n\r\nFirst, we should support capturing configuration. \r\nThen, we should support multiple prompts and instructions. \r\n\r\nWe need to be mindful of the total size of the URL, and look for alternatives if it gets too long.\n\n### Motivation, pitch\n\nLink sharing supports collaboration and helps more folks use the prompttools playground.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-08-07T03:19:49Z",
+      "updated_at": "2023-08-07T03:20:21Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted",
+        "playground"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/66/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/66",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/66",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.882600",
+      "comments": []
+    },
+    {
+      "issue_number": 51,
+      "title": "Add benchmarks and evals for jailbreaks",
+      "body": "### 🚀 The feature\n\nAs we add benchmarks, it would be good to cover common jailbreak scenarios. We should incorporate these benchmarks, and have auto-evals that check responses to see if they are \"broken\"\n\n### Motivation, pitch\n\nhttps://github.com/llm-attacks/llm-attacks\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-08-02T00:11:03Z",
+      "updated_at": "2023-08-02T00:11:03Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/51/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/51",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/51",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.882625",
+      "comments": []
+    },
+    {
+      "issue_number": 49,
+      "title": "Add ingestion harness for vectorDB experiments",
+      "body": "### 🚀 The feature\n\nWe need a way to experiment with different chunking + ingestion strategies. For example, we have some \"raw\" documents we want to ingest into a vector database, and there are different ways of transforming those \"raw\" documents into the documents we end up vectorizing. For example, we can ingest them as is, \"chunk\" them into 10-line chunks, or do other pre-processing to extract keywords and relevant phrases.\n\n### Motivation, pitch\n\nTalking to some customers about their needs regarding vector DB evaluation at scale.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-08-01T22:28:43Z",
+      "updated_at": "2023-08-01T22:32:26Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "vector_databases"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/49/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/49",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/49",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:47.882632",
+      "comments": []
+    },
+    {
+      "issue_number": 3,
+      "title": "PaLM Support",
+      "body": "Add experiments for Google PaLM, and harnesses to compare between model providers.",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-05T20:35:06Z",
+      "updated_at": "2023-07-29T01:07:38Z",
+      "closed_at": "2023-07-29T01:07:38Z",
+      "labels": [
+        "model_providers"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/3/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/3",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/3",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.393331",
+      "comments": [
+        {
+          "author": "NivekT",
+          "body": "Added in 027eca1efebecfdef338b37964c8d2f38676d1bb",
+          "created_at": "2023-07-29T01:07:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 4,
+      "title": "Anthropic Support",
+      "body": "Add experiments for Anthropic, and harnesses to compare between model providers.",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-05T20:35:32Z",
+      "updated_at": "2023-07-29T01:07:09Z",
+      "closed_at": "2023-07-29T01:07:09Z",
+      "labels": [
+        "help wanted",
+        "model_providers"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/4/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/4",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/4",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.589841",
+      "comments": [
+        {
+          "author": "NivekT",
+          "body": "Added by 96323c33ce644ae66293b5a9f7f47ca18f1c380a",
+          "created_at": "2023-07-29T01:07:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 1,
+      "title": "Vector Database Experiment Support",
+      "body": "Add support for experimenting across embeddings, vector DBs, queries, etc.\r\n\r\nSome components that we will include:\r\n* Low level experiment for vector DBs\r\n* Harness for document retrieval tests\r\n* prompttest runner for document retrieval",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-05T20:33:08Z",
+      "updated_at": "2023-07-25T17:59:41Z",
+      "closed_at": "2023-07-25T17:59:41Z",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "vector_databases"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/1/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/1",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/1",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.763042",
+      "comments": []
+    },
+    {
+      "issue_number": 8,
+      "title": "Local LLM Support / Examples",
+      "body": "### 🚀 The feature\n\nSupport local LLMs experiments. This would include adding experiments for Local LLM Chat and Completion APIs, harnesses and unit test runners for those experiments, and providing a few examples in notebooks.\r\n\r\nWe should start with huggingface models, and look at containerized models as well.\n\n### Motivation, pitch\n\nToday we only support OpenAI models. We need a way to support local models as well.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "closed",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-08T05:01:06Z",
+      "updated_at": "2023-07-17T20:37:25Z",
+      "closed_at": "2023-07-17T20:37:25Z",
+      "labels": [
+        "model_providers"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/8/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/8",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/8",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.763061",
+      "comments": []
+    },
+    {
+      "issue_number": 10,
+      "title": "More testing utilities",
+      "body": "### 🚀 The feature\n\n* LLM-generated expected responses\r\n* Move auto-eval to a utility function\r\n* LLM chooses between multiple responses\n\n### Motivation, pitch\n\nWe want more pre-built evaluation functions and utilities\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-08T05:22:29Z",
+      "updated_at": "2023-07-08T05:22:54Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/10/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/10",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/10",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.763070",
+      "comments": []
+    },
+    {
+      "issue_number": 9,
+      "title": "Create generic experiments that accept a completion or chat completion function",
+      "body": "### 🚀 The feature\n\nWe need experiment classes that generalize the OpenAI experiments to any OpenAI compatible API.\n\n### Motivation, pitch\n\nWe can use this to support any completion or chat completion APIs that are compatible with the OpenAI API.\n\n### Alternatives\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "steventkrawczyk",
+      "author_type": "User",
+      "created_at": "2023-07-08T05:03:15Z",
+      "updated_at": "2023-07-08T05:08:38Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hegelai/prompttools/issues/9/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hegelai/prompttools/issues/9",
+      "api_url": "https://api.github.com/repos/hegelai/prompttools/issues/9",
+      "repository": "hegelai/prompttools",
+      "extraction_date": "2025-06-22T00:44:49.763074",
+      "comments": []
+    }
+  ]
+}

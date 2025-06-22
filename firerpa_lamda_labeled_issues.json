@@ -1,0 +1,528 @@
+{
+  "repository": "firerpa/lamda",
+  "repository_info": {
+    "repo": "firerpa/lamda",
+    "stars": 7053,
+    "language": "Python",
+    "description": " The most powerful Android RPA agent framework, next generation of mobile automation robots.",
+    "url": "https://github.com/firerpa/lamda",
+    "topics": [
+      "adb",
+      "agents",
+      "ai",
+      "android",
+      "appium",
+      "automation",
+      "dynamic-analysis",
+      "frida",
+      "magisk",
+      "mcp",
+      "mcp-server",
+      "mobile-security",
+      "pentesting",
+      "remote-control",
+      "reverse-engineering",
+      "security",
+      "uiautomation",
+      "uiautomator2",
+      "workflow",
+      "xposed"
+    ],
+    "created_at": "2022-07-10T03:20:56Z",
+    "updated_at": "2025-06-22T01:11:40Z",
+    "search_query": "ai agent language:python stars:>3 -framework",
+    "total_issues_estimate": 198,
+    "labeled_issues_estimate": 19,
+    "labeling_rate": 10.0,
+    "sample_labeled": 5,
+    "sample_total": 50,
+    "has_issues": true,
+    "repo_id": 512334495,
+    "default_branch": "8.0",
+    "size": 26064
+  },
+  "extraction_date": "2025-06-22T00:34:10.229306",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 10,
+  "issues": [
+    {
+      "issue_number": 80,
+      "title": "LAMDA 视频教程计划",
+      "body": "说出文档或者实际使用中与 LAMDA 相关或弱相关的问题，我们录制视频教程！你的问题可以与如何使用 LAMDA 有关，也可以与其无关但是属于 LAMDA 的相关附属功能如 frida 或安卓相关知识，也可以是业务中需要处理的问题。我们会根据问题的力所能及程度以及支持（点赞）数选择是否录制视频或文字教程。视频统一发布到公众号 __设备农场__ 所有视频均为免费知识不会要求付费观阅。\r\n<p align=\"center\"><img width=\"345px\" src=\"https://raw.githubusercontent.com/rev1si0n/lamda/HEAD/image/wx.png\"/></p>\r\n",
+      "state": "closed",
+      "author": "rev1si0n",
+      "author_type": "User",
+      "created_at": "2024-03-23T10:59:34Z",
+      "updated_at": "2025-01-18T04:39:30Z",
+      "closed_at": "2025-01-18T04:39:30Z",
+      "labels": [
+        "documentation",
+        "help wanted",
+        "notice"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/80/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/80",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/80",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.230666",
+      "comments": []
+    },
+    {
+      "issue_number": 84,
+      "title": "Elements are not detected even though `info()` returns something.",
+      "body": "In some cases, Selector cannot find the element. Although `e.info()` returns some info, operations like `click()` will not work.\r\n![image](https://github.com/rev1si0n/lamda/assets/41464808/55a2f032-a79d-43cd-bc9a-3aa74a204ffd)\r\n\r\n```\r\nfrom lamda.client import *\r\n\r\nd = Device('172.31.90.197', 65000)\r\ne = d(resourceId=\"com.aimar.id.hijacker:id/btn1\")\r\nprint(e.info())\r\nprint(\"exists: \" + str(e.exists()))\r\n```\r\n\r\nRuns on WSA with latest lamda. I have also tried restarting the server but no luck.",
+      "state": "open",
+      "author": "aimardcr",
+      "author_type": "User",
+      "created_at": "2024-04-23T23:15:59Z",
+      "updated_at": "2024-04-24T08:45:06Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/84/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/84",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/84",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.230690",
+      "comments": [
+        {
+          "author": "aimardcr",
+          "body": "Okay, so I have found out that the focus activity on current app is not actually the app activity itself, but rather some weird app from the WSA:\r\n![image](https://github.com/rev1si0n/lamda/assets/41464808/7eafb0e0-f606-4574-a413-396eddef19f1)\r\n",
+          "created_at": "2024-04-23T23:26:22Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "It's a bug, we are working on this https://github.com/rev1si0n/lamda/issues/83 ",
+          "created_at": "2024-04-24T08:45:04Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 83,
+      "title": "无法检查界面上非重要元素的存在性",
+      "body": "例如，运行其他APP时，无法检查状态栏中元素是否存在，始终返回 False",
+      "state": "open",
+      "author": "rev1si0n",
+      "author_type": "User",
+      "created_at": "2024-04-20T04:46:44Z",
+      "updated_at": "2024-04-20T04:46:44Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/83/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/83",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/83",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.459528",
+      "comments": []
+    },
+    {
+      "issue_number": 19,
+      "title": "建议出一份详细wiki",
+      "body": "这样或许会更专业、更好\r\n建议而已",
+      "state": "closed",
+      "author": "moeik",
+      "author_type": "User",
+      "created_at": "2023-01-07T01:10:48Z",
+      "updated_at": "2024-03-28T02:03:53Z",
+      "closed_at": "2024-03-23T11:00:35Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/19/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/19",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/19",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.459551",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "后面有时间会出全集使用视频，readthedoc 或者自建官网那种类型的 wiki 暂时不会有。",
+          "created_at": "2023-01-08T16:16:05Z"
+        },
+        {
+          "author": "fjqisba",
+          "body": "介绍太复杂了，看不懂",
+          "created_at": "2023-02-28T10:18:12Z"
+        },
+        {
+          "author": "shidalao",
+          "body": "非常复杂，而且这份安装文档是适配Windows 还是Ubuntu？看不懂。。。",
+          "created_at": "2023-03-15T10:18:24Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "> 非常复杂，而且这份安装文档是适配Windows 还是Ubuntu？看不懂。。。\r\n\r\n那看样子录视频势在必行了，确实很多废话。",
+          "created_at": "2023-03-15T10:33:23Z"
+        },
+        {
+          "author": "yingpwu",
+          "body": "> > 非常复杂，而且这份安装文档是适配Windows 还是Ubuntu？看不懂。。。\r\n> \r\n> 那看样子录视频势在必行了，确实很多废话。\r\n\r\n文档里面唯一的视频链接还点不开....",
+          "created_at": "2023-03-26T03:39:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "运行launch.sh，出现CRITICAL failed (-11)",
+      "body": null,
+      "state": "open",
+      "author": "flynightair",
+      "author_type": "User",
+      "created_at": "2023-02-17T03:52:51Z",
+      "updated_at": "2023-10-29T12:04:21Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/31/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/31",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/31",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.671787",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "请附上机型，系统版本信息。",
+          "created_at": "2023-02-17T04:06:15Z"
+        },
+        {
+          "author": "flynightair",
+          "body": "HW mate 30E pro, ro.build.version.sdk: 29,  ro.build.version.release: 10",
+          "created_at": "2023-02-17T05:52:34Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "暂时没有这个机型，如果是鸿蒙的话不确定是否支持。\r\n你可以使用这个工具脚本发送一个文件报告过来：\r\n\r\nhttps://raw.githubusercontent.com/rev1si0n/lamda/master/tools/statistics.sh\r\n\r\n```bash\r\n# 下载该脚本并 push 到 /data/local/tmp\r\nadb push statistics.sh /data/local/tmp\r\n# 使用 root 身份执行以下命令（可能需要改 launch.sh 为你实际安装的 launch.sh 位置，这是默认路径）\r\nsh /data/local/tmp/sta",
+          "created_at": "2023-02-18T08:47:20Z"
+        },
+        {
+          "author": "tothemoon08",
+          "body": "BEGIN LAMDA REPORT 2023-02-23.18:37:39\r\n---------------------------------------------\r\nenforced:                 Enforcing\r\nashmem:                   1\r\nbinder:                   0\r\nuname:                    Linux localhost 4.19.87-24017124 #1 SMP PREEMPT Thu Aug 25 18:19:54 KST 2022 aarch64\r\n\r\nro.b",
+          "created_at": "2023-02-23T10:46:07Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "三星的机器，你尝试 `setenforce 0` 然后再启动看看（怀疑这个也没用）",
+          "created_at": "2023-02-23T16:09:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 27,
+      "title": "其他APP无障碍服务启动  无效果",
+      "body": "经过测试发现关闭lamda后 其他APP无障碍正常\r\n红米note7pro 安卓10 miui12 \r\n红米5plus 安卓8.1 miui11\r\n都是magisk刷入的lamda:3.95",
+      "state": "closed",
+      "author": "yu1chaofan",
+      "author_type": "User",
+      "created_at": "2023-02-03T06:50:23Z",
+      "updated_at": "2023-09-17T09:10:41Z",
+      "closed_at": "2023-02-16T07:18:18Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/27/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/27",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/27",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:07.953346",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "关闭过后需要重启才会生效\r\n\r\n获取 Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n发件人: yu1chaofan ***@***.***>\r\n发送时间: Friday, February 3, 2023 2:50:34 PM\r\n收件人: rev1si0n/lamda ***@***.***>\r\n抄送: Subscribed ***@***.***>\r\n主题: [rev1si0n/lamda] 其他APP无障碍服务无法启动 (Issue #27)\r\n\r\n\r\n经过测试发现关闭lamda后 其他A",
+          "created_at": "2023-02-03T07:10:40Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "在magisk app中禁用，随后重启，或者用文档中的kill命令",
+          "created_at": "2023-02-03T08:08:26Z"
+        },
+        {
+          "author": "yu1chaofan",
+          "body": "在magisk app中禁用后  \r\n或者 kill lamda \r\n其他APP无障碍服务可以正常运行了\r\n有解决方法让lamda 和 无障碍都能使用吗",
+          "created_at": "2023-02-03T09:26:43Z"
+        },
+        {
+          "author": "rev1si0n",
+          "body": "目前不行，也不是不行，有BUG且考虑到兼容6-13各个版本，就直接一刀切了。改动有可能会导致本来能用的现在不能用了，所以暂不考虑，可能会在下个大版本中改掉。",
+          "created_at": "2023-02-03T10:27:46Z"
+        },
+        {
+          "author": "yu1chaofan",
+          "body": "嗯嗯  好的",
+          "created_at": "2023-02-03T15:02:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 54,
+      "title": "关于是否将mitmproxy整合进lamda的问题？",
+      "body": "先说一下个人认为的优点和缺点吧。\r\n优点：\r\n1.一键抓包。只需要一个命令即可开启抓包，例：`d.mitmproxy_start(web_port=8080)`\r\n2.一键翻墙抓包。在启动参数配置好翻墙软件开放的http端口。例：`d.mitmproxy_start(web_port=8080,vpn_port=18080)`\r\n3.一键指定抓包。指定抓app或者全部app。例：`d.mitmproxy_start(web_port=8080,vpn_port=18080,app='com.xxx.xxx')`\r\n4.一键停止抓包。例：`d.mitmproxy_stop()`\r\n缺点：\r\n1.整体不精简。\r\n2.消耗手机内存。关于这个，个人认为可以仅代码处理请求，不提供可视化和存储，即启动抓包时必须配置好对应的py脚本。例：`d.mitmproxy_start(vpn_port=18080,app='com.xxx.xxx',scrypt='./run.py')`\r\n总结：\r\n方便自动化+中间人进行app调试",
+      "state": "open",
+      "author": "Lehcok",
+      "author_type": "User",
+      "created_at": "2023-06-29T08:02:36Z",
+      "updated_at": "2023-06-30T01:57:16Z",
+      "closed_at": null,
+      "labels": [
+        "new feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/54/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/54",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/54",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:08.170486",
+      "comments": []
+    },
+    {
+      "issue_number": 41,
+      "title": "高分屏下页面布局问题",
+      "body": "我的显示器分辨率是3440*1440,手机屏幕被拉的很长很窄,没找到你的布局文件放在哪了,每次用还要手动修改布局,一刷新又得改,UI上能不能加个选项可以手动设置屏幕宽度,或者算一下比例把宽度增加一下\r\n![image](https://user-images.githubusercontent.com/1725120/231050008-b3640962-274c-4a7f-9131-dbc850a4799c.png)\r\n\r\n",
+      "state": "closed",
+      "author": "32ns",
+      "author_type": "User",
+      "created_at": "2023-04-11T03:38:20Z",
+      "updated_at": "2023-04-14T22:23:02Z",
+      "closed_at": "2023-04-14T16:36:59Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/41/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/41",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/41",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:08.170508",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "已解决，等候下个版本（周末）。",
+          "created_at": "2023-04-14T16:36:59Z"
+        },
+        {
+          "author": "32ns",
+          "body": "> 已解决，等候下个版本（周末）。\r\n\r\n非常感谢",
+          "created_at": "2023-04-14T22:23:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 33,
+      "title": "当我执行 pip3 install -U --force-reinstall 'lamda[frida]' 报错",
+      "body": "当我执行 pip3 install -U --force-reinstall 'lamda[frida]' 报错\r\n错误内容如下：\r\nERROR: Invalid requirement: \"'lamda[frida]'\"\r\n\r\n我在 https://pypi.org/search/?q=lamda%5Bfrida%5D&o= 上搜索 lamda[frida]也没有搜索到\r\n",
+      "state": "closed",
+      "author": "sanqudui8ban",
+      "author_type": "User",
+      "created_at": "2023-02-22T07:40:52Z",
+      "updated_at": "2023-02-22T08:13:14Z",
+      "closed_at": "2023-02-22T08:13:14Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/33/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/33",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/33",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:08.358418",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "去掉单引号试试",
+          "created_at": "2023-02-22T08:01:35Z"
+        },
+        {
+          "author": "sanqudui8ban",
+          "body": "是的，我刚才去掉单引号就成功了，谢谢！\r\n\r\n\r\n\r\n\r\n------------------&nbsp;原始邮件&nbsp;------------------\r\n发件人: ***@***.***&gt;; \r\n发送时间: 2023年2月22日(星期三) 下午4:01\r\n收件人: ***@***.***&gt;; \r\n抄送: ***@***.***&gt;; ***@***.***&gt;; \r\n主题: Re: [rev1si0n/lamda] 当我执行 pip3 install -U --force-reinstall &#39;lamda[frida]&#39; 报错 (Issue #3",
+          "created_at": "2023-02-22T08:02:43Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 32,
+      "title": "[BUG]",
+      "body": "**Describe the bug**\r\n我使用magisk刷入的模块，在使用frps端口转发时,在frp面板发现好像没有转发成功，我如何查看到相关frp是否转发成功的日志\r\n\r\n**Generate statistics**\r\n",
+      "state": "closed",
+      "author": "251623126",
+      "author_type": "User",
+      "created_at": "2023-02-20T06:04:49Z",
+      "updated_at": "2023-02-21T16:34:42Z",
+      "closed_at": "2023-02-21T16:34:42Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/firerpa/lamda/issues/32/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/firerpa/lamda/issues/32",
+      "api_url": "https://api.github.com/repos/firerpa/lamda/issues/32",
+      "repository": "firerpa/lamda",
+      "extraction_date": "2025-06-22T00:34:08.599876",
+      "comments": [
+        {
+          "author": "rev1si0n",
+          "body": "连不上应该是配置有问题，可以先检查一下和模板配置的差别。\r\n\r\n## 查看 frps 的日志\r\nvim 修改 /data/adb/modules/lamda/service.sh ，在两条 launch 命令后加上 `--logfile=/data/server.log`\r\n```\r\n$launch --port=${port} --logfile=/data/server.log\r\n```\r\n重启手机，等待一会进入 web shell，输入以下命令将过滤出 frp 相关日志。\r\n```bash\r\ngrep '(fwd)' /data/server.log\r\n```\r\n\r\n完毕后移除这两个选项",
+          "created_at": "2023-02-20T07:00:12Z"
+        }
+      ]
+    }
+  ]
+}

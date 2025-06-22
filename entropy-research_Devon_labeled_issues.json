@@ -1,0 +1,1639 @@
+{
+  "repository": "entropy-research/Devon",
+  "repository_info": {
+    "repo": "entropy-research/Devon",
+    "stars": 3432,
+    "language": "Python",
+    "description": "Devon: An open-source pair programmer",
+    "url": "https://github.com/entropy-research/Devon",
+    "topics": [
+      "agent",
+      "agent-based-framework",
+      "agent-based-model",
+      "ai",
+      "ai-developer",
+      "ai-software",
+      "ai-software-engineer",
+      "code-assistant",
+      "code-generation",
+      "developer-tool",
+      "developer-tools",
+      "gpt-4",
+      "gpt-4o",
+      "groq",
+      "llama3",
+      "ollama",
+      "vscode"
+    ],
+    "created_at": "2024-03-15T04:52:31Z",
+    "updated_at": "2025-06-21T11:56:16Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 142,
+    "labeled_issues_estimate": 15,
+    "labeling_rate": 11.1,
+    "sample_labeled": 4,
+    "sample_total": 36,
+    "has_issues": true,
+    "repo_id": 772385740,
+    "default_branch": "main",
+    "size": 139414
+  },
+  "extraction_date": "2025-06-22T00:44:07.575939",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 29,
+  "issues": [
+    {
+      "issue_number": 22,
+      "title": "Compatibly issue, Windows 11 ",
+      "body": "Hello, yeah, I got this error after running pipx install devon_agent:\r\n\r\n(env) PS C:\\Users\\sonic\\Downloads\\Devon> pipx install devon_agent\r\nFatal error from pip prevented installation. Full pip output in file:\r\n    C:\\Users\\sonic\\.local\\pipx\\logs\\cmd_2024-05-15_23.37.05_pip_errors.log       \r\n\r\nSome possibly relevant errors from pip install:\r\n    ERROR: Ignored the following versions that require a different python version: 0.0.1 Requires-Python <4.0,>=3.10; 0.0.2 Requires-Python <4.0,>=3.10; 0.0.3 Requires-Python <4.0,>=3.10; 0.0.4 Requires-Python <4.0,>=3.10; 0.0.5 Requires-Python <4.0,>=3.10; 0.0.6 Requires-Python <4.0,>=3.10; 0.0.7 Requires-Python <4.0,>=3.10; 0.1.0 Requires-Python <4.0,>=3.10; 0.1.1 Requires-Python <4.0,>=3.10; 0.1.2 Requires-Python <4.0,>=3.10; 0.1.3 Requires-Python <4.0,>=3.10; 0.1.4 Requires-Python <4.0,>=3.10; 0.1.5 Requires-Python <4.0,>=3.10; 0.1.6 Requires-Python <4.0,>=3.10\r\n    ERROR: Could not find a version that satisfies the requirement devon-agent (from versions: none)\r\n    ERROR: No matching distribution found for devon-agent\r\n\r\nError installing devon-agent.\r\n\r\nAny help, is much appreciated.",
+      "state": "closed",
+      "author": "sonicino2",
+      "author_type": "User",
+      "created_at": "2024-05-16T04:42:46Z",
+      "updated_at": "2024-10-27T04:40:54Z",
+      "closed_at": "2024-05-16T06:59:18Z",
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/22/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/22",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/22",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:00.427646",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "Hey @sonicino2, to my knowledge we are currently working on adding support for Windows. Sorry about the inconvenience! I will ping you once we release a version that supports it 👍",
+          "created_at": "2024-05-16T06:59:18Z"
+        },
+        {
+          "author": "emosGambler",
+          "body": "Is there any update?",
+          "created_at": "2024-07-17T23:25:09Z"
+        },
+        {
+          "author": "emosGambler",
+          "body": "Anything? :). What is there to be done exactly?",
+          "created_at": "2024-10-27T04:40:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 49,
+      "title": "Trouble identifying path",
+      "body": "it appears devon has a hard time identifying the path of the items I have asked it to do.  Devon ran: Running command:                                              |\r\n|   open_file                                                                |\r\n|   \"/Users/username/devopsgpt/backend/app/pkgs/tools/llm_basic.py\"         |\r\n|                                                                            |\r\n|   > Failed to open file: /Users/username/DevOpsGPT/username/devopsgpt/   |\r\n|   backend/app/pkgs/tools/llm_basic.py. Error: Could not open file, file    |\r\n|   does not exist: /Users/username/DevOpsGPT/username/devopsgpt/backend   |\r\n|   /app/pkgs/tools/llm_basic.py                                             |\r\n+----------------------------------------------------------------------------+\r\n+----------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                       |\r\n|   The error message indicates that the file llm_basic.py could not be      |\r\n|   opened because it does not exist at the specified path. It seems there   |\r\n|    was a mismatch between the path returned by the find_file command and   |\r\n|    the actual file path.                                                   |\r\n|                                                                            |\r\n|   To resolve this, I should:                                               |\r\n|   1. Double-check the file path returned by find_file                      |\r\n|   2. Verify that the file exists at the correct location                   |\r\n|   3. If the file path is incorrect, update it to the correct path          |\r\n|   4. Open the file using the correct path                                  |\r\n|   5. Check if the LLMBase class is defined in the file                     |\r\n|   6. Make any necessary changes to fix the ImportError                     |\r\n|   7. Run tests to ensure the fix resolves the issue                        |\r\n|                                                                            |\r\n|   I'll start by verifying the file path and updating it if needed.         |\r\n|                                                                            |\r\n+----------------------------------------------------------------------------+\r\n+----------------------------------------------------------------------+\r\n|   Devon ran: Running command:                                        |\r\n|   find_file \"llm_basic.py\"                                           |\r\n|                                                                      |\r\n|   > /Users/username/devopsgpt/backend/app/pkgs/tools/llm_basic.py   |\r\n+----------------------------------------------------------------------+\r\n+----------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                       |\r\n|   The find_file command returned the correct path for the llm_basic.py     |\r\n|   file:                 ",
+      "state": "closed",
+      "author": "businistry",
+      "author_type": "User",
+      "created_at": "2024-05-22T07:32:31Z",
+      "updated_at": "2024-07-01T17:11:07Z",
+      "closed_at": "2024-07-01T17:11:07Z",
+      "labels": [
+        "🕹️ issue: agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/49/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/49",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/49",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:00.640172",
+      "comments": [
+        {
+          "author": "mihirchdev",
+          "body": "thanks for bringing this to our attention. The issue comes from the way paths are being managed by the OpenFile tool. I'll make sure the next version contains the fix to it. What was the directory from which you ran Devon from?\r\n",
+          "created_at": "2024-05-22T20:57:55Z"
+        },
+        {
+          "author": "businistry",
+          "body": "It’s the Devopsgpt directory.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrom: Mihir1003 ***@***.***>\r\nSent: Wednesday, May 22, 2024 3:58 PM\r\nTo: entropy-research/Devon ***@***.***>\r\nCc: Todd S Curry Jr ***@***.***>; Author ***@***.***>\r\nSubject: Re: [entropy-re",
+          "created_at": "2024-05-22T21:02:06Z"
+        },
+        {
+          "author": "businistry",
+          "body": "Is there a work around in the meantime\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrom: Mihir1003 ***@***.***>\r\nSent: Wednesday, May 22, 2024 3:58:16 PM\r\nTo: entropy-research/Devon ***@***.***>\r\nCc: Todd S Curry Jr ***@***.***>; Author ***@***.***>\r\nSubject: Re:",
+          "created_at": "2024-05-22T21:02:53Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "So the issue is happening because of the case in DevOpsGPT. If it is changed to devopsgpt then it should work but that might break your username. If you run it with a username which is all lowercase it should work!",
+          "created_at": "2024-05-22T21:31:33Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@businistry sorry, could you provide the actual path of the file? From the root of the directory? That would help me solve this.",
+          "created_at": "2024-05-27T22:00:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 67,
+      "title": "devon_agent not added to path",
+      "body": "I dont know what way devon_agent is supposed to be added to path. If its a symlink or moving the file to bin. But it does not happen.\r\nArch Linux x86_64",
+      "state": "open",
+      "author": "0xnim",
+      "author_type": "User",
+      "created_at": "2024-06-08T09:54:14Z",
+      "updated_at": "2024-06-30T19:29:16Z",
+      "closed_at": null,
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/67/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/67",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/67",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:00.865168",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "Culprit: https://github.com/entropy-research/Devon/blob/main/devon-tui/source/cli.tsx#L222\r\n`./devon_agent` worked but `devon_agent` gave command not found error",
+          "created_at": "2024-06-08T09:58:06Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@0xnim are you still facing this issue?",
+          "created_at": "2024-06-30T19:29:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 10,
+      "title": "Benchmark on SWE-Bench",
+      "body": "It would be interesting to see the performance on SWE-Bench benchmarks, so that this project can be more clearly differentiated from the increasing number of other coding agents.\r\n \r\n* https://www.swebench.com/\r\n* https://github.com/princeton-nlp/SWE-bench\r\n   \r\n* > [ICLR 2024] SWE-Bench: Can Language Models Resolve Real-world Github Issues?\r\n* https://arxiv.org/abs/2310.06770\r\n   \r\n* > SWE-bench: Can Language Models Resolve Real-World GitHub Issues?\r\n> Carlos E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, Karthik Narasimhan\r\n> Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We consider real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. We therefore introduce SWE-bench, an evaluation framework including 2,294 software engineering problems drawn from real GitHub issues and corresponding pull requests across 12 popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. Claude 2 and GPT-4 solve a mere 4.8% and 1.7% of instances respectively, even when provided with an oracle retriever. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.\r\n\r\n",
+      "state": "open",
+      "author": "distbit0",
+      "author_type": "User",
+      "created_at": "2024-04-10T10:27:40Z",
+      "updated_at": "2024-06-25T12:25:56Z",
+      "closed_at": null,
+      "labels": [
+        "💬 discussion"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/10/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/10",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/10",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:01.078875",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "Hey Yep! We are working on it right now!",
+          "created_at": "2024-04-17T05:38:03Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Hey following up this. We just refactored, and standardized environments. This should allow us (and anyone who wants) to run on swe bench.",
+          "created_at": "2024-05-16T16:44:30Z"
+        },
+        {
+          "author": "nashid",
+          "body": "Have you conducted benchmarks of Devon using the SWE-Bench dataset?",
+          "created_at": "2024-05-22T21:06:54Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@nashid we have, they were pretty good but incomplete. will be pushing for it next week!",
+          "created_at": "2024-05-27T21:08:20Z"
+        },
+        {
+          "author": "BradKML",
+          "body": "Would like to see how this goes vs Aider or AutoCodeRover or OpenDevin https://github.com/aorwall/SWE-bench-docker",
+          "created_at": "2024-06-25T12:25:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 71,
+      "title": "devon",
+      "body": "not work on wsl windows 10",
+      "state": "closed",
+      "author": "werruww",
+      "author_type": "User",
+      "created_at": "2024-06-16T23:20:13Z",
+      "updated_at": "2024-06-18T06:12:27Z",
+      "closed_at": "2024-06-18T06:11:35Z",
+      "labels": [
+        "🔃 duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/71/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/71",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/71",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:01.294102",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "Thanks!",
+          "created_at": "2024-06-17T17:37:14Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "If you have a stack trace that would be great!",
+          "created_at": "2024-06-17T17:37:22Z"
+        },
+        {
+          "author": "ObjectJosh",
+          "body": "Closing, duplicate of #72 ",
+          "created_at": "2024-06-18T06:11:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 46,
+      "title": "Maing websites (python http.server) prevents form continuation",
+      "body": "Devon is waiting for the server to stop - but user can not do that. Perhaps there is an bug for killing the server.\r\n\r\nI needed to kill devon, start again and continue each time. The old port was taken (so the server was still alive), devon was able to use next free port (8001, 8002). \r\n\r\nExpected: devon should close the http server after user confirms that the page looks good. Or keep the server alive and do changes to the html/js files.\r\n\r\nI can provide full log if needed.",
+      "state": "open",
+      "author": "w84death",
+      "author_type": "User",
+      "created_at": "2024-05-21T15:06:09Z",
+      "updated_at": "2024-06-17T17:41:23Z",
+      "closed_at": null,
+      "labels": [
+        "🕹️ issue: agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/46/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/46",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/46",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:01.593485",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "@w84death Hey this is awesome feedback! Yes please post a log, we will get to making a branch to fix it tomorrow or the day after",
+          "created_at": "2024-05-21T17:01:37Z"
+        },
+        {
+          "author": "w84death",
+          "body": "Correction: with simple websites devon creates needed files and \"Devon has left the chat.\". \r\n\r\nYesterday it created server few times. I think creating games or more interactive projects forces it to start the server that leads to the dead-end.\r\n\r\nUnfortunately I ran out of my API credits to do more",
+          "created_at": "2024-05-22T10:42:29Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@Mihir1003  should be taking care of this. should allow us to spawn off new processes. pinging to let him fill you in.",
+          "created_at": "2024-06-17T17:41:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 19,
+      "title": "Stuck on initializing",
+      "body": "I installed everything and when I ran the command \"devon\" it gets stuck on initailizing.",
+      "state": "closed",
+      "author": "mberman84",
+      "author_type": "User",
+      "created_at": "2024-05-13T16:57:52Z",
+      "updated_at": "2024-06-09T14:11:58Z",
+      "closed_at": "2024-05-21T18:29:58Z",
+      "labels": [
+        "🕹️ issue: agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 14,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/19/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/19",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/19",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:01.867487",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "@mberman84 Hey thanks for raising this issue! Currently it doesn't handle all errors well so it might have crashed somewhere along the way. Are there any logs above the \"Initializing...\" UI?",
+          "created_at": "2024-05-13T17:15:45Z"
+        },
+        {
+          "author": "mberman84",
+          "body": "@ObjectJosh no logs",
+          "created_at": "2024-05-13T21:25:33Z"
+        },
+        {
+          "author": "ObjectJosh",
+          "body": "@mberman84 Hm, interesting. What OS are you on? And does it happen consistently (it hasn't been able to respond after restarting?)",
+          "created_at": "2024-05-13T21:27:41Z"
+        },
+        {
+          "author": "businistry",
+          "body": "I am experiencing the same thing on Mac Pro M3\r\n",
+          "created_at": "2024-05-16T15:04:58Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Ok, theres going to be a big refactor we are packaging today that should fix the hanging. Will also include openai support. @mberman84 @businistry",
+          "created_at": "2024-05-16T16:48:43Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "It's stuck",
+      "body": "![grafik](https://github.com/entropy-research/Devon/assets/95778421/9fb1898b-b97e-46d9-b7bb-4a1fb152e0a7)\r\n",
+      "state": "closed",
+      "author": "PierrunoYT",
+      "author_type": "User",
+      "created_at": "2024-05-18T13:19:04Z",
+      "updated_at": "2024-06-09T13:52:51Z",
+      "closed_at": "2024-05-19T18:49:55Z",
+      "labels": [
+        "🕹️ issue: agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/31/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/31",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/31",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:02.087729",
+      "comments": [
+        {
+          "author": "JosueBCe",
+          "body": "I'm facing the same issue here\r\n![image](https://github.com/entropy-research/Devon/assets/102635770/ee9c0fda-c1b6-4a66-a8cc-14db81dfee98)\r\n",
+          "created_at": "2024-05-18T15:10:23Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@PierrunoYT @JosueBCe  can you guys run it in debug mode? That would help a lot.",
+          "created_at": "2024-05-18T19:27:17Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "For reference on how to run in debug mode, see the readme",
+          "created_at": "2024-05-18T19:27:36Z"
+        },
+        {
+          "author": "PierrunoYT",
+          "body": "> @PierrunoYT @JosueBCe can you guys run it in debug mode? That would help a lot.\r\n\r\npierruno@Pierruno:~$ devon --debug\r\nUsing model name: gpt4-o\r\nUsage: devon_agent server [OPTIONS]\r\nTry 'devon_agent server --help' for help.\r\n\r\n\r\nError: No such option: --model Did you mean --help?",
+          "created_at": "2024-05-18T19:30:27Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Cool, thanks. Please install the latest version! Should fix it.",
+          "created_at": "2024-05-18T20:08:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 21,
+      "title": "Add support for using via an sdk",
+      "body": "AutoGPT is about to expand the way we do components and give agents access to tools. If it's not a ton of trouble, I'd be interested in how you'd go about creating a Component to provide your tool to AutoGPT (and other agents we build) as a component. \r\n\r\nDocs still in progress, things in movement and such but trying to get some conversations started on how to actually integrate other agents. \r\n\r\nI would say don’t start coding this on our behalf until we chat :)",
+      "state": "open",
+      "author": "ntindle",
+      "author_type": "User",
+      "created_at": "2024-05-15T11:28:42Z",
+      "updated_at": "2024-05-31T15:35:59Z",
+      "closed_at": null,
+      "labels": [
+        "✨ enhancement",
+        "💬 discussion"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/21/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/21",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/21",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:02.316246",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "Sounds great! @ntindle how can I hop in on the conversation so I can keep tabs on our end?",
+          "created_at": "2024-05-16T16:51:50Z"
+        },
+        {
+          "author": "ntindle",
+          "body": "From our side, it's pretty easy! Join our [discord](https://discord.gg/autogpt) and ping me @ntindle \n\nI can also join yours and we can go from there",
+          "created_at": "2024-05-18T14:27:48Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Sounds good!",
+          "created_at": "2024-05-18T20:15:45Z"
+        },
+        {
+          "author": "ntindle",
+          "body": "joined your discord :)",
+          "created_at": "2024-05-31T15:35:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 32,
+      "title": "It attempted to open a directory as a file and got stuck",
+      "body": "<img width=\"1425\" alt=\"image\" src=\"https://github.com/entropy-research/Devon/assets/2593231/8377238e-9d46-43be-9a75-e4280e7224b4\">\r\n<img width=\"1417\" alt=\"image\" src=\"https://github.com/entropy-research/Devon/assets/2593231/88772089-31f9-48c2-8a90-964520d0e991\">\r\n<img width=\"1422\" alt=\"image\" src=\"https://github.com/entropy-research/Devon/assets/2593231/e6a7ebd6-0cd9-4cd1-ae1f-de75a7878dd9\">\r\n<img width=\"1431\" alt=\"image\" src=\"https://github.com/entropy-research/Devon/assets/2593231/3a3728df-7a3a-478b-aa31-aef355586257\">",
+      "state": "closed",
+      "author": "AlysonBasilio",
+      "author_type": "User",
+      "created_at": "2024-05-18T14:53:16Z",
+      "updated_at": "2024-05-28T23:30:12Z",
+      "closed_at": "2024-05-28T23:30:12Z",
+      "labels": [
+        "🕹️ issue: agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/32/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/32",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/32",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:02.537917",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "Thanks for opening this! I think I know whats going on.\r\n\r\nI think there may need to be some additional error handling around tools, we recently did a large refactor to make working with and adding tools easier.",
+          "created_at": "2024-05-18T18:38:15Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Hey so I just replicated this @AlysonBasilio. I had it open the devon-tui folder as a file, and it continued to function as normal.\r\n\r\n<img width=\"202\" alt=\"Screenshot 2024-05-18 at 12 20 34 PM\" src=\"https://github.com/entropy-research/Devon/assets/61808204/6892a5e6-32bd-4db0-a5db-0ed5acdb8641\">\r\n\r\n",
+          "created_at": "2024-05-18T19:24:13Z"
+        },
+        {
+          "author": "AlysonBasilio",
+          "body": "I'm running a mac with an M1 processor",
+          "created_at": "2024-05-19T13:51:36Z"
+        },
+        {
+          "author": "dockercore",
+          "body": "me too",
+          "created_at": "2024-05-21T03:26:40Z"
+        },
+        {
+          "author": "dockercore",
+          "body": "> I'm running a mac with an M1 processor我正在运行配备 M1 处理器的 Mac\r\n\r\nme too",
+          "created_at": "2024-05-21T03:26:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 55,
+      "title": "Local ollama issues:  loops forever on random problems: problems with saving/ovewriting, no closing fence",
+      "body": "Running local ollama run deepseek-coder:6.7b\r\nKubuntu 24.04, RTX 2060 6GB VRAM\r\n\r\n**Fail to generate files**\r\nIt loops forever trying to run  CreateFileTool.function() but got  too many arguments. \r\n\r\n```\r\n+------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                     |\r\n|   I understand that we are creating a website about some of my indie games which were    |\r\n|   created using Assembly language for the x86 boot sector. I need to create the          |\r\n|   necessary files and directories for this project.                                      |\r\n|                                                                                          |\r\n+------------------------------------------------------------------------------------------+\r\n+--------------------------------------------------------------------------------------------+\r\n|   Devon ran: Running command:                                                              |\r\n|   create_file index.html                                                                   |\r\n|   ```                                                                                      |\r\n|   &lt;DOCTYPE html&gt;                                                                     |\r\n|   &lt;html&gt;                                                                             |\r\n|   &lt;head&gt;                                                                             |\r\n|        &lt;title&gt;My Indie Games&lt;/title&gt;                                           |\r\n|   &lt;/head&gt;                                                                            |\r\n|   &lt;body&gt;                                                                             |\r\n|        &lt;h1&gt;Welcome to my indie games website&lt;/h1&gt;                              |\r\n|        &lt;p&gt;Here you can find information about some of my favorite indie games, all   |\r\n|    made using Assembly language for the x86 boot sector.&lt;/p&gt;                         |\r\n|   &lt;/body&gt;                                                                            |\r\n|   &lt;/html&gt;                                                                            |\r\n|   ```                                                                                      |\r\n|                                                                                            |\r\n|   > CreateFileTool.function() takes from 3 to 4 positional arguments but 44 were given     |\r\n+--------------------------------------------------------------------------------------------+\r\n```\r\n\r\n**Generate first file but fails with updating it**\r\nAfter restarting and given same prompt it now creates index.html but then loops forever trying to update the file.\r\n\r\n```\r\n+-------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                      |\r\n|   I understand the user's request to create a website about his indie games, which are    |\r\n|   written in Assembly language and targeting an x86 boot sector. I will start by          |\r\n|   creating a basic HTML structure for the site.                                           |\r\n|                                                                                           |\r\n+-------------------------------------------------------------------------------------------+\r\n+--------------------------------------------------------------------------------------+\r\n|   Devon ran: Running command:                                                        |\r\n|   create_file index.html                                                             |\r\n|   <<<                                                                                |\r\n|   &lt;DOCTYPE html&gt;                                                               |\r\n|   &lt;html lang=\"en\"&gt;                                                             |\r\n|   &lt;head&gt;                                                                       |\r\n|        &lt;meta charset=\"UTF-8\"&gt;                                                  |\r\n|        &lt;title&gt;My Indie Games&lt;/title&gt;                                     |\r\n|   &lt;/head&gt;                                                                      |\r\n|   &lt;body&gt;                                                                       |\r\n|        &lt;h1&gt;Welcome to my indie games website&lt;/h1&gt;                        |\r\n|   &lt;/body&gt;                                                                      |\r\n|   &lt;/html&gt;                                                                      |\r\n|   >>>                                                                                |\r\n|                                                                                      |\r\n|   > Failed to create file: index.html. Error: Could not create file, file already    |\r\n|   exists: /home/kj/Code/devon/games-web/index.html                                   |\r\n+--------------------------------------------------------------------------------------+\r\n```\r\n\r\n**Not valid HTML files**\r\nThe file itself lacks proper TAGs:\r\n\r\n```\r\n&lt;!DOCTYPE html&gt;\r\n&lt;html lang=\"en\"&gt;\r\n&lt;head&gt;\r\n    &lt;meta charset=\"UTF-8\"&gt;\r\n    &lt;title&gt;My Indie Games&lt;/title&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n    &lt;h1&gt;Welcome to my indie games website!&lt;/h1&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n```\r\nThis only happens once.\r\n\r\n\r\n**Not closing fence**\r\n\r\nThird restart  (clean folder) it generates valid index.html:\r\n\r\n```\r\n+--------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                       |\r\n|   I understand the requirement of creating a website for my indie games. I will start by   |\r\n|    creating an HTML file that serves as the main page of our website. This will include    |\r\n|   information about the game catalog, introduction and instructions on how to run them     |\r\n|   (in emulator or from floppy).                                                            |\r\n|                                                                                            |\r\n+--------------------------------------------------------------------------------------------+\r\n+--------------------------------------------------------------------------------------------+\r\n|   Devon ran: Running command:                                                              |\r\n|   create_file index.html                                                                   |\r\n|   <<<                                                                                      |\r\n|   <!DOCTYPE html>                                                                          |\r\n|   <html>                                                                                   |\r\n|       <head>                                                                               |\r\n|           <title>Indie Games Catalog</title>                                               |\r\n|       </head>                                                                              |\r\n|       <body>                                                                               |\r\n|           <h1>Welcome to our Indie Games Catalog</h1>                                      |\r\n|           <p>Here you can find a collection of indie games developed in assembly for x86   |\r\n|    bootsector.                                                                             |\r\n|           Each game comes with an introduction and instructions on how to run them (in     |\r\n|   emulator or from floppy).</<｜begin▁of▁sentence｜>                                       |\r\n|       </body>                                                                              |\r\n|   </html>                                                                                  |\r\n|   >>>                                                                                      |\r\n|                                                                                            |\r\n|   > Successfully created file /home/kj/Code/devon/games-web/index.html                     |\r\n+--------------------------------------------------------------------------------------------+\r\n```\r\n\r\n ..but then loops forever on No closing fence (>>>) :\r\n\r\n```\r\n+--------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                       |\r\n|   I understand the requirement of creating a website for my indie games. I will start by   |\r\n|    creating an HTML file that serves as the main page of our website. This will include    |\r\n|   information about the game catalog, introduction and instructions on how to run them     |\r\n|   (in emulator or from floppy).                                                            |\r\n|                                                                                            |\r\n+--------------------------------------------------------------------------------------------+\r\n+------------------------------------------------------------+\r\n|   Devon ran:                                               |\r\n|   > No closing fence (>>>) found for multiline argument.   |\r\n+------------------------------------------------------------+\r\n```\r\n\r\n\r\nClean the folder (because it can not overwrite files) and it's the same thing with good html and then `No closing fence` loop.\r\n",
+      "state": "closed",
+      "author": "w84death",
+      "author_type": "User",
+      "created_at": "2024-05-24T12:37:25Z",
+      "updated_at": "2024-05-28T23:22:59Z",
+      "closed_at": "2024-05-28T23:22:59Z",
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/55/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/55",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/55",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:02.746525",
+      "comments": [
+        {
+          "author": "emlazzarin",
+          "body": "I have the same issue consistently with `gpt-4o`, so I don't think this is specific to local ollama.",
+          "created_at": "2024-05-24T21:52:31Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@emlazzarin @w84death Hey guys! thanks for this, I am going to try to find a fix for it, seems like a bug in the parsing code. Will fix today :)",
+          "created_at": "2024-05-24T23:04:45Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Just solved this with an update to the parser!\r\n\r\nAlso this seems to sometimes be a model hallucination problem. At least for deepseek. I'll be adding support to enforce output structure soon. Opened an issue for this: #62\r\n\r\nclosing!",
+          "created_at": "2024-05-28T23:22:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 20,
+      "title": "agent attempts to open files that do not exist, edit loops with indentation error",
+      "body": "\r\nInstalled and tried my first prompt:\r\n\r\n\"I'd like to improve the test coverage in this project for the python files in src/shared\"\r\n\r\nAgent decided to try to open a file that does not exist and then hangs:\r\n\r\n``` bash\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                                                                                                                                        |\r\n|   The user requested improving test coverage for the Python files in the src/shared directory. From the directory listing, I can see there are Python files in src/shared, but no test files specifically   |\r\n|    for that directory.                                                                                                                                                                                      |\r\n|                                                                                                                                                                                                             |\r\n|   To improve test coverage, I should:                                                                                                                                                                       |\r\n|                                                                                                                                                                                                             |\r\n|   1. Open and review the Python files in src/shared to understand what functionality needs testing                                                                                                          |\r\n|   2. Create a new test file in the tests/shared directory for the src/shared code                                                                                                                           |\r\n|   3. Write test cases that exercise the key functionality and edge cases of the src/shared code                                                                                                             |\r\n|   4. Run the new tests to make sure they pass                                                                                                                                                               |\r\n|   5. Check the test coverage report to confirm coverage has improved                                                                                                                                        |\r\n|   6. Submit the changes                                                                                                                                                                                     |\r\n|                                                                                                                                                                                                             |\r\n|   I'll start by opening the Python files in src/shared to see what needs testing.                                                                                                                           |\r\n|                                                                                                                                                                                                             |\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|   Devon ran: Running command:                                                                                                                         |\r\n|   open_file \"src/shared/utils.py\"                                                                                                                     |\r\n|                                                                                                                                                       |\r\n|   > Failed to open file: /Users/rwalters/Documents/GitHub.nosync/python-robb/src/shared/utils.py. Error: Could not open file, file does not exist:    |\r\n|   /Users/rwalters/Documents/GitHub.nosync/python-robb/src/shared/utils.py                                                                             |\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|                                                                                                                                                                                                               |\r\n|   Waiting for Devon...                                                                                                                                                                                        |\r\n|                                                                                                                                                                                                               |\r\n|                                                                                                                                                                                                               |\r\n|                                                                                                                                                                                                               |\r\n+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n```\r\n",
+      "state": "closed",
+      "author": "rjwalters",
+      "author_type": "User",
+      "created_at": "2024-05-13T17:55:15Z",
+      "updated_at": "2024-05-28T20:26:13Z",
+      "closed_at": "2024-05-28T20:26:12Z",
+      "labels": [
+        "💬 discussion",
+        "🕹️ issue: agent"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 13,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/20/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/20",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/20",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:02.964091",
+      "comments": [
+        {
+          "author": "mihirchdev",
+          "body": "Yeah, the agent does try to open files that don't exist which is fine (it generally recovers from its mistake). However, it should not hang. Thanks for bringing it up, I'll investigate it\r\n",
+          "created_at": "2024-05-13T18:21:14Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "What OS are you using?",
+          "created_at": "2024-05-13T18:21:42Z"
+        },
+        {
+          "author": "rjwalters",
+          "body": "I'm on mac os",
+          "created_at": "2024-05-13T18:48:10Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "I think right now this is a context management problem. To me that seems like a hallucination from the model. Just made some updates to the tools the model has access to which should improve reliability.\r\n\r\nCurrently the model has the ability to directly search for files and open them and does a fai",
+          "created_at": "2024-05-16T16:51:07Z"
+        },
+        {
+          "author": "rjwalters",
+          "body": "I don't have a utils.py file so it must have been hallucinated. It should have found these files:\r\n\r\n```\r\n(venv) rwalters@robb python-robb % ls -al src/shared\r\ntotal 232\r\ndrwxr-xr-x  20 rwalters  staff    640 May 16 10:08 .\r\ndrwxr-xr-x  13 rwalters  staff    416 May 15 13:38 ..\r\n-rw-r--r--   1 rwalt",
+          "created_at": "2024-05-16T17:40:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 54,
+      "title": "Devon sometimes doesnt actually write to files",
+      "body": "In certain scenarios, the agent successfully edits but the changes arent reflected.\r\nPlatform: MacOS\r\nPotential causes:\r\n- permissions (can try to create a env where the agents doesn't have any permissions)\r\n\r\n(for reference discord: support)\r\n",
+      "state": "closed",
+      "author": "mihirchdev",
+      "author_type": "User",
+      "created_at": "2024-05-23T02:42:37Z",
+      "updated_at": "2024-05-28T20:13:02Z",
+      "closed_at": "2024-05-28T20:13:01Z",
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/54/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/54",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/54",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.164792",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "This actually is probably happening on empty files. I have replicated that. Will fix right now.",
+          "created_at": "2024-05-27T21:55:13Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "fixed",
+          "created_at": "2024-05-28T20:13:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 59,
+      "title": "Edit tool fails on empty files",
+      "body": "Adding this because empty files cause the edit tool to fail.",
+      "state": "closed",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-26T07:49:10Z",
+      "updated_at": "2024-05-28T20:12:49Z",
+      "closed_at": "2024-05-28T20:12:49Z",
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/59/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/59",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/59",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.360300",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "fixed",
+          "created_at": "2024-05-28T20:12:49Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 38,
+      "title": "LM Studio integration",
+      "body": "👋  I see that local LLMs are on the roadmap, are there any plans for LM Studio as well? Is there anything needed to make adding it easier? ",
+      "state": "closed",
+      "author": "mrdjohnson",
+      "author_type": "User",
+      "created_at": "2024-05-20T16:23:13Z",
+      "updated_at": "2024-05-28T08:35:16Z",
+      "closed_at": "2024-05-27T22:02:47Z",
+      "labels": [
+        "✨ enhancement",
+        "👋 good first issue",
+        "🤖 feat: agent"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/38/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/38",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/38",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.582085",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "@mrdjohnson We have a branch with a working ollama integration, but I'm not a big user of LM Studio. However, from what I know its an endpoint right? \r\n\r\nIf you have any more context on how you'd like to use it that would be great. Also, I think this may just require a slight change to managing conf",
+          "created_at": "2024-05-20T17:59:17Z"
+        },
+        {
+          "author": "mrdjohnson",
+          "body": "@killind-dev LM Studio is a local platform for using LLMs, it has great support for a lot of huggingface models as well. The server it comes with is open ai api compatible. Like ollama, LM Studio would be an option to use Devon based on local generation. ",
+          "created_at": "2024-05-21T06:57:13Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Cool, sounds like [this](https://docs.litellm.ai/docs/providers/custom_openai_proxy) is what we want? Just use the completions function in litellm?",
+          "created_at": "2024-05-21T07:15:17Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@mrdjohnson just merged custom model config support, so in theory this is also covered as long as the endpoint is oai compatible! Will be updating documentation soon with this information. Closing for now.",
+          "created_at": "2024-05-27T22:02:47Z"
+        },
+        {
+          "author": "mrdjohnson",
+          "body": "@akiradev0x  Excited to hear about the custom model config support! That would definitely work for LM Studio as well as Ollama, I'll work on getting LM Studio into Litellm and circle back here to try to get first party LM Studio support! It would be an honor to have our users see affiliation with aw",
+          "created_at": "2024-05-28T08:35:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 61,
+      "title": "Regression Testing Spec document",
+      "body": "Basically we want to be able to define some testing spec document with N steps and test points for regression testing.\r\n\r\nThis task should:\r\n\r\n1) Implement regression tests for tools and model (in headless mode)\r\n2) Implement a system by which the model can know which steps to execute and can be tested on its execution of those steps",
+      "state": "open",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-27T22:51:12Z",
+      "updated_at": "2024-05-28T00:34:55Z",
+      "closed_at": null,
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/61/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/61",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/61",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.800840",
+      "comments": []
+    },
+    {
+      "issue_number": 60,
+      "title": "Add headless mode",
+      "body": "what the title says.",
+      "state": "closed",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-27T22:04:32Z",
+      "updated_at": "2024-05-27T22:49:40Z",
+      "closed_at": "2024-05-27T22:49:39Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/60/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "akiradev0x"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/60",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/60",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.800854",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "done",
+          "created_at": "2024-05-27T22:49:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 40,
+      "title": "Agent regression tests",
+      "body": "In order to make it easy for people to contribute, we need a good system for checking regressions.\r\n\r\nAt the moment, I propose using a simple file editing task  or something where the model has to search, create and edit files. Running this with each supported model on a PR or something like that. Unsure of frequency as of now.",
+      "state": "closed",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-20T19:28:59Z",
+      "updated_at": "2024-05-27T22:49:22Z",
+      "closed_at": "2024-05-27T22:49:22Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/40/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/40",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/40",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:03.976732",
+      "comments": [
+        {
+          "author": "amphetamarina",
+          "body": "As of now, Devon can't be run in headless mode, or am I wrong here? \r\nSo wouldn't a requirement for this issue be a headless mode for Devon?\r\n\r\nIdea: spin off this issue into a \"Regression Testing Spec document\" where we can draft a TESTING.md file with step-by-step guide following your file editing",
+          "created_at": "2024-05-23T16:12:10Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Really good idea, lets get a headless mode working. This shouldnt be too hard, basically we just remove the user tools and force the task to be some task set via the cli in `__main__.py`",
+          "created_at": "2024-05-27T07:32:56Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "just added headless mode.",
+          "created_at": "2024-05-27T22:45:56Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "closing issue and creating another for step by step testing workflows",
+          "created_at": "2024-05-27T22:49:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 51,
+      "title": "Add a way to ignore some folders from scanning",
+      "body": "Devon appears to be attempting to read the entire directory, including both 'node_modules' and '.venv' folders. If so, is there a method to create a '.devonignore' file or utilize the existing '.gitignore' file to selectively 'hide' specific content from Devon?",
+      "state": "closed",
+      "author": "imakecodes",
+      "author_type": "User",
+      "created_at": "2024-05-22T13:00:18Z",
+      "updated_at": "2024-05-27T21:54:33Z",
+      "closed_at": "2024-05-27T21:54:32Z",
+      "labels": [
+        "✨ enhancement",
+        "👋 good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/51/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/51",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/51",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.198433",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "Hey @imakecodes this is a great suggestion! Going ahead and marking it as a good first issue :)",
+          "created_at": "2024-05-22T20:20:47Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "Thanks for the idea! I will try to implement this by tomorrow\r\n",
+          "created_at": "2024-05-22T20:54:04Z"
+        },
+        {
+          "author": "imakecodes",
+          "body": "@ObjectJosh @Mihir1003 I was taking a look on #53 and make sense to add a \"exclude\" key on ` .devon.config` file instead of creating a new file for this",
+          "created_at": "2024-05-23T14:34:49Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@imakecodes doing that now!",
+          "created_at": "2024-05-27T21:06:25Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "just merged code for this. closing.",
+          "created_at": "2024-05-27T21:54:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 47,
+      "title": "Multi-Model Config",
+      "body": "Goal here I think is to make sure that we can easily allow users to swap out endpoints, prompts, and models. So to complete this,\r\nwe should have a basic config system that captures:\r\n\r\n1) default agent name\r\n2) model name\r\n\r\nand then, some sort of abstraction that acts as a agent:model:prompt mapping",
+      "state": "closed",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-21T22:46:58Z",
+      "updated_at": "2024-05-27T21:02:36Z",
+      "closed_at": "2024-05-27T21:02:36Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/47/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "amphetamarina"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/47",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/47",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.384529",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "@cyborgmarina feel free to pick this one up!",
+          "created_at": "2024-05-21T22:47:31Z"
+        },
+        {
+          "author": "amphetamarina",
+          "body": "On it, will report back here with updates and request for discussions 🫡",
+          "created_at": "2024-05-22T01:08:01Z"
+        },
+        {
+          "author": "imakecodes",
+          "body": "This will be awesome, today I was going to task about support to use Ollama instead of OpenAI/other paid options",
+          "created_at": "2024-05-22T16:22:35Z"
+        },
+        {
+          "author": "amphetamarina",
+          "body": "PR updated here: #53 ",
+          "created_at": "2024-05-23T14:30:45Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "closing, #53 is merged!",
+          "created_at": "2024-05-27T21:02:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 56,
+      "title": "allow Devon's history to be written and read from disk",
+      "body": "Often Devon gets stuck with something — either a loop or other bug — and the only path out is to terminate the process and start over. Ideally, the thought process log, scratchpad, etc. that represents Devon's work could be written to disk so it can resume where it left off should the process need to be terminated.\r\n\r\nThis could also be useful for running tests, forking Devons, or even collaboration between Devons in the future.",
+      "state": "closed",
+      "author": "emlazzarin",
+      "author_type": "User",
+      "created_at": "2024-05-24T21:55:38Z",
+      "updated_at": "2024-05-27T07:30:09Z",
+      "closed_at": "2024-05-27T07:30:08Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/56/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/56",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/56",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.601909",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "@emlazzarin awesome idea, on it. Doing a bug-a-thon tonight and tomorrow, and I'll add this. Thank you for being patient!",
+          "created_at": "2024-05-24T23:05:51Z"
+        },
+        {
+          "author": "ObjectJosh",
+          "body": "Thanks for the feedback! Related #44 ",
+          "created_at": "2024-05-24T23:29:15Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Just closed this out!",
+          "created_at": "2024-05-27T07:30:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 58,
+      "title": "Devon server requires SIGKILL instead of SIGTERM",
+      "body": "I am making this issue to bring attention to the fact that the cli sends a SIGKILL but should send a SIGTERM",
+      "state": "open",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-26T07:21:47Z",
+      "updated_at": "2024-05-26T07:21:47Z",
+      "closed_at": null,
+      "labels": [
+        "🪲 bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/58/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/58",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/58",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.768920",
+      "comments": []
+    },
+    {
+      "issue_number": 43,
+      "title": "Support for Google Gemini ",
+      "body": "It'd be great to get support for Google Gemini too ",
+      "state": "open",
+      "author": "therealbryanho",
+      "author_type": "User",
+      "created_at": "2024-05-21T05:46:09Z",
+      "updated_at": "2024-05-26T03:34:35Z",
+      "closed_at": null,
+      "labels": [
+        "✨ enhancement",
+        "👋 good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/43/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/43",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/43",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.768940",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "@therealbryanho Thanks for the recommendation! Added to the [list](https://github.com/entropy-research/Devon/blob/main/README.md#current-goals) ✅ \r\nContributions welcome, if anyone wants to give this a shot :)",
+          "created_at": "2024-05-21T06:26:06Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "Really excited to see how well Gemini 1.5 does specially with its insane context window. I wonder if it is able to reason through all of its context window",
+          "created_at": "2024-05-21T06:28:18Z"
+        },
+        {
+          "author": "amphetamarina",
+          "body": "I *think* with #53 it should be possible to use Gemini, but might need to check LiteLLM support for it. \r\n",
+          "created_at": "2024-05-23T16:14:27Z"
+        },
+        {
+          "author": "Elite",
+          "body": "Excited to see Google Gemini support in coming versions :)",
+          "created_at": "2024-05-26T03:34:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 44,
+      "title": "Exceeding per-minute rate limit",
+      "body": "It would be great if there could be some way that Devon outputs a history so that if the workflow is stopped it can be resumed again upon reloading. I Have tried a few tricks to keep my workflow going but I still keep hitting rate limits. My attempt was to create an instructions.txt with a very detailed explanation of what I wanted. In my instructions I told Devon to keep a running log in a separate txt file so that the workflow could be easily restarted in case of a crash. Within my instructions.txt I tell Devon to first read the previous log and then continue working. It kind of works, but not well enough to get me through the entire project.",
+      "state": "open",
+      "author": "basher83",
+      "author_type": "User",
+      "created_at": "2024-05-21T06:08:03Z",
+      "updated_at": "2024-05-21T17:34:42Z",
+      "closed_at": null,
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/44/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/44",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/44",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:04.972194",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "@basher83 Yup, better persistence / restoring from a history is definitely on the list, in order to make it a lot more usable. In the meantime, a quick trick some have done just to avoid the per-minute rate limit is add a sleep duration in the code.",
+          "created_at": "2024-05-21T06:15:54Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "That's a actually really cool way to persist workflows!Adding persistence is definitely on the roadmap. \nRate limit is strange as I added exponential backoff. I'll increase backoff period so those can be avoided!",
+          "created_at": "2024-05-21T06:23:50Z"
+        },
+        {
+          "author": "basher83",
+          "body": "@ObjectJosh Thanks for the tip! I suppose a sleep duration would have been a simpler approach to my complex solution. I appreciate the feedback and look forward to how this project improves and evolves.",
+          "created_at": "2024-05-21T17:34:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "`poetry install` loop that degenerates into `scroll_down \"main.py\"` loop",
+      "body": "I asked Devon to first prepare its environment properly and it seems there was an issue with Poetry, which kept indicating there were no dependencies to install or update (which is not true). Separate from this issue, how should we reason about Devon's Python environment?\r\n\r\n```\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:15.441780+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:15.441882+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:15.442616+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:15.443602+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:16.039170+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:16.039222+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:16.039242+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:16.039260+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\nINFO:     127.0.0.1:63087 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                                                                                              |\r\n|   I have reviewed the `README.md` and `main.py` files. The `README.md` provides an overview of the project architecture, installation instructions, and usage.    |\r\n|   The `main.py` file contains the main logic for setting up and running the Telegram bot.                                                                         |\r\n|                                                                                                                                                                   |\r\n|   To proceed, I'll set up the environment using `poetry` as instructed in the `README.md`. This involves running `poetry install` to install the dependencies     |\r\n|   and then `poetry shell` to activate the virtual environment.                                                                                                    |\r\n|                                                                                                                                                                   |\r\n|   Since I cannot run the code due to missing API keys, I'll focus on identifying potential improvements by reviewing the code and documentation. I'll start by    |\r\n|   installing the dependencies using `poetry`.                                                                                                                     |\r\n|                                                                                                                                                                   |\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n+----------------------------------------------+\r\n|   Devon ran: Running command:                |\r\n|   poetry install                             |\r\n|                                              |\r\n|   > Installing dependencies from lock file   |\r\n|                                              |\r\n|   No dependencies to install or update       |\r\n+----------------------------------------------+\r\nINFO:     127.0.0.1:63088 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63090 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63101 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63102 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63103 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63105 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\n\r\n\r\n\r\n\r\n\r\n****************\r\n\r\n\r\nNAME: Devon\r\n\r\nTHOUGHT:\r\nI have reviewed the `README.md` and `main.py` files. The `README.md` provides an overview of the project architecture, installation instructions, and usage. The `main.py` file contains the main logic for setting up and running the Telegram bot.\r\n\r\nTo proceed, I'll set up the environment using `poetry` as instructed in the `README.md`. This involves running `poetry install` to install the dependencies and then `poetry shell` to activate the virtual environment.\r\n\r\nSince I cannot run the code due to missing API keys, I'll focus on identifying potential improvements by reviewing the code and documentation. I'll start by installing the dependencies using `poetry`.\r\n\r\n\r\nACTION:\r\npoetry install\r\n\r\n\r\nOBSERVATION: Installing dependencies from lock file\r\n\r\nNo dependencies to install or update\r\n\r\nSCRATCHPAD: None\r\n\r\n\r\n****************\r\n\r\n\r\n\r\n\r\n\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:22.625999+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:22.626130+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:22.626211+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:22.626319+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:23.200441+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:23.200488+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:23.200508+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:23.200526+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\nINFO:     127.0.0.1:63107 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                                                                                              |\r\n|   I have reviewed the `README.md` and `main.py` files. The `README.md` provides an overview of the project architecture, installation instructions, and usage.    |\r\n|   The `main.py` file contains the main logic for setting up and running the Telegram bot.                                                                         |\r\n|                                                                                                                                                                   |\r\n|   To proceed, I'll set up the environment using `poetry` as instructed in the `README.md`. This involves running `poetry install` to install the dependencies     |\r\n|   and then `poetry shell` to activate the virtual environment.                                                                                                    |\r\n|                                                                                                                                                                   |\r\n|   Since I cannot run the code due to missing API keys, I'll focus on identifying potential improvements by reviewing the code and documentation. I'll start by    |\r\n|   installing the dependencies using `poetry`.                                                                                                                     |\r\n|                                                                                                                                                                   |\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n+----------------------------------------------+\r\n|   Devon ran: Running command:                |\r\n|   poetry install                             |\r\n|                                              |\r\n|   > Installing dependencies from lock file   |\r\n|                                              |\r\n|   No dependencies to install or update       |\r\n+----------------------------------------------+\r\nINFO:     127.0.0.1:63108 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63121 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63128 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\nINFO:     127.0.0.1:63133 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\n\r\n\r\n\r\n\r\n\r\n****************\r\n\r\n\r\nNAME: Devon\r\n\r\nTHOUGHT:\r\nI have successfully reviewed the `README.md` and `main.py` files. The next step is to identify potential improvements to the library. Since I cannot run the code due to missing API keys, I will focus on code review and documentation.\r\n\r\nI'll start by examining the `main.py` file for any potential improvements or refactoring opportunities.\r\n\r\n\r\nACTION:\r\nscroll_down \"main.py\"\r\n\r\n\r\nOBSERVATION: Installing dependencies from lock file\r\n\r\nNo dependencies to install or update\r\n\r\nSCRATCHPAD: None\r\n\r\n\r\n****************\r\n\r\n\r\n\r\n\r\n\r\nTraceback (most recent call last):\r\n  File \"/Users/elazzarin/.local/pipx/venvs/devon-agent/lib/python3.12/site-packages/devon_agent/session.py\", line 321, in step_event\r\n    response = env.tools[toolname]({\r\n               ^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/Users/elazzarin/.local/pipx/venvs/devon-agent/lib/python3.12/site-packages/devon_agent/tool.py\", line 91, in __call__\r\n    response = self.function(context, *args, **kwargs)\r\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/Users/elazzarin/.local/pipx/venvs/devon-agent/lib/python3.12/site-packages/devon_agent/tools/editortools.py\", line 568, in function\r\n    ctx[\"state\"].editor.file[abs_path][\"page\"] = new_page_number\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\r\nTypeError: 'NoneType' object is not subscriptable\r\n\r\n\r\nError routing tool call: 'NoneType' object is not subscriptable\r\n\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.248566+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.248695+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.248770+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.248870+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n/Users/elazzarin/code/gptgenie main.py\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252091+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252180+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252231+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252273+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252313+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'EnvironmentResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252351+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ToolResponse', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252390+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\n(True, {'properties': {'batch_size': 1, 'event_type': 'ModelRequest', 'message': '', 'server_context': 'FastAPI', '$lib': 'posthog-python', '$lib_version': '3.5.0', '$geoip_disable': True}, 'timestamp': '2024-05-20T15:33:28.252430+00:00', 'context': {}, 'distinct_id': '9389db25-00e0-489b-9b2a-27dd602686d9', 'event': 'SessionEventEvent'})\r\nINFO:     127.0.0.1:63134 - \"GET /session/cli/events HTTP/1.1\" 200 OK\r\n\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n|   Devon is thinking:                                                                                                                                              |\r\n|   I have successfully reviewed the `README.md` and `main.py` files. The next step is to identify potential improvements to the library. Since I cannot run the    |\r\n|   code due to missing API keys, I will focus on code review and documentation.                                                                                    |\r\n|                                                                                                                                                                   |\r\n|   I'll start by examining the `main.py` file for any potential improvements or refactoring opportunities.                                                         |\r\n|                                                                                                                                                                   |\r\n+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+\r\n+----------------------------------------------+\r\n|   Devon ran: Running command:                |\r\n|   scroll_down \"main.py\"                      |\r\n|                                              |\r\n|   > 'NoneType' object is not subscriptable   |\r\n+----------------------------------------------+\r\n```",
+      "state": "closed",
+      "author": "emlazzarin",
+      "author_type": "User",
+      "created_at": "2024-05-20T15:35:52Z",
+      "updated_at": "2024-05-20T23:10:16Z",
+      "closed_at": "2024-05-20T22:14:26Z",
+      "labels": [
+        "🪲 bug",
+        "🕹️ issue: agent"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/37/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/37",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/37",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:05.193046",
+      "comments": [
+        {
+          "author": "akiradev0x",
+          "body": "Hey! Yeah, my main focus today is to stop this type of looping. It seems to be an agent issue that some others are also having. I think its related to how it handles a current task (not well to say the least). \r\n\r\nWatch out for a new release today that fixes this @emlazzarin ",
+          "created_at": "2024-05-20T17:57:36Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Solved the issue in #42 ",
+          "created_at": "2024-05-20T22:14:26Z"
+        },
+        {
+          "author": "emlazzarin",
+          "body": "Thank you!\r\n\r\nOn Mon, May 20 2024 at 18:14, killind-dev < ***@***.*** > wrote:\r\n\r\n> \r\n> \r\n> \r\n> \r\n> \r\n> \r\n> \r\n> Solved the issue in #42 ( https://github.com/entropy-research/Devon/pull/42\r\n> )\r\n> \r\n> \r\n> \r\n> —\r\n> Reply to this email directly, view it on GitHub (\r\n> https://github.com/entropy-researc",
+          "created_at": "2024-05-20T23:10:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 33,
+      "title": "Ollama Support: litellm dependency issue with uvicorn",
+      "body": "**Context**\r\nI am working to add Ollama support for Devon, so I started working on the prompts in my fork inside the `ollama-support` branch; at the moment of writing there is the `OllamaModel` class implemented as follows inside `devon_agent/agents/model.py`:\r\n```\r\nimport os\r\nimport litellm\r\nimport logging\r\nfrom litellm import completion\r\nfrom dataclasses import dataclass\r\nfrom typing import Optional\r\n\r\n# ...\r\nclass OllamaModel:\r\n\r\n    def __init__(self, args: ModelArguments):\r\n        self.args = args\r\n        self.api_model = args.model_name  # fixed\r\n        self.model_metadata = {\r\n            \"max_tokens\": 4096,\r\n        }\r\n\r\n        self.api_key = \"ollama\"\r\n\r\n    def query(self, messages: list[dict[str, str]], system_message: str = \"\") -> str:\r\n        model_completion = completion(\r\n            messages=[{\"role\": \"system\", \"content\": system_message}] + messages,\r\n            max_tokens=self.model_metadata[\"max_tokens\"],\r\n            model=self.api_model,\r\n            temperature=self.args.temperature,\r\n            stop=[\"</COMMAND>\"],\r\n            api_base=\"http://localhost:11434\"\r\n        )\r\n\r\n        response = model_completion.choices[0].message.content.rstrip(\"</COMMAND>\")\r\n        return response + \"</COMMAND>\"\r\n\r\n```\r\n\r\n**Issue**\r\nTo run litellm the following command should be runned:\r\n```\r\nlitellm --model ollama_chat/model_name\r\n```\r\n\r\nIt relies on `litellm[proxy]` library, to install it the following command should be runned:\r\n\r\n```\r\npoetry add litellm[proxy]\r\n```\r\n\r\nThe problem is that it causes a **dependency error** with poetry, as follows:\r\n```\r\n$ poetry add litellm[proxy]\r\n\r\nUpdating dependencies\r\n\r\nBecause no versions of litellm match >1.37.16,<2.0.0\r\n and litellm[proxy] (1.37.16) depends on uvicorn (>=0.22.0,<0.23.0), litellm[proxy] (>=1.37.16,<2.0.0) requires uvicorn (>=0.22.0,<0.23.0).\r\nSo, because devon-agent depends on both uvicorn (^0.29.0) and litellm[proxy] (^1.37.16), version solving failed.\r\n```\r\n\r\n**Possible Solution**\r\nI think that the problem could be solved by removing `litellm` dependency in `models.py` and directly using ollama for python. \r\nIf there are other solutions I would appreciate some feedback, however until a solution is found I am unable to work one ollama support.",
+      "state": "closed",
+      "author": "antoninoLorenzo",
+      "author_type": "User",
+      "created_at": "2024-05-18T16:27:12Z",
+      "updated_at": "2024-05-20T22:13:26Z",
+      "closed_at": "2024-05-20T22:13:25Z",
+      "labels": [
+        "✨ enhancement",
+        "💬 discussion"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 13,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/33/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/33",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/33",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:05.377027",
+      "comments": [
+        {
+          "author": "amphetamarina",
+          "body": "Isn't ollama OpenAI compatible? Just out of curiosity, is litellm proxy really necessary here?\r\n\r\n[ollama/docs/openai.md at main · ollama/ollama · GitHub](https://github.com/ollama/ollama/blob/main/docs/openai.md)\r\n\r\nCould you provide a link for a WIP Pull Request or point me to some branch you're w",
+          "created_at": "2024-05-18T17:22:45Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "Bumping down the version of uvicorn is fine, which should take care of the dependency conflict. I think having liteLLM could vert useful long term to add support for cloud providers like groq, together, etc",
+          "created_at": "2024-05-18T18:37:03Z"
+        },
+        {
+          "author": "antoninoLorenzo",
+          "body": "@cyborgmarina I was thinking exactly about not using `litellm`.\r\n\r\nI am working on the `ollama-support` branch on my own fork given that I am not one of the repository main contributors, so I was implementing the prompts at `devon_agent/agents/default/ollama_prompts.py`; you could either go in my fo",
+          "created_at": "2024-05-18T18:38:38Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "One thing we can do to reduce bloated dependencies in the future is use python package extras. We could support devon_agent[litellm], however for now we want to add support for groq and other providers in the short run. \r\n\r\nOnce dependencies start getting bloated, we will divide them into extras.\r\nA",
+          "created_at": "2024-05-18T18:42:35Z"
+        },
+        {
+          "author": "mihirchdev",
+          "body": "https://github.com/BerriAI/liteLLM-proxy\r\nLiteLLM proxy seems to be deprecated",
+          "created_at": "2024-05-18T18:48:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 30,
+      "title": "Just wanna say thank you",
+      "body": "Thank you for choosing Anthropic as the primary endpoint. OpenAI has recently been acting as a monster, being hostile towards open source community, proposing hardware spying etc.\r\n\r\nI might contribute to Devon in my free time.\r\n\r\nThanks",
+      "state": "closed",
+      "author": "andr0s",
+      "author_type": "User",
+      "created_at": "2024-05-18T06:54:49Z",
+      "updated_at": "2024-05-18T20:26:14Z",
+      "closed_at": "2024-05-18T20:26:14Z",
+      "labels": [
+        "⭐ feedback"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/30/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/30",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/30",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:05.576438",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "@andr0s Thanks for your support, would love to have you contribute 👍 ",
+          "created_at": "2024-05-18T07:01:23Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "@andr0s Yep!! Also claude is more human-like and friendly. We are wrapping up adding multi model support too which means there will be local models as well supported via ollama!",
+          "created_at": "2024-05-18T07:21:44Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "closing this issue",
+          "created_at": "2024-05-18T20:26:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 15,
+      "title": "Local llm support",
+      "body": "This issue requires adding ollama and supported models with prompts as an alternative model choice.\r\n\r\nWould also be nice to add default model selection to the devon command with `devon set-default`",
+      "state": "closed",
+      "author": "akiradev0x",
+      "author_type": "User",
+      "created_at": "2024-05-13T01:23:57Z",
+      "updated_at": "2024-05-18T20:25:08Z",
+      "closed_at": "2024-05-18T20:25:08Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/15/reactions",
+        "total_count": 4,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 1
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/15",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/15",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:05.783344",
+      "comments": [
+        {
+          "author": "cocobeach",
+          "body": "I suggest ollama, gives a lot of flexibility for testing the tool for free, then anthropic for prod, why not.\r\nSo far testing tools I spent quite a lot on APIs, with ollama I can play for free until I get stuff right it's just a call to localhost:11434. \r\nAlso for ancillary tasks llama3 and mixtral ",
+          "created_at": "2024-05-13T07:54:17Z"
+        },
+        {
+          "author": "antoninoLorenzo",
+          "body": "I looked inside the source code and it seems like the integration of Ollama is possible by modifying the following modules:\r\n- devon_agent/model.py requires a configurable OllamaModel interface;\r\n- devon_agent/agent.py requires TaskAgent to enable configuration to chose what model to use when `self.",
+          "created_at": "2024-05-16T06:29:52Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Hey, yeah so it looks like ollama is really usable with this, I just added some code to use litellm. After I have that worked out @antoninoLorenzo would love for you to take a look and see how ollama can fit in better (I'll be adding a basic implementation but it can definitely be made better in a l",
+          "created_at": "2024-05-16T16:46:53Z"
+        },
+        {
+          "author": "antoninoLorenzo",
+          "body": "@killind-dev if you make a branch to work on the ollama integration I would really enjoy to fork it, also tell me if you already have a plan on how to integrate it.",
+          "created_at": "2024-05-16T18:13:49Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "Yep, I'll make a branch for it in a couple hours. Thanks!",
+          "created_at": "2024-05-17T04:27:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 18,
+      "title": "OpenAI Support",
+      "body": "Add support for OpenAI models.",
+      "state": "closed",
+      "author": "mihirchdev",
+      "author_type": "User",
+      "created_at": "2024-05-13T04:31:18Z",
+      "updated_at": "2024-05-17T12:13:56Z",
+      "closed_at": "2024-05-17T08:17:16Z",
+      "labels": [
+        "✨ enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/entropy-research/Devon/issues/18/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/entropy-research/Devon/issues/18",
+      "api_url": "https://api.github.com/repos/entropy-research/Devon/issues/18",
+      "repository": "entropy-research/Devon",
+      "extraction_date": "2025-06-22T00:44:06.041750",
+      "comments": [
+        {
+          "author": "ObjectJosh",
+          "body": "gpt4o!\r\nWould love to implement vision + voice once it comes out: https://x.com/OpenAI/status/1790130708612088054",
+          "created_at": "2024-05-13T21:30:02Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "GPT4-o support coming in today. Will also be adding voice support in a few days.",
+          "created_at": "2024-05-16T16:47:32Z"
+        },
+        {
+          "author": "akiradev0x",
+          "body": "GPT4-o support is integrated. closing.",
+          "created_at": "2024-05-17T08:17:17Z"
+        },
+        {
+          "author": "AlysonBasilio",
+          "body": "@killind-dev Any instruction on how to use it? I tried to reinstall the agent here but it didn't seem to get the new version, it keeps asking me for the anthropic api key...",
+          "created_at": "2024-05-17T12:12:25Z"
+        },
+        {
+          "author": "AlysonBasilio",
+          "body": "Also, thank you for working on giving support to open ai! I hope I can contribute to the project on the next days.",
+          "created_at": "2024-05-17T12:13:55Z"
+        }
+      ]
+    }
+  ]
+}

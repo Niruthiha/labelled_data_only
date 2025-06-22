@@ -1,0 +1,2760 @@
+{
+  "repository": "hyperonym/basaran",
+  "repository_info": {
+    "repo": "hyperonym/basaran",
+    "stars": 1301,
+    "language": "Python",
+    "description": "Basaran is an open-source alternative to the OpenAI text completion API. It provides a compatible streaming API for your Hugging Face Transformers-based text generation models.",
+    "url": "https://github.com/hyperonym/basaran",
+    "topics": [
+      "generative",
+      "gpt",
+      "huggingface",
+      "language-model",
+      "llama",
+      "llm",
+      "model",
+      "natural-language-processing",
+      "nlp",
+      "openai-api",
+      "python",
+      "text-generation",
+      "transformers"
+    ],
+    "created_at": "2023-02-17T17:22:29Z",
+    "updated_at": "2025-06-16T05:53:14Z",
+    "search_query": "openai api language:python stars:>1 created:>2023-01-01",
+    "total_issues_estimate": 50,
+    "labeled_issues_estimate": 42,
+    "labeling_rate": 84.6,
+    "sample_labeled": 11,
+    "sample_total": 13,
+    "has_issues": true,
+    "repo_id": 603131458,
+    "default_branch": "master",
+    "size": 5634
+  },
+  "extraction_date": "2025-06-22T09:51:11.485208",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 57,
+  "issues": [
+    {
+      "issue_number": 289,
+      "title": "401 error on llama2 model while access granted",
+      "body": "Hello,\r\n\r\nTrying to get llama-2-7b-chat-hf working but getting this error :\r\n\r\ndocker run -p 80:80 -e MODEL=meta-llama/Llama-2-7b-chat-hf hyperonym/basaran:0.21.1\r\nTraceback (most recent call last):\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_errors.py\", line 261, in hf_raise_for_status\r\n    response.raise_for_status()\r\n  File \"/usr/local/lib/python3.8/dist-packages/requests/models.py\", line 1021, in raise_for_status\r\n    raise HTTPError(http_error_msg, response=self)\r\nrequests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/resolve/main/tokenizer_config.json\r\n\r\nThe above exception was the direct cause of the following exception:\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 428, in cached_file\r\n    resolved_file = hf_hub_download(\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 118, in _inner_fn\r\n    return fn(*args, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/file_download.py\", line 1195, in hf_hub_download\r\n    metadata = get_hf_file_metadata(\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 118, in _inner_fn\r\n    return fn(*args, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/file_download.py\", line 1541, in get_hf_file_metadata\r\n    hf_raise_for_status(r)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_errors.py\", line 277, in hf_raise_for_status\r\n    raise GatedRepoError(message, response) from e\r\nhuggingface_hub.utils._errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-657dfa24-0ebb40e66e153b8e7ed92d16;6e8f330d-5d1f-42ab-ba69-1ec0a453f218)\r\n\r\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/resolve/main/tokenizer_config.json.\r\nRepo model meta-llama/Llama-2-7b-chat-hf is gated. You must be authenticated to access it.\r\n\r\nThe above exception was the direct cause of the following exception:\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/lib/python3.8/runpy.py\", line 194, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"/usr/lib/python3.8/runpy.py\", line 87, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/app/basaran/__main__.py\", line 41, in <module>\r\n    stream_model = load_model(\r\n  File \"/app/basaran/model.py\", line 332, in load_model\r\n    tokenizer = AutoTokenizer.from_pretrained(name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 677, in from_pretrained\r\n    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 677, in from_pretrained\r\n    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 510, in get_tokenizer_config\r\n    resolved_config_file = cached_file(\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 443, in cached_file\r\n    raise EnvironmentError(\r\nOSError: You are trying to access a gated repo.\r\nMake sure to request access at https://huggingface.co/meta-llama/Llama-2-7b-chat-hf and pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`.\r\n\r\nHowever, i am authenticated to huggingface hub\r\n\r\nhuggingface-cli.exe whoami\r\ntomtomtom44\r\n\r\nAnd my request access to the model repo has been granted : \"Gated model\r\nYou have been granted access to this model\" on https://huggingface.co/meta-llama/Llama-2-7b-chat-hf\r\n\r\n\r\n\r\n",
+      "state": "open",
+      "author": "tomtomtomtom44",
+      "author_type": "User",
+      "created_at": "2023-12-16T19:49:05Z",
+      "updated_at": "2023-12-18T04:13:56Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/289/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/289",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/289",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.112580",
+      "comments": []
+    },
+    {
+      "issue_number": 288,
+      "title": "Runpod Serverless",
+      "body": "Is there a plan or an implementation of basaran for the runpod serverless environment?",
+      "state": "open",
+      "author": "stonejohnson",
+      "author_type": "User",
+      "created_at": "2023-12-15T13:58:10Z",
+      "updated_at": "2023-12-18T04:13:31Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/288/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/288",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/288",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.112610",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Possibly duplicated: https://github.com/hyperonym/basaran/issues/58",
+          "created_at": "2023-12-18T04:13:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 280,
+      "title": "Loading basaran on multiple gpus leads to error",
+      "body": "Getting error:\r\nRuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cuda:1!\r\n\r\nI am running basaran with default params and llama 2 model. ",
+      "state": "open",
+      "author": "tanmaylaud",
+      "author_type": "User",
+      "created_at": "2023-11-30T03:58:05Z",
+      "updated_at": "2023-11-30T04:00:57Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/280/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/280",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/280",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.296326",
+      "comments": []
+    },
+    {
+      "issue_number": 140,
+      "title": "Add support for chat completion API",
+      "body": "## Checklist\r\n\r\n- [x] Regardless of whether the last role in `messages` is `user` or `assistant`, the response will always be `assistant`.\r\n- [ ] When `steam=true`, the first returned event will always be `{\"role\": \"assistant\"}`.\r\n- [ ] When `steam=true`, the specific `finish_reason` will be yielded as a separate event.\r\n\r\n## Compatibility\r\n\r\n| Parameter | Basaran | OpenAI | Default Value | Maximum Value |\r\n| --- | --- | --- | --- | --- |\r\n| `model` | ○ | ● | - | - |\r\n| `messages` | ● | ● | `[]` | `CHAT_MAX_PROMPT` |\r\n| `min_tokens` | ● | ○ | `0` | `CHAT_MAX_TOKENS` |\r\n| `max_tokens` | ● | ● | `512` | `CHAT_MAX_TOKENS` |\r\n| `temperature` | ● | ● | `1.0` | - |\r\n| `top_p` | ● | ● | `1.0` | - |\r\n| `n` | ● | ● | `1` | `CHAT_MAX_N` |\r\n| `stream` | ● | ● | `false` | - |\r\n| `stop` | ○ | ● | - | - |\r\n| `presence_penalty` | ○ | ● | - | - |\r\n| `frequency_penalty` | ○ | ● | - | - |\r\n| `logit_bias` | ○ | ● | - | - |\r\n| `user` | ○ | ● | - | - |\r\n\r\n## Examples\r\n\r\n### Chat completion (n=1, stream=false)\r\n\r\n```json\r\n{\r\n    \"id\": \"chatcmpl-6z5sqEUkSdUyWqsNFRyyJ1s7kCzpM\",\r\n    \"object\": \"chat.completion\",\r\n    \"created\": 1680018644,\r\n    \"model\": \"gpt-3.5-turbo-0301\",\r\n    \"usage\": {\r\n        \"prompt_tokens\": 12,\r\n        \"completion_tokens\": 14,\r\n        \"total_tokens\": 26\r\n    },\r\n    \"choices\": [\r\n        {\r\n            \"message\": {\r\n                \"role\": \"assistant\",\r\n                \"content\": \"I was created by a team of developers and engineers at OpenAI.\"\r\n            },\r\n            \"finish_reason\": \"stop\",\r\n            \"index\": 0\r\n        }\r\n    ]\r\n}\r\n```\r\n\r\n### Chat completion (n=2, stream=false)\r\n\r\n```json\r\n{\r\n    \"id\": \"chatcmpl-6z5sOxJ318FNEWVkDsRbsZPS7wexL\",\r\n    \"object\": \"chat.completion\",\r\n    \"created\": 1680018616,\r\n    \"model\": \"gpt-3.5-turbo-0301\",\r\n    \"usage\": {\r\n        \"prompt_tokens\": 12,\r\n        \"completion_tokens\": 34,\r\n        \"total_tokens\": 46\r\n    },\r\n    \"choices\": [\r\n        {\r\n            \"message\": {\r\n                \"role\": \"assistant\",\r\n                \"content\": \"I was created by a team of developers at OpenAI.\"\r\n            },\r\n            \"finish_reason\": \"stop\",\r\n            \"index\": 0\r\n        },\r\n        {\r\n            \"message\": {\r\n                \"role\": \"assistant\",\r\n                \"content\": \"I was created by a team of developers at OpenAI, using advanced artificial intelligence and natural language processing technologies.\"\r\n            },\r\n            \"finish_reason\": \"stop\",\r\n            \"index\": 1\r\n        }\r\n    ]\r\n}\r\n```\r\n\r\n### Chat completion (n=1, stream=true)\r\n\r\n```\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"I\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" was\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" created\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" by\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" a\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" team\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" of\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" developers\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" at\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" Open\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"AI\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\".\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5sk5NJqhsESrfo25sQzjMfCbcZ0\",\"object\":\"chat.completion.chunk\",\"created\":1680018638,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{},\"index\":0,\"finish_reason\":\"stop\"}]}\r\n\r\ndata: [DONE]\r\n```\r\n\r\n### Chat completion (n=2, stream=true)\r\n\r\n```\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"I\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"I\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" was\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" was\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" created\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" created\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" by\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" by\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" a\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" Open\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"AI\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" team\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\".\"},\"index\":0,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" of\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" programmers\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" and\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" developers\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" at\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\" Open\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"AI\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\".\"},\"index\":1,\"finish_reason\":null}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{},\"index\":0,\"finish_reason\":\"stop\"}]}\r\n\r\ndata: {\"id\":\"chatcmpl-6z5rT81CjeF0YZH9BCf5fXscq2iqA\",\"object\":\"chat.completion.chunk\",\"created\":1680018559,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{},\"index\":1,\"finish_reason\":\"stop\"}]}\r\n\r\ndata: [DONE]\r\n```\r\n\r\n### Text completion (n=1, stream=false)\r\n\r\n```json\r\n{\r\n    \"id\": \"cmpl-6z60oeEN6Wf4O3Ad0OvAMtA92ELQd\",\r\n    \"object\": \"text_completion\",\r\n    \"created\": 1680019138,\r\n    \"model\": \"text-davinci-003\",\r\n    \"choices\": [\r\n        {\r\n            \"text\": \"\\n\\nThis is indeed a test\",\r\n            \"index\": 0,\r\n            \"logprobs\": null,\r\n            \"finish_reason\": \"length\"\r\n        }\r\n    ],\r\n    \"usage\": {\r\n        \"prompt_tokens\": 5,\r\n        \"completion_tokens\": 7,\r\n        \"total_tokens\": 12\r\n    }\r\n}\r\n```",
+      "state": "open",
+      "author": "peakji",
+      "author_type": "User",
+      "created_at": "2023-04-16T10:08:36Z",
+      "updated_at": "2023-10-08T03:42:49Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/140/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "peakji"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/140",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/140",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.296347",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "Prompt templating is available in [v4.34](https://github.com/huggingface/transformers/releases/tag/v4.34.0):\r\n\r\n> We've added a new [template](https://huggingface.co/docs/transformers/main/chat_templating) feature for chat models. This allows the formatting that a chat model was trained with to be s",
+          "created_at": "2023-10-08T03:42:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 266,
+      "title": "Tried multiple different models but get \"The model weights are not tied...\" error every time..",
+      "body": "Hi,\r\n\r\nI'm running Basaran via Docker and I have now tried using several different models at this point but every time after its downloaded and load everything, I'm facing with this error: ```The model weights are not tied. Please use the `tie_weights` method before using the `infer_auto_device` function ```\r\n\r\nAm I missing something? I've tried multiple GPTQ models from TheBloke and even the official Llama2-13b model but this error is thrown every single time regardless of the model and it prevents me from using Basaran at all. \r\n\r\nAny help would be appreciated. Thanks in advance.\r\n",
+      "state": "open",
+      "author": "jontstaz",
+      "author_type": "User",
+      "created_at": "2023-09-30T04:45:26Z",
+      "updated_at": "2023-10-08T03:38:31Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/266/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/266",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/266",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.584918",
+      "comments": []
+    },
+    {
+      "issue_number": 234,
+      "title": "How to send Audio Inputs to the Basaran",
+      "body": "Hi Team,\r\nI am trying to replicate this text-completion behaviour with OpenAI Whisper Model, how can I send audio inputs to the basaran so that it can generate streaming output",
+      "state": "open",
+      "author": "Tushar-ml",
+      "author_type": "User",
+      "created_at": "2023-07-27T07:46:25Z",
+      "updated_at": "2023-10-07T03:20:11Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/234/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Tushar-ml"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/234",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/234",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.584936",
+      "comments": [
+        {
+          "author": "bender-2000",
+          "body": "+1 that would be awesome",
+          "created_at": "2023-08-03T12:29:55Z"
+        },
+        {
+          "author": "Tushar-ml",
+          "body": "@peakji kindly assign this issue to me",
+          "created_at": "2023-10-05T17:23:20Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "Thanks @Tushar-ml !",
+          "created_at": "2023-10-07T03:20:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 263,
+      "title": "Strong need for multiple `models` in a single deployment",
+      "body": "As mentioned in #179, users need multiple models. On a multi-GPU on-prem machine, I want to write a config file that's like:\r\n\r\n```bash\r\nCUDA_VISIBLE_DEVICES=0     MODEL=meta-llama/Llama-2-7b-chat-hf\r\nCUDA_VISIBLE_DEVICES=1,2,3 MODEL=meta-llama/Llama-2-13b-chat-hf\r\n```\r\n\r\nThen users should be able to specify `\"model\": \"<either_model>\",` in their requests.\r\n\r\nI can start a PR if you want this feature. Let me know if you have any suggestions on the best way to load these models and keep them mostly separate from each other.",
+      "state": "open",
+      "author": "KastanDay",
+      "author_type": "User",
+      "created_at": "2023-09-21T18:19:13Z",
+      "updated_at": "2023-09-25T18:02:52Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/263/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/263",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/263",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:50.783401",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @KastanDay! I would suggest to implement a routing service externally, which can decide which backend service/process to call based on the `model` parameter. This not only ensures the isolation of model deployment, but also allows for load balancing of the same model replicated across multiple ma",
+          "created_at": "2023-09-22T06:36:38Z"
+        },
+        {
+          "author": "KastanDay",
+          "body": "Thank you! \r\n\r\nDo you have any suggestions on an easy routing system? Something short and sweet? I'm an experienced backend programmer, but I've not done much with load balancing // reverse proxies. Thanks again!\r\n\r\nEdit: In particular, I want to respect the `model` parameter. How can I intercept th",
+          "created_at": "2023-09-25T17:48:21Z"
+        },
+        {
+          "author": "KastanDay",
+          "body": "Answering my own question, I suppose NGIX or Traefik would work well. \r\n\r\nHere's what GPT-4 said, just pretend `backend == model` parameter.\r\n\r\nYou can configure Traefik to route requests based on query parameters using its `Query` rule. Here's a basic example using Docker Compose and Traefik to rou",
+          "created_at": "2023-09-25T18:02:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 232,
+      "title": "Llama 2 models not working - how to pass auth token?",
+      "body": "I am trying to run the llama 2 models and here is the command and the logs:\r\n```bash\r\nsudo docker run -p 80:80 -e MODEL=meta-llama/Llama-2-7b-hf hyperonym/basaran:0.19.0\r\nTraceback (most recent call last):\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_errors.py\", line 259, in hf_raise_for_status\r\n    response.raise_for_status()\r\n  File \"/usr/local/lib/python3.8/dist-packages/requests/models.py\", line 1021, in raise_for_status\r\n    raise HTTPError(http_error_msg, response=self)\r\nrequests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json\r\n\r\nThe above exception was the direct cause of the following exception:\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 417, in cached_file\r\n    resolved_file = hf_hub_download(\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 118, in _inner_fn\r\n    return fn(*args, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/file_download.py\", line 1195, in hf_hub_download\r\n    metadata = get_hf_file_metadata(\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 118, in _inner_fn\r\n    return fn(*args, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/file_download.py\", line 1541, in get_hf_file_metadata\r\n    hf_raise_for_status(r)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_errors.py\", line 291, in hf_raise_for_status\r\n    raise RepositoryNotFoundError(message, response) from e\r\nhuggingface_hub.utils._errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-64ba9aef-0847ce6e5dbe16fd46aae799)\r\n\r\nRepository Not Found for url: https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json.\r\nPlease make sure you specified the correct `repo_id` and `repo_type`.\r\nIf you are trying to access a private or gated repo, make sure you are authenticated.\r\nInvalid username or password.\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/lib/python3.8/runpy.py\", line 194, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"/usr/lib/python3.8/runpy.py\", line 87, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/app/basaran/__main__.py\", line 41, in <module>\r\n    stream_model = load_model(\r\n  File \"/app/basaran/model.py\", line 319, in load_model\r\n    tokenizer = AutoTokenizer.from_pretrained(name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 643, in from_pretrained\r\n    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 487, in get_tokenizer_config\r\n    resolved_config_file = cached_file(\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 433, in cached_file\r\n    raise EnvironmentError(\r\nOSError: meta-llama/Llama-2-7b-hf is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'\r\nIf this is a private repository, make sure to pass a token having permission to this repo with `use_auth_token` or log in with `huggingface-cli login` and pass `use_auth_token=True`.\r\n```\r\n\r\nI have been granted access to those models by both Meta and HF and I am logged in using huggingface_cli\r\n```bash\r\n$ /home/arsaboo/.local/bin/huggingface-cli whoami\r\narsaboo\r\n```",
+      "state": "open",
+      "author": "arsaboo",
+      "author_type": "User",
+      "created_at": "2023-07-21T14:51:27Z",
+      "updated_at": "2023-09-21T18:10:16Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/232/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/232",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/232",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.026421",
+      "comments": [
+        {
+          "author": "KastanDay",
+          "body": "This one works for me, ensure you fill out the \"Model Request form\" on Facebook's Llama page. You MUST be approved by facebook before they let you use this model.\r\n\r\n`MODEL=meta-llama/Llama-2-7b-chat-hf`",
+          "created_at": "2023-09-21T18:10:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 253,
+      "title": "TypeError: issubclass() arg 1 must be a class",
+      "body": "I'm getting this error with version 0.21.1\r\n```\r\ndocker run -p 80:80 -e MODEL=smallcloudai/Refact-1_6B-fim -e MODEL_TRUST_REMOTE_CODE=true hyperonym/basaran:0.21.1\r\n```\r\nbut not with version 0.19.0\r\n```\r\ndocker run -p 80:80 -e MODEL=smallcloudai/Refact-1_6B-fim -e MODEL_TRUST_REMOTE_CODE=true hyperonym/basaran:0.19.0\r\n```\r\nLooks like maybe something like [this](https://github.com/langchain-ai/langchain/issues/5740#issuecomment-1632768302) is necessary?",
+      "state": "open",
+      "author": "gsuuon",
+      "author_type": "User",
+      "created_at": "2023-09-04T19:35:02Z",
+      "updated_at": "2023-09-15T09:51:59Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/253/reactions",
+        "total_count": 4,
+        "+1": 4,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/253",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/253",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.215068",
+      "comments": [
+        {
+          "author": "andrewisplinghoff",
+          "body": "Yeah got the same and fixed it by upgrading to latest Pydantic.",
+          "created_at": "2023-09-15T09:51:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 138,
+      "title": ":latest version tag",
+      "body": "Can you please add the **:latest** tag version to the newest Docker image instead of :0.15.2, :0.15.3 etc? So people will stop to manually change the version everytime when new Docker version is out.\r\n\r\n",
+      "state": "open",
+      "author": "mariushosting",
+      "author_type": "User",
+      "created_at": "2023-04-15T21:25:08Z",
+      "updated_at": "2023-09-11T06:18:44Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/138/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/138",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/138",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.404814",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @mariushosting!\r\n\r\nIn fact, we've been intentionally avoid using the `latest` tag. Apart from some [common controversies](https://vsupalov.com/docker-latest-tag/), the main reason is that Basaran needs to ensure that the CUDA version inside the container is compatible with the Nvidia software env",
+          "created_at": "2023-04-16T04:23:36Z"
+        },
+        {
+          "author": "Abdiesel23",
+          "body": "> \r\n\r\nya but the quick start guide just says to use the latest version anyway",
+          "created_at": "2023-09-11T06:18:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 256,
+      "title": "Use basaran API as Langchain LLM",
+      "body": "Is there already any support to use the basaran API as an LLM in Langchain?",
+      "state": "open",
+      "author": "brightebyte",
+      "author_type": "User",
+      "created_at": "2023-09-08T09:57:09Z",
+      "updated_at": "2023-09-08T14:13:47Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/256/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/256",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/256",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.588700",
+      "comments": []
+    },
+    {
+      "issue_number": 215,
+      "title": "RuntimeError: expected scalar type Float but found Half",
+      "body": "Found an issue with loading the ``Salesforcet5/codet5-large-ntp-py`` model.\r\n```\r\nbasaran_1  | ERROR:waitress:Exception while serving /v1/completions\r\nbasaran_1  | Traceback (most recent call last):\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/waitress/channel.py\", line 428, in service\r\nbasaran_1  |     task.service()\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/waitress/task.py\", line 168, in service\r\nbasaran_1  |     self.execute()\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/waitress/task.py\", line 456, in execute\r\nbasaran_1  |     for chunk in app_iter:\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/werkzeug/wsgi.py\", line 289, in __next__\r\nbasaran_1  |     return self._next()\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/werkzeug/wrappers/response.py\", line 32, in _iter_encoded\r\nbasaran_1  |     for item in iterable:\r\nbasaran_1  |   File \"/app/basaran/__main__.py\", line 187, in stream\r\nbasaran_1  |     for choice in stream_model(**options):\r\nbasaran_1  |   File \"/app/basaran/model.py\", line 73, in __call__\r\nbasaran_1  |     for (\r\nbasaran_1  |   File \"/app/basaran/model.py\", line 215, in generate\r\nbasaran_1  |     kwargs[\"encoder_outputs\"] = encoder(**encoder_kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py\", line 1423, in _call_impl\r\nbasaran_1  |     return forward_call(*input, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/accelerate/hooks.py\", line 165, in new_forward\r\nbasaran_1  |     output = old_forward(*args, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/transformers/models/t5/modeling_t5.py\", line 1090, in forward\r\nbasaran_1  |     layer_outputs = layer_module(\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py\", line 1423, in _call_impl\r\nbasaran_1  |     return forward_call(*input, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/accelerate/hooks.py\", line 165, in new_forward\r\nbasaran_1  |     output = old_forward(*args, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/transformers/models/t5/modeling_t5.py\", line 693, in forward\r\nbasaran_1  |     self_attention_outputs = self.layer[0](\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py\", line 1423, in _call_impl\r\nbasaran_1  |     return forward_call(*input, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/accelerate/hooks.py\", line 165, in new_forward\r\nbasaran_1  |     output = old_forward(*args, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/transformers/models/t5/modeling_t5.py\", line 599, in forward\r\nbasaran_1  |     normed_hidden_states = self.layer_norm(hidden_states)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py\", line 1423, in _call_impl\r\nbasaran_1  |     return forward_call(*input, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/accelerate/hooks.py\", line 165, in new_forward\r\nbasaran_1  |     output = old_forward(*args, **kwargs)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/apex/normalization/fused_layer_norm.py\", line 386, in forward\r\nbasaran_1  |     return fused_rms_norm_affine(input, self.weight, self.normalized_shape, self.eps)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/apex/normalization/fused_layer_norm.py\", line 189, in fused_rms_norm_affine\r\nbasaran_1  |     return FusedRMSNormAffineFunction.apply(*args)\r\nbasaran_1  |   File \"/usr/local/lib/python3.8/dist-packages/apex/normalization/fused_layer_norm.py\", line 69, in forward\r\nbasaran_1  |     output, invvar = fused_layer_norm_cuda.rms_forward_affine(\r\nbasaran_1  | RuntimeError: expected scalar type Float but found Half\r\n```\r\n\r\n\r\nI've forked this repo and added a fix, however I think it breaks every other model out there, so I didn't make a PR. \r\nI can still create a PR if you'd like me to.\r\n\r\nhttps://github.com/lvnvceo/basaran/commit/61c1d4131e6de5798166e6ccab72f5e865a4fcab\r\n",
+      "state": "open",
+      "author": "DataDropp",
+      "author_type": "User",
+      "created_at": "2023-06-16T20:19:29Z",
+      "updated_at": "2023-07-12T02:07:46Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/215/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/215",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/215",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.588737",
+      "comments": []
+    },
+    {
+      "issue_number": 227,
+      "title": "TypeError: __init__() got an unexpected keyword argument 'load_in_4bit'",
+      "body": "```bash\r\n# MODEL_TRUST_REMOTE_CODE=True MODEL=huggyllama/llama-7b PORT=80 python -m basaran\r\nTraceback (most recent call last):\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/runpy.py\", line 197, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/runpy.py\", line 87, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/basaran/__main__.py\", line 41, in <module>\r\n    stream_model = load_model(\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/basaran/model.py\", line 334, in load_model\r\n    model = AutoModelForCausalLM.from_pretrained(name_or_path, **kwargs)\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py\", line 467, in from_pretrained\r\n    return model_class.from_pretrained(\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/transformers/modeling_utils.py\", line 2611, in from_pretrained\r\n    model = cls(config, *model_args, **model_kwargs)\r\nTypeError: __init__() got an unexpected keyword argument 'load_in_4bit'\r\n```\r\n\r\n\r\n```bash\r\n# MODEL_TRUST_REMOTE_CODE=True MODEL=openlm-research/open_llama_3b PORT=80 python -m basaran\r\n\r\nTraceback (most recent call last):\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/runpy.py\", line 197, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/runpy.py\", line 87, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/basaran/__main__.py\", line 41, in <module>\r\n    stream_model = load_model(\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/basaran/model.py\", line 334, in load_model\r\n    model = AutoModelForCausalLM.from_pretrained(name_or_path, **kwargs)\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py\", line 467, in from_pretrained\r\n    return model_class.from_pretrained(\r\n  File \"/root/anaconda3/envs/cuda_test2/lib/python3.9/site-packages/transformers/modeling_utils.py\", line 2611, in from_pretrained\r\n    model = cls(config, *model_args, **model_kwargs)\r\nTypeError: __init__() got an unexpected keyword argument 'load_in_4bit'\r\n```\r\n\r\nBut this model works perfect with transformers:\r\n\r\n```python\r\nimport torch\r\nfrom transformers import LlamaTokenizer, LlamaForCausalLM\r\n\r\n## v2 models\r\n#model_path = 'openlm-research/open_llama_7b_v2'\r\n\r\n## v1 models\r\nmodel_path = 'openlm-research/open_llama_3b'\r\n# model_path = 'openlm-research/open_llama_7b'\r\n# model_path = 'openlm-research/open_llama_13b'\r\n\r\ntokenizer = LlamaTokenizer.from_pretrained(model_path)\r\nmodel = LlamaForCausalLM.from_pretrained(\r\n    model_path, torch_dtype=torch.float16, device_map='auto',\r\n)\r\n\r\nprompt = 'Q: What is China?\\nA:'\r\ninput_ids = tokenizer(prompt, return_tensors=\"pt\").input_ids\r\n\r\ngeneration_output = model.generate(\r\n    input_ids=input_ids, max_new_tokens=32\r\n)\r\nprint(tokenizer.decode(generation_output[0]))\r\n```",
+      "state": "open",
+      "author": "tanshuai",
+      "author_type": "User",
+      "created_at": "2023-07-11T14:34:07Z",
+      "updated_at": "2023-07-12T02:06:53Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/227/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/227",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/227",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.588746",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @tanshuai. Which version of `transformers` are you using?\r\n\r\nUpgrading `transformers` to v4.30.2+ would solve the issue.",
+          "created_at": "2023-07-12T02:06:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 223,
+      "title": "Error when Running Vicuna's FastChat Model without GPU",
+      "body": "I am new to Vicuna.\r\n\r\nI wish to use their open source model to train my dataset.\r\n\r\nI don't have a GPU in my computer, so I wanted to use their RESTful API Server. I used Windows PowerShell for the commands below.\r\n\r\nAccording to their explanation (https://github.com/lm-sys/FastChat/blob/main/docs/openai_api.md)\r\n\r\nFirst, I launched the command\r\n\r\npython3 -m fastchat.serve.controller\r\n\r\n. Then, it opened a localhost for me. I opened it in my browser and it displayed the following message:\r\n\r\n{\"detail\":\"Not Found\"}.\r\n\r\nNext, I opened a new PowerShell window and ran their second command:\r\n\r\n> python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.3\r\nHowever, I encountered the following error:\r\n\r\n\"AssertionError: Torch not compiled with CUDA enabled\".\r\n\r\nDoes this error occur because I do not have a GPU in my computer?",
+      "state": "closed",
+      "author": "davyeu",
+      "author_type": "User",
+      "created_at": "2023-07-06T09:41:00Z",
+      "updated_at": "2023-07-12T02:03:40Z",
+      "closed_at": "2023-07-12T02:03:40Z",
+      "labels": [
+        "wontfix"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/223/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/223",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/223",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:51.785127",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @davyeu, the issue is not related to this project. I would suggest to find help in [FastChat](https://github.com/lm-sys/FastChat/tree/main).",
+          "created_at": "2023-07-12T02:03:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 221,
+      "title": "FR support for using fine tuned models that use Peft",
+      "body": "Use case: I've fine tuned a model in a similar model as here: \r\nhttps://colab.research.google.com/drive/1jCkpikz0J2o20FBQmYmAGdiKmJGOMo-o?usp=sharing#scrollTo=hsD1VKqeA62Z\r\n\r\nI now have a base model and an adapter. How do I let Basaran load the model + adapter?\r\n",
+      "state": "open",
+      "author": "samos123",
+      "author_type": "User",
+      "created_at": "2023-07-03T09:01:18Z",
+      "updated_at": "2023-07-12T02:00:26Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/221/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/221",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/221",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:52.028195",
+      "comments": []
+    },
+    {
+      "issue_number": 198,
+      "title": "Langchain Prompt Format",
+      "body": "I have been working to integrate langchain with basaran and I am encountering an issue that I believe has to do with the prompt format. It seems that when langchain is posting to basaran, the prompt is a list and not a string. For example:\r\n\r\n```\r\n{\"prompt\": [\"Sample data is test data\\n\\nQuestion: What is sample data?\\nHelpful Answer:\"], \"model\": \"text-davinci-003\", \"temperature\": 0.1, \"max_tokens\": 256, \"top_p\": 1, \"frequency_penalty\": 0, \"presence_penalty\": 0, \"n\": 1, \"logit_bias\": {}}\r\n```\r\nreturns\r\n```\r\n{\"id\":\"cmpl-3728b36ca4b7a2aac121df7f\",\"object\":\"text_completion\",\"created\":1685652057,\"model\":\"wizard-vicuna-13B\",\"choices\":[{\"text\":\"\",\"index\":0,\"logprobs\":null,\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":1,\"completion_tokens\":256,\"total_tokens\":257}}\r\n```\r\n\r\nIt sees the prompt as a single token and doesn't return anything. I am able to replicate the issue by changing the example to use a list. The model seems to take the single (empty?) token and generate text. For instance:\r\n```\r\ncurl http://127.0.0.1/v1/completions \\\r\n    -H 'Content-Type: application/json' \\\r\n    -d '{ \"prompt\": [\"once upon a time,\"], \"echo\": true }'\r\n```\r\nreturns\r\n\r\n```\r\n{\"id\":\"cmpl-ef0bc647b6de2f4986c728e8\",\"object\":\"text_completion\",\"created\":1685652242,\"model\":\"wizard-vicuna-13B\",\"choices\":[{\"text\":\"Ahituv, Nima, 1974-\\nIntroduction:\",\"index\":0,\"logprobs\":null,\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":1,\"completion_tokens\":17,\"total_tokens\":18}}\r\n```\r\n\r\nWould you consider this a langchain issue if the openAI API supports the call-- or am I missing something in my basaran setup?",
+      "state": "open",
+      "author": "0xDigest",
+      "author_type": "User",
+      "created_at": "2023-06-01T20:47:42Z",
+      "updated_at": "2023-06-29T14:55:07Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "enhancement"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/198/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "peakji",
+        "fardeon"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/198",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/198",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:52.028349",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @0xDigest! Thank you for bringing this issue to our attention.\r\n\r\nUpon verification, it has been confirmed that the `prompt` parameter in OpenAI's API can indeed be [either a string or a list of strings](https://platform.openai.com/docs/api-reference/completions/create#completions/create-prompt).",
+          "created_at": "2023-06-02T01:15:45Z"
+        },
+        {
+          "author": "0xDigest",
+          "body": "Thanks for the quick reply-\r\n\r\nHonestly, I've just started with langchain, I haven't seen any instances of multiple values in the prompt list, yet. I did go ahead and patch parse_options to add list to the dtypes tuple and changed the returned value to return the first value if it's a list So far, e",
+          "created_at": "2023-06-02T03:42:11Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "We've added a [temporary workaround](https://github.com/hyperonym/basaran/pull/199/files) in [v0.18.1](https://github.com/hyperonym/basaran/releases/tag/v0.18.1): currently only the first prompt in the list will be used, and `400 Bad Request` will be returned if the prompt list contains more than on",
+          "created_at": "2023-06-02T04:50:27Z"
+        },
+        {
+          "author": "0xDigest",
+          "body": "Thanks for the quick turnaround. I've updated and can confirm this works as expected. ",
+          "created_at": "2023-06-02T13:17:13Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Example responses for some multi-prompt requests:\r\n\r\n[multi-prompts.txt](https://github.com/hyperonym/basaran/files/11907046/multi-prompts.txt)\r\n[multi-prompts-2.txt](https://github.com/hyperonym/basaran/files/11907049/multi-prompts-2.txt)\r\n[multi-prompts-3.txt](https://github.com/hyperonym/basaran/",
+          "created_at": "2023-06-29T14:55:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 220,
+      "title": "I want use the function prefix_allowed_tokens_fn, where of basaran's source code shall I modify?",
+      "body": "Hello, we all know that in huggingface transformers' origin `model.generate()` method, we can set the function paremeter`prefix_allowed_tokens_fn` to restrict the generate rule. I want to use this function in basaran just like I used in origin `model.generate()`, could you please tell me where of the source code shall I modify to make the model generation obey my custom prefix_allowed_tokens_fn?",
+      "state": "open",
+      "author": "zoubaihan",
+      "author_type": "User",
+      "created_at": "2023-06-29T08:07:58Z",
+      "updated_at": "2023-06-29T14:43:22Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/220/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/220",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/220",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:52.238298",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Generation related features can be implemented by modifying [StreamModel.generate()](https://github.com/hyperonym/basaran/blob/9a0c400fc60d246c8b905679bc5b686470e5f6ac/basaran/model.py#L183). \r\n\r\nHowever, the original implementation from HF Transformers may require significant modifications to suppo",
+          "created_at": "2023-06-29T14:43:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 204,
+      "title": "Falcon 40B : too slow and random answers",
+      "body": "Hi,\r\nWhen i deployed the Falcon 40B model on the Basaran WebUI i had : \r\n-random answers, by example, when i said \"hi\", i get : \" był AbramsPlayEvent磨}$,ocempreferred LaceKUZOOOoodlesWCHawaiiVEsecured cardvue ...\"\r\n-a very slow inference, whereas i was using a RunPod server costing $10 per hour with 4 GPU A100 80GB\r\n\r\nI tried to custom the setting like that :  \r\nkwargs = {\r\n        \"local_files_only\": local_files_only,\r\n        \"trust_remote_code\": trust_remote_code,\r\n        \"torch_dtype\": torch.bfloat16,\r\n        \"device_map\": \"auto\"\r\n    }\r\n+ i used the half precision, but nothing changed,\r\n\r\nAny idea how i could handle this issue ?\r\n\r\nThanks (and congrat for this beautiful webui !)",
+      "state": "open",
+      "author": "ArnaudHureaux",
+      "author_type": "User",
+      "created_at": "2023-06-06T12:43:50Z",
+      "updated_at": "2023-06-20T11:04:10Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/204/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "fardeon"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/204",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/204",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:52.573417",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @ArnaudHureaux! I haven't used RunPod before, and there could be multiple reasons for this issue:\r\n\r\n1. Falcon models seem to require PyTorch 2.0, while Basaran's images use version 1.1.4.\r\n\r\n2. The custom settings you mentioned are not in the format accepted by Basaran. Options supported by Basa",
+          "created_at": "2023-06-07T03:27:21Z"
+        },
+        {
+          "author": "jgcb00",
+          "body": "Hi,\r\nThe Falcon model is pretty bad when asking very small prompt, like hi, hello etc... you often get exactly that kind of output. If you ask a longer question, you will get a proper answer, it's not related with the basaran implementation",
+          "created_at": "2023-06-08T08:54:32Z"
+        },
+        {
+          "author": "ArnaudHureaux",
+          "body": "On my case, the answer was totally random with message like \"był AbramsPlayEvent磨}$,ocempreferred LaceKUZOOOoodlesWCHawaiiVEsecured cardvue ...\" ??\r\n\r\nI didn't have this comportment on other implementation, so i think that the problem is from the implementation ? ",
+          "created_at": "2023-06-08T09:01:08Z"
+        },
+        {
+          "author": "jgcb00",
+          "body": "Using only hugging face :\r\nI got the same result with `load_in_8bit=True` :\r\n```\r\nQuestion: hi\r\nAnswer:  (4).\r\n\r\n'I don't think I'll ever be able to forget you.'\r\n```\r\n\r\nor : \r\n\r\n```\r\nQuestion: hi\r\nAnswer:  \r\nIt seems that the error is caused by a problem with your `onRequestSuccess` function. Speci",
+          "created_at": "2023-06-08T09:06:37Z"
+        },
+        {
+          "author": "0xDigest",
+          "body": "If it helps, \r\nI updated the Dockerfile to use nvcr.io/nvidia/pytorch:23.05-py3 and was able to load the [model](https://huggingface.co/tiiuae/falcon-40b) [referenced above](https://github.com/hyperonym/basaran/issues/204#issuecomment-1579816548) and run inference. I can confirm that it runs slow fo",
+          "created_at": "2023-06-09T18:14:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 180,
+      "title": "GPTQ & 4bit",
+      "body": "My apologies if this is a really stupid question... but\r\n\r\nIs there scope here to provide the ability to load 4bit models? such as vicuna-13B-1.1-GPTQ-4bit-128g or even 4bit 30B llama models will squeeze into 24GB VRAM. I know this can all be done in other web-ui projects, but having an OpenAI like API such as this project would be amazing.",
+      "state": "open",
+      "author": "olihough86",
+      "author_type": "User",
+      "created_at": "2023-04-22T18:42:09Z",
+      "updated_at": "2023-06-14T02:17:31Z",
+      "closed_at": null,
+      "labels": [
+        "duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/180/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/180",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/180",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:53.045228",
+      "comments": [
+        {
+          "author": "olihough86",
+          "body": "I'm a moron and didn't check the closed issues...",
+          "created_at": "2023-04-22T20:22:09Z"
+        },
+        {
+          "author": "AntouanK",
+          "body": "@olihough86 How did you get it to work?",
+          "created_at": "2023-06-08T12:30:41Z"
+        },
+        {
+          "author": "djmaze",
+          "body": "GPTQ seems not supported yet, only QLora. This issue should be reopened.",
+          "created_at": "2023-06-13T23:00:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 213,
+      "title": "crash when running mosaicml/mpt-7b-* models: KeyError: 'attention_mask'",
+      "body": "```python\r\nfrom basaran.model import load_model\r\n\r\nmodel = load_model('mosaicml/mpt-7b-storywriter',  trust_remote_code=True, load_in_8bit=True,)\r\n\r\nfor choice in model(\"once upon a time\"):\r\n    print(choice)\r\n```\r\n```\r\nTraceback (most recent call last):\r\n  File \"/home/taras/Documents/ctranslate2/basaran/run.py\", line 7, in <module>\r\n    for choice in model(\"once upon a time\"):\r\n  File \"/home/taras/Documents/ctranslate2/basaran/.venv/lib/python3.9/site-packages/basaran/model.py\", line 73, in __call__\r\n    for (\r\n  File \"/home/taras/Documents/ctranslate2/basaran/.venv/lib/python3.9/site-packages/basaran/model.py\", line 233, in generate\r\n    inputs = self.model.prepare_inputs_for_generation(\r\n  File \"/home/taras/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b-storywriter/8667424ea9d973d3c01596fcbb86a3a8bc164299/modeling_mpt.py\", line 280, in prepare_inputs_for_generation\r\n    attention_mask = kwargs['attention_mask'].bool()\r\nKeyError: 'attention_mask'\r\n```",
+      "state": "open",
+      "author": "tarasglek",
+      "author_type": "User",
+      "created_at": "2023-06-12T12:19:17Z",
+      "updated_at": "2023-06-13T04:23:41Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/213/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/213",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/213",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:53.321943",
+      "comments": [
+        {
+          "author": "tarasglek",
+          "body": "Same thing happens with `mosaicml/mpt-7b-instruct`",
+          "created_at": "2023-06-12T13:10:27Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "It appears that the error originates from the internal code of MPT. We will conduct further testing.",
+          "created_at": "2023-06-13T04:22:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 202,
+      "title": "QLoRa support",
+      "body": "does it qlora?",
+      "state": "closed",
+      "author": "bitnom",
+      "author_type": "User",
+      "created_at": "2023-06-02T20:50:23Z",
+      "updated_at": "2023-06-09T05:57:28Z",
+      "closed_at": "2023-06-09T05:57:27Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/202/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/202",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/202",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:53.668900",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "No yet. But QLoRA, GPTQ, and 4-bit quantization are on the todo list.",
+          "created_at": "2023-06-03T05:12:59Z"
+        },
+        {
+          "author": "LoopControl",
+          "body": "@peakji  GPTQ would be fantastic. The 4 bit implementation in bitsandbytes has very slow inference speeds (like 8X slower).\r\n\r\nFor GPTQ integration, [AutoGPTQ](https://github.com/PanQiWei/AutoGPTQ) is ideal since it provides a higher level abstraction than the low-level and always changing gptq-for-",
+          "created_at": "2023-06-05T00:50:55Z"
+        },
+        {
+          "author": "0xDigest",
+          "body": "> No yet. But QLoRA, GPTQ, and 4-bit quantization are on the todo list.\r\n\r\nIt'd be interesting if this could support multiple LoRa adapters[0] that could be swapped using the unused model parameter.\r\n\r\n[0] https://github.com/huggingface/peft/blob/main/examples/multi_adapter_examples/PEFT_Multi_LoRA_",
+          "created_at": "2023-06-05T02:33:03Z"
+        },
+        {
+          "author": "peakji",
+          "body": "4-bit quantization with QLoRA is added in https://github.com/hyperonym/basaran/pull/209.\r\n\r\nFeel free to open another issue for GPTQ integration.",
+          "created_at": "2023-06-09T05:57:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 205,
+      "title": "concurrent request supported?",
+      "body": "Does this server support concurent request ?\r\nIs is thread-safe for concurent request?",
+      "state": "closed",
+      "author": "hudengjunai",
+      "author_type": "User",
+      "created_at": "2023-06-06T15:44:56Z",
+      "updated_at": "2023-06-08T09:30:02Z",
+      "closed_at": "2023-06-08T09:30:02Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/205/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/205",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/205",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:53.873570",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "> Does this server support concurent request ?\r\n\r\nYes, the server supports up to `SERVER_THREADS` (default = 32) concurrent requests. It is recommended to set this environment variable to a number that's larger than your number of CPU threads, especially when you're using GPUs.\r\n\r\n> Is is thread-saf",
+          "created_at": "2023-06-07T03:10:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 179,
+      "title": "Support for `v1/embeddings` endpoint",
+      "body": "I'm not sure how feasible or within-scope this is, but it'd be *very* useful if the Basaran project were able to implement the `v1/embeddings` endpoint (using Hugging Face repos, like with the `v1/completions` endpoint).\r\n\r\nText embeddings are very often used alongside the completion endpoints, and we have this particular requirement for OpenCharacters so we can save and search over the character's \"memories\".\r\n\r\n(And very soon we'll have the same requirement for text-to-image. If it were possible for Basaran to aim to be *the* OpenAI-compatible, open-source API server, that would be awesome.)",
+      "state": "closed",
+      "author": "josephrocca",
+      "author_type": "User",
+      "created_at": "2023-04-22T11:09:46Z",
+      "updated_at": "2023-06-03T05:07:25Z",
+      "closed_at": "2023-06-03T05:07:25Z",
+      "labels": [
+        "wontfix"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/179/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/179",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/179",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:54.140153",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Basaran's current goal is to ensure compatibility with both the text completion and chat completion APIs, which actually share the same model. To support embeddings, we would need another (or a set of) model(s), which is actually how OpenAI API does it.\r\n\r\nFrom a architecture perspective, a GPT-like",
+          "created_at": "2023-04-23T02:28:10Z"
+        },
+        {
+          "author": "Electrofried",
+          "body": "Here is the thing, from an end user perspective for this to be a drop in replacement for OpenAI API for it to be considered 'functional', it needs to replicate all main features of the API. I understand that the goal is to only replicate the completion part of the API, however for the vast majority ",
+          "created_at": "2023-04-23T03:20:34Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "> To support embeddings, we would need another (or a set of) model(s), which is actually how OpenAI API does it.\r\n\r\nYep, of course.\r\n\r\n> What many (most?) people want is to be able to load up this docker image, and then redirect any application that currently uses OpenAI api and have it 'just work'.",
+          "created_at": "2023-04-23T05:39:41Z"
+        },
+        {
+          "author": "peakji",
+          "body": "@Electrofried @josephrocca I completely understand and agree with your point of view! The current difficulty actually comes from the architecture: supporting embeddings requires deploying additional models, which are much smaller than LLM but still require significant resources. As a result, Basaran",
+          "created_at": "2023-04-23T05:48:35Z"
+        },
+        {
+          "author": "peakji",
+          "body": "We plan to focus on achieving compatibility with the chat API in the short term, and in the long term, we may start a **router project** that provides a complete replacement for the OpenAI API, where Basaran is one of the backend. This will also enable model selection using the `model` parameter.\r\n\r",
+          "created_at": "2023-04-23T05:56:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 197,
+      "title": "in stream mode, the English word has no space after detokenizer and Chinese were messed up",
+      "body": "![image](https://github.com/hyperonym/basaran/assets/21303438/8e1a9698-0daa-4bf3-b1ba-79e24a4dd2f3)\r\n\r\nHow to resolve this problem?>",
+      "state": "open",
+      "author": "lucasjinreal",
+      "author_type": "User",
+      "created_at": "2023-06-01T08:11:43Z",
+      "updated_at": "2023-06-02T09:31:02Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 14,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/197/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/197",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/197",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:50:57.694422",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @lucasjinreal. We need more information in order to assist you in resolving the issue.\r\n\r\nMay I ask which model you are using? Are you using it through the API or through Python?",
+          "created_at": "2023-06-01T08:46:29Z"
+        },
+        {
+          "author": "lucasjinreal",
+          "body": "@peakji Ithink its not related about model. For model am simple using Llama.\r\n\r\nThe reason is that when we decode same id, compare with decode ids in a sentence, tokenizers can be different.\r\n\r\nFor instance, for ids: [34, 56, 656], tokenizers would decode like: I love u\r\n\r\nBut if you decode one by o",
+          "created_at": "2023-06-01T09:49:17Z"
+        },
+        {
+          "author": "lucasjinreal",
+          "body": "Or maybe these is something missed inside your StreamTokenizer? (like ignored some ids). Can u try get decode ids one by one and print it?\r\n\r\n```\r\noutputs = []\r\n          for oid in output_ids:\r\n              # if i > len(input_ids[0]):\r\n              # print(oid)\r\n              word = tokenizer.dec",
+          "created_at": "2023-06-01T09:50:45Z"
+        },
+        {
+          "author": "peakji",
+          "body": "> The reason is that when we decode same id, compare with decode ids in a sentence, tokenizers can be different.\r\n\r\n`StreamTokenizer` is specifically designed to handle this properly.\r\n\r\nThere is an example of the LLaMA tokenizer in the test case, which also includes Chinese characters:\r\n\r\nhttps://g",
+          "created_at": "2023-06-01T10:27:54Z"
+        },
+        {
+          "author": "lucasjinreal",
+          "body": "@peakji Thanks, I just using tokenizer of StreamModel and the Chinese decoding error problems still exist.\r\n\r\n\r\n![image](https://github.com/hyperonym/basaran/assets/21303438/8ba6fadb-34a6-47d7-b644-f419543a453a)\r\n\r\n\r\nAnd I still can not get the spaces between engliesh words .\r\n\r\nI think the output s",
+          "created_at": "2023-06-01T10:55:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 160,
+      "title": "Vicuna problem",
+      "body": "Has anyone got this model to work yet? Running into this:\r\n\r\nOSError: anon8231489123/vicuna-13b-GPTQ-4bit-128g does not appear to have a file named pytorch_model-00001-of-00003.bin. Checkout 'https://huggingface.co/anon8231489123/vicuna-13b-GPTQ-4bit-128g/main' for available files.",
+      "state": "closed",
+      "author": "zhound420",
+      "author_type": "User",
+      "created_at": "2023-04-20T00:30:33Z",
+      "updated_at": "2023-05-30T15:16:45Z",
+      "closed_at": "2023-04-21T02:55:47Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 13,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/160/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/160",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/160",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:02.925954",
+      "comments": [
+        {
+          "author": "jota2rz",
+          "body": "I don't think basaran supports GPTQ pre-quantized models.\r\nhttps://github.com/oobabooga/text-generation-webui supports this model.\r\nDocumentation at https://github.com/oobabooga/text-generation-webui/wiki/GPTQ-models-(4-bit-mode)\r\n\r\nFeature request? 👀\r\n\r\n",
+          "created_at": "2023-04-20T22:53:26Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Basaran should work with Vicuna models. The model repo seems to contain outdated configs that point to non-existing weight files: https://huggingface.co/anon8231489123/vicuna-13b-GPTQ-4bit-128g/discussions/15\n\nAlso, you may want to install `safetensors`, as the repo only provides weights in safetens",
+          "created_at": "2023-04-21T01:19:25Z"
+        },
+        {
+          "author": "jota2rz",
+          "body": "> Basaran should work with Vicuna models.\r\n\r\nDo you know how to make it work?\r\n\r\nI get this error.\r\n```\r\nValueError: Couldn't instantiate the backend tokenizer from one of:\r\n(1) a `tokenizers` library serialization file,\r\n(2) a slow tokenizer instance to convert or\r\n(3) an equivalent slow tokenizer ",
+          "created_at": "2023-04-21T01:40:50Z"
+        },
+        {
+          "author": "jota2rz",
+          "body": "Oops, I forgot to install the extra dependencies since I was inside a venv.\r\nI needed transformers, sentenpiece and safetensors.\r\n```pip install safetensors transformers[sentencepiece]```\r\n\r\nWorks good!",
+          "created_at": "2023-04-21T02:03:25Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "We will add `safetensors` support in the next release: https://github.com/hyperonym/basaran/pull/174 https://github.com/hyperonym/basaran/pull/175",
+          "created_at": "2023-04-21T02:55:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 183,
+      "title": "Docker run runs and then exits, does not set up server",
+      "body": "I'm running\r\n\r\n`docker run -p 80:80 -e MODEL=user/repo hyperonym/basaran:0.14.1`\r\n\r\nwhere `user/repo` is a Hugging Face repo. It then appears to download the model, but then once it finishes it just exits the process.\r\n\r\nI'm using 0.14.1 because it looks like that's the only one that supports arm64 chips.\r\n\r\n",
+      "state": "open",
+      "author": "handrew",
+      "author_type": "User",
+      "created_at": "2023-04-25T03:13:05Z",
+      "updated_at": "2023-05-24T04:34:11Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted",
+        "dependencies"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/183/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/183",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/183",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:03.137560",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @handrew ! This is a bit awkward. 😅\r\n\r\nIn https://github.com/hyperonym/basaran/pull/111, we added support for ARM architecture, but due to the resource limitations of GitHub Action runners, we had to use some hacks (https://github.com/hyperonym/basaran/pull/114, https://github.com/hyperonym/basar",
+          "created_at": "2023-04-25T04:45:54Z"
+        },
+        {
+          "author": "bigtiger",
+          "body": "Understandable. I'm reading this while `Downloading model.safetensors` fails to reach more than 65%. 😅 Thanks for your efforts.",
+          "created_at": "2023-05-24T04:34:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 193,
+      "title": "How to set my own parameters in model.generate() in basaran?",
+      "body": "Hello, I want use my customize parameters when model.generate(), like this:\r\n```\r\nmodel.generate(input_ids, max_new_tokens=max_new_tokens,\r\n                                     do_sample=True, max_length=max_length, temperature=temperature, top_p=top_p,\r\n                                     repetition_penalty=repetition_penalty)\r\n```\r\nbut if I use basaran, the code is like this:\r\n```\r\nmodel = load_model(model_name)\r\nfor choice in model(input_code):\r\n      yield choice\r\n```\r\nIt seems no place I can set parameters like `do_sample`, `max_length`, `top_p`, ..., just like I use model.generate() directly.\r\nSo that I can not set those parameters by myself. \r\nHow to solve this problem?",
+      "state": "open",
+      "author": "zoubaihan",
+      "author_type": "User",
+      "created_at": "2023-05-17T03:03:23Z",
+      "updated_at": "2023-05-22T06:48:27Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/193/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/193",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/193",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:03.371520",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @zoubaihan, you can specify parameters such as `top_p` and `max_tokens` when [calling the `StreamModel` instance](https://github.com/hyperonym/basaran/blob/0f4f5402aaa4ba25a9d96e2ffcf75ad1872b895f/basaran/model.py#L30) obtained using the `load_model` function. However, we haven't implemented a st",
+          "created_at": "2023-05-21T05:14:56Z"
+        },
+        {
+          "author": "zoubaihan",
+          "body": "> \r\n\r\nOK, thank you, I hope one day it could support all parameters of `model.generate()` !",
+          "created_at": "2023-05-22T06:48:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 192,
+      "title": "Inference should stop if connection is aborted/closed",
+      "body": "For chat use cases on consumer hardware this is basically a show-stopper. The user needs to be able to stop a response, because consumer on-device inference is quite slow, and so if they don't like where a generation is headed, then they can stop the response in the chat UI (which aborts the HTTP request), but they'll need to wait for the response to finish behind the scenes so that their processor is free to write another response (and I'm not sure how they'd find out when it is actually finished, other than looking at their CPU usage).",
+      "state": "closed",
+      "author": "josephrocca",
+      "author_type": "User",
+      "created_at": "2023-05-15T18:34:25Z",
+      "updated_at": "2023-05-21T16:24:15Z",
+      "closed_at": "2023-05-21T16:17:31Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/192/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/192",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/192",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:03.547469",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Apologies for the late reply.\r\n\r\nBasaran's event-stream implementation is based on Python generators. When a user terminates the request, the server does not generate complete completions and then stop the computation. Instead, it only completes the calculation for the next token that is currently r",
+          "created_at": "2023-05-21T05:06:06Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "I just tried replicating the problem (CPU usage of all cores at max tens of seconds after stopping generation), and I couldn't, so I must have accidentally had a request running in the background somewhere when I reported this. Sorry!!",
+          "created_at": "2023-05-21T16:17:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 141,
+      "title": "Define chat history format using jinja template",
+      "body": "## Checklist\r\n\r\n- [ ] Use jinja template to render message history of `system`, `user`, and `assistant` as a prompt for completion.\r\n- [ ] Allow specifying template file through environment variable to adapt to formatting requirements of different models.\r\n- [x] Provide a reasonable default template.",
+      "state": "open",
+      "author": "peakji",
+      "author_type": "User",
+      "created_at": "2023-04-16T10:21:48Z",
+      "updated_at": "2023-05-14T09:54:42Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/141/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "peakji"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/141",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/141",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:03.740498",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "Default template added in https://github.com/hyperonym/basaran/pull/163",
+          "created_at": "2023-04-20T05:36:13Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Message history examples: [examples.zip](https://github.com/hyperonym/basaran/files/11471603/examples.zip)\r\n",
+          "created_at": "2023-05-14T09:54:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 185,
+      "title": "Do you have Discord community?",
+      "body": "Discord community will be a great place to share thoughts and get help",
+      "state": "open",
+      "author": "karfly",
+      "author_type": "User",
+      "created_at": "2023-04-25T17:37:36Z",
+      "updated_at": "2023-04-26T02:45:56Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/185/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/185",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/185",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:03.932689",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "We don't have a Discord community yet. We are maintaining this project in our spare time and have been a bit busy lately. \r\n\r\nThe plan is to prioritize completing support for the chat API during the upcoming holidays and then start a community server on Discord and others.",
+          "created_at": "2023-04-26T02:45:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 144,
+      "title": "`v1/completions` does not include `data: ` prefix when `stream:true`",
+      "body": "I've just swapped over the endpoints in my code, and the parsing logic broke for streaming responses due to the lack of `data: ` before the JSON object. Is this intended behavior, for some reason?\r\n\r\nThe only OpenAI `v1/completion` endpoint that I've tested is `text-davinci-003`, and it returns a stream where each JSON object is prefixed with `data: `.\r\n\r\n",
+      "state": "closed",
+      "author": "josephrocca",
+      "author_type": "User",
+      "created_at": "2023-04-16T11:15:50Z",
+      "updated_at": "2023-04-24T08:45:20Z",
+      "closed_at": "2023-04-16T11:40:29Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/144/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/144",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/144",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:04.185207",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Basaran's response format is identical to OpenAI's, which includes the `data:` prefix for JSON objects:\r\n\r\n```\r\n# curl \"http://127.0.0.1:8888/v1/completions?stream=true&prompt=hi\"   \r\ndata: {\"id\":\"cmpl-dead34f1d82f3e6f72dc469c\",\"object\":\"text_completion\",\"created\":1681644219,\"model\":\"bigscience/bloo",
+          "created_at": "2023-04-16T11:24:22Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Are you using `EventSource` in browsers? I remember the `EventSource` API automatically strips the `data:` prefix as it is part of the event stream specification.",
+          "created_at": "2023-04-16T11:25:40Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "@peakji No but I think I might have worked out what's going on: I am using `stream:true` in the POST request rather than as a URL parameter. Does Basaran support this? I think it might be just returning a normal non-streaming JSON response.\r\n\r\nEdit: Yep pretty sure this is what's happening.",
+          "created_at": "2023-04-16T11:31:55Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Basaran supports passing options in request body, just remember to add the `Content-Type: application/json` header:\r\n\r\n```\r\ncurl -X POST -H \"Content-Type:application/json\" -d '{\"stream\":true}' \"http://127.0.0.1:8888/v1/completions\"\r\n```",
+          "created_at": "2023-04-16T11:40:29Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "Ah you're right that it was the lack of `content-type` header - might be worth adding an error if the body contains data, but there's no content-type header (unless that is for some reason valid in some cases).",
+          "created_at": "2023-04-16T12:13:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 120,
+      "title": "How can I use this with a project using OpenAI's nodejs library?",
+      "body": "OpenAI's official node.js library does not support changing the API URL endpoint.\n\nIs there a workaround or other libraries I could be using?",
+      "state": "closed",
+      "author": "MarkSchmidty",
+      "author_type": "User",
+      "created_at": "2023-04-12T20:32:28Z",
+      "updated_at": "2023-04-24T08:45:01Z",
+      "closed_at": "2023-04-13T04:33:06Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/120/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/120",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/120",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:04.369946",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @MarkSchmidty , it seems the nodejs library has a [`basePath` option](https://github.com/openai/openai-node/blob/master/configuration.ts#L70) in `Configuration`.",
+          "created_at": "2023-04-13T01:31:45Z"
+        },
+        {
+          "author": "MarkSchmidty",
+          "body": "I didn't realize that. But I think this resolves my issue/question. Thank you!",
+          "created_at": "2023-04-13T01:41:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 139,
+      "title": "ValueError: Tokenizer class LLaMATokenizer does not exist or is not currently imported.",
+      "body": "Running this command:\r\n```\r\ndocker run -p 80:80 -e MODEL=decapoda-research/llama-7b-hf hyperonym/basaran:0.15.3\r\n```\r\nGives:\r\n```\r\nValueError: Tokenizer class LLaMATokenizer does not exist or is not currently imported.\r\n```\r\n\r\nIt worked fine with the `cerebras/Cerebras-GPT-1.3B` and `bigscience/bloom-560m` models.\r\n\r\n(Thanks for your work on this project! Currently integrating it with [OpenCharacters](https://github.com/josephrocca/OpenCharacters))",
+      "state": "closed",
+      "author": "josephrocca",
+      "author_type": "User",
+      "created_at": "2023-04-16T10:07:50Z",
+      "updated_at": "2023-04-24T08:44:46Z",
+      "closed_at": "2023-04-16T10:12:15Z",
+      "labels": [
+        "duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/139/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/139",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/139",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:04.558554",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @josephrocca, `decapoda-research/llama-7b-hf` hasn't been updated to use the new class name (`LLaMATokenizer` -> `LlamaTokenizer`), which was later finalized in HF Transformers v4.28.0. You could just pick another LLaMA model from Hugging Face Hub.\r\n\r\nRelated: https://github.com/hyperonym/basaran",
+          "created_at": "2023-04-16T10:12:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "How to pass `max_token_length` to `load_model` ?",
+      "body": "I want the model to keep outputing text for the `max_token_length` i specify.",
+      "state": "closed",
+      "author": "MohamedAliRashad",
+      "author_type": "User",
+      "created_at": "2023-04-10T06:08:02Z",
+      "updated_at": "2023-04-24T08:44:28Z",
+      "closed_at": "2023-04-14T18:46:43Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/116",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/116",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:04.741241",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @MohamedAliRashad !\r\n\r\nIf you want to limit the maximum allowed number of output tokens, use the `COMPLETION_MAX_TOKENS` environment variable (default is **4096**).\r\n\r\nIf you want the model to always output text up to a certain length, use the `min_tokens` request parameter.",
+          "created_at": "2023-04-10T06:36:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 110,
+      "title": "Support ARM Docker images",
+      "body": "As a local workaround, add the `--platform` tag.\r\n\r\n`docker run -p 80:80 -e MODEL=user/repo --platform=linux/amd64 hyperonym/basaran:0.13.5`\r\n",
+      "state": "closed",
+      "author": "WillBeebe",
+      "author_type": "User",
+      "created_at": "2023-04-06T16:30:44Z",
+      "updated_at": "2023-04-24T08:44:10Z",
+      "closed_at": "2023-04-07T15:46:10Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/110/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/110",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/110",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:04.921076",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Fixed in https://github.com/hyperonym/basaran/pull/111 thanks to @WillBeebe. The next release will include image for linux/arm64. ",
+          "created_at": "2023-04-07T15:47:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 109,
+      "title": "how to run model in total offline?",
+      "body": "Sorry for stupid question, but I am totally newbie in Docker and using Huggingface locally (not via colab or something else). This is the command to model for the first time , for example:\r\n\r\ndocker run -p 80:80 -e MODEL=bigscience/bloom-560m hyperonym/basaran:0.13.5\r\n\r\nIn this case everything is incredible! All works, I turn of the connection and still everything works fine. \r\n\r\nNow, when I want to use the previously downloaded model, I have difficulties. Can you just give and example of offline run? \r\n\r\nSomething like this, without using Dockerfile etc. Just one command:\r\ndocker run -p 80:80 -e TRANFORMERS_OFFLINE=1 MODEL='/home/my_model' hyperonym/basaran:0.13.5\r\n\r\nAnd please, don't send this. I've tried a lot of different variations, but still didn't get it:\r\nhttps://huggingface.co/docs/transformers/v4.15.0/installation#offline-mode\r\n\r\nSo, shortly: how to run basaran in Docker locally, give an example of command, please.\r\n\r\nThank you for your understanding and for your help and work!",
+      "state": "closed",
+      "author": "gitknu",
+      "author_type": "User",
+      "created_at": "2023-04-06T13:23:35Z",
+      "updated_at": "2023-04-24T08:43:57Z",
+      "closed_at": "2023-04-10T13:59:55Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/109/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/109",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/109",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:05.085435",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "There are several ways to run Basaran locally using Docker, and the simplest and most portable way is to create a bundled image: By creating a new Dockerfile to pre-download the model and package it into a new image, the bundled image can be run offline locally.\r\n\r\nTaking `bloomz-560m` as an example",
+          "created_at": "2023-04-07T15:32:18Z"
+        },
+        {
+          "author": "gitknu",
+          "body": "Thank you! Everything works now great!\r\n\r\nIn case you can recommend any ChatGPT alike model for low-end PC - thank you! (because everything I ran before was text completion - bloomz-1b1, codegen etc.; and the Alpaca-native-7B doesn't have config.json so it didn't run). If not - nevertheless, you do ",
+          "created_at": "2023-04-10T13:40:23Z"
+        },
+        {
+          "author": "peakji",
+          "body": "[ChatGLM-6B](https://github.com/hyperonym/basaran/blob/master/deployments/bundle/chatglm-6b.Dockerfile) works pretty well (for English and Chinese) on commodity hardware, and [LLaMA/Alpaca support](https://github.com/hyperonym/basaran/issues/57) will be added in the next minor release!",
+          "created_at": "2023-04-10T13:58:09Z"
+        },
+        {
+          "author": "gitknu",
+          "body": "Thanks! I will try it today))",
+          "created_at": "2023-04-10T13:59:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 107,
+      "title": "Support for llama.cpp/ggml models",
+      "body": "Is there a plan to add support for llama.cpp models? It could support inference on CPUs.\r\n\r\nhttps://github.com/ggerganov/llama.cpp and https://github.com/thomasantony/llamacpp-python.\r\n\r\nRelated: https://github.com/hyperonym/basaran/issues/57\r\n",
+      "state": "closed",
+      "author": "codito",
+      "author_type": "User",
+      "created_at": "2023-04-01T03:41:48Z",
+      "updated_at": "2023-04-24T08:43:34Z",
+      "closed_at": "2023-04-06T14:58:17Z",
+      "labels": [
+        "wontfix"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/107/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/107",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/107",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:05.301596",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Currently there are no plans to add support for llama.cpp and related models. The Basaran project will continue to develop around the Hugging Face ecosystem to be compatible with more existing and future models.\r\n\r\nWe will also try to introduce more universal technologies to optimize CPU inference.",
+          "created_at": "2023-04-05T08:11:09Z"
+        },
+        {
+          "author": "codito",
+          "body": "Thanks @peakji, it makes sense. Closing this issue as out of scope.",
+          "created_at": "2023-04-06T14:58:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 62,
+      "title": "Chat broken",
+      "body": "I asked chat gpt to write a code, instead it writes garbage, completely irrelevant content. Any explanation?\r\nI am using docker container in Synology",
+      "state": "closed",
+      "author": "hassansf",
+      "author_type": "User",
+      "created_at": "2023-03-20T19:40:45Z",
+      "updated_at": "2023-04-24T08:43:02Z",
+      "closed_at": "2023-03-21T09:49:34Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/62/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/62",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/62",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:05.522075",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @hassansf , which model are you using with Basaran? Since you mentioned that you are running on Synology, I assume that you might be using a small model (like the default [bloomz-560m](https://huggingface.co/bigscience/bloomz-560m)).\r\n\r\nDifferent models have different ranges of capabilities, and ",
+          "created_at": "2023-03-21T02:31:17Z"
+        },
+        {
+          "author": "hassansf",
+          "body": "hello @peakji, I am actually not using NAS hardware instead it is an old Optiplex with 8GB RAM. Also the CPU usage will reach at 99% so I had to remove the container. I used this command to install Basaran:\r\n\r\ndocker run -d --name=Basaran \\\r\n-p 5477:80 \\\r\n-e MODEL=gpt2 \\\r\n--restart always \\\r\nhyperon",
+          "created_at": "2023-03-21T05:29:13Z"
+        },
+        {
+          "author": "peakji",
+          "body": ">  Also the CPU usage will reach at 99% so I had to remove the container.\r\n\r\nWhen the model is inferring, it is normal for the CPU utilization to reach 100%. It should return to 0% after the output is complete.\r\n\r\n> It installs without error and the response time is unusually fast but the content wr",
+          "created_at": "2023-03-21T09:32:40Z"
+        },
+        {
+          "author": "hassansf",
+          "body": "Much appreciated. Thank you.",
+          "created_at": "2023-03-21T09:39:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 61,
+      "title": "API Usage - iOS Shortcuts",
+      "body": "I want to integrate basaran into iOS Shortcuts, but I'm unsure how to use the API. With the existing iOS Shortcuts, for ChatGP, you only need an API key. \r\n\r\nIs there a good place to look for documentation on API usage, or does anyone have an iOS Shortcut that leverages basaran, willing to share it with us?",
+      "state": "closed",
+      "author": "saddle-gaudier-06",
+      "author_type": "User",
+      "created_at": "2023-03-20T16:27:10Z",
+      "updated_at": "2023-04-24T08:42:46Z",
+      "closed_at": "2023-03-21T03:45:23Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/61/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/61",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/61",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:05.712879",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "After running Basaran, its API format is consistent with the OpenAI text completion API, and you can refer to their [documentation](https://platform.openai.com/docs/api-reference/completions/create) directly. Since Basaran is self-hosted, there is no need to use an API Key. However, some client libr",
+          "created_at": "2023-03-21T02:25:23Z"
+        },
+        {
+          "author": "saddle-gaudier-06",
+          "body": "I just tested it and you are correct. This is great!",
+          "created_at": "2023-03-21T03:45:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 58,
+      "title": "Created RunPod template for easy deploy",
+      "body": "First of all I want to say I love Basaran is more OpenAI than OpenAI itself :)\r\nI decided to give a go and made template for Basaran to run on RunPod GPU service and it works well including UI and API endpoints.\r\nHope that helps users who want to use it without GPU access to also be able to enjoy it.\r\nhttps://runpod.io/gsc?template=7ito7h393l&ref=vfker49t\r\n\r\nI will be publishing blog post soon so will share link later.\r\nI also have question about location of the models. For now container saves model to temp storage if you let me know where models are being saved I will adjust template to allow saving to volume storage so users can avoid downloading models every time.\r\n\r\nThank you for amazing work again :)",
+      "state": "closed",
+      "author": "kodxana",
+      "author_type": "User",
+      "created_at": "2023-03-18T09:49:45Z",
+      "updated_at": "2023-04-24T08:42:31Z",
+      "closed_at": "2023-03-19T15:43:20Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/58/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 2,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/58",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/58",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:05.914116",
+      "comments": [
+        {
+          "author": "kodxana",
+          "body": "Post link: https://blog.runpod.io/guide-for-running-basaran-an-open-source-alternative-to-the-openai-text-completion-api/",
+          "created_at": "2023-03-18T15:41:10Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Hi @kodxana , thanks for the blog post!\r\n\r\nThe directory for storing/caching model is specified by the `MODEL_CACHE_DIR` environment variable, which is set to `/models` by default.\r\n\r\nHere are some recommended environment variables to be included in the template:\r\n\r\n* `MODEL`, `MODEL_REVISION`, and ",
+          "created_at": "2023-03-18T17:10:13Z"
+        },
+        {
+          "author": "kodxana",
+          "body": "Updated template to include recommended settings question is GPT-Nano model compatible by chance?",
+          "created_at": "2023-03-18T17:27:20Z"
+        },
+        {
+          "author": "peakji",
+          "body": "> is GPT-Nano model compatible by chance?\r\n\r\nI haven't tried yet, but theoretically Basaran supports all 🤗 Transformers-based models. If the model is not available on HF hub, you can load it by specifying the `MODEL` environment variable to a local directory, e.g. `MODEL=/home/ubuntu/gpt-nano`.\r\n\r\nY",
+          "created_at": "2023-03-18T17:45:30Z"
+        },
+        {
+          "author": "kodxana",
+          "body": "I get it worked though had to remove half precision was breaking it. GPT-Neo is so Dark :D\r\n![obraz](https://user-images.githubusercontent.com/16674412/226124313-1dcb2179-f19b-49a4-bea9-26983a1ff4f3.png)\r\n",
+          "created_at": "2023-03-18T17:47:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "Api for embeddings",
+      "body": "Are there any plans on adding text embeddings?\n",
+      "state": "closed",
+      "author": "K0IN",
+      "author_type": "User",
+      "created_at": "2023-03-09T08:59:17Z",
+      "updated_at": "2023-04-24T08:42:07Z",
+      "closed_at": "2023-03-09T13:20:09Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/26/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/26",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/26",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:06.130489",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Currently we do not have plan to support the embeddings API.\n\nFor most of the common use cases, you can use a sentence encoding service like [bert-as-servive](https://bert-as-service.readthedocs.io/en/latest/).",
+          "created_at": "2023-03-09T13:13:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 5,
+      "title": "RuntimeError: mat1 and mat2 shapes cannot be multiplied",
+      "body": "Sample 1:\r\n```\r\nERROR:waitress:Exception while serving /v1/completions\r\nTraceback (most recent call last):\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/channel.py\", line 428, in service\r\n    task.service()\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/task.py\", line 168, in service\r\n    self.execute()\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/task.py\", line 456, in execute\r\n    for chunk in app_iter:\r\n  File \"/opt/conda/lib/python3.8/site-packages/werkzeug/wsgi.py\", line 500, in __next__\r\n    return self._next()\r\n  File \"/opt/conda/lib/python3.8/site-packages/werkzeug/wrappers/response.py\", line 50, in _iter_encoded\r\n    for item in iterable:\r\n  File \"server.py\", line 157, in stream\r\n    for c in model(**options):\r\n  File \"/app/model.py\", line 68, in __call__\r\n    for (\r\n  File \"/app/model.py\", line 222, in generate\r\n    outputs = self.model(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 900, in forward\r\n    transformer_outputs = self.transformer(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 782, in forward\r\n    outputs = block(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 463, in forward\r\n    output = self.mlp(layernorm_output, residual)\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 384, in forward\r\n    hidden_states = self.gelu_impl(self.dense_h_to_4h(hidden_states))\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/nn/modules.py\", line 242, in forward\r\n    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 488, in matmul\r\n    return MatMul8bitLt.apply(A, B, out, bias, state)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 397, in forward\r\n    output += torch.matmul(subA, state.subB)\r\nRuntimeError: mat1 and mat2 shapes cannot be multiplied (1x6 and 3x16384)\r\n```\r\n\r\nSample 2:\r\n```\r\nERROR:waitress:Exception while serving /v1/completions\r\nTraceback (most recent call last):\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/channel.py\", line 428, in service\r\n    task.service()\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/task.py\", line 168, in service\r\n    self.execute()\r\n  File \"/opt/conda/lib/python3.8/site-packages/waitress/task.py\", line 456, in execute\r\n    for chunk in app_iter:\r\n  File \"/opt/conda/lib/python3.8/site-packages/werkzeug/wsgi.py\", line 500, in __next__\r\n    return self._next()\r\n  File \"/opt/conda/lib/python3.8/site-packages/werkzeug/wrappers/response.py\", line 50, in _iter_encoded\r\n    for item in iterable:\r\n  File \"server.py\", line 157, in stream\r\n    for c in model(**options):\r\n  File \"/app/model.py\", line 68, in __call__\r\n    for (\r\n  File \"/app/model.py\", line 222, in generate\r\n    outputs = self.model(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 900, in forward\r\n    transformer_outputs = self.transformer(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 782, in forward\r\n    outputs = block(\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 463, in forward\r\n    output = self.mlp(layernorm_output, residual)\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/transformers/models/bloom/modeling_bloom.py\", line 395, in forward\r\n    intermediate_output = self.dense_4h_to_h(hidden_states)\r\n  File \"/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1186, in _call_impl\r\n    return forward_call(*input, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/accelerate/hooks.py\", line 158, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/nn/modules.py\", line 242, in forward\r\n    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 488, in matmul\r\n    return MatMul8bitLt.apply(A, B, out, bias, state)\r\n  File \"/opt/conda/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 397, in forward\r\n    output += torch.matmul(subA, state.subB)\r\nRuntimeError: mat1 and mat2 shapes cannot be multiplied (1x3 and 1x4096)\r\n```",
+      "state": "closed",
+      "author": "fardeon",
+      "author_type": "User",
+      "created_at": "2023-02-22T09:59:39Z",
+      "updated_at": "2023-04-24T08:41:55Z",
+      "closed_at": "2023-03-21T02:52:33Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/5/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/5",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/5",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:06.320116",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Error seems random. The [workaround will be removed](https://github.com/hyperonym/basaran/tree/no-retry/basaran) when https://github.com/TimDettmers/bitsandbytes/issues/162 is closed.",
+          "created_at": "2023-03-21T02:52:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 3,
+      "title": "The installed version of bitsandbytes was compiled without GPU support",
+      "body": "Failed to run with `MODEL_LOAD_IN_8BIT=true`:\r\n\r\n```\r\n===================================BUG REPORT===================================\r\nWelcome to bitsandbytes. For bug reports, please submit your error trace to: https://github.com/TimDettmers/bitsandbytes/issues\r\n================================================================================\r\n/opt/conda/lib/python3.10/site-packages/bitsandbytes/cextension.py:31: UserWarning: The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers and GPU quantization are unavailable.\r\n  warn(\"The installed version of bitsandbytes was compiled without GPU support. \"\r\nTraceback (most recent call last):\r\n  File \"/app/model.py\", line 300, in load_model\r\n    model = AutoModelForCausalLM.from_pretrained(name_or_path, **kwargs)\r\n  File \"/opt/conda/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py\", line 464, in from_pretrained\r\n    return model_class.from_pretrained(\r\n  File \"/opt/conda/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 2478, in from_pretrained\r\n    ) = cls._load_pretrained_model(\r\n  File \"/opt/conda/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 2794, in _load_pretrained_model\r\n    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(\r\n  File \"/opt/conda/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 665, in _load_state_dict_into_meta_model\r\n    set_module_8bit_tensor_to_device(model, param_name, param_device, value=param)\r\n  File \"/opt/conda/lib/python3.10/site-packages/transformers/utils/bitsandbytes.py\", line 71, in set_module_8bit_tensor_to_device\r\n    new_value = bnb.nn.Int8Params(new_value, requires_grad=False, has_fp16_weights=has_fp16_weights).to(device)\r\n  File \"/opt/conda/lib/python3.10/site-packages/bitsandbytes/nn/modules.py\", line 196, in to\r\n    return self.cuda(device)\r\n  File \"/opt/conda/lib/python3.10/site-packages/bitsandbytes/nn/modules.py\", line 160, in cuda\r\n    CB, CBt, SCB, SCBt, coo_tensorB = bnb.functional.double_quant(B)\r\n  File \"/opt/conda/lib/python3.10/site-packages/bitsandbytes/functional.py\", line 1616, in double_quant\r\n    row_stats, col_stats, nnz_row_ptr = get_colrow_absmax(\r\n  File \"/opt/conda/lib/python3.10/site-packages/bitsandbytes/functional.py\", line 1505, in get_colrow_absmax\r\n    lib.cget_col_row_stats(ptrA, ptrRowStats, ptrColStats, ptrNnzrows, ct.c_float(threshold), rows, cols)\r\n  File \"/opt/conda/lib/python3.10/ctypes/__init__.py\", line 387, in __getattr__\r\n    func = self.__getitem__(name)\r\n  File \"/opt/conda/lib/python3.10/ctypes/__init__.py\", line 392, in __getitem__\r\n    func = self._FuncPtr((name_or_ordinal, self))\r\nAttributeError: /opt/conda/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so: undefined symbol: cget_col_row_stats\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"/app/server.py\", line 78, in <module>\r\n    model = load_model(MODEL, MODEL_CACHE_DIR, load_in_8bit)\r\n  File \"/app/model.py\", line 304, in load_model\r\n    if not model.can_generate():\r\nUnboundLocalError: local variable 'model' referenced before assignment\r\n```",
+      "state": "closed",
+      "author": "peakji",
+      "author_type": "User",
+      "created_at": "2023-02-21T17:50:27Z",
+      "updated_at": "2023-04-24T08:40:17Z",
+      "closed_at": "2023-02-22T04:06:18Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/3/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/3",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/3",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:06.496236",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "Fixed in [v0.4.0](https://github.com/hyperonym/basaran/releases/tag/v0.4.0)",
+          "created_at": "2023-02-22T04:06:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 181,
+      "title": "RuntimeError: mat1 and mat2 shapes cannot be multiplied",
+      "body": "When I call multiple streaming completions at the same time I get the error below.\r\n\r\n```\r\nstart listening on 127.0.0.1:8888\r\nERROR:waitress:Exception while serving /v1/completions\r\nTraceback (most recent call last):\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/waitress/channel.py\", line 428, in service\r\n    task.service()\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/waitress/task.py\", line 168, in service\r\n    self.execute()\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/waitress/task.py\", line 456, in execute\r\n    for chunk in app_iter:\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/werkzeug/wsgi.py\", line 500, in __next__\r\n    return self._next()\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/werkzeug/wrappers/response.py\", line 50, in _iter_encoded\r\n    for item in iterable:\r\n  File \"/home/chang/AI/llm/basaran/basaran/__main__.py\", line 168, in stream\r\n    for choice in stream_model(**options):\r\n  File \"/home/chang/AI/llm/basaran/basaran/model.py\", line 73, in __call__\r\n    for (\r\n  File \"/home/chang/AI/llm/basaran/basaran/model.py\", line 237, in generate\r\n    outputs = self.model(\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1501, in _call_impl\r\n    return forward_call(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/accelerate/hooks.py\", line 165, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py\", line 662, in forward\r\n    outputs = self.gpt_neox(\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1501, in _call_impl\r\n    return forward_call(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/accelerate/hooks.py\", line 165, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py\", line 553, in forward\r\n    outputs = layer(\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1501, in _call_impl\r\n    return forward_call(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/accelerate/hooks.py\", line 165, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py\", line 335, in forward\r\n    mlp_output = self.mlp(self.post_attention_layernorm(hidden_states))\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1501, in _call_impl\r\n    return forward_call(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/accelerate/hooks.py\", line 165, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py\", line 297, in forward\r\n    hidden_states = self.dense_4h_to_h(hidden_states)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1501, in _call_impl\r\n    return forward_call(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/accelerate/hooks.py\", line 165, in new_forward\r\n    output = old_forward(*args, **kwargs)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/bitsandbytes/nn/modules.py\", line 320, in forward\r\n    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 500, in matmul\r\n    return MatMul8bitLt.apply(A, B, out, bias, state)\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/torch/autograd/function.py\", line 506, in apply\r\n    return super().apply(*args, **kwargs)  # type: ignore[misc]\r\n  File \"/home/chang/anaconda3/envs/hf38/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py\", line 417, in forward\r\n    output += torch.matmul(subA, state.subB)\r\nRuntimeError: mat1 and mat2 shapes cannot be multiplied (238x13 and 29x5120)\r\nERROR:waitress:Exception while serving /v1/completions\r\n\r\n```",
+      "state": "open",
+      "author": "lcw99",
+      "author_type": "User",
+      "created_at": "2023-04-24T06:12:03Z",
+      "updated_at": "2023-04-24T08:39:48Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "duplicate"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/181/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/181",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/181",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:06.693165",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "We've ran into the exact same error before: https://github.com/hyperonym/basaran/issues/5. The error is caused by https://github.com/TimDettmers/bitsandbytes/issues/162 and seems fully random.\r\n\r\nCurrently the only workaround is to stop using `INT8` quantization, and use half-precision instead.",
+          "created_at": "2023-04-24T08:37:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 152,
+      "title": "Getting error for model when using vicuna model",
+      "body": "2023-04-18 17:03:51 Traceback (most recent call last):\r\n2023-04-18 17:03:51   File \"/usr/lib/python3.8/runpy.py\", line 194, in _run_module_as_main\r\n2023-04-18 17:03:51     return _run_code(code, main_globals, None,\r\n2023-04-18 17:03:51   File \"/usr/lib/python3.8/runpy.py\", line 87, in _run_code\r\n2023-04-18 17:03:51     exec(code, run_globals)\r\n2023-04-18 17:03:51   File \"/app/basaran/__main__.py\", line 38, in <module>\r\n2023-04-18 17:03:51     stream_model = load_model(\r\n2023-04-18 17:03:51   File \"/app/basaran/model.py\", line 318, in load_model\r\n2023-04-18 17:03:51     tokenizer = AutoTokenizer.from_pretrained(name_or_path, **kwargs)\r\n2023-04-18 17:03:51   File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 657, in from_pretrained\r\n2023-04-18 17:03:51     config = AutoConfig.from_pretrained(\r\n2023-04-18 17:03:51   File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/configuration_auto.py\", line 916, in from_pretrained\r\n2023-04-18 17:03:51     config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)\r\n2023-04-18 17:03:51   File \"/usr/local/lib/python3.8/dist-packages/transformers/configuration_utils.py\", line 573, in get_config_dict\r\n2023-04-18 17:03:51     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)\r\n2023-04-18 17:03:51   File \"/usr/local/lib/python3.8/dist-packages/transformers/configuration_utils.py\", line 628, in _get_config_dict\r\n2023-04-18 17:03:51     resolved_config_file = cached_file(\r\n2023-04-18 17:03:51   File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 380, in cached_file\r\n2023-04-18 17:03:51     raise EnvironmentError(\r\n2023-04-18 17:03:51 OSError: /models/vicuna does not appear to have a file named config.json. Checkout 'https://huggingface.co//models/vicuna/None' for available files.\r\n\r\nMaybe the documentation can improve on running a custom model. It is pretty vague right now.\r\n\r\n\r\n```\r\nFROM hyperonym/basaran:0.15.3\r\n\r\n# Copy model files\r\nCOPY ./model /models/vicuna\r\n\r\n# Provide default environment variables\r\nENV MODEL=\"/models/vicuna\"\r\nENV MODEL_LOCAL_FILES_ONLY=\"true\"\r\nENV MODEL_HALF_PRECISION=\"true\"\r\nENV SERVER_MODEL_NAME=\"vicuna\"\r\n```\r\n\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "djaffer",
+      "author_type": "User",
+      "created_at": "2023-04-18T22:09:34Z",
+      "updated_at": "2023-04-23T02:37:26Z",
+      "closed_at": "2023-04-23T02:37:26Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/152/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/152",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/152",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:06.872361",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "It looks like the `config.json` file was not found in `/models/vicuna`. You can enter the container to check if the file has been copied correctly. This may be due to the different working directory when running `docker build`.",
+          "created_at": "2023-04-19T02:53:34Z"
+        },
+        {
+          "author": "djaffer",
+          "body": "it quits before it starts. ",
+          "created_at": "2023-04-19T05:33:19Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "> it quits before it starts.\r\n\r\nYou may temporarily remove `ENV MODEL=\"/models/vicuna\"` to let it download and start with the default model, meanwhile `bash` into the container to see if the files were correctly copied.",
+          "created_at": "2023-04-19T05:37:50Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "Vicuna is now tested and is working properly (https://github.com/hyperonym/basaran/issues/160). This issue seems to be a configuration problem within the model repository.",
+          "created_at": "2023-04-21T04:14:47Z"
+        },
+        {
+          "author": "peakji",
+          "body": "I guess it is now safe to close this issue as vicuna has been confirmed to work with Basaran (https://github.com/hyperonym/basaran/issues/160, https://github.com/hyperonym/basaran/issues/180).\r\n\r\nFor choices of working vicuna models, please refer to https://github.com/hyperonym/basaran/issues/160#is",
+          "created_at": "2023-04-23T02:37:25Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 173,
+      "title": "Possible to run on M-series chips/MPS?",
+      "body": "Hello,\r\nThank you for making this great repository! Is it possible to run this on M1/M2 chips using MPS? I've tried setting `self.device` to `mps`, however I get this:\r\n```\r\nRuntimeError: Placeholder storage has not been allocated on MPS device!\r\n```\r\nIs there any way to run this using MPS optimization?\r\nThank you!",
+      "state": "closed",
+      "author": "fakerybakery",
+      "author_type": "User",
+      "created_at": "2023-04-20T20:39:18Z",
+      "updated_at": "2023-04-22T23:33:44Z",
+      "closed_at": "2023-04-22T23:33:44Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/173/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/173",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/173",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:07.097637",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "I haven't used MPS before, will investigate it.",
+          "created_at": "2023-04-21T02:08:46Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "After some attempts, I found that setting `device=\"mps\"` alone is not enough, and we also need an additional `model.to(\"mps\")` to run.\r\n\r\nWhat's even stranger is that the inference speed (of `distillgpt2`) actually decreases significantly when using MPS compared to using CPU (Macbook Pro M1).",
+          "created_at": "2023-04-21T05:25:34Z"
+        },
+        {
+          "author": "fakerybakery",
+          "body": "OK, thank you. I will try that out.",
+          "created_at": "2023-04-22T23:33:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 158,
+      "title": "Question about COMPLETION_MAX_PROMPT",
+      "body": "Hi, I noticed that COMPLETION_MAX_PROMPT is defined via the length of the prompt in characters, rather than tokens, and was wondering if this is intended?\r\nIf intentional, it may be worth clarifying somewhere (as currently the default value is identical to that of COMPLETION_MAX_TOKENS) and/or adding a warning when a prompt is being truncated.",
+      "state": "closed",
+      "author": "nicpopovic",
+      "author_type": "User",
+      "created_at": "2023-04-19T13:41:39Z",
+      "updated_at": "2023-04-21T13:53:45Z",
+      "closed_at": "2023-04-21T13:53:45Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/158/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/158",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/158",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:07.270861",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "`COMPLETION_MAX_PROMPT` is just a safety measure to handle worst-case scenarios. Since `COMPLETION_MAX_TOKENS` can only ensure that the number of **newly** generated tokens is controllable, another mechanism is needed to prevent the input side from being maliciously exploited.\r\n\r\nWe recommend settin",
+          "created_at": "2023-04-19T14:16:16Z"
+        },
+        {
+          "author": "nicpopovic",
+          "body": "Makes sense, though I would suggest reconsidering adding a warning: With the default value of 4096, an example prompt I was using was being truncated to approx. 700 tokens, which is not noticeable if you are not echoing prompt tokens. The only way to notice, of course, is that suddenly the generated",
+          "created_at": "2023-04-19T14:49:19Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Perhaps a workaround is to increase the default to a large value (e.g. `16384`?), which can avoid surprising users.\r\n\r\nWarning or throwing errors may break compatibility with the OpenAI API, as their documentation does not provide detailed examples for corner cases. We have to manually try them out,",
+          "created_at": "2023-04-19T15:35:05Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Also, we will thoroughly revamp the playground interface soon. The current implementation based on `EventSource` is also limiting the prompt length due to URL encoding. We will switch to using POST requests in the future, which is particularly important for adding the chat interface.",
+          "created_at": "2023-04-19T16:02:49Z"
+        },
+        {
+          "author": "nicpopovic",
+          "body": "Sounds good, thanks for all your work on this project, I'm really liking it :)",
+          "created_at": "2023-04-21T13:53:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 147,
+      "title": "Any chance to support text-generation-inference as backend?",
+      "body": "https://github.com/huggingface/text-generation-inference\r\n\r\nMain features of TGI are quite awesome. It woud be nice to make it additional inference implementation. ",
+      "state": "open",
+      "author": "hewr2010",
+      "author_type": "User",
+      "created_at": "2023-04-18T02:10:52Z",
+      "updated_at": "2023-04-21T04:17:06Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/147/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/147",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/147",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:07.490638",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "Thanks for introducing TGU, we'll definitely check it out! ",
+          "created_at": "2023-04-18T16:16:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 151,
+      "title": "The requested URL was not found on the server",
+      "body": "Hi,\r\n\r\nI keep hitting the following error.\r\n\r\n```bash\r\nInvalidRequestError: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\r\n```\r\n\r\nThis happens when trying to droppin' replace `OpenAI` with `basaran` (tested with both [`babyagi`](https://github.com/yoheinakajima/babyagi) and [`langchain`](https://github.com/hwchase17/langchain)'s own implementation of [`babyagi` as a Jupyter notbook](https://github.com/hwchase17/langchain/blob/e56673c7f9a8c928ca2275f21bc82dc2944508aa/docs/modules/chains/examples/baby_agi.ipynb)). While I had to tweak the former, the later [supports setting the api_base](https://github.com/hwchase17/langchain/pull/2823) since recently.\r\n\r\nI did make sure that `basaran` is running fine, I can hit it with,\r\n\r\n```bash\r\ncurl http://127.0.0.1/v1/completions \\\r\n    -H 'Content-Type: application/json' \\\r\n    -d '{ \"prompt\": \"once upon a time,\", \"echo\": true }'\r\n```\r\n\r\nAny pointer would be appreciated :)",
+      "state": "open",
+      "author": "artivis",
+      "author_type": "User",
+      "created_at": "2023-04-18T18:45:09Z",
+      "updated_at": "2023-04-21T04:16:54Z",
+      "closed_at": null,
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/151/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/151",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/151",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:07.743634",
+      "comments": [
+        {
+          "author": "fardeon",
+          "body": "I think there might be two possible reasons for the `404` error:\r\n\r\n1. Please make sure `api_base` is set correctly. Specifically:\r\n\r\n| api_base  | |\r\n| :--- | --- |\r\n| `http://127.0.0.1/v1` | ✅ |\r\n| `http://127.0.0.1/v1/` | ❌ |\r\n| `http://127.0.0.1/` | ❌ |\r\n\r\n2. Currently, Basaran only supports the",
+          "created_at": "2023-04-19T02:49:27Z"
+        },
+        {
+          "author": "artivis",
+          "body": "1. The `api_base` is indeed set correctly.\r\n2. I finally could get it to 'work' with [`babyagi`](https://github.com/yoheinakajima/babyagi). The call is made and babyagi starts running however it spits a bunch of numbers and crash. I'm not planning to invest more time debugging at this point.\r\nAs for",
+          "created_at": "2023-04-19T08:18:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 137,
+      "title": "Instructions unclear",
+      "body": "in windows \r\nreplacing private.dockerfile with:\r\n```\r\nFROM hyperonym/basaran:0.15.3\r\n\r\n# Copy model files\r\nCOPY vicuna128 D:\\basaran\\models\\vicuna128\r\n\r\n# Provide default environment variables\r\nENV MODEL=\"D:\\basaran\\models\\vicuna128\"\r\nENV MODEL_LOCAL_FILES_ONLY=\"true\"\r\nENV SERVER_MODEL_NAME=\"vicuna128\"\r\n```\r\nand doing `docker build deployments\\bundle\\private.dockerfile` gives a location error because it can't find the model under models/vicuna so i tried running:\r\n```\r\nbasaran> docker run -p 80:80 -e MODEL=\"D:\\basaran\\models\\vicuna128\" --name fun hyperonym/basaran:0.15.3\r\n>>\r\nTraceback (most recent call last):\r\n  File \"/usr/lib/python3.8/runpy.py\", line 194, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"/usr/lib/python3.8/runpy.py\", line 87, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/app/basaran/__main__.py\", line 38, in <module>\r\n    stream_model = load_model(\r\n  File \"/app/basaran/model.py\", line 318, in load_model\r\n    tokenizer = AutoTokenizer.from_pretrained(name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 642, in from_pretrained\r\n    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/models/auto/tokenization_auto.py\", line 486, in get_tokenizer_config\r\n    resolved_config_file = cached_file(\r\n  File \"/usr/local/lib/python3.8/dist-packages/transformers/utils/hub.py\", line 409, in cached_file\r\n    resolved_file = hf_hub_download(\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 112, in _inner_fn\r\n    validate_repo_id(arg_value)\r\n  File \"/usr/local/lib/python3.8/dist-packages/huggingface_hub/utils/_validators.py\", line 166, in validate_repo_id\r\n    raise HFValidationError(\r\nhuggingface_hub.utils._validators.HFValidationError: Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: 'D:\\basaran\\models\\vicuna128'.\r\n```\r\n\r\nit runs normally and seems to default to a model called \r\nbigscience/bloomz-560m which runs on http://127.0.0.1/\r\nis there any way to swap models after running the docker file?? or any way you could post the output of your terminal when running a private docker file in this way?\r\n\r\nim not new to docker, but im also unemployed so have no one to ask about this.",
+      "state": "open",
+      "author": "Anonym0us33",
+      "author_type": "User",
+      "created_at": "2023-04-15T20:44:27Z",
+      "updated_at": "2023-04-21T04:16:25Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/137/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/137",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/137",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:07.909738",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @Anonym0us33!\r\n\r\nThe [COPY instruction](https://docs.docker.com/engine/reference/builder/#copy) copies  files or directories from `<src>` to the filesystem of the container at `<dest>`. And you cannot copy files outside the build context when building a docker image.\r\n\r\nTherefore, you should firs",
+          "created_at": "2023-04-16T04:29:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 143,
+      "title": "CORS headers",
+      "body": "CORS headers are required to use the API from the client side, otherwise we get errors like this:\r\n\r\n> Access to fetch at 'http://127.0.0.1/v1/completions' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.\r\n\r\nCan CORS headers be added? Client-side usage is needed in [OpenCharacters](https://github.com/josephrocca/OpenCharacters).\r\n\r\nThe header: `Access-Control-Allow-Origin: *` should be added to `/v1/completions` responses.",
+      "state": "closed",
+      "author": "josephrocca",
+      "author_type": "User",
+      "created_at": "2023-04-16T10:28:47Z",
+      "updated_at": "2023-04-18T18:39:05Z",
+      "closed_at": "2023-04-18T16:23:35Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/143/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "orionji",
+        "fardeon"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/143",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/143",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:08.069491",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Since Basaran is completely stateless and does not involve any user or credential information, I guess it is safe to add `Access-Control-Allow-Origin: *` for all endpoints?",
+          "created_at": "2023-04-16T10:37:01Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "Yep - although it might make sense to add API keys eventually, so that random websites that you visit can't try hitting `http://127.0.0.1/v1/completions` while you're browsing the web. But it's all inside docker, so there are multiple layers they'd need to get through to actually do any harm (other ",
+          "created_at": "2023-04-16T10:45:53Z"
+        },
+        {
+          "author": "peakji",
+          "body": "Make sense! We will make CORS configurable via environment variables.",
+          "created_at": "2023-04-16T10:51:13Z"
+        },
+        {
+          "author": "josephrocca",
+          "body": "I'm guessing it'll just be something like this?\r\n\r\n```py\r\nfrom . import CORS_ALLOWED_ORIGIN\r\n\r\n# ...\r\n\r\n@app.after_request\r\ndef apply_cors_headers(response):\r\n    if CORS_ALLOWED_ORIGIN:\r\n        response.headers['Access-Control-Allow-Origin'] = CORS_ALLOWED_ORIGIN\r\n    else:\r\n        response.heade",
+          "created_at": "2023-04-16T11:27:21Z"
+        },
+        {
+          "author": "peakji",
+          "body": "According to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests), `POST`ing a JSON is not a [simple request](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests). (not sure if this is the case as I'm not very familiar with web dev). We may need to handle ",
+          "created_at": "2023-04-16T11:57:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 145,
+      "title": "Replace EventSource with POST requests in playground",
+      "body": "Encoding `prompt` as query parameters can lead to `414 URI Too Long` for long user inputs. We should replace `EventSource` with native POST requests.",
+      "state": "open",
+      "author": "fardeon",
+      "author_type": "User",
+      "created_at": "2023-04-17T04:01:14Z",
+      "updated_at": "2023-04-17T04:01:14Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "enhancement"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/145/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "fardeon"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/145",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/145",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:08.266797",
+      "comments": []
+    },
+    {
+      "issue_number": 142,
+      "title": "Add a chat interface to playground",
+      "body": "## Checklist\r\n\r\n- [ ] Add a tab menu at the top to allow for selection between completion or chat.\r\n- [ ] Allow to specify the title of the playground, with the model name as the subtitle.\r\n- [ ] Refactor and review all frontend code.",
+      "state": "open",
+      "author": "peakji",
+      "author_type": "User",
+      "created_at": "2023-04-16T10:27:58Z",
+      "updated_at": "2023-04-16T10:27:58Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/142/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "fardeon"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/142",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/142",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:08.266823",
+      "comments": []
+    },
+    {
+      "issue_number": 57,
+      "title": "Does this work for LLaMA models?",
+      "body": "I wanna stream the output of LLaMA models is it possible using this?",
+      "state": "closed",
+      "author": "marcoripa96",
+      "author_type": "User",
+      "created_at": "2023-03-17T13:25:25Z",
+      "updated_at": "2023-04-14T20:00:12Z",
+      "closed_at": "2023-04-14T18:06:28Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 21,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/57/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/57",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/57",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:08.266834",
+      "comments": []
+    },
+    {
+      "issue_number": 70,
+      "title": "[bug] Strange output from StreamModel",
+      "body": null,
+      "state": "closed",
+      "author": "Yangruipis",
+      "author_type": "User",
+      "created_at": "2023-03-22T09:17:44Z",
+      "updated_at": "2023-03-28T07:23:01Z",
+      "closed_at": "2023-03-22T09:35:25Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/70/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/70",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/70",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:10.880355",
+      "comments": [
+        {
+          "author": "Yangruipis",
+          "body": "![image](https://user-images.githubusercontent.com/16623724/226856567-dc0a2f41-3293-46ce-99f8-e6e46d47154a.png)\r\n\r\n\r\ncommit: 42b849383dadfeec54573f28d89db326b94bd296",
+          "created_at": "2023-03-22T09:18:36Z"
+        },
+        {
+          "author": "fardeon",
+          "body": "The example script is using [hf-internal-testing/tiny-random-t5](https://huggingface.co/hf-internal-testing/tiny-random-t5), which by its name, generates random outputs.\r\n\r\nYou should replace `\"hf-internal-testing/tiny-random-t5\"` with the model you want to use.",
+          "created_at": "2023-03-22T09:27:51Z"
+        },
+        {
+          "author": "Yangruipis",
+          "body": "aha i got it, and thanks for your wonderful job!",
+          "created_at": "2023-03-22T09:35:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 97,
+      "title": "Beam search",
+      "body": "I am using this package, which shows much better performance than MS DeepSpeed-MII, which has a similar function. Do you have plans to implement beam search as well?",
+      "state": "closed",
+      "author": "lcw99",
+      "author_type": "User",
+      "created_at": "2023-03-26T21:13:38Z",
+      "updated_at": "2023-03-28T07:22:35Z",
+      "closed_at": "2023-03-27T23:29:16Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/97/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/97",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/97",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:11.114704",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Currently we do not have plans to implement beam search. On one hand, it would incur greater performance overhead, and on the other hand, if you want to generate natural text, [beam search may not be the best choice](https://arxiv.org/abs/1904.09751).\r\n\r\n<img width=\"456\" src=\"https://user-images.git",
+          "created_at": "2023-03-27T02:48:54Z"
+        },
+        {
+          "author": "lcw99",
+          "body": "Thanks for your answer. I really expecting Frequency and presence penalties functionality. Currently, I have some repetation problem on my model. ",
+          "created_at": "2023-03-27T23:29:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 99,
+      "title": "Slow Streaming",
+      "body": "Thanks for this package, working great and pretty fast too when i tried using this for Bloomz 7B model but when i tried the same for this model : [GPT-NeoXT-Chat-Base-20B] (https://huggingface.co/togethercomputer/GPT-NeoXT-Chat-Base-20B), the streaming token generation seems very very slow (~1 token / 2-3 secs). \r\n\r\nJust checking if this is expected or am i missing something,  as i can see you guys have tested this model too as per README\r\n\r\nI'm running it on single A100 machine and during the streaming token generation the GPU Util is around ~55%.",
+      "state": "closed",
+      "author": "manojpreveen",
+      "author_type": "User",
+      "created_at": "2023-03-27T17:48:46Z",
+      "updated_at": "2023-03-28T07:21:49Z",
+      "closed_at": "2023-03-28T07:18:37Z",
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/hyperonym/basaran/issues/99/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/hyperonym/basaran/issues/99",
+      "api_url": "https://api.github.com/repos/hyperonym/basaran/issues/99",
+      "repository": "hyperonym/basaran",
+      "extraction_date": "2025-06-22T09:51:11.311860",
+      "comments": [
+        {
+          "author": "peakji",
+          "body": "Hi @manojpreveen ! 20B is indeed a relatively large model, but the speed should not be this slow.\r\n\r\nYou can try adding `MODEL_HALF_PRECISION=true` to your environment variables to enable half-precision quantization, which will reduce memory usage while improving the speed of generation.\r\n\r\nEspecial",
+          "created_at": "2023-03-28T02:44:58Z"
+        },
+        {
+          "author": "manojpreveen",
+          "body": "Yeah enabling half precision definitely made a difference and is much faster now. Thanks. Closing the issue.\r\n",
+          "created_at": "2023-03-28T07:18:37Z"
+        }
+      ]
+    }
+  ]
+}

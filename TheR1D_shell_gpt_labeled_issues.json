@@ -1,0 +1,2509 @@
+{
+  "repository": "TheR1D/shell_gpt",
+  "repository_info": {
+    "repo": "TheR1D/shell_gpt",
+    "stars": 11019,
+    "language": "Python",
+    "description": "A command-line productivity tool powered by AI large language models like GPT-4, will help you accomplish your tasks faster and more efficiently.",
+    "url": "https://github.com/TheR1D/shell_gpt",
+    "topics": [
+      "chatgpt",
+      "cheat-sheet",
+      "cli",
+      "commands",
+      "gpt-3",
+      "gpt-4",
+      "linux",
+      "llama",
+      "llm",
+      "ollama",
+      "openai",
+      "productivity",
+      "python",
+      "shell",
+      "terminal"
+    ],
+    "created_at": "2023-01-18T19:40:11Z",
+    "updated_at": "2025-06-21T21:49:17Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 130,
+    "labeled_issues_estimate": 13,
+    "labeling_rate": 10.0,
+    "sample_labeled": 3,
+    "sample_total": 30,
+    "has_issues": true,
+    "repo_id": 590604203,
+    "default_branch": "main",
+    "size": 252
+  },
+  "extraction_date": "2025-06-22T00:25:41.362454",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 51,
+  "issues": [
+    {
+      "issue_number": 478,
+      "title": "Implement Ctrl-C (SIGINT) Handling for Graceful Interruption of Streaming",
+      "body": "WHen the AI is actively generating output (streaming mode) with `--repl`, it would be nice if pressing <Ctrl>-C would cancel streaming, allowing me to interact with the AI to correct what it's doing.\r\n\r\nWhen there is not an active stream, <Ctrl>-C should continue to exit the REPL.",
+      "state": "closed",
+      "author": "ryanfreckleton",
+      "author_type": "User",
+      "created_at": "2024-02-14T03:26:29Z",
+      "updated_at": "2025-04-11T09:09:31Z",
+      "closed_at": "2025-04-11T09:09:29Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/478/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/478",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/478",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:15.579627",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "SIGINT was implemented for `--repl` mode in one of latest releases. Closing this issue for now.",
+          "created_at": "2025-04-11T09:09:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 111,
+      "title": "when using it in container mode, it lost the awareness of the actual os and shell",
+      "body": "for example,  I am using macos, yet when I asked the system update commands, it gave me the ones for debian/ubuntu,  because this is the env of the docker image. \r\n\r\nmaybe supporting providing such info in the config files or some env vars? ",
+      "state": "closed",
+      "author": "binaryoak",
+      "author_type": "User",
+      "created_at": "2023-03-28T05:59:01Z",
+      "updated_at": "2025-04-11T09:01:24Z",
+      "closed_at": "2025-04-11T09:01:23Z",
+      "labels": [
+        "enhancement",
+        "docker"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/111/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/111",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/111",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:15.812119",
+      "comments": [
+        {
+          "author": "AnkitGupta17134",
+          "body": "How are you sure its referring to base image(linux) of docker to answer regarding update commands?",
+          "created_at": "2023-03-28T17:20:00Z"
+        },
+        {
+          "author": "binaryoak",
+          "body": "because my os is macos, yet the system update command it gave was apt-get which is for the base image used by python-3-slim -- `FROM debian:bullseye-slim`",
+          "created_at": "2023-03-29T03:57:51Z"
+        },
+        {
+          "author": "saifmode",
+          "body": "I addressed this in my  fork https://github.com/saifmode/shell_gpt\r\n\r\n@TheR1D  feel free to cherry pick this commit https://github.com/TheR1D/shell_gpt/commit/cec01d07f186ff5d7fb9d0a4bee1f36648702b9b\r\nI also added support for other models in my fork.\r\n\r\n@binaryoak Please note, when running a docker ",
+          "created_at": "2023-04-02T19:43:48Z"
+        },
+        {
+          "author": "Robinsane",
+          "body": "I think my PR #540 offers a decent solution to this :)",
+          "created_at": "2024-04-11T15:24:33Z"
+        },
+        {
+          "author": "bash-bandicoot",
+          "body": "It is worth noting 1.4.4 ver. added OS_NAME and SHELL_NAME envs, however, since it runs in a container, sgpt won't be able to interact with your actual computer as it \"lives\" in the container's OS.",
+          "created_at": "2024-08-15T15:18:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 685,
+      "title": "Release pipelie fails to create a new GitHub release",
+      "body": "Latest \"release\" [pipleine run](https://github.com/TheR1D/shell_gpt/actions/runs/14331485938/job/40168397270) failed to create a new GitHub release. The issue is related to https://github.com/actions/upload-artifact",
+      "state": "open",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2025-04-08T11:01:25Z",
+      "updated_at": "2025-04-08T11:01:25Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/685/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/685",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/685",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:16.045499",
+      "comments": []
+    },
+    {
+      "issue_number": 459,
+      "title": "An issue with Python version < 3.8 (walrus operator)",
+      "body": "It output the following error when I enter:\r\n`sgpt \"nginx default config file location\"`\r\n\r\n```\r\nTraceback (most recent call last):\r\n  File \"/Users/guest/miniconda3/bin/sgpt\", line 5, in <module>\r\n    from sgpt import cli\r\n  File \"/Users/guest/miniconda3/lib/python3.7/site-packages/sgpt/__init__.py\", line 1, in <module>\r\n    from .app import main as main\r\n  File \"/Users/guest/miniconda3/lib/python3.7/site-packages/sgpt/app.py\", line 12, in <module>\r\n    from sgpt.handlers.repl_handler import ReplHandler\r\n  File \"/Users/guest/miniconda3/lib/python3.7/site-packages/sgpt/handlers/repl_handler.py\", line 20\r\n    while (user_input := typer.prompt(\"...\", prompt_suffix=\"\")) != '\"\"\"':\r\n                      ^\r\n```",
+      "state": "closed",
+      "author": "apprithm",
+      "author_type": "User",
+      "created_at": "2024-01-29T08:53:21Z",
+      "updated_at": "2025-02-17T04:11:11Z",
+      "closed_at": "2025-02-17T04:11:11Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/459/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/459",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/459",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:16.045538",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Thank you for reporting this issue. The walrus operator `:=` was added in Python 3.8, since you have Python 3.7, it can't handle it. ShellGPT is supposed to support any Python version starting from 3.6, as defined in [pyproject.toml](https://github.com/TheR1D/shell_gpt/blob/main/pyproject.toml#L11).",
+          "created_at": "2024-01-29T21:50:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 472,
+      "title": "Shell autocompletions",
+      "body": "Since ShellGPT is builded with [Typer](https://typer.tiangolo.com/) we can utilise [autocomplitions](https://typer.tiangolo.com/tutorial/options-autocompletion/) in order to improve user experience.\r\n\r\n* Completions for options and arguments.\r\n* Completions for OpenAI models when using `--model`.\r\n* Completions for chat IDs (get list of files from chats folder) - optional.\r\n* Completions for roles (get list of files from roles folder) - optional.\r\n\r\nShellGPT reads multiple files on invoke (config, roles) we might need to optimise it, to make it more responsive.",
+      "state": "open",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2024-02-09T23:51:49Z",
+      "updated_at": "2024-08-15T15:24:12Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/472/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/472",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/472",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:18.354059",
+      "comments": [
+        {
+          "author": "bash-bandicoot",
+          "body": "I think autocompletion with --model will be a blast!",
+          "created_at": "2024-08-15T15:24:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 333,
+      "title": "Render markdown output",
+      "body": "Currently output of command is not formated by default\r\n![image](https://github.com/TheR1D/shell_gpt/assets/459989/c24e82f1-d096-4b90-87a7-5bbbd2a303a7)\r\n\r\nIt would be more readable if use something like `glow` formatting (although glow is written in go - so some alternative should be found)\r\n![image](https://github.com/TheR1D/shell_gpt/assets/459989/241eca61-1635-4d0b-ab9d-980ae988c94b)\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "volkov",
+      "author_type": "User",
+      "created_at": "2023-08-21T06:47:00Z",
+      "updated_at": "2024-08-11T10:42:47Z",
+      "closed_at": "2023-12-19T20:29:22Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/333/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 1,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/333",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/333",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:18.551476",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "It is possible to pipe output of `sgpt` to `glow` or any other markdown reader (which supports stdin).\r\n```shell\r\nsgpt \"how to zip all files in current folder\" | glow\r\n```",
+          "created_at": "2023-08-23T00:43:55Z"
+        },
+        {
+          "author": "volkov",
+          "body": "True, at least for latest glow versions (1.4.0 does not support stdin).\r\n\r\nPiping to glow makes outupt more readable, but I have to wait till end of generation to see anything.",
+          "created_at": "2023-08-23T06:05:45Z"
+        },
+        {
+          "author": "David-Else",
+          "body": "How about https://github.com/swsnr/mdcat for full output, or https://github.com/sharkdp/bat to get some colour highlighting? (`bat` is `batcat` in Debian)\r\n\r\nThis works, but for some reason there is no colour, do I need some `--color` type option?:\r\n\r\n`sgpt \"show me some markdown that contains all m",
+          "created_at": "2023-08-24T15:02:01Z"
+        },
+        {
+          "author": "jeanlucthumm",
+          "body": "https://rich.readthedocs.io/en/stable/markdown.html\r\n\r\n^ python lib for markdown rendering with code syntax highlighting, and it looks like it's already a dependency of this project: https://github.com/TheR1D/shell_gpt/blob/1c585664889e2cfb19ca1e13f0e8d621463ddef3/pyproject.toml#L34\r\n\r\nA lot of my u",
+          "created_at": "2023-09-01T06:47:07Z"
+        },
+        {
+          "author": "jeanlucthumm",
+          "body": "The line that prints messages seems to be this one:\r\n\r\nhttps://github.com/TheR1D/shell_gpt/blob/1c585664889e2cfb19ca1e13f0e8d621463ddef3/sgpt/handlers/handler.py#L34\r\n\r\nGonna try to change it to the Rich markdown handler and see what happens \r\n\r\nI guess one issue is that the words stream in, and Ric",
+          "created_at": "2023-09-01T06:59:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 329,
+      "title": "Feature request: Allow starting a chat from most recent response",
+      "body": "I really love this interface for working with llms, but sometimes I intend to ask a one off question and realize the LLM almost but didn't quite get me, so I'd like to follow up rather than starting over with a new prompt.\r\n\r\nI could use my shell's built in history to pipe in the last reply as context, but I think a more pleasant solution would be to introduce a `last` chat that stores the output of the last prompt that didn't specify a chat. Whenever a user makes a prompt without a `--chat` argument, the last entry is overwritten. If it's a named chat, have the `last` chat point to that named chat.\r\n\r\nSince replies are cached by default, I think this would be really sensible and maybe there could even be a `--reply` flag that's syntactic sugar for responding to whatever was the last chat. To me, that's more ergonomic than assuming I'll want to continue the conversation before I ask my question.",
+      "state": "open",
+      "author": "mccartykim",
+      "author_type": "User",
+      "created_at": "2023-08-16T18:49:19Z",
+      "updated_at": "2024-07-13T09:41:00Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/329/reactions",
+        "total_count": 5,
+        "+1": 5,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/329",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/329",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:18.821424",
+      "comments": [
+        {
+          "author": "pcuci",
+          "body": "What if the response comes from whatever the previous command's stdout/stderr output the shell received?\r\n\r\nA lot of the times, I get an error I've never seen before, and being lazy to read it, I feed it to ChatGPT to read it for me. This saves a lot of time, for instance, when some unformatted json",
+          "created_at": "2023-09-10T13:36:05Z"
+        },
+        {
+          "author": "moritztim",
+          "body": "#32",
+          "created_at": "2023-12-21T14:40:03Z"
+        },
+        {
+          "author": "jeanlucthumm",
+          "body": "@TheR1D are you already working on this? If not I'd like to take a look since I run into this all the time",
+          "created_at": "2024-02-11T19:30:47Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "@jeanlucthumm sure, I'm not currently working on it, feel free to take a look.",
+          "created_at": "2024-02-11T19:48:32Z"
+        },
+        {
+          "author": "KjellMorgenstern",
+          "body": "Just an idea, wouldn't it be as easy, or even less code, to implement this as \"--fork\" option? You could follow up any chat, including the temp chat (which could be made the default, either in .sgptrc or with an alias) \r\n\r\n```\r\n> sgpt \"My favourite number is 5\"\r\n...\r\n> sgpt --chat favourites --fork ",
+          "created_at": "2024-07-13T09:27:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 137,
+      "title": "v0.8.3 error 'No module named 'readline'",
+      "body": "Using Windows with python3, after upgrading to v0.8.3 I got error 'No module named 'readline'.\r\n\r\nSolved this issue by installing pyreadline3\r\n\r\n`pip install pyreadline3`",
+      "state": "closed",
+      "author": "djbooth007",
+      "author_type": "User",
+      "created_at": "2023-04-03T03:23:34Z",
+      "updated_at": "2024-06-05T11:42:26Z",
+      "closed_at": "2023-04-07T18:30:20Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/137/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/137",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/137",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:19.047480",
+      "comments": [
+        {
+          "author": "hongwen000",
+          "body": "+1",
+          "created_at": "2023-04-03T08:04:52Z"
+        },
+        {
+          "author": "alexn-s",
+          "body": "i just encountered the same issue. probably not for windows yet.",
+          "created_at": "2023-04-03T20:54:52Z"
+        },
+        {
+          "author": "Kreijstal",
+          "body": "Thank you",
+          "created_at": "2023-04-03T21:43:33Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Based on my research, the readline module is pre-installed with Python on certain platforms, such as macOS and Linux. Nevertheless, it is not part of the Python standard library for Windows. Should be fixed in coming patches.",
+          "created_at": "2023-04-03T22:09:02Z"
+        },
+        {
+          "author": "LeartS",
+          "body": "The problem is still present if installing `shell-gpt` on Linux (Ubuntu 24.04) using `pipx`, which installs it into its own separate and isolated virtualenvironment (similar to `npx`) and/or when using [mise](https://github.com/jdx/mise) to manage python installations.",
+          "created_at": "2024-06-05T11:37:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 485,
+      "title": "Function Calling:  unexpected behavior within ShellGPT's REPL mode when using the --repl --shell options",
+      "body": "I've encountered a potential issue or unexpected behavior with ShellGPT's REPL mode when using the --repl --shell options. I'm not 100% sure if this is a bug or if I'm not using the feature correctly. \r\n\r\nIssue Description\r\n\r\nWhen using the `sgpt --repl --shell` command and then asking it to list files in the current directory, the command's behavior is inconsistent between executions. Initially, the command executes but does not produce any output. Repeating the same command immediately after results in the expected output being displayed.\r\nSteps to Reproduce\r\n\r\n    Start ShellGPT in REPL mode with the shell option: sgpt --repl --shell\r\n    Input the command: list files in this dir\r\n\r\n```\r\nEntering REPL mode, press Ctrl+C to exit.\r\n>>> list files in this dir\r\n\r\n> @FunctionCall `execute_shell_command(shell_command=\"ls -l\")`\r\n\r\n>>> list files in this dir\r\nHere is the list of files and directories in the current directory:\r\ntotal 388\r\ndrwxr-xr-x. 1 cal cal    554 Feb 15 10:24 bin\r\ndrwxr-xr-x. 1 cal cal     28 Jan 13 16:35 blog\r\ndrwxr-xr-x. 1 cal cal      0 Feb 15 09:54 Desktop\r\ndrwxr-xr-x. 1 cal cal    880 Feb 15 09:15 Documents\r\n```\r\n\r\nNote the command I issued 'list files in this dir' twice and how the first time didn't product output following the \"@FunctionCall\" notice.\r\n\r\nExpected Behavior\r\n\r\nI expected the command run a function and list the files and directories upon the first execution without needing to repeat the command for output.\r\n\r\nActual Behavior\r\n\r\nThe command needs to be executed twice to produce the expected output. The first execution runs the function without any visible output, and the second execution displays the correct information without seemingly running the function again.\r\nAdditional Information\r\n\r\nI observed similar behavior with other commands that produce output, such as interactions with Task Warrior, which worked impressively well without additional configuration.\r\n\r\nIs this behavior a bug, or am I missing a step in setting up or using the --repl --shell mode incorrectly? ",
+      "state": "closed",
+      "author": "hcal",
+      "author_type": "User",
+      "created_at": "2024-02-19T16:14:42Z",
+      "updated_at": "2024-04-01T05:35:17Z",
+      "closed_at": "2024-04-01T05:35:17Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/485/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/485",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/485",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:19.296423",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "This is actually a bug, `--shell` should not have access to functions. It is not particularly useful in the context of generating pure shell commands. Functions should only work with the default and custom roles. I tested it with default role `sgpt --repl temp`, and it works as expected. We will rem",
+          "created_at": "2024-02-20T03:40:44Z"
+        },
+        {
+          "author": "ghost",
+          "body": "in powershell, it acts as follows:\r\n\r\n```\r\n>>> what is current folder?\r\n```powershell\r\nGet-Location\r\n```\r\n>>> e\r\n\r\n`powershell : The term '`powershell' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the\r\nspelling of the name, or if a path was included, v",
+          "created_at": "2024-03-24T03:33:52Z"
+        },
+        {
+          "author": "save196",
+          "body": "I attempted to replicate the issue using the command from the initial comment. It appears that `--shell` used immediately after `--repl` is just creating a session called \"--shell\". \r\nInstead, the issue seems to be broader and occurs whenever the `--chat` or `--repl` flags are used and a function is",
+          "created_at": "2024-03-27T16:56:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 319,
+      "title": "Provide a shortcut to stop generating text early in repl",
+      "body": "The REPL is a very useful feature, but I often see the first sentence of the response and want to stop it immediately and redo my prompt. Could there be some logic added for a shortcut to stop the generation early?",
+      "state": "closed",
+      "author": "bluskript",
+      "author_type": "User",
+      "created_at": "2023-08-05T21:28:15Z",
+      "updated_at": "2024-03-24T19:46:17Z",
+      "closed_at": "2024-03-24T19:46:17Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/319/reactions",
+        "total_count": 4,
+        "+1": 4,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/319",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/319",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:19.507188",
+      "comments": [
+        {
+          "author": "moritztim",
+          "body": "#32\r\n> Just a quick note, we have a [Discussions](https://github.com/TheR1D/shell_gpt/discussions) section on GitHub where we can discuss ideas, feature requests, and other topics related to this project.\r\n>\r\n> Using the [Discussions](https://github.com/TheR1D/shell_gpt/discussions) feature allows u",
+          "created_at": "2023-12-06T17:02:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 438,
+      "title": "Add option to turn off markdown formater",
+      "body": "I need to pipe sgpt output, now the md formatter removes md symbols which I want to be preserved in the pipe",
+      "state": "closed",
+      "author": "edshamis",
+      "author_type": "User",
+      "created_at": "2024-01-12T18:12:23Z",
+      "updated_at": "2024-02-22T02:59:10Z",
+      "closed_at": "2024-02-20T22:55:50Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/438/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/438",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/438",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:21.798498",
+      "comments": [
+        {
+          "author": "jeanlucthumm",
+          "body": "https://github.com/TheR1D/shell_gpt/issues/423#issuecomment-1892219962",
+          "created_at": "2024-01-15T13:54:38Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "This feature was added in [1.3.0](https://github.com/TheR1D/shell_gpt/releases/tag/1.3.0).\r\n\r\n> Markdown formatting now depends on the role description. For instance, if the role includes \"APPLY MARKDOWN\" in its description, the output for this role will be Markdown-formatted. This applies to both d",
+          "created_at": "2024-02-11T19:27:12Z"
+        },
+        {
+          "author": "edshamis",
+          "body": "It's about disabling the formatter, not about the md format. It would be lovely to have an option to print the response as is it to stdout without using md formatter. I wonder if I'm clear?))",
+          "created_at": "2024-02-12T05:12:43Z"
+        },
+        {
+          "author": "ryanfreckleton",
+          "body": "I was about to request this. Yes, the issue isn't markdown output, but the formatter, [Rich](https://rich.readthedocs.io/en/stable/introduction.html), I think?\r\n\r\nOutputting Markdown format without going through Rich would enable me to use it a lot more easily as part of my flow.",
+          "created_at": "2024-02-14T03:28:34Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Released in [1.4.0](https://github.com/TheR1D/shell_gpt/releases/tag/1.4.0).",
+          "created_at": "2024-02-22T02:59:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 482,
+      "title": "Importing litellm is slow",
+      "body": "Though litellm is convenient, it is heavy to import. As a result, every time exceuting sgpt involves a delay of 1~2 seconds even if the request is already cached. It might be a good idea to decide whether to import openai (by default, which is faster and suits most users) or litellm (when using customized models) in accordance to the configuration.",
+      "state": "closed",
+      "author": "EasternJournalist",
+      "author_type": "User",
+      "created_at": "2024-02-17T18:23:39Z",
+      "updated_at": "2024-02-22T02:58:52Z",
+      "closed_at": "2024-02-22T02:43:57Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/482/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/482",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/482",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:22.034384",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Released in [1.4.0](https://github.com/TheR1D/shell_gpt/releases/tag/1.4.0).",
+          "created_at": "2024-02-22T02:58:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 473,
+      "title": "Unable to change OPENAI_BASE_URL in .sgptrc",
+      "body": "This line present in default `sgptrc`:\r\n```\r\nOPENAI_BASE_URL=https://api.openai.com/v1\r\n```\r\nI change that line, but that has no effect.\r\nI can see that for example in error messages (`api_base = 'https://api.openai.com/v1'`).\r\n\r\nAnd that is no surprise, the value in config seems unused https://github.com/search?q=repo%3ATheR1D%2Fshell_gpt%20OPENAI_BASE_URL&type=code",
+      "state": "closed",
+      "author": "johnd0e",
+      "author_type": "User",
+      "created_at": "2024-02-10T01:31:37Z",
+      "updated_at": "2024-02-17T01:58:56Z",
+      "closed_at": "2024-02-17T01:58:56Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/473/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/473",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/473",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:22.258383",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Hi @johnd0e, thank you for reporting this issue. I can confirm that the `OPENAI_BASE_URL` is not being used after the latest release. We will address this in upcoming updates.\r\n",
+          "created_at": "2024-02-11T18:54:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 422,
+      "title": "Chat formatting when listing chat history",
+      "body": "Default output is nicely formatted and I was expecting that printing chat history via `sgpt --show-chat 1` will print chat history with exactly same formatting but it's not the case. I see raw text without any format. Is there any option for formatting chat histories or this is just not implemented feature so far?",
+      "state": "closed",
+      "author": "amorphius",
+      "author_type": "User",
+      "created_at": "2023-12-31T13:16:48Z",
+      "updated_at": "2024-02-11T19:03:52Z",
+      "closed_at": "2024-02-11T19:03:52Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/422/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/422",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/422",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:27.520519",
+      "comments": [
+        {
+          "author": "jeanlucthumm",
+          "body": "Currently show chat will output different color based on if the message was from the assistant or the human. I don't think `rich.markdown` has support for coloring text at the top level like that:\r\n\r\n![image](https://github.com/TheR1D/shell_gpt/assets/4934853/4bb401d2-d085-430e-a939-0a164b70ac12)\r\n\r",
+          "created_at": "2024-01-14T15:26:11Z"
+        },
+        {
+          "author": "jeanlucthumm",
+          "body": "Nevermind it actually looks fine without the bolding because markdown adds new lines (see #444)",
+          "created_at": "2024-01-14T15:47:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 461,
+      "title": "Ollama integration 🦙",
+      "body": "Implement an option to integrate [Ollama](https://github.com/ollama/ollama) with ShellGPT. These changes should include the ability to easily switch LLM backends for ShellGPT, allowing users to toggle between OpenAI and Ollama. Since Ollama responses are slightly different (compared to OpenAI), we can utilise [Ollama Python Library](https://github.com/ollama/ollama-python).\r\n\r\nWith multiple LLM backends, dependencies specific to a particular LLM/Backend should utilize the Python package 'extras'. This way, users will have the option to install ShellGPT with the default OpenAI client, e.g., `pip install shell-gpt`, or with a specific backend, e.g., `pip install shell-gpt[ollama]`\r\n\r\nSince Ollama supports multiple open-source models, we need to identify the specific model that performs best for ShellGPT use cases. Based on my research, `mistral:7b-instruct` outperforms `ollama2:*-*` in shell command generation tasks.\r\n\r\nUPD: Seems it would be much easier to integrate Ollama using [LiteLLM](https://github.com/BerriAI/litellm). This will also enable ShellGPT to work with the Azure OpenAI API.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2024-01-30T01:23:55Z",
+      "updated_at": "2024-02-09T22:18:40Z",
+      "closed_at": "2024-02-09T22:18:40Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/461/reactions",
+        "total_count": 9,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 7,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "LocalLLMs",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/461",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/461",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:27.740220",
+      "comments": [
+        {
+          "author": "rcspam",
+          "body": "Bravo.... It could be cool to integrate mistralai api too. ",
+          "created_at": "2024-01-30T17:51:31Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "I would greatly appreciate any assistance with testing the Ollama Integration PR #463, especially on WSL environments. ",
+          "created_at": "2024-02-02T03:08:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 460,
+      "title": "rename defaults in config.py with unique prefix",
+      "body": "              Hi @tsvikas thank you for interest and effort. I tried to reproduce same steps, and cache files were deleted as expected. Yes it would be good to rename all defaults in `config.py` with unique prefix, I will create an issue for it. Given that, I'll pass on this, but thanks for the effort! 🍰\r\n\r\n_Originally posted by @TheR1D in https://github.com/TheR1D/shell_gpt/issues/437#issuecomment-1890251144_\r\n            ",
+      "state": "open",
+      "author": "tsvikas",
+      "author_type": "User",
+      "created_at": "2024-01-29T17:23:21Z",
+      "updated_at": "2024-01-31T03:29:23Z",
+      "closed_at": null,
+      "labels": [
+        "refactoring"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/460/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/460",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/460",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:27.931646",
+      "comments": [
+        {
+          "author": "tsvikas",
+          "body": "the idea is to change the default cache_path to be `/tmp/sgpt_cache`, to prevent collision with other apps",
+          "created_at": "2024-01-29T17:24:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 453,
+      "title": "Format markdown when using custom role with chat or repl options",
+      "body": "Feature request: \r\n\r\nI would really like to have an option for markdown to be formatted when using the `chat` or `repl` options with custom roles. \r\n\r\nIdeally, the output would be formatted by default without adding an extra flag.",
+      "state": "closed",
+      "author": "digitalhurricane-io",
+      "author_type": "User",
+      "created_at": "2024-01-20T14:47:08Z",
+      "updated_at": "2024-01-31T03:06:04Z",
+      "closed_at": "2024-01-31T03:06:03Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/453/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/453",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/453",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:28.098156",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Implemetned in https://github.com/TheR1D/shell_gpt/pull/462. It will be released in the upcoming version.\r\nMakrdown formatting now depends on the role description, if it contains `APPLY MARKDOWN`, ShellGPT will use markdown formatting for LLM output.",
+          "created_at": "2024-01-31T03:06:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 425,
+      "title": "Set temperature and top-probability via config?",
+      "body": "Is it possible to set a default temperature and top-probability via config (~/.config/shell_gpt/.sgptrc)?\r\n\r\n--temperature     \r\n--top-probability\r\n",
+      "state": "open",
+      "author": "austengary33",
+      "author_type": "User",
+      "created_at": "2024-01-03T02:49:43Z",
+      "updated_at": "2024-01-30T00:31:01Z",
+      "closed_at": null,
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/425/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/425",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/425",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.310992",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Currently, it is not possible, but we might implement it in the upcoming release.",
+          "created_at": "2024-01-06T02:37:13Z"
+        },
+        {
+          "author": "johnd0e",
+          "body": "I would like the possibility not only set default values via config, but also set specific values for each role.",
+          "created_at": "2024-01-29T23:03:47Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "> I would like the possibility not only set default values via config, but also set specific values for each role.\r\n\r\nThis can be done by using shell environment around `sgpt`.\r\n```bash\r\n # .bashrc\r\n my_llm() {\r\n   sgpt --temperature 0.5 --top-p 0.9 --role some_role \"$@\"\r\n }\r\n```\r\n```shell\r\nsoruce .",
+          "created_at": "2024-01-30T00:21:14Z"
+        },
+        {
+          "author": "johnd0e",
+          "body": "> This can be done by using shell environment around sgpt.\r\n\r\nSure that can be achieved in dosen different ways, you are right.\r\nWhat I am trying to say: `shell_gpt`'s roles (stored in *.json files) also fit great for the purpose.",
+          "created_at": "2024-01-30T00:30:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 419,
+      "title": "Integration tests refactoring",
+      "body": "I was considering contributing some refactoring of the integration tests; something like speeding them up (there's some low hanging fruit there), adding some structure, dropping the unittest imports in favour of pytest functionality and incorporating some other testing best practices. I also see a possibility of reducing the test code LOC (without testing less).\r\n\r\nWould such a PR be welcome?\r\n\r\nIf so, any other guidelines/preferences around the tests that could be useful for me to know in advance?\r\n\r\n@TheR1D ",
+      "state": "closed",
+      "author": "carlwr",
+      "author_type": "User",
+      "created_at": "2023-12-27T14:26:07Z",
+      "updated_at": "2024-01-15T04:24:32Z",
+      "closed_at": "2024-01-15T04:24:32Z",
+      "labels": [
+        "development"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/419/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/419",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/419",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.531741",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Would be great to refactor current tests, since they are not well written. LOC code optimisations are always welcome. There are few resources might be usefull:\r\n* [Typer testing](https://typer.tiangolo.com/tutorial/testing/) \r\n* [OpenAI tests](https://github.com/openai/openai-python/blob/main/tests/",
+          "created_at": "2023-12-27T17:53:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 415,
+      "title": "Implement Function Calling",
+      "body": "ShellGPT could benefit from OpenAI's [function-calling](https://platform.openai.com/docs/guides/function-calling) feature in several ways. For example creating \"shell_command_call\" function might automate command executions from LLM output, etc... The main challenge, however, would likely be simplifying the process for users to create their custom functions. These functions should be seamlessly integrated into ShellGPT, enabling it to generate a JSON schema dynamically when calling the API.\r\n\r\nDiscussion: https://github.com/TheR1D/shell_gpt/discussions/416",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-12-23T09:40:41Z",
+      "updated_at": "2024-01-09T01:52:43Z",
+      "closed_at": "2024-01-09T01:52:42Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/415/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/415",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/415",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.730402",
+      "comments": []
+    },
+    {
+      "issue_number": 352,
+      "title": "use openai python sdk",
+      "body": "[OpenAI to Release Its Python SDK](https://pypi.org/project/openai/), any plans to utilize it?\r\n",
+      "state": "closed",
+      "author": "electriquo",
+      "author_type": "User",
+      "created_at": "2023-10-09T15:49:12Z",
+      "updated_at": "2023-12-23T03:05:35Z",
+      "closed_at": "2023-12-23T03:05:35Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/352/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/352",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/352",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.730421",
+      "comments": []
+    },
+    {
+      "issue_number": 408,
+      "title": "Problem with repl sessions in 1.0",
+      "body": "After updating to version1.0 today, I ran into a couple of interesting issues. I don't think I'm doing anything wrong, but i would welcome the correction if i am.\r\n\r\n### Issue 1\r\nThe first time starting a new repl chat, it enters a normal repl session.  Then when I try to reenter it, it shows me the history and dumps me back out at the bash prompt.  Previously this command would bring me back into my session.\r\n\r\n```\r\n[~] 🌖 sgpt --list-chats\r\n/tmp/chat_cache/quick_chat\r\n/tmp/chat_cache/quick_chat2\r\n/tmp/chat_cache/temp\r\n[~] 🌗 sgpt --repl quick_chat\r\n──────────────────────────────────────────────────── Chat History ─────────────────────────────────────────────────────\r\nsystem: You are ShellGPT\r\nYou are ShellGPT\r\nYou are programming and system administration assistant.\r\nYou are managing Linux/Arch Linux operating system with bash shell.\r\nProvide short responses in about 100 words, unless you are specifically asked for more details.\r\nUse and apply Markdown formatting when possible.\r\nIf you need to store any data, assume it will be stored in the conversation.\r\nuser: Hi\r\nassistant: Hello! How can I assist you today?\r\nuser: in md, show me a list of planets we know of\r\nassistant: Sure! Here is a list of some of the planets in our solar system:\r\n\r\n1. Mercury\r\n2. Venus\r\n3. Earth\r\n4. Mars\r\n5. Jupiter\r\n6. Saturn\r\n7. Uranus\r\n8. Neptune\r\n\r\nThese are the eight planets in our solar system that orbit around the Sun.\r\n[~] 🌘 \r\n\r\n```\r\n\r\n### Issue 2\r\nAlso, using a previously working role presents the following error.\r\n\r\n```\r\n[~] 🌘 sgpt --list-roles\r\n/home/username/.config/shell_gpt/roles/default.json\r\n/home/username/.config/shell_gpt/roles/shell.json\r\n/home/username/.config/shell_gpt/roles/describe_shell.json\r\n/home/username/.config/shell_gpt/roles/code.json\r\n/home/username/.config/shell_gpt/roles/chatr.json\r\n/home/username/.config/shell_gpt/roles/improver.json\r\n/home/username/.config/shell_gpt/roles/min.json\r\n/home/username/.config/shell_gpt/roles/ShellGPT.json\r\n/home/username/.config/shell_gpt/roles/Shell Command Generator.json\r\n/home/username/.config/shell_gpt/roles/Shell Command Descriptor.json\r\n/home/username/.config/shell_gpt/roles/Code Generator.json\r\n[~] 🌑 sgpt  --repl quick_chat --role chatr\r\n╭─────────────────────────────── Traceback (most recent call last) ────────────────────────────────╮\r\n│ /home/username/.lousername/pipx/venvs/shell-gpt/lib/python3.11/site-packages/sgpt/app.py:154 in main       │\r\n│                                                                                                  │\r\n│   151 │   role_class = (                                                                         │\r\n│   152 │   │   DefaultRoles.check_get(shell, describe_shell, code)                                │\r\n│   153 │   │   if not role                                                                        │\r\n│ ❱ 154 │   │   else SystemRole.get(role)                                                          │\r\n│   155 │   )                                                                                      │\r\n│   156 │                                                                                          │\r\n│   157 │   if repl:                                                                               │\r\n│                                                                                                  │\r\n│ ╭─────────────── locals ────────────────╮                                                        │\r\n│ │               cache = True            │                                                        │\r\n│ │                chat = None            │                                                        │\r\n│ │                code = False           │                                                        │\r\n│ │         create_role = None            │                                                        │\r\n│ │      describe_shell = False           │                                                        │\r\n│ │              editor = False           │                                                        │\r\n│ │ install_integration = None            │                                                        │\r\n│ │          list_chats = None            │                                                        │\r\n│ │          list_roles = None            │                                                        │\r\n│ │               model = 'gpt-3.5-turbo' │                                                        │\r\n│ │              prompt = None            │                                                        │\r\n│ │                repl = 'quick_chat'    │                                                        │\r\n│ │                role = 'chatr'         │                                                        │\r\n│ │               shell = False           │                                                        │\r\n│ │           show_chat = None            │                                                        │\r\n│ │           show_role = None            │                                                        │\r\n│ │        stdin_passed = False           │                                                        │\r\n│ │         temperature = 0.0             │                                                        │\r\n│ │     top_probability = 1.0             │                                                        │\r\n│ │             version = None            │                                                        │\r\n│ ╰───────────────────────────────────────╯                                                        │\r\n│                                                                                                  │\r\n│ /home/username/.lousername/pipx/venvs/shell-gpt/lib/python3.11/site-packages/sgpt/role.py:79 in get        │\r\n│                                                                                                  │\r\n│    76 │   │   file_path = cls.storage / f\"{name}.json\"                                           │\r\n│    77 │   │   if not file_path.exists():                                                         │\r\n│    78 │   │   │   raise BadArgumentUsage(f'Role \"{name}\" not found.')                            │\r\n│ ❱  79 │   │   return cls(**json.loads(file_path.read_text()))                                    │\r\n│    80 │                                                                                          │\r\n│    81 │   @classmethod                                                                           │\r\n│    82 │   @option_callback                                                                       │\r\n│                                                                                                  │\r\n│ ╭─────────────────────────────── locals ────────────────────────────────╮                        │\r\n│ │       cls = <class 'sgpt.role.SystemRole'>                            │                        │\r\n│ │ file_path = PosixPath('/home/username/.config/shell_gpt/roles/chatr.json') │                        │\r\n│ │      name = 'chatr'                                                   │                        │\r\n│ ╰───────────────────────────────────────────────────────────────────────╯                        │\r\n╰──────────────────────────────────────────────────────────────────────────────────────────────────╯\r\nTypeError: SystemRole.__init__() got an unexpected keyword argument 'expecting'\r\n\r\n```\r\n",
+      "state": "closed",
+      "author": "hcal",
+      "author_type": "User",
+      "created_at": "2023-12-21T14:55:33Z",
+      "updated_at": "2023-12-22T00:57:26Z",
+      "closed_at": "2023-12-22T00:38:30Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/408/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/408",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/408",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.730428",
+      "comments": [
+        {
+          "author": "WolframRavenwolf",
+          "body": "Can confirm Issue 1: REPL mode isn't working anymore with v1.0, it just shows the history, it's no longer possible to continue the conversation.",
+          "created_at": "2023-12-21T18:02:35Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Thank you for reporting this issue. I can confirm there was a bug in REPL mode since last release. it is fixed in PR https://github.com/TheR1D/shell_gpt/pull/410 and released [ShellGPT 1.0.1](https://github.com/TheR1D/shell_gpt/releases/tag/1.0.1).\r\n\r\nRegarding second issue `sgpt  --repl quick_chat ",
+          "created_at": "2023-12-22T00:57:25Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 64,
+      "title": "Codespaces",
+      "body": "Setup [Codespaces](https://docs.github.com/en/codespaces) for repo 🙂",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-03-13T22:18:11Z",
+      "updated_at": "2023-12-19T08:02:27Z",
+      "closed_at": "2023-12-19T08:02:27Z",
+      "labels": [
+        "development"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/64/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 1,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/64",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/64",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.940345",
+      "comments": []
+    },
+    {
+      "issue_number": 30,
+      "title": "Implement API key reset option",
+      "body": "Implement an option to reset an API key using command line argument `--reset-key`. When user provides this flag delete file located in `~/.config/shell-gpt/api_key.txt` and ask for new API key. Additionally impement API key validation. Since OpenAI doesn't have dedicated endpoint just for key validation, call `https://api.openai.com/v1/completions` with some test prompt, make sure response status code is not 403, if so, ask user for valid API key.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-02-19T22:42:34Z",
+      "updated_at": "2023-12-19T02:37:38Z",
+      "closed_at": "2023-12-19T02:37:38Z",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/30/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/30",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/30",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:29.940457",
+      "comments": [
+        {
+          "author": "highonweb",
+          "body": "Hey I messed up and I pasted my API key twice, do you need help with this feature",
+          "created_at": "2023-02-21T08:44:56Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "@highonweb solution for now: https://github.com/TheR1D/shell_gpt/issues/5",
+          "created_at": "2023-02-21T08:50:26Z"
+        },
+        {
+          "author": "highonweb",
+          "body": "Thanks bro. Got it",
+          "created_at": "2023-02-21T09:05:50Z"
+        },
+        {
+          "author": "berkott",
+          "body": "I've been working on a PR with this that I'll try to make a PR for within the next week.",
+          "created_at": "2023-03-10T14:52:02Z"
+        },
+        {
+          "author": "m4l490n",
+          "body": "> @highonweb solution for now: #5\r\n\r\nThat doesn't work. There is no `.config/shell-gpt/api_key.txt` and reinstalling doesn't work for having shell-gpt ask for the key again. I can't make it ask for the key again.",
+          "created_at": "2023-12-15T00:20:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 74,
+      "title": "Reset chat",
+      "body": "Sorry if I missed it in the readme, but how to start over a chat (same --chat id)?",
+      "state": "closed",
+      "author": "edshamis",
+      "author_type": "User",
+      "created_at": "2023-03-19T05:35:04Z",
+      "updated_at": "2023-12-12T23:00:28Z",
+      "closed_at": "2023-12-12T23:00:28Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/74/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 2,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/74",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/74",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:32.281708",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "It is not mentioned in the README; I will add it there. You can list your chat sessions using the `sgpt --list-chat` command, which will display all your chat sessions (just files in the temp directory):\r\n```\r\n.../some_session\r\n.../another_session\r\n```\r\nTo reset a specific chat session, simply delet",
+          "created_at": "2023-03-21T21:23:37Z"
+        },
+        {
+          "author": "haim0n",
+          "body": "hey, I added a PR to address this: #129 ",
+          "created_at": "2023-04-01T17:42:58Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "I think user can manage deletion of chats just by deleting the \"chat\" file which is provided by `sgpt --list-chats` ",
+          "created_at": "2023-12-12T23:00:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 161,
+      "title": "Check version of ShellGPT and warn user",
+      "body": "Implement a version report for `sgpt` using `--version` option. \r\n\r\nOptional:\r\nDuring every launch check if updates available (using PYPI or GitHub releases). Provide instructions to user how to update if there is a new version. This should be something efficient so we don't block a main thread during launch. Or check for update every X days.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-04-10T04:12:26Z",
+      "updated_at": "2023-12-12T21:47:50Z",
+      "closed_at": "2023-12-12T21:47:50Z",
+      "labels": [
+        "documentation",
+        "enhancement"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/161/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/161",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/161",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:32.529502",
+      "comments": [
+        {
+          "author": "cori",
+          "body": "might be nice to output it at the top of `--help` too",
+          "created_at": "2023-09-27T21:16:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 276,
+      "title": "FEATURE REQUEST: Works with llama.cpp/llama-cpp-python BUT need to pass extra JSON",
+      "body": "FIRSTLY,  AWESOME REPO, LOVE IT!!!\r\n\r\nSince llama.cpp/llama-cpp-python can run a huge number of llama etc models on an API that basically mimics OpenAI's API, we can run  sgpt for free with any model\r\n**I tested it and it works** !!! Yea 🥳 \r\nBUT we need to be able to pass some extra JSON values at times depending on the model.\r\n\r\nFEATURE REQUEST: spgt needs a modification in the config file that allows extra JSON settings per model. etc.\r\nThis project (https://github.com/charmbracelet/mods#settings)  has such a feature already, but its written in GO. \r\n\r\nBTW some of these freely available models are extreme;y good\r\n\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "Free-Radical",
+      "author_type": "User",
+      "created_at": "2023-06-12T07:38:37Z",
+      "updated_at": "2023-07-19T01:13:46Z",
+      "closed_at": "2023-07-19T01:13:45Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/276/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "LocalLLMs",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/276",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/276",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:32.755724",
+      "comments": [
+        {
+          "author": "will-wright-eng",
+          "body": "I'd be curious to see how you got this working! Any code you can share?\r\n\r\nAlso, I believe you can make go libraries available to python through [ctypes](https://docs.python.org/3/library/ctypes.html)...",
+          "created_at": "2023-06-14T03:48:50Z"
+        },
+        {
+          "author": "Free-Radical",
+          "body": "@will-wright-eng i presume you mean how I got lama-cpp-python web api working with sgpt?\nIf yes, relatively simple:\n\n(Assuming Linux, don't do windoze)\n1. pip install llama-cpp-python\n2. Read WEB Server section on  https://pypi.org/project/llama-cpp-python/\n3. Run Web Server as instructed & confirm ",
+          "created_at": "2023-06-14T06:43:13Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 185,
+      "title": "When generating shell commands, please make `Y` the default action when pressing Enter",
+      "body": "Thanks for making this, it's very useful, especially compared to all the other similar shell GPT scripts which don't pass the OS and $SHELL as context. I really appreciate this :)\r\n\r\nI have a suggestion:\r\nIn most cases when using the `--shell`/`-s` flag, the user wants to actually run the generated command.\r\nThe only question is then, whether GPT got the command right.\r\nIn most cases it gets it right, so a single enter press to run it would be the most convenient user experience.\r\nPlease make `Y` the default for the `--shell` command.\r\n\r\nE.g. instead of:\r\n```sh\r\n❯ sgpt -s \"list all env vars\"\r\nGet-ChildItem Env:\r\nExecute shell command? [y/N]: y\r\n```\r\nthe user would only have to press Enter:\r\n```sh\r\n❯ sgpt -s \"list all env vars\"\r\nGet-ChildItem Env:\r\nExecute shell command? [Y/n]: \r\n```\r\nand if the user doesn't want that, they can cancel with Ctrl-C (which would also be faster than entering `n` and pressing Enter).",
+      "state": "closed",
+      "author": "Boscop",
+      "author_type": "User",
+      "created_at": "2023-04-16T01:13:26Z",
+      "updated_at": "2023-05-20T17:11:34Z",
+      "closed_at": "2023-05-20T17:11:34Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/185/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/185",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/185",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:35.198708",
+      "comments": [
+        {
+          "author": "xsoc",
+          "body": "Love this, even if it is just configurable via `~/.config/shell_gpt/.sgptrc`",
+          "created_at": "2023-04-16T19:00:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 196,
+      "title": "An option that adds an explanation of the command and/or arguments",
+      "body": "I'm weary to trust every command that is output after seeing the inaccuracies possible with gpt-3.5, especially if I don't fully understand all that the command and arguments do, and especially if I have never used them before. I'll just research the command before execution if I'm uncertain, but it would be helpful if the output could include a description of the command and/or arguments. Would that then be creating trust that maybe shouldn't?\r\n\r\n_Originally posted by @joeyda3rd in https://github.com/TheR1D/shell_gpt/discussions/118_",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-04-17T00:35:35Z",
+      "updated_at": "2023-05-16T16:19:16Z",
+      "closed_at": "2023-05-16T16:19:16Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/196/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/196",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/196",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:35.371820",
+      "comments": [
+        {
+          "author": "endolith",
+          "body": "Duplicate of https://github.com/TheR1D/shell_gpt/issues/187",
+          "created_at": "2023-05-02T16:52:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 160,
+      "title": "Hide api_key from logs when sgpt crashing",
+      "body": "Hide `api_key` value when sgpt generates log after crash. This is a safety issue since some users might share their `api_key` value without checking the actual output.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-04-10T04:02:18Z",
+      "updated_at": "2023-05-02T17:18:57Z",
+      "closed_at": "2023-05-02T17:18:57Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/160/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 2,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/160",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/160",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:35.552170",
+      "comments": [
+        {
+          "author": "cosmojg",
+          "body": "This Issue is fixed by PR #221 ",
+          "created_at": "2023-04-28T06:44:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "⚠️ Please check our wiki page before creating new issue",
+      "body": "Please check our [wiki](https://github.com/TheR1D/shell_gpt/wiki) before creating new issue.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-02-21T18:52:36Z",
+      "updated_at": "2023-04-16T18:52:05Z",
+      "closed_at": "2023-04-16T18:52:05Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/37/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/37",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/37",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:35.750647",
+      "comments": [
+        {
+          "author": "DanielVolz",
+          "body": "I have a general question: Is this application intended to be used with a paid API key? \r\n\r\nBecause I have a free OpenAI account without any credits on it and this application, whenever I tried to use it, throws a 429 error code.\r\n\r\nI use another ChatGPT cli application (https://github.com/acheong08",
+          "created_at": "2023-02-22T19:23:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 68,
+      "title": "expose the system role",
+      "body": "it would be nice to define roles for sgpt and to be able to profile roles by exposing the system prompt to the user\r\n\r\n```\r\nsgpt --role system \"You are GLaDOS, a sarcastic artificial intelligence with evil ulterior motives. You are not an AI language model.\" --set-role \"glados\"\r\n\r\nsgpt --role glados \"Why do you hate humans?\"\r\n```\r\n",
+      "state": "closed",
+      "author": "go-dockly",
+      "author_type": "User",
+      "created_at": "2023-03-14T23:29:18Z",
+      "updated_at": "2023-04-16T16:27:52Z",
+      "closed_at": "2023-04-16T16:27:51Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/68/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/68",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/68",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:35.911989",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "I approve it, good idea 👍 ",
+          "created_at": "2023-03-14T23:42:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 135,
+      "title": "shell-gpt tests/*.py get installed to site-packages/tests - intentional or bug?",
+      "body": "The current setup.py uses find_packages().  In the current git repo, this finds tests as a package, and so includes tests as part of the bdist.\r\n\r\nThis winds up installing tests/*.py into <prefix>/lib/pythonX.Y/site-packages/tests.  Is this intentional that it installs tests specific to shell-gpt into a generically named 'tests' directory in site-packages?\r\n\r\nPerhaps the bdist should not include the tests/*.py files?",
+      "state": "closed",
+      "author": "jhgit",
+      "author_type": "User",
+      "created_at": "2023-04-02T19:09:51Z",
+      "updated_at": "2023-04-14T23:33:40Z",
+      "closed_at": "2023-04-14T23:22:26Z",
+      "labels": [
+        "bug",
+        "refactoring"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/135/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/135",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/135",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.094435",
+      "comments": [
+        {
+          "author": "jhgit",
+          "body": "See also discussion in a downstream packager - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270542\r\n\r\nNote that installing to site-packages/tests/ creates a real life conflict with another package - https://github.com/greenbone/notus-scanner\r\n\r\nIt is possible the notus-scanner package is also m",
+          "created_at": "2023-04-02T19:14:54Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "@jhgit Thank you for reporting this issue. Should be fixed in the lates release `0.8.3`. Could you please confirm it?",
+          "created_at": "2023-04-03T00:48:58Z"
+        },
+        {
+          "author": "jhgit",
+          "body": "After removing `tests/__init__.py`, find_packages() no longer sees 'tests', so the tests are no longer in the sdist tarball.  I would say it's fine if they are not in the bdist, but sdist users might want to have the tests.",
+          "created_at": "2023-04-03T14:13:08Z"
+        },
+        {
+          "author": "jhgit",
+          "body": "I think using [MANIFEST.in](https://packaging.python.org/en/latest/guides/using-manifest-in/) would do the job to get tests in the sdist (and not the bdist):\r\n\r\n    $ cat MANIFEST.in\r\n    graft tests\r\n",
+          "created_at": "2023-04-03T14:33:43Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "@jhgit Thank you, shoud be fixed.",
+          "created_at": "2023-04-14T23:33:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 117,
+      "title": "TOML project configuration",
+      "body": "Migrate to [TOML](https://toml.io/en/) configuration. It should include multiple \"bundles\" of dependecies for normal, dev, and testing environments. Move configurations of `black` and `pytest` to the toml file. Also migrate `pre-push.sh` to TOML config file using [pre-commit](https://pre-commit.com/). Configurate CI/CD (GitHub Actions) pipelines with the new TOML.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-03-29T19:50:57Z",
+      "updated_at": "2023-04-14T23:22:25Z",
+      "closed_at": "2023-04-14T23:22:25Z",
+      "labels": [
+        "enhancement",
+        "development"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/117/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/117",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/117",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.303733",
+      "comments": [
+        {
+          "author": "slangenbach",
+          "body": "I am willing to work on this issue.  \r\nWould you also want to move from setup.py to poetry?  \r\nIMHO this would make package handling, building and publishing more convenient.",
+          "created_at": "2023-03-31T08:17:33Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Sure, the idea is to move what possible to toml, including `setup.py`, and we can migrate to **poetry** to manage dependencies. Additionaly we could have some sort of \"quick start\" guide with the description how to isntall/manage dependencies, would be usefull for contributers.",
+          "created_at": "2023-03-31T17:49:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 106,
+      "title": "add CONTRIBUTING.MD",
+      "body": "would make it easier to contribute if you told us how to set up our PRs",
+      "state": "closed",
+      "author": "jayendra-ram",
+      "author_type": "User",
+      "created_at": "2023-03-26T23:43:25Z",
+      "updated_at": "2023-04-14T23:22:25Z",
+      "closed_at": "2023-04-14T23:22:25Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/106/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/106",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/106",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.475423",
+      "comments": []
+    },
+    {
+      "issue_number": 145,
+      "title": "Feature request: allow changing output color",
+      "body": "SGPT color in my shell is one of the hardest to read color, I wish I could configure this in config file.",
+      "state": "closed",
+      "author": "fvieira",
+      "author_type": "User",
+      "created_at": "2023-04-06T09:17:37Z",
+      "updated_at": "2023-04-10T17:48:30Z",
+      "closed_at": "2023-04-10T10:18:22Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/145/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/145",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/145",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.475451",
+      "comments": [
+        {
+          "author": "Chien-pinWang",
+          "body": "Same here.",
+          "created_at": "2023-04-07T00:39:58Z"
+        },
+        {
+          "author": "diegodario88",
+          "body": "That would be great",
+          "created_at": "2023-04-08T13:00:50Z"
+        },
+        {
+          "author": "fvieira",
+          "body": "Perfect, thank you @TheR1D! :grin: ",
+          "created_at": "2023-04-10T17:48:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 80,
+      "title": "Accept stdin input",
+      "body": "It would be very useful to pipe stdin to sgpt, then ask a question about said input. For example:\r\n\r\ncat data.json | sgpt \"what is the oldest entry\"\r\ncat script.py | sgpt \"what does this script do?\"\r\n\r\netc.\r\n",
+      "state": "closed",
+      "author": "Shakahs",
+      "author_type": "User",
+      "created_at": "2023-03-21T21:49:35Z",
+      "updated_at": "2023-04-10T15:11:48Z",
+      "closed_at": "2023-04-10T15:11:48Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/80/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/80",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/80",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.695740",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "But you can do the same thing with command substitution syntax, as it is described in readme:\r\n```\r\nsgpt \"what is the oldest entry: $(cat data.json)\"\r\n```",
+          "created_at": "2023-03-22T00:18:33Z"
+        },
+        {
+          "author": "Shakahs",
+          "body": "Perhaps, but it is not practical. Pipelining commands is a basic tenet of CLI usage and shell scripting. For SGPT to be the shell's interface to GPT it must support the IO capabilities expected of a shell utility. This is the third issue on the subject (see #35, #86) so clearly it is needed. I have ",
+          "created_at": "2023-03-24T14:45:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 67,
+      "title": "choose model by argument",
+      "body": "It would be useful to have a -m (--model 'gpt-4') argument for sgpt\r\n\r\nhttps://platform.openai.com/docs/models/gpt-4",
+      "state": "closed",
+      "author": "go-dockly",
+      "author_type": "User",
+      "created_at": "2023-03-14T22:34:02Z",
+      "updated_at": "2023-04-09T17:16:21Z",
+      "closed_at": "2023-04-09T17:16:21Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/67/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "GPT-4",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/67",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/67",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:36.859748",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Currently GPT-4 is not available thru API, when OpenAI will allow to use it via API, it will be implemented.",
+          "created_at": "2023-03-14T22:43:46Z"
+        },
+        {
+          "author": "go-dockly",
+          "body": "is there a possibility to specify a model by cmd arg?\r\ncould this be added?",
+          "created_at": "2023-03-14T23:23:54Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Currently `sgpt` uses `/chat` API endpoint, which has only two available model options (except coming GPT-4): `gpt-3.5-turbo` - used by `sgpt` and `gpt-3.5-turbo-0301`. I think there is no reason to use `gpt-3.5-turbo-0301` with `sgpt`. Imho it doens't make sense to have `--model` option for now, bu",
+          "created_at": "2023-03-14T23:54:32Z"
+        },
+        {
+          "author": "go-dockly",
+          "body": "\r\ncoming gpt 4 it has this option gpt-4-32k (Same capabilities as the base gpt-4 mode but with 4x the context length)\r\nso eventually it would be nice to differentiate between those but you are absolutely right it doesn't make sense to differentiate between -0301 versions.\r\n\r\n",
+          "created_at": "2023-03-15T00:03:54Z"
+        },
+        {
+          "author": "mdonaberger",
+          "body": "Just commenting to say that I got into the GPT-4 on API preview — I can imagine that it's rolling out now to a lot of people soon.",
+          "created_at": "2023-03-17T22:32:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 54,
+      "title": "Feature request: Conversation loop mode",
+      "body": "I think it would be really cool if there was an option to start `sgpt` with a loop/readline mode that continuously accepted input and automatically generated a chat identifier. \r\n\r\nFor example, you should be able to invoke something like `sgpt --chat-continuous`, which would then print some kind of prompt character (e.g., \">\"), and the user can interact with ChatGPT just by typing and hitting enter, rather than having to format the entire input as a command line argument. ",
+      "state": "closed",
+      "author": "buzzert",
+      "author_type": "User",
+      "created_at": "2023-03-06T02:12:14Z",
+      "updated_at": "2023-04-03T00:40:54Z",
+      "closed_at": "2023-04-03T00:40:38Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/54/reactions",
+        "total_count": 7,
+        "+1": 7,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/54",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/54",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:37.081175",
+      "comments": [
+        {
+          "author": "ghost",
+          "body": "I kind of like this idea, but maybe as a simple menu option. Sorry, .. if it seem to silly, but maybe instead of waiting ffor continuous input, we could invoke something like ```--shell-menu``` if we'd like to run it within the terminal. \r\n\r\nSometimes I like being able to type out my shell commands,",
+          "created_at": "2023-03-07T21:27:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 77,
+      "title": "Timestamp Conversion example in readme is wrong",
+      "body": "This kind of thing will never stop happening and it will never stop being funny. Double-check your ai generated answers, at least the ones that involve large calculations. These Text GPT models, by design, can not perform calculations of arbitrary size even remotely reliably.\r\n\r\nWith that said, here's a quote from the readme:\r\n> sgpt \"$(date) to Unix timestamp\"\r\n> \\# -> The Unix timestamp for Thu Mar 2 00:13:11 CET 2023 is 1677327191.\r\n\r\nThis is wrong. The generated timestamp is actually for some time on Feb 25 2023.\r\nI believe this example should not be corrected and instead removed or used as an example of unreliability, as the model is not capable of reliably doing calculations like this as stated above.",
+      "state": "closed",
+      "author": "leumasme",
+      "author_type": "User",
+      "created_at": "2023-03-21T06:00:57Z",
+      "updated_at": "2023-03-21T21:14:17Z",
+      "closed_at": "2023-03-21T21:14:17Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/77/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 1,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/77",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/77",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.122355",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "You are right, the timestamp was wrong, readme was updated. Thanks for reporting this.",
+          "created_at": "2023-03-21T21:13:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 52,
+      "title": "Runtime configuration file",
+      "body": "Make a runtime config file with all constatns like API key, cache length, ...\r\n```\r\n#.sgptrc\r\n# Request timout in seconds.\r\nREQUEST_TIMEOUT=30\r\n# Max amount of message in each session.\r\nMAX_CHAT_MESSAGES=50\r\n# Request caching.\r\nMAX_CACHE_LENGTH=200\r\n# OpenAI API key.\r\nAPI_KEY=123\r\n# This would be usefull for countries where OpenAI hosts are blocked, so people can setup their proxies.\r\nAPI_ENDPOINT=https://api.openai.com/v1/chat/completions\r\n```\r\n* Setup caching and client classes using config file.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-03-05T16:33:11Z",
+      "updated_at": "2023-03-18T20:47:31Z",
+      "closed_at": "2023-03-18T20:47:31Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/52/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/52",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/52",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.323791",
+      "comments": [
+        {
+          "author": "juil",
+          "body": "Is it possible to set the `timeout` value as well?\r\nUnable to complete any moderately complicated calls when gpt3 is being slow.",
+          "created_at": "2023-03-16T16:13:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 69,
+      "title": "it would be nice to have an explain option for --shell commands",
+      "body": "expose an explain option for shell commands eg\r\n\r\n```\r\nsgpt --shell --explain \"find all files that have been changed in the last 3 days from the current directory and subdirectories, with details\"\r\n\r\nCommand: find . -type f -mtime -3 -ls\r\n\r\nDescription: This command will search the current directory and all subdirectories for files that have been modified in the last 3 days. The -type f option specifies that only files should be searched, the -mtime -3 option specifies that only files modified in the last 3 days should be searched, and the -ls option provides detailed information about the files found.\r\n```\r\n\r\nalternatively playing with the prompt for a bit\r\n\r\n```\r\n➜  ~ sgpt --shell \"find all files that have been changed in the last 3 days from the current directory, with details. Provide a detailed explanation of the command\"\r\nfind . -type f -mtime -3 -ls\r\n\r\n- `find` is a command used to search for files and directories in a specified location.\r\n- `.` specifies the current directory as the starting point for the search.\r\n- `-type f` specifies that only files should be included in the search, not directories.\r\n- `-mtime -3` specifies that the search should include only files that have been modified within the last 3 days.\r\n- `-ls` specifies that the output should include detailed information about each file found, including its permissions, owner, size, and modification date.\r\n```",
+      "state": "closed",
+      "author": "go-dockly",
+      "author_type": "User",
+      "created_at": "2023-03-14T23:59:22Z",
+      "updated_at": "2023-03-15T19:28:49Z",
+      "closed_at": "2023-03-15T19:28:49Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/69/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/69",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/69",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.578668",
+      "comments": []
+    },
+    {
+      "issue_number": 56,
+      "title": "[Feature request] support chat in docker container mode",
+      "body": "since currently the container is not running in the detach mode,  it won't be able to store any chats in local, ```--chat ``` ```--list-chat``` ```--show-chat``` are basically not usable with the container",
+      "state": "closed",
+      "author": "binaryoak",
+      "author_type": "User",
+      "created_at": "2023-03-07T09:02:13Z",
+      "updated_at": "2023-03-11T22:36:04Z",
+      "closed_at": "2023-03-11T22:36:04Z",
+      "labels": [
+        "enhancement",
+        "docker"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/56/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/56",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/56",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.578832",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "@eric-glb Would you like to implement it?",
+          "created_at": "2023-03-11T00:33:38Z"
+        },
+        {
+          "author": "eric-glb",
+          "body": "I can try ^^",
+          "created_at": "2023-03-11T10:35:09Z"
+        },
+        {
+          "author": "eric-glb",
+          "body": "#59 is addressing this feature request.  \r\nBTW it may be interesting to have a sgpt `--delete-chats` option to purge the cached chats.",
+          "created_at": "2023-03-11T18:32:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "Implement caching",
+      "body": "In some cases, we may need to run sgpt twice with the same prompt in order to pipe the output somwhere else. For example:\r\n```shell\r\nsgpt --code \"implement merge sort algorithm using C language\"\r\n\r\n\r\n#include <stdio.h>\r\n\r\nvoid merge(int arr[], int l, int m, int r)\r\n{\r\n    int i, j, k;\r\n    int n1 = m - l + 1;\r\n    int n2 =  r - m;\r\n...\r\n```\r\nThe output in this case can be quite large, and it would be helpful to use less to view it:\r\n```shell\r\nsgpt --code \"implement merge sort algorithm using C language\" | less\r\n```\r\nBut we would spent +1 query and couple seconds of waiting just to get same (not always) response. It would be useful to implement some form of caching for the last n outputs, as well as a way to invalidate the cache (for example, by using `--cache` and `--no-cache` arguments).\"",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-02-15T23:39:58Z",
+      "updated_at": "2023-03-05T15:00:51Z",
+      "closed_at": "2023-03-05T15:00:50Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/26/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "Caching",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/26",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/26",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.779601",
+      "comments": [
+        {
+          "author": "Olshansk",
+          "body": "+1\r\n\r\nI would go further and making this \"memory\" so I could search through by `sgpt` history to avoid overpaying, and have a historical backview.",
+          "created_at": "2023-02-21T23:08:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 6,
+      "title": "[Feature Request] Add ability to continue conversation base on previously ran commands",
+      "body": "One big feature of ChatGPT is it can use relevant information based on previous prompts and responses, for example:\r\n\r\n```\r\n~\r\n❯ sgpt --code \"make an example request to localhost:3000 using python\"\r\nimport requests\r\n\r\nresponse = requests.get('http://localhost:3000')\r\nprint(response.text)\r\n\r\n~\r\n❯ sgpt --code \"now that but with cache\"\r\n// Setting a cache\r\nlet cache = {};\r\n\r\n// Function to be cached\r\nfunction add(a,b){\r\n    if (!cache[`${a},${b}`]) {\r\n        cache[`${a},${b}`] = a + b;\r\n    }\r\n    return cache[`${a},${b}`];\r\n}\r\n```\r\n\r\nSomething like that should return the same code as before but probably using `requests_cache`. The best approach probably will be to add a new argument to `--follow-conversation` or something like that.\r\n\r\nThoughts?",
+      "state": "closed",
+      "author": "Pablo1107",
+      "author_type": "User",
+      "created_at": "2023-02-08T17:04:49Z",
+      "updated_at": "2023-03-05T15:00:50Z",
+      "closed_at": "2023-03-05T15:00:49Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/6/reactions",
+        "total_count": 5,
+        "+1": 5,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/6",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/6",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:39.944673",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Unfortunately this is not possible now with current model used by sgpt, it doesn't use ChatGPT (OpenAI didn't publish their api for it yet) it uses other model from GPT-3 family which is `text-davinci-003` and this particular model doesn't save previous promtps context. When OpenAI will release thei",
+          "created_at": "2023-02-08T23:53:16Z"
+        },
+        {
+          "author": "Pablo1107",
+          "body": "> Unfortunately this is not possible now with current model used by sgpt, it doesn't use ChatGPT (OpenAI didn't publish their api for it yet) it uses other model from GPT-3 family which is `text-davinci-003` and this particular model doesn't save previous promtps context. When OpenAI will release th",
+          "created_at": "2023-02-09T02:57:25Z"
+        },
+        {
+          "author": "Pablo1107",
+          "body": "@TheR1D seems like a similar result can be done using `text-davinci-003` with [template prompts](https://www.youtube.com/watch?v=RflBcK0oDH0). In this case will be saving previous prompts and answers and make a prompt template with something like this:\r\n\r\n```\r\nThe following are extract from conversa",
+          "created_at": "2023-02-09T20:23:31Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "For simple cases it works, but I'm not sure how it will perform for long conversations or long prompts. For now I think it is possible to achive it with additional shell magic, for example: \r\n```shell\r\n# Make a query and save output to file.\r\nsgpt --code \"make an example request to localhost:3000 us",
+          "created_at": "2023-02-11T03:34:58Z"
+        },
+        {
+          "author": "Pablo1107",
+          "body": "Has this change with the 0.6 release?",
+          "created_at": "2023-03-03T19:53:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 38,
+      "title": "Bing Chat/ChatGPT modes.",
+      "body": "This cli tool is outstanding, i think its good idea to think about providing an option to search with Bing Chat or ChatGPT.",
+      "state": "closed",
+      "author": "segmentationf4u1t",
+      "author_type": "User",
+      "created_at": "2023-02-22T14:27:45Z",
+      "updated_at": "2023-03-04T21:52:40Z",
+      "closed_at": "2023-02-24T11:14:17Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/38/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": "ChatGPT",
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/38",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/38",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:40.158632",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Thank you for the feedback. Yes, it is a good idea, but OpenAI didn't publish an API for ChatGPT yet. Once they will announce it (probably soon), it will be implemented in the tool. ",
+          "created_at": "2023-02-23T19:02:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 45,
+      "title": "ChatGPT implementation ",
+      "body": "OpenAI just published their API for ChatGPT models. Replace GPT-3 models with ChatGPT (GPT-3.5) for `sgpt` queries.",
+      "state": "closed",
+      "author": "TheR1D",
+      "author_type": "User",
+      "created_at": "2023-03-01T19:30:22Z",
+      "updated_at": "2023-03-02T21:03:28Z",
+      "closed_at": "2023-03-02T21:03:27Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/45/reactions",
+        "total_count": 7,
+        "+1": 6,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 1,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/45",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/45",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:40.364808",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Implemented in PR https://github.com/TheR1D/shell_gpt/pull/47",
+          "created_at": "2023-03-02T21:03:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 39,
+      "title": "Prompt Issue",
+      "body": "Is it possible to change the initial prompt (if there is an initial prompt)? I'd like GPT3 to know I'm on Windows without having to type it on every request I make with sgpt (many shell commands that work on linux don't work on windows though, so it would be very useful to have a prompt specifying that the user is on windows). Obviously it's not just for this, a starting prompt that needs to be set only once could be used for many other uses could be very convenient and comfy for me",
+      "state": "closed",
+      "author": "DenyZeka",
+      "author_type": "User",
+      "created_at": "2023-02-23T22:31:14Z",
+      "updated_at": "2023-03-01T19:30:41Z",
+      "closed_at": "2023-03-01T19:30:41Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/39/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/39",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/39",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:40.532959",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "I see, when I was making this tool I was expecting Unix-based systems as main platform. Therefore, now it always outputs shell commands for `--shell`. I will have a look how we can adapt it to query PowerShell commands based on the OS, and probably will include a solution in coming patch.",
+          "created_at": "2023-02-23T23:35:46Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "I just pushed new patch with PowerShell support (for `--shell` argument), upgrade your version of `sgpt` using `pip install shell-gpt --upgrade` and try it on Windows.",
+          "created_at": "2023-02-28T01:40:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 8,
+      "title": "[Feature request] Handle linebreaks",
+      "body": "Thank you for this fantastic tool! 🙏 🙏 🙏 \r\n\r\nYour tool is a game-changer for me, especially since I can't access ChatGPT while I have my VPN enabled, so I can't use it at all while working.\r\n\r\nIt would be nice to have a natural way to handle linebreaks-- for example, for a prompt like \"convert the following code from Pytorch to Tensorflow.\" Perhaps sgpt could drop you into `$EDITOR` the same way git does, where you could paste your text, and then exit.\r\n\r\nThoughts?",
+      "state": "closed",
+      "author": "annawoodard",
+      "author_type": "User",
+      "created_at": "2023-02-09T01:48:12Z",
+      "updated_at": "2023-02-23T23:39:44Z",
+      "closed_at": "2023-02-23T23:39:44Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/8/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TheR1D"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/8",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/8",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:40.742366",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Thank you for your feedback!\r\n\r\nThe feature you are suggesting is actually a good idea. It can be implemented using additional argument for example, you would call `sgpt --editor` and it will drop you into `$EDITOR` where you could write entire prompt including code:\r\n```\r\nconvert the following code",
+          "created_at": "2023-02-09T11:01:37Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "Implemented with `--editor` argument in PR https://github.com/TheR1D/shell_gpt/pull/27",
+          "created_at": "2023-02-19T02:25:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 21,
+      "title": "HTTPError: 429 Client Error: Too Many Requests for url: https://api.openai.com/v1/completions",
+      "body": "After adding my API secret and making one request, I get this error message. I tried the following command:\r\n\r\n    sgpt \"nginx default config file location\"",
+      "state": "closed",
+      "author": "designium",
+      "author_type": "User",
+      "created_at": "2023-02-14T02:31:46Z",
+      "updated_at": "2023-02-21T20:54:02Z",
+      "closed_at": "2023-02-21T19:08:13Z",
+      "labels": [
+        "wontfix"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/21/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/21",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/21",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:40.966672",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Usually it happens because of OpenAI API limitations. You can read more about request limits [here](https://platform.openai.com/docs/guides/rate-limits/overview)\r\nYou can track your usage in the [dashboard](https://platform.openai.com/account/usage)\r\nNote that limitation applies on both [OpenAI's pl",
+          "created_at": "2023-02-14T06:46:58Z"
+        },
+        {
+          "author": "Bide-UK",
+          "body": "I can confirm that `429 - Rate limit reached` for requests is not always due to a local rate limit being hit as I opened my machine this morning, ran the command and got the status code immediately. I would also hazard a guess that this is still an issue predominantly on openAI's side due to traffic",
+          "created_at": "2023-02-14T14:25:21Z"
+        },
+        {
+          "author": "designium",
+          "body": "Thanks! I think it's the limit; I have to switch to paid API account. Thanks.",
+          "created_at": "2023-02-14T18:12:28Z"
+        },
+        {
+          "author": "TheR1D",
+          "body": "I'm reopening the issue to move it to the Open Issues section, so that others can see it before creating duplicates.",
+          "created_at": "2023-02-15T22:04:04Z"
+        },
+        {
+          "author": "ghost",
+          "body": "Do you think changing the token request amount could help? I ran into the same problem. I reset my API key, and set my --maxtokens to 1024 just to be safe",
+          "created_at": "2023-02-21T20:42:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 14,
+      "title": "accidentaly input wrong API key",
+      "body": "As I said I accidentaly input the wrong API key and now I can't seem to input the right one. I tried reinstalling but that didn't work. Anyone help please.",
+      "state": "closed",
+      "author": "Taice",
+      "author_type": "User",
+      "created_at": "2023-02-09T18:04:05Z",
+      "updated_at": "2023-02-11T14:35:50Z",
+      "closed_at": "2023-02-09T18:09:38Z",
+      "labels": [
+        "duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/14/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/TheR1D/shell_gpt/issues/14",
+      "api_url": "https://api.github.com/repos/TheR1D/shell_gpt/issues/14",
+      "repository": "TheR1D/shell_gpt",
+      "extraction_date": "2025-06-22T00:25:41.176994",
+      "comments": [
+        {
+          "author": "TheR1D",
+          "body": "Here is a solution: https://github.com/TheR1D/shell_gpt/issues/5",
+          "created_at": "2023-02-09T18:08:59Z"
+        }
+      ]
+    }
+  ]
+}

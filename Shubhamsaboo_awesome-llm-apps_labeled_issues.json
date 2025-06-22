@@ -1,0 +1,365 @@
+{
+  "repository": "Shubhamsaboo/awesome-llm-apps",
+  "repository_info": {
+    "repo": "Shubhamsaboo/awesome-llm-apps",
+    "stars": 45177,
+    "language": "Python",
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "topics": [
+      "llms",
+      "python",
+      "rag"
+    ],
+    "created_at": "2024-04-29T05:30:25Z",
+    "updated_at": "2025-06-22T02:03:09Z",
+    "search_query": "openai anthropic language:python stars:>2",
+    "total_issues_estimate": 56,
+    "labeled_issues_estimate": 15,
+    "labeling_rate": 27.8,
+    "sample_labeled": 5,
+    "sample_total": 18,
+    "has_issues": true,
+    "repo_id": 793375104,
+    "default_branch": "main",
+    "size": 169738
+  },
+  "extraction_date": "2025-06-21T22:47:57.622627",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 7,
+  "issues": [
+    {
+      "issue_number": 217,
+      "title": "Music generated can't be played",
+      "body": "![Image](https://github.com/user-attachments/assets/221b23cd-9897-428c-994b-ea94a3ff6616)\n\nDownloaded audio file corrupted, can't be played and the play button is also greyed out after generating music",
+      "state": "open",
+      "author": "Fortune-14021996",
+      "author_type": "User",
+      "created_at": "2025-06-12T06:51:06Z",
+      "updated_at": "2025-06-16T11:24:35Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/217/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/217",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/217",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.047588",
+      "comments": [
+        {
+          "author": "Ankush-Rajas",
+          "body": "<audio controls>\n  <source src=\"generated_music.mp3\" type=\"audio/mpeg\">\n  Your browser does not support the audio element.\n</audio>\n",
+          "created_at": "2025-06-16T11:24:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 155,
+      "title": "Unable to chat with rag-agent using playground",
+      "body": "```\nfrom agno.agent import Agent\n# from agno.models.openai import OpenAIChat\nfrom agno.models.ollama import Ollama\nfrom agno.embedder.ollama import OllamaEmbedder\n\nfrom agno.knowledge.pdf_url import PDFUrlKnowledgeBase\nfrom agno.vectordb.lancedb import LanceDb, SearchType\nfrom agno.playground import Playground, serve_playground_app\nfrom agno.tools.duckduckgo import DuckDuckGoTools\n\nollama_llm = Ollama(id=\"llama3.2:1b-instruct-fp16\")\nollama_embedder = OllamaEmbedder(id=\"nomic-embed-text:latest\", dimensions=768)\n\ndb_uri = \"tmp/lancedb\"\n# Create a knowledge base from a PDF\nknowledge_base = PDFUrlKnowledgeBase(\n    urls=[\"https://phi-public.s3.amazonaws.com/recipes/ThaiRecipes.pdf\"],\n    # Use LanceDB as the vector database\n    vector_db=LanceDb(table_name=\"recipes\", uri=db_uri, search_type=SearchType.vector, embedder=ollama_embedder),\n)\n# Load the knowledge base: Comment out after first run\n# knowledge_base.load(upsert=True)\n\nrag_agent = Agent(\n    model=ollama_llm,\n    # model=OpenAIChat(id=\"gpt-4o\"),\n    agent_id=\"rag-agent\",\n    knowledge=knowledge_base, # Add the knowledge base to the agent\n    tools=[DuckDuckGoTools()],\n    show_tool_calls=True,\n    markdown=True,\n)\n\napp = Playground(agents=[rag_agent]).get_app()\n\nif __name__ == \"__main__\":\n    serve_playground_app(\"rag_agent:app\", reload=True)\n```\n\nLOGS:\n```\nINFO Starting playground on http://localhost:7777                                                                                                                     \n┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Agent Playground ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n┃                                                                             ┃\n┃                                                                             ┃\n┃  Playground URL: https://app.agno.com/playground?endpoint=localhost%3A7777  ┃\n┃                                                                             ┃\n┃                                                                             ┃\n┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\nINFO:     Will watch for changes in these directories: ['/home/arslan/Data/Learning/REPO/wip/agentic_rag']\nINFO:     Uvicorn running on http://localhost:7777 (Press CTRL+C to quit)\nINFO:     Started reloader process [31195] using StatReload\nINFO:     Started server process [31217]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     127.0.0.1:38480 - \"GET /v1/playground/agents HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:38496 - \"GET /v1/playground/status HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:38480 - \"GET /v1/playground/agents/rag-agent/sessions?user_id=allokzzzzzzz HTTP/1.1\" 404 Not Found\n```\n",
+      "state": "closed",
+      "author": "Arslan-Mehmood1",
+      "author_type": "User",
+      "created_at": "2025-03-24T16:21:23Z",
+      "updated_at": "2025-06-15T17:26:50Z",
+      "closed_at": "2025-06-15T17:26:50Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/155/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/155",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/155",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.195118",
+      "comments": [
+        {
+          "author": "Shubhamsaboo",
+          "body": "@Madhuvod can you please check this? ",
+          "created_at": "2025-04-14T03:30:54Z"
+        },
+        {
+          "author": "Shubhamsaboo",
+          "body": "This works based on the logs. You just have to click the link to access the playground as shown in the logs. \n\nhttp://localhost:7777",
+          "created_at": "2025-06-15T17:26:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 220,
+      "title": "Incorrect environment variable for ElevenLabs API key in blog_to_podcast_agent.py",
+      "body": "\nFile:\nstarter_ai_agents/ai_blog_to_podcast_agent/audio_generations/blog_to_podcast_agent.py\n\nIssue:\nThe code uses the environment variable ELEVENLABS_API_KEY, which is incorrect and causes authentication failure when calling the ElevenLabs API.\n\nLine in question:\n\nos.environ[\"ELEVENLABS_API_KEY\"]\n\nFix:\nIt should be:\n\nos.environ[\"ELEVEN_LABS_API_KEY\"]\n\nImpact:\nUsing the incorrect environment variable name results in a 401 Unauthorized error when making requests to the ElevenLabs API.\n\nReference:\n[Elevenlabs API - Error: 401 Client Error: Unauthorized for url](https://stackoverflow.com/questions/75961275/elevenlabs-api-error-401-client-error-unauthorized-for-url-https-api-elev)\n\n⸻\n\nLet me know if you’d like me to help you actually submit it via the GitHub API or automate the process further!",
+      "state": "closed",
+      "author": "haoduotnt",
+      "author_type": "User",
+      "created_at": "2025-06-13T03:49:57Z",
+      "updated_at": "2025-06-15T16:36:50Z",
+      "closed_at": "2025-06-15T15:35:47Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/220/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/220",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/220",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.399231",
+      "comments": [
+        {
+          "author": "fayzan101",
+          "body": "i can help you",
+          "created_at": "2025-06-13T17:51:42Z"
+        },
+        {
+          "author": "Shubhamsaboo",
+          "body": "Its fixed here: https://github.com/Shubhamsaboo/awesome-llm-apps/pull/230",
+          "created_at": "2025-06-15T15:33:29Z"
+        },
+        {
+          "author": "fayzan101",
+          "body": "I am looking to contribute to open source projects if you have any then do\r\ntell me\r\n\r\nOn Sun, 15 Jun 2025, 8:36 pm Shubham Saboo, ***@***.***>\r\nwrote:\r\n\r\n> Closed #220 <https://github.com/Shubhamsaboo/awesome-llm-apps/issues/220>\r\n> as completed via #230\r\n> <https://github.com/Shubhamsaboo/awesome-",
+          "created_at": "2025-06-15T16:36:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 197,
+      "title": "advanced_ai_agents/ai_health_fitness_agent SSL certification BUG?",
+      "body": "![Image](https://github.com/user-attachments/assets/eee07c24-79ac-4fa9-bedd-16927d865562)\nERROR    Unknown error from Gemini API: [Errno 22] Invalid argument\nWARNING  Attempt 1/1 failed: [Errno 22] Invalid argument\nERROR    Failed after 1 attempts. Last error using Gemini(gemini-2.0-flash)",
+      "state": "closed",
+      "author": "CSrookie11",
+      "author_type": "User",
+      "created_at": "2025-05-04T09:02:04Z",
+      "updated_at": "2025-06-15T16:07:12Z",
+      "closed_at": "2025-06-15T16:07:12Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/197/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/197",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/197",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.593119",
+      "comments": [
+        {
+          "author": "Shubhamsaboo",
+          "body": "@claude can you please fix this bug?",
+          "created_at": "2025-05-23T00:51:34Z"
+        },
+        {
+          "author": "claude[bot]",
+          "body": "**Claude finished @Shubhamsaboo's task** —— [View job](https://github.com/Shubhamsaboo/awesome-llm-apps/actions/runs/15199809853) • [`claude/issue-197-20250523_005154`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/claude/issue-197-20250523_005154) • [Create PR ➔](https://github.com/Shubhams",
+          "created_at": "2025-05-23T00:51:53Z"
+        },
+        {
+          "author": "Shubhamsaboo",
+          "body": "It's working for me with the same code. Most likely some issue with your Gemini API key. \n\nhttps://github.com/user-attachments/assets/feb99faa-d87f-45b9-a826-92e496f111ea",
+          "created_at": "2025-06-15T16:07:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 218,
+      "title": "TypeError: Agent.__init__() got an unexpected keyword argument 'system_prompt'",
+      "body": "Hi! Your toolset looks awesome!\n\nI'm struggling to run it, however. I spent 1 hour to debug python etc, but now it seems that there's a code issue:\n\n![Image](https://github.com/user-attachments/assets/23a29935-8e4a-43e3-a6b4-992126b67b9d)\n\n```\nFile \"/Users/x/Projects/lab/awesome-llm-apps/advanced_ai_agents/single_agent_apps/ai_lead_generation_agent/ai_lead_generation_agent.py\", line 209, in <module>\n    main()\n    ~~~~^^\nFile \"/Users/x/Projects/lab/awesome-llm-apps/advanced_ai_agents/single_agent_apps/ai_lead_generation_agent/ai_lead_generation_agent.py\", line 178, in main\n    transform_agent = create_prompt_transformation_agent(openai_api_key)\nFile \"/Users/x/Projects/lab/awesome-llm-apps/advanced_ai_agents/single_agent_apps/ai_lead_generation_agent/ai_lead_generation_agent.py\", line 126, in create_prompt_transformation_agent\n        return Agent(\n               ~~~~~^\n            model=OpenAIChat(id=\"gpt-4o-mini\", api_key=openai_api_key),\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<17 lines>...\n            markdown=True\n            ^^^^^^^^^^^^^\n        )\n        ^\n```\n\nJust downloaded all latest releases of everything (python, this repo etc).\n\n```\n➜  ai_lead_generation_agent git:(main) ✗ pip --version\npip 25.1.1 from /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pip (python 3.13)\n➜  ai_lead_generation_agent git:(main) ✗ python --version\nPython 3.13.4\n```\n\nAny ideas why this happens?",
+      "state": "closed",
+      "author": "nikitaeverywhere",
+      "author_type": "User",
+      "created_at": "2025-06-12T07:53:51Z",
+      "updated_at": "2025-06-15T15:53:58Z",
+      "closed_at": "2025-06-15T15:53:58Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/218/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/218",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/218",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.780310",
+      "comments": []
+    },
+    {
+      "issue_number": 141,
+      "title": "Failed to retrieve google sheets link for lead generation agent",
+      "body": "I tried replicating the output for the lead generation agent, but failed to retrieve google sheets link: \n\n![Image](https://github.com/user-attachments/assets/01a720f3-0960-46d8-b030-23ee39f506f8)\n\nPlease take a look\n\np.s: Tested google sheets integration, which seems to be fine",
+      "state": "open",
+      "author": "akash301191",
+      "author_type": "User",
+      "created_at": "2025-03-06T12:44:19Z",
+      "updated_at": "2025-03-27T19:50:17Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/141/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/141",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/141",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:53.780347",
+      "comments": [
+        {
+          "author": "Shubhamsaboo",
+          "body": "Thanks for pointing it out @akash301191. \n\nFix is in progress here: https://github.com/Shubhamsaboo/awesome-llm-apps/pull/150",
+          "created_at": "2025-03-27T19:50:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 140,
+      "title": "ModuleNotFoundError: No module named 'agno.agents'",
+      "body": "Performed a clean git clone and followed the steps exactly in the README.  Tried troubleshooting with DeepSeek, but to no avail. Does this require that some of your other packages are also running?\n\nawesome-llm-apps/ai_agent_tutorials/ai_investment_agent/investment_agent.py\", line 3, in <module>\n    from agno.agents import Agent\n",
+      "state": "closed",
+      "author": "metaverse-sherpa",
+      "author_type": "User",
+      "created_at": "2025-03-06T10:01:03Z",
+      "updated_at": "2025-03-18T02:12:38Z",
+      "closed_at": "2025-03-18T02:12:37Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/140/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/issues/140",
+      "api_url": "https://api.github.com/repos/Shubhamsaboo/awesome-llm-apps/issues/140",
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "extraction_date": "2025-06-21T22:47:55.762875",
+      "comments": [
+        {
+          "author": "Laurenneds",
+          "body": "I believe I am having a similar issue: \n\nModuleNotFoundError: No module named 'agno'\n\nTraceback:\nFile \"/opt/anaconda3/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 85, in exec_func_with_error_handling\n    result = func()\n             ^^^^^^\nFile \"/opt/anaconda3/lib/",
+          "created_at": "2025-03-15T17:18:07Z"
+        },
+        {
+          "author": "AssistBeinasco",
+          "body": "not an expert, but a quick Google search led me to this [Agno](https://github.com/agno-agi/agno) which seems to be what you are looking for?",
+          "created_at": "2025-03-17T09:28:04Z"
+        },
+        {
+          "author": "Madhuvod",
+          "body": "@metaverse-sherpa @AssistBeinasco @Laurenneds  sorry for the delayed response,\n\nthe bug is now fixed - its due to a change in the Agno Agent Framework - which is now resolved.\n\nthe pr of that is: https://github.com/Shubhamsaboo/awesome-llm-apps/pull/146\n\nit'll be merged asap, look into the pr for th",
+          "created_at": "2025-03-17T13:43:48Z"
+        },
+        {
+          "author": "Laurenneds",
+          "body": "Are you also able to fix for the travel agent? I am just realizing the previous person was working with the investment agent. Thank you!",
+          "created_at": "2025-03-17T16:22:30Z"
+        },
+        {
+          "author": "Madhuvod",
+          "body": "yes travel agent is fixed too - https://github.com/Shubhamsaboo/awesome-llm-apps/pull/147\n",
+          "created_at": "2025-03-17T19:12:03Z"
+        }
+      ]
+    }
+  ]
+}

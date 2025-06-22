@@ -1,0 +1,2926 @@
+{
+  "repository": "Kiln-AI/Kiln",
+  "repository_info": {
+    "repo": "Kiln-AI/Kiln",
+    "stars": 3820,
+    "language": "Python",
+    "description": "The easiest tool for fine-tuning LLM models, synthetic data generation, and collaborating on datasets.",
+    "url": "https://github.com/Kiln-AI/Kiln",
+    "topics": [
+      "ai",
+      "chain-of-thought",
+      "collaboration",
+      "dataset-generation",
+      "evals",
+      "evaluation",
+      "fine-tuning",
+      "machine-learning",
+      "macos",
+      "ml",
+      "ollama",
+      "openai",
+      "prompt",
+      "prompt-engineering",
+      "python",
+      "rlhf",
+      "synthetic-data",
+      "windows"
+    ],
+    "created_at": "2024-07-23T23:10:13Z",
+    "updated_at": "2025-06-21T23:19:15Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 50,
+    "labeled_issues_estimate": 50,
+    "labeling_rate": 100.0,
+    "sample_labeled": 4,
+    "sample_total": 4,
+    "has_issues": true,
+    "repo_id": 832879402,
+    "default_branch": "main",
+    "size": 20902
+  },
+  "extraction_date": "2025-06-22T00:42:28.622788",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 63,
+  "issues": [
+    {
+      "issue_number": 381,
+      "title": "gui",
+      "body": "Can you provide a non-graphical version for Linux? Now the installation requires opening the GUI, but web applications should not need it. Also, can you provide a Chinese version?",
+      "state": "closed",
+      "author": "z-yulong",
+      "author_type": "User",
+      "created_at": "2025-06-21T07:06:46Z",
+      "updated_at": "2025-06-21T13:53:00Z",
+      "closed_at": "2025-06-21T13:53:00Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/381/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/381",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/381",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.541534",
+      "comments": []
+    },
+    {
+      "issue_number": 382,
+      "title": "[Feature Request] Internationalization / Translation (simplified)",
+      "body": "I'd like to enable a simple translation/Internationalization UX for Kiln.\n\nCurrently using tools like Chrome's translate feature don't work well, as they also translate your data (the outputs of LLMs, the saved inputs). This makes it pretty unusable at its core use case -- your data shouldn't be translated in a data analysis tool.\n\n\n**Note: I don't want to support internationalizing the whole app with strings as part of the app at this point.** There are too many strings, and things are moving too fast. The team won't be able to maintain key languages. We should make it easy to use with translation extensions for now.\n\n## Part 1: Ignore Raw Data [P1]\n\nWe should add `translate=\"no\"` to our html elements with data (model outputs/inputs, synthetic data). We don't want translation software touching it.\n\nAfter this we can encourage people to use Chrome's translate feature (or another extension), without breaking core purpose of Kiln\n\n## Part 2: Figure out next steps [P2]\n\nMaybe strategically translate a few key items (sidebar elements, important buttons that don't automatically translate well), without trying to translate everything. Leave 99% to the extension. At this point, contributors could fix bad translations with small tactical changes (add a `data-i18n` tag to problematic elements, and add translations for it).\n\nAlso: we should get feedback from international users on what it needs to be good. If there are still concerns, we could add more hints like `data-i18n` labels on key elements (without expecting to add them to everything). Are there extensions other than chrome translate in use here that we should support? And if so, how do we support them.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-06-21T13:35:02Z",
+      "updated_at": "2025-06-21T13:47:12Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/382/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/382",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/382",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.541556",
+      "comments": []
+    },
+    {
+      "issue_number": 374,
+      "title": "[Bug] Differing behavior when predicting dicts in UI vs Python library",
+      "body": "**Describe the bug**\nGiven a JSON output schema that includes a dict field (such that any keys can be predicted), when generating from the CLI, then the output dict is always empty. When attempting the same in the UI, this is not the case. The UI case is preferable!\n\nTested this with `google/gemini-2.0-flash-001` and `openai/gpt-4o-mini`, both via OpenRouter.\n\n**Checks**\n\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Use the Kiln task defined below.\n2. Open the task in the UI. Paste in any text, e.g., \"The judge was Steve Cosman and the defendant was John Smith.\"\n3. Run task.\n4. See a structured output, e.g., `{entities: {\"judge\": \"Steve Cosman\", \"defendant\": \"John Smith\"}}`\n5. Try again, programmatically this time, loading the task from the command line.\n6. Get empty output, e.g., `{entities: {}}`. This happens for any input text.\n\n```\n{\n  \"v\": 1,\n  \"id\": \"168947134826\",\n  \"created_at\": \"2025-06-13T09:14:37.854319\",\n  \"created_by\": \"aryamccarthy\",\n  \"name\": \"Entity extraction v1\",\n  \"description\": \"\",\n  \"instruction\": \"Extract the entities (i.e., organizations and people) in this document, as key/value pairs to signify that the role (key) X was performed by entity Y (value). For instance, you may learn that in a court case, the defendant was John Smith.\",\n  \"requirements\": [],\n  \"output_json_schema\": \"{\\\"description\\\": \\\"Model for validating and storing key entities.\\\\n\\\\nThe goal of this model is only to standardize the collection of entities in a document;\\\\\\\\nit does not attempt to capture the relationships between them or normalize their names.\\\\nThat'll be the responsibility of another model.\\\", \\\"properties\\\": {\\\"entities\\\": {\\\"additionalProperties\\\": {\\\"anyOf\\\": [{\\\"type\\\": \\\"string\\\"}, {\\\"items\\\": {\\\"type\\\": \\\"string\\\"}, \\\"type\\\": \\\"array\\\"}]}, \\\"default\\\": {}, \\\"description\\\": \\\"A dictionary of entities found in the document. The keys are the entity types, and the values are either a single entity or a list of entities. The values may be strings or lists of strings, depending on how many of a given entity type arefound.\\\", \\\"title\\\": \\\"Entities\\\", \\\"type\\\": \\\"object\\\"}}, \\\"title\\\": \\\"KeyEntities\\\", \\\"type\\\": \\\"object\\\"}\",\n  \"input_json_schema\": null,\n  \"thinking_instruction\": \"\",\n  \"model_type\": \"task\"\n}\n```\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\nI expected the CLI behavior to match the UI behavior. Is there a structured prediction setting I'm not enabling in the UI—or one that I can disable from the CLI? I know OAI doesn't let you freely generate dict keys; is this true for other models?\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Error Logs**\nPlease include the logs if the issue shows an error. State that no error is shown if there is no error.\n\nNo error\n\n**System Information:**\n\n- OS: MacOS\n- Browser safari\n- Kiln app Version v0.16\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "open",
+      "author": "aryamccarthy",
+      "author_type": "User",
+      "created_at": "2025-06-18T22:55:07Z",
+      "updated_at": "2025-06-20T14:58:00Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/374/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/374",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/374",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.541562",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "We don’t have a CLI - I assume you mean python library?\n\nAlso: better the judge than the defendant I guess…",
+          "created_at": "2025-06-19T00:44:17Z"
+        },
+        {
+          "author": "aryamccarthy",
+          "body": "You're right - I should say, it happens with the Python library.\n\nI can try to isolate a minimal example; right now, it's wrapped in a bit of indirection. Before I do: is there a reason (off the top of your head) why the default running configuration would be different within the library versus the ",
+          "created_at": "2025-06-20T14:56:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 202,
+      "title": "[Feature Request] Linux AppImage support",
+      "body": "If anyone wants to add this, Linux app image support would be great. I'd love help on this as usually work on MacOS.\n\nPyinstaller has some tests: https://github.com/pyinstaller/pyinstaller/commit/85fe0c15b6ef7dcb8f66cc8b46e02ad5bdf93e27\n\nMy preferred tooling would be: https://appimage-builder.readthedocs.io/en/latest/",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-02-16T15:47:34Z",
+      "updated_at": "2025-06-08T03:17:58Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/202/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/202",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/202",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.747471",
+      "comments": [
+        {
+          "author": "aliciusschroeder",
+          "body": "4 months with no takers - either this is more of a \"good _second_ issue\" or AppImage demand is lower than expected. Hoping it's the former since I'd like to dive into AppImage tooling, but I'd also love if there's actual user demand for this.\n\nI'm assuming this is about packaging the existing PyInst",
+          "created_at": "2025-06-07T14:32:31Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@aliciusschroeder sounds right but I’m not sure I know enough about app image to spot issues. \n\nYes: ideally part of same build script, and now exporting both the x86 binary and an app image (I’ll ship both). ",
+          "created_at": "2025-06-07T20:59:31Z"
+        },
+        {
+          "author": "aliciusschroeder",
+          "body": "@scosman Thanks for confirming! I'm halfway through the implementation",
+          "created_at": "2025-06-08T03:17:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 330,
+      "title": "[Feature Request] Repairing data should offer a \"apply this repair to all templates\"",
+      "body": "**Is your feature request related to a problem? Please describe.**\nThere will be systematic problems with synthetic data since the variance around synthetic data is typically quite limited. There should be a way to craft a prompt that fixes one data point, then apply it to all datapoints.\n\n\n**Checks**\n\n- [X] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [X] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nAn apply all flow for repairing data.\n\n",
+      "state": "open",
+      "author": "tawnymanticore",
+      "author_type": "User",
+      "created_at": "2025-05-28T17:24:18Z",
+      "updated_at": "2025-05-28T17:24:18Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/330/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/330",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/330",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.926905",
+      "comments": []
+    },
+    {
+      "issue_number": 328,
+      "title": "[Feature Request] Eval should be allowed to run with many different random seeds and generation params then averaged",
+      "body": "**Is your feature request related to a problem? Please describe.**\nWhen running evaluations on the evaluation set, the client should be able to specify how many repetitions of the samples they want. eg for a 100-sized eval set, they may want to operate over it 3x (to bump up the eval size to 300) with different random seeds to get a breadth of the variance since in production they may not use greedy sampling.\n\n**Checks**\n\n- [X] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [X] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nA pretty UI where the Eval client is greeted by, \"Greedy\" vs \"Sampling\" toggles, where Greedy explains that every sample will produce the same generation every time, and sampling means every time can be different. Then Sampling has a sub-toggle on maybe topP and Temperature to start auto-populated to the default that the service (Fireworks for example) is currently deploying as default.\n\n**Describe alternatives you've considered**\nAt the very least a Greedy vs not Greedy switch. Clients may not know that they have variance at inference time and need to know if their evals are representative.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here.\n",
+      "state": "open",
+      "author": "tawnymanticore",
+      "author_type": "User",
+      "created_at": "2025-05-28T16:55:29Z",
+      "updated_at": "2025-05-28T16:55:29Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/328/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/328",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/328",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.926922",
+      "comments": []
+    },
+    {
+      "issue_number": 324,
+      "title": "[Bug] How to export download the JSONL?",
+      "body": "**Describe the bug**\nNot able to download JSONL data.\n\nI have tagged it already.\n\nManually Tag Existing Data\nBe sure to assign the following tags in the requested proportions: 100% fine_tune_data\nFollow these steps to manually tag existing data to be used for your fine tune.\n\n![Image](https://github.com/user-attachments/assets/a67049ef-10f7-4754-a9b5-e93d593f6b7d)\n\n![Image](https://github.com/user-attachments/assets/71be0211-4d29-490b-88e7-ae8de39a8826)\n\n\nIt is a great project with lots of potential. It would be great if you could add a docker image and simplify the download directly from the dataset page. You select rows and then be able to download. ",
+      "state": "closed",
+      "author": "djaffer",
+      "author_type": "User",
+      "created_at": "2025-05-23T04:34:16Z",
+      "updated_at": "2025-05-26T13:04:37Z",
+      "closed_at": "2025-05-23T04:49:17Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/324/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/324",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/324",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:13.926928",
+      "comments": [
+        {
+          "author": "djaffer",
+          "body": "![Image](https://github.com/user-attachments/assets/0e9cd23c-d6ff-4e5e-a733-944ae0b64240)\n\nFigured out we have to use new training dataset after tagging. I kept using other option. This can improve ux flow. Keeping it here incases someone gets stuck here.",
+          "created_at": "2025-05-23T04:49:17Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Good feedback. I updated the strings to hopefully eliminate this confusion. Thanks!",
+          "created_at": "2025-05-26T13:04:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 322,
+      "title": "[Feature Request] In the \"Add project\" flow, the Kiln UI should open a file picker rather than asking for an absolute path",
+      "body": "**Is your feature request related to a problem? Please describe.**\nNot a blocker, just an annoyance. screenshot:\n![Image](https://github.com/user-attachments/assets/7ca974dd-9b70-400a-b242-aaaf1ad2d022)\n\n**Checks**\n\nN/A\n\n**Describe the solution you'd like**\nA file picker to be used to select a project\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here.\n",
+      "state": "closed",
+      "author": "tawnymanticore",
+      "author_type": "User",
+      "created_at": "2025-05-22T17:40:50Z",
+      "updated_at": "2025-05-22T17:43:15Z",
+      "closed_at": "2025-05-22T17:43:14Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/322/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/322",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/322",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.176907",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Unfortunately not possible to get the absolute path to something from a web browser file picker :( ",
+          "created_at": "2025-05-22T17:43:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 321,
+      "title": "[Bug/UX] When fine-tuning, it should be clearer that a WandB account setup is required for seeing metrics from Together/FW",
+      "body": "**Describe the bug**\n[Bug/UX] When fine-tuning, it should be clearer that a WandB account setup is required for seeing metrics from Together/FW\n\n**Checks**\n\n\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Fine tune a model\n2. Be presented with no way to see the metrics if you used Fireworks\n\n**Expected behavior**\nWe should be able to see the metrics right in the Kiln app, or be presented with a URL of the final WandB metrics. At the very least clients should be warned with a, \"You do not have a WandB account setup, you will not be able to see the metrics\"\n\n**Screenshots**\nN/A\n\n**Error Logs**\nN/A\n\n\n**System Information:**\nMac\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "open",
+      "author": "tawnymanticore",
+      "author_type": "User",
+      "created_at": "2025-05-21T21:41:15Z",
+      "updated_at": "2025-05-21T21:41:15Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/321/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/321",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/321",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.352448",
+      "comments": []
+    },
+    {
+      "issue_number": 298,
+      "title": "[Bug] 1Password overlays buttons on hidden modal fields",
+      "body": "**Describe the bug**\n\nScreenshots further down below.\n\nUI bug:\n- 1password Chrome extension overlays its buttons on form fields contained in modals that are present in the DOM but not visible\n\nOn the `connect_providers.svelte` page, for example, it seems 1Password matches on a text input inside the hidden `openai_compatible_dialog` modal.\n\nA workaround is to use the 1Password opt-out attribute ([docs](https://releases.1password.com/b5x/beta/8.10.52-14/)):\n> When designing a website to work with 1Password, you can now use “data-op-ignore” as an alias for the “data-1p-ignore” attribute.\n\nAlthough, it would probably be cleaner to remove those modals from the DOM when not shown.\n\n**Checks**\n\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\nIf you have 1password (or some other password manager that may behave similarly):\n1. Go to http://localhost:5173/settings/providers or on a detailed eval page (http://localhost:5173/evals/A/B/C)\n2. See 1password button overlay floating in the middle of the page\n\nIf you click in the page, the button disappears; it comes back again if you hard refresh the page, or if you click on another page in the sidebar, and come back.\n\n**Expected behavior**\n\nPassword managers do not overlay their buttons on top of fields in closed modals.\n\n**Screenshots**\n\nConnect providers screen:\n<img width=\"912\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/90aba282-6e48-4e9e-9a1e-7369cacc7a92\" />\n\nEvals detailed UI:\n<img width=\"1037\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/041702c1-9eb4-4e86-9c49-551c2a070aed\" />\n\n**Error Logs**\n\nN/A\n\n**System Information:**\n\n- OS: MacOS\n- Browser: Chrome\n- Kiln app Version: `0.15.0` (was happening on all previous versions from the past months too)\n\n**Additional context**\n\nN/A",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-05-02T05:47:24Z",
+      "updated_at": "2025-05-02T15:59:42Z",
+      "closed_at": "2025-05-02T15:59:42Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/298/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/298",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/298",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.352482",
+      "comments": []
+    },
+    {
+      "issue_number": 287,
+      "title": "[Bug] QwQ fine-tune dataset format",
+      "body": "**Describe the bug**\n\nThe current fine-tuning dataset format for reasoning models like QwQ at the moment is in the following format:\n```json\n{\n   \"messages\":[\n      {\n         \"role\":\"system\",\n         \"content\":\"task instruct\\n\\nYour response should respect the following requirements:\\n1) must be funny\\n\"\n      },\n      {\n         \"role\":\"user\",\n         \"content\":\"joke about a banana\"\n      },\n      {\n         \"role\":\"user\",\n         \"content\":\"think\"\n      },\n      {\n         \"role\":\"assistant\",\n         \"content\":\"Okay, I need to come up with a joke about a banana that's funny. Let me think... Bananas are slippery, yellow, have a peel. Maybe something involving slipping? Or why did the banana cross the road? No, that's too similar to the classic joke. How about a pun? Bananas can be \\\"split.\\\" Oh, here's one: Why don't bananas write? Because they have bad pencil (peel)-sh sharpeners! Wait, pencil and peel sound alike. That's a pun. Is that funny enough? Maybe. Alternatively, why did the banana go to the doctor? Because it wasn't peeling well! Hmm, that's also a play on words. Which one is funnier? The doctor one might be better. Let me check the fun score. Maybe 7/10? The user wants the JSON with joke and fun_score. Alright, let's go with the doctor one. Fun score 7.\"\n      },\n      {\n         \"role\":\"user\",\n         \"content\":\"Considering the above, return a final result.\"\n      },\n      {\n         \"role\":\"assistant\",\n         \"content\":\"{\\\"joke\\\": \\\"Why did the banana go to the doctor? Because it wasn't peeling well!\\\", \\\"fun_score\\\": 7}\"\n      }\n   ]\n}\n```\n\nThe format instead should instead look like this:\n```json\n{\n   \"messages\":[\n      {\n         \"role\":\"system\",\n         \"content\":\"task instruct\\n\\nYour response should respect the following requirements:\\n1) must be funny\\n\"\n      },\n      {\n         \"role\":\"user\",\n         \"content\":\"joke about a banana\"\n      },\n      {\n         \"role\":\"assistant\",\n         \"content\":\"Okay, I need to come up with a joke about a banana that's funny. Let me think... Bananas are slippery, yellow, have a peel. Maybe something involving slipping? Or why did the banana cross the road? No, that's too similar to the classic joke. How about a pun? Bananas can be \\\"split.\\\" Oh, here's one: Why don't bananas write? Because they have bad pencil (peel)-sh sharpeners! Wait, pencil and peel sound alike. That's a pun. Is that funny enough? Maybe. Alternatively, why did the banana go to the doctor? Because it wasn't peeling well! Hmm, that's also a play on words. Which one is funnier? The doctor one might be better. Let me check the fun score. Maybe 7/10? The user wants the JSON with joke and fun_score. Alright, let's go with the doctor one. Fun score 7.</think>{\\\"joke\\\": \\\"Why did the banana go to the doctor? Because it wasn't peeling well!\\\", \\\"fun_score\\\": 7}\"\n      }\n   ]\n}\n```\n\n**Checks**\n\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Go to `Fine Tune` and `Create Fine Tune`\n2. Select `Fireworks AI: QwQ-32B (qwq-32b)` as model\n3. Filter for samples with `Thinking (items with reasoning/chain-of-thought)`\n4. As `Model Type / Training Strategy`, select: `Reasoning - Learn intermediate thinking and final response`\n5. Submit the fine-tuning job\n6. Go to Fireworks and see that was submitted was in the multi-message format described above\n\nExpected outcome:\n- the dataset submitted to Fireworks.ai should be in the other format, with a trailing `</think>` tag after the thinking trace\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Error Logs**\nN/A\n\n**System Information:**\n\n- OS: MacOS\n- Browser: chrome\n- Kiln app Version: v0.14.0\n\n**Additional context**\nAdd any other context about the problem here.\n\n**Reference**\n\nResponse we get on a QwQ inference call to Fireworks.ai (via LlmLite adapter):\n\n```json\n{\n   \"id\":\"XXX\",\n   \"created\":1745146073,\n   \"model\":\"fireworks_ai/accounts/fireworks/models/qwq-32b\",\n   \"object\":\"chat.completion\",\n   \"system_fingerprint\":null,\n   \"choices\":[\n      {\n         \"finish_reason\":\"stop\",\n         \"index\":0,\n         \"message\":{\n            \"content\":\"Okay, the user wants a joke about a hoodie. Let's think... Hoodies are clothing items, right? Maybe play on words with \\\"hood\\\" since that's part of the name. How about something with a pun? Like why did the hoodie go to school? Hmm, maybe \\\"Because it wanted to improve its hanger presence!\\\" Wait, no, hanger is more for dresses. Maybe \\\"Because it needed to button up its math skills?\\\" No, hoodies typically don't have buttons, they have drawstrings. Maybe \\\"Because it wanted to zip up its knowledge\\\"? But zippers aren't always on hoodies either. Let me think again.\\n\\nAlternatively, think of a play on \\\"hood\\\" and \\\"crowd\\\" or \\\"overhead\\\". Maybe a pun with \\\"hood\\\" and \\\"mood\\\". Like \\\"Why did the hoodie go to therapy? Because it had too many 'overcoat' issues!\\\" Hmm, overcoat is different. Maybe \\\"Because it was feeling a little unravelled?\\\" Not specific enough. \\n\\nWait, how about a joke where the hoodie is being windy? Like \\\"Why did the hoodie hold a party? Because it was the perfect hostess – it had everything on hand and in the hood!\\\" That's a bit forced. Maybe better to think of a pun with \\\"draw the line\\\" since hoodies have drawstrings. \\\"Why don't hoodies ever lie? Because they know how to draw the line!\\\" That could work. Then the fun score? Maybe 7? Let me see. Another angle: \\\"Why did the hoodie go to the gym? To get a better pull-over!\\\" Wait, pull-over is a type of shirt. Not bad. Not sure which one is funnier. Maybe the first one with the hostess? Or the draw the line? Hmm. The draw the line joke has a double meaning (drawstring vs drawing the line on lying). That might be better. Let's go with that. Then fun_score... maybe 8? Because it's a decent pun. Okay, that's the plan.\\n</think>\\n\\n```json\\n{\\n  \\\"joke\\\": \\\"Why did the hoodie go to the therapist? Because it was feeling a little unravelled and needed to tie up some loose ends! (It also kept扎着 knots about its 'draw-the-line' issues.)\\\",\\n  \\\"fun_score\\\": 8\\n}\\n```\",\n            \"role\":\"assistant\",\n            \"tool_calls\":null,\n            \"function_call\":null\n         }\n      }\n   ],\n   \"usage\":{\n      \"completion_tokens\":488,\n      \"prompt_tokens\":129,\n      \"total_tokens\":617,\n      \"completion_tokens_details\":null,\n      \"prompt_tokens_details\":null\n   },\n   \"service_tier\":null\n}\n```",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-04-20T11:12:34Z",
+      "updated_at": "2025-05-01T17:14:34Z",
+      "closed_at": "2025-05-01T17:14:33Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/287/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "leonardmq"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/287",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/287",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.352491",
+      "comments": [
+        {
+          "author": "leonardmq",
+          "body": "Had a look at the format we are getting from R1 to see if it has the same problem; and seems like the format there is different with the reasoning trace provided as a different field altogether. Example of an R1 response from Fireworks (via LlmLite adapter)\n\n```json\n{\n  \"id\": \"XXX\",\n  \"created\": 174",
+          "created_at": "2025-04-20T11:14:19Z"
+        },
+        {
+          "author": "leonardmq",
+          "body": "Fixed in https://github.com/Kiln-AI/Kiln/pull/294",
+          "created_at": "2025-05-01T17:14:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 290,
+      "title": "[Bug] JSON schema validation for objects allows extra fields",
+      "body": "Our JSON schema validation allows extra fields \n\nExample input (extra hobbies field):\n```\n{\n \"name\": \"Jeff\",\n \"age\": 110,\n \"hobbies\": \"ice skating\"\n}\n```\n\nSchema:\n```\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"person\": {\n      \"type\": \"object\",\n      \"title\": \"Person\",\n      \"description\": \"A person\",\n      \"properties\": {\n        \"name\": {\n          \"type\": \"string\",\n          \"title\": \"Name\",\n          \"description\": \"The user's name\"\n        },\n        \"age\": {\n          \"type\": \"integer\",\n          \"title\": \"Age\",\n          \"description\": \"The user's age\"\n        }\n      }\n    }\n  },\n  \"required\": [\n    \"person\"\n  ]\n}\n```",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-04-22T01:22:00Z",
+      "updated_at": "2025-04-22T12:16:59Z",
+      "closed_at": "2025-04-22T12:16:58Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/290/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/290",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/290",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.549172",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "This might be by design: https://json-schema.org/understanding-json-schema/reference/object#additionalproperties",
+          "created_at": "2025-04-22T12:13:07Z"
+        },
+        {
+          "author": "scosman",
+          "body": "confirmed - by design",
+          "created_at": "2025-04-22T12:16:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 284,
+      "title": "[Bug] Unsupported array type in Run with Structured Input",
+      "body": "**Describe the bug**\nNot a true bug, more of an unexpected unsupported action:\n- UI does not let the user input an array in the `Run` UI for a Task with a `Structured Input` schema that requires an `array`.\n\n> Unsupported property type: arrayfor property ingredients. This may be supported by the python framework, but is not yet supported in the UI. Required property not provided: ingredients\n\nWhere this is particularly problematic is the user only finds out their Task is broken after going through the effort of creating the Task, defining the JSON schema, and trying the `Run` page.\n\nI have attached an example `.kiln` Task definition further down.\n\n**Checks**\n\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Create a Task with `Structured Input`, and a JSON schema that includes a property of type `array`\n2. Go to the `Run` page\n3. Try filling in the array field\n4. Click the `Run` button\n5. The UI shows an error that inputting an array is not supported\n\n**Expected behavior**\nThe user can input an array in the field of type `array` and `Run` successfully.\n\n**Screenshots**\nHere is what the UI shows when you click `Run`:\n<img width=\"808\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3b3d28ce-2d7f-4e3b-ba76-73b6defa446a\" />\n\n**Error Logs**\nNo logs - this seems to be expected behavior.\n\n**System Information:**\n- OS: MacOS\n- Browser: chrome\n- Kiln app Version: v0.14.0\n\n**Additional context**\nExample Task where this happens for the `ingredients` field:\n\n```json\n{\n  \"v\": 1,\n  \"id\": \"203138911691\",\n  \"created_at\": \"2025-04-19T13:16:25.087620\",\n  \"created_by\": \"leonardmarcq\",\n  \"name\": \"Structured input with array\",\n  \"description\": \"A task with structured input where a property is an array\",\n  \"instruction\": \"Generate a recipe for the dish, using the provided ingredients.\",\n  \"requirements\": [\n    {\n      \"id\": \"182169483296\",\n      \"name\": \"Ingredients\",\n      \"description\": \"\",\n      \"instruction\": \"The recipe should use every ingredient.\",\n      \"priority\": 1,\n      \"type\": \"pass_fail\"\n    },\n    {\n      \"id\": \"280711970890\",\n      \"name\": \"Dish\",\n      \"description\": \"\",\n      \"instruction\": \"The recipe should produce the exact dish.\",\n      \"priority\": 1,\n      \"type\": \"pass_fail\"\n    }\n  ],\n  \"output_json_schema\": \"{\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"title\\\": {\\n      \\\"type\\\": \\\"string\\\"\\n    },\\n    \\\"content\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Markdown-formatted text\\\"\\n    }\\n  },\\n  \\\"required\\\": [\\\"title\\\", \\\"content\\\"],\\n  \\\"additionalProperties\\\": false\\n}\",\n  \"input_json_schema\": \"{\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"dish\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"The name of the dish to be cooked\\\"\\n    },\\n    \\\"ingredients\\\": {\\n      \\\"type\\\": \\\"array\\\",\\n      \\\"items\\\": {\\n        \\\"type\\\": \\\"string\\\",\\n        \\\"description\\\": \\\"The name of the ingredient to be used\\\"\\n      }\\n    }\\n  },\\n  \\\"required\\\": [\\\"dish\\\", \\\"ingredients\\\"],\\n  \\\"additionalProperties\\\": false\\n}\",\n  \"thinking_instruction\": \"\",\n  \"model_type\": \"task\"\n}\n```\n",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-04-19T05:37:52Z",
+      "updated_at": "2025-04-22T01:06:09Z",
+      "closed_at": "2025-04-22T01:06:08Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/284/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/284",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/284",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.789000",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed by https://github.com/Kiln-AI/Kiln/pull/288",
+          "created_at": "2025-04-22T01:06:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 285,
+      "title": "[Bug] Fireworks fine-tune error \"Dataset ID: first character of id must not be a digit\"",
+      "body": "**For users hitting this**: a temporary work around is to just hit the button again, until it works. Some of our IDs don't start with digits (UUIDs with hex) so it will work after a few tried.\n\nI'd like Fireworks to fix this - UUIDs should be valid IDs. See thread below. If they don't want to, I'll update the client to prepend \"KILN-\" to all IDs.\n\nhttps://discord.com/channels/1137072072808472616/1363214412395184350/1363214412395184350",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-04-19T18:09:37Z",
+      "updated_at": "2025-04-22T00:14:31Z",
+      "closed_at": "2025-04-22T00:14:31Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/285/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/285",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/285",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:14.967588",
+      "comments": []
+    },
+    {
+      "issue_number": 273,
+      "title": "[Feature Request] GGUF export and usability improvements for running locally",
+      "body": "I think we should make going from cloud to local and back super user friendly. Currently you can download cloud-fine-tunes now, but need to use some libraries/CLI to get them running locally.\n\nThis is a WIP spec - please comment below on what you'd want in this space!\n\n- Download GGUF format from the \"Fine-tune\" tab (just Lora or flattened model?)\n- Automatic Ollama integration: One button to export model to Ollama?\n- Is Ollama enough, or do people want llama.cpp, vLLM, and other engines?\n\nPriority here is Fireworks since they have 60+ downloadable models compared to Together's 4. Downloading is easy (https://docs.fireworks.ai/api-reference/get-model-download-endpoint) but we'll need to unpack, convert and maybe quantize.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-04-06T14:51:47Z",
+      "updated_at": "2025-04-11T13:03:12Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/273/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/273",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/273",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:16.915436",
+      "comments": []
+    },
+    {
+      "issue_number": 275,
+      "title": "ollama bug need to fix",
+      "body": "Unexpected error: litellm.NotFoundError: NotFoundError: OpenAIException - 404 page not found      ollama bug need to fix",
+      "state": "closed",
+      "author": "abczmx",
+      "author_type": "User",
+      "created_at": "2025-04-08T08:57:35Z",
+      "updated_at": "2025-04-08T11:23:32Z",
+      "closed_at": "2025-04-08T11:23:31Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/275/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/275",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/275",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:16.915463",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Please fill out the issue template for new issues. Without it we can examine or resolve a bug. ",
+          "created_at": "2025-04-08T11:23:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 263,
+      "title": "[Bug] Cannot Authenticate Anthropic",
+      "body": "**Describe the bug**\nAdding an API key for Anthropic returns: `Failed to connect to Anthropic. Error: [400]`. According to [Anthropic](https://docs.anthropic.com/en/api/errors), this is: \n```\n400 - invalid_request_error: There was an issue with the format or content of your request. \n```\n\n**Checks**\n\n- [X ] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [X ] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [ X] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [X ] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Go to AI Model Settings\n2. Add Anthropic API key\n\n**Expected behavior**\nA successful connection. \n\n\n**Error Logs**\nFailed to connect to Anthropic. Error: [400]\n\n**System Information:**\n\n- OS: MacOS M2 Ultra\n- Chrome Version 134.0.6998.166\n- Kiln app Version v0.13.2",
+      "state": "closed",
+      "author": "StreamlinedStartup",
+      "author_type": "User",
+      "created_at": "2025-03-31T01:54:58Z",
+      "updated_at": "2025-03-31T20:42:24Z",
+      "closed_at": "2025-03-31T19:44:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/263/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/263",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/263",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.090024",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "I can repo this - Anthropic must have changed something.",
+          "created_at": "2025-03-31T19:42:44Z"
+        },
+        {
+          "author": "scosman",
+          "body": "You can download the fixed version here: https://github.com/Kiln-AI/Kiln/actions/runs/14180539491",
+          "created_at": "2025-03-31T20:42:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 248,
+      "title": "[Bug] Run imported from CSV cannot be repaired",
+      "body": "**Describe the bug**\nThe run repairing flow does not work on CSV-imported task runs. This is because the `file_import` data source does not have a `prompt_id`, so it fails to create the repair prompt.\n\nError shown in the UI is: `Unexpected error: Prompt builder 'None' is not a valid prompt builder`.\n\nIn terms of a fix, not immediately clear where the best place for the user to indicate the prompt type should be - possibly this is a piece of information that they should include in the CSV as a field with possibly a fallback to basic zero shot prompt type if left blank. Alternatively in the CSV import modal, through a dropdown but it does not really work if the samples they import span different types of prompts.\n\n**Checks**\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] - n/a - I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. Go to `Dataset`\n2. Click on `Upload File`\n3. Choose a valid file in the modal and click `Upload`\n4. Click on one of the newly added rows\n5. Rate it `2` stars\n6. Fill in the `Repair Instructions` text area in `Repair Output`\n7. Click `Attempt Repair`\n8. UI shows an error: `Unexpected error: Prompt builder 'None' is not a valid prompt builder`\n\n**Expected behavior**\nClicking `Attempt Repair` on a CSV-imported task run should attempt to repair it. \n\n**Screenshots**\n<img width=\"1221\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a511bded-807f-410e-a68e-6cd947527c22\" />\n\n**Error Logs**\n```log\nERROR:    Exception in ASGI application\nTraceback (most recent call last):\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py\", line 406, in run_asgi\n    result = await app(  # type: ignore[func-returns-value]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py\", line 60, in __call__\n    return await self.app(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/fastapi/applications.py\", line 1054, in __call__\n    await super().__call__(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/applications.py\", line 113, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py\", line 187, in __call__\n    raise exc\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py\", line 165, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 93, in __call__\n    await self.simple_response(scope, receive, send, request_headers=headers)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py\", line 144, in simple_response\n    await self.app(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py\", line 62, in __call__\n    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/routing.py\", line 715, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/routing.py\", line 735, in app\n    await route.handle(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/routing.py\", line 288, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/routing.py\", line 76, in app\n    await wrap_app_handling_exceptions(app, request)(scope, receive, send)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/starlette/routing.py\", line 73, in app\n    response = await f(request)\n               ^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/fastapi/routing.py\", line 301, in app\n    raw_response = await run_endpoint_function(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/.venv/lib/python3.12/site-packages/fastapi/routing.py\", line 212, in run_endpoint_function\n    return await dependant.call(**values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/app/desktop/studio_server/repair_api.py\", line 38, in run_repair\n    repair_task_input = RepairTaskRun.build_repair_task_input(\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/libs/core/kiln_ai/adapters/repair/repair_task.py\", line 67, in build_repair_task_input\n    original_prompt = cls._original_prompt(task_run, original_task)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/xxx/Kiln/libs/core/kiln_ai/adapters/repair/repair_task.py\", line 61, in _original_prompt\n    raise ValueError(f\"Prompt builder '{prompt_id}' is not a valid prompt builder\")\nValueError: Prompt builder 'None' is not a valid prompt builder\n```\n\n**System Information:**\n- OS: MacOS\n- Browser: chrome\n- Kiln app Version: latest `main` (`0.12.1`)\n\n**Additional context**\nThe error is thrown from here: https://github.com/Kiln-AI/Kiln/blob/062624904d73ec91534a5c728c8d30a6ed10803e/libs/core/kiln_ai/adapters/repair/repair_task.py#L61",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-03-16T13:28:29Z",
+      "updated_at": "2025-03-27T20:24:03Z",
+      "closed_at": "2025-03-27T20:24:01Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/248/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "leonardmq"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/248",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/248",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.312182",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Let's default to basic prompt builder if it's missing?\n\n - Top UI show something like \"None (imported)\", or just hide that field\n - Repair API defaults to Basic prompt if none provided.\n\nYou want to fix or should I?",
+          "created_at": "2025-03-17T15:30:04Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Fixed by #259 ",
+          "created_at": "2025-03-27T20:24:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 260,
+      "title": "[Bug]",
+      "body": "**Describe the bug**\nAfter installing the current (2025/03/19) or the last-to-current version, Kiln cannot start on windows. \n\n\n\n**Checks**\n\n- [x] I've read the [troubleshooting guide](https://docs.getkiln.ai/docs/troubleshooting-and-logs)\n- [x] I've tried to reproduce the problem using another model, and confirmed it's not an issue specific to the model I've chosen.\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues/discussions\n\n**To Reproduce**\nSteps to reproduce the behavior:\n\n1. install https://github.com/Kiln-AI/Kiln/actions/runs/13942701424 (or one of the two before that)\n2. Start the newly installed Kiln\n3. Kiln Desktop doesn't open, instead I get an \"unhandled exception in script\":\n    Failed to execute script'desktop' due to unhandled exception: \n    unknown encoding  cl100k_base. \n    Plugins found: [] \n    tiktoken version 0.9.0 (are you on latest?)\n\n**Expected behavior**\n\"Kiln AI Loading\" banner disappears. Kiln Desktop opens. \n\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/d33fcb3f-3232-4d2a-82c9-a65774bc4158)\n\n**Error Logs**\n\n2025-03-19 12:17:24,226.226 - ERROR - uvicorn.error - Exception in ASGI application\nTraceback (most recent call last):\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\uvicorn\\protocols\\http\\h11_impl.py\", line 403, in run_asgi\n    result = await app(  # type: ignore[func-returns-value]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        self.scope, self.receive, self.send\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\uvicorn\\middleware\\proxy_headers.py\", line 60, in __call__\n    return await self.app(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\applications.py\", line 1054, in __call__\n    await super().__call__(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\applications.py\", line 112, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\middleware\\errors.py\", line 187, in __call__\n    raise exc\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\middleware\\errors.py\", line 165, in __call__\n    await self.app(scope, receive, _send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\middleware\\cors.py\", line 85, in __call__\n    await self.app(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\middleware\\exceptions.py\", line 62, in __call__\n    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\routing.py\", line 714, in __call__\n    await self.middleware_stack(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\routing.py\", line 734, in app\n    await route.handle(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\routing.py\", line 288, in handle\n    await self.app(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\routing.py\", line 76, in app\n    await wrap_app_handling_exceptions(app, request)(scope, receive, send)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\_exception_handler.py\", line 53, in wrapped_app\n    raise exc\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\_exception_handler.py\", line 42, in wrapped_app\n    await app(scope, receive, sender)\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\starlette\\routing.py\", line 73, in app\n    response = await f(request)\n               ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\routing.py\", line 301, in app\n    raw_response = await run_endpoint_function(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\routing.py\", line 212, in run_endpoint_function\n    return await dependant.call(**values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renek\\source\\repos\\Kiln\\app\\desktop\\studio_server\\provider_api.py\", line 139, in get_available_models\n    if not provider.model_id:\n           ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\renek\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\main.py\", line 891, in __getattr__\n    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')\nAttributeError: 'KilnModelProvider' object has no attribute 'model_id'\n\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "closed",
+      "author": "ReneKry",
+      "author_type": "User",
+      "created_at": "2025-03-19T14:02:07Z",
+      "updated_at": "2025-03-19T22:36:40Z",
+      "closed_at": "2025-03-19T22:35:33Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/260/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/260",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/260",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.497600",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "\nEdit: it's the cl100k_base issue. I just fixed that. Try the link below",
+          "created_at": "2025-03-19T18:00:34Z"
+        },
+        {
+          "author": "scosman",
+          "body": "This build has a fix: https://github.com/Kiln-AI/Kiln/releases/tag/v0.13.1",
+          "created_at": "2025-03-19T22:35:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 252,
+      "title": "[Feature Request] Documentation on adding new models to core library",
+      "body": "Great library! It would help my team a lot to have a guide on how to add custom models in the core library (rather than through the app). For instance, the recent Gemini releases, or a `FakeAdapter` for unit testing our own code. While there's a guide for the app, I wasn't able to find a corresponding one in the core library documentation, and I'm under the impression that a lot of the `enum` exhaustiveness checks preclude it.\n\nI believe the following things are true, but I'm not certain.\n* For the `FakeAdapter`, the best way is to use a real model's params to initialize an `Adapter` subclass, then override `_run`. (I believe I see this approach in your tests with `MockAdapter`.\n* For Gemini 2, it should be possible to add - but it's not clear to me how.\n* For other new models, the exhaustiveness checks for certain enums preclude me from using them without modifying the kiln core library itself.\n\n**Checks**\n\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nA page in the docs to describe the cases outlined above.\n\n**Describe alternatives you've considered**\nDocumenting it within the code itself.\n",
+      "state": "closed",
+      "author": "aryamccarthy",
+      "author_type": "User",
+      "created_at": "2025-03-17T02:25:00Z",
+      "updated_at": "2025-03-18T18:22:02Z",
+      "closed_at": "2025-03-18T18:13:37Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/252/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/252",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/252",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.754928",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Ah good call. Short version here, I'll leave issue open to track adding it to docs.\n\nFor easy Gemini - grab a [daily build](https://github.com/Kiln-AI/Kiln/actions/runs/13887993973). I added Gemini support via Vertex and Gemini. Will ship it this week.\n\nIn general, you can add providers/models in yo",
+          "created_at": "2025-03-17T04:07:06Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@aryamccarthy fixed. Let me know if the new docs help. You can read them here now: https://github.com/Kiln-AI/Kiln/blob/main/libs/core/README.md (they will be published next time I ship a library update)\n\n",
+          "created_at": "2025-03-18T18:14:41Z"
+        },
+        {
+          "author": "aryamccarthy",
+          "body": "Looks really good! Just a typo `s/AI Provier/AI Provider/`. Super clearly written; I'll test it out later.",
+          "created_at": "2025-03-18T18:18:07Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Ha, thanks. Will fix!",
+          "created_at": "2025-03-18T18:22:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 255,
+      "title": "[Feature Request] Docs improvement - synthetic data gen example in libs/core/README.md",
+      "body": "We should add a docs for how to use synthetic data gen from code. It's all there, but a sample would help.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-03-18T18:16:39Z",
+      "updated_at": "2025-03-18T18:16:47Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/255/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/255",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/255",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.969603",
+      "comments": []
+    },
+    {
+      "issue_number": 198,
+      "title": "[Feature Request] Support azure openai",
+      "body": "**Is your feature request related to a problem? Please describe.**\nI want to use models from azure openai ,but i can't find azure openai provider. And i also can't use customer provider because it doesn't suppot v1/models. \nThe stange thing is. when i create a proxy to simulator openai interface. it still can't work.\n**Checks**\n\n- [* ] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [* ] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nI want to use models from azure openai ,but i can't find azure openai provider. And i also can't use customer provider because it doesn't suppot v1/models. \n\n**Describe alternatives you've considered**\nProvide more detail information on what's a valid customer provider. I emulate /v1/chat/comletion and /v1/models. but it still can't show the models.\n\n",
+      "state": "closed",
+      "author": "hanhsia",
+      "author_type": "User",
+      "created_at": "2025-02-15T15:33:33Z",
+      "updated_at": "2025-03-17T16:53:55Z",
+      "closed_at": "2025-03-17T11:07:07Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/198/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/198",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/198",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:17.969623",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "What URL are you using? The \"v1\" should be part of the base URL. Can you share the exact errors you see.\n\nIf Azure doesn't support the model list function, they don't really have an OpenAI compatible endpoint. We could add custom support via Langchain or custom adapter, but that's a lot more work.\n\n",
+          "created_at": "2025-02-16T15:56:09Z"
+        },
+        {
+          "author": "ValerianClerc",
+          "body": "+1 to this feature request. I'd love to use Kiln, but my org can only work with Azure OpenAI at the moment",
+          "created_at": "2025-03-05T19:35:12Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@ValerianClerc did you try LiteLLM? You should be able to run it as a local proxy to Azure.\n\nI'd be curious to know if it meets the need. I could integrate it directly into Kiln if it did.",
+          "created_at": "2025-03-05T23:01:28Z"
+        },
+        {
+          "author": "ValerianClerc",
+          "body": "@scosman Thanks for the quick follow-up! I'll let you know if I manage to get it working with LiteLLM (currently I'm playing with Kiln with my personal OpenAI token, but I'll need to move to Azure soon)",
+          "created_at": "2025-03-06T17:47:31Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@ValerianClerc @hanhsia I have a alpha version of this available here: https://github.com/Kiln-AI/Kiln/actions/runs/13825559886\n\nWould love for you to try it and let me know it it works.\n\nParticularly, I have a new Azure OAI account and can't deploy o3-mini or o1 -- would love to know if those model",
+          "created_at": "2025-03-13T02:15:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 115,
+      "title": "Allow manual data entry/correction",
+      "body": "From reddit: https://www.reddit.com/r/LocalLLaMA/comments/1i1ffid/comment/m78a9zr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-01-15T15:15:39Z",
+      "updated_at": "2025-03-17T16:24:19Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/115/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/115",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/115",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.170301",
+      "comments": []
+    },
+    {
+      "issue_number": 90,
+      "title": "Eval Tooling",
+      "body": "LLM and Judge, exact match, and similar eval tooling.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-12-21T13:55:04Z",
+      "updated_at": "2025-03-17T11:09:26Z",
+      "closed_at": "2025-03-17T11:09:25Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/90/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/90",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/90",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.170324",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Done and shipped!",
+          "created_at": "2025-03-17T11:09:25Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 239,
+      "title": "[Feature Request] Permission Control for Ollama Integration",
+      "body": "# Feature Request: Permission Control for Ollama Integration\n\n**Is your feature request related to a problem? Please describe.**\nOllama lacks built-in permission controls, which creates security concerns when enabling external access. Many users currently need to create their own permission control solutions as workarounds.\n\n**Checks**\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nCould Kiln AI please add permission control options for Ollama integration? This would allow defining access levels and managing authentication for external users. The Dify project (https://github.com/langgenius/dify) has implemented similar permission features that could serve as a reference.\n\n**Describe alternatives you've considered**\nCurrent alternatives require separate authentication layers or proxy solutions, which add complexity and potential security vulnerabilities. A native permission system would be more secure and user-friendly.\n\nThank you for considering this request.\n\n**Additional context**\n\n![Image](https://github.com/user-attachments/assets/40a108dd-734b-47da-89ac-1fce52ff43ba)\n\n\n",
+      "state": "closed",
+      "author": "linancn",
+      "author_type": "User",
+      "created_at": "2025-03-09T09:32:31Z",
+      "updated_at": "2025-03-17T11:09:04Z",
+      "closed_at": "2025-03-17T11:09:03Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/239/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/239",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/239",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.483725",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Short term: look at a liteLLM proxy.\n\nLonger term: is there a doc with where ollama has auth options documented? I'd need to know the headers/format.",
+          "created_at": "2025-03-16T03:07:42Z"
+        },
+        {
+          "author": "scosman",
+          "body": "I see Ollama doesn't support auth.\n\nIf you have a proxy between Ollama and you that adds auth, just add it as a custom server since that's what it is. Custom servers allow api keys: https://docs.getkiln.ai/docs/models-and-ai-providers#custom-openai-compatible-servers",
+          "created_at": "2025-03-17T11:09:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 251,
+      "title": "[Feature] Kiln-Unsloth Bridge for Usability",
+      "body": "Long story short: Unsloth is awesome, local and private - but it's a lot harder to use right now. We export the JSONL format they consume, but you still need to install it, open a notebook, tweak some code, export GGUFs, import GGUFs to Ollama, then add the model in Kiln. The usability is no where near the level we have for fine-tuning on OpenAI or Fireworks (a few clicks and you're running a serverless fine-tune).\n\n## Proposal:\n\nCan we write a bridge so that running something like `uvx run kiln-unsloth-bridge` starts up a local API with higher level unsloth interface. Super high level idea:\n\n - start_finetune API\n   -  takes a base model ID, a path to JSONL, optional val set JSONL, hyper params, deployment config\n   - Streams progress (SSE)\n   - Writes out progress and fine-tune to a local directory when done.\n   - Depending on deployment options, deploys it. Ollama GGUFs to start.\n   - Error handling\n\n## Questions:\n\nCan this be a simple python library? It probably can for some use cases, but Kiln is packaged as a pyinstaller app - I'm betting some of the CUDA/MLX driver bits won't work if packaged in our app format. I should mess around with this and try it. I'm okay with a `uvx run xyz` if not, but I wouldn't want anything more tedious than that or we won't see a ton of adoption.\n\nAre the unsloth folks planning a higher level api like this? Do they want to own it? Is this better in unsloth, independent, part of kiln, or a collab? There are probably about 50 important details to get right here: the default params for tuning each model, warnings/errors based on available memory/hardware, validation sets, resuming jobs, etc, etc.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-03-16T19:39:00Z",
+      "updated_at": "2025-03-16T19:40:28Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/251/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/251",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/251",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.688077",
+      "comments": []
+    },
+    {
+      "issue_number": 237,
+      "title": "[Feature Request] LiteLLM integration (Azure, Google Vertex, Gemini API, Together, AWS)",
+      "body": "I want to add an in-process liteLLM option. Instead of adding providers 1 by 1 in code, add a dependency on LiteLLM and make it easy to add any provider they support.\n\nSteps:\n\n - Sanity check this is a good idea. \n   - Can we make a clean user experience and clean code, or is there just going to be a ton of custom code per provider anyways while adding unnecessary abstraction?\n   - What's the hit to app-size? Can we actually make the app smaller by removing langchain-aws, and using LiteLLM instead?\n - Allow setting up specific providers via LiteLLM, with an identical UX as other providers (OpenAI, AWS). Azure, Google Vertex, Gemini API, Together, and AWS are good top candidates.\n - Setup an adapter for LiteLLM. Should be able to use the OpenAICompatible one as they support an OpenAI compatible API. However, a little weird to be making HTTP requests to my own process... let's see best option here. \n - Allow adding LiteLLM providers to our ml_model_list. We still want our unit testing to hit these providers in the big paid search experiments.\n - P2: UX or config to allow adding any provider LiteLLM supported provider. TBD what this looks like. Should break this into a separate PR, and focus on a few great providers to start.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-03-07T15:04:58Z",
+      "updated_at": "2025-03-16T03:28:42Z",
+      "closed_at": "2025-03-16T03:28:37Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/237/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/237",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/237",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.688099",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Working on this.",
+          "created_at": "2025-03-09T06:49:30Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Done!",
+          "created_at": "2025-03-16T03:28:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 29,
+      "title": "Add more models to default pack [Ongoing]",
+      "body": "We like to have a well-tested default pack of models (each model-provider pair is tested, including testing that structured output works reliably).\r\n\r\nWhat models should we add next? 👍 a model comment for support, and I'll prioritize by this list.\r\n\r\nSee the [separate issue](https://github.com/Kiln-AI/Kiln/issues/28) tracking end-user option to add models.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-12T14:10:06Z",
+      "updated_at": "2025-03-10T13:51:50Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/29/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/29",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/29",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:18.904601",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "✅ Request: Qwen 2.5",
+          "created_at": "2024-11-12T14:10:19Z"
+        },
+        {
+          "author": "scosman",
+          "body": "✅ Llama 3.3 70b",
+          "created_at": "2024-12-10T18:49:38Z"
+        },
+        {
+          "author": "scosman",
+          "body": "✅ Deepseek V3",
+          "created_at": "2024-12-30T01:31:53Z"
+        },
+        {
+          "author": "leonardmq",
+          "body": "Adding Google as a provider would be a nice one as Gemini 2.0 is coming out to prod in the next few weeks",
+          "created_at": "2024-12-31T18:16:22Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@leonardmq I can add 2.0 when it's out. Is there a reason to want direct Google/Vertex access instead of Gemini via OpenRouter?",
+          "created_at": "2025-01-06T16:10:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 223,
+      "title": "[Feature Request] Support for tool / function calls",
+      "body": "**Is your feature request related to a problem? Please describe.**\n\nFine-tuning for a Task that requires tool / function calls ([as in these examples](https://platform.openai.com/docs/guides/function-calling?example=get-weather)) is currently not supported.\n\n**Checks**\n\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n\n**Describe the solution you'd like**\n\nA rough idea of what that would likely involve:\n- `Task`-level (or `Project`-level) defined `tools` where we define the tools and their schemas, etc.\n- The Runs would display tool calls in some way and probably allow editing to correct incorrect tool calls\n\n**Describe alternatives you've considered**\n\nNot using tools 😄 \n\n**Additional context**\n\nIt seems like fine-tuning would be helpful for cases where tool usage depends on nuanced / semi-subjective context. For example, in a RAG setup, a model may need to decide whether to query a vector database or generate an answer directly based on context. Fine-tuning could help improve when and how it makes this decision.\n\nFound this cookbook by OpenAI on fine-tuning for Function Calling: https://cookbook.openai.com/examples/fine_tuning_for_function_calling",
+      "state": "open",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-02-24T23:54:51Z",
+      "updated_at": "2025-03-07T16:45:59Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/223/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/223",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/223",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:19.108765",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Agreed. What's the best open standard for tools? [MPC](https://www.anthropic.com/news/model-context-protocol)?",
+          "created_at": "2025-02-27T17:49:11Z"
+        },
+        {
+          "author": "quenbyako",
+          "body": "@scosman Currently, MCP is close to the unofficial standard of function calling (similar to openai api — not official, but a de-facto standard). So feels like it's way more worth to implement MCP here.\n\nThere is a different examples of how MCP could be supported, i found that it works well with llam",
+          "created_at": "2025-03-07T16:45:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 236,
+      "title": "[Bug]",
+      "body": "Unexpected error: <html> <head> <title>500 Internal Privoxy Error</title> <link rel=\"shortcut icon\" href=\"http://config.privoxy.org/error-favicon.ico\" type=\"image/x-icon\"></head> <body> <h1>500 Internal Privoxy Error</h1> <p>Privoxy encountered an error while processing your request:</p> <p><b>Could not load template file <code>no-server-data</code> or one of its included components.</b></p> <p>Please contact your proxy administrator.</p> <p>If you are the proxy administrator, please put the required file(s)in the <code><i>(confdir)</i>/templates</code> directory. The location of the <code><i>(confdir)</i></code> directory is specified in the main Privoxy <code>config</code> file. (It's typically the Privoxy install directory).</p> </body> </html> (status code: 500)",
+      "state": "closed",
+      "author": "suijiawei123",
+      "author_type": "User",
+      "created_at": "2025-03-06T04:03:31Z",
+      "updated_at": "2025-03-06T13:17:38Z",
+      "closed_at": "2025-03-06T13:17:36Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/236/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/236",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/236",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:19.336849",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Please use the bug template. It has the info I need to help. ",
+          "created_at": "2025-03-06T13:17:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 225,
+      "title": "[Bug] HTML cached after app update (was: App version number out of date)",
+      "body": "**Describe the bug**\nI've installed the latest version v0.11.1,but it still shows there is new version available, and current version is v0.10.1 which is wrong.\n**Checks**\n\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Download `Kiln.MacOS.AppleSilicon.M-Processor.dmg`  from https://github.com/Kiln-AI/Kiln/releases/tag/v0.11.1\n2. Open .dmg file and install\n3. Click replace the old version app\n4. Open Kiln\n\n**Expected behavior**\nIt should be the right version I've installed\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/74560a18-6dea-4ab6-ae33-b3d3de8664dd)\n\n**System Information:**\n - OS: [MacOS]\n - Browser [chrome]\n - Kiln app Version [v0.11.1]\n\n**Additional context**\nI have installed old version before i install v0.11.1.\n",
+      "state": "closed",
+      "author": "hiwanz",
+      "author_type": "User",
+      "created_at": "2025-02-26T10:02:59Z",
+      "updated_at": "2025-02-27T17:14:36Z",
+      "closed_at": "2025-02-27T17:14:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/225/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/225",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/225",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:19.536468",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Try a hard refresh in browser (shift refresh)? It probably just cached the HTML including version. If that's the case, I can cache-control this.\n\nAlso double check you didn't leave the old version running when you updated?",
+          "created_at": "2025-02-26T19:06:23Z"
+        },
+        {
+          "author": "hiwanz",
+          "body": "@scosman I clear the cache and try hard reload，and it works fine，should be a cache problem.",
+          "created_at": "2025-02-27T04:20:35Z"
+        },
+        {
+          "author": "scosman",
+          "body": "👍 . I'll put this on the queue to fix. Thanks!",
+          "created_at": "2025-02-27T05:24:18Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Fixed",
+          "created_at": "2025-02-27T17:14:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 192,
+      "title": "[Feature Request] Log instructions for docs",
+      "body": "It would be good to have instructions in our docs for how to get Kiln error logs. Unfortunately I have no idea where/if pyinstaller logs errors to. It's easy to get these in development mode, but most users won't have those.\n\nWe should either add:\n - instructions for how to get the logs on each platform (Win/Mac/Linux)\n - code to save them to files (error level) if pyinstaller doesn't do this by default, including ensuring we don't take up too much disk.\n\nHelp would be great on this one.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-02-11T18:39:27Z",
+      "updated_at": "2025-02-26T16:00:42Z",
+      "closed_at": "2025-02-26T16:00:41Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/192/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/192",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/192",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:19.755928",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed by @leonardmq in https://github.com/Kiln-AI/Kiln/pull/227!",
+          "created_at": "2025-02-26T16:00:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 214,
+      "title": "[Bug]Unexpected error: (status code: 502)",
+      "body": "![Image](https://github.com/user-attachments/assets/9854a575-2a91-4e54-93e4-c6ef3ee44f27)\n\n**Describe the bug**\nA clear and concise description of what the bug is.\n\n**Checks**\n\n- [ ] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [ ] I've searched for existing Github issues\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**System Information:**\n - OS: wi10\n - Browser chrome,\n - Kiln app  v0.11.1\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "closed",
+      "author": "z-x-x136",
+      "author_type": "User",
+      "created_at": "2025-02-21T05:17:40Z",
+      "updated_at": "2025-02-26T15:41:56Z",
+      "closed_at": "2025-02-26T04:20:57Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/214/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/214",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/214",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:19.940372",
+      "comments": [
+        {
+          "author": "z-x-x136",
+          "body": "ollama connects properly. ",
+          "created_at": "2025-02-21T05:18:15Z"
+        },
+        {
+          "author": "scosman",
+          "body": "This is some sort of network issue. Are you running it in docker or something like that?",
+          "created_at": "2025-02-21T13:33:00Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Closing as stale, no response.",
+          "created_at": "2025-02-26T04:20:57Z"
+        },
+        {
+          "author": "z-x-x136",
+          "body": "> This is some sort of network issue. Are you running it in docker or something like that?这是某种网络问题。你是在 docker 或类似的东西中运行它吗？\n\n我是在win10安装了kiln的本地软件，不是docker运行的",
+          "created_at": "2025-02-26T09:12:41Z"
+        },
+        {
+          "author": "z-x-x136",
+          "body": "> Closing as stale, no response.关闭为过时，无响应。\n\n我把vpn关了，这个问题解决，出现了Unexpected error: This task requires a specific output schema. While the model produced JSON, that JSON didn't meet the schema. Search 'Troubleshooting Structured Data Issues' in our docs for more information. The error from the schema ch",
+          "created_at": "2025-02-26T09:18:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 213,
+      "title": "[Feature Request]When installing win10, how to set the custom installation path and how to customize the project storage path when creating a project",
+      "body": "**Is your feature request related to a problem? Please describe.**\nA clear and concise description of what the problem is. Ex. I'm always frustrated when [...]\n\n**Checks**\n\n- [ ] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [ ] I've searched for existing Github issues\n\n**Describe the solution you'd like**\nA clear and concise description of what you want to happen.\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here.\n",
+      "state": "closed",
+      "author": "z-x-x136",
+      "author_type": "User",
+      "created_at": "2025-02-21T05:08:23Z",
+      "updated_at": "2025-02-21T13:35:21Z",
+      "closed_at": "2025-02-21T13:35:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/213/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/213",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/213",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:20.139570",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Custom installation path: won't be able to get to that for a while. However, you can just move the app folder. It's self contained and the installer is really just there to copy it in. You need to move the whole folder, not just the exe.\n\nCustom folder: you can do that. Just import a project instead",
+          "created_at": "2025-02-21T13:35:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 211,
+      "title": "[Feature Request] add image-caption pair data generate support",
+      "body": "**Is your feature request related to a problem? Please describe.**\nfor multimodel model training,their must need a image-text pair dataset, and it is possible to be distilled from foundation multimodelmodel, is it possible to create a function for situation like this?\n\n\n\n**Describe the solution you'd like**\nupload a image  zip folder and  some system instruction to generate like question-image-answer triplet or image-caption pair dataset\n\n",
+      "state": "open",
+      "author": "systemoutprintlnhelloworld",
+      "author_type": "User",
+      "created_at": "2025-02-20T06:25:14Z",
+      "updated_at": "2025-02-20T06:25:25Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/211/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/211",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/211",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:20.370851",
+      "comments": []
+    },
+    {
+      "issue_number": 206,
+      "title": "[Bug] run_repair get error in dataset",
+      "body": "**Describe the bug**\n-  we used custom_open_ai::gpt-4o，it fine for `run task`\n- but we got error while use `Attempt Repair`in Dataset\n```python\n# error msg of api ”/run_repair“:\n{\n    \"message\": \"Invalid openai compatible model ID: gpt-4o\",\n    \"raw_error\": \"Invalid openai compatible model ID: gpt-4o\"\n}\n```\n\n**Checks**\n\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n",
+      "state": "closed",
+      "author": "chobitsX",
+      "author_type": "User",
+      "created_at": "2025-02-18T03:52:35Z",
+      "updated_at": "2025-02-18T21:21:41Z",
+      "closed_at": "2025-02-18T21:21:38Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/206/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/206",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/206",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:20.370872",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "What do you mean `we used custom_open_ai::gpt-4o，it fine for run task`\n\nGPT 4o is built in. What is that string and where did you use it?\n\nClosing for now as missing bug template fields (step to reproduce most importantly). Please fill the entire template out for bug reports. ",
+          "created_at": "2025-02-18T21:21:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 207,
+      "title": "The error encountered during fine-tuning is: \"Unexpected error: Failed to create dataset: [403] { 'code': 7, 'details': [], 'message': '' }\"",
+      "body": "After I generate the data and click on model fine-tuning and set it up, the error 'Unexpected error: Failed to create dataset: [403] { 'code': 7, 'details': [], 'message': '' }' occurs.\"",
+      "state": "closed",
+      "author": "harrrrden",
+      "author_type": "User",
+      "created_at": "2025-02-18T08:11:52Z",
+      "updated_at": "2025-02-18T20:51:02Z",
+      "closed_at": "2025-02-18T20:51:02Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/207/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/207",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/207",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:20.589369",
+      "comments": [
+        {
+          "author": "harrrrden",
+          "body": "The model used is Firework's Llama3.",
+          "created_at": "2025-02-18T08:54:04Z"
+        },
+        {
+          "author": "scosman",
+          "body": "That's a 403 (Forbidden) from Fireworks API. Not sure why they are blocking it. Do you have enough of a balance for the operation?\n\nNo repro for me. Since it seems to be account specific, moving to discussion.",
+          "created_at": "2025-02-18T20:50:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 188,
+      "title": "[Bug]Error while executing Firework fine-tuning",
+      "body": "**Describe the bug**\nError while executing Firework fine-tuning.\nI selected a different model, but still got an error.\n\n**Checks**\n\n- [✅] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [✅]] I've searched for existing Github issues\n\n**Expected behavior**\nFine-tune as normal\n\n**Screenshots**\n\n<img width=\"1795\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7af949e8-f50b-4f74-ade1-456187b9ba91\" />\n\n<img width=\"1792\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/67a6b094-559d-467c-853e-15ba105f1f0c\" />\n\n**System Information:**\n - OS: MacOS ARM\n - Browser chrome\n - Kiln app Version v0.11.1",
+      "state": "closed",
+      "author": "exqmjmz",
+      "author_type": "User",
+      "created_at": "2025-02-11T13:11:35Z",
+      "updated_at": "2025-02-12T02:11:26Z",
+      "closed_at": "2025-02-12T02:11:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/188/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/188",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/188",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:20.847622",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "hmm, I can't repo this.\n\nCan you check the Fireworks AI fine-tune dashboard, see if a job is created, and show any errors from there?\n\nhttps://fireworks.ai/dashboard/fine-tuning",
+          "created_at": "2025-02-11T17:43:11Z"
+        },
+        {
+          "author": "exqmjmz",
+          "body": "<img width=\"1234\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/cafca018-58ee-4d63-a6ea-168280c582e5\" />\n\nNot created successfully.\nI can upload my task.\n\n[471927245781 - Copy of A2 English Learning.zip](https://github.com/user-attachments/files/18760949/471927245781.-.Copy.of.A2.Engli",
+          "created_at": "2025-02-12T02:09:36Z"
+        },
+        {
+          "author": "exqmjmz",
+          "body": "The issue is closed. When I retested in the morning, it was able to be created.\nIt is suspected to be caused by network fluctuations.",
+          "created_at": "2025-02-12T02:11:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 190,
+      "title": "Windows antivirus false positive report",
+      "body": "**Describe the bug**\n\nDownload virus report\n\n\n**Checks**\n\n- [ ] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [ ] I've searched for existing Github issues\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. download \n\n**Expected behavior**\n\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/0939040d-34ab-4f77-ad10-ef56399190d7)\n\n**System Information:**\n - OS: Windows 11\n - Browser chrome\n - Kiln app Version v0.11.1\n",
+      "state": "closed",
+      "author": "jsoncode",
+      "author_type": "User",
+      "created_at": "2025-02-11T14:10:37Z",
+      "updated_at": "2025-02-11T17:48:53Z",
+      "closed_at": "2025-02-11T17:48:53Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/190/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/190",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/190",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:21.080654",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Are you sure it's v0.11.1? We did new signing in 0.11.1 which mostly resolved these issues.\n\nVirus total likes gives it all green: https://www.virustotal.com/gui/file-analysis/ZGQ2NmMzMGFkOWI4NWJmNTg0ZGRlYjI2ZTZjZDkwMzE6MTczOTI5NTk0MQ== \n\nWhat virus scanner is this? And can you translate the message",
+          "created_at": "2025-02-11T17:48:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 187,
+      "title": "[Bug] Attempt Repair used wrong llm within Dataset",
+      "body": "**Describe the bug**\n\"Attempt Repair\" used wrong llm within 【Dataset】tab，\nbut it run right within 【Run】 tab as here can choose llm\n\n**Checks**\n\n- [x] I've searched [the docs](https://docs.getkiln.ai) for a solution\n- [x] I've searched for existing Github issues\n",
+      "state": "closed",
+      "author": "chobitsX",
+      "author_type": "User",
+      "created_at": "2025-02-11T10:17:27Z",
+      "updated_at": "2025-02-11T17:40:16Z",
+      "closed_at": "2025-02-11T17:40:15Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/187/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/187",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/187",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:21.281158",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Repairs use the same model as the original run was for consistency. That's by design. If you want to use another model, do so from the run tab.\n\n<img width=\"321\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/caa94ffb-91aa-48c0-b9c4-7806fa1850e5\" />",
+          "created_at": "2025-02-11T17:40:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 186,
+      "title": "[Bug] Unexpected error: json: cannot unmarshal object into Go struct field ChatRequest.format of type string (status code: 400)",
+      "body": "I'm encountering an error while using an Ollama model. It's showing a format error. I'm using a sample code to generate the results, and I don't know what's causing the issue. \n\n![Image](https://github.com/user-attachments/assets/19baa2f1-b163-4af1-b0d7-b9c4eef4fdbc)\n\n![Image](https://github.com/user-attachments/assets/e3fda39f-b602-4d5d-bfdd-5a02308c39e8)\n",
+      "state": "closed",
+      "author": "wrx1990",
+      "author_type": "User",
+      "created_at": "2025-02-11T08:14:12Z",
+      "updated_at": "2025-02-11T17:35:04Z",
+      "closed_at": "2025-02-11T17:35:02Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/186/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/186",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/186",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:21.461640",
+      "comments": [
+        {
+          "author": "shrekxu",
+          "body": "Same problem.",
+          "created_at": "2025-02-11T10:15:20Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Structured outputs is a feature of [Ollama 0.5.0](https://github.com/ollama/ollama/releases/tag/v0.5.0) or newer. [Upgrade](https://github.com/ollama/ollama/blob/main/docs/faq.md#how-can-i-upgrade-ollama) ollama.\n\nSource: https://github.com/ollama/ollama/issues/7991",
+          "created_at": "2025-02-11T17:35:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 122,
+      "title": "Filter Dataset by Synthetic data topic tree",
+      "body": "Hey, it will be nice if some additional tags related to high level topics and sub-topics get added to the dataset run - this will help users quickly filter data from certain subsections and sections quickly.\n\n\n",
+      "state": "open",
+      "author": "mathew55",
+      "author_type": "User",
+      "created_at": "2025-01-18T11:17:44Z",
+      "updated_at": "2025-02-11T01:15:28Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/122/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "scosman"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/122",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/122",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:21.658333",
+      "comments": [
+        {
+          "author": "mathew55",
+          "body": "When you are creating lots of data - sometimes it can be difficult to annotate and rank everything at one go. so sometimes you take the leap faith and try with whatever we have.\n\nBut later you realise there might be certain sections that will be underperforming to realise that data generated from a ",
+          "created_at": "2025-01-18T11:19:54Z"
+        },
+        {
+          "author": "scosman",
+          "body": "I like this idea! Should be easy to add. I’ll try to get to it. ",
+          "created_at": "2025-01-18T13:03:39Z"
+        },
+        {
+          "author": "scosman",
+          "body": "So we actually already stored this in the input_source properties. I added to the UI here: https://github.com/Kiln-AI/Kiln/pull/168\n\nStill not filterable, so will leave this to track that.",
+          "created_at": "2025-02-09T19:17:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 162,
+      "title": "Windows signing",
+      "body": "The smart-screen warnings and virus false positives are slowing down windows users and deployments. Signing should solve both. However, the windows signing ecosystem is a pain, especially since I don't have a windows box (just VMs). \n\nI'm willing to buy an OV code signing cert, but they are expensive so I would rather wait until we actually have a signing flow.\n\n**If anyone with experience wants to take a stab at it, contributions are welcome.**\n\nReqs:\n\n - Sign both the exe, and the installer. The installer for smart screen, the exe for virus false positives.\n - Ideally sign with GitHub Actions + secrets (not sure if this is still possible with new hardware key reqs)\n\n",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-02-07T14:09:48Z",
+      "updated_at": "2025-02-09T22:33:50Z",
+      "closed_at": "2025-02-09T22:33:49Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/162/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/162",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/162",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:23.578659",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed: https://github.com/Kiln-AI/Kiln/pull/169",
+          "created_at": "2025-02-09T22:33:49Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 142,
+      "title": "[ux/feature-request] auto populate all subtopics/topics",
+      "body": "as can be seen in the demo video starting at 37 seconds: https://vimeo.com/1044098339 where it had to be fast-forwarded to not show real-time how long that takes to do manually each time.\n\nyou have to first generate the topics, then for each one click subtopics, then for each subtopic click create data, ...\n\nthis becomes very cumbersome with tens of topics and tens of subtopics per topic to get a baseline before you generate more selectively, ideally there would simply be a single modal where you specify N topics, N subtopics, N data per subtopic and it does it, then you can still add more subtopics/topics/data manually by clicking the usual links on the right side",
+      "state": "open",
+      "author": "lucyknada",
+      "author_type": "User",
+      "created_at": "2025-01-31T21:59:05Z",
+      "updated_at": "2025-02-09T19:15:49Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/142/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/142",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/142",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:23.793073",
+      "comments": []
+    },
+    {
+      "issue_number": 158,
+      "title": "Blank content after setup [Fix available]",
+      "body": "\n### Discussed in https://github.com/Kiln-AI/Kiln/discussions/157\n\n<div type='discussions-op-text'>\n\n<sup>Originally posted by **Jiopro** February  6, 2025</sup>\nHi,\r\n\r\nI love the idea of Kiln. I tried to install it on windows. Although after setup (ollama, projet and task etc), Kiln showed the main app page but without any content on each sub page like Run, Dataset and the rest as well. So I closed the app and reopen it, it stuck at loading http://localhost:8757/run. How should I fix this ?\r\n\r\nThanks !</div>",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-02-06T16:32:16Z",
+      "updated_at": "2025-02-08T13:22:14Z",
+      "closed_at": "2025-02-07T00:23:16Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/158/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/158",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/158",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:23.793089",
+      "comments": [
+        {
+          "author": "MindlessForMinerva",
+          "body": "I am experiencing the same issue.",
+          "created_at": "2025-02-06T19:22:35Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@MindlessForMinerva there's a workaround [here](https://github.com/Kiln-AI/Kiln/discussions/157#discussioncomment-12080855)\n\nFor anyone else seeing this can you post your OS. I can't repo this on MacOS. Thanks!",
+          "created_at": "2025-02-06T19:41:46Z"
+        },
+        {
+          "author": "scosman",
+          "body": "If anyone needs the fix before I get a release out including it, it is available here: https://github.com/Kiln-AI/Kiln/actions/runs/13186886668",
+          "created_at": "2025-02-07T00:23:16Z"
+        },
+        {
+          "author": "hh-kai",
+          "body": "> If anyone needs the fix before I get a release out including it, it is available here: https://github.com/Kiln-AI/Kiln/actions/runs/13186886668\n\nwin10 install this and  web blank \nlike this [http://localhost:8757](http://localhost:8757)",
+          "created_at": "2025-02-08T01:39:59Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@hh-kai can I get some more details. Which build do you have and what browser are you using?",
+          "created_at": "2025-02-08T13:22:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 139,
+      "title": "Allow disconnecting any provider, so you can setup new creds",
+      "body": "I've deleted my openrouter key since last time using kiln, and now I have no way to edit it, clicking the checkmark does nothing and it does not have an option like custom connections to change it.\n\nalso; where does kiln store settings on macOS so I could work around it temporarily? thanks",
+      "state": "closed",
+      "author": "lucyknada",
+      "author_type": "User",
+      "created_at": "2025-01-31T19:45:44Z",
+      "updated_at": "2025-02-07T16:30:18Z",
+      "closed_at": "2025-02-07T16:30:18Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/139/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/139",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/139",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:23.989505",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Ah it’s in ~/.kiln_ai/settings.yaml\n\nI’ll leave this open to fix the UI bug. Thanks. ",
+          "created_at": "2025-01-31T19:51:30Z"
+        },
+        {
+          "author": "lucyknada",
+          "body": "found it, thanks!",
+          "created_at": "2025-01-31T19:57:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 160,
+      "title": "JSON schema has incorrect key if you create a project by editing the sample",
+      "body": "title should also be used for key, but isn't:\n\n```\n    \"setup\": {\n      \"title\": \"goulet\",\n      \"type\": \"string\",\n      \"description\": \"The setup to the joke\"\n    },\n```",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2025-02-07T00:05:02Z",
+      "updated_at": "2025-02-07T01:12:12Z",
+      "closed_at": "2025-02-07T01:12:12Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/160/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/160",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/160",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.227210",
+      "comments": []
+    },
+    {
+      "issue_number": 143,
+      "title": "[ux/feature-request] allow collapsing topics/subtopics",
+      "body": "currently if you generate a lot of topics/subtopics/data you do not have a way to easily look at the ones that might not have any data still or no subtopics etc, being able to collapse a topic container (subtopic or parent) would help this significantly",
+      "state": "open",
+      "author": "lucyknada",
+      "author_type": "User",
+      "created_at": "2025-01-31T21:59:47Z",
+      "updated_at": "2025-02-06T19:11:00Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/143/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/143",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/143",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.227231",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "This would be a good addition for sure!\n\n@lucyknada - any chance you're available for a chat? I'm trying to chat with folks using kiln to find ways to make it better. I've already talked with some other folks and made improvements based on their feedback. You can email me at steve [at] getkiln [dot]",
+          "created_at": "2025-02-04T13:56:34Z"
+        },
+        {
+          "author": "lucyknada",
+          "body": "Thanks for the offer! I prefer public feedback, easier to track too",
+          "created_at": "2025-02-05T00:09:27Z"
+        },
+        {
+          "author": "scosman",
+          "body": "👍 - there's also a new discord for the project if chat helps: https://discord.gg/sVJEzDGu",
+          "created_at": "2025-02-06T19:10:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 124,
+      "title": "Inference usage of model tuned on `task_response` tool",
+      "body": "For a Task with Structured Output, creating a fine-tuning job via the `Fine Tune` UI for an OpenAI model will compile the dataset in a tool_call format, where the structured output of the task is modeled as `arguments` to a `task_response` tool. \n\nIf the model is trained to output `arguments` to a `task_response` tool, usage at inference time should typically align with the same format to most benefit from the training. If the user were to call the model without a `task_response` tool for example, or with `response_format` instead, the model may behave inconsistently due to the mismatch with the training samples. \n\n`task_response` as a `tool` does not seem to be documented at the moment.\n\n<details>\n<summary>[Sample format sent to OpenAI for fine-tuning]</summary>\n\n```json\n{\n  \"messages\":[\n    { \"role\":\"system\", \"content\":\"...\" },\n    { \"role\":\"user\", \"content\":\"...\" },\n    {\n      \"role\":\"assistant\",\n      \"content\":null,\n      \"tool_calls\":[\n        {\n          \"id\":\"call_1\",\n          \"type\":\"function\",\n          \"function\":{\n            \"name\":\"task_response\",\n            \"arguments\":\"{\\\"x\\\": 1, \\\"y\\\": 2}\"\n          }\n        }\n      ]\n    }\n  ]\n}\n```\n</details>\n\nTo align with the sample format, the code calling the model at inference time might need to look like this:\n```ts\nconst completion = await this.openai.chat.completions.create({\n  model: 'my-tuned-model',\n  messages: [...],\n\n  // response_schema: { ... }, // no response_schema\n\n  tool_choice: 'required', // the model must always call the tool\n  tools: [\n    {\n      strict: true,\n      type: 'function',\n      function: {\n        name: 'task_response', // define a function tool called task_response like in the samples\n        parameters: {\n          type: 'object',\n          properties: { x: {  type: 'number' }, y: { type: 'number' } }, // our Task's structured output will be here\n          ...\n        },\n      },\n    },\n  ],\n});\n\n// get the response from the function call args of the `task_response` toolcall\nconst output = JSON.parse(completion.choices[0].message.tool_calls[0].function.arguments) as { x: number; y: number }\n```\n\nCould you please clarify how code using the tuned model is expected to use the model at inference-time? I'd be happy to help with documenting this once intended usage is confirmed.\n\nAbout the format in general, [the OpenAI docs](https://platform.openai.com/docs/guides/structured-outputs#function-calling-vs-response-format) suggest that `response_format` might be more suitable when the structured output use case does not require making actual calls; it also shows [an example](https://platform.openai.com/docs/guides/fine-tuning) of fine-tuning structured output by including the serialized JSON in `content`. However, their documentation does not elaborate on whether there are any meaningful differences besides a slightly different interface and slightly more convenient parsing with the SDK.",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-01-20T02:14:00Z",
+      "updated_at": "2025-01-30T00:04:56Z",
+      "closed_at": "2025-01-30T00:04:56Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/124/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "scosman"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/124",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/124",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.419755",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "I’m away from my computer for a week so this is from memory, but from what I recall\n\n1) used tools instead of JSON for tighter schema checks/guarantees\n2) used the task_response to get a json structure instead or ordered list of params\n\nI don’t know why I didn’t use response_format - that might be b",
+          "created_at": "2025-01-21T01:47:57Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Checked my notes and had a note to potentially move to response_format from tool calling 😀. It fixed some issues with Ollama and Qwen in fireworks. ",
+          "created_at": "2025-01-21T01:49:50Z"
+        },
+        {
+          "author": "leonardmq",
+          "body": "I seem to notice negative side-effects at inference time on a GPT-4o-mini model tuned on the `task_response` format - both when using it with a `task_response` tool and parsing the arguments, and also when trying it out with `response_format`. For example, a tokenizer model tuned on that format ofte",
+          "created_at": "2025-01-22T23:17:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 101,
+      "title": "Repaired run output not included in datasplit",
+      "body": "**Issue**: \r\nRepairing a run output and clicking `Accept repair (5 Stars)` does not include the repaired run in the fine-tune datasplits.\r\n\r\n**Expected**: \r\nAccepting a repair should turn the run into a 5 stars and as such the repaired output should be included in newly created fine-tune datasplits that filter for `High Rating (4+ stars).\r\n\r\n**Version**: `main` at [1f4c281f207f208ea6d956c8e7c23ce6d7aab251](https://github.com/Kiln-AI/Kiln/commit/1f4c281f207f208ea6d956c8e7c23ce6d7aab251)\r\n\r\n---\r\n\r\nSteps to reproduce:\r\n1. Create a run\r\n2. Rate it `3 Stars` on the `Overall Rating`\r\n3. Repair the output\r\n4. Accept the repaired output by clicking `Accept Repair (5 stars)`\r\n5. In `Fine Tune`:\r\n  a. Create a fine-tune\r\n  b. Pick `Download: OpenAI chat format with tool calls (JSONL)` (or any other)\r\n  c. New dataset\r\n  d. In `Dataset Filter`, select `High Rating (4+ stars)`\r\n  e. In `Dataset Splits`, select `Entire Dataset -- 100`\r\n  f. Create Dataset\r\n\r\nThe file does not include the repaired run.\r\n\r\n---\r\n\r\nThe filtering logic for High Rating seems to be done here:\r\nhttps://github.com/Kiln-AI/Kiln/blob/1f4c281f207f208ea6d956c8e7c23ce6d7aab251/libs/core/kiln_ai/datamodel/__init__.py#L601\r\n\r\nAdding `or task_run.repaired_output is not None` in the bool check would only fix the filtering, but not the downstream code uses the `output` rather than the `repaired_output` - so downstream logic like creating datasplits would use the original output rather than the one coming out of the repair.\r\n\r\n---\r\n\r\nWhat are your plans for how `repaired_output` should be used? \r\n\r\nIf `repaired_output` is used for prompt generation but not included in fine tuning data, maybe then renaming the `Accept Repair (5 stars)` button could reduce confusion as the `5 stars` mention suggests the repair would cause the run to behave as if it were rated 5 stars.",
+      "state": "closed",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-01-10T23:38:21Z",
+      "updated_at": "2025-01-27T05:35:43Z",
+      "closed_at": "2025-01-27T05:35:43Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/101/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "scosman"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/101",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/101",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.591334",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Good catch! I'll fix this. Thanks @leonardmq !",
+          "created_at": "2025-01-10T23:44:37Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "Dataset UI: total number of runs in dataset",
+      "body": "Would be nice to show the total number of runs in the Dataset page. A dataset is generally put together over time with a bunch of synthetic data generation rounds so you generally lose track of the count after a while. \n\n(There is a UI workaround right now to get the count: in the `Dataset` table, click `Select` and check all rows, and the UI shows the total selected count.)\n\nIn the same idea, showing a basic summary of the dataset in there could be useful - like how many rated vs needing rated, number for each star-rating value, etc.",
+      "state": "open",
+      "author": "leonardmq",
+      "author_type": "User",
+      "created_at": "2025-01-18T11:56:17Z",
+      "updated_at": "2025-01-25T19:05:02Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/123/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "v2",
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/123",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/123",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.786473",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Nice to have, but v2 since there’s a workaround. Not hard to add, just need a clean UI. ",
+          "created_at": "2025-01-25T19:05:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 42,
+      "title": "Feature Request: Allow Custom OpenAi - Compatible API",
+      "body": "Hiya,\r\n\r\ni've been using Kiln for a bit with a supplied OpenAi Key.\r\nBut we all know that Cloud services are expensive and not very customizeable.\r\n\r\nHence why i'd have hoped for more Local support.\r\n\r\nTwo issues.\r\n- I have an OpenAi Compatible API e.g. vLLM or Aphrodite but I cannot reference it.\r\nSolution: Allow the user to set a custom URL for an Self-hosted OpenAi instance or using a MITM Proxy to control costs and usage.\r\n\r\n- Ollama is Running on a different host. Locally I run the Kiln Studio client on my Device but if the Ollama Service is running e.g. on a different IP or Port this will throw a simple error.\r\nSolution: Allow the user to set a custom URL for the Ollama Instance.\r\n\r\nIn general I think it is important, especially with Synthetic Data, to support locally hosted models.\r\n\r\nThank you!",
+      "state": "closed",
+      "author": "LumiWasTaken",
+      "author_type": "User",
+      "created_at": "2024-11-21T09:33:52Z",
+      "updated_at": "2024-12-21T15:08:33Z",
+      "closed_at": "2024-12-17T02:11:24Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/42/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/42",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/42",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:24.962560",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Both good ideas. I'll get to them at some point. I also need to update that UX a bit, like changing a key after it is set.\r\n\r\nShort term, you can set `ollama_base_url` in your settings file (~/.kiln_ai/settings.yaml) to target any Ollama instance. Needs UI but it's there.\r\n\r\n```\r\nollama_base_url: ht",
+          "created_at": "2024-11-22T01:18:06Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Ollama request complete here: https://github.com/Kiln-AI/Kiln/commit/57f51f337f84cba260a11bb5b1d9cd69d0de03bc",
+          "created_at": "2024-12-10T20:10:27Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Edit title to make this issue specific to OpenAI compatibility. Ollama URL done and will be in next release.",
+          "created_at": "2024-12-12T18:13:20Z"
+        },
+        {
+          "author": "scosman",
+          "body": "@LumiWasTaken this is in the v0.8 beta release. Have a second to try it out? \r\n\r\nhttps://github.com/Kiln-AI/Kiln/releases/tag/v0.8.0-beta",
+          "created_at": "2024-12-20T16:33:53Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "I currently can't. I'll let you know.",
+          "created_at": "2024-12-20T16:35:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "Expose model parameters in UI (temperature, max_tokens, etc)",
+      "body": "Add UI to expose setting (and persisting) model parameters.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-12T16:21:46Z",
+      "updated_at": "2024-12-15T07:25:49Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/31/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/31",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/31",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:25.166354",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "I did this for fine-tuning in a really nice way. We should reuse that style/code when doing this.",
+          "created_at": "2024-11-28T15:43:13Z"
+        },
+        {
+          "author": "sammcj",
+          "body": "[num_ctx](https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values) for Ollama would probably make sense to have as an optional parameter.\r\n\r\nFor context (pun intended) - by default Ollama models from the public hub come configured with a tiny little 2k context which ",
+          "created_at": "2024-12-15T07:25:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 62,
+      "title": "Perf Improvements",
+      "body": "We should add some caching to our BaseDatamodel and data model registry.\r\n\r\n - Getting a specific data model item by ID still iterates and parses the whole tree - can use the path to skip to the exact ID\r\n - We re-parse the JSON every API call, but should keep it in memory cache.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-12-07T17:22:10Z",
+      "updated_at": "2024-12-13T16:13:16Z",
+      "closed_at": "2024-12-13T16:13:16Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/62/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/62",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/62",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:25.353489",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed by:\r\n\r\n - https://github.com/Kiln-AI/Kiln/pull/63\r\n - https://github.com/Kiln-AI/Kiln/pull/70",
+          "created_at": "2024-12-13T16:13:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 28,
+      "title": "Add ability to add any model from any supported provider",
+      "body": "We should add this. To have a good UX it should check if it 1) works, 2) supports structured output, 3) Nice UI to add it (and feedback on the result of the test).",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-12T00:43:51Z",
+      "updated_at": "2024-12-12T19:55:37Z",
+      "closed_at": "2024-12-12T19:54:56Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/28/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/28",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/28",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:25.592232",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed by https://github.com/Kiln-AI/Kiln/pull/67\r\n\r\nDidn't add all the fancy checks, but I have build really nice UI explains untested models since I wrote that.",
+          "created_at": "2024-12-12T19:54:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 54,
+      "title": "Ollama UX Needs Improvement",
+      "body": "Using:\r\nhttps://github.com/Kiln-AI/Kiln/actions/runs/12130985759\r\n\r\nBackend:\r\nBoth normal Ollama and KoboldCPP Ollama Compatible API\r\n\r\nIssue:\r\n![image](https://github.com/user-attachments/assets/59b99757-5ed2-492c-b732-778ef8b79ddf)\r\nNo model found.\r\n\r\n",
+      "state": "closed",
+      "author": "LumiWasTaken",
+      "author_type": "User",
+      "created_at": "2024-12-03T09:19:53Z",
+      "updated_at": "2024-12-06T09:30:59Z",
+      "closed_at": "2024-12-04T17:37:11Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 13,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/54/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/54",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/54",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:27.363722",
+      "comments": [
+        {
+          "author": "LumiWasTaken",
+          "body": "I dug a bit deeper and it seems to be a Fundamental issue with:\r\n\r\n`Ollama running, but no models available`\r\n\r\nit does not properly fetch the /api/tags model list. Sadly I could with my effort not properly debug the \"Why\"",
+          "created_at": "2024-12-03T09:56:18Z"
+        },
+        {
+          "author": "scosman",
+          "body": "interesting. What does a `curl http://localhost:11434/api/tags` return? \r\n\r\nDo you have one of the supported Ollama models installed. `llama3.1:8b, llama3.1:70b, llama3.1:405b, mistral-large, llama3.2:1b, llama3.2, lama3.2-vision, llama3.2-vision:90b, phi3.5, gemma2:2b, gemma2:9b, gemma2:27b`\r\n\r\nAls",
+          "created_at": "2024-12-03T20:38:16Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "Oh- i did not know there is a specific list of \"supported\" models as i use custom loaded models via gguf since mine have a slightly altered finedtune.\r\n\r\nmay i ask why you added a list of \"supported\" models... given that technically people who'd want to create synthetic data know what kind of model ",
+          "created_at": "2024-12-03T20:40:45Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "the /api/tags endpoint returns the normal\r\n```{\"models\":[{\"name\":\"dagbs/qwen2.5-coder-14b-instruct-abliterated:q4_k_m\",\"model\":\"dagbs/qwen2.5-coder-14b-instruct-abliterated:q4_k_m\",\"modified_at\":\"2024-12-03T14:08:10.388678503+01:00\",\"size\":8988113261,\"digest\":\"c729c6635cd6ed6d14ee6d5d272d7c3930cb0cb",
+          "created_at": "2024-12-03T20:42:54Z"
+        },
+        {
+          "author": "scosman",
+          "body": "yeah - that's by design (if the design is good is another question). I want the out of box experience to be great so I test every feature with every model in a big matrix. But you should be able to override it.\r\n\r\nTry one of the supported models for now. \r\n\r\nI'll keep this issue for improving the UX",
+          "created_at": "2024-12-03T20:55:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 58,
+      "title": "Feature Request: Dark Mode",
+      "body": "Yo,\r\n\r\nit's me with another UX Request:\r\nDark Mode.\r\n\r\nit seems like my Extension for darkmode is a bit upset given that i open it locally via http://localhost:8757 (127.0.0.1 doesnt work btw)\r\n\r\nThank you!",
+      "state": "open",
+      "author": "LumiWasTaken",
+      "author_type": "User",
+      "created_at": "2024-12-05T00:58:56Z",
+      "updated_at": "2024-12-05T20:23:24Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/58/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": "v2",
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/58",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/58",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:27.602099",
+      "comments": [
+        {
+          "author": "LumiWasTaken",
+          "body": "Found an issue from my Extension in the console:\r\n`TypeError: bgColor is null`",
+          "created_at": "2024-12-05T01:25:28Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Might do this later, but it's pretty far down the list. Can't promise compatibility with any extensions. DaisyUI themes actually make this pretty easy, but would need to audit every screen for hardcoded colours.",
+          "created_at": "2024-12-05T19:55:55Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "No worries, but i highlighted the Console error, maybe setting the Bg colour to a white value directly would help in some cases with the extension as a intermediairy.\r\n\r\nSlowly i'm getting the feeling i need to start looking into how to compile it locally heh... do you have a vague guideline for it ",
+          "created_at": "2024-12-05T20:11:21Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Setup instructions are here: https://github.com/Kiln-AI/Kiln/blob/main/CONTRIBUTING.md\r\n\r\nBut I think that error is from your extension, not Kiln?",
+          "created_at": "2024-12-05T20:13:13Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "> Setup instructions are here: https://github.com/Kiln-AI/Kiln/blob/main/CONTRIBUTING.md\r\n> \r\n> But I think that error is from your extension, not Kiln?\r\n\r\nThank you.\r\n\r\nThe extension is pretty popular \"Dark Reader\" and the error kind of hints that yes maybe i should report that to the authors of th",
+          "created_at": "2024-12-05T20:23:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 40,
+      "title": "Feature Request: Linux Support",
+      "body": "Hiya,\r\n\r\nFirst of all, amazing tool. It's a Cleaner + GUI Version to what i have been privately building. \r\n\r\ni've had a hard time spotting any support for the most commonly used OS in the context of ML / AI Development Linux.\r\n\r\nAre there any plans to Release for example an AppImage or guidance on how to build it for Linux?\r\n\r\nIf not, what are the roadblocks, so assistance could be provided?\r\n\r\nThanks in advance!",
+      "state": "closed",
+      "author": "LumiWasTaken",
+      "author_type": "User",
+      "created_at": "2024-11-20T23:45:20Z",
+      "updated_at": "2024-12-04T21:10:14Z",
+      "closed_at": "2024-12-04T21:10:14Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/40/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/40",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/40",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:27.790073",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "@LumiWasTaken try the build here: https://github.com/Kiln-AI/Kiln/actions/runs/11947069712\r\n\r\nLinux should work, I just don't have an environment setup for testing. Note: pyinstaller builds raw executables, not AppImage or FlatPak. Might be too much of a pain for typical users?",
+          "created_at": "2024-11-21T05:20:39Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "Hi, that worked pretty good! I suppose a nice to have would be automatically opening the default Browser with the localhost:8757 port.\r\n\r\nOther than that this worked perfectly and i enjoy it.\r\n\r\nI was tossing in the term \"AppImage\" given that i'm not 100% confident what would be the best solution.\r\n",
+          "created_at": "2024-11-21T09:28:41Z"
+        },
+        {
+          "author": "scosman",
+          "body": "Not done yet, still in a branch!\r\n\r\n@LumiWasTaken mind trying this one and reporting back? It uses a single file distribution which simplifies things for users moving things around: https://github.com/Kiln-AI/Kiln/actions/runs/11953608049\r\n\r\nOther questions:\r\n - does the tray icon work and look okay",
+          "created_at": "2024-11-21T12:59:16Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "@scosman Oops!\r\n\r\nSorry! In a bit of a rush today.\r\n\r\nWhen i hopen the Klin binairy i get the following:\r\n```\r\n./Kiln \r\nThe environment does not allow connecting to the splash screen. Did bootloader fail to initialize it?\r\nTraceback (most recent call last):\r\n  File \"PyInstaller/fake-modules/pyi_spla",
+          "created_at": "2024-11-21T14:44:09Z"
+        },
+        {
+          "author": "LumiWasTaken",
+          "body": "Note: I was only testing functionality before, I did not realize that the tray icon etc. were relevant.",
+          "created_at": "2024-11-21T14:44:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 22,
+      "title": "Add Fine-Tuning",
+      "body": "An issue to track details around adding fine-tuning.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-06T15:29:44Z",
+      "updated_at": "2024-12-04T20:37:38Z",
+      "closed_at": "2024-12-04T20:37:38Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/22/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/22",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/22",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:28.026601",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Completed! By https://github.com/Kiln-AI/Kiln/pull/52 and earlier pulls.",
+          "created_at": "2024-12-04T20:37:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 30,
+      "title": "Add synthetic data generation",
+      "body": "Data driven synthetic data generation",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-12T16:15:00Z",
+      "updated_at": "2024-12-03T23:46:35Z",
+      "closed_at": "2024-12-03T23:46:35Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/30/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/30",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/30",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:28.223216",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "Fixed by https://github.com/Kiln-AI/Kiln/pull/36",
+          "created_at": "2024-12-03T23:46:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "Add non-text types (images, audio)",
+      "body": "An issue to track requests around adding non-text data (images and audio) for models that support them.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-07T19:20:45Z",
+      "updated_at": "2024-11-07T19:34:36Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/26/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/26",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/26",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:28.426126",
+      "comments": []
+    },
+    {
+      "issue_number": 23,
+      "title": "Add chain of thought prompting",
+      "body": "An issue to track details around adding chain of thought prompt option.",
+      "state": "closed",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-06T15:30:14Z",
+      "updated_at": "2024-11-07T19:19:42Z",
+      "closed_at": "2024-11-07T19:19:41Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/23/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/23",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/23",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:28.426146",
+      "comments": [
+        {
+          "author": "scosman",
+          "body": "completed by https://github.com/Kiln-AI/Kiln/pull/25",
+          "created_at": "2024-11-07T19:19:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 21,
+      "title": "Add RAG",
+      "body": "A issue to track requests and details relating to RAG.",
+      "state": "open",
+      "author": "scosman",
+      "author_type": "User",
+      "created_at": "2024-11-06T15:29:21Z",
+      "updated_at": "2024-11-06T15:29:21Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/21/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Kiln-AI/Kiln/issues/21",
+      "api_url": "https://api.github.com/repos/Kiln-AI/Kiln/issues/21",
+      "repository": "Kiln-AI/Kiln",
+      "extraction_date": "2025-06-22T00:42:28.622382",
+      "comments": []
+    }
+  ]
+}

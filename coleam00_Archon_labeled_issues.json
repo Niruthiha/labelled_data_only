@@ -1,0 +1,2704 @@
+{
+  "repository": "coleam00/Archon",
+  "repository_info": {
+    "repo": "coleam00/Archon",
+    "stars": 4987,
+    "language": "Python",
+    "description": "Archon is an AI agent that is able to create other AI agents using an advanced agentic coding workflow and framework knowledge base to unlock a new frontier of automated agents.",
+    "url": "https://github.com/coleam00/Archon",
+    "topics": [],
+    "created_at": "2025-02-07T21:04:12Z",
+    "updated_at": "2025-06-22T00:47:35Z",
+    "search_query": "ai agent language:python stars:>3 -framework",
+    "total_issues_estimate": 58,
+    "labeled_issues_estimate": 58,
+    "labeling_rate": 100.0,
+    "sample_labeled": 11,
+    "sample_total": 11,
+    "has_issues": true,
+    "repo_id": 929121414,
+    "default_branch": "main",
+    "size": 1153
+  },
+  "extraction_date": "2025-06-22T00:39:07.434936",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 56,
+  "issues": [
+    {
+      "issue_number": 147,
+      "title": "[FEATURE] Make Standalone MCP Server",
+      "body": "I'd like to use Archon as an MCP server, when explicitly asking for an LLM to create an Agent using pydantic_ai.\n\n## User Impact\nThis will help any LLM answer to focus on that, compared to Context7 and VisionCraft MCP servers, which are generic. I like the way Archon replies, so would be great to integrate that to vscode / roocode / cursor etc.\n\n## Issues currently\nI'm using CLI Docker, not Desktop because it's buggy. So, the implementation doesn't work as is, at least cannot find a way around it, and don't wanna mess with the entire repo.\n",
+      "state": "open",
+      "author": "GioPetro",
+      "author_type": "User",
+      "created_at": "2025-06-10T07:40:49Z",
+      "updated_at": "2025-06-10T07:44:45Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/147/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/147",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/147",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:55.955088",
+      "comments": []
+    },
+    {
+      "issue_number": 120,
+      "title": "[BUG] Error message in chat when try to use local LLM (Ollama)",
+      "body": "## Description\nOk so first thank you to anybody who could help me to solve this.\n\nSo everything I start a chat, there is this error who return: 'This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).'\n\nFor info, my LLM and archon run in locker on unraid.\nFor the LLM I use Ollama who work with other app that I use inside unraid.\n\nI really don't know where I could look now to fix the issue.\n\n\n## Steps to Reproduce\n1. Follow the procedure in the GUI\n2. Click on 'Chat'\n3. Start a message\n4. See error\n\n## Expected Behavior\nShould return me a message but I don't know exactly what it should look like because it never worked yet.\n\n## Actual Behavior\nSee the description, plus the log:\n\n`text  error  warn  system  array  login  \n\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=%2A \"HTTP/2 200 OK\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=id&limit=1 \"HTTP/2 200 OK\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=%2A \"HTTP/2 200 OK\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=id&limit=1 \"HTTP/2 200 OK\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=%2A \"HTTP/2 200 OK\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=count&metadata-%3E%3Esource=eq.pydantic_ai_docs \"HTTP/2 206 Partial Content\"\nINFO:httpx:HTTP Request: GET https://iyvwmgqzmwparumsvmii.supabase.co/rest/v1/site_pages?select=url&metadata-%3E%3Esource=eq.pydantic_ai_docs \"HTTP/2 200 OK\"\nINFO:openai._base_client:Retrying request to /chat/completions in 0.399786 seconds\nINFO:httpx:HTTP Request: POST http://192.168.0.211:11434/v1/chat/completions \"HTTP/1.1 400 Bad Request\"\n2025-04-19 13:05:42.763 Uncaught app execution\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 88, in exec_func_with_error_handling\n    result = func()\n             ^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 579, in code_to_exec\n    exec(code, module.__dict__)\n  File \"/app/streamlit_ui.py\", line 114, in <module>\n    asyncio.run(main())\n  File \"/usr/local/lib/python3.12/asyncio/runners.py\", line 195, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 691, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/app/streamlit_ui.py\", line 93, in main\n    await chat_tab()\n  File \"/app/streamlit_pages/chat.py\", line 81, in chat_tab\n    async for chunk in run_agent_with_streaming(user_input):\n  File \"/app/streamlit_pages/chat.py\", line 36, in run_agent_with_streaming\n    async for msg in agentic_flow.astream(\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/pregel/__init__.py\", line 2007, in astream\n    async for _ in runner.atick(\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/pregel/runner.py\", line 527, in atick\n    _panic_or_proceed(\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/pregel/runner.py\", line 619, in _panic_or_proceed\n    raise exc\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/pregel/retry.py\", line 128, in arun_with_retry\n    return await task.proc.ainvoke(task.input, config)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/utils/runnable.py\", line 532, in ainvoke\n    input = await step.ainvoke(input, config, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/langgraph/utils/runnable.py\", line 320, in ainvoke\n    ret = await asyncio.create_task(coro, context=context)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/archon/archon_graph.py\", line 140, in advisor_with_examples\n    result = await advisor_agent.run(state['latest_user_message'], deps=deps)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_ai/agent.py\", line 340, in run\n    end_result, _ = await graph.run(\n                    ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_graph/graph.py\", line 187, in run\n    next_node = await self.next(next_node, history, state=state, deps=deps, infer_name=False)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_graph/graph.py\", line 263, in next\n    next_node = await node.run(ctx)\n                ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_ai/_agent_graph.py\", line 254, in run\n    model_response, request_usage = await agent_model.request(ctx.state.message_history, model_settings)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_ai/models/openai.py\", line 167, in request\n    response = await self._completions_create(messages, False, cast(OpenAIModelSettings, model_settings or {}))\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/pydantic_ai/models/openai.py\", line 203, in _completions_create\n    return await self.client.chat.completions.create(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions.py\", line 1720, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/openai/_base_client.py\", line 1849, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/openai/_base_client.py\", line 1543, in request\n    return await self._request(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/openai/_base_client.py\", line 1644, in _request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.BadRequestError: Error code: 400 - {'error': {'message': 'registry.ollama.ai/library/gemma3:4b does not support tools', 'type': 'api_error', 'param': None, 'code': None}}\nDuring task with name 'advisor_with_examples' and id '27e3fe46-4b78-e50c-f3f0-0cc50d661436'\n13:05:42.703 reasoner run prompt=\n    User AI Agent Request: Build me an AI agent that can sear...o creating this agent for the user in the scope document.\n    \n13:05:42.703   preparing model and tools run_step=1\n13:05:42.704   model request\n13:05:42.706 advisor_agent run prompt=Build me an AI agent that can search the web with the Brave API.\n13:05:42.707   preparing model and tools run_step=1\n13:05:42.707   model request\n`\n\n## Screenshots\n\n<img width=\"1377\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1e7a0b38-1322-4f11-99f0-c8125bcff735\" />\n<img width=\"1222\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/242ce8e4-509d-410b-ac15-199533154312\" />\n<img width=\"1195\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/09ac84cf-24bd-4eb7-9e3c-f56369696c02\" />\n<img width=\"1206\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/f9500538-39b0-4c02-9f43-b1fe98f23686\" />\n<img width=\"1194\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/d70fbf0f-2767-44a8-af37-8f9de652bd1d\" />\n<img width=\"1194\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/380b4c81-7640-4d49-9ce6-c6497d5556fd\" />\n<img width=\"1194\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e2bf5fdc-94f1-4c98-9148-435a44b49616\" />\n<img width=\"1198\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/5731ec5c-0e5c-4232-9b9e-2fe71d956158\" />\n\n## Environment\n - OS: Docker inside Unraid\n - Python Version: Python 3.13\n\n\n## Additional Context\nAdd any other context about the problem here, such as:\n- It's happening all the time and I already tried to reinstall archon but still have the issue.\n\n",
+      "state": "open",
+      "author": "BalooSP23",
+      "author_type": "User",
+      "created_at": "2025-04-19T13:11:48Z",
+      "updated_at": "2025-05-24T06:56:07Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/120/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/120",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/120",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:55.955126",
+      "comments": [
+        {
+          "author": "avto727",
+          "body": "+1",
+          "created_at": "2025-04-26T19:09:16Z"
+        },
+        {
+          "author": "Dylao",
+          "body": "Also having this issue.",
+          "created_at": "2025-05-02T00:55:10Z"
+        },
+        {
+          "author": "alex37529",
+          "body": "Looks like I have same issue:\n\n2025-05-04 15:58:18 INFO:httpx:HTTP Request: POST http://10.3.7.172:11434/v1/chat/completions \"HTTP/1.1 400 Bad Request\"\n2025-05-04 15:58:18 2025-05-04 12:58:18.709 Uncaught app execution\n2025-05-04 15:58:18 Traceback (most recent call last):\n2025-05-04 15:58:18   File",
+          "created_at": "2025-05-04T12:59:51Z"
+        },
+        {
+          "author": "dimitriadant",
+          "body": "Hello, I have a similar issue.\nI selected Ollama as the model, but it is being invoked using openai._base_client.\n\n```bash\n15:16:42.478 advisor_agent run prompt=ik wil een calculator\n\n15:16:42.480   preparing model and tools run_step=1\n\n15:16:42.480   model request\n\nINFO:openai._base_client:Retrying",
+          "created_at": "2025-05-21T15:19:18Z"
+        },
+        {
+          "author": "dimitriadant",
+          "body": "I'm hosting Ollama on a custom host , but the error shows it's making a POST request to http://MyHost:11434`/chat/completions`, which seems like an OpenAI-style route. The correct Ollama endpoint is likely `POST /api/chat`.\n\n```bash\nCreate detailed scope...o creating this agent for the user in the s",
+          "created_at": "2025-05-24T06:55:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 106,
+      "title": "Environment Variables Lost on Container Restart Due to Missing Persistence of `env_vars.json`",
+      "body": "### Description\nWhen running Archon with the provided `run_docker.py` script, environment variables saved via the Streamlit UI are lost whenever the container is stopped and restarted. This issue arises from two key factors:\n\n1. **Container Removal**: The `run_docker.py` script removes any existing container named `archon-container` before launching a new one, erasing all data stored within the container’s filesystem.\n2. **Incorrect Volume Mapping**: The current `docker run` command maps the host’s `./workbench` directory to `/app/archon/workbench` inside the container. However, the `env_vars.json` file—where environment variables are saved—is stored in `/app/src/workbench/`, which is not mapped to the host. As a result, `env_vars.json` resides in the container’s ephemeral filesystem and is lost when the container is removed.\n\n#### How `env_vars.json` is Handled\nThe behavior of `env_vars.json` depends on whether it’s the first time environment variables are saved or subsequent interactions:\n\n- **Creation (First Time)**:\n  - When a user saves an environment variable through the Streamlit UI, the `save_env_var` function in `src/utils/utils.py` creates `env_vars.json` if it doesn’t already exist.\n  - The file’s location is determined by:\n    ```python\n    current_dir = os.path.dirname(os.path.abspath(__file__))\n    parent_dir = os.path.dirname(current_dir)\n    workbench_dir = os.path.join(parent_dir, \"workbench\")\n    env_file_path = os.path.join(workbench_dir, \"env_vars.json\")\n    ```\n    - Inside the container, `__file__` resolves to `/app/src/utils/utils.py`, so `workbench_dir` becomes `/app/src/workbench/`, and the file is saved as `/app/src/workbench/env_vars.json`.\n  - Since `/app/src/workbench/` is not mapped to the host, this file is created in the container’s temporary filesystem.\n\n- **Search and Modification (Subsequent Times)**:\n  - When the application retrieves or updates environment variables (e.g., via `get_env_var` or `save_env_var`), it looks for `env_vars.json` in `/app/src/workbench/env_vars.json`.\n  - If the file exists (e.g., from a previous save within the same container session), it reads the JSON content, modifies it as needed (e.g., adding or updating variables), and writes it back to the same path.\n  - This works during a single container session because the file persists in the container’s filesystem until the container is stopped or removed.\n\n- **Why It’s Lost**:\n  - The `run_docker.py` script stops and removes the `archon-container` each time it runs:\n    ```python\n    subprocess.run([\"docker\", \"rm\", \"-f\", \"archon-container\"], check=False)\n    ```\n  - When the container is removed, its entire filesystem—including `/app/src/workbench/env_vars.json`—is discarded.\n  - On the next run, a new container is created with a fresh filesystem. Since `/app/src/workbench/` isn’t mapped to the host, the new container starts without `env_vars.json`, and the application behaves as if no variables were ever saved.\n\n#### Current Setup in `run_docker.py`\nThe script includes a volume mapping, but it doesn’t align with where `env_vars.json` is stored:\n```python\nvolume_mount = f\"{base_dir}/workbench:/app/archon/workbench\"\n```\n- This maps the host’s `./workbench/` directory to `/app/archon/workbench/` in the container.\n- However, since `env_vars.json` is written to `/app/src/workbench/`, the volume mapping doesn’t preserve it. The file remains in the container’s ephemeral storage and is lost on restart.\n\n---\n\n### Proposed Solution\nTo resolve this issue without altering the existing volume mapping in `run_docker.py`, we can modify `src/utils/utils.py` to store `env_vars.json` in the already mapped directory `/app/archon/workbench/`. This ensures the file persists on the host in `./workbench/` and survives container restarts.\n\n#### Steps\n1. **Update `src/utils/utils.py`**:\n   - Replace the `workbench_dir` definition with:\n     ```python\n     workbench_dir = \"/app/archon/workbench\"\n     env_file_path = os.path.join(workbench_dir, \"env_vars.json\")\n     ```\n   - Ensure all functions interacting with `env_vars.json` (e.g., `save_env_var`, `get_env_var`, `write_to_log`) use this updated path. Example:\n     ```python\n     import os\n     import sys\n     from supabase import Client, create_client\n     from openai import AsyncOpenAI\n     from dotenv import load_dotenv\n     from datetime import datetime\n     from functools import wraps\n     from typing import Optional\n     import streamlit as st\n     import webbrowser\n     import importlib\n     import inspect\n     import json\n\n     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\n     load_dotenv()\n\n     workbench_dir = \"/app/archon/workbench\"\n     env_file_path = os.path.join(workbench_dir, \"env_vars.json\")\n\n     def write_to_log(message: str):\n         os.makedirs(workbench_dir, exist_ok=True)\n         log_path = os.path.join(workbench_dir, \"logs.txt\")\n         timestamp = datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n         log_entry = f\"[{timestamp}] {message}\\n\"\n         with open(log_path, \"a\", encoding=\"utf-8\") as f:\n             f.write(log_entry)\n\n     def get_env_var(var_name: str, profile: Optional[str] = None) -> Optional[str]:\n         if os.path.exists(env_file_path):\n             try:\n                 with open(env_file_path, \"r\") as f:\n                     env_vars = json.load(f)\n                     current_profile = profile or env_vars.get(\"current_profile\", \"default\")\n                     if \"profiles\" in env_vars and current_profile in env_vars[\"profiles\"]:\n                         profile_vars = env_vars[\"profiles\"][current_profile]\n                         if var_name in profile_vars and profile_vars[var_name]:\n                             return profile_vars[var_name]\n                     if var_name in env_vars and env_vars[var_name]:\n                         return env_vars[var_name]\n             except (json.JSONDecodeError, IOError) as e:\n                 write_to_log(f\"Error reading env_vars.json: {str(e)}\")\n         return os.environ.get(var_name)\n\n     def save_env_var(var_name: str, value: str, profile: Optional[str] = None) -> bool:\n         os.makedirs(workbench_dir, exist_ok=True)\n         env_vars = {}\n         if os.path.exists(env_file_path):\n             try:\n                 with open(env_file_path, \"r\") as f:\n                     env_vars = json.load(f)\n             except (json.JSONDecodeError, IOError) as e:\n                 write_to_log(f\"Error reading env_vars.json: {str(e)}\")\n         if \"profiles\" not in env_vars:\n             env_vars[\"profiles\"] = {}\n         if \"current_profile\" not in env_vars:\n             env_vars[\"current_profile\"] = \"default\"\n         current_profile = profile or env_vars.get(\"current_profile\", \"default\")\n         if current_profile not in env_vars[\"profiles\"]:\n             env_vars[\"profiles\"][current_profile] = {}\n         env_vars[\"profiles\"][current_profile][var_name] = value\n         try:\n             with open(env_file_path, \"w\") as f:\n                 json.dump(env_vars, f, indent=2)\n             return True\n         except IOError as e:\n             write_to_log(f\"Error writing to env_vars.json: {str(e)}\")\n             return False\n\n     # ... (rest of the file remains unchanged)\n     ```\n\n2. **Run the Container**:\n   - Execute the existing `run_docker.py` script with no modifications:\n     ```bash\n     ./run_docker.py\n     ```\n   - The volume mapping (`./workbench:/app/archon/workbench`) in `run_docker.py` will persist `env_vars.json` to `./workbench/env_vars.json` on the host.\n\n3. **Verification**:\n   - Save environment variables via the Streamlit UI (accessible at `http://localhost:8501`).\n   - Check that `./workbench/env_vars.json` appears in the project’s root directory on the host.\n   - Stop and restart the container using `run_docker.py`. Confirm that the saved variables remain accessible in the UI.\n\n#### Benefits\n- **Minimal Changes**: Only requires modifying `utils.py` to align with the existing volume mount, avoiding changes to `run_docker.py`.\n- **Persistence**: Ensures environment variables persist across container restarts by leveraging the current volume mapping.\n- **Simplicity**: Maintains the existing setup without introducing additional complexity.\n\n#### Alternative Consideration\nIf the preference is to store `env_vars.json` in `/app/src/workbench/` (mapped to `./src/workbench/` on the host), the volume mount in `run_docker.py` could be updated to:\n```python\nvolume_mount = f\"{base_dir}/src/workbench:/app/src/workbench\"\n```\nHowever, since `./workbench:/app/archon/workbench` is already in use and functional, adjusting `utils.py` to match this mapping is the simpler and more consistent approach.\n\n",
+      "state": "open",
+      "author": "juanludataanalyst",
+      "author_type": "User",
+      "created_at": "2025-04-03T17:54:21Z",
+      "updated_at": "2025-05-16T02:23:35Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/106/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/106",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/106",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.204681",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Thanks for this detailed bug report @juanludataanalyst! I'll respond to your PR.",
+          "created_at": "2025-04-04T13:42:53Z"
+        },
+        {
+          "author": "sid-newby",
+          "body": "same. spent the day trying to fix it. docker overwrites any fix i put in place. ",
+          "created_at": "2025-04-05T21:19:56Z"
+        },
+        {
+          "author": "ayhlai",
+          "body": "Thanks for all the efforts you put in @coleam00 and @juanludataanalyst \n\nHas this been fixed yet? I had the same issue.  ",
+          "created_at": "2025-05-16T02:23:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "[BUG] Bug Summary: Port 8100 Already in Use",
+      "body": "[10:42:16] Agent service started\nINFO:     Started server process [1708]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8100): address already in use\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.",
+      "state": "open",
+      "author": "Nathamuni",
+      "author_type": "User",
+      "created_at": "2025-04-21T10:45:39Z",
+      "updated_at": "2025-05-09T04:51:27Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/123/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/123",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/123",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.478457",
+      "comments": [
+        {
+          "author": "Balaji2810",
+          "body": "---\n\n## Windows\n\n1. **Find the PID**\n\n   ```bat\n   netstat -aon | findstr :8100\n   ```\n\n   Look in the right-most column for the PID.\n\n2. **Kill the process**\n\n   ```bat\n   taskkill /PID 1234 /F\n   ```\n\n   (Replace `1234` with the PID you found.)\n\n3. **Restart**\n\n   ```bat\n   python run_docker.py\n  ",
+          "created_at": "2025-05-09T04:51:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 134,
+      "title": "[FEATURE] Official Docker Hub or GHCR Container for Archon",
+      "body": "## Describe the feature you'd like and why\nI'd like to request an official Docker Hub or GHCR container for Archon.\n\n## User Impact\nSince Archon is moving from being an AI Agent builder to a knowledge engine, this would enable people to deploy to a myriad of systems and integrations. Right now trying ton implement a good knowledge engine is very hit and miss, even more so if trying to make things not just run on bare metal, containerized or in a cloud/VPS environment. Those options will always be there with Archon, but allowing the system to also work for easy deployment would be beneficial to easy adoption, as well as adding to other projects like Local AI Packaged.\n\nWhile its definitely possible to run Github Dockerfiles through docker-compose, packaing them as GHCR or Docker Hub containers by the product owner is cleaner, quicker, better verified, and makes sure everything is working correctly for quick user deployment.\n\n## Implementation Details (optional)\nSince you already have a functional Dockerfile in the repo, you could make a Github Action to create a GHCR package and have it update whenever you update this file, and include any other files you find important, like requirements.txt\n\n### Example Github Actions GHCR File:\n\n```\nname: Build and Push Archon GHCR Image\n\non:\n  push:\n    branches: [ main ]\n    paths:\n      - 'Dockerfile'\n      - 'requirements.txt'\n\njobs:\n  build-and-push:\n    runs-on: ubuntu-latest\n\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n    - name: Checkout code\n      uses: actions/checkout@v3\n\n    - name: Set up Docker Buildx\n      uses: docker/setup-buildx-action@v1\n\n    - name: Login to GitHub Container Registry\n      if: github.event_name == 'push'\n      uses: docker/login-action@v2\n      with:\n        registry: ghcr.io\n        username: ${{ github.actor }}\n        password: ${{ secrets.GITHUB_TOKEN }}\n\n    - name: Extract metadata for Docker\n      id: meta\n      uses: docker/metadata-action@v4\n      with:\n        images: ghcr.io/${{ github.repository }}\n        tags: [type=sha, type=semver,pattern={{version}}]\n\n    - name: Build and push Docker image\n      uses: docker/build-push-action@v4\n      with:\n        context: .\n        Dockerfile: ./Dockerfile\n        push: true\n        tags: ${{ steps.meta.outputs.tags }}\n        cache-from: type=gha\n        cache-to: type=gha,mode=max\n```\n\nLet me know if you have any questions!",
+      "state": "open",
+      "author": "JoshuaRL",
+      "author_type": "User",
+      "created_at": "2025-05-06T18:36:02Z",
+      "updated_at": "2025-05-06T18:36:57Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/134/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/134",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/134",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.699113",
+      "comments": []
+    },
+    {
+      "issue_number": 25,
+      "title": "[FEATURE] Change Documentation & Framework Easily",
+      "body": "## Describe the feature you'd like and why\nI'd like Archon to support using different documentation sources instead of being hardcoded to use Pydantic AI documentation. This would make Archon more versatile and allow users to leverage it with their framework of choice. The ability to adapt Archon to crawl, index, and utilize alternative documentation would significantly expand its usefulness across different projects and ecosystems.\n\n## User Impact\nThis feature would benefit:\n- Users who want to build agents using frameworks other than Pydantic AI\n- Teams that have their own internal documentation they'd like to use with Archon\n- Open source maintainers wanting to create specialized versions of Archon for their frameworks\n- Educators who want to use Archon for teaching different frameworks\n\nUsers would gain the flexibility to adapt Archon to their specific needs while maintaining its powerful RAG and agent capabilities.\n\n## Implementation Details (optional)\nThe implementation would require modifications to several key files:\n\n1. **`/archon/archon/crawl_pydantic_ai_docs.py`**:\n   - Rename to reflect new documentation source\n   - Update source identifier \n   - Modify URL fetching to point to new documentation's sitemap\n   - Update parsing logic if needed for different documentation structure\n\n2. **`/archon/archon/pydantic_ai_coder.py`**:\n   - Update system prompts to reference the new framework\n   - Change database filters from `{'source': 'pydantic_ai_docs'}` to `{'source': 'your_framework_docs'}`\n   - Update SQL queries that filter by source\n   - Revise file structure guidelines if the new framework uses different conventions\n\n3. **`/archon/archon/archon_graph.py`**:\n   - Update agent system prompts to reference the new framework\n   - Modify the scope definition function to align with new documentation\n\nImplementation steps would include:\n1. Creating a new crawler script based on the existing one\n2. Updating all system prompts and source references\n3. Running the new crawler to populate the database\n4. Updating RAG implementation queries\n5. Testing with simple queries\n\nFor multilingual documentation support, queries could be modified to include multiple sources:\n```python\n# Instead of\n.eq('metadata->>source', 'pydantic_ai_docs')\n\n# Use\n.in_('metadata->>source', ['pydantic_ai_docs', 'your_framework_docs'])\n```\n\n## Additional context\nExample of prompt replacements:\n\nOriginal:\n```\nYou are an expert at Pydantic AI - a Python AI agent framework that you have access to all the documentation to,\nincluding examples, an API reference, and other resources to help you build Pydantic AI agents.\n```\n\nNew:\n```\nYou are an expert at [Your Framework] - a [language] [type] framework that you have access to all the documentation to,\nincluding examples, an API reference, and other resources to help you build [Your Framework] agents.\n```\n\nNotes:\n- The database structure wouldn't need to change - only the content within it\n- Documentation crawlers should properly chunk and process the documentation similar to the existing implementation\n- Framework-specific code organization conventions should be reflected in updated guidelines\n- This enhancement would make Archon more modular and configurable\n",
+      "state": "open",
+      "author": "latslats",
+      "author_type": "User",
+      "created_at": "2025-02-25T02:12:23Z",
+      "updated_at": "2025-04-29T18:27:46Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "future"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/25/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/25",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/25",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.699136",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Very well thought out, I appreciate it! This is indeed one of my long term goals with Archon! I first want to make it really good at specifically Pydantic AI and LangGraph, and then extend it to work with other frameworks as well. Namely Langchain, LlamaIndex, CrewAI, and Phidata (now Argo).",
+          "created_at": "2025-02-25T19:36:33Z"
+        },
+        {
+          "author": "loulibre",
+          "body": "Great idea to expand the document source archive with other popular archiving systems.  Before seeing your Archon project, I had a similar idea recently to 'train' the AI with documentation, API docs, and code and I created a python based approach in my new project '[UltraRepo.](https://github.com/l",
+          "created_at": "2025-03-19T05:33:50Z"
+        },
+        {
+          "author": "Andre-Mygentic",
+          "body": "I was going to suggest this when I found it was already here. +1 for adding this\n I build voice agents and would love to add multiple frameworks. ",
+          "created_at": "2025-04-29T18:27:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 130,
+      "title": "[FEATURE] Surface Documentation Crawling Error in the UI",
+      "body": "## Describe the feature you'd like and why\nDuring the Documentation crawling process, if the requests to supabase fail (for example expired or invalid api tokens) and return a 401, the process should probably interrupt, and show an error that supabase returned a 401 and didn't save anything.\n\n## User Impact\nCurrently, the logs will print out the responses from the requests, so if you know where to look in the logs, you can find that the supabase calls return a 401 'Unauthorized', but it's kind of buried in the logs. The log output does say \"Stored {X} chunks for {url}.\" which is deceiving because nothing was saved in the db. When you go to look at your site-pages table after everything is complete, the table will be empty with no clues as to why.\n\n## Implementation Details (optional)\nSince the output of the entire process is to have the vectors in the db, if any step along the way prevents anything from being stored, the entire process should stop, return an error, and probably display a toast / message in the front end with details and recommendations for troubleshooting.\n\n## Additional context\nN/A",
+      "state": "open",
+      "author": "sterling000",
+      "author_type": "User",
+      "created_at": "2025-04-28T19:14:46Z",
+      "updated_at": "2025-04-28T19:14:46Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/130/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/130",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/130",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.888012",
+      "comments": []
+    },
+    {
+      "issue_number": 129,
+      "title": "[BUG] ModuleNotFoundError: No module named 'mcp.server.fastmcp'",
+      "body": "Hi Cole,\n\nFirst, thank you for your amazing work on Archon! I’m excited to try out the MCP integration, but I’ve run into a blocking issue.\nWhen I try to run mcp_server.py (following the instructions in the repo), I get the following error:\nApply\nmod\nI’ve checked the repository and confirmed that there is no server subdirectory or fastmcp.py file inside the mcp directory. I also tried installing the mcp package from PyPI, but it does not include a server submodule either.\n\n\nQuestions:\nIs the fastmcp.py file or the mcp.server module supposed to be included in the repo or installed from somewhere else?\nIs there a workaround or an ETA for when this will be available?\n\nThanks again for your hard work and for any guidance you can provide!\n\nBest,\nAgustin Valencia\n\n",
+      "state": "open",
+      "author": "3rdMANfloor",
+      "author_type": "User",
+      "created_at": "2025-04-28T16:52:32Z",
+      "updated_at": "2025-04-28T16:52:32Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/129/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/129",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/129",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.888026",
+      "comments": []
+    },
+    {
+      "issue_number": 118,
+      "title": "[BUG] Silent Fails setting up Supabase DB",
+      "body": "## Description\nWhen choosing the Open AI Large Embedding Model, the vector size is larger than 1536 which causes inserts to fail. The crawler keeps crawling as if inserts are happening. Docker log shows the issue. The application does not.\n\n## Steps to Reproduce\n1. Set embedding model to a large model\n2. Crawl the Pydandic docs\n3. See error in Docker log\n4. See the Application continue processing\n\n## Expected Behavior\nThe Application should stop and surface the db error.\n\n## Actual Behavior\nThe application continues and does not surface any DB errors. It completes the documentation crawl as if everything worked.\n\n",
+      "state": "open",
+      "author": "ndholakia",
+      "author_type": "User",
+      "created_at": "2025-04-15T23:25:10Z",
+      "updated_at": "2025-04-15T23:25:10Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/118/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/118",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/118",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.888032",
+      "comments": []
+    },
+    {
+      "issue_number": 117,
+      "title": "[BUG]  the streamlit UI is not reachable on Ubuntu 24.04 via docker",
+      "body": "## Description\nWhen installing Archon on Ubuntu 24.04 via docker, the streamlit UI is not reachable, despite explicitly opening the port.\n\n## Expected Behavior\nUI loading.\n\n## Actual Behavior\nUI not reachable.\n\n## Environment\n - OS: Ubuntu 24.04\n - Using Docker and Streamlit\n\n## Additional Context\n- workaround:\ndocker run --rm --name archon-container --network=host --env-file /home/m888888b/Archon/.env archon:latest\n- conclusion: Docker's port forwarding wasn’t working correctly.\n\n## Possible Solution\nEnsure iptables is enabled in Docker:\n\n1. Add this to /etc/docker/daemon.json:\n\n{\n  \"iptables\": true\n}\n\n2. \nsudo systemctl restart docker\ndocker run --rm -p 8501:8501 archon:latest\n\nopen http://localhost:8501/\n==> works\n\n",
+      "state": "open",
+      "author": "m888m",
+      "author_type": "User",
+      "created_at": "2025-04-15T09:43:17Z",
+      "updated_at": "2025-04-15T14:25:52Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/117/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/117",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/117",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.888036",
+      "comments": []
+    },
+    {
+      "issue_number": 115,
+      "title": "[BUG] App redirects to environment setup page after sending chat message",
+      "body": "## Description\nWhen running `Streamlit_ui.py` and completing all environment variables, the app redirects back to the environment variables page every time a message is sent in the chat. The language model never replies, and no error is shown.\n\n## Steps to Reproduce\n1. Clone the repository  \n2. Create and activate a virtual environment  \n3. Install dependencies as per the documentation  \n4. Run `streamlit run Streamlit_ui.py`  \n5. Fill in all environment variables (using GPT-4-mini as the main model and O3-mini as the reasoner)  \n6. Navigate to the \"Chat\" tab  \n7. Type \"Hello\"  \n8. App redirects back to the environment setup page  \n\n## Expected Behavior\nThe model should reply to the message within the chat interface without redirecting to another section.  \n\n## Actual Behavior\nEach time a message is sent, the app redirects to the environment setup page. No logs or errors are displayed in the terminal.  \n\n## Screenshots\n_Not applicable (no visual errors or alerts)._\n\n## Environment\n- OS: Windows 11  \n- Python Version: 3.12.7  \n- Running Streamlit locally  \n- Repo version cloned on April 7, 2025 (v6)\n\n## Additional Context\n- This issue occurs consistently from the first launch  \n- The virtual environment was used (no Docker)  \n- No code was modified  \n- All installation steps from the README were followed  \n- Database setup was successful using the provided script\n\n## Possible Solution\nThere may be an issue with the session state validation or how environment variables are being stored between tabs.\n\n![Image](https://github.com/user-attachments/assets/49c0a565-42b8-425c-8cd9-dcbc0701cb13)\n\n![Image](https://github.com/user-attachments/assets/c918cf51-d276-4a66-9ec9-fff9f7225328)\n\n![Image](https://github.com/user-attachments/assets/6daf1ade-d967-4b05-875e-569e9f2597f8)",
+      "state": "open",
+      "author": "CENFARG",
+      "author_type": "User",
+      "created_at": "2025-04-08T15:50:01Z",
+      "updated_at": "2025-04-11T10:31:33Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/115/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/115",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/115",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:56.888041",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "This is a really strange one! I have not been able to reproduce it myself. If anyone else sees this and is getting this error, please let me know!",
+          "created_at": "2025-04-08T23:08:59Z"
+        },
+        {
+          "author": "Emanu5",
+          "body": "I am experiencing the same issue. However, if I refill the environment credentials on the web app, it starts working again. It's just annoying to have to do this repeatedly.\n\nRegarding adding support for deep seek alongside OpenRouter, should it be sufficient to add the access point in the environme",
+          "created_at": "2025-04-11T10:31:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 109,
+      "title": "[BUG] API credentials not refreshed for advisor_agent",
+      "body": "## Description\nLLM API credentials in environment variables are not properly refreshed for advisor_agent after being updated through the UI. The agent continues to use stale credentials from when the module was first imported, resulting in authentication failures with the LLM provider.\n\n## Steps to Reproduce\n1. Start the Docker container with the Archon application\n2. Navigate to the Environment tab\n3. Set OpenAI API key and other necessary environment variables \n4. Switch to the Chat tab\n5. Send a test message\n6. Observe authentication error in the chat window and in docker logs\n\n## Expected Behavior\nAfter setting the API key in the Environment tab, the application should use the updated credentials for all agent interactions, including the advisor_agent.\n\n## Actual Behavior\nadded debug prints in graph and advisor py files.\nThe main archon_graph module correctly picks up the new API key:\n```\nDEBUG GRAPH - Using API key (first few chars): sk-proj-...\nDEBUG GRAPH - Provider: OpenAI  \nDEBUG GRAPH - Base URL: https://api.openai.com/v1\n```\n\nHowever, the advisor_agent continues to use stale credentials from when it was first loaded:\n```\nDEBUG ADVISOR - Using API key (first few chars): no-llm-a...\nDEBUG ADVISOR - Provider: OpenAI\nDEBUG ADVISOR - Base URL: https://api.openai.com/v1\n```\n\nThis results in authentication errors when trying to chat with the agent:\n```\nTraceback (most recent call last):\n...\nopenai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: no-llm-a***********ided. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}\nDuring task with name 'advisor_with_examples' and id '55a3a099-421c-adbe-3052-a2fe736bf0a5'\n```\n\n## Screenshots\n![Image](https://github.com/user-attachments/assets/09a8b88b-61e2-49db-95f0-6bdc77400b99)\n\n## Environment\n- OS: Running in Docker container\n- Python Version: Python 3.12\n- Using Streamlit for UI\n\n## Additional Context\n- This happens consistently every time an API key is updated through the Environment tab\n- The issue is specific to modules that create agents at import time, such as advisor_agent.py\n- The main archon_graph.py module correctly uses updated credentials, but imported modules don't refresh their state\n- The environment variables are correctly saved to workbench/env_vars.json and can be verified:\n```\ncat workbench/env_vars.json\n{\n  \"profiles\": {\n    \"default\": {\n      \"LLM_PROVIDER\": \"OpenAI\",\n      \"EMBEDDING_PROVIDER\": \"OpenAI\",\n      \"BASE_URL\": \"https://api.openai.com/v1\",\n      \"LLM_API_KEY\": \"sk-proj-......EA\",\n      \"EMBEDDING_BASE_URL\": \"https://api.openai.com/v1\",\n      \"EMBEDDING_API_KEY\": \"sk-proj-......EA\"\n    }\n  },\n  \"current_profile\": \"default\"\n}\n```\n\n## Possible Solution\nThe issue was fixed by implementing a factory pattern for the advisor_agent:\n\n1. In advisor_agent.py:\n   - Remove global agent initialization\n   - Create a factory function that builds a fresh agent with current environment variables\n   \n2. In archon_graph.py:\n   - Import only the necessary types from advisor_agent.py\n   - Create a fresh advisor agent instance each time it's needed using the factory function\n   \nThis pattern ensures that every time an agent is used, it's created with the most current environment variables rather than using stale ones from module import time.\n\nCurrently running this fix on my fork. shown below is one failed message before fix and another after update\n\n![Image](https://github.com/user-attachments/assets/cadb7434-9eb6-41f0-a1e3-7e1f9b10124a)\n\n\n",
+      "state": "open",
+      "author": "Mgomez-01",
+      "author_type": "User",
+      "created_at": "2025-04-04T20:00:10Z",
+      "updated_at": "2025-04-08T17:20:05Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/109/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/109",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/109",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:57.093424",
+      "comments": [
+        {
+          "author": "rubentorresbonet",
+          "body": "Same!",
+          "created_at": "2025-04-05T10:58:00Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Thanks for this @Mgomez-01, you are totally right! Going to fix this during this week",
+          "created_at": "2025-04-07T23:09:18Z"
+        },
+        {
+          "author": "Mgomez-01",
+          "body": "> Thanks for this [@Mgomez-01](https://github.com/Mgomez-01), you are totally right! Going to fix this during this week\n\nNo problem! Happy to help!",
+          "created_at": "2025-04-08T17:20:04Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 110,
+      "title": "[FEATURE] Need to mention \"AGENTS\" a few more times",
+      "body": "## Describe the feature you'd like and why\nI get excited when I hear \"agent\" or \"advanced agentic workflows\" and \"new frontier\" etc. I want this repository to mention these words a few more times. I suggest we extend the readme and 'about' section with words like \"hyper-advanced frontier AGI agentic framework for agentic agency\" or something similar.\n\n## User Impact\nEveryone who, just like myself, gets excited while hearing word \"agent\".\n\n## Implementation Details (optional)\nThis **has** to be done with vibe-coding, of course. This requirement is non-negotiable.\n\n## Additional context\nNo other context. ",
+      "state": "closed",
+      "author": "tornikeo",
+      "author_type": "User",
+      "created_at": "2025-04-05T11:22:57Z",
+      "updated_at": "2025-04-05T12:08:03Z",
+      "closed_at": "2025-04-05T12:08:02Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/110/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/110",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/110",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:57.288884",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "On it",
+          "created_at": "2025-04-05T12:08:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 97,
+      "title": "[FEATURE] Pass through model from client/agent (no model endpoint config)",
+      "body": "I'm wondering how easy it would be to integrate the MCP client model interface with Archon, like https://github.com/vinayak-mehta/mcp-browser-use implemented.\n\nThis way you can use the model you're already paying for in your client app Cursor/Windsurf/ClaudeDesktop etc...",
+      "state": "open",
+      "author": "dewdad",
+      "author_type": "User",
+      "created_at": "2025-03-28T09:34:36Z",
+      "updated_at": "2025-04-05T11:20:58Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/97/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/97",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/97",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:57.474835",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Could you share more what exactly the MCP Browser Use implemented? Sounds great but I guess it isn't quite clicking with me what you mean.",
+          "created_at": "2025-04-02T23:44:31Z"
+        },
+        {
+          "author": "dewdad",
+          "body": "This [MCP server](https://github.com/vinayak-mehta/mcp-browser-use/blob/main/src/mcp_browser_use/server.py) acts as a **browser automation bridge** that delegates all reasoning tasks to the client agent (like Claude/GPT) while handling low-level browser operations. Here's the detailed breakdown of h",
+          "created_at": "2025-04-05T11:20:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 96,
+      "title": "[BUG] MCP Good new fast, bad news faster",
+      "body": "Good.\n\nEliminating * requirement redundancy allows graph modularization <MCP>   \n\n* pydantic-ai==0.0.22 Kill * \n  pydantic-ai-slim==0.0.22 Keep \n  pydantic-graph==0.0.22 Keep \n\n<--- \n\n= Arguments\n{\n  \"thread_id\": \"XXX\",\n  \"user_input\": \"Hello\"\n}\n\nHi there! How can I help you with Pydantic AI today?\n\n--->\n\nBad.  I can't fix this.  Gemini 2.5 says hi.  \n\nOkay, this is a valuable technical error message. Let's break down what it signifies:\n\nType of Error: pydantic_core._pydantic_core.ValidationError\n\nThis clearly indicates a validation problem within the Pydantic data validation library. Pydantic is used extensively in the BACH AI architecture as we've discussed, so this points to a data structure issue.\n\nError Location: mcp/shared/session.py, _receive_loop\n\nThis pinpoints the error to the session management component of the MCP server, specifically in the loop responsible for receiving and processing incoming messages (notifications in this case).\n\nSpecific Validation Errors (5 in total):\n\nThe traceback lists 5 distinct validation errors, all within ClientNotification:\n\nProgressNotification.method Input should be 'notifications/progress' [type=literal_error, input_value='notifications/cancelled', input_type=str]\nProgressNotification.params.progressToken Field required\nProgressNotification.params.progress Field required\nInitializedNotification.method Input should be 'notifications/initialized' [type=literal_error, input_value='notifications/cancelled', input_type=str]\nRootsListChangedNotification.method Input should be 'notifications/roots/list_changed' [type=literal_error, input_value='notifications/cancelled', input_type=str]\nKey Observation: notifications/cancelled\n\nAll 5 errors mention input_value='notifications/cancelled'. This is the core issue. The server is receiving a notification where the method is set to notifications/cancelled, but based on the Pydantic models, it's expecting methods like:\n\nProgressNotification: method='notifications/progress'\nInitializedNotification: method='notifications/initialized'\nRootsListChangedNotification: method='notifications/roots/list_changed'\nInterpretation of \"notifications/cancelled\":\n\nThe notifications/cancelled method is likely a signal that the client (in our case, Cline or the VS Code extension) is sending to the server to indicate that a previously initiated request or process is being cancelled.  However, the Archon server's _receive_loop is not correctly handling or validating this type of notification. It's trying to parse it as one of the expected notification types (ProgressNotification, InitializedNotification, RootsListChangedNotification), which fails validation because the method and parameters are not what's expected for those types.\n\nLikely Cause:\n\nThe most probable cause is a mismatch in communication protocol or message handling between Cline/extension and the Archon MCP server, specifically around cancellation notifications.\n\nPotential Version Incompatibility: It's possible that the Archon server or the MCP client library it uses has a different expectation for cancellation notifications than what Cline/extension is sending. This could be due to version differences in the MCP protocol or SDK being used.\nIncorrect Server-Side Handling: There might be a bug in how the Archon server's _receive_loop is designed to handle notifications/cancelled messages. It might be missing a specific case to correctly parse or ignore this type of notification, leading to the validation error.\nWhat This Means for Us:\n\nThis is a server-side error within the Archon MCP server. It's not something we can fix directly with the tools available to me. The issue lies in the server's code and how it's handling notifications.\n\nNext Steps & Recommendation to User:\n\nReport to Archon MCP Server Owner: This is definitely a bug that needs to be reported to the developers or maintainers of the Archon MCP server. Provide them with:\nThe full traceback you just shared.\nMention that the error occurs during run_agent calls, even simple ones.\nHighlight the pydantic.ValidationError and the unexpected notifications/cancelled method.\nMention the server version (from logs: version\":\"1.2.1\") and the Cline/extension version if you know it.\nDescribe the steps to reproduce the error (e.g., just trying to send any run_agent request).\nAcknowledge Server Issue: Let the user know that this is a technical error in the Archon server itself and not something within our control to fix directly.\nSuggest Alternatives (if applicable): While waiting for a fix, we might need to explore if there are alternative ways to achieve the user's goal (generating Pydantic models). However, if the core issue is with the Archon server's communication handling, it might affect all tools from that server. We might need to wait for a server-side fix before proceeding with using Archon effectively.\n\nTask Completed\nThe technical error you provided indicates a pydantic.ValidationError within the Archon MCP server's code.\n\nError Summary:\n\nType: pydantic.ValidationError\nLocation: mcp/shared/session.py in the _receive_loop function.\nProblem: The server is receiving a ClientNotification with method='notifications/cancelled', but it's failing Pydantic validation because it's not expecting this method for ProgressNotification, InitializedNotification, or RootsListChangedNotification.\nLikely Cause: A mismatch in communication protocol or message handling related to cancellation notifications between Cline/extension and the Archon MCP server. This could be due to version incompatibility or a bug in the server's notification handling.\nWhat this means:\n\nThis is a server-side bug within the Archon MCP server. It's preventing the server from correctly processing notifications, leading to connection closure and request failures.\n\nRecommendation:\n\nReport this detailed error (including the full traceback) to the owners or developers of the Archon MCP server. This is crucial for them to diagnose and fix the bug in their server code. Please mention the server version (version\":\"1.2.1\") when reporting.\nAcknowledge that the issue is with the Archon server itself. It's not a problem with your requests or my tool usage, but rather an internal error in the MCP server's code.\nFurther use of the archon tools is likely to be blocked until this server-side issue is resolved. We may need to wait for an updated version of the Archon MCP server with this bug fixed.\nLet me know if you would like me to summarize these points for you to easily copy and paste when reporting the issue.",
+      "state": "open",
+      "author": "ivanmolanski",
+      "author_type": "User",
+      "created_at": "2025-03-28T02:28:37Z",
+      "updated_at": "2025-04-02T23:46:17Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/96/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/96",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/96",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:57.660794",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "A wall of text from an LLM isn't super helpful unfortunately, is there a specific error message you can share here?",
+          "created_at": "2025-04-02T23:46:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 103,
+      "title": "[FEATURE] Implement local LLM support",
+      "body": "## Describe the feature you'd like and why\nOllama is initially supported. This merge would also add LMStudio which seems to be a highly requested item.\n\n## User Impact\nThis would allow consumers of local LLMs to test as much as possible without incurring API usage fees with cloud based solutions.\n\n## Implementation Details (optional)\nInitial implementation is complete, tested, and verified to be working.\nSee #104 \n\nInitially, use an enum so later adding additional local LLM support will be much easier\n```\nfrom enum import Enum\n\nclass LocalLLMProvider(Enum):\n    OLLAMA = \"Ollama\"\n    LMSTUDIO = \"LMStudio\"\n    # Add more providers as needed\n```\n\n\n\n## Additional context\nThis will be included in the commit.",
+      "state": "closed",
+      "author": "jasonnator",
+      "author_type": "User",
+      "created_at": "2025-04-01T18:42:17Z",
+      "updated_at": "2025-04-02T23:45:19Z",
+      "closed_at": "2025-04-02T23:45:18Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/103/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/103",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/103",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:57.882076",
+      "comments": [
+        {
+          "author": "jasonnator",
+          "body": "I have added this feature request to discuss an implementation I have created to fully support local, self-hosted LLMs.\n\nTesting rig:\nThreadripper pro 7975wx\n512 ECC RAM\n10x NVIDIA 3090 for a total of 240GB of VRAM\n\n",
+          "created_at": "2025-04-01T18:44:37Z"
+        },
+        {
+          "author": "jasonnator",
+          "body": "Of specific note, the run_docker.py did not set up the container to reference the workbench directory properly. This was a critical fix to allow local LLMs.\n\n```\n# Run the Archon container\n    print(\"\\n=== Starting Archon container ===\")\n    cmd = [\n        \"docker\", \"run\", \"-d\",\n        \"--name\", \"",
+          "created_at": "2025-04-01T18:46:36Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Closing this issue since you made a PR, thanks for that! Could you please add a description to the PR, including some of the details you provided here? That would be the right place for it!",
+          "created_at": "2025-04-02T23:45:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 62,
+      "title": "[BUG] Error when saving the documentation",
+      "body": "## Description\nI'm not sure what's going on because the docs are being crawl but they are not saved on supabase for some reason.\n\nI've double (and triple) check that the supabase url and the service role key are correct, but i'm not sure what's happening.\n\nDocker logs:\n```\nProcessed 10 chunks for https://ai.pydantic.dev/agents/\n2025-03-13 17:54:01.710 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.710 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.710 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nProcessed 4 chunks for https://ai.pydantic.dev/dependencies/\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nProcessed 13 chunks for https://ai.pydantic.dev/graph/\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n2025-03-13 17:54:01.711 Thread 'Thread-13 (run_crawl)': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\nINFO:httpx:HTTP Request: POST https://pgupfoydrgzxfyodpvys.supabase.co/rest/v1/site_pages \"HTTP/2 404 Not Found\"\nError inserting chunk: {}\n```",
+      "state": "closed",
+      "author": "NanezX",
+      "author_type": "User",
+      "created_at": "2025-03-13T18:22:36Z",
+      "updated_at": "2025-04-02T23:43:13Z",
+      "closed_at": "2025-04-02T23:43:13Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/62/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/62",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/62",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.053203",
+      "comments": [
+        {
+          "author": "NanezX",
+          "body": "I would love to use a local database, any suggestions?",
+          "created_at": "2025-03-13T19:26:50Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "@NanezX Seems like it is saying the site_pages table isn't found. Did you go to the database tab and do that setup first?",
+          "created_at": "2025-03-19T12:41:42Z"
+        },
+        {
+          "author": "CodeMonkey01",
+          "body": "check if your firewall is block connections to supabase",
+          "created_at": "2025-03-24T14:46:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 61,
+      "title": "[BUG] 'message': 'JSON could not be generated', 'code': 404",
+      "body": "## Description\nive setup my .env for ollama\n\n`Error checking table status: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': 'b'<!DOCTYPE html><html lang=\"en\" data-sentry-element=\"Html\" data-sentry-component=\"MyDocument\" data-sentry-source-file=\"_document.tsx\"><head data-sentry-element=\"Head\" data-sentry-source-file=\"_document.tsx\"><meta charSet=\"utf-8\"/><title>Supabase</title><meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" data-sentry-element=\"meta\" data-sentry-source-file=\"_app.tsx\"/><style>:root{--font-custom:\\'__customFont_3e1b4b\\', \\'__customFont_Fallback_3e1b4b\\', Circular, custom-font, Helvetica Neue, Helvetica, Arial, sans-serif;--font-source-code-pro:\\'__Source_Code_Pro_d90f7b\\', \\'__Source_Code_Pro_Fallback_d90f7b\\', Source Code Pro, Office Code Pro, Menlo, monospace;}</style><link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"/dashboard/favicon/apple-icon-57x57.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"60x60\" href=\"/dashboard/favicon/apple-icon-60x60.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"/dashboard/favicon/apple-icon-72x72.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"76x76\" href=\"/dashboard/favicon/apple-icon-76x76.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"/dashboard/favicon/apple-icon-114x114.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"120x120\" href=\"/dashboard/favicon/apple-icon-120x120.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"/dashboard/favicon/apple-icon-144x144.png\"/><link rel=\"apple-touch-icon-precomposed\" sizes=\"152x152\" href=\"/dashboard/favicon/apple-icon-152x152.png\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-16x16.png\" sizes=\"16x16\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-32x32.png\" sizes=\"32x32\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-48x48.png\" sizes=\"48x48\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-96x96.png\" sizes=\"96x96\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-128.png\" sizes=\"128x128\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-180x180.png\" sizes=\"180x180\"/><link rel=\"icon\" type=\"image/png\" href=\"/dashboard/favicon/favicon-196x196.png\" sizes=\"196x196\"/><meta name=\"application-name\" content=\"Supabase Studio\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-TileColor\" content=\"#1E1E1E\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-TileImage\" content=\"/dashboard/favicon/mstile-144x144.png\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-square70x70logo\" content=\"/dashboard/favicon/mstile-70x70.png\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-square150x150logo\" content=\"/dashboard/favicon/mstile-150x150.png\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-wide310x150logo\" content=\"/dashboard/favicon/mstile-310x150.png\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"msapplication-square310x310logo\" content=\"/dashboard/favicon/mstile-310x310.png\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><meta name=\"theme-color\" content=\"#1E1E1E\" data-sentry-element=\"meta\" data-sentry-source-file=\"pages-router.tsx\"/><link rel=\"shortcut icon\" href=\"/dashboard/favicon/favicon.ico\"/><link rel=\"icon\" type=\"image/x-icon\" href=\"/dashboard/favicon/favicon.ico\"/><link rel=\"apple-touch-icon\" href=\"/dashboard/favicon/favicon.ico\"/><meta name=\"next-head-count\" content=\"30\"/><link rel=\"stylesheet\" type=\"text/css\" data-name=\"vs/editor/editor.main\" href=\"https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.37.0/min/vs/editor/editor.main.css\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/54303b32ba90fa38-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/907906e8fbfce607-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/0cc7d245d5cfdd81-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/5c27cc9f8a2b89ca-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/8c3413ba6d69dfc1-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/01027326dc6ad359-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/fe723311b54e86ee-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/media/dba81c1208da12ee-s.p.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\" data-next-font=\"size-adjust\"/><link rel=\"preload\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/css/1df0ff889c687906.css?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" as=\"style\"/><link rel=\"stylesheet\" href=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/css/1df0ff889c687906.css?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" nomodule=\"\" src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/webpack-be115aae7e4daffe.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/framework-7af093f04a99c210.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/main-0850bfe902396aeb.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/pages/_app-863bacda1684a936.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/7623-58802083e5de763b.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/chunks/pages/404-e727f15e9639b14f.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/VTdQ_dxGnB8zbm-r6d9-M/_buildManifest.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script><script src=\"https://frontend-assets.supabase.com/studio/b26b35fdcb2d/_next/static/VTdQ_dxGnB8zbm-r6d9-M/_ssgManifest.js?dpl=dpl_HJAiNJFWQ4sFZjgUFXFwy5P9bEKz\" defer=\"\"></script></head><body><div id=\"__next\"><script type=\"application/json\" data-flag-values=\"true\">{}</script><script>!function(){try{var d=document.documentElement,n=\\'data-theme\\',s=\\'setAttribute\\';var e=localStorage.getItem(\\'theme\\');if(\\'system\\'===e||(!e&&true)){var t=\\'(prefers-color-scheme: dark)\\',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = \\'dark\\';d[s](http://localhost:8501/n,%5C'dark%5C')}else{d.style.colorScheme = \\'light\\';d[s](http://localhost:8501/n,%5C'light%5C')}}else if(e){d[s](n,e|| \\'\\')}if(e===\\'light\\'||e===\\'dark\\')d.style.colorScheme=e}catch(e){}}()</script><div class=\"relative mx-auto flex h-screen w-full flex-col items-center justify-center\" data-sentry-component=\"Error404\" data-sentry-source-file=\"404.tsx\"><div class=\"absolute top-0 mx-auto w-full max-w-7xl px-8 pt-6 sm:px-6 lg:px-8\"><nav class=\"relative flex items-center justify-between sm:h-10\"><div class=\"flex flex-shrink-0 flex-grow items-center lg:flex-grow-0\"><div class=\"flex w-full items-center justify-between md:w-auto\"><a data-sentry-element=\"Link\" data-sentry-source-file=\"404.tsx\" href=\"/dashboard/projects\"><span style=\"box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%\"><span style=\"box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%\"><img style=\"display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27120%27%20height=%2724%27/%3e\"/></span><img alt=\"supabase\" data-sentry-element=\"Image\" data-sentry-source-file=\"404.tsx\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\"/><noscript><img alt=\"supabase\" data-sentry-element=\"Image\" data-sentry-source-file=\"404.tsx\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" srcSet=\"/dashboard/_next/image?url=%2Fdashboard%2Fimg%2Fsupabase-light.svg&amp;w=128&amp;q=75 1x, /dashboard/_next/image?url=%2Fdashboard%2Fimg%2Fsupabase-light.svg&amp;w=256&amp;q=75 2x\" src=\"/dashboard/_next/image?url=%2Fdashboard%2Fimg%2Fsupabase-light.svg&amp;w=256&amp;q=75\"/></noscript></span></a></div></div></nav></div><div class=\"absolute select-none opacity-[5%] filter transition duration-200 blur-none\"><h1 style=\"font-size:28rem\">404</h1></div><div class=\"flex flex-col items-center justify-center space-y-6 transition opacity-0\"><div class=\"flex w-[380px] flex-col items-center justify-center space-y-3 text-center\"><h3 class=\"text-xl\">Looking for something? \\xf0\\x9f\\x94\\x8d</h3><p class=\"text-foreground-light\">We couldn't find the page that you're looking for!</p></div><div class=\"flex items-center space-x-4\"><a data-sentry-element=\"Link\" data-sentry-source-file=\"404.tsx\" data-size=\"small\" type=\"button\" class=\"relative justify-center cursor-pointer inline-flex items-center space-x-2 text-center font-regular ease-out duration-200 rounded-md outline-none transition-all outline-0 focus-visible:outline-4 focus-visible:outline-offset-1 border bg-brand-400 dark:bg-brand-500 hover:bg-brand/80 dark:hover:bg-brand/50 text-foreground border-brand-500/75 dark:border-brand/30 hover:border-brand-600 dark:hover:border-brand focus-visible:outline-brand-600 data-[state=open]:bg-brand-400/80 dark:data-[state=open]:bg-brand-500/80 data-[state=open]:outline-brand-600 text-sm leading-4 px-3 py-2 h-[34px]\" href=\"/dashboard/projects\"><span class=\"truncate\">Head back</span></a></div></div></div><div></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"VTdQ_dxGnB8zbm-r6d9-M\",\"assetPrefix\":\"[https://frontend-assets.supabase.com/studio/b26b35fdcb2d\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}](https://frontend-assets.supabase.com/studio/b26b35fdcb2d%22,%22nextExport%22:true,%22autoExport%22:true,%22isFallback%22:false,%22scriptLoader%22:%5B%5D%7D)</script></body></html>''}`\n\n## Steps to Reproduce\n1. venv\\Scripts\\activate\n2. streamlit run streamlit_ui.py\n3. click on \"Archon - Database Configuration\"\n4. See error\n5. follow Manual SQL Execution Instructions on supabase\n6. run the code for the Manual SQL Execution\n7. runs fine but get error when restarting archon in database tab\n8. debug Manual SQL Execution with ai\n9. run and inject it \n10. refresh page\n11. error\n12. drop tables and repeat \n13. always get JSON could not be generated', 'code': 404\n\n## Expected Behavior\nconnect to the https://supabase.com/dashboard/project DB\n\n## Actual Behavior\nbig red block of error text\n\n## Screenshots\nIf applicable, add screenshots to help explain your problem.\n\n## Environment\n - git clone venv requirements Python Version\n\n## Additional Context ollama settings \n- Vector Dimensions set for ollama 768 for DB\n- BASE_URL=http://localhost:11434/v1\n- REASONER_MODEL=DeepSeek-R1:latest\n- PRIMARY_MODEL=DeepSeek-R1:latest\n",
+      "state": "closed",
+      "author": "givemhell",
+      "author_type": "User",
+      "created_at": "2025-03-11T12:28:22Z",
+      "updated_at": "2025-04-02T23:42:54Z",
+      "closed_at": "2025-04-02T23:42:54Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/61/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/61",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/61",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.236001",
+      "comments": [
+        {
+          "author": "givemhell",
+          "body": "running without the database connection results in \n\n`12:29:13.698   preparing model and tools run_step=1\n12:29:13.699   model request\nINFO:httpx:HTTP Request: POST http://localhost:11434/v1/chat/completions \"HTTP/1.1 \n200 OK\"\n12:29:40.144   handle model response\n2025-03-11 08:29:40.153 Uncaught app",
+          "created_at": "2025-03-11T12:31:32Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "This seems like it could potentially be an issue if you are running on Python 3.13 since LangGraph doesn't fully support 3.13 yet and that's a LangGraph error (RuntimeError: Called get_config outside of a runnable context). Could you please try running the Docker way?",
+          "created_at": "2025-03-19T12:40:59Z"
+        },
+        {
+          "author": "givemhell",
+          "body": "i hate docker and tbh every time i try to install it i have all kinds of issues\neven a windows wipe and ive had issues \nwindows 10 and 11 \nfuck docker \n\ni use pyenv \ni can change to whatever version of python, at the click of a btn on my stream deck local and global \ni didnt see any info on what ver",
+          "created_at": "2025-03-19T12:44:56Z"
+        },
+        {
+          "author": "givemhell",
+          "body": "i see \nPython 3.11+\n\ni will tey 3.11.9 now ",
+          "created_at": "2025-03-19T12:46:53Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Closing this since it has been two weeks, let me know if you got to test with 3.11.9 and if you are experiencing any issues still! I would also try Python 3.12",
+          "created_at": "2025-04-02T23:42:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 57,
+      "title": "Do any Models other than OpenAI work? I have found zero.",
+      "body": "I have been trying different models all night with OpenRouter trying to get Archon to work, and every single one throws an error. FYI: All these tests were done using the example “Build me an AI agent that can search the web with the Brave API.”\n\nI have yet to find a single working model. Ollama doesn’t work. OpenRouter doesn’t work.\n\nHere are some of the errors:\n\nopenai.NotFoundError: Error code: 404 - {‘error’: {‘message’: ‘No endpoints found that support tool use. To learn more about provider routing, visit: [Provider Routing | Intelligent Multi-Provider Request Routing — OpenRouter | Documentation](https://openrouter.ai/docs/provider-routing)’, ‘code’: 404}}\n\nTypeError: ‘NoneType’ object cannot be interpreted as an integer\n\npydantic_ai.exceptions.UnexpectedModelBehavior: Received empty model response",
+      "state": "closed",
+      "author": "WildeWebMarketing",
+      "author_type": "User",
+      "created_at": "2025-03-10T06:30:44Z",
+      "updated_at": "2025-04-02T23:42:15Z",
+      "closed_at": "2025-04-02T23:42:15Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/57/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/57",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/57",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.453659",
+      "comments": [
+        {
+          "author": "WildeWebMarketing",
+          "body": "I finally found a model that works.\n\nWhen using OpenRouter, you can filter models by \"tools\" under Supported Parameters on the sidebar on their website.\n\nYou should definitely add that to the instructions.",
+          "created_at": "2025-03-10T06:58:19Z"
+        },
+        {
+          "author": "WildeWebMarketing",
+          "body": "Still getting a lot of errors. This one primarily: TypeError: ‘NoneType’ object cannot be interpreted as an integer\n\nhttps://github.com/pydantic/pydantic-ai/issues/527\n",
+          "created_at": "2025-03-10T07:23:27Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Where is this NoneType error happening?\n\nI appreciate the suggestion to be clear on tool use LLMs in the docs too!",
+          "created_at": "2025-03-10T20:00:54Z"
+        },
+        {
+          "author": "doudoumei",
+          "body": "\nHave you successfully called the model in Ollama?",
+          "created_at": "2025-03-12T05:49:49Z"
+        },
+        {
+          "author": "WildeWebMarketing",
+          "body": "> Have you successfully called the model in Ollama?\n\nNo, I'm still trying to get it to just successfully embed the PydanticAI docs to the database.\n\nNo luck yet.",
+          "created_at": "2025-03-15T02:52:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 89,
+      "title": "Local Supabase",
+      "body": "Ugh, so frustrating.  Your tutorials are amazing, but hacking your code to local config is brutal.  I have supabase running on localhost:8000.  All my learning with pydantic and langgraph works fine with just that url and the key.  But changing your code to use that just doesn't cooperate:\n\n```\n    # Supabase client setup\n    \n    supabase_url = get_env_var(\"SUPABASE_URL\")\n    supabase_key = get_env_var(\"SUPABASE_SERVICE_KEY\")\n    supabase = create_client(get_env_var(\"SUPABASE_URL\"), get_env_var(\"SUPABASE_SERVICE_KEY\"))\n    if supabase:\n        try:\n            test_response = supabase.from_(\"site_pages\").select(\"*\").limit(1).execute()\n        except Exception as e:\n            print(f\"Failed to initialize Supabase: {e}\")\n            write_to_log(f\"Failed to initialize Supabase: {e}\")\n\n    return embedding_client, supabase     \n``` \n\nError checking table status: [Errno 111] Connection refused\n\nIn db dashboard at localhost:3001 it returns no errors (as expected since no data imported).  I also tried localhost:3001 since that is where the dashboard runs, no luck. ",
+      "state": "closed",
+      "author": "lamachine",
+      "author_type": "User",
+      "created_at": "2025-03-24T17:10:15Z",
+      "updated_at": "2025-03-30T19:07:03Z",
+      "closed_at": "2025-03-30T19:00:54Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/89/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/89",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/89",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.676783",
+      "comments": [
+        {
+          "author": "GiffenGood1",
+          "body": "I've managed to get local superbase to work with this project. If you are running Archon in docker then localhost is pointing towards the internal docker network and not your host machine network.\n\nThe host.docker.internal hostname will resolve to your host machine's IP address, allowing the contain",
+          "created_at": "2025-03-29T19:01:30Z"
+        },
+        {
+          "author": "lamachine",
+          "body": "WOOT.  +++ Kudos to you Sir or Ma'am  I am off and running!  Just put the http://host.docker.internal:8000 in the Archon UI environment tab.  \n\nAlmost.  But at least it accepted it.  On to the next challange\nURLs Found  62\nURLs Processed  62\nSuccessful  54\nFailed  8\n\nDatabase Statistics\nPydantic AI ",
+          "created_at": "2025-03-30T19:00:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 91,
+      "title": "...",
+      "body": null,
+      "state": "closed",
+      "author": "kevinnkansah",
+      "author_type": "User",
+      "created_at": "2025-03-25T08:13:59Z",
+      "updated_at": "2025-03-25T08:29:49Z",
+      "closed_at": "2025-03-25T08:29:27Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/91/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/91",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/91",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.842097",
+      "comments": []
+    },
+    {
+      "issue_number": 68,
+      "title": "[FEATURE] LangGraph Builder integration",
+      "body": "So Langchain just put out a new video about a visual builder for graphs in LangGraph:\n\nhttps://www.youtube.com/watch?v=iwPeT_I_GEc\n\nIt looks ideal for sketching out the skeleton of the flow which Archon could then code out.\n\nNotice how it also can generate the code once the graph is drawn up, through creating the stubs which are then passed into the editable file for low level completion. \n\nMaybe it could be incorporated into Archon which could do the rest of that process automatically, or even enter the Pydantic AI agent code into the LangGraph stubs for the agents.\n\n",
+      "state": "open",
+      "author": "konradre",
+      "author_type": "User",
+      "created_at": "2025-03-18T16:39:02Z",
+      "updated_at": "2025-03-23T23:26:16Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "future"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/68/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/68",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/68",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:58.842114",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Yeah I saw that video, super awesome! I think this would potentially be an incredible addition to Archon for that initial agent creation. My one hesitation though is that Archon is meant to make it easy enough to build agents with just a simple prompt at the start (maybe not powerful enough now, but",
+          "created_at": "2025-03-19T12:49:47Z"
+        },
+        {
+          "author": "usadaddy",
+          "body": "It seems like that feature is super useful for making rapid changes to the flow as well. To my way of thinking (could be wrong also), having the visual builder there to build out the flow visually is a lot easier than just having it in mind and working with prompts. If Archon could initialize the vi",
+          "created_at": "2025-03-20T07:23:27Z"
+        },
+        {
+          "author": "konradre",
+          "body": "@coleam00 Did you also see Lance's new vid about using an MCP doc lookup instead of indexing docs like you're doing with Archon?\n\nAt the very least, the upside of this method is that you can have very targeted recall for specific recurring issues.\n\nI have a feeling that combining both approaches wou",
+          "created_at": "2025-03-20T19:52:11Z"
+        },
+        {
+          "author": "RepairYourTech",
+          "body": "n8n and flowise are built on https://github.com/xyflow/xyflow\n\nit would be dope to just make a custom one for archon that handles all the agent frameworks",
+          "created_at": "2025-03-23T23:26:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 67,
+      "title": "[BUG] MCP server started by run_docker.py not working on linux",
+      "body": "```\npython3 run_docker.py\nCONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                                                                                      NAMES\na5ee115acbb3   archon-mcp:latest   \"python mcp_server.py\"   3 seconds ago    Up 3 seconds    8100/tcp                                                                                   agitated_leavitt\n5052070d8924   archon:latest       \"streamlit run strea…\"   26 minutes ago   Up 26 minutes   0.0.0.0:8100->8100/tcp, [::]:8100->8100/tcp, 0.0.0.0:8501->8501/tcp, [::]:8501->8501/tcp   archon-container\n```\n\n![Image](https://github.com/user-attachments/assets/308a6c91-191f-426a-b6aa-24b5bee99a83)\n\nMCP configuration:\n```\n{\n  \"mcpServers\": {\n    \"archon\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"-e\",\n        \"GRAPH_SERVICE_URL\",\n        \"archon-mcp:latest\"\n      ],\n      \"env\": {\n        \"GRAPH_SERVICE_URL\": \"http://host.docker.internal:8100\"\n      }\n    }\n  }\n}\n\n```",
+      "state": "open",
+      "author": "BarelElbaz",
+      "author_type": "User",
+      "created_at": "2025-03-16T17:33:05Z",
+      "updated_at": "2025-03-20T09:19:10Z",
+      "closed_at": null,
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/67/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/67",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/67",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:59.072419",
+      "comments": [
+        {
+          "author": "BarelElbaz",
+          "body": "After bypassing the DNS resolution by using the actual IP:\n```\n{\n  \"mcpServers\": {\n    \"archon\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"-e\",\n        \"GRAPH_SERVICE_URL\",\n        \"archon-mcp:latest\"\n      ],\n      \"env\": {\n        \"GRAPH_SER",
+          "created_at": "2025-03-16T17:39:23Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Linux needs the \"--add-host host.docker.internal:host-gateway\" parameter for host.docker.internal to work, but I've already added that... I think the issue might be something not working within the Archon container itself. Could you please check the logs for the container and see if there is an erro",
+          "created_at": "2025-03-19T12:47:27Z"
+        },
+        {
+          "author": "BarelElbaz",
+          "body": "You indeed added the --add-host (in `run_docker.py`)\nthis is the log of the mcp container:\n```\n{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{\"experimental\":{},\"prompts\":{\"listChanged\":false},\"resources\":{\"subscribe\":false,\"listChanged\":false},\"tools\":{\"listChanged\"",
+          "created_at": "2025-03-20T09:00:20Z"
+        },
+        {
+          "author": "BarelElbaz",
+          "body": "After replacing `http://host.docker.internal:8100` with `http://10.25.15.102:8100` (my actual private ip)\n\nit worked fine:\n```\n{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{\"experimental\":{},\"prompts\":{\"listChanged\":false},\"resources\":{\"subscribe\":false,\"listChange",
+          "created_at": "2025-03-20T09:12:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 41,
+      "title": "[FEATURE] Dependabot",
+      "body": "## Describe the feature you'd like and why\nI would like to suggest adding Dependabot to automatically check for updates in Docker and Python dependencies. This would help keep code secure and up to date, ensuring we quickly address any vulnerabilities or outdated packages.\n\n## User Impact\nAnyone working on or using the project would benefit by reducing manual dependency maintenance and improving overall stability.\n\n## Implementation Details (optional)\nDependabot can be configured via `.github/dependabot.yml` to monitor dependency files. At first glance I believe python and docker shall be considered. If this aligns with the project’s scope, I can look into setting it up. Final step would be you activating dependency graph and Dependabot, which can only be performed by the repository owner.\n\n## Additional context\nLet me know if this is within the scope of the project. I have some free time this weekend, and I'd be happy to open a PR with the required changes and configurations if that seems fine.\n",
+      "state": "closed",
+      "author": "juan-miii",
+      "author_type": "User",
+      "created_at": "2025-03-05T16:18:19Z",
+      "updated_at": "2025-03-19T16:13:08Z",
+      "closed_at": "2025-03-19T16:13:08Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/41/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/41",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/41",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:59.281871",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "This is a great idea, I appreciate it @juan-miii! I haven't used Dependabot before - as long as you don't think this would cause issues for end users with versions of things updating more frequently, then I am all for it!",
+          "created_at": "2025-03-09T12:33:44Z"
+        },
+        {
+          "author": "juan-miii",
+          "body": "Totally understandable! In practice, Dependabot will open pull requests any time it detects an available update. We can configure our GitHub Actions to automatically build and test the project for each new PR. That way:\n\n1. If an update passes all tests/builds successfully, we can merge it without r",
+          "created_at": "2025-03-09T15:57:08Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "That sounds amazing, thank you @juan-miii!",
+          "created_at": "2025-03-09T17:22:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 44,
+      "title": "[FEATURE] Handle openAI rate limits",
+      "body": "## Describe the feature you'd like and why\nHandle API rate limits from openAI\n\n## User Impact\n```\n{\"log\":\"Error getting embedding: Error code: 429 - {'error': {'message': 'Rate limit reached for text-embedding-3-small in organization org-XXXXXXXXX on tokens per min (TPM): Limit 1000000, Used 1000000, Requested 603. Please try again in 36ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}\\n\",\"stream\":\"stdout\",\"time\":\"2025-03-06T11:04:24.131619492Z\"}\n```\n## Implementation Details (optional)\n```\nasync def get_embedding(text: str, max_retries: int = 5) -> List[float]:\n    \"\"\"Get embedding vector from OpenAI with rate limit handling.\n    \n    Args:\n        text: The text to get embedding for\n        max_retries: Maximum number of retry attempts for rate-limited requests\n        \n    Returns:\n        The embedding vector or zero vector on unrecoverable error\n    \"\"\"\n    retry_count = 0\n    base_delay = 0.1  # Start with 100ms delay\n    \n    while retry_count <= max_retries:\n        try:\n            response = await openai_client.embeddings.create(\n                model=embedding_model,\n                input=text\n            )\n            return response.data[0].embedding\n            \n        except Exception as e:\n            error_message = str(e)\n            \n            # Check if this is a rate limit error\n            if \"rate_limit_exceeded\" in error_message and retry_count < max_retries:\n                retry_count += 1\n                \n                # Try to extract wait time from error message\n                wait_time = None\n                if \"Please try again in \" in error_message:\n                    try:\n                        wait_text = error_message.split(\"Please try again in \")[1].split(\".\")[0]\n                        if \"ms\" in wait_text:\n                            wait_time = float(wait_text.replace(\"ms\", \"\")) / 1000.0\n                        elif \"s\" in wait_text:\n                            wait_time = float(wait_text.replace(\"s\", \"\"))\n                    except:\n                        pass\n                \n                # If we couldn't extract wait time, use exponential backoff with jitter\n                if wait_time is None:\n                    # Calculate delay with exponential backoff and some random jitter\n                    wait_time = base_delay * (2 ** retry_count) * (0.5 + random.random())\n                \n                print(f\"Rate limit reached, waiting {wait_time:.2f}s before retry {retry_count}/{max_retries}\")\n                await asyncio.sleep(wait_time)\n            else:\n                # Not a rate limit error or we've exhausted retries\n                print(f\"Error getting embedding: {e}\")\n                return [0] * 1536  # Return zero vector on error\n    \n    # If we've exhausted all retries\n    print(f\"Failed to get embedding after {max_retries} retries\")\n    return [0] * 1536\n```\n",
+      "state": "open",
+      "author": "BarelElbaz",
+      "author_type": "User",
+      "created_at": "2025-03-06T12:26:17Z",
+      "updated_at": "2025-03-19T16:03:26Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/44/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/44",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/44",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:59.643788",
+      "comments": [
+        {
+          "author": "BarelElbaz",
+          "body": "In general we should improve the error handling",
+          "created_at": "2025-03-06T12:26:40Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Yes I agree that better error handling in general is in order, that is something I am going to be looking into!\n\nAny specific suggestions besides handling the rate limit errors?",
+          "created_at": "2025-03-09T12:34:22Z"
+        },
+        {
+          "author": "juan-miii",
+          "body": "@BarelElbaz This looks great! If you’re up for it, feel free to open a PR with these changes, or add more details so others can pick it up.\n@coleam00 Agreed that adding robust logging instead of simple prints would help with traceability and debugging.",
+          "created_at": "2025-03-19T16:03:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 60,
+      "title": "[BUG] Off server local Ollama usage",
+      "body": "## Description\nWhen attempting to use a locally hosted Ollama server that is not located within the docker network or localhost, it does not detect that it is Ollama.\n\nWhen checking if it is ollama, \"localhost\", \"host.docker.internal\", \"ollama\" are checked. If it is being run on a different server within the same network, none of these will pass.\n\nDuring the setup, this prevents the document scraper from properly managing the initial scraping.\n\nI have also run into an additional issue during the scraping from the docker container throttling the pulls preventing a clean scrape of the Pydantic AI Documentation, but that's a separate issue.\n\nI tested this using a streamlit instance running next to the docker bundle, and in my testing, it worked.\n\n##\nSuspected Code:\nutils/utils.py: Line 102\n\n```\ndef get_clients():\n    openai_client = None\n    base_url = get_env_var('BASE_URL') or 'https://api.openai.com/v1'\n    api_key = get_env_var('LLM_API_KEY') or 'no-llm-api-key-provided'\n    is_ollama = any(kw in base_url.lower() for kw in [\"localhost\", \"host.docker.internal\", \"ollama\"])\n```\n\n\n## Environment\n - OS: Fedora\n - Python Version: Python 3.13.2\n\n## Possible Solution\nA possible solution is to also check for the default port. (:11434)\nutils/utils.py: Line 106\n`    is_ollama = any(kw in base_url.lower() for kw in [\"localhost\", \"host.docker.internal\", \"ollama\", \":11434\"])`",
+      "state": "closed",
+      "author": "sudrakoder",
+      "author_type": "User",
+      "created_at": "2025-03-11T03:17:20Z",
+      "updated_at": "2025-03-17T13:08:42Z",
+      "closed_at": "2025-03-17T13:08:41Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/60/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/60",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/60",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:38:59.840544",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "This has been resolved with recent changes to environment variables!",
+          "created_at": "2025-03-17T13:08:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 59,
+      "title": "[BUG] MCP config json error path",
+      "body": "It has error while add \"streamlit_pages\" in front of.\nIt should be E:\\\\archon\\\\mcp\\\\mcp_server.py \n![Image](https://github.com/user-attachments/assets/f8c862bc-af5a-49d6-bb7a-0532bc5fdc6c)",
+      "state": "closed",
+      "author": "khanhthanhdev",
+      "author_type": "User",
+      "created_at": "2025-03-10T15:36:31Z",
+      "updated_at": "2025-03-10T20:12:45Z",
+      "closed_at": "2025-03-10T20:12:44Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/59/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/59",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/59",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:01.703898",
+      "comments": [
+        {
+          "author": "khanhthanhdev",
+          "body": "The get path function in mcp.py file in streamlit_pages will take the path include /streamlit_pages that cause error\n![Image](https://github.com/user-attachments/assets/5ca70735-772d-4d66-9746-46128cc58e73)",
+          "created_at": "2025-03-10T15:43:48Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Fixed this with the latest commit. Thanks for calling this out and for giving great details too!",
+          "created_at": "2025-03-10T20:12:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 56,
+      "title": "[BUG] Instructions for Recreating Site Pages Table, and easy fix.",
+      "body": "## Description\nWhen re-creating when data has already been populated, we get this error:-\nERROR:  42723: function \"match_site_pages\" already exists with same argument types\n\n## Environment\n - OS: Windows 11 wsl2 debian\n - Python Version: Python 3.12\n - Using Streamlit \n\n## Solution\nDrop the function before dropping the table:-\nDROP FUNCTION IF EXISTS match_site_pages(vector(1536), int, jsonb);\nDROP TABLE IF EXISTS site_pages CASCADE;",
+      "state": "closed",
+      "author": "drew1two",
+      "author_type": "User",
+      "created_at": "2025-03-10T06:06:43Z",
+      "updated_at": "2025-03-10T20:12:27Z",
+      "closed_at": "2025-03-10T20:12:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/56/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/56",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/56",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:01.899655",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Fix this with the latest commit - thank you for pointing this out!",
+          "created_at": "2025-03-10T20:12:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 55,
+      "title": "[FEATURE]  Archon V5: Multi-Agent Coding Workflow",
+      "body": "## Describe the feature you'd like and why\nSpecialized agents for different parts of the agent creation process. Creating this issue to track my progress on this over the next week or two.\n\n## User Impact\nThis will make the agent creation process more robust for everyone.\n\n## Implementation Details (optional)\nSee the future enhancements tab in Archon for more info on what this entails.\n\n## Additional context\nTBD",
+      "state": "open",
+      "author": "coleam00",
+      "author_type": "User",
+      "created_at": "2025-03-09T17:22:00Z",
+      "updated_at": "2025-03-09T17:22:00Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/55/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/55",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/55",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.072861",
+      "comments": []
+    },
+    {
+      "issue_number": 54,
+      "title": "[FEATURE]  Enhance the Environment Tab",
+      "body": "## Describe the feature you'd like and why\nThe environment tab in its current state (for setting environment variables) is not the most intuitive. Instead of just asking for a base URL, it should have a provider dropdown select and an option to override the base URL if necessary. Then based on the provider selected the environment variables can be more dynamic so it isn't as confusing.\n\nFor example, if you select OpenRouter for your LLM, you still need to use a different provider for the embedding model since OpenRouter doesn't have embedding models. But if you choose OpenAI or Ollama, you can use it as the provider for both the LLM and embedding model.\n\n## User Impact\nThis will make the setup for Archon make more sense for everyone.\n\n## Implementation Details (optional)\nProbably going to separate the provider selection for the LLM and embedding model. I'll have to think on this more. But basically the user will first select their provider, and then the first of the environment variable options related to the LLM/embeddings will show up with hints on how to get it set up specifically for the provider selected.",
+      "state": "open",
+      "author": "coleam00",
+      "author_type": "User",
+      "created_at": "2025-03-09T17:20:12Z",
+      "updated_at": "2025-03-09T17:20:12Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/54/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/54",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/54",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.072884",
+      "comments": []
+    },
+    {
+      "issue_number": 51,
+      "title": "[FEATURE]  Split up the Massive Streamlit App Script",
+      "body": "## Describe the feature you'd like and why\nRight now the Streamlit script is wayyyy too long. Need to split it out into different files like I did for future_enhancements.py.\n\n## User Impact\nThis will help myself a ton as well as future contributors.\n\n## Implementation Details (optional)\nGoing to be making a dedicated folder for the Streamlit pages and splitting everything up like I did for the future enhancements tab.",
+      "state": "closed",
+      "author": "coleam00",
+      "author_type": "User",
+      "created_at": "2025-03-09T12:44:23Z",
+      "updated_at": "2025-03-09T17:17:23Z",
+      "closed_at": "2025-03-09T17:17:22Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/51/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "coleam00"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/51",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/51",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.072892",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Finished this with the latest commit.",
+          "created_at": "2025-03-09T17:17:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 52,
+      "title": "[BUG] Ollama is unlikely to be running on localhost inside a docker container",
+      "body": "## Description\nOllama is unlikely to be running on localhost inside a docker container\n\n## Steps to Reproduce\nNone\n\n## Expected Behavior\nProperly identify if end user is using Ollama\n\n## Actual Behavior\nThe current logic will likely never work.\n\n## Screenshots\nNone\n\n## Environment\nDocker\n\n## Additional Context\nNone\n\n## Possible Solution\narchon_graph.py line 36\n\ncurrent code:\nis_ollama = \"localhost\" in base_url.lower()\nis_anthropic = \"anthropic\" in base_url.lower()\nis_openai = \"openai\" in base_url.lower()\n\nsuggested updates:\nis_anthropic = \"anthropic\" in base_url.lower()\nis_openai = \"openai\" in base_url.lower()\nis_ollama = not is_anthropic and not is_openai",
+      "state": "closed",
+      "author": "pijim",
+      "author_type": "User",
+      "created_at": "2025-03-09T15:54:42Z",
+      "updated_at": "2025-03-09T17:17:02Z",
+      "closed_at": "2025-03-09T17:17:01Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/52/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/52",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/52",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.258880",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "This is a really good point, I appreciate you calling this out! I'm thinking the base URL will just be host.docker.internal (Ollama running on the host) or ollama (using an Ollama instance in another container in the network), so I'm thinking of just including those in the check. What do you think?",
+          "created_at": "2025-03-09T16:10:11Z"
+        },
+        {
+          "author": "pijim",
+          "body": "I think the \"right\" way do do it to add a provider enum and expose that in the environment vars rather than looking at the URL for clues.  It'll clean up a few places where the isopenai/isanthropic checks are used.  It also allows you to extend to other providers later.  I think the easiest is what ",
+          "created_at": "2025-03-09T16:54:16Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> I think the \"right\" way do do it to add a provider enum and expose that in the environment vars rather than looking at the URL for clues. It'll clean up a few places where the isopenai/isanthropic checks are used. It also allows you to extend to other providers later. I think the easiest is what I",
+          "created_at": "2025-03-09T17:17:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 35,
+      "title": "[BUG] Application Crashes When Entering Invalid Supabase URL",
+      "body": "## Description\nWhen an invalid Supabase URL is entered into the application, it crashes instead of displaying an error message. This prevents users from correcting the URL and continuing to use the application.\n\n## Steps to Reproduce\n1. Open the application.\n2. Enter an invalid Supabase URL, such as:\n   ```\n   postgresql://postgres:1234@db.ecprthkcdisvsd.supabase.co:5432/postgres\n   ```\n\n## Expected Behavior\nThe application should display an error message indicating that the URL is invalid, allowing the user to correct it.\n\n## Actual Behavior\nThe application crashes, and it becomes impossible to change the URL to a correct one.\n\n## Screenshots\n![Image](https://github.com/user-attachments/assets/6ecf42bb-44a4-4615-8167-4b16091e9c44)\n\n## Environment\n- **Operating System:** Windows 10\n- **Python Version:** 3.12.6\n- **Framework:** Streamlit\n\n## Additional Information\nThis issue is critical as it prevents users from recovering from a simple input error, leading to a poor user experience.\n\n## Suggested Fix\nImplement error handling to validate the Supabase URL and display an appropriate error message without crashing the application.",
+      "state": "closed",
+      "author": "Xairooo",
+      "author_type": "User",
+      "created_at": "2025-03-04T10:55:44Z",
+      "updated_at": "2025-03-09T17:15:36Z",
+      "closed_at": "2025-03-09T17:15:35Z",
+      "labels": [
+        "bug",
+        "looking into it"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/35/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/35",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/35",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.440887",
+      "comments": [
+        {
+          "author": "sadbro",
+          "body": "Can I work on this ?\nlooks fun",
+          "created_at": "2025-03-04T12:11:02Z"
+        },
+        {
+          "author": "solankivedant10",
+          "body": "Modify the code where you initialize the Supabase client (Client = Client(...)) to validate the URL before attempting to connect.",
+          "created_at": "2025-03-05T11:16:03Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Can I work on this ? looks fun\n\nYes feel free! I might try to knock it out soon too",
+          "created_at": "2025-03-09T12:31:25Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Modify the code where you initialize the Supabase client (Client = Client(...)) to validate the URL before attempting to connect.\n\nYes this is the plan! I am looking into this soon",
+          "created_at": "2025-03-09T12:31:38Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Fixed this with the latest commit!",
+          "created_at": "2025-03-09T17:15:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 29,
+      "title": "[BUG] Archon Clear Table Data",
+      "body": "## Description\nON the Database tab, clicking the Clear Table Data button results in an error and table data are not cleared.\n\n## Steps to Reproduce\n1. Go to the Database tab\n2. Click on the \"Clear Table Data\" button.\n4. See error\n\n## Expected Behavior\nThe table data are cleared and the user receives positive feedback.\n\n## Actual Behavior\nOne of two things happens. Either the options never returns or it returns this error: \n```\narchon/streamlit_ui.py:629: RuntimeWarning: coroutine ‘clear_existing_records’ was never awaited\nst.error(f\":x: Error clearing Pydantic AI docs: {str(e)}\")\n:x: Error clearing Pydantic AI docs: asyncio.run() cannot be called from a running event loop\n```\n## Environment\n - OS: macOS\n - Python Version: 3.11.5\n - Using Streamlit \n",
+      "state": "closed",
+      "author": "xactant",
+      "author_type": "User",
+      "created_at": "2025-03-03T02:45:17Z",
+      "updated_at": "2025-03-09T17:15:21Z",
+      "closed_at": "2025-03-09T17:15:20Z",
+      "labels": [
+        "bug",
+        "looking into it"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/29/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/29",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/29",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.660415",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Thanks for reporting this @xactant! I will be taking a look soon",
+          "created_at": "2025-03-03T12:20:44Z"
+        },
+        {
+          "author": "bigsk1",
+          "body": "@xactant \n\nLine 421 in crawl_pydantic_ai_docs.py \n\n```bash\nasync def clear_existing_records():\n    try:\n        result = await supabase.table(\"site_pages\").delete().eq(\"metadata->>source\", \"pydantic_ai_docs\").execute()   # add await\n        print(\"Cleared existing pydantic_ai_docs records from site_",
+          "created_at": "2025-03-07T06:48:59Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Fixed this with the latest commit!",
+          "created_at": "2025-03-09T17:15:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 53,
+      "title": "[BUG] Missing import from streamlit chat.py",
+      "body": "## Description\nThe Command import is missing\n\n## Steps to Reproduce\nNone\n\n## Expected Behavior\nNone\n\n## Actual Behavior\nNone\n\n## Screenshots\nNone\n\n## Environment\nNone\n\n## Additional Context\nNone\n\n## Possible Solution\nAdd import to streamlit_pages/chat.py\n\nfrom langgraph.types import Command",
+      "state": "closed",
+      "author": "pijim",
+      "author_type": "User",
+      "created_at": "2025-03-09T15:56:01Z",
+      "updated_at": "2025-03-09T16:11:25Z",
+      "closed_at": "2025-03-09T16:11:24Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/53/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/53",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/53",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:02.901903",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Shoot I knew there would be little things like this when I try to modularize the Streamlit script. Fixed this just now, thank you for calling it out!",
+          "created_at": "2025-03-09T16:11:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 47,
+      "title": "[BUG] MCP run_agent command 500 error on docker deployment in Cursor",
+      "body": "## Description\nFollowing the instructions in the README. When using the MCP server via the recommended docker deployment the Archon MCP server is available but when using in Cursor it received a 500 internal server error on the run_agent step\n\n## Steps to Reproduce\nError executing tool run_agent: 500 Server Error: Internal Server Error for url: http://host.docker.internal:8100/invoke\n\n\n## Expected Behavior\nrun_agent hits /invoke and begins building the agent. \n\n## Actual Behavior\n500 Internal Server error\n\n## Screenshots\n![Image](https://github.com/user-attachments/assets/75d3ffc5-60a7-41aa-8908-1ea8497c8518)\n\n## Environment\n - OS: Mac - 15.3.1 (24D70)\n - Python Version: 3.12 but using the recommended docker deplyment\n  - Using MCP or Streamlit (or something else) - MCP configured through streamlit",
+      "state": "closed",
+      "author": "NicholasSpisak",
+      "author_type": "User",
+      "created_at": "2025-03-08T05:37:03Z",
+      "updated_at": "2025-03-09T16:08:48Z",
+      "closed_at": "2025-03-09T16:08:47Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/47/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/47",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/47",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:03.062581",
+      "comments": [
+        {
+          "author": "NicholasSpisak",
+          "body": "Log messages - same error in docker and python deploys:\n\n--- SHOWING NEWEST LOGS FIRST (AUTO-SCROLL MODE) ---\n\nINFO:     127.0.0.1:56416 - \"POST /invoke HTTP/1.1\" 500 Internal Server Error\n05:48:26.263   model request\n05:48:26.262   preparing model and tools run_step=1\n05:48:26.262 pydantic_ai_coder",
+          "created_at": "2025-03-08T05:49:46Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Sorry you are running into this! Could you please check the contents of Workbench/logs.txt and see if you have a more helpful error message there? Error handling/logging is something I am improving soon too btw.",
+          "created_at": "2025-03-09T12:35:16Z"
+        },
+        {
+          "author": "NicholasSpisak",
+          "body": "Okay, this is way more helpful seeing where the low level logs are stored. Looks like it wasn't handling the openrouter configurations I had for the LLM settings. I updated everything to OpenAI direct and got it work. Thank you! ",
+          "created_at": "2025-03-09T15:27:28Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Okay, this is way more helpful seeing where the low level logs are stored. Looks like it wasn't handling the openrouter configurations I had for the LLM settings. I updated everything to OpenAI direct and got it work. Thank you!\n\nPerfect, glad you figured it out! I've made a couple improvements to",
+          "created_at": "2025-03-09T16:08:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 50,
+      "title": "[FEATURE]  Better Error Handling",
+      "body": "## Describe the feature you'd like and why\nCurrently a lot of errors that happen in the backend with the MCP server don't bubble up to the frontend so it's hard to tell what is going wrong when there is a 500 error for the Archon service API endpoint.\n\nMight need to just direct everyone to check the Workbench/logs.txt file as well.\n\n## User Impact\nAnyone who gets a 500 internal error from the API will benefit from being able to more easily see what is going wrong.\n\n## Implementation Details (optional)\nReturning a specific error message instead of just raising a 500 error + updating docs to check logs.txt.\n\n## Additional context\nExample of an issue this would help with #47 ",
+      "state": "closed",
+      "author": "coleam00",
+      "author_type": "User",
+      "created_at": "2025-03-09T12:43:06Z",
+      "updated_at": "2025-03-09T13:26:12Z",
+      "closed_at": "2025-03-09T13:26:11Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/50/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "coleam00"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/50",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/50",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:03.258619",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Finished for now, probably still some opportunities to make it even better",
+          "created_at": "2025-03-09T13:26:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 39,
+      "title": "[BUG] Error checking table status: [Errno 111] Connection refused",
+      "body": null,
+      "state": "closed",
+      "author": "moghadas76",
+      "author_type": "User",
+      "created_at": "2025-03-05T00:26:16Z",
+      "updated_at": "2025-03-09T12:32:15Z",
+      "closed_at": "2025-03-09T12:32:14Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/39/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/39",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/39",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:03.436585",
+      "comments": [
+        {
+          "author": "CodeMonkey01",
+          "body": "maybe duplicate: check https://github.com/coleam00/Archon/issues/36",
+          "created_at": "2025-03-06T22:46:22Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Closing this since yes I believe it is a duplicate and no text provided for this issue. Please reopen with more details if you want!",
+          "created_at": "2025-03-09T12:32:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "[FEATURE] Include BAML",
+      "body": "## Describe the feature you'd like and why\nBAML is an advancement over Pydantic AI. So it would be a good choice to have it among the options for creating agents.\n\n## User Impact\nAnyone who wants to build more reliable AI agents will benefit.\n\n## Implementation Details (optional)\nhttps://docs.boundaryml.com/home\n\n## Additional context\nhttps://docs.boundaryml.com/guide/comparisons/baml-vs-pydantic",
+      "state": "open",
+      "author": "henrymazer",
+      "author_type": "User",
+      "created_at": "2025-03-03T13:24:06Z",
+      "updated_at": "2025-03-09T12:30:54Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "future"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/31/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/31",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/31",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:03.628357",
+      "comments": [
+        {
+          "author": "varunpp",
+          "body": "+1 for BAML",
+          "created_at": "2025-03-06T19:55:57Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "BAML looks fantastic - this is actually my first time seeing it! I'll be including support for other frameworks besides Pydantic AI and LangGraph in V10 and it sure seems BAML deserves a spot!",
+          "created_at": "2025-03-09T12:30:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 28,
+      "title": "[FEATURE] Need support for AzureOpenAI",
+      "body": "need support for azure Openai",
+      "state": "closed",
+      "author": "rohithbojja",
+      "author_type": "User",
+      "created_at": "2025-03-02T18:05:30Z",
+      "updated_at": "2025-03-09T12:28:03Z",
+      "closed_at": "2025-03-09T12:28:03Z",
+      "labels": [
+        "enhancement",
+        "future"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/28/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/28",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/28",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:03.800646",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "I will be adding support for a bunch of providers at once in a later version and yes AzureOpenAI will be included!",
+          "created_at": "2025-03-09T12:27:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 18,
+      "title": "[FEATURE] automated testing",
+      "body": "Build a sub agent that generates  tests and  another as a test runner. \n\nBackground. The auto run features of windsurf and cursor sometimes get into loops they will also on occasion change tests to force them to pass. \n\nas an idea see (  https://github.com/BuilderIO/micro-agent)\n\n",
+      "state": "open",
+      "author": "ephraimm",
+      "author_type": "User",
+      "created_at": "2025-02-20T21:16:37Z",
+      "updated_at": "2025-03-09T12:27:10Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "future"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/18/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/18",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/18",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:04.000915",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Love this suggestion, thank you @ephraimm! I'll add this to the new project board I made for Archon.",
+          "created_at": "2025-02-24T18:44:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 30,
+      "title": "[BUG]",
+      "body": "# Bug Report: Archon MCP Container Configuration and Connectivity Issues\n\n## Summary\nThe Archon MCP (Master Control Program) service on port 8100 was not properly starting or responding to requests, causing connectivity issues between the main Archon container and the MCP service.\n\n## Environment\n- OS: Darwin 23.6.0\n- Docker Version: Running on Docker Desktop\n- Affected Components:\n  - Archon main container\n  - Archon MCP container\n  - Port: 8100\n\n## Issue Description\nThe original setup had several issues:\n1. The MCP container was not properly starting due to Python package dependency issues\n2. The container was exiting immediately after startup\n3. The `mcp_server.py` had syntax errors and was not properly configured\n4. The Docker networking between containers was not properly configured\n\n## Investigation Steps Taken\n1. Checked container logs:\n   ```\n   File \"/app/mcp_server.py\", line 40\n       timestamp = datetime.now().strftime(\"\n                                         ^\n   SyntaxError: unterminated string literal (detected at line 40)\n   ```\n\n2. Inspected Docker configuration:\n   - Found that both containers were trying to use port 8100\n   - MCP container was not properly joining the Docker network\n   - Dependencies were not properly specified in requirements.txt\n\n3. Tested connectivity:\n   - Local machine to MCP: Failed\n   - Archon container to MCP: Failed\n   - Found networking isolation issues between containers\n\n## Root Causes\n1. **Package Dependencies**: The `mcp` package (version 1.2.1) specified in requirements.txt was either:\n   - Not available in PyPI\n   - Had incorrect version specification\n   - Had malformed requirements.txt (found '%' character at end of line)\n\n2. **Container Configuration**:\n   - Both containers were configured to use port 8100\n   - No proper Docker network configuration\n   - Missing environment variables for container communication\n\n3. **Code Issues**:\n   - Syntax errors in mcp_server.py\n   - Improper handling of Python imports\n   - Missing error handling and logging\n\n## Temporary Fix Applied\n1. Created a basic MCP server implementation that:\n   - Listens on port 8100\n   - Handles both GET and POST requests\n   - Returns proper JSON responses\n   - Implements basic error handling\n\n2. Fixed container configuration:\n   - Created dedicated Docker network\n   - Properly mapped container ports\n   - Set up container-to-container communication\n\n3. Verified working endpoints:\n   ```bash\n   # Local access\n   $ curl http://localhost:8100\n   {\"status\": \"MCP is running\"}\n\n   # Container-to-container access\n   $ curl http://archon-mcp:8100\n   {\"status\": \"MCP is running\"}\n   ```\n\n## Recommended Long-term Fixes\n1. **Code Changes**:\n   - Fix syntax errors in original mcp_server.py\n   - Add proper error handling and logging\n   - Implement proper Python package structure\n   - Add health check endpoints\n\n2. **Docker Configuration**:\n   ```dockerfile\n   # Recommended MCP Dockerfile\n   FROM python:3.12-slim\n   WORKDIR /app\n   COPY requirements.txt .\n   RUN pip install --no-cache-dir -r requirements.txt\n   COPY . .\n   ENV PYTHONUNBUFFERED=1\n   ENV PYTHONPATH=/app\n   EXPOSE 8100\n   HEALTHCHECK CMD curl --fail http://localhost:8100 || exit 1\n   CMD [\"python\", \"mcp_server.py\"]\n   ```\n\n3. **Dependency Management**:\n   - Fix requirements.txt formatting\n   - Specify exact package versions\n   - Add package integrity checks\n   - Consider using virtual environments\n\n4. **Deployment Changes**:\n   - Add container orchestration (e.g., Docker Compose)\n   - Implement proper service discovery\n   - Add monitoring and logging\n   - Implement automatic container restart policies\n\n## Additional Recommendations\n1. Add comprehensive logging to both containers\n2. Implement proper error handling for network failures\n3. Add API documentation for MCP endpoints\n4. Implement proper health checks\n5. Add automated tests for container communication\n6. Consider implementing circuit breakers for service communication\n\n## Impact\n- Users unable to use Archon's MCP-dependent features\n- Potential data loss or corruption if MCP communication fails\n- System instability due to container communication issues\n\n## Attachments\n- Container logs\n- Docker configuration files\n- Network test results\n\n## Priority\nHigh - This issue prevents core functionality from working properly.\n\n## Status\nTemporary fix implemented. Awaiting proper implementation of recommended long-term fixes.",
+      "state": "closed",
+      "author": "arashiyama",
+      "author_type": "User",
+      "created_at": "2025-03-03T04:37:10Z",
+      "updated_at": "2025-03-09T12:26:30Z",
+      "closed_at": "2025-03-09T12:26:29Z",
+      "labels": [
+        "bug",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/30/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/30",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/30",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:04.203298",
+      "comments": [
+        {
+          "author": "bigsk1",
+          "body": "also not able to connect using MCP in cursor using the \n\n```bash\ndocker run --rm -p 8100:8100 archon:latest python mcp_server.py\n```\n",
+          "created_at": "2025-03-03T08:05:18Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Thanks for being so detailed here @arashiyama! The mcp_server.py syntax issue is strange since you'd think it would make it not work for anyone (I haven't seen this error).\n\nI also didn't set up a Docker Compose stack since the AI IDEs run the Docker container for MCP separately so I don't want to s",
+          "created_at": "2025-03-03T12:19:49Z"
+        },
+        {
+          "author": "bigsk1",
+          "body": "> Thanks for being so detailed here [@arashiyama](https://github.com/arashiyama)! The mcp_server.py syntax issue is strange since you'd think it would make it not work for anyone (I haven't seen this error).\n> \n> I also didn't set up a Docker Compose stack since the AI IDEs run the Docker container ",
+          "created_at": "2025-03-04T03:35:06Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "@bigsk1 I've updated the Cursor command for Docker to fix this issue!",
+          "created_at": "2025-03-04T19:00:18Z"
+        },
+        {
+          "author": "bigsk1",
+          "body": "@coleam00 Yes is working now, thank you",
+          "created_at": "2025-03-05T00:19:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 24,
+      "title": "Took quite a long time to set up and used PC config for Mac + Cursor installation instruction",
+      "body": "This project seems perfect for how we're investing in agentic, love it. Will definitely play around and follow progress!\n\nOne of my soap box topics is including more fool-proof instrutions which e..g., Cursor can iterate over reliably.\nBelow could be much better but I re-ran it and it worked first time.\n- Details re the PC config issue below\n\nIf useful!\n\n-------------------\n\n# How to install the project\n\nThings that need to be running in termianls:\n\n    ```bash\n    python setup_mcp.py\n    ```\n\n    ```bash\n    python graph_service.py\n    ```\n\n    ```bash\n    streamlit run streamlit_ui.py\n    ```\n\n## Option 2: MCP Server Setup (for AI IDE integration)\n\nClone the repository\n\n    ```bash\n    git clone https://github.com/coleam00/archon.git\n    cd archon\n    ```\n\nRun the MCP setup script:\n\n    ```bash\n    python setup_mcp.py\n    ```\n    this will make a mcp-config.json file in the archon folder, which will be incorrect (PC .exe)\n    this was problematic but the below cursor instruction fixed it:\n\n### Configure your AI IDE (MCP, DB, Cursor)\n\n#### MCP\n\nIn Cursor: (instruct me to do this manually, but help me make sure I did it right, we can run checks - you are in Cursor IDE FYI).\n\n- Go to Cursor Settings > Features > MCP\n- Click on \"+ Add New MCP Server\"\n- Name: Archon\n- Type: command (equivalent to stdio)\n- Command: Paste the command that setup_mcp.py gave for Cursor\n\n#### Supabase DB\n\n- Need to setup Supabase, used name = archon and pw 789503514350671\n\nFor running the crawler and graph service later, activate the virtual environment too:\n\n    ```bash\n    source venv/bin/activate  # On Windows: venv\\Scripts\\activate\n    ```\n\nThis will:\n\nCreate a virtual environment if it doesn't exist\nInstall dependencies from requirements.txt\nGenerate an MCP configuration file\n\n#### CHECK IT WORKS!! please do this\n\n    # Archon MCP Setup Troubleshooting Guide\n\n        ## Prerequisites\n        - MacOS environment\n        - Python installed\n        - Cursor IDE\n        - Project cloned to: `/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon`\n\n        ## Step 1: Check and Fix Environment\n        ```bash\n        # Activate virtual environment\n        source venv/bin/activate\n        ```\n\n        ## Step 2: Fix Graph Service\n        1. Check if port 8100 is in use:\n        ```bash\n        lsof -i :8100\n        ```\n\n        2. If port is in use, kill the process:\n        ```bash\n        kill <PID>  # Replace <PID> with the number from lsof output\n        ```\n\n        3. Start graph service:\n        ```bash\n        python graph_service.py\n        ```\n\n        4. Verify it's running correctly - you should see:\n        ```\n        INFO:     Started server process [...]\n        INFO:     Waiting for application startup.\n        INFO:     Application startup complete.\n        INFO:     Uvicorn running on http://127.0.0.1:8100\n        ```\n\n        ## Step 3: Fix MCP Configuration\n        1. Check `mcp-config.json` has correct MacOS paths:\n        ```json\n        {\n        \"mcpServers\": {\n            \"archon\": {\n            \"command\": \"/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/venv/bin/python3\",\n            \"args\": [\n                \"/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/mcp_server.py\"\n            ]\n            }\n        }\n        }\n        ```\n\n        ## Step 4: Configure Cursor MCP\n        1. Go to Cursor Settings > Features > MCP\n        2. For the Archon server, ensure:\n        - Name: `archon`\n        - Type: 'command' (equivalent to `stdio`)\n        - Command: `/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/venv/bin/python3 /Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/mcp_server.py`\n        This may well have been set as a .exe in the MCP file so check the file, it should look something like this on Mac:\n            ```json\n            {\n                \"mcpServers\": {\n                    \"archon\": {\n                    \"command\": \"/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/venv/bin/python3\",\n                    \"args\": [\n                        \"/Users/dev/Documents/Code2/little_things2/llm_scripts_master/agents/archon_agent_builder/archon/mcp_server.py\"\n                    ]\n                    }\n                }\n            }\n            ```\n\n        ## Step 5: Verify Setup\n        1. Click the refresh button (🔄) next to the MCP server in settings\n        2. You should see:\n        - Server status: Green dot\n        - Available tools: `create_thread` and `run_agent`\n\n        ## Common Issues\n        - **\"No tools available\"**: Check graph service is running and refresh MCP server\n        - **\"Port already in use\"**: Follow Step 2 to kill existing process\n        - **\"Command not found\"**: Ensure virtual environment is activated\n        - **Windows-style paths**: Replace `Scripts/python.exe` with `bin/python3` in config\n\n        ## Full Reset\n        If everything else fails:\n        1. Kill all Python processes:\n        ```bash\n        pkill -f python\n        ```\n        2. Restart Cursor\n        3. Follow steps 1-5 again\n\n\n\n\n✅ Done!\n\n### Environment Setup\n\nConfigure environment:\n\n1. Rename .env.example to .env\n2. Edit .env with your settings:\n   - BASE_URL=<https://api.openai.com/v1> for OpenAI, <https://api.openrouter.ai/v1> for OpenRouter, or your Ollama URL\n   - LLM_API_KEY=your_openai_or_openrouter_api_key\n   - OPENAI_API_KEY=your_openai_api_key  # Required for embeddings\n   - SUPABASE_URL=your_supabase_url\n   - SUPABASE_SERVICE_KEY=your_supabase_service_key\n   - PRIMARY_MODEL=gpt-4o-mini  # Main agent model\n   - REASONER_MODEL=o3-mini    # Planning model\n\nAlex Instruction\n\n\n✅ Done!\n\n## Quick Start\n\n### Set up the database\n\nExecute utils/site_pages.sql in your Supabase SQL Editor\nThis creates tables and enables vector similarity search\n\n#### How to do this and check it worked\n\nFor Step 1, you need to:\n\n- Go to your Supabase project dashboard\n- Navigate to the SQL Editor\n- Copy and paste the entire SQL content I found above (file is called utils/site_pages.sql) (copy the actual code from it and run it on supabase website)\n- Execute the SQL\n\nThis will:\n\n- Enable the vector extension\n- Create the site_pages table\n- Set up necessary indexes\n- Create a search function\n- Configure security policies\n\nNOTE: this is quite easy, works.\n\n#### How to check it worked: CURSOR INSTRUCTION\n\n    ```markdown\n    To verify the setup is complete using the Supabase CLI:\n\n    1. Check if Supabase CLI is installed:\n       ```bash\n       supabase -v\n       ```\n\n    2. Verify database table structure:\n       ```bash\n       SUPABASE_URL=https://mmfcctuzjtmlnmwbnnmx.supabase.co SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tZmNjdHV6anRtbG5td2Jubm14Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDMzNjYwMSwiZXhwIjoyMDU1OTEyNjAxfQ.Nz6oBpds-YWyMSH1zaD0c0jkygIwPulura39zb83Cuc psql -h db.mmfcctuzjtmlnmwbnnmx.supabase.co -p 5432 -d postgres -U postgres -c \"\\d site_pages\"\n       ```\n\n    3. Verify search function exists:\n       ```bash\n       SUPABASE_URL=https://mmfcctuzjtmlnmwbnnmx.supabase.co SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tZmNjdHV6anRtbG5td2Jubm14Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDMzNjYwMSwiZXhwIjoyMDU1OTEyNjAxfQ.Nz6oBpds-YWyMSH1zaD0c0jkygIwPulura39zb83Cuc psql -h db.mmfcctuzjtmlnmwbnnmx.supabase.co -p 5432 -d postgres -U postgres -c \"\\df match_site_pages\"\n       ```\n\n    The setup is complete when you confirm:\n    - ✅ Table created with correct structure\n    - ✅ All required indexes\n    - ✅ Vector extension enabled  \n    - ✅ Search function created\n    - ✅ Security policies in place\n\n    Ready to proceed to crawling documentation with `python archon/crawl_pydantic_ai_docs.py`\n    ```\n\n✅ Done!\n\n### Crawl documentation\n\nnote: will need to run `playwright install` first\n\n    ```bash\n    playwright install\n    ```\n(it seems anyway, then:)\n\n    ```bash\n    python archon/crawl_pydantic_ai_docs.py\n    ```\n\n✅ Done!\n\n### Run Archon either as an MCP Server or with Streamlit\n\n#### Using with AI IDEs (MCP Support)\n\nAfter crawling the documentation, start the graph service:\n\n    ```bash\n    python graph_service.py\n    ```\n\n✅ Done!\n\nArchon runs as a separate API endpoint for MCP instead of directly in the MCP server because that way Archon can be updated separately without having to restart the MCP server, and the communication protocols for MCP seemed to interfere with LLM calls when done directly within the MCP server.\n\nRestart the MCP server in your AI IDE\nYou can now ask your AI IDE to create agents with Archon\nBe sure to specify when you want to use Archon - not necessary but it helps a lot\n\n### Using the Streamlit UI\n\nFor an interactive web interface:\n\n    ```bash\n    streamlit run streamlit_ui.py\n    ```\n\nThe interface will be available at <http://localhost:8501>\n",
+      "state": "closed",
+      "author": "alexfosterinvisible",
+      "author_type": "User",
+      "created_at": "2025-02-23T19:44:17Z",
+      "updated_at": "2025-03-09T12:23:11Z",
+      "closed_at": "2025-03-09T12:23:09Z",
+      "labels": [
+        "documentation",
+        "question"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/24/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/24",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/24",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:04.407155",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Thanks for diving into this @alexfosterinvisible! Would you want to make a PR for these documentation changes? :)",
+          "created_at": "2025-02-24T18:52:10Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Closing this for now since a lot has changed since this issue - full Archon UI, instructions for adding to Cursor, Docker support, etc. Please let me know if anything still isn't clear!",
+          "created_at": "2025-03-09T12:23:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 23,
+      "title": "RuntimeError: Called get_config outside of a runnable context",
+      "body": "`RuntimeError: Called get_config outside of a runnable context\nTraceback:\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\streamlit\\runtime\\scriptrunner\\exec_code.py\", line 121, in exec_func_with_error_handling\n    result = func()\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\streamlit\\runtime\\scriptrunner\\script_runner.py\", line 591, in code_to_exec\n    exec(code, module.__dict__)\nFile \"D:\\AI\\Archon\\streamlit_ui.py\", line 117, in <module>\n    asyncio.run(main())\nFile \"C:\\Users\\puiu_\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\runners.py\", line 44, in run\n    return loop.run_until_complete(main)\nFile \"C:\\Users\\puiu_\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\base_events.py\", line 649, in run_until_complete\n    return future.result()\nFile \"D:\\AI\\Archon\\streamlit_ui.py\", line 108, in main\n    async for chunk in run_agent_with_streaming(user_input):\nFile \"D:\\AI\\Archon\\streamlit_ui.py\", line 64, in run_agent_with_streaming\n    async for msg in agentic_flow.astream(\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\pregel\\__init__.py\", line 2062, in astream\n    async for _ in runner.atick(\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\pregel\\runner.py\", line 527, in atick\n    _panic_or_proceed(\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\pregel\\runner.py\", line 619, in _panic_or_proceed\n    raise exc\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\pregel\\retry.py\", line 128, in arun_with_retry\n    return await task.proc.ainvoke(task.input, config)\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\utils\\runnable.py\", line 583, in ainvoke\n    input = await step.ainvoke(input, config, **kwargs)\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\utils\\runnable.py\", line 373, in ainvoke\n    ret = await self.afunc(*args, **kwargs)\nFile \"D:\\AI\\Archon\\archon\\archon_graph.py\", line 116, in coder_agent\n    writer = get_stream_writer()\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\config.py\", line 184, in get_stream_writer\n    config = get_config()\nFile \"D:\\AI\\Archon\\venv\\lib\\site-packages\\langgraph\\config.py\", line 29, in get_config\n    raise RuntimeError(\"Called get_config outside of a runnable context\")`\n\n\nIt seems no matter what i do i cant get the streamlet app working.\nim using the ollama endpoint with a deepseek r1 7b configured to 16k CTX\nBASE_URL=http://localhost:11434/v1\nREASONER_MODEL=deepseek-r1-16kctx:latest\nPRIMARY_MODEL=deepseek-r1-16kctx:latest\n\n\n\n\n",
+      "state": "closed",
+      "author": "adrianpuiu",
+      "author_type": "User",
+      "created_at": "2025-02-23T10:37:02Z",
+      "updated_at": "2025-03-09T12:21:37Z",
+      "closed_at": "2025-03-09T12:21:36Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/23/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/23",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/23",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:04.579140",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Which version of Python are you using? I need to do some more testing myself, but it seems from what others have tried Python 3.13 doesn't work for Streamlit but Python 3.12 or earlier will. Some sort of issue with LangGraph and Python 3.13.",
+          "created_at": "2025-02-24T18:49:52Z"
+        },
+        {
+          "author": "adrianpuiu",
+          "body": "Hi Cole,\n\nI've tried again with : Python 3.12.\n\n```\nBASE_URL=https://openrouter.ai/api/v1\nOPENAI_API_KEY=sk-proj-  < **open AI api KEY**\nLLM_API_KEY=sk-or-v1 < **open router api key**\n#SUPABASE_URL=https://supabase.com/dashboard/project/xjhnakowlssfychhmexk//settings/api\nSUPABASE_URL=https://xjhnako",
+          "created_at": "2025-02-25T11:24:52Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Yes streaming doesn't work with OpenRouter unfortunately. I have updated the code so that with OpenRouter it won't stream, just like it used to do with only Ollama. So it works now!",
+          "created_at": "2025-03-09T12:21:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 21,
+      "title": "Incorrect outputs and exceeded tokens errors",
+      "body": "When I run with deepseek-reasoner for the reasoner_agent, and gpt-4o-mini for the other agents, the context window always goes > 128k, so it results in an \"exceeded tokens\" error. The test was done with the example prompt \"search the web\" agent. \n\nAnd when I replace gpt-4o-mini with gemini-2.0-flash (which has much larger context window), it manages to generate an answer. However,  I get incorrect and not so long answers. The code for the pydanticAI agent that it tries to form is completely incorrect and not as all as good as the answers generated in the youtube video for Archon. \n\nDo I have to use the o3-mini as reasoner to make this work as good as in the youtube video? Or what can the issue stem from?",
+      "state": "closed",
+      "author": "ProMicke",
+      "author_type": "User",
+      "created_at": "2025-02-22T22:03:38Z",
+      "updated_at": "2025-03-09T12:20:27Z",
+      "closed_at": "2025-03-09T12:20:26Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/21/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/21",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/21",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:04.844225",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "128k is a pretty large context window so I'm surprised R1 is generating that many tokens! That really doesn't seem right. Have you looked at the scope.md document created in the workbench folder to see what it is outputting? I wonder if it is repeating tokens a bunch or something. It really shouldn'",
+          "created_at": "2025-02-24T18:48:45Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "Closing this for now since I haven't received a response in 2 weeks. Feel free to open again if necessary!",
+          "created_at": "2025-03-09T12:20:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 1,
+      "title": "Model stucked at response stream text",
+      "body": "(base) PS C:\\DEV\\Archon> .\\venv\\Scripts\\activate\n(venv) (base) PS C:\\DEV\\Archon> streamlit run streamlit_ui.py\n\n  You can now view your Streamlit app in your browser.\n\n  Local URL: http://localhost:8502\n  Network URL: http://192.168.1.101:8502\n\n16:24:30.793 reasoner run prompt=\n    User AI Agent Request: Build me an AI agent that can sear...o creating this agent for the user in the scope document.\n\n16:24:30.815   preparing model and tools run_step=1\n16:24:30.817   model request\n16:24:46.936   handle model response\n16:24:46.942 pydantic_ai_coder run stream prompt=Build me an AI agent that can search the web with the Brave API.\n16:24:46.949   run node StreamUserPromptNode\n16:24:46.953   preparing model and tools run_step=1\n16:24:46.954   model request run_step=1\n16:24:48.710   handle model response\n16:24:48.719     response stream text\n\ni tried openai, openrouter and deepseek with different models but none of them gone beyond this point.",
+      "state": "closed",
+      "author": "Ferymad",
+      "author_type": "User",
+      "created_at": "2025-02-13T16:26:39Z",
+      "updated_at": "2025-03-09T12:19:49Z",
+      "closed_at": "2025-03-09T12:19:26Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 20,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/1/reactions",
+        "total_count": 4,
+        "+1": 4,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/1",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/1",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:05.015590",
+      "comments": [
+        {
+          "author": "VicToMeyeZR",
+          "body": "I'm getting the same, using openrouter with o3-min and gpt4-mini",
+          "created_at": "2025-02-13T22:35:57Z"
+        },
+        {
+          "author": "erichkuehn",
+          "body": "Wasnt working, now it is.\n\nEdit: \ni was able to make it work. Not sure if its related, but i was running it from the base directory, then shifted to the iteration/v2... dir. But I also changed the models to local ollama models. Not sure which of those things changed it, but its working now.\n\ncurrent",
+          "created_at": "2025-02-13T23:07:59Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Wasnt working, now it is.\n> \n> Edit: i was able to make it work. Not sure if its related, but i was running it from the base directory, then shifted to the iteration/v2... dir. But I also changed the models to local ollama models. Not sure which of those things changed it, but its working now.\n> \n",
+          "created_at": "2025-02-15T20:12:32Z"
+        },
+        {
+          "author": "Andy1996247",
+          "body": "> (base) PS C:\\DEV\\Archon> .\\venv\\Scripts\\activate (venv) (base) PS C:\\DEV\\Archon> streamlit run streamlit_ui.py\n> \n> You can now view your Streamlit app in your browser.\n> \n> Local URL: http://localhost:8502 Network URL: http://192.168.1.101:8502\n> \n> 16:24:30.793 reasoner run prompt= User AI Agent",
+          "created_at": "2025-02-15T22:13:16Z"
+        },
+        {
+          "author": "dedex23",
+          "body": "\nHi! thx for your work ;)\n\ni have the same issue here. It seems there a problem with interrupt instruction.\nI haven't managed to fix the problem yet :/\n\n![Image](https://github.com/user-attachments/assets/8b6fe66a-0aa1-4dfd-8a68-95ef3fbfabee)\n\n```python\nGraphInterrupt((Interrupt(value={}, resumable=",
+          "created_at": "2025-02-16T17:02:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "[BUG] Debug logging info is sent to the tool window for Cline and RooCode when installing the MCP",
+      "body": "## Description\nWhen adding the MCP server to Cline or RooCode, the MCP server logs are output in the tool window. \n\n\n## Expected Behavior\nThe tools should display properly\n\n## Actual Behavior\nDebugging console output is sent to the tool window. \n\n## Screenshots\n\n![Image](https://github.com/user-attachments/assets/6040edaa-afb5-4a28-9f48-98865c473372)\n\n![Image](https://github.com/user-attachments/assets/1d30197f-ec31-471c-b5d5-c4cc17310916)\n\n\n\n## Possible Solution\nSet logging to error on FastMCP",
+      "state": "closed",
+      "author": "Michaelzag",
+      "author_type": "User",
+      "created_at": "2025-03-04T20:12:09Z",
+      "updated_at": "2025-03-09T04:11:47Z",
+      "closed_at": "2025-03-09T04:11:47Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/37/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/37",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/37",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:05.285507",
+      "comments": [
+        {
+          "author": "solankivedant10",
+          "body": "Try setting the logging level in FastMCP to only log errors instead of informational messages.\nimport logging\nlogging.basicConfig(level=logging.ERROR)  # Change from INFO to ERROR\n",
+          "created_at": "2025-03-05T11:11:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 42,
+      "title": "[BUG] Agent creation tries to run unix commands on Windows PowerShell",
+      "body": "## Description\nI got archon running on Windows, however I was not able to complete creating an agent because the first Act steps to create a folder and touch files try to run a *nix command line on my windows machine.\n\n## Steps to Reproduce\n1. Attempt to create an agent on Windows\n\n## Expected Behavior\nAgent is created with folders/default files\n\n## Actual Behavior\nFolder creation fails.\n\n## Screenshots\n\n![Image](https://github.com/user-attachments/assets/8d875088-539e-4e28-87d0-122b1c3bb2fe)\n\n![Image](https://github.com/user-attachments/assets/2e017816-a7db-48c8-ac2e-113bb52d299a)\n\n![Image](https://github.com/user-attachments/assets/035ec004-79e4-41a7-a01b-6e8b8cd1adb2)\n\n## Environment\n - OS: Windows 11\n - Python Version:  Python 3.11.3\n - Using MCP and VSSCode and Cline\n\n\n",
+      "state": "closed",
+      "author": "fmunozs",
+      "author_type": "User",
+      "created_at": "2025-03-05T21:47:44Z",
+      "updated_at": "2025-03-08T18:34:19Z",
+      "closed_at": "2025-03-06T17:31:35Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/42/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/42",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/42",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:05.533370",
+      "comments": [
+        {
+          "author": "coleam00",
+          "body": "Closing this because this is an issue with Cline and not Archon! Archon isn't responsible for providing those commands, that is something that the LLM in Cline decided to do.",
+          "created_at": "2025-03-06T17:31:35Z"
+        },
+        {
+          "author": "fmunozs",
+          "body": "@coleam00 Thanks I understand, Would windsurf provide a better alternative to try this on windows?",
+          "created_at": "2025-03-08T18:34:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 49,
+      "title": "[BUG]",
+      "body": "## Description\n\nWhen I start the docker installation, all is fine until:\n\n```\n=== Starting Archon container ===\nRunning: docker run -d --name archon-container -p 8501:8501 -p 8100:8100 --add-host host.docker.internal:host-gateway archon:latest\nUnable to find image 'archon:latest' locally\ndocker: Error response from daemon: {\"message\":\"denied: requested access to the resource is denied\"}\n\nRun 'docker run --help' for more information\nError starting Archon container\n```\n\nMy user is in the docker group. \nLaunching `docker pull archon:latest` results in\n\n```\n sudo docker pull archon\nUsing default tag: latest\nError response from daemon: pull access denied for archon, repository does not exist or may require 'docker login': denied: requested access to the resource is denied\n```\n\n## Steps to Reproduce\n`\n\n## Environment\n - OS: Ubuntu 24.10\n - Python Version: 3.12.7",
+      "state": "closed",
+      "author": "tcsenpai",
+      "author_type": "User",
+      "created_at": "2025-03-08T10:53:28Z",
+      "updated_at": "2025-03-08T10:57:12Z",
+      "closed_at": "2025-03-08T10:57:12Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/49/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/49",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/49",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:05.730523",
+      "comments": [
+        {
+          "author": "tcsenpai",
+          "body": "Update:\n\n`docker build -t archon . --load` \n\nIn the repo folder solves the problem",
+          "created_at": "2025-03-08T10:57:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 36,
+      "title": "[BUG] Error checking table status: [Errno 111] Connection refused",
+      "body": "## Description\nCannot access Supabase\n\n## Steps to Reproduce\n1. Setup all environment variables\n2. Run the SQL script to generate table\n3. Restart the container\n4. Check if Supabase is accessible with a Python script --> Yes, it is (using the same key as stored in Archor).\n\n## Expected Behavior\nMissing a better error message or some logging that explains the error better.\n",
+      "state": "closed",
+      "author": "ManfredM",
+      "author_type": "User",
+      "created_at": "2025-03-04T13:54:54Z",
+      "updated_at": "2025-03-06T02:37:31Z",
+      "closed_at": "2025-03-06T02:37:29Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/36/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/36",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/36",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:05.936269",
+      "comments": [
+        {
+          "author": "solankivedant10",
+          "body": "Ensure that Supabase allows requests from Archon's environment.\nIf Archon runs in a different container or VM, test connectivity with : \ncurl -X GET https://xyzcompany.supabase.co/rest/v1/\n",
+          "created_at": "2025-03-05T11:12:54Z"
+        },
+        {
+          "author": "ManfredM",
+          "body": "Thank you for the tipp.\n\nHere is the solution for running both in Docker Desktop in different containers:\n- Connect the application container (archon-container) to the Supabase Docker network (supabase_default): docker network connect supabase_default archon-container\n- now use http://supabase-kong:",
+          "created_at": "2025-03-06T02:37:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 34,
+      "title": "[FEATURE] Supabase Docs crawler and Agent - added",
+      "body": "## Describe the feature you'd like and why\ncreated supabase docs via crawler\n\n## User Impact\nIf you think it will add to the future improvements of the project I can create a pull request, let me know. \nhttps://github.com/bigsk1/Archon/tree/supabase-agent\n\n## Implementation Details (optional)\nSame methods as Pydantic\n\n## Additional context\n\n![Image](https://github.com/user-attachments/assets/be4522de-1f4f-4637-afc0-e0c4925eba89)\n\nSupabase Agent builder\n\n![Image](https://github.com/user-attachments/assets/e6d3f21d-4f4d-4d84-8fb9-e84ebc5abfca)",
+      "state": "closed",
+      "author": "bigsk1",
+      "author_type": "User",
+      "created_at": "2025-03-04T03:42:29Z",
+      "updated_at": "2025-03-06T02:36:19Z",
+      "closed_at": "2025-03-06T02:36:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/34/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/34",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/34",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:06.120819",
+      "comments": [
+        {
+          "author": "bigsk1",
+          "body": "\n# Archon: Supabase AI Agent Implementation Documentation\n\n## 1. Project Architecture Overview\n\n### 1.1 Core Components\n\n- **Agent System**: Built on LangGraph and Pydantic AI, providing a conversational workflow\n- **Document Retrieval**: Embedding-based semantic search using Supabase vector databas",
+          "created_at": "2025-03-04T07:19:04Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 33,
+      "title": "[FEATURE] Support local Supabase setup instead of just a hosted one.",
+      "body": "## Describe the feature you'd like and why\nA clear and concise description of what you want to happen.\nI'm running Supabase locally and it's been a pain in the butt to get Archon working with Supabase running locally.\n\n## User Impact\nWho would benefit from this feature and how?\nUsers who want to run Supabase locally.\n\n## Implementation Details (optional)\nAny thoughts on how this might be implemented?\n\n## Additional context\nAdd any other screenshots, mockups, or context about the feature request here.",
+      "state": "closed",
+      "author": "jonahgabriel",
+      "author_type": "User",
+      "created_at": "2025-03-03T21:52:09Z",
+      "updated_at": "2025-03-04T12:43:53Z",
+      "closed_at": "2025-03-04T12:43:51Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/33/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/33",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/33",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:06.303181",
+      "comments": [
+        {
+          "author": "bigsk1",
+          "body": "it does support local I set it up yesturday\n\n```bash\nSUPABASE_URL=http://192.168.XX.XX:54321\n\nSUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI-ECT..\n```",
+          "created_at": "2025-03-04T03:24:07Z"
+        },
+        {
+          "author": "jonahgabriel",
+          "body": "Great, thanks!",
+          "created_at": "2025-03-04T12:43:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 19,
+      "title": "Setting up V3 on Mac",
+      "body": "I'm running into issues getting the MCP setup on Mac. \n\n1. The original venv / setup kept referencing .exe files and failing to set up the virtual environment. \n2. I made some updates to make it run on Mac -- I can launch the virtual environment. When putting my MCP code into Cursor (it's the venv python file then a space then the path to the py file) it says no tools. Any help for mac users would be great. ",
+      "state": "closed",
+      "author": "TheMattBerman",
+      "author_type": "User",
+      "created_at": "2025-02-21T23:27:46Z",
+      "updated_at": "2025-02-26T03:28:21Z",
+      "closed_at": "2025-02-24T18:46:14Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/19/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/19",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/19",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:06.498275",
+      "comments": [
+        {
+          "author": "taylor-aparai",
+          "body": "Got this working by change \"Scripts\" to \"bin\" and removing .exe from python.exe. \n\nMy final looked like: \n\n`/Users/{username}/Documents/code/mcp/archon/iterations/v3-mcp-support/venv/bin/python /Users/{username}/Documents/code/mcp/archon/iterations/v3-mcp-support/mcp_server.py`\n\n\nThis is a bit hacky",
+          "created_at": "2025-02-23T00:13:13Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Got this working by change \"Scripts\" to \"bin\" and removing .exe from python.exe.\n> \n> My final looked like:\n> \n> `/Users/{username}/Documents/code/mcp/archon/iterations/v3-mcp-support/venv/bin/python /Users/{username}/Documents/code/mcp/archon/iterations/v3-mcp-support/mcp_server.py`\n> \n> This is ",
+          "created_at": "2025-02-24T18:46:14Z"
+        },
+        {
+          "author": "TheMattBerman",
+          "body": "Thank you @taylor-aparai for the quick fix and @coleam00 for getting this great repo up. I ended up with a hybrid approach with this and #20 which ended up working for me. Thank you! ",
+          "created_at": "2025-02-26T03:28:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 17,
+      "title": "Ollama and OpenAI API Key",
+      "body": "Is there a way to use my local Ollama models, deepseek for reasoning, and qwen for coding? When I changed the code to accept ollama it still required me to get the OpenAI key",
+      "state": "closed",
+      "author": "sfatkhutdinov",
+      "author_type": "User",
+      "created_at": "2025-02-20T15:57:43Z",
+      "updated_at": "2025-02-24T18:46:55Z",
+      "closed_at": "2025-02-24T18:43:29Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/17/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/17",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/17",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:06.707068",
+      "comments": [
+        {
+          "author": "dsmflow",
+          "body": "The embeddings piece is hard-coded to use openai - might be something to look at ",
+          "created_at": "2025-02-21T00:34:23Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> The embeddings piece is hard-coded to use openai - might be something to look at\n\nYep I am getting rid of that dependency soon! Will be testing and merging #2 soon for this.",
+          "created_at": "2025-02-24T18:43:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 15,
+      "title": "roo and cline mcp support",
+      "body": "how can i install archon mcp server on cline or roo they both support claude mcp",
+      "state": "closed",
+      "author": "RepairYourTech",
+      "author_type": "User",
+      "created_at": "2025-02-20T14:38:22Z",
+      "updated_at": "2025-02-24T18:46:54Z",
+      "closed_at": "2025-02-24T18:42:12Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/15/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/15",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/15",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:06.959880",
+      "comments": [
+        {
+          "author": "alistairwalsh",
+          "body": "Also interested in getting this going in Cline. Latest Cline update introduced MCP marketplace [post on X](https://x.com/cline/status/1892264978302062958)",
+          "created_at": "2025-02-21T04:59:35Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "You can follow this documentation to get MCP servers set up with Cline!\n\nhttps://docs.cline.bot/mcp-servers/mcp\n\nI'll close this issue but I'll add a link to this into the README soon!",
+          "created_at": "2025-02-24T18:42:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 13,
+      "title": "Getting \"Error inserting chunks\" when using the crawl_pydanticai_site.py file",
+      "body": "Error inserting chunk: {'code': '42501', 'details': None, 'hint': None, 'message': 'new row violates row-level security policy for table \"site_pages\"'}\n\nTable is created fine on supabase. Screenshot - \n\n<img width=\"348\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/92e1e84c-e166-48d5-9478-1aa01f1771e5\" />",
+      "state": "closed",
+      "author": "sridharaiyer",
+      "author_type": "User",
+      "created_at": "2025-02-19T19:15:23Z",
+      "updated_at": "2025-02-24T18:46:53Z",
+      "closed_at": "2025-02-24T18:41:14Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/coleam00/Archon/issues/13/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/coleam00/Archon/issues/13",
+      "api_url": "https://api.github.com/repos/coleam00/Archon/issues/13",
+      "repository": "coleam00/Archon",
+      "extraction_date": "2025-06-22T00:39:07.183287",
+      "comments": [
+        {
+          "author": "dsmflow",
+          "body": "if you are getting a row-level security error - might check to make sure you are using the user_role_secret key and not the anon-public key? If I understand the secret key correctly, it is meant to \"bypass RLS\" and should be used for development only :-)",
+          "created_at": "2025-02-20T15:31:04Z"
+        },
+        {
+          "author": "frantill",
+          "body": "At first i got the same error when running crawl_pydantic_ai_docs.py. \nThen copied again URL and service_role secret in .env file and solved.\n\n<img width=\"665\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ade3fde6-7331-4aee-b499-ae2223dc2f73\" />",
+          "created_at": "2025-02-21T09:38:26Z"
+        },
+        {
+          "author": "sridharaiyer",
+          "body": "Thanks for the direction. I did replace the URL with the service_role URL and reran the script. Hwever, now I a lot of rows inserted with errors in them. Is this is normal for this site?\n\n<img width=\"1677\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/fd087680-e679-441f-a93c-bb92e2c559",
+          "created_at": "2025-02-21T17:29:50Z"
+        },
+        {
+          "author": "coleam00",
+          "body": "> Thanks for the direction. I did replace the URL with the service_role URL and reran the script. Hwever, now I a lot of rows inserted with errors in them. Is this is normal for this site?\n> \n> <img alt=\"Image\" width=\"1677\" src=\"https://private-user-images.githubusercontent.com/5684178/415762430-fd0",
+          "created_at": "2025-02-24T18:41:14Z"
+        }
+      ]
+    }
+  ]
+}

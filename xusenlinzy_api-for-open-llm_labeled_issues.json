@@ -1,0 +1,3325 @@
+{
+  "repository": "xusenlinzy/api-for-open-llm",
+  "repository_info": {
+    "repo": "xusenlinzy/api-for-open-llm",
+    "stars": 2444,
+    "language": "Python",
+    "description": "Openai style api for open large language models, using LLMs just as chatgpt! Support for LLaMA, LLaMA-2, BLOOM, Falcon, Baichuan, Qwen, Xverse, SqlCoder, CodeLLaMA, ChatGLM, ChatGLM2, ChatGLM3 etc. 开源",
+    "url": "https://github.com/xusenlinzy/api-for-open-llm",
+    "topics": [
+      "baichuan",
+      "chatglm",
+      "code-llama",
+      "docker",
+      "internlm",
+      "langchain",
+      "llama",
+      "llama2",
+      "llms",
+      "nlp",
+      "openai",
+      "qwen",
+      "sqlcoder",
+      "xverse"
+    ],
+    "created_at": "2023-05-23T06:43:51Z",
+    "updated_at": "2025-06-19T09:15:26Z",
+    "search_query": "openai api language:python stars:>1 created:>2023-01-01",
+    "total_issues_estimate": 170,
+    "labeled_issues_estimate": 38,
+    "labeling_rate": 22.7,
+    "sample_labeled": 10,
+    "sample_total": 44,
+    "has_issues": true,
+    "repo_id": 644259800,
+    "default_branch": "master",
+    "size": 18696
+  },
+  "extraction_date": "2025-06-22T00:46:26.511442",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 73,
+  "issues": [
+    {
+      "issue_number": 301,
+      "title": "💡 [REQUEST] - 请问可以支持中国电信大模型Telechat吗？流程可以跑通，但是回复content会被截断",
+      "body": "### 起始日期 | Start Date\n\n8/2/2024\n\n### 实现PR | Implementation PR\n\n整体流程可以跑通，正常读取模型，启动服务，调用API\n\n### 相关Issues | Reference Issues\n\n回复内容上出现截断\n\n### 摘要 | Summary\n\n让Telechat可以完美适配\n\n### 基本示例 | Basic Example\n\ncontent：“XXXXX，XXXX。XXXXX ￥%*&（某些字符，每次不一样，然后就断了）”，role：assistant\n\n### 缺陷 | Drawbacks\n\n回复内容上出现截断，初步判定是Templates里没有相关配置，导致回复内容stop\n\n### 未解决问题 | Unresolved questions\n\n附上Telechat开源模型链接https://github.com/Tele-AI/Telechat/tree/master/models/12B-V2",
+      "state": "open",
+      "author": "Song345381185",
+      "author_type": "User",
+      "created_at": "2024-08-02T08:01:06Z",
+      "updated_at": "2024-08-16T02:20:31Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/301/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/301",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/301",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:10.482977",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "![image](https://github.com/user-attachments/assets/60951518-600d-4211-ae4b-42acfbbb52fe)\r\n\r\n刚刚添加了Telechat模型的chat模板，更新代码之后试试启动的时候指定PROMPT_NAME=telechat",
+          "created_at": "2024-08-02T09:09:25Z"
+        },
+        {
+          "author": "Song345381185",
+          "body": "非常感谢老师！我现在试试",
+          "created_at": "2024-08-02T09:14:33Z"
+        },
+        {
+          "author": "Song345381185",
+          "body": "> ![image](https://private-user-images.githubusercontent.com/111472355/354539948-60951518-600d-4211-ae4b-42acfbbb52fe.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjI4MjEwOTksIm5iZiI6MTcyMjgyMDc5OSwic",
+          "created_at": "2024-08-05T01:20:59Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "这个看起来是使用了默认的模板，启动模型的时候指定了PROMPT_NAME=telechat吗\r\n",
+          "created_at": "2024-08-05T01:28:56Z"
+        },
+        {
+          "author": "Song345381185",
+          "body": "> 这个看起来是使用了默认的模板，启动模型的时候指定了PROMPT_NAME=telechat吗\r\n老师，我指定了模型，PROMPT_NAME也是telechat\r\n![微信图片_20240805093145](https://github.com/user-attachments/assets/132e994c-7df0-4169-8821-3d2158abc68c)\r\n![微信图片_20240805093246](https://github.com/user-attachments/assets/c1675460-a8f3-4d3e-8531-7eb2ef7511b5)\r\n",
+          "created_at": "2024-08-05T01:34:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 300,
+      "title": "💡 [REQUEST] - 请问可以支持中国电信大模型Telechat吗？流程可以跑通，但是回复content会被截断",
+      "body": "### 起始日期 | Start Date\n\n8/2/2024\n\n### 实现PR | Implementation PR\n\n整体流程可以跑通，正常读取模型，启动服务，调用API\n\n### 相关Issues | Reference Issues\n\n回复内容上出现截断\n\n### 摘要 | Summary\n\n让Telechat可以完美适配\n\n### 基本示例 | Basic Example\n\ncontent：“XXXXX，XXXX。XXXXX ￥%*&（某些字符，每次不一样，然后就断了）”，role：assistant\n\n### 缺陷 | Drawbacks\n\n回复内容上出现截断，初步判定是Templates里没有相关配置，导致回复内容stop\n\n### 未解决问题 | Unresolved questions\n\n附上Telechat开源模型链接https://github.com/Tele-AI/Telechat/tree/master/models/12B-V2",
+      "state": "closed",
+      "author": "Song345381185",
+      "author_type": "User",
+      "created_at": "2024-08-02T08:00:46Z",
+      "updated_at": "2024-08-02T08:03:06Z",
+      "closed_at": "2024-08-02T08:03:06Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/300/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/300",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/300",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:10.677642",
+      "comments": []
+    },
+    {
+      "issue_number": 258,
+      "title": "我想使用的模型不在模型支持列表，是否说明无法使用此项目生成openai的接口",
+      "body": "### 起始日期 | Start Date\n\n2024/4.12\n\n### 实现PR | Implementation PR\n\n编辑生成openai格式接口宫langchai-chatchat调用\n\n### 相关Issues | Reference Issues\n\n无\n\n### 摘要 | Summary\n\n我想使用电信公司大模型Telechat\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n无",
+      "state": "closed",
+      "author": "xiaoma444",
+      "author_type": "User",
+      "created_at": "2024-04-15T08:07:18Z",
+      "updated_at": "2024-06-12T03:40:28Z",
+      "closed_at": "2024-06-12T03:40:28Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/258/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/258",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/258",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:10.677669",
+      "comments": [
+        {
+          "author": "VastOcean-Yang",
+          "body": "同问\r\n",
+          "created_at": "2024-06-06T02:17:30Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "模型支持列表很久没更新了。。请问你想使用的是哪个模型",
+          "created_at": "2024-06-06T02:38:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 248,
+      "title": "💡 [REQUEST] - <请问可以支持一下Xai新发布的Grok-1模型吗>",
+      "body": "### 起始日期 | Start Date\n\n3/19/2024\n\n### 实现PR | Implementation PR\n\nhttps://github.com/xai-org/grok-1\n\n### 相关Issues | Reference Issues\n\nhttps://github.com/xai-org/grok-1\n\n### 摘要 | Summary\n\nhttps://github.com/xai-org/grok-1\n\n### 基本示例 | Basic Example\n\nhttps://github.com/xai-org/grok-1\n\n### 缺陷 | Drawbacks\n\nhttps://github.com/xai-org/grok-1\n\n### 未解决问题 | Unresolved questions\n\nhttps://github.com/xai-org/grok-1",
+      "state": "closed",
+      "author": "Hapluckyy",
+      "author_type": "User",
+      "created_at": "2024-03-19T07:59:02Z",
+      "updated_at": "2024-06-08T01:14:06Z",
+      "closed_at": "2024-06-08T01:14:06Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/248/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/248",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/248",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:10.930931",
+      "comments": [
+        {
+          "author": "Tendo33",
+          "body": "MiniCPM支持吗\r\n",
+          "created_at": "2024-03-26T02:19:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 233,
+      "title": "💡 [REQUEST] - <能否实现一个功能，就是api一段时间无调用的时候，自动卸载到cpu甚至硬盘>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n如题\n\n### 基本示例 | Basic Example\n\n如题\n\n### 缺陷 | Drawbacks\n\n如题\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "Tongjilibo",
+      "author_type": "User",
+      "created_at": "2024-02-07T14:56:21Z",
+      "updated_at": "2024-06-08T01:13:29Z",
+      "closed_at": "2024-06-08T01:13:29Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/233/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/233",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/233",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.115460",
+      "comments": []
+    },
+    {
+      "issue_number": 152,
+      "title": "💡 [REQUEST] - 跟 ChatGLM3 配套的视觉语言模型 CogVLM 支持",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n这个项目可以支持视觉语言模型来理解图像吗\n\n### 基本示例 | Basic Example\n\n比如 CogVLM 文档：https://github.com/THUDM/CogVLM/blob/main/README_zh.md#cogvlm\n\n### 缺陷 | Drawbacks\n\n-\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "mushan0x0",
+      "author_type": "User",
+      "created_at": "2023-10-30T06:47:55Z",
+      "updated_at": "2024-06-08T01:13:17Z",
+      "closed_at": "2024-06-08T01:13:17Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/152/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/152",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/152",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.115480",
+      "comments": []
+    },
+    {
+      "issue_number": 163,
+      "title": "💡 [REQUEST] - <title>请支持chat2DB",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请支持chat2DB\n\n### 基本示例 | Basic Example\n\n请支持chat2DB\n\n### 缺陷 | Drawbacks\n\n请支持chat2DB\n\n### 未解决问题 | Unresolved questions\n\n请支持chat2DB",
+      "state": "closed",
+      "author": "coderwpf",
+      "author_type": "User",
+      "created_at": "2023-11-09T10:16:02Z",
+      "updated_at": "2024-06-08T01:13:07Z",
+      "closed_at": "2024-06-08T01:13:07Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/163/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/163",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/163",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.115487",
+      "comments": []
+    },
+    {
+      "issue_number": 160,
+      "title": "💡 [REQUEST] - 是否有计划增加对autogen的支持？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n希望能支持autogen直接调用api-for-open-llm的api接口。\n\n### 基本示例 | Basic Example\n\n希望能支持autogen\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "darvsum",
+      "author_type": "User",
+      "created_at": "2023-11-06T07:50:37Z",
+      "updated_at": "2024-06-08T01:12:51Z",
+      "closed_at": "2024-06-08T01:12:51Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/160/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/160",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/160",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.115493",
+      "comments": [
+        {
+          "author": "darvsum",
+          "body": "API-FOR-OPEN-LLM当前支持autogen单个agent使用，但是多个agent调用时报错。\r\n报错信息如下：\r\nuser_proxy (to chat_manager):\r\n\r\nfind a lastest paper about gpt-4 on arxiv and find its potential applications in software.\r\n\r\n--------------------------------------------------------------------------------\r\nTraceback (most recent call ",
+          "created_at": "2023-12-01T09:14:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 159,
+      "title": "💡 [REQUEST] - <title>请支持Qwen-Agent接口，感谢！！！",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请支持Qwen-Agent接口，感谢！！！\n\n### 基本示例 | Basic Example\n\n请支持Qwen-Agent接口，感谢！！！\n\n### 缺陷 | Drawbacks\n\n请支持Qwen-Agent接口，感谢！！！\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "coderwpf",
+      "author_type": "User",
+      "created_at": "2023-11-06T01:55:35Z",
+      "updated_at": "2024-06-08T01:12:38Z",
+      "closed_at": "2024-06-08T01:12:38Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/159/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/159",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/159",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.307069",
+      "comments": []
+    },
+    {
+      "issue_number": 45,
+      "title": "建议增加llama2系列模型的call function功能",
+      "body": "千问代码生成能力较弱，这方面llama2系列相对好很多，如果增加了call function功能，类似代码解释器的实现就很容易了~",
+      "state": "closed",
+      "author": "skingko",
+      "author_type": "User",
+      "created_at": "2023-08-05T15:58:41Z",
+      "updated_at": "2024-06-08T01:12:01Z",
+      "closed_at": "2024-06-08T01:12:01Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/45/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/45",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/45",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.307093",
+      "comments": [
+        {
+          "author": "huangchen007",
+          "body": "@xusenlinzy 这个issue一直没有更新，是否有难度？主要的难点是什么呢？",
+          "created_at": "2023-09-21T03:27:22Z"
+        },
+        {
+          "author": "thiner",
+          "body": "最新的Qwen 模型已经支持call function功能了。",
+          "created_at": "2023-09-27T09:39:39Z"
+        },
+        {
+          "author": "skyliwq",
+          "body": "同样需要",
+          "created_at": "2023-11-23T04:10:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 278,
+      "title": "我现在部署了很多模型，有没有一个webui 界面让我来统一调用部署的模型进行推理",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n可以将部署的模型统一在webui 进行管理和推理，只需要填写模型名和本地的api-base 就可以调用到\n\n### 基本示例 | Basic Example\n\nNone\n\n### 缺陷 | Drawbacks\n\nstreamlit-demo 只能选择一个模型进行对话\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "Tendo33",
+      "author_type": "User",
+      "created_at": "2024-06-04T02:59:14Z",
+      "updated_at": "2024-06-05T07:05:46Z",
+      "closed_at": "2024-06-05T03:48:51Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/278/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/278",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/278",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.518997",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "更新一下代码试试\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/111472355/37219425-cae3-462c-8ca2-133095f17331)\r\n",
+          "created_at": "2024-06-04T03:56:33Z"
+        },
+        {
+          "author": "Tendo33",
+          "body": "GLM4 出了，template 可能要更新一下",
+          "created_at": "2024-06-05T04:07:53Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "已经更新了",
+          "created_at": "2024-06-05T07:05:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 273,
+      "title": "什么时候能修复 Qwen 1.5 call function功能了。",
+      "body": "什么时候能修复 Qwen 1.5 call function功能了。",
+      "state": "open",
+      "author": "skyliwq",
+      "author_type": "User",
+      "created_at": "2024-05-11T17:32:27Z",
+      "updated_at": "2024-05-11T17:32:43Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/273/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/273",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/273",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.782060",
+      "comments": []
+    },
+    {
+      "issue_number": 245,
+      "title": "Qwen1.5不支持tool_choice",
+      "body": "### 提交前必须检查以下项目 | The following items must be checked before submission\n\n- [X] 请确保使用的是仓库最新代码（git pull），一些问题已被解决和修复。 | Make sure you are using the latest code from the repository (git pull), some issues have already been addressed and fixed.\n- [X] 我已阅读[项目文档](https://github.com/xusenlinzy/api-for-open-llm/blob/master/README.md)和[FAQ章节](https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/FAQ.md)并且已在Issue中对问题进行了搜索，没有找到相似问题和解决方案 | I have searched the existing issues / discussions\n\n### 问题类型 | Type of problem\n\n效果问题 | Effectiveness issues\n\n### 操作系统 | Operating system\n\nLinux\n\n### 详细描述问题 | Detailed description of the problem\n\n```\r\n# 下面为请求body\r\n# \r\nmodelName=Qwen-14B, \r\nconversationId=***,\r\nhistory=[ChatContent(role=user, metadata=null, content=北京今天天气怎么样)],\r\ntools=[OpenAiTools(type=function, function=OpenAiTool(name=weather, description=获取某地的天气、温度，湿度等信息, \r\nparameters=OpenAiToolParameterDto(type=object, properties=null), required=[]))], \r\ntoolChoice=none, \r\nstop=[Observation]\r\n\r\n# 下面为模型返回\r\n对不起，我无法获取实时的天气信息，因为我没有相应的数据接口。建议您可以通过查看各大天气预报网站，或者使用专业的天气预报应用来查询北京的天气情况。\r\n\r\n# 提问：\r\n原先是Qwen 1时，是会返回具体的工具选择结果及参数的。现在升级Qwen1.5后，不支持该功能了。\r\n请问：是调用方式有修改吗？还是还不支持Qwen1.5 tool_choice，是否有考虑在后续版本增加该功能？\r\n\r\n```\r\n\n\n### Dependencies\n\n_No response_\n\n### 运行日志或截图 | Runtime logs or screenshots\n\n_No response_",
+      "state": "open",
+      "author": "YunmengLiu0",
+      "author_type": "User",
+      "created_at": "2024-03-12T02:40:24Z",
+      "updated_at": "2024-05-03T17:16:54Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/245/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/245",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/245",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.782083",
+      "comments": [
+        {
+          "author": "EchoShoot",
+          "body": "+1",
+          "created_at": "2024-03-13T03:54:09Z"
+        },
+        {
+          "author": "QuentinWang1",
+          "body": "+1",
+          "created_at": "2024-03-13T11:42:07Z"
+        },
+        {
+          "author": "skyliwq",
+          "body": "+1",
+          "created_at": "2024-04-23T15:56:49Z"
+        },
+        {
+          "author": "skyliwq",
+          "body": "什么时候能处理一下",
+          "created_at": "2024-05-03T17:16:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 269,
+      "title": "💡 vllm已经支持流水线并行啦（pipeline parallel），可以极大增加吞吐量，作者可否增加一下vllm的pipeline parallel支持",
+      "body": "### 起始日期 | Start Date\n\n4/26/2024\n\n### 实现PR | Implementation PR\n\nvllm已经支持流水线并行啦（pipeline parallel），可以极大增加吞吐量，作者可否增加一下vllm的pipeline parallel支持\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n对于整个集群而言pipeline parallel可以增大吞吐量，是非常关键的指标。vllm的新版本也支持pipeline parallel了，希望作者能更新一下API\n\n### 基本示例 | Basic Example\n\n--pipeline-parallel-size (-pp) <size>：流水线并行阶段的数量。\r\n--tensor-parallel-size (-tp) <size>：张量并行副本数量。\n\n### 缺陷 | Drawbacks\n\n会影响单个推理的延迟\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "CaptainLeezz",
+      "author_type": "User",
+      "created_at": "2024-04-26T14:04:33Z",
+      "updated_at": "2024-04-28T01:51:02Z",
+      "closed_at": "2024-04-28T01:51:02Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/269/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/269",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/269",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971574",
+      "comments": []
+    },
+    {
+      "issue_number": 255,
+      "title": "💡 [REQUEST] - 请求支持CodeLlama-70b-Instruct-hf",
+      "body": "### 起始日期 | Start Date\n\n无\n\n### 实现PR | Implementation PR\n\n无\r\n\r\n\n\n### 相关Issues | Reference Issues\n\n无\r\n\r\n\n\n### 摘要 | Summary\n\n无\r\n\r\n\n\n### 基本示例 | Basic Example\n\n无\r\n\r\n\n\n### 缺陷 | Drawbacks\n\n无\r\n\r\n\n\n### 未解决问题 | Unresolved questions\n\n```\r\nChat use: The 70B Instruct model uses a [different prompt template](https://huggingface.co/codellama/CodeLlama-70b-Instruct-hf#chat_prompt) than the smaller versions. To use it with transformers, we recommend you use the built-in chat template:\r\n```\r\n70B的 prompt template 和现在已经支持的7/13/34B不一样。不知道能否直接用\r\n",
+      "state": "closed",
+      "author": "Reset816",
+      "author_type": "User",
+      "created_at": "2024-03-30T07:08:07Z",
+      "updated_at": "2024-04-24T10:05:42Z",
+      "closed_at": "2024-04-24T10:05:42Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/255/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/255",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/255",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971596",
+      "comments": []
+    },
+    {
+      "issue_number": 178,
+      "title": "💡 [REQUEST] - Cohere embed 支持",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nhttps://huggingface.co/Cohere/Cohere-embed-multilingual-v3.0\n\n### 基本示例 | Basic Example\n\nhttps://huggingface.co/Cohere/Cohere-embed-multilingual-v3.0\n\n### 缺陷 | Drawbacks\n\nhttps://huggingface.co/Cohere/Cohere-embed-multilingual-v3.0\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-11-22T12:11:19Z",
+      "updated_at": "2024-04-17T03:45:31Z",
+      "closed_at": "2024-04-17T03:45:31Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/178/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/178",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/178",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971606",
+      "comments": []
+    },
+    {
+      "issue_number": 179,
+      "title": "💡 [REQUEST] - please support airllm?",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\nhttps://github.com/lyogavin/Anima/tree/main/air_llm\r\n\r\nAirLLM optimizes inference memory usage, allowing 70B large language models to run inference on a single 4GB GPU card.\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nwould you please support airllm tech? the author said it can optimizes inference memory usage, allowing 70B large language models to run inference on a single 4GB GPU card.\n\n### 基本示例 | Basic Example\n\nadd new\n\n### 缺陷 | Drawbacks\n\nnot known yet.\n\n### 未解决问题 | Unresolved questions\n\nnone yet",
+      "state": "closed",
+      "author": "showkeyjar",
+      "author_type": "User",
+      "created_at": "2023-11-23T12:35:42Z",
+      "updated_at": "2024-04-17T03:45:11Z",
+      "closed_at": "2024-04-17T03:45:11Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/179/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/179",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/179",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971612",
+      "comments": []
+    },
+    {
+      "issue_number": 198,
+      "title": "💡 [REQUEST] - 请支持类似FastChat的Controller功能，以便支持多个模型部署",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n现在的api只能支持单个部署的模型，无法通过统一API支持多个模型。建议参考FastChat的Controller实现多个模型统一API\n\n### 基本示例 | Basic Example\n\n参考fastchat的Controller\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "rainsoft",
+      "author_type": "User",
+      "created_at": "2023-12-11T08:13:31Z",
+      "updated_at": "2024-04-17T03:45:04Z",
+      "closed_at": "2024-04-17T03:45:04Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/198/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/198",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/198",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971617",
+      "comments": []
+    },
+    {
+      "issue_number": 246,
+      "title": "你好，支持mistral模型吗",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问支持mistral模型吗\n\n### 基本示例 | Basic Example\n\n请问支持mistral模型吗\n\n### 缺陷 | Drawbacks\n\n请问支持mistral模型吗\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2024-03-13T08:20:30Z",
+      "updated_at": "2024-04-16T07:51:22Z",
+      "closed_at": "2024-04-16T07:51:22Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/246/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/246",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/246",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971624",
+      "comments": []
+    },
+    {
+      "issue_number": 256,
+      "title": "INFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity💡 [REQUEST] - <title>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\nINFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity\r\n通过dify来调用function calling 导致报错422,模板为openapi的头;\n\n### 相关Issues | Reference Issues\n\nINFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity\r\n通过dify来调用function calling 导致报错422,模板为openapi的头;\n\n### 摘要 | Summary\n\nINFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity\r\n通过dify来调用function calling 导致报错422,模板为openapi的头;\n\n### 基本示例 | Basic Example\n\nINFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity\r\n通过dify来调用function calling 导致报错422,模板为openapi的头;\n\n### 缺陷 | Drawbacks\n\nINFO:     172.20.0.8:60822 - \"POST /v1/chat/completions HTTP/1.1\" 422 Unprocessable Entity\r\n通过dify来调用function calling 导致报错422,模板为openapi的头;\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "besthong999",
+      "author_type": "User",
+      "created_at": "2024-04-03T01:43:46Z",
+      "updated_at": "2024-04-16T07:50:52Z",
+      "closed_at": "2024-04-16T07:50:52Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/256/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/256",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/256",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:11.971629",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "function calling功能还没完善，可能有不兼容",
+          "created_at": "2024-04-16T07:50:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 253,
+      "title": "💡 [REQUEST] - <title>vllm支持Qwen1.5-14B-Chat-AWQ和Qwen1.5-14B-Chat-GPTQ-int4吗",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nvllm支持Qwen1.5-14B-Chat-AWQ和Qwen1.5-14B-Chat-GPTQ-int4吗\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n无",
+      "state": "closed",
+      "author": "dickpy",
+      "author_type": "User",
+      "created_at": "2024-03-27T09:35:59Z",
+      "updated_at": "2024-04-15T01:13:10Z",
+      "closed_at": "2024-04-15T01:13:10Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/253/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/253",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/253",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:12.209974",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "支持的\n\n\n\n---- 回复的原邮件 ----\n| 发件人 | ***@***.***> |\n| 日期 | 2024年03月27日 17:36 |\n| 收件人 | ***@***.***> |\n| 抄送至 | ***@***.***> |\n| 主题 | [xusenlinzy/api-for-open-llm] 💡 [REQUEST] - <title>vllm支持Qwen1.5-14B-Chat-AWQ和Qwen1.5-14B-Chat-GPTQ-int4吗 (Issue #253) |\n\n起始日期 | Start Date\n\nNo response\n\n实现PR | Implementati",
+          "created_at": "2024-03-27T10:33:39Z"
+        },
+        {
+          "author": "dickpy",
+          "body": "好的谢谢，是不是.env的配置就按照default里面的来，在vllm里面没看到那些模型，还以为不通用",
+          "created_at": "2024-03-28T01:46:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 105,
+      "title": "💡 [REQUEST] - 请问如何支持 Qwen/Qwen-VL-Chat",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问如何支持 Qwen/Qwen-VL-Chat\n\n### 基本示例 | Basic Example\n\n`File \"server.py\", line 2, in <module>\r\n    from api.models import EMBEDDED_MODEL, GENERATE_MDDEL, app, VLLM_ENGINE\r\n  File \"/root/api-for-open-llm/api/models.py\", line 140, in <module>\r\n    VLLM_ENGINE = create_vllm_engine() if (config.USE_VLLM and config.ACTIVATE_INFERENCE) else None\r\n  File \"/root/api-for-open-llm/api/models.py\", line 98, in create_vllm_engine\r\n    engine = AsyncLLMEngine.from_engine_args(engine_args)\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/engine/async_llm_engine.py\", line 232, in from_engine_args\r\n    engine = cls(engine_args.worker_use_ray,\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/engine/async_llm_engine.py\", line 55, in __init__\r\n    self.engine = engine_class(*args, **kwargs)\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/engine/llm_engine.py\", line 101, in __init__\r\n    self._init_workers(distributed_init_method)\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/engine/llm_engine.py\", line 133, in _init_workers\r\n    self._run_workers(\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/engine/llm_engine.py\", line 470, in _run_workers\r\n    output = executor(*args, **kwargs)\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/worker/worker.py\", line 67, in init_model\r\n    self.model = get_model(self.model_config)\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/model_executor/model_loader.py\", line 57, in get_model\r\n    model.load_weights(model_config.model, model_config.download_dir,\r\n  File \"/usr/local/miniconda3/lib/python3.8/site-packages/vllm/model_executor/models/qwen.py\", line 308, in load_weights\r\n    param = state_dict[name]\r\nKeyError: 'transformer.visual.positional_embedding'`\n\n### 缺陷 | Drawbacks\n\nQwen/Qwen-VL-Chat\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "open",
+      "author": "wangschang",
+      "author_type": "User",
+      "created_at": "2023-09-06T06:44:17Z",
+      "updated_at": "2024-02-29T08:14:00Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/105/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/105",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/105",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:14.288532",
+      "comments": [
+        {
+          "author": "xiaogui340",
+          "body": "同问，是否可以增加 视觉模型或多模态模型支持？",
+          "created_at": "2024-02-29T08:13:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 181,
+      "title": "💡 [REQUEST] - <title>希望能动态更换模型与lora模型",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n每次更换模型及lora 都需要重启docker，能不能实现Api接口动态更换。\n\n### 基本示例 | Basic Example\n\n….\n\n### 缺陷 | Drawbacks\n\n暂无内容\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "skyliwq",
+      "author_type": "User",
+      "created_at": "2023-11-24T05:53:21Z",
+      "updated_at": "2024-02-04T02:09:34Z",
+      "closed_at": "2024-02-04T02:09:34Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/181/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/181",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/181",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:14.524246",
+      "comments": []
+    },
+    {
+      "issue_number": 204,
+      "title": "💡 [REQUEST] - 支持tools和tool_choice的适配调用",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n希望可以支持openai规范的tools和tool_choice适配调用。如下传入参数：\r\n\r\ntools: [\r\n      {\r\n        type: 'function',\r\n        function: agentFunction\r\n      }\r\n    ],\r\n    tool_choice: { type: 'function', function: { name: agentFunName } }\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "leoterry-ulrica",
+      "author_type": "User",
+      "created_at": "2023-12-17T12:38:30Z",
+      "updated_at": "2024-02-04T02:09:00Z",
+      "closed_at": "2024-02-04T02:09:00Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/204/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/204",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/204",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:14.524265",
+      "comments": [
+        {
+          "author": "leoterry-ulrica",
+          "body": "@xusenlinzy 这个后续会支持不？",
+          "created_at": "2023-12-27T04:31:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 220,
+      "title": "你好 llama-cpp 启动方式支持chatglm3-6b吗",
+      "body": "### 起始日期 | Start Date\n\n1/12\n\n### 实现PR | Implementation PR\n\nPORT=80\r\n\r\n# model related\r\nMODEL_NAME=chatglm3\r\nMODEL_PATH=/workspace/chatglm.cpp/chatglm-ggml.bin\r\nPROMPT_NAME=\r\nEMBEDDING_NAME=\r\n\r\n# api related\r\nAPI_PREFIX=/v1\r\n\r\n# vllm related\r\nENGINE=llama.cpp\r\nTRUST_REMOTE_CODE=true\r\nTOKENIZE_MODE=slow\r\nTENSOR_PARALLEL_SIZE=1\r\nDTYPE=half\n\n### 相关Issues | Reference Issues\n\n上面是我的运行示例，chatglm-ggml.bin是我用chatglm.cpp项目转换的模型，但是运行报错\r\npython3 server.py \r\n2024-01-12 09:10:22.356 | DEBUG    | api.config:<module>:264 - SETTINGS: {\r\n    \"host\": \"0.0.0.0\",\r\n    \"port\": 80,\r\n    \"api_prefix\": \"/v1\",\r\n    \"engine\": \"llama.cpp\",\r\n    \"model_name\": \"chatglm3\",\r\n    \"model_path\": \"/workspace/chatglm.cpp/chatglm-ggml.bin\",\r\n    \"adapter_model_path\": null,\r\n    \"resize_embeddings\": false,\r\n    \"dtype\": \"half\",\r\n    \"device\": \"cuda\",\r\n    \"device_map\": null,\r\n    \"gpus\": null,\r\n    \"num_gpus\": 1,\r\n    \"only_embedding\": false,\r\n    \"embedding_name\": null,\r\n    \"embedding_size\": -1,\r\n    \"embedding_device\": \"cuda\",\r\n    \"quantize\": 16,\r\n    \"load_in_8bit\": false,\r\n    \"load_in_4bit\": false,\r\n    \"using_ptuning_v2\": false,\r\n    \"pre_seq_len\": 128,\r\n    \"context_length\": -1,\r\n    \"chat_template\": null,\r\n    \"patch_type\": null,\r\n    \"alpha\": \"auto\",\r\n    \"trust_remote_code\": true,\r\n    \"tokenize_mode\": \"slow\",\r\n    \"tensor_parallel_size\": 1,\r\n    \"gpu_memory_utilization\": 0.9,\r\n    \"max_num_batched_tokens\": -1,\r\n    \"max_num_seqs\": 256,\r\n    \"quantization_method\": null,\r\n    \"use_streamer_v2\": false,\r\n    \"api_keys\": null,\r\n    \"activate_inference\": true,\r\n    \"interrupt_requests\": true,\r\n    \"n_gpu_layers\": 0,\r\n    \"main_gpu\": 0,\r\n    \"tensor_split\": null,\r\n    \"n_batch\": 512,\r\n    \"n_threads\": 64,\r\n    \"n_threads_batch\": 64,\r\n    \"rope_scaling_type\": -1,\r\n    \"rope_freq_base\": 0.0,\r\n    \"rope_freq_scale\": 0.0,\r\n    \"tgi_endpoint\": null,\r\n    \"tei_endpoint\": null,\r\n    \"max_concurrent_requests\": 256,\r\n    \"max_client_batch_size\": 32\r\n}\r\nggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no\r\nggml_init_cublas: CUDA_USE_TENSOR_CORES: yes\r\nggml_init_cublas: found 8 CUDA devices:\r\n  Device 0: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 1: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 2: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 3: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 4: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 5: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 6: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\n  Device 7: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes\r\ngguf_init_from_file: invalid magic characters 'ggml'\r\nerror loading model: llama_model_loader: failed to load model from /workspace/chatglm.cpp/chatglm-ggml.bin\r\n\r\nllama_load_model_from_file: failed to load model\r\nAVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | \r\nTraceback (most recent call last):\r\n  File \"/workspace/api-for-open-llm-v3/server.py\", line 2, in <module>\r\n    from api.models import app, EMBEDDED_MODEL, GENERATE_ENGINE\r\n  File \"/workspace/api-for-open-llm-v3/api/models.py\", line 165, in <module>\r\n    GENERATE_ENGINE = create_llama_cpp_engine()\r\n  File \"/workspace/api-for-open-llm-v3/api/models.py\", line 127, in create_llama_cpp_engine\r\n    engine = Llama(\r\n  File \"/usr/local/lib/python3.10/dist-packages/llama_cpp/llama.py\", line 962, in __init__\r\n    self._n_vocab = self.n_vocab()\r\n  File \"/usr/local/lib/python3.10/dist-packages/llama_cpp/llama.py\", line 2276, in n_vocab\r\n    return self._model.n_vocab()\r\n  File \"/usr/local/lib/python3.10/dist-packages/llama_cpp/llama.py\", line 251, in n_vocab\r\n    assert self.model is not None\r\nAssertionError\r\nroot@6970820d17b2:/workspace/api-for-open-llm-v3# vim .env\r\nroot@6970820d17b2:/workspace/api-for-open-llm-v3# \r\n\n\n### 摘要 | Summary\n\n帮忙看看\n\n### 基本示例 | Basic Example\n\n是哪里出现问题吗\n\n### 缺陷 | Drawbacks\n\n求助\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2024-01-12T09:14:18Z",
+      "updated_at": "2024-01-19T04:17:20Z",
+      "closed_at": "2024-01-19T04:17:20Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/220/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/220",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/220",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:14.738095",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "https://github.com/ggerganov/llama.cpp 的支持模型里面没有chatglm",
+          "created_at": "2024-01-19T04:17:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 126,
+      "title": "💡 [REQUES\"text-embedding-ada-002T] - <title>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n\"text-embedding-ada-002\n\n### 相关Issues | Reference Issues\n\n\"text-embedding-ada-002\n\n### 摘要 | Summary\n\n\"text-embedding-ada-002\n\n### 基本示例 | Basic Example\n\n\"text-embedding-ada-002\n\n### 缺陷 | Drawbacks\n\n\"text-embedding-ada-002\n\n### 未解决问题 | Unresolved questions\n\n\"text-embedding-ada-002",
+      "state": "closed",
+      "author": "longcheng-wangxj",
+      "author_type": "User",
+      "created_at": "2023-09-20T09:29:25Z",
+      "updated_at": "2024-01-08T03:05:36Z",
+      "closed_at": "2024-01-08T03:05:36Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/126/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/126",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/126",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:14.971712",
+      "comments": [
+        {
+          "author": "longcheng-wangxj",
+          "body": "\"text-embedding-ada-002   openapi 的这个 多会支持啊",
+          "created_at": "2023-09-20T09:29:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 74,
+      "title": "💡 [REQUEST] - <title>建议增加并发量配置",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n用于生产环境\n\n### 基本示例 | Basic Example\n\n-\n\n### 缺陷 | Drawbacks\n\n-\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-08-16T10:29:49Z",
+      "updated_at": "2024-01-08T03:05:01Z",
+      "closed_at": "2024-01-08T03:05:01Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/74/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/74",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/74",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.225728",
+      "comments": []
+    },
+    {
+      "issue_number": 207,
+      "title": "💡 [REQUEST] - 对于 API 类大语言模型的支持",
+      "body": "### 起始日期 | Start Date\n\n12/20/2023\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nGemini\r\nChatGLM\r\n文心一言4\n\n### 基本示例 | Basic Example\n\n--\n\n### 缺陷 | Drawbacks\n\n--\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "DevXiaolan",
+      "author_type": "User",
+      "created_at": "2023-12-20T02:15:08Z",
+      "updated_at": "2024-01-08T03:03:31Z",
+      "closed_at": "2024-01-08T03:03:31Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/207/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/207",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/207",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.225787",
+      "comments": [
+        {
+          "author": "2catycm",
+          "body": "项目的名字叫做OpenLLM，但是感觉完全不必作茧自缚。既然本地都能支持，API应该更简单",
+          "created_at": "2024-01-02T09:36:46Z"
+        },
+        {
+          "author": "2catycm",
+          "body": "要不fork一个api-for-closed-llm，然后在里面写",
+          "created_at": "2024-01-02T09:37:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 212,
+      "title": "💡 [REQUEST] - <title>支持 Mixtral 8x7B ",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nhttps://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1\n\n### 基本示例 | Basic Example\n\nhttps://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1\n\n### 缺陷 | Drawbacks\n\nhttps://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-12-22T13:41:50Z",
+      "updated_at": "2024-01-08T03:03:15Z",
+      "closed_at": "2024-01-08T03:03:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/212/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/212",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/212",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.399048",
+      "comments": []
+    },
+    {
+      "issue_number": 216,
+      "title": "请问如何支持Qwen1.8B的模型？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n请问如何支持Qwen1.8B的模型？\n\n### 相关Issues | Reference Issues\n\n请问如何支持Qwen1.8B的模型？\n\n### 摘要 | Summary\n\n请问如何支持Qwen1.8B的模型？\n\n### 基本示例 | Basic Example\n\n请问如何支持Qwen1.8B的模型？\n\n### 缺陷 | Drawbacks\n\n请问如何支持Qwen1.8B的模型？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2023-12-27T03:04:14Z",
+      "updated_at": "2023-12-27T09:09:39Z",
+      "closed_at": "2023-12-27T09:09:39Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/216/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/216",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/216",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.399070",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "MODEL_NAME=qwen",
+          "created_at": "2023-12-27T06:14:45Z"
+        },
+        {
+          "author": "lucheng07082221",
+          "body": "抱歉，运行出错了\r\n\r\nlc@lc-ConceptD-CT500-51A:~/api-for-open-llm$ python3 server.py \r\n2023-12-27 14:28:03.577 | DEBUG    | api.config:<module>:130 - Config: {'HOST': '0.0.0.0', 'PORT': 8000, 'MODEL_NAME': 'qwen', 'MODEL_PATH': '/media/lc/lc/Qwen-1.8B-Chat', 'ADAPTER_MODEL_PATH': None, 'RESIZE_EMBEDDINGS': Fa",
+          "created_at": "2023-12-27T06:29:32Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "看样子应该是transformers的版本问题，你可以更新一下项目代码，按照最新的requirements.txt安装依赖",
+          "created_at": "2023-12-27T06:45:29Z"
+        },
+        {
+          "author": "lucheng07082221",
+          "body": "更新了最新的代码，也按照pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.tx 要求重新安装依赖\r\n然后还是报错：\r\nTraceback (most recent call last):\r\n  File \"/home/lc/api-for-open-llm/server.py\", line 2, in <module>\r\n    from api.models import app, EMBEDDED_MODEL, GENERATE_ENGINE\r\n  File \"/home/lc/api-for-",
+          "created_at": "2023-12-27T08:25:31Z"
+        },
+        {
+          "author": "lucheng07082221",
+          "body": "重新下载模型修复了，谢谢",
+          "created_at": "2023-12-27T09:07:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 214,
+      "title": "能解试下这个presence_penalty 参数应该设置多少吗？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n能解试下这个presence_penalty 参数应该设置多少吗？\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n能解试下这个presence_penalty 参数应该设置多少吗？\n\n### 基本示例 | Basic Example\n\n能解试下这个presence_penalty 参数应该设置多少吗？\n\n### 缺陷 | Drawbacks\n\n能解试下这个presence_penalty 参数应该设置多少吗？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2023-12-25T10:39:03Z",
+      "updated_at": "2023-12-27T03:04:23Z",
+      "closed_at": "2023-12-27T03:04:23Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/214/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/214",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/214",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.612299",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "这个参数暂时没有生效",
+          "created_at": "2023-12-25T11:23:09Z"
+        },
+        {
+          "author": "lucheng07082221",
+          "body": "收到，谢谢",
+          "created_at": "2023-12-27T03:03:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 182,
+      "title": "💡 [REQUEST] - <title> 请问一下，VLLM可以配置在多块GPU上运行吗，要怎么配置",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问一下，VLLM可以配置在多块GPU上运行吗，要怎么配置\n\n### 基本示例 | Basic Example\n\n请问一下，VLLM可以配置在多块GPU上运行吗，要怎么配置\n\n### 缺陷 | Drawbacks\n\n请问一下，VLLM可以配置在多块GPU上运行吗，要怎么配置\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-11-25T13:52:27Z",
+      "updated_at": "2023-12-26T03:29:14Z",
+      "closed_at": "2023-11-28T05:43:29Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/182/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/182",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/182",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.775959",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "TENSOR_PARALLEL_SIZE=2  # GPU数量\r\nENGINE=vllm",
+          "created_at": "2023-11-25T14:08:52Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "请问我这样配置有错误吗？\r\n- USE_VLLM=true\r\n      - TRUST_REMOTE_CODE=true\r\n      - ENGINE=vllm\r\n      - TENSOR_PARALLEL_SIZE = 2\r\n\r\n      - EMBEDDING_NAME=models/bge-large-en-v1.5\r\n      - EMBEDDING_DEVICE=cuda    # CPU:EMBEDDING_DEVICE=cpu，GPU：EMBEDDING_DEVICE=cuda，3号GPU：EMBEDDING_DEVICE=cuda:3\r\n      # - EMBE",
+          "created_at": "2023-11-29T12:30:34Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "应该是没问题的",
+          "created_at": "2023-11-29T14:06:43Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "![image](https://github.com/xusenlinzy/api-for-open-llm/assets/5433705/1e15b5b6-b3f2-4b7d-b497-ad4cc8192d1a)\r\n这个配置多卡不行呢，VLLM1.0.0的版本，报错",
+          "created_at": "2023-11-30T17:38:07Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "使用最新代码报错如下：\r\nllm-2  | 2023-12-03 09:27:45,235        ERROR services.py:1329 -- Failed to start the dashboard , return code 1\r\nllm-2  | 2023-12-03 09:27:45,236        ERROR services.py:1354 -- Error should be written to 'dashboard.log' or 'dashboard.err'. We are printing the last 20 lines for you. Se",
+          "created_at": "2023-12-03T09:29:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 205,
+      "title": "能提供模型训练的完整框架吗",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n能提供模型训练的完整框架吗\n\n### 相关Issues | Reference Issues\n\n能提供模型训练的完整框架吗\n\n### 摘要 | Summary\n\n能提供模型训练的完整框架吗\n\n### 基本示例 | Basic Example\n\n能提供模型训练的完整框架吗\n\n### 缺陷 | Drawbacks\n\n能提供模型训练的完整框架吗\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2023-12-18T04:19:51Z",
+      "updated_at": "2023-12-19T06:06:16Z",
+      "closed_at": "2023-12-19T06:06:16Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/205/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/205",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/205",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:15.971723",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "你可以使用这个训练模型 https://github.com/hiyouga/LLaMA-Factory",
+          "created_at": "2023-12-18T06:38:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 12,
+      "title": "建议增加openai的function call特性",
+      "body": "https://platform.openai.com/docs/guides/gpt/function-calling\r\n",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-06-20T16:27:06Z",
+      "updated_at": "2023-12-15T07:39:13Z",
+      "closed_at": "2023-12-15T07:39:13Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 11,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/12/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/12",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/12",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.177232",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "已经添加了通义千问模型的  `function call` 支持，使用方式参考 https://github.com/xusenlinzy/api-for-open-llm/blob/master/examples/quad_calculator.py",
+          "created_at": "2023-08-04T03:56:28Z"
+        },
+        {
+          "author": "yhfgyyf",
+          "body": "> 已经添加了通义千问模型的 `function call` 支持，使用方式参考 https://github.com/xusenlinzy/api-for-open-llm/blob/master/examples/quad_calculator.py\r\n\r\n能否修改下route.py中function call的代码，符合openai api的接口，方便langchain的agent调用？",
+          "created_at": "2023-08-07T03:47:00Z"
+        },
+        {
+          "author": "zhengxiang5965",
+          "body": "@xusenlinzy 使用OpenAIFunctionAgent 调用，会报错\r\n\r\n\r\nKeyError: 'name_for_model'\r\nINFO:     172.16.30.94:64022 - \"POST /v1/chat/completions HTTP/1.1\" 500 Internal Server Error\r\nERROR:    Exception in ASGI application\r\nTraceback (most recent call last):\r\n  File \"/usr/local/lib/python3.8/dist-packages/uvicorn",
+          "created_at": "2023-08-08T07:33:55Z"
+        },
+        {
+          "author": "zhengxiang5965",
+          "body": "2023-08-08 15:27:25 [llm/start] [1:chain:AgentExecutor > 2:llm:ChatOpenAI] Entering LLM run with input: {\r\n2023-08-08 15:27:25   \"messages\": [\r\n2023-08-08 15:27:25     [\r\n2023-08-08 15:27:25       {\r\n2023-08-08 15:27:25         \"lc\": 1,\r\n2023-08-08 15:27:25         \"type\": \"constructor\",\r\n2023-08-08",
+          "created_at": "2023-08-08T07:35:10Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "拉取最新的代码（效果不稳定，可能是langchain里面有很多默认的prompt）\r\n\r\n```python\r\nfrom langchain import LLMMathChain\r\nfrom langchain.agents import AgentType\r\nfrom langchain.agents import initialize_agent, Tool\r\nfrom langchain.chat_models import ChatOpenAI\r\n\r\nllm = ChatOpenAI(\r\n    openai_api_base=\"http://192.168.0.53:7891/v1",
+          "created_at": "2023-08-08T09:21:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 195,
+      "title": "如何设定本地EMBEDDING_NAME 对应的model path？💡 [REQUEST] - <title>💡 [REQUEST] - <title>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n如何设定本地EMBEDDING_NAME 对应的model path？💡 [REQUEST] - <title>\n\n### 基本示例 | Basic Example\n\n目前只看到模型地址，没有看到embedding地址，在私有环境中应该如何配置？\n\n### 缺陷 | Drawbacks\n\n目前只看到模型地址，没有看到embedding地址，在私有环境中应该如何配置？\n\n### 未解决问题 | Unresolved questions\n\n目前只看到模型地址，没有看到embedding地址，在私有环境中应该如何配置？",
+      "state": "closed",
+      "author": "tongcu",
+      "author_type": "User",
+      "created_at": "2023-12-08T07:37:55Z",
+      "updated_at": "2023-12-08T08:12:42Z",
+      "closed_at": "2023-12-08T08:12:42Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/195/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/195",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/195",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.406939",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "EMBEDDING_NAME就是路径",
+          "created_at": "2023-12-08T07:47:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 186,
+      "title": "💡 [REQUEST] - 请求支持幻方量化的DeepSeek LLM",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n幻方量化于近日发布 [deepseek-llm-7b-chat](https://huggingface.co/deepseek-ai/deepseek-llm-7b-chat) 和 [deepseek-llm-67b-chat](https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat) ，烦请开发者做出适配。\n\n### 基本示例 | Basic Example\n\n``` python\r\nimport torch\r\nfrom transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig\r\n\r\nmodel_name = \"deepseek-ai/deepseek-llm-7b-chat\"\r\ntokenizer = AutoTokenizer.from_pretrained(model_name)\r\nmodel = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16, device_map=\"auto\")\r\nmodel.generation_config = GenerationConfig.from_pretrained(model_name)\r\nmodel.generation_config.pad_token_id = model.generation_config.eos_token_id\r\n\r\nmessages = [\r\n    {\"role\": \"user\", \"content\": \"Who are you?\"}\r\n]\r\ninput_tensor = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors=\"pt\")\r\noutputs = model.generate(input_tensor.to(model.device), max_new_tokens=100)\r\n\r\nresult = tokenizer.decode(outputs[0][input_tensor.shape[1]:], skip_special_tokens=True)\r\nprint(result)\r\n```\n\n### 缺陷 | Drawbacks\n\n67B模型需要多张显卡进行推理\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "SirlyDreamer",
+      "author_type": "User",
+      "created_at": "2023-11-30T05:35:10Z",
+      "updated_at": "2023-12-01T05:35:18Z",
+      "closed_at": "2023-12-01T05:35:18Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/186/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/186",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/186",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.568424",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/SCRIPT.md#deepseekchat\r\n\r\n你可以更新一下代码然后试试上面的配置",
+          "created_at": "2023-11-30T10:02:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 175,
+      "title": "💡 [REQUEST] - vllm支持更多模型",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n比如支持chatglm系列\r\nhttps://docs.vllm.ai/en/latest/models/supported_models.html\n\n### 基本示例 | Basic Example\n\n比如支持chatglm系列\r\nhttps://docs.vllm.ai/en/latest/models/supported_models.html\n\n### 缺陷 | Drawbacks\n\n比如支持chatglm系列\r\nhttps://docs.vllm.ai/en/latest/models/supported_models.html\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "yinggoga",
+      "author_type": "User",
+      "created_at": "2023-11-21T06:55:13Z",
+      "updated_at": "2023-11-28T05:43:17Z",
+      "closed_at": "2023-11-28T05:43:17Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/175/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/175",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/175",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.749562",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "目前代码已经支持chatglm了",
+          "created_at": "2023-11-28T05:43:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 136,
+      "title": "为什么用lora微调完成后稍微和原始问题不一样就回答错误呢",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n为什么用lora微调完成后稍微和原始问题不一样就回答错误呢\n\n### 基本示例 | Basic Example\n\n为什么用lora微调完成后稍微和原始问题不一样就回答错误呢\n\n### 缺陷 | Drawbacks\n\n为什么用lora微调完成后稍微和原始问题不一样就回答错误呢\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2023-09-28T02:14:06Z",
+      "updated_at": "2023-11-24T08:07:22Z",
+      "closed_at": "2023-11-24T08:07:22Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/136/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/136",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/136",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.957968",
+      "comments": []
+    },
+    {
+      "issue_number": 142,
+      "title": "💡 [REQUEST] - <title> wizardLM系列求更新！",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n你好呀，感谢你的工作！ wizardmath  wizardcode效果都很好，不知道你们是否有添加的打算~\n\n### 基本示例 | Basic Example\n\n1\n\n### 缺陷 | Drawbacks\n\n或者出个教程告诉我们自己怎么添加呀\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "2018211801",
+      "author_type": "User",
+      "created_at": "2023-10-08T09:06:28Z",
+      "updated_at": "2023-11-24T08:07:03Z",
+      "closed_at": "2023-11-24T08:07:03Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/142/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/142",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/142",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:16.957988",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "你可以试试 https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/SCRIPT.md#wizard-coder",
+          "created_at": "2023-10-08T09:09:21Z"
+        },
+        {
+          "author": "2018211801",
+          "body": "谢谢你及时的回复！！ 就是vllm/script.md 和 script.md 里面给出的可用模型不一样，这两个是除了环境，其他通用的吗？vllm下的没写wizard也可以用吗？我好像通过vllm方式正在下载wizard，但是还有半天才下完，不知道这样可以用吗？   再次感谢~",
+          "created_at": "2023-10-08T10:51:39Z"
+        },
+        {
+          "author": "2018211801",
+          "body": "好像不行，已经报错了",
+          "created_at": "2023-10-08T11:14:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 154,
+      "title": "💡 [REQUEST] - 支持 XuanYuan-70B-Chat-4bit / 8bit",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nXuanYuan-70B 在金融领域达到 GPT-4 水平。 XuanYuan-70B-Chat 开源了 8bit 和 4bit 的量化版本，其中 4bit 量化版本和 Qwen-14B-Chat-Int4 同样使用了 auto-gptq 工具，且显存要求相对较低，应该更适合部署调试。在这个基础上如果能进一步增加 vllm（官方demo支持） 和 8bit 量化版本的支持就更好了。\n\n### 基本示例 | Basic Example\n\nhttps://github.com/Duxiaoman-DI/XuanYuan\r\nhttps://huggingface.co/Duxiaoman-DI/XuanYuan-70B-Chat-4bit\r\nhttps://huggingface.co/Duxiaoman-DI/XuanYuan-70B-Chat-8bit\n\n### 缺陷 | Drawbacks\n\n-\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "LuneZ99",
+      "author_type": "User",
+      "created_at": "2023-11-02T05:56:20Z",
+      "updated_at": "2023-11-24T08:06:40Z",
+      "closed_at": "2023-11-24T08:06:40Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/154/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/154",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/154",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:17.177400",
+      "comments": []
+    },
+    {
+      "issue_number": 174,
+      "title": "💡 [REQUEST] - <请求增加OrionStar-Yi-34B-Chat，基于Yi-34B-Base的对话模型>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n请求增加OrionStar-Yi-34B-Chat，基于Yi-34B-Base的对话模型\r\nhttps://huggingface.co/OrionStarAI/OrionStar-Yi-34B-Chat\r\n\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请求增加OrionStar-Yi-34B-Chat，基于Yi-34B-Base的对话模型\r\nhttps://huggingface.co/OrionStarAI/OrionStar-Yi-34B-Chat\r\n\n\n### 基本示例 | Basic Example\n\n请求增加OrionStar-Yi-34B-Chat，基于Yi-34B-Base的对话模型\r\nhttps://huggingface.co/OrionStarAI/OrionStar-Yi-34B-Chat\r\n\n\n### 缺陷 | Drawbacks\n\n该模型比较厉害\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "liuxiaopai-ai",
+      "author_type": "User",
+      "created_at": "2023-11-21T03:16:37Z",
+      "updated_at": "2023-11-24T08:05:50Z",
+      "closed_at": "2023-11-24T08:05:50Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/174/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/174",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/174",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:17.177421",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "刚刚更新了模板，你可以尝试使用下面的配置\r\n\r\n```\r\nMODEL_NAME=orionstar\r\nMODEL_PATH=OrionStarAI/OrionStar-Yi-34B-Chat\r\nPROMPT_NAME=orionstar\r\nDEVICE_MAP=auto\r\n```",
+          "created_at": "2023-11-21T04:05:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 176,
+      "title": "💡 [REQUEST] - 想知道template中的这些模型全都支持吗？",
+      "body": "### 起始日期 | Start Date\n\n11/21/2023\n\n### 实现PR | Implementation PR\n\n暂无\n\n### 相关Issues | Reference Issues\n\n```\r\nregister_prompt_adapter(AlpacaTemplate)\r\nregister_prompt_adapter(AquilaChatTemplate)\r\nregister_prompt_adapter(BaiChuanTemplate)\r\nregister_prompt_adapter(BaiChuan2Template)\r\nregister_prompt_adapter(BelleTemplate)\r\nregister_prompt_adapter(BlueLMTemplate)\r\nregister_prompt_adapter(ChatglmTemplate)\r\nregister_prompt_adapter(Chatglm2Template)\r\nregister_prompt_adapter(ChineseAlpaca2Template)\r\nregister_prompt_adapter(DeepseekTemplate)\r\nregister_prompt_adapter(FireflyTemplate)\r\nregister_prompt_adapter(FireflyForQwenTemplate)\r\nregister_prompt_adapter(HuatuoTemplate)\r\nregister_prompt_adapter(InternLMTemplate)\r\nregister_prompt_adapter(Llama2Template)\r\nregister_prompt_adapter(MossTemplate)\r\nregister_prompt_adapter(OctopackTemplate)\r\nregister_prompt_adapter(OpenBuddyTemplate)\r\nregister_prompt_adapter(OrionStarTemplate)\r\nregister_prompt_adapter(PhindTemplate)\r\nregister_prompt_adapter(PhoenixTemplate)\r\nregister_prompt_adapter(QwenTemplate)\r\nregister_prompt_adapter(StarChatTemplate)\r\nregister_prompt_adapter(VicunaTemplate)\r\nregister_prompt_adapter(XuanYuanTemplate)\r\nregister_prompt_adapter(XverseTemplate)\r\nregister_prompt_adapter(ZephyrTemplate)\r\nregister_prompt_adapter(BaseTemplate)\r\n```\n\n### 摘要 | Summary\n\n暂无\n\n### 基本示例 | Basic Example\n\n暂无\n\n### 缺陷 | Drawbacks\n\n暂无\n\n### 未解决问题 | Unresolved questions\n\n暂无",
+      "state": "closed",
+      "author": "Hapluckyy",
+      "author_type": "User",
+      "created_at": "2023-11-21T13:09:34Z",
+      "updated_at": "2023-11-24T08:05:28Z",
+      "closed_at": "2023-11-24T08:05:27Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/176/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/176",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/176",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:17.444826",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "应该是的，有部分模型没有测试",
+          "created_at": "2023-11-22T01:20:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 158,
+      "title": "💡 [REQUEST] - <title>如何解决跨域问题？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n如何解决跨域问题？\n\n### 基本示例 | Basic Example\n\n如何解决跨域问题？\n\n### 缺陷 | Drawbacks\n\n如何解决跨域问题？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "coderwpf",
+      "author_type": "User",
+      "created_at": "2023-11-04T14:27:54Z",
+      "updated_at": "2023-11-06T01:54:16Z",
+      "closed_at": "2023-11-06T01:54:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/158/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/158",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/158",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:17.666863",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "在下面的代码中设置跨域参数就行 https://github.com/xusenlinzy/api-for-open-llm/blob/master/api/models.py#L11C4-L11C21  ",
+          "created_at": "2023-11-05T00:50:02Z"
+        },
+        {
+          "author": "coderwpf",
+          "body": "> 在下面的代码中设置跨域参数就行 https://github.com/xusenlinzy/api-for-open-llm/blob/master/api/models.py#L11C4-L11C21\r\n\r\n感谢大佬，问题终于解决了。十分感谢",
+          "created_at": "2023-11-06T01:54:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 151,
+      "title": "💡 [REQUEST] - 支持chatglm3-6B ",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n希望能支持chatglm3-6b 模型的部署\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "wuzechuan",
+      "author_type": "User",
+      "created_at": "2023-10-27T16:00:36Z",
+      "updated_at": "2023-11-03T07:51:29Z",
+      "closed_at": "2023-11-03T07:51:29Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/151/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/151",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/151",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:17.852439",
+      "comments": [
+        {
+          "author": "LuneZ99",
+          "body": "模型项目地址 https://github.com/THUDM/ChatGLM3",
+          "created_at": "2023-10-28T04:31:00Z"
+        },
+        {
+          "author": "Lvjinhong",
+          "body": "可以直接换成glm3，可以正常运行\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/96970081/4e93fbe7-2564-4f2c-a100-cb69a04c4b97)\r\n\r\n\r\n但是streamlit的接口好像是有些问题：\r\n当我使用 OPENAI_API_BASE=http://127.0.0.1:8000/v1 streamlit run streamlit_app.py 运行时，会出现问题：\r\n\r\n![image](https://github.com/xusenlinzy/api-for-open",
+          "created_at": "2023-10-28T04:50:43Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "最新代码已添加支持",
+          "created_at": "2023-10-28T16:27:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 156,
+      "title": "💡 [REQUEST] - 如何多卡运行？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问怎么多卡运行，当单卡无法满足模型运行，如何多卡运行呢\n\n### 基本示例 | Basic Example\n\n请问怎么多卡运行，当单卡无法满足模型运行，如何多卡运行呢\n\n### 缺陷 | Drawbacks\n\n请问怎么多卡运行，当单卡无法满足模型运行，如何多卡运行呢\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "deku0818",
+      "author_type": "User",
+      "created_at": "2023-11-02T09:55:49Z",
+      "updated_at": "2023-11-03T07:50:39Z",
+      "closed_at": "2023-11-03T07:50:39Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/156/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/156",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/156",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:18.045009",
+      "comments": [
+        {
+          "author": "deku0818",
+          "body": "用vllm  设置了 TENSOR_PARALLEL_SIZE=2 但还是用的一张卡",
+          "created_at": "2023-11-02T10:10:57Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "![image](https://github.com/xusenlinzy/api-for-open-llm/assets/111472355/0e12001c-f429-418e-b55d-ed43c4a41d20)\r\n使用docker启动的话，这个地方也要修改，比如两张卡就写  `['0', '1']`",
+          "created_at": "2023-11-03T07:50:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 145,
+      "title": "💡 [REQUEST] - <title> 请问Qwen-14B-Chat-Int4模型可以跑在vllm的镜像上面吗？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问Qwen-14B-Chat-Int4模型可以跑在vllm的镜像上面吗？\n\n### 基本示例 | Basic Example\n\n请问Qwen-14B-Chat-Int4模型可以跑在vllm的镜像上面吗？\n\n### 缺陷 | Drawbacks\n\n请问Qwen-14B-Chat-Int4模型可以跑在vllm的镜像上面吗？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-10-11T16:38:54Z",
+      "updated_at": "2023-10-26T03:29:15Z",
+      "closed_at": "2023-10-26T03:29:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/145/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/145",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/145",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:18.294787",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "vllm还不支持gptq量化的模型",
+          "created_at": "2023-10-16T01:02:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 138,
+      "title": "💡 [REQUEST] - <title>请问，可以只跑embedding模型，而不启动LLM吗？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问，可以只跑embedding模型，而不启动LLM吗？\n\n### 基本示例 | Basic Example\n\n请问，可以只跑embedding模型，而不启动LLM吗？\n\n### 缺陷 | Drawbacks\n\n请问，可以只跑embedding模型，而不启动LLM吗？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-10-07T05:14:43Z",
+      "updated_at": "2023-10-08T06:50:26Z",
+      "closed_at": "2023-10-08T06:50:26Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/138/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/138",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/138",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:18.458813",
+      "comments": [
+        {
+          "author": "kv-chiu",
+          "body": "yes, i had tried it",
+          "created_at": "2023-10-08T06:42:16Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "拉取最新代码，环境变量增加 ONLY_EMBEDDING=true",
+          "created_at": "2023-10-08T06:42:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 134,
+      "title": "💡 [REQUEST] - 需要支持Qwen-14B-chat",
+      "body": "### 起始日期 | Start Date\n\n09/25/2023\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nqwen14B模型发布了，可以支持下这个模型吗\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n无",
+      "state": "closed",
+      "author": "wuzechuan",
+      "author_type": "User",
+      "created_at": "2023-09-25T06:56:31Z",
+      "updated_at": "2023-10-08T06:37:09Z",
+      "closed_at": "2023-10-08T06:37:09Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/134/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/134",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/134",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:18.639079",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "应该是可以的，和qwen-7b使用方式一样，模型的关键代码没什么变化",
+          "created_at": "2023-09-25T07:45:19Z"
+        },
+        {
+          "author": "wuzechuan",
+          "body": "vllm 启动不了，非vllm的可以",
+          "created_at": "2023-09-25T08:30:03Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "可以试试 https://github.com/vllm-project/vllm/pull/1173",
+          "created_at": "2023-09-25T10:01:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 132,
+      "title": "这个项目非常有价值，感恩随喜！💡 [REQUEST] - <title>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n这个项目非常有价值，建议说明书可以再详细完善一点\n\n### 基本示例 | Basic Example\n\n这个项目非常有价值，解决了各大语言模型api接口不统一的问题，节省了开发者大量的时间，非常感恩作者的付出。\r\n有一个小小的建议，说明书可以再详细完善一点，比如各模型数据请求的格式以及返回的数据格式。在部署baichuan-2 13B的时候就遇到这个问题，最开始我的数据请求格式如下：\r\n```javascript\r\n{\r\n    \"messages\": [\r\n      {\"role\": \"user\",\"content\": \"介绍一下你自己\"}\r\n    ],\r\n    \"repetition_penalty\": 1.0,\r\n    \"stream\": true\r\n}\r\n``` \r\n\r\n但总是报错，后来试了一天，才发现需要在请求的数据中加上模型名称，如下：\r\n```javascript\r\n{\r\n    \"model\": \"baichuan2-13b-chat\",\r\n    \"messages\": [\r\n      {\"role\": \"user\",\"content\": \"介绍一下你自己\"}\r\n    ],\r\n    \"repetition_penalty\": 1.0\r\n    \"stream\": true\r\n}\r\n``` \r\n在这方面，Chinese-LLaMA-Alpaca的仿OpenAI API调用说明就写得很好\r\nhttps://github.com/ymcui/Chinese-LLaMA-Alpaca-2/wiki/api_calls_zh\r\n建议楼主可以参考。\r\n\r\n非常感恩！\n\n### 缺陷 | Drawbacks\n\n说明书比较简略\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "qiangduscu",
+      "author_type": "User",
+      "created_at": "2023-09-24T09:32:30Z",
+      "updated_at": "2023-10-08T06:36:31Z",
+      "closed_at": "2023-10-08T06:36:31Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/132/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/132",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/132",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:20.626441",
+      "comments": []
+    },
+    {
+      "issue_number": 133,
+      "title": "你好，支持书生20B吗",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n你好，支持书生20B吗\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n你好，支持书生20B吗\n\n### 基本示例 | Basic Example\n\n你好，支持书生20B吗\n\n### 缺陷 | Drawbacks\n\n你好，支持书生20B吗\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lucheng07082221",
+      "author_type": "User",
+      "created_at": "2023-09-25T01:56:30Z",
+      "updated_at": "2023-09-26T09:36:14Z",
+      "closed_at": "2023-09-26T09:36:14Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/133/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/133",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/133",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:20.626469",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "应该是可以的，启动方式参考 https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/SCRIPT.md#internlm",
+          "created_at": "2023-09-25T07:47:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 129,
+      "title": "💡 [REQUEST] - < InternLM-20B的启动方式和InternLM-7B是一样的吗>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\nInternLM新出了一个20B的版本，不知道能否用7B的方式启动\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "xiaoranchenwai",
+      "author_type": "User",
+      "created_at": "2023-09-22T08:47:29Z",
+      "updated_at": "2023-09-25T01:41:56Z",
+      "closed_at": "2023-09-25T01:41:56Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/129/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/129",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/129",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:20.803686",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "是一样的",
+          "created_at": "2023-09-22T08:50:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 122,
+      "title": "💡 [REQUEST] - 如何支持YeungNLP/firefly-qwen-7b",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n想用微调后的千问，请问大佬如何配置，这是我目前的配置\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/7c775309-8008-4a1b-b8a8-53083b93218a)\r\n启动时报错了：\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/29bd7476-c9b5-4a3f-8140-5ece464b9d9e)\r\n\n\n### 基本示例 | Basic Example\n\n1\n\n### 缺陷 | Drawbacks\n\n1\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "tkokto",
+      "author_type": "User",
+      "created_at": "2023-09-15T01:40:40Z",
+      "updated_at": "2023-09-16T01:48:05Z",
+      "closed_at": "2023-09-16T01:48:05Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/122/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/122",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/122",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.034743",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "刚刚更新了，拉取新的代码试试\r\n\r\n```\r\nPROMPT_NAME=firefly-qwen\r\nDEVICE_MAP=auto\r\n```\r\n\r\nMODEL_PATH换成绝对路径试试，报错信息好像没找到模型文件",
+          "created_at": "2023-09-15T03:06:33Z"
+        },
+        {
+          "author": "tkokto",
+          "body": "感谢回复！\r\n我刚更新了最新代码\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/913ae913-72a4-4253-ab4c-806c7751df8b)\r\n我把model_path改为了YeungNLP/firefly-qwen-7b，还是报错了，\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/e4da70e8-61ca-4774-88f6-6bb11e32e18f)\r\n是不是我的路径写的有问题",
+          "created_at": "2023-09-15T03:24:20Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "你的模型文件下载到本地了吗，报错信息是因为连接不上huggingface",
+          "created_at": "2023-09-15T03:28:04Z"
+        },
+        {
+          "author": "tkokto",
+          "body": "下载到本地了，还是报错，\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/a4b88c82-1c60-4065-afc8-216d11702fef)\r\n我把model中的path也改了\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/a4d0e86c-c220-4cca-aa3e-8ae030d20617)\r\n但是报错日志中一直显示去下载",
+          "created_at": "2023-09-15T07:21:08Z"
+        },
+        {
+          "author": "tkokto",
+          "body": "这是下载后的路径：\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/b066f041-fd07-401d-a265-cfb086b80a24)\r\n好像一直去hugging face去下载qwen7b了，而不是本地的firefly qwen\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/43598273/9315ef36-4e54-47a5-81bd-9be3765eabf8)\r\n",
+          "created_at": "2023-09-15T07:23:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "💡 [QUESTION] - <请问支持Chinese- alpaca-2吗>",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问支持Chinese- alpaca2吗\n\n### 基本示例 | Basic Example\n\n使用llama2进行部署吗，我看代码里每个模型都会寻到一个部署路径。\n\n### 缺陷 | Drawbacks\n\n无\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "Alberoyang",
+      "author_type": "User",
+      "created_at": "2023-09-15T03:06:33Z",
+      "updated_at": "2023-09-15T09:12:56Z",
+      "closed_at": "2023-09-15T09:12:56Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/123/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/123",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/123",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.232108",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "刚刚更新了代码，你可以试试修改下面的配置\r\n\r\n```\r\nMODEL_NAME=llama2\r\nPROMPT_NAME=chinese-llama-alpaca2\r\n```",
+          "created_at": "2023-09-15T03:31:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "请问如何支持新的模型 chatglm2-6b-32k，我试了一下 没有任何响应",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n...\n\n### 基本示例 | Basic Example\n\n...\n\n### 缺陷 | Drawbacks\n\n...\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lonely1215225",
+      "author_type": "User",
+      "created_at": "2023-09-09T18:42:00Z",
+      "updated_at": "2023-09-11T10:05:41Z",
+      "closed_at": "2023-09-11T10:05:41Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/116",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/116",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.456405",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "与chatglm2-6b的配置是一样的\r\n\r\n```\r\nMODEL_NAME=chatglm2\r\nMODEL_PATH=THUDM/chatglm2-6b-32k\r\n```",
+          "created_at": "2023-09-10T04:12:06Z"
+        },
+        {
+          "author": "lonely1215225",
+          "body": "> \r\n\r\n真的没有回复内容，请问你有试过吗？",
+          "created_at": "2023-09-10T06:42:00Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "![image](https://github.com/xusenlinzy/api-for-open-llm/assets/111472355/6c2cfb5f-455e-4f2d-ab46-ac0ad661d2a0)\r\n",
+          "created_at": "2023-09-10T09:23:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 115,
+      "title": "请问为什么不使用Gradio去增加并发量？uvicorn都是worker的方式 资源无法最大化利用了",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n。。\n\n### 基本示例 | Basic Example\n\n。。\n\n### 缺陷 | Drawbacks\n\n。。\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lonely1215225",
+      "author_type": "User",
+      "created_at": "2023-09-09T16:20:15Z",
+      "updated_at": "2023-09-11T04:51:15Z",
+      "closed_at": "2023-09-11T04:51:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/115/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/115",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/115",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.665922",
+      "comments": []
+    },
+    {
+      "issue_number": 113,
+      "title": "为什么不使用Gradio去启动？uvicorn 的 workers太占用资源了",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n。。。。\n\n### 基本示例 | Basic Example\n\n。。。\n\n### 缺陷 | Drawbacks\n\n。。。\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "lonely1215225",
+      "author_type": "User",
+      "created_at": "2023-09-07T17:14:34Z",
+      "updated_at": "2023-09-07T17:15:46Z",
+      "closed_at": "2023-09-07T17:15:46Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/113/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/113",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/113",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.665944",
+      "comments": []
+    },
+    {
+      "issue_number": 108,
+      "title": "如何使用基于starcoder微调过的模型",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n请问如何使用其他基于starcoder微调的模型（codes），用法跟sqlcoder一样嘛，还是暂时不支持\n\n### 基本示例 | Basic Example\n\n无\n\n### 缺陷 | Drawbacks\n\n是否支持呢\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "steph730",
+      "author_type": "User",
+      "created_at": "2023-09-07T03:07:29Z",
+      "updated_at": "2023-09-07T09:48:50Z",
+      "closed_at": "2023-09-07T09:48:50Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/108/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/108",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/108",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.665951",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "与starcoder模型的使用方式是一致的，如果是对话模型的话，需要注意对话的prompt模板",
+          "created_at": "2023-09-07T03:15:20Z"
+        },
+        {
+          "author": "steph730",
+          "body": "> 与starcoder模型的使用方式是一致的，如果是对话模型的话，需要注意对话的prompt模板\r\n我看文档里没有startcoder的启动方式呀，只有starchat和sqlcoder，是使用sqlcoder的启动方式嘛",
+          "created_at": "2023-09-07T03:38:37Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "对的",
+          "created_at": "2023-09-07T03:53:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 107,
+      "title": "baichuan2已发布，建议支持一下。",
+      "body": "\r\nbaichuan2已发布，建议支持一下。",
+      "state": "closed",
+      "author": "143heyan",
+      "author_type": "User",
+      "created_at": "2023-09-07T02:13:12Z",
+      "updated_at": "2023-09-07T09:37:32Z",
+      "closed_at": "2023-09-07T09:37:32Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/107/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/107",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/107",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:21.863572",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/SCRIPT.md#baichuan2\r\n\r\n您好，已经更新了代码，还未测试，可以测试一下看看有没有问题哈~",
+          "created_at": "2023-09-07T02:18:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 102,
+      "title": "💡 [REQUEST] - <title> 本地模型使用的是 chatglm2-6b-int4，请问QUANTIZE和LOAD_IN_4BIT参数分别要怎么设置",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n本地模型使用的是 chatglm2-6b-int4，请问QUANTIZE和LOAD_IN_4BIT参数分别要怎么设置\n\n### 基本示例 | Basic Example\n\n本地模型使用的是 chatglm2-6b-int4，请问QUANTIZE和LOAD_IN_4BIT参数分别要怎么设置\n\n### 缺陷 | Drawbacks\n\n本地模型使用的是 chatglm2-6b-int4，请问QUANTIZE和LOAD_IN_4BIT参数分别要怎么设置\r\n\r\nQUANTIZE = 4\r\nLOAD_IN_4BIT = true\r\n\r\n是这样设置吗？\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-09-05T02:02:25Z",
+      "updated_at": "2023-09-05T04:58:39Z",
+      "closed_at": "2023-09-05T04:58:39Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/102/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/102",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/102",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:22.043496",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "下载的是 chatglm2-6b-int4 权重的话，其他参数不需要配置，跟 chatglm2 一样的加载方式，QUANTIZE是在chatglm2-6b模型的基础上进行量化",
+          "created_at": "2023-09-05T02:19:15Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "> 下载的是 chatglm2-6b-int4 权重的话，其他参数不需要配置，跟 chatglm2 一样的加载方式，QUANTIZE是在chatglm2-6b模型的基础上进行量化\r\n\r\n感谢",
+          "created_at": "2023-09-05T04:58:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 90,
+      "title": "[help]考虑支持一下codellama吧？",
+      "body": "### 提交前必须检查以下项目 | The following items must be checked before submission\n\n- [X] 请确保使用的是仓库最新代码（git pull），一些问题已被解决和修复。 | Make sure you are using the latest code from the repository (git pull), some issues have already been addressed and fixed.\n- [X] 我已阅读[项目文档](https://github.com/xusenlinzy/api-for-open-llm/blob/master/README.md)和[FAQ章节](https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/FAQ.md)并且已在Issue中对问题进行了搜索，没有找到相似问题和解决方案 | I have searched the existing issues / discussions\n\n### 问题类型 | Type of problem\n\n其他问题 | Other issues\n\n### 操作系统 | Operating system\n\nLinux\n\n### 详细描述问题 | Detailed description of the problem\n\n支持一下codellama\n\n### Dependencies\n\n```\r\n# 请在此处粘贴依赖情况\r\n# Please paste the dependencies here\r\n```\r\n\n\n### 运行日志或截图 | Runtime logs or screenshots\n\n```\r\n# 请在此处粘贴运行日志\r\n# Please paste the run log here\r\n```\r\n",
+      "state": "closed",
+      "author": "bh4ffu",
+      "author_type": "User",
+      "created_at": "2023-08-25T03:28:14Z",
+      "updated_at": "2023-09-02T12:45:58Z",
+      "closed_at": "2023-09-02T12:45:58Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/90/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/90",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/90",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:22.245708",
+      "comments": [
+        {
+          "author": "WCwalker",
+          "body": "加载 code-llama后出现以下问题: 1. 代码颜色不清楚；2.出现莫名类似html的 代码\r\n![1693214991405](https://github.com/xusenlinzy/api-for-open-llm/assets/36464439/f99e732c-dd2b-4115-a7d9-5e38d9ace32f)\r\n\r\n",
+          "created_at": "2023-08-28T09:31:34Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "![image](https://github.com/xusenlinzy/api-for-open-llm/assets/111472355/ebde554f-1c2e-49fb-b866-c5f336be4258)\r\n这是我跑的结果，可能是gradio的版本问题，你试试安装gradio==3.28.0",
+          "created_at": "2023-08-28T09:40:43Z"
+        },
+        {
+          "author": "WCwalker",
+          "body": "> ![image](https://user-images.githubusercontent.com/111472355/263663242-ebde554f-1c2e-49fb-b866-c5f336be4258.png) 这是我跑的结果，可能是gradio的版本问题，你试试安装gradio==3.28.0\r\n\r\n我试了改gradio版本，结果运行web_demo.py会卡住，前端页面停留在loading\r\n![1693217060487](https://github.com/xusenlinzy/api-for-open-llm/assets/36464439/13bf05fc-c6",
+          "created_at": "2023-08-28T10:04:32Z"
+        },
+        {
+          "author": "WCwalker",
+          "body": "我请教一下为什么codellama会返回很多个 ‘\\n’，应该怎么处理",
+          "created_at": "2023-08-29T07:00:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 94,
+      "title": "现在启动模式使用环境变量配置，如果我需要在一台机器上启动2个模型实例，如何配置？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n现在启动模式使用环境变量配置，如果我需要在一台机器上启动2个模型实例，如何配置？\n\n### 基本示例 | Basic Example\n\n需要在一台机器上启动2个模型实例，如何配置\n\n### 缺陷 | Drawbacks\n\n需要在一台机器上启动2个模型实例，如何配置\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "anyshu",
+      "author_type": "User",
+      "created_at": "2023-08-29T06:30:02Z",
+      "updated_at": "2023-08-30T07:22:56Z",
+      "closed_at": "2023-08-30T05:38:47Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/94/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/94",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/94",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:22.512214",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "分别启动两个模型，每个模型修改对应的环境变量，例如\r\n\r\n```\r\n# 启动qwen\r\nPORT=8000\r\nMODEL_NAME=qwen\r\nMODEL_PATH=Qwen/Qwen-7B-Chat\r\nDEVICE_MAP=auto\r\n\r\nCUDA_VISIBLE_DEVICES=0 python python api/server.py\r\n\r\n\r\n# 启动chatglm2\r\nPORT=8001\r\nMODEL_NAME=chatglm2\r\nMODEL_PATH=THUDM/chatglm2-6b\r\nDEVICE_MAP=auto\r\n\r\nCUDA_VISIBLE_DEVICES=1 pytho",
+          "created_at": "2023-08-29T06:36:45Z"
+        },
+        {
+          "author": "anyshu",
+          "body": "谢谢！",
+          "created_at": "2023-08-30T07:22:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 82,
+      "title": "💡 [REQUEST] - 是否支持chatglm2的多轮对话？",
+      "body": "### 起始日期 | Start Date\r\n\r\n_No response_\r\n\r\n### 实现PR | Implementation PR\r\n\r\n_No response_\r\n\r\n### 相关Issues | Reference Issues\r\n\r\n_No response_\r\n\r\n### 摘要 | Summary\r\n\r\n在chatglm自己的方法里，多轮对话是通过传入history，找了一下代码好像没有相关调用\r\n\r\n### 基本示例 | Basic Example\r\n```\r\nfor chunk in openai.ChatCompletion.create(\r\n        model=\"chatglm2-6b\",\r\n        messages=[\r\n            {\"role\": \"user\", \"content\": \"你好\"},{\"role\": \"assistance\", \"content\": \"你好\"}\r\n        ],\r\n        stream=True\r\n    ):\r\n        if hasattr(chunk.choices[0].delta, \"content\"):\r\n            print(chunk.choices[0].delta.content, end=\"\", flush=True)\r\n```\r\n\r\n### 缺陷 | Drawbacks\r\n\r\n满足多轮会话需求\r\n\r\n### 未解决问题 | Unresolved questions\r\n\r\n_No response_",
+      "state": "closed",
+      "author": "huanglx27",
+      "author_type": "User",
+      "created_at": "2023-08-18T09:09:35Z",
+      "updated_at": "2023-08-20T10:13:12Z",
+      "closed_at": "2023-08-20T10:13:12Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/82/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/82",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/82",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:22.731451",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "您好，本项目所有模型都是支持多轮对话的，多轮对话通过 `messages` 参数传入，根据不同的模型适配不同的 `prompt`，比如 `chatglm2` 采用的方式是：\r\nhttps://github.com/xusenlinzy/api-for-open-llm/blob/master/api/apapter/conversation.py#L101",
+          "created_at": "2023-08-20T09:55:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 59,
+      "title": "安装成功，调用几次就会报错。",
+      "body": "### 提交前必须检查以下项目 | The following items must be checked before submission\n\n- [X] 请确保使用的是仓库最新代码（git pull），一些问题已被解决和修复。 | Make sure you are using the latest code from the repository (git pull), some issues have already been addressed and fixed.\n- [X] 我已阅读[项目文档](https://github.com/xusenlinzy/api-for-open-llm/blob/master/README.md)和[FAQ章节](https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/FAQ.md)并且已在Issue中对问题进行了搜索，没有找到相似问题和解决方案 | I have searched the existing issues / discussions\n\n### 问题类型 | Type of problem\n\n模型推理和部署 | Model inference and deployment\n\n### 操作系统 | Operating system\n\nLinux\n\n### 详细描述问题 | Detailed description of the problem\n\n```\r\n# 请在此处粘贴运行代码（如没有可删除该代码块）\r\n# Paste the runtime code here (delete the code block if you don't have it)\r\n```\r\n\n\n### Dependencies\n\nFROM nvcr.io/nvidia/pytorch:22.12-py3\r\n  \r\nWORKDIR /workspace/\r\nENV PYTHONPATH /workspace/\r\nCOPY requirements.txt /workspace/\r\nCOPY . /workspace\r\n\r\nRUN pip install --no-cache-dir -r /workspace/requirements.txt -i https://mirror.baidu.com/pypi/simple\r\nRUN pip install bitsandbytes --upgrade -i https://mirror.baidu.com/pypi/simple && \\\r\n    pip install torch -U  -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn && \\\r\n    pip install git+https://github.com/vllm-project/vllm.git -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn\n\n### 运行日志或截图 | Runtime logs or screenshots\n\nRuntimeError: CUDA error: unspecified launch failure\r\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\r\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1.\r\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.",
+      "state": "closed",
+      "author": "Hkaisense",
+      "author_type": "User",
+      "created_at": "2023-08-12T04:56:56Z",
+      "updated_at": "2023-08-20T10:12:42Z",
+      "closed_at": "2023-08-20T10:12:42Z",
+      "labels": [
+        "environment"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/59/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/59",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/59",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:22.906303",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "请问您的启动命令和调用方式是？\r\n\r\nvllm的依赖要求：\r\n\r\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/111472355/5327f544-222e-47ef-b184-df8f48adbea6)\r\n\r\n\r\n也有可能是以下原因：\r\nhttps://wenku.csdn.net/answer/fa42ef7313ff70c36c818031ea9f2fd8",
+          "created_at": "2023-08-12T05:18:40Z"
+        },
+        {
+          "author": "Hkaisense",
+          "body": "python3 -m vllm.entrypoints.openai.api_server --model source/model/models--Qwen--Qwen-7B-Chat --trust-remote-code我用curl调用您提供的接口地址也一样，两种方式都会报这个错发自我的 iPhone在 2023年8月12日，13:18，xusenlin ***@***.***> 写道：﻿\r\n请问您的启动命令和调用方式是？\r\n\r\n—Reply to this email directly, view it on GitHub, or unsubscribe.You are receivi",
+          "created_at": "2023-08-12T06:38:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 58,
+      "title": "Torch not compiled with CUDA enabled",
+      "body": "运行环境: win10 + WSL2(Ubuntu 22.04)\r\n按照文档安装了新的虚拟环境并安装了依赖：\r\n\r\n> 安装 pytorch 环境\r\nconda create -n pytorch python=3.8\r\nconda activate pytorch\r\nconda install pytorch cudatoolkit -c pytorch\r\n安装依赖包\r\npip install -r requirements.txt\r\n\r\n运行命令行为：\r\n\r\n> (pytorch) wmjy@BuildMachine:~/api-for-open-llm$ cat runBaichuan13b.sh\r\npython3 api/app.py \\\r\n    --port 6666 \\\r\n    --allow-credentials \\\r\n    --model_name baichuan-13b-chat \\\r\n    --model_path /home/wmjy/llm/baichuan-inc/Baichuan-13B-Chat \\\r\n    --device cuda \\\r\n    --quantize 8(pytorch)\r\n\r\n起始执行输出：\r\n\r\n> (pytorch) wmjy@BuildMachine:~/api-for-open-llm$ sh runBaichuan13b.sh\r\n/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/bitsandbytes/cextension.py:34: UserWarning: The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.\r\n  warn(\"The installed version of bitsandbytes was compiled without GPU support. \"\r\n/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/bitsandbytes/libbitsandbytes_cpu.so: undefined symbol: cadam32bit_grad_fp32\r\n2023-08-11 19:00:05.787 | INFO     | api.router:main:492 - args: Namespace(adapter_model_path=None, allow_credentials=True, allowed_headers=['*'], allowed_methods=['*'], allowed_origins=['*'], context_len=None, device='cuda', embedding_name=None, gpus=None, host='0.0.0.0', load_in_4bit=False, load_in_8bit=False, model_name='baichuan-13b-chat', model_path='/home/wmjy/llm/baichuan-inc/Baichuan-13B-Chat', num_gpus=1, patch_type=None, port=6666, prompt_name=None, quantize=8, stream_interval=2, training_length=4096, use_ptuning_v2=False, window_size=512)\r\nLoading checkpoint shards: 100%|██████████████████████████████████████████████████████████| 3/3 [00:14<00:00,  4.73s/it]\r\n2023-08-11 19:02:40.242 | INFO     | api.model_adapter:load_model:119 - Quantizing model to 8 bit.\r\n\r\n这儿有个警告“The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.”\r\n\r\n然后客户端连接上去请求chat completion之后，显示报错：\r\n\r\n> 2023-08-11 19:02:40.242 | INFO     | api.model_adapter:load_model:119 - Quantizing model to 8 bit.\r\nTraceback (most recent call last):\r\n  File \"api/app.py\", line 108, in <module>\r\n    main(args)\r\n  File \"/home/wmjy/api-for-open-llm/./api/router.py\", line 495, in main\r\n    model, tokenizer = load_model(\r\n  File \"/home/wmjy/api-for-open-llm/./api/model_adapter.py\", line 226, in load_model\r\n    model, tokenizer = adapter.load_model(\r\n  File \"/home/wmjy/api-for-open-llm/./api/model_adapter.py\", line 123, in load_model\r\n    model.to(device)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/transformers/modeling_utils.py\", line 1900, in to\r\n    return super().to(*args, **kwargs)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1145, in to\r\n    return self._apply(convert)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 797, in _apply\r\n    module._apply(fn)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 797, in _apply\r\n    module._apply(fn)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 820, in _apply\r\n    param_applied = fn(param)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py\", line 1143, in convert\r\n    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)\r\n  File \"/home/wmjy/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/cuda/__init__.py\", line 239, in _lazy_init\r\n    raise AssertionError(\"Torch not compiled with CUDA enabled\")\r\nAssertionError: Torch not compiled with CUDA enabled\r\n\r\n全新创建的虚拟环境和安装的依赖，请问是什么原因呢？还需要安装什么，或者是否是WSL的问题",
+      "state": "closed",
+      "author": "happyfire",
+      "author_type": "User",
+      "created_at": "2023-08-11T11:07:59Z",
+      "updated_at": "2023-08-18T01:59:37Z",
+      "closed_at": "2023-08-18T01:59:37Z",
+      "labels": [
+        "environment"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/58/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/58",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/58",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:23.145153",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "您好，我这边使用的是docker环境，不方便进行测试，docker环境中torch版本是1.14，您可以参考https://blog.csdn.net/m0_46948660/article/details/129205116?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-129205116-blog-125737765.235^v38^pc_relevant_anti_vip&spm=1001.2101.3001.4242.1&utm_relevant",
+          "created_at": "2023-08-11T11:23:38Z"
+        },
+        {
+          "author": "happyfire",
+          "body": "多谢，我磁盘快满了，之前只剩40G，docker build之后就只剩17G了，然后把image删了怎么清理也就24G，现在不敢试docker了，等下周换个新硬盘再试试",
+          "created_at": "2023-08-11T11:25:45Z"
+        },
+        {
+          "author": "JinguangHe",
+          "body": "> 您好，我这边使用的是docker环境，不方便进行测试，docker环境中torch版本是1.14，您可以参考[https://blog.csdn.net/m0_46948660/article/details/129205116?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-129205116-blog-125737765.235^v38^pc_relevant_anti_vip&spm=1001.2101.3001.4242.1&utm_relev",
+          "created_at": "2023-08-16T14:42:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 72,
+      "title": "💡 [REQUEST] - <title>可以单独配置embedding模型使用CPU资源吗？",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n节省GPU内存\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n节省GPU内存\n\n### 基本示例 | Basic Example\n\n节省GPU内存\n\n### 缺陷 | Drawbacks\n\n节省GPU内存\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-08-16T05:23:53Z",
+      "updated_at": "2023-08-16T10:04:24Z",
+      "closed_at": "2023-08-16T10:04:24Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/72/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/72",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/72",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:23.333491",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "你可以试试使用最新代码，设置环境变量 `EMBEDDING_DEVICE`\r\n\r\n`EMBEDDING_DEVICE=cpu`: 使用 `cpu`\r\n\r\n`EMBEDDING_DEVICE=cuda`: 使用 `gpu`\r\n\r\n也可以设置\r\n\r\n`EMBEDDING_DEVICE=cuda:3`: 使用 3 号 `gpu`",
+          "created_at": "2023-08-16T05:54:51Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "谢谢",
+          "created_at": "2023-08-16T10:04:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 68,
+      "title": "💡 [REQUEST] - <title>QWen模型流失问答输出个不停，不知道什么问题",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n_No response_\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/5433705/a3d961f1-dd40-4245-b7d4-bac095ce67fd)\r\n\n\n### 基本示例 | Basic Example\n\n![image](https://github.com/xusenlinzy/api-for-open-llm/assets/5433705/6f6141f1-ad6f-40cf-9cac-19f2fb5b7b34)\r\n\n\n### 缺陷 | Drawbacks\n\nDocker启动，vllm和非vllm效果都一样\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-08-15T01:02:28Z",
+      "updated_at": "2023-08-15T14:17:15Z",
+      "closed_at": "2023-08-15T14:17:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 20,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/68/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/68",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/68",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:23.510608",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "看一下你的 `.env` 文件",
+          "created_at": "2023-08-15T01:06:10Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "MODEL_NAME=qwen\r\nMODEL_PATH=models/Qwen-7B\r\nEMBEDDING_NAME=models/m3e-base\r\nADAPTER_MODEL_PATH=\r\nQUANTIZE=16\r\nCONTEXT_LEN=\r\nLOAD_IN_8BIT=false\r\nLOAD_IN_4BIT=false\r\nUSING_PTUNING_V2=false\r\nSTREAM_INTERVERL=2\r\nPROMPT_NAME=\r\n\r\n# device related\r\nDEVICE=cuda\r\nDEVICE_MAP=\r\nGPUS=0\r\nNUM_GPUs=1\r\n\r\n# patch re",
+          "created_at": "2023-08-15T01:22:20Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "模型是 `Qwen/Qwen-7B-Chat` 还是 `Qwen/Qwen-7B`，`Qwen/Qwen-7B`是预训练模型 ，`Qwen/Qwen-7B-Chat` 是对话模型，一般使用对话模型进行对话",
+          "created_at": "2023-08-15T01:25:48Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "当前用的是Qwen/Qwen-7B，刚才env里少了vllm配置，我加上看看",
+          "created_at": "2023-08-15T01:28:07Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "> 当前用的是Qwen/Qwen-7B，刚才env里少了vllm配置，我加上看看\r\n\r\n默认是不使用vllm的，Qwen/Qwen-7B模型的话是会出现这种情况的",
+          "created_at": "2023-08-15T01:29:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 66,
+      "title": "💡 [REQUEST] - <title> 有什么办法可以让embedding模型的维度扩充到1536维吗，有些系统固定了1536维度，要怎么兼容",
+      "body": "### 起始日期 | Start Date\n\n_No response_\n\n### 实现PR | Implementation PR\n\n有什么办法可以让embedding模型的维度扩充到1536维吗，有些系统固定了1536维度，要怎么兼容\n\n### 相关Issues | Reference Issues\n\n_No response_\n\n### 摘要 | Summary\n\n有什么办法可以让embedding模型的维度扩充到1536维吗，有些系统固定了1536维度，要怎么兼容\n\n### 基本示例 | Basic Example\n\n有什么办法可以让embedding模型的维度扩充到1536维吗，有些系统固定了1536维度，要怎么兼容\n\n### 缺陷 | Drawbacks\n\n有什么办法可以让embedding模型的维度扩充到1536维吗，有些系统固定了1536维度，要怎么兼容\n\n### 未解决问题 | Unresolved questions\n\n_No response_",
+      "state": "closed",
+      "author": "jinghai",
+      "author_type": "User",
+      "created_at": "2023-08-14T06:47:57Z",
+      "updated_at": "2023-08-14T15:17:27Z",
+      "closed_at": "2023-08-14T09:42:23Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 11,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/66/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/66",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/66",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:23.708206",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "1536刚好是768的两倍，可以试试将每个句子的向量copy一遍拼接在后面？\r\n\r\n修改 https://github.com/xusenlinzy/api-for-open-llm/blob/master/api/routes/embedding.py#L49\r\n\r\n```python\r\nimport numpy as np\r\n\r\nvecs = EMBEDDED_MODEL.encode(batch, normalize_embeddings=True)\r\nembedding = {\r\n    \"embedding\": np.c_[vecs, vecs].tolist(),\r\n    \"to",
+          "created_at": "2023-08-14T07:11:10Z"
+        },
+        {
+          "author": "3jQQuY",
+          "body": "需要补充的部分应该直接填零就行？一般做相似度量是用余弦相似度，都填零的话一方面对计算结果不会有啥影响，另一方面也不会影响原向量的归一化。",
+          "created_at": "2023-08-14T07:41:50Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "填零确实比较合理，用余弦相似度不会改变计算结果\r\n\r\n```python\r\nimport numpy as np\r\n\r\nvecs = EMBEDDED_MODEL.encode(batch, normalize_embeddings=True)\r\nembedding = {\r\n    \"embedding\": np.c_[vecs, np.zeros_like(vecs)].tolist(),\r\n    \"token_num\": sum([len(i) for i in batch]),\r\n}\r\n```",
+          "created_at": "2023-08-14T07:47:35Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "> 填零确实比较合理，用余弦相似度不会改变计算结果\r\n> \r\n> ```python\r\n> import numpy as np\r\n> \r\n> vecs = EMBEDDED_MODEL.encode(batch, normalize_embeddings=True)\r\n> embedding = {\r\n>     \"embedding\": np.c_[vecs, np.zeros_like(vecs)].tolist(),\r\n>     \"token_num\": sum([len(i) for i in batch]),\r\n> }\r\n> ```\r\n\r\n建议在哪里加个配置，给需要1536维的人",
+          "created_at": "2023-08-14T08:22:04Z"
+        },
+        {
+          "author": "jinghai",
+          "body": "> 填零确实比较合理，用余弦相似度不会改变计算结果\r\n> \r\n> ```python\r\n> import numpy as np\r\n> \r\n> vecs = EMBEDDED_MODEL.encode(batch, normalize_embeddings=True)\r\n> embedding = {\r\n>     \"embedding\": np.c_[vecs, np.zeros_like(vecs)].tolist(),\r\n>     \"token_num\": sum([len(i) for i in batch]),\r\n> }\r\n> ```\r\n\r\n这段代码要加到哪里，generate.p",
+          "created_at": "2023-08-14T08:27:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 60,
+      "title": "vllm启动方式添加embedding模型报错",
+      "body": "### 提交前必须检查以下项目 | The following items must be checked before submission\n\n- [X] 请确保使用的是仓库最新代码（git pull），一些问题已被解决和修复。 | Make sure you are using the latest code from the repository (git pull), some issues have already been addressed and fixed.\n- [X] 我已阅读[项目文档](https://github.com/xusenlinzy/api-for-open-llm/blob/master/README.md)和[FAQ章节](https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/FAQ.md)并且已在Issue中对问题进行了搜索，没有找到相似问题和解决方案 | I have searched the existing issues / discussions\n\n### 问题类型 | Type of problem\n\n模型推理和部署 | Model inference and deployment\n\n### 操作系统 | Operating system\n\nLinux\n\n### 详细描述问题 | Detailed description of the problem\n\n如果不添加embedding_name，服务可以正常启动。添加了以后报错，我尝试修改源码将'device'直接替换成'cuda'，但会有其他错误。\r\n\r\n启动的docker-compose.yml如下：\r\n```\r\nversion: '3.8'\r\nservices:\r\n  qwen:\r\n    image: llm-api:vllm\r\n    container_name: qwen\r\n    command: \"python api/vllm_server.py --port 80 --allow-credentials --model_name qwen --model /model/qwen --trust-remote-code --embedding_name /model/m3e-base --tokenizer-mode auto --dtype half\"\r\n    ports:\r\n      - \"9999:80\"\r\n    volumes:\r\n      - /data/AIGC-space/serving/api-for-open-llm:/workspace\r\n      - /data/AIGC-space/models/Qwen-7B-Chat:/model/qwen\r\n      - /data/AIGC-space/models/m3e-base:/model/m3e-base\r\n    deploy:\r\n      resources:\r\n        reservations:\r\n          devices:\r\n            - driver: nvidia\r\n              count: 1\r\n              capabilities: [gpu]\r\n ```\n\n### Dependencies\n\n_No response_\n\n### 运行日志或截图 | Runtime logs or screenshots\n\n\r\n\r\nqwen           | INFO 08-12 13:18:41 llm_engine.py:70] Initializing an LLM engine with config: model='/model/qwen', tokenizer='/model/qwen', tokenizer_mode=auto, trust_remote_code=True, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)\r\nqwen           | WARNING 08-12 13:18:42 tokenizer.py:63] Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.\r\nqwen           | INFO 08-12 13:18:55 llm_engine.py:196] # GPU blocks: 562, # CPU blocks: 512\r\nqwen           | WARNING 08-12 13:18:58 tokenizer.py:63] Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.\r\nqwen           | Traceback (most recent call last):\r\nqwen           |   File \"api/vllm_server.py\", line 666, in <module>\r\nqwen           |     embed_client = SentenceTransformer(args.embedding_name, device=args.device)\r\nqwen           | AttributeError: 'Namespace' object has no attribute 'device'",
+      "state": "closed",
+      "author": "youzhonghui",
+      "author_type": "User",
+      "created_at": "2023-08-12T13:22:12Z",
+      "updated_at": "2023-08-14T02:54:19Z",
+      "closed_at": "2023-08-14T02:09:27Z",
+      "labels": [
+        "bug",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/60/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/60",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/60",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:23.946562",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "您好，最新代码已经解决了该问题，请拉取最新代码启动模型\r\n\r\nhttps://github.com/xusenlinzy/api-for-open-llm/blob/1e05d931153787e42754634452ac5ceed8186213/docker/Dockerfile.vllm#L12",
+          "created_at": "2023-08-14T02:08:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 57,
+      "title": "My Qwen LLM startup failed",
+      "body": "ValueError: Model architectures ['QWenLMHeadModel'] are not supported for now. Supported architectures: ['BaiChuanForCausalLM', 'BaichuanForCausalLM', 'BloomForCausalLM', 'FalconForCausalLM', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTJForCausalLM', 'GPTNeoXForCausalLM', 'LlamaForCausalLM', 'LLaMAForCausalLM', 'MPTForCausalLM', 'OPTForCausalLM', 'RWForCausalLM']",
+      "state": "closed",
+      "author": "Hkaisense",
+      "author_type": "User",
+      "created_at": "2023-08-11T10:49:47Z",
+      "updated_at": "2023-08-11T16:20:34Z",
+      "closed_at": "2023-08-11T16:20:34Z",
+      "labels": [
+        "solved"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/57/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/57",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/57",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:24.152750",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "please install vllm from source code\r\n\r\n```\r\npip install torch>=2.0.0\r\npip install git+https://github.com/vllm-project/vllm.git\r\n```\r\n",
+          "created_at": "2023-08-11T11:03:07Z"
+        },
+        {
+          "author": "Hkaisense",
+          "body": "Thanks! It seems that the problem has been improved, but a new problem has come\r\n\r\nINFO 08-11 12:24:40 llm_engine.py:70] Initializing an LLM engine with config: model='source/model/models--Qwen--Qwen-7B-Chat', tokenizer='source/model/models--Qwen--Qwen-7B-Chat', tokenizer_mode=slow, trust_remote_cod",
+          "created_at": "2023-08-11T12:27:43Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "`pip install torch -U`  before `pip install git+https://github.com/vllm-project/vllm.git`\r\n\r\nit seems like that the torch vesion need greater than 2.0.0",
+          "created_at": "2023-08-11T12:31:25Z"
+        },
+        {
+          "author": "Hkaisense",
+          "body": "FROM nvcr.io/nvidia/pytorch:22.12-py3\r\n  \r\nWORKDIR /workspace/\r\nENV PYTHONPATH /workspace/\r\nCOPY requirements.txt /workspace/\r\nCOPY . /workspace\r\n\r\nRUN pip install --no-cache-dir -r /workspace/requirements.txt -i https://mirror.baidu.com/pypi/simple\r\nRUN pip install bitsandbytes --upgrade -i https:/",
+          "created_at": "2023-08-11T12:36:08Z"
+        },
+        {
+          "author": "Hkaisense",
+          "body": "Thank you very much for your patience, is the docker configuration file I set up like this correct?\r\n",
+          "created_at": "2023-08-11T12:37:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 48,
+      "title": "希望并发处理多个请求",
+      "body": "请求只能同时处理一个?",
+      "state": "closed",
+      "author": "Huangyajuan-123",
+      "author_type": "User",
+      "created_at": "2023-08-07T03:00:06Z",
+      "updated_at": "2023-08-11T09:40:41Z",
+      "closed_at": "2023-08-11T09:40:41Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/48/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/48",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/48",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:24.376360",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "本项目最近增加了vllm的支持，主要对模型输入做了一些修改，支持baichuan和qwen等模型，你可以测试一下效果怎么样使用方式见 https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/VLLM_SCRIPT.md",
+          "created_at": "2023-08-10T11:08:29Z"
+        },
+        {
+          "author": "Huangyajuan-123",
+          "body": "  谢谢! 为什么在没有添加vllm之前的代码, 推理速度比hf模型推理速度快,是做了哪方面的改进?",
+          "created_at": "2023-08-11T02:47:03Z"
+        },
+        {
+          "author": "xusenlinzy",
+          "body": "模型的解码方式统一采用了 \r\nhttps://github.com/xusenlinzy/api-for-open-llm/blob/a6a7b1152a54ab8fdb201bbe893549abca942717/api/generate.py#L206\r\n有可能是解码方式相对简单",
+          "created_at": "2023-08-11T03:07:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 53,
+      "title": "建议向量模型考虑增加bge-large-zh",
+      "body": "https://huggingface.co/BAAI/bge-large-zh\r\n如题，看整体效果还挺不错的",
+      "state": "closed",
+      "author": "berwinjoule",
+      "author_type": "User",
+      "created_at": "2023-08-10T07:13:09Z",
+      "updated_at": "2023-08-11T02:21:14Z",
+      "closed_at": "2023-08-11T02:21:14Z",
+      "labels": [
+        "solved"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/53/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/53",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/53",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:24.586610",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "您好，最新的代码已经增加了",
+          "created_at": "2023-08-10T16:11:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "建议支持starcoder",
+      "body": "https://huggingface.co/blog/zh/starchat-alpha",
+      "state": "closed",
+      "author": "praguepp",
+      "author_type": "User",
+      "created_at": "2023-07-15T08:44:24Z",
+      "updated_at": "2023-07-18T09:46:33Z",
+      "closed_at": "2023-07-18T09:46:33Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/26/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/26",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/26",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:24.764410",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "您好，您可以拉取最新的代码进行测试",
+          "created_at": "2023-07-15T11:50:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 4,
+      "title": "报错mixed dtype (CPU): expect input to have scalar type of BFloat16)\",\"code\":50001",
+      "body": "本地启动，使用CPU模式运行时报错：\r\n\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_requestor.py\", line 331, in handle_error_response\r\n    error_data = resp[\"error\"]\r\nKeyError: 'error'\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\xxx\\Downloads\\api-for-open-llm-master-adapt\\api-for-open-llm-master\\api\\untitled0.py\", line 16, in <module>\r\n    completion = openai.ChatCompletion.create(\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_resources\\chat_completion.py\", line 25, in create\r\n    return super().create(*args, **kwargs)\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_resources\\abstract\\engine_api_resource.py\", line 153, in create\r\n    response, _, api_key = requestor.request(\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_requestor.py\", line 226, in request\r\n    resp, got_stream = self._interpret_response(result, stream)\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_requestor.py\", line 619, in _interpret_response\r\n    self._interpret_response_line(\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_requestor.py\", line 682, in _interpret_response_line\r\n    raise self.handle_error_response(\r\n  File \"C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openai\\api_requestor.py\", line 333, in handle_error_response\r\n    raise error.APIError(\r\nopenai.error.APIError: Invalid response object from API: '{\"object\":\"error\",\"message\":\"**NETWORK ERROR DUE TO HIGH TRAFFIC. PLEASE REGENERATE OR REFRESH THIS PAGE.**\\\\n\\\\n(mixed dtype (CPU): expect input to have scalar type of BFloat16)\",\"code\":50001}' (HTTP response code was 500)",
+      "state": "closed",
+      "author": "DXQer",
+      "author_type": "User",
+      "created_at": "2023-06-05T08:36:28Z",
+      "updated_at": "2023-06-08T02:58:12Z",
+      "closed_at": "2023-06-08T02:58:12Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/4/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/xusenlinzy/api-for-open-llm/issues/4",
+      "api_url": "https://api.github.com/repos/xusenlinzy/api-for-open-llm/issues/4",
+      "repository": "xusenlinzy/api-for-open-llm",
+      "extraction_date": "2025-06-22T00:46:26.293355",
+      "comments": [
+        {
+          "author": "xusenlinzy",
+          "body": "应该是模型精度的问题，已经重新提交了代码，你可以看看最新的代码运行有没有问题",
+          "created_at": "2023-06-06T01:46:25Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "repository": "NVIDIA/ChatRTX",
+  "repository_info": {
+    "repo": "NVIDIA/ChatRTX",
+    "stars": 3002,
+    "language": "Python",
+    "description": "A developer reference project for creating Retrieval Augmented Generation (RAG) chatbots on Windows using TensorRT-LLM",
+    "url": "https://github.com/NVIDIA/ChatRTX",
+    "topics": [],
+    "created_at": "2023-10-18T12:57:53Z",
+    "updated_at": "2025-06-19T19:36:45Z",
+    "search_query": "RAG retrieval augmented language:python stars:>3",
+    "total_issues_estimate": 176,
+    "labeled_issues_estimate": 43,
+    "labeling_rate": 24.4,
+    "sample_labeled": 11,
+    "sample_total": 45,
+    "has_issues": true,
+    "repo_id": 706696555,
+    "default_branch": "release/0.5.0",
+    "size": 36117
+  },
+  "extraction_date": "2025-06-22T00:44:14.766584",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 12,
+  "issues": [
+    {
+      "issue_number": 111,
+      "title": "Uncaught TypeError: Cannot read properties of undefined (reading 'name')",
+      "body": "As I encounter nothing but errors and issues with each and every software released by Nvidia in the last decade - except for NvBroadcast - I'm currently struggling with getting ChatRTX to work after it's clean installation.\n\n```\nB:\\ChatRTX\\RAG\\trt-llm-rag-windows-ChatRTX_0.4.0\\ChatRTXUI\\dist\\win-unpacked>\"NVIDIA ChatRTX.exe\"\n\nB:\\ChatRTX\\RAG\\trt-llm-rag-windows-ChatRTX_0.4.0\\ChatRTXUI\\dist\\win-unpacked>\n13:59:44.593 > systemLanguage\n13:59:44.695 > Conda setup done!\n13:59:44.780 > B:\\ChatRTX\\RAG\\trt-llm-rag-windows-ChatRTX_0.4.0\\ChatRTXUI\\engine\\ChatRTXUIEngine.py\n[TensorRT-LLM] TensorRT-LLM version: 0.9.0\n13:59:49.773 > Loaded python file B:\\ChatRTX\\RAG\\trt-llm-rag-windows-ChatRTX_0.4.0\\ChatRTXUI\\engine\\ChatRTXUIEngine.py\n13:59:49.883 > [PyE] 2025-01-08 13:59:49,883 - [ChatRTX] - INFO - backend.py:40 - Model init for dir C:\\ProgramData\\NVIDIA Corporation\\chatrtx\nCopied contents of B:\\ChatRTX\\env_nvd_rag\\lib\\site-packages\\ChatRTX\\model_manager\\../sample_data to C:\\ProgramData\\NVIDIA Corporation\\chatrtx\\sample_data\nConfig saved\n[01/08/2025-13:59:49] Model init for dir C:\\ProgramData\\NVIDIA Corporation\\chatrtx\n[01/08/2025-13:59:49] Application started with\n Dataset path : C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset\n App mode Mode.RAG\n13:59:49.884 > [PyE] [ChatRTXUIEngine] - INFO - ChatRTXUIEngine.py:122 - Application started with\n13:59:49.885 > [PyE]  Dataset path : C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset\n13:59:49.885 > [PyE]  App mode Mode.RAG\n[01/08/2025-13:59:49] Model already downloaded\n[01/08/2025-13:59:49] ChatRTX in Mode.RAG mode with datadir C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset\n13:59:49.885 > [PyE] 2025-01-08 13:59:49,884 - [ChatRTX] - INFO - backend.py:61 - Model already downloaded\n13:59:49.886 > [PyE] 2025-01-08 13:59:49,885 - [ChatRTX] - INFO - backend.py:89 - ChatRTX in Mode.RAG mode with datadir C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset\n13:59:49.886 > [PyE] 2025-01-08 13:59:49,885 - [ChatRTX] - INFO - chatrtx_rag.py:59 - ChatRTX RAG mode initialized with model directory: C:\\ProgramData\\NVIDIA Corporation\\chatrtx\\models\n[01/08/2025-13:59:49] ChatRTX RAG mode initialized with model directory: C:\\ProgramData\\NVIDIA Corporation\\chatrtx\\models\n13:59:55.201 > [PyE] 2025-01-08 13:59:55,202 - [ChatRTX] - INFO - chatrtx_rag.py:184 - Using the persisted value from C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset_vector_embedding\n[01/08/2025-13:59:55] Using the persisted value from C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\sample_data\\dataset_vector_embedding\n13:59:55.372 > Logging inside listner  ON_PYTHON_ENGINE_INIT null\n13:59:55.373 > In handle events\n13:59:55.373 > Logging inside listner  ON_PYTHON_ENGINE_INIT null\n13:59:55.373 > Logging inside listner  ON_PYTHON_ENGINE_INIT null\n13:59:55.374 > Logging inside listner  ON_PYTHON_ENGINE_INIT null\n13:59:55.374 > Logging inside listner  ON_PYTHON_ENGINE_INIT null\n13:59:55.375 > getModelInfo call returned with value  {\n  supported: [\n    {\n      name: 'Mistral 7B int4',\n      id: 'mistral_7b_AWQ_int4_chat',\n      ngc_model_name: 'nvidia/llama/mistral-7b-int4-chat:1.2',\n      is_downloaded_required: true,\n      downloaded: true,\n      is_installation_required: true,\n      setup_finished: true,\n      min_gpu_memory: 8,\n      should_show_in_UI: false,\n      prerequisite: [Object],\n      metadata: [Object],\n      model_info: 'The Mistral-7B is a instruct fine-tuned text generation model',\n      model_license: 'https://github.com/mistralai/mistral-src/blob/main/LICENSE',\n      model_size: '4GB',\n      modelDevelopers: 'Mistral AI',\n      isTextBased: true,\n      isImageBased: false,\n      isChineseSupported: false,\n      isEnglishSupported: true\n    },\n    {\n      name: 'Llama2 13B int4',\n      id: 'llama2_13b_AWQ_INT4_chat',\n      ngc_model_name: 'nvidia/llama/llama2-13b:1.5',\n      is_downloaded_required: true,\n      downloaded: false,\n      is_installation_required: true,\n      setup_finished: false,\n      min_gpu_memory: 16,\n      should_show_in_UI: false,\n      prerequisite: [Object],\n      metadata: [Object],\n      model_info: 'LlaMa 2 is a large language AI model capable of generating text and code in response to prompts',\n      model_license: 'https://ai.meta.com/llama/license/',\n      model_size: '6.8GB',\n      modelDevelopers: 'Meta',\n      isTextBased: true,\n      isImageBased: false,\n      isChineseSupported: false,\n      isEnglishSupported: true\n    },\n    {\n      name: 'ChatGLM 3 6B int4',\n      id: 'chatglm3_6b_AWQ_int4',\n      ngc_model_name: 'nvidia/chatglm3-6b-chat-int4:1.0',\n      is_downloaded_required: true,\n      downloaded: false,\n      is_installation_required: true,\n      setup_finished: false,\n      min_gpu_memory: 8,\n      should_show_in_UI: false,\n      prerequisite: [Object],\n      metadata: [Object],\n      model_info: 'ChatGLM-6B is an open bilingual language model based on General Language Model framework, with 6.2 billion parameters',\n      model_license: 'https://huggingface.co/THUDM/chatglm3-6b/blob/main/MODEL_LICENSE',\n      model_size: '3.8GB',\n      modelDevelopers: 'Zhipu AI',\n      isTextBased: true,\n      isImageBased: false,\n      isChineseSupported: true,\n      isEnglishSupported: false\n    },\n    {\n      name: 'Gemma 7B int4',\n      id: 'gemma_7b_int4',\n      ngc_model_name: 'nvidia/llama/gemma-7b-int4-rtx:1.1',\n      is_downloaded_required: true,\n      downloaded: false,\n      is_installation_required: true,\n      setup_finished: false,\n      min_gpu_memory: 16,\n      should_show_in_UI: false,\n      prerequisite: [Object],\n      metadata: [Object],\n      model_info: 'Gemma-7B is a 7B parameter model from Gemma family of models from Google',\n      model_license: 'https://ai.google.dev/gemma/terms',\n      model_size: '6.6GB',\n      modelDevelopers: 'Google',\n      isTextBased: true,\n      isImageBased: false,\n      isChineseSupported: false,\n      isEnglishSupported: true\n    },\n    {\n      name: 'CLIP',\n      id: 'clip_model',\n      hf_model_name: 'openai/clip-vit-large-patch14-336',\n      is_downloaded_required: true,\n      downloaded: false,\n      download_link: 'https://huggingface.co/openai/clip-vit-large-patch14-336/resolve/main',\n      is_installation_required: false,\n      setup_finished: false,\n      min_gpu_memory: 8,\n      should_show_in_UI: false,\n      prerequisite: [Object],\n      metadata: {},\n      model_info: 'CLIP is a multi-modal vision and language model used for image-text similarity and for zero-shot image classification',\n      model_license: 'https://github.com/openai/CLIP/blob/main/LICENSE',\n      model_size: '1.5GB',\n      modelDevelopers: 'OpenAI',\n      isTextBased: false,\n      isImageBased: true,\n      isChineseSupported: false,\n      isEnglishSupported: true\n    }\n  ],\n  selected: 'mistral_7b_AWQ_int4_chat',\n  enable_asr: true,\n  supported_asr: [\n    {\n      name: 'Whisper Medium Int8',\n      installed: false,\n      metadata: [Object]\n    }\n  ]\n}\n13:59:55.379 > getFineTuningInfo call returned with value\n13:59:55.379 > getDatasetInfo call returned  {\"sources\": [\"directory\", \"nodataset\"], \"selected\": \"directory\", \"path\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\dataset\", \"path_chinese\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\chinese_dataset\", \"path_clip\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\images_dataset\", \"selected_path\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\dataset\"}\n13:59:55.380 > getSampelQuestionInfo returned  {\"default\": {\"modelIdList\": [\"mistral_7b_AWQ_int4_chat\", \"llama2_13b_AWQ_INT4_chat\", \"gemma_7b_int4\"], \"dataset_path\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\dataset\", \"isRelative\": true, \"queries\": [\"How does NVIDIA ACE generate emotional responses?\", \"What is Portal: Prelude RTX?\"]}, \"chinese\": {\"modelIdList\": [\"chatglm3_6b_AWQ_int4\"], \"dataset_path\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\chinese_dataset\", \"isRelative\": true, \"queries\": [\"NVIDIA ACE\\u662f\\u5982\\u4f55\\u751f\\u6210\\u5bcc\\u6709\\u60c5\\u611f\\u7684\\u56de\\u590d\\u7684\\uff1f\", \"\\u4f20\\u9001\\u95e8\\uff1a\\u5e8f\\u66f2 RTX \\u7248\\u662f\\u4ec0\\u4e48\\uff1f\"]}, \"images\": {\"modelIdList\": [\"clip_model\"], \"dataset_path\": \"C:\\\\ProgramData\\\\NVIDIA Corporation\\\\ChatRTX\\\\sample_data\\\\images_dataset\", \"isRelative\": true, \"queries\": [\"Pictures of bicycles\", \"Pictures of toys\", \"Pictures of dinosaurs\", \"Pictures of computer\"]}}\n13:59:55.380 > call initChatbotEngine returned response  null\n13:59:55.421 > Uncaught TypeError: Cannot read properties of undefined (reading 'name')\n```\n\nThe Window starts to open, shows \"Loading ChatRTX...\" for a few seconds and then transforms into a fully black but still border resizable window.",
+      "state": "open",
+      "author": "BlankFX1",
+      "author_type": "User",
+      "created_at": "2025-01-08T13:06:22Z",
+      "updated_at": "2025-04-22T06:03:13Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/111/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/111",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/111",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:10.355096",
+      "comments": [
+        {
+          "author": "akaanupkumar",
+          "body": "Maybe the config file is corrupt that causing issues in startup. Please try deleting following file \"C:\\ProgramData\\NVIDIA Corporation\\ChatRTX\\config\\config.json\" and restarting the app.",
+          "created_at": "2025-03-26T04:49:01Z"
+        },
+        {
+          "author": "BlankFX1",
+          "body": "Nope, thats not it. I already tried (and re-tried) renaming/deleting it.\nIt just gets re-created and the same issue persists.",
+          "created_at": "2025-03-27T11:03:33Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "The config gets copied from site packages location and if that itself got corrupt somehow, renaming/deleting won't help. Clean installation should have resolved such issue though. Can you confirm that after uninstallation has actually cleaned all files under:\nC:\\Program Files\\NVIDIA Corporation\\Chat",
+          "created_at": "2025-04-08T07:11:40Z"
+        },
+        {
+          "author": "BlankFX1",
+          "body": "`C:\\Program Files\\NVIDIA Corporation\\ChatRTX`\nI can confirm that this folder doesn't exist right now, but the Issue remains exactly the same.\n\nI also tried to update to 0.5, uninstalling the former version and making sure no folders would remain.\nBut sadly, 0.5 has shown as being fully defective fro",
+          "created_at": "2025-04-21T14:23:56Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": ">> It seems you migrated ChatRTX on Windows to WSL\nThats correct. ChatRTX 0.5 supports NIMs on WSL.\n\nI am suspecting something related to WSL. Can you retry installing after either updating WSL ( or removing WSL). Installer takes care of installing WSL if not present.\n\nIf issue persists, we can take",
+          "created_at": "2025-04-22T06:03:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 99,
+      "title": "Nvidia APP Just loads",
+      "body": "I have reinstalled the app 5 times, force closed it restarted my pc. Idk what else to do. I have a 4070 ti super and i just cant use the app![Image](https://github.com/user-attachments/assets/845077a2-d191-452a-8b2f-f54d0bc7a21d)\n",
+      "state": "open",
+      "author": "ignhakka",
+      "author_type": "User",
+      "created_at": "2024-11-13T00:03:58Z",
+      "updated_at": "2025-04-22T05:55:28Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 17,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/99/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/99",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/99",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:10.591994",
+      "comments": [
+        {
+          "author": "doctorsangria",
+          "body": "#90 ",
+          "created_at": "2024-11-14T23:05:56Z"
+        },
+        {
+          "author": "ZombieWorm",
+          "body": "I bought a 5080 and installed it this week. I went to the nvidia App and it loads the tool. However if I try to select another local folder it doesn't take. When I ask the Chat a question I get \"Problem generating response: Data source may be empty or unsupported – Ensure dataset compatibility with ",
+          "created_at": "2025-02-14T14:33:35Z"
+        },
+        {
+          "author": "anujj",
+          "body": "0.4v version is not supported on 5080 and 5090 ",
+          "created_at": "2025-02-17T16:00:16Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "The 0.5 version would work on RTX 5080. Please try it out.",
+          "created_at": "2025-04-08T07:36:59Z"
+        },
+        {
+          "author": "ZombieWorm",
+          "body": "Thanks Akaan, will give this a go.\r\n\r\nOn Tue, 8 Apr 2025 at 08:37, akaanupkumar ***@***.***> wrote:\r\n\r\n> The 0.5 version would work on RTX 5080. Please try it out.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/NVIDIA/ChatRTX/issues/99#issuecomment-2785520088>, or\r",
+          "created_at": "2025-04-08T22:24:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 93,
+      "title": "Data source may be empty or unsupported？",
+      "body": "Hello, After installing ChatRTX ChatGLM 3 6B int4, the runtime prompt reads:\n\nChatRTX\nProblem generating response: Data source may be empty or unsupported – Ensure dataset compatibility with the AI model\n\nI cleared the Data directory (C: \\ProgramData\\NVIDIA Corporation \\ChatRTX\\sample_data\\Chinese_dataset) and only put a simple file, but it didn't work either. And this directory cannot be changed to any other directory. May I ask what the reason is?",
+      "state": "open",
+      "author": "leshan",
+      "author_type": "User",
+      "created_at": "2024-10-03T06:59:38Z",
+      "updated_at": "2025-04-14T05:53:12Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/93/reactions",
+        "total_count": 4,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 4
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/93",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/93",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:10.859748",
+      "comments": [
+        {
+          "author": "moonman1425",
+          "body": "I'm having the same issue did you ever find a fix?",
+          "created_at": "2024-11-08T16:35:24Z"
+        },
+        {
+          "author": "hotpotato-451",
+          "body": "need vpn to run properly...why does it require internet connection to generate response?",
+          "created_at": "2024-11-10T07:29:20Z"
+        },
+        {
+          "author": "moonman1425",
+          "body": "> need vpn to run properly...why does it require internet connection to generate response?\n\nThat’s odd and I don’t really trust it now. I moved over to LMStudio. Runs completely offline and locally and works great so far.",
+          "created_at": "2024-11-10T15:02:31Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "Please verify prerequisites and upgrade to latest 0.5 version. I believe you should not run into such issues. Please let us know if you are facing issue with updated version.\n\nResponse generation is completely offline in ChatRTX. The code is opensourced. You could verify that in source code as well.",
+          "created_at": "2025-04-10T06:12:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 77,
+      "title": "Build the Mistral TRT-LLM int4 AWQ Engine not working",
+      "body": "(chatrtx) C:\\chatrtx>trtllm-build --checkpoint_dir .\\model\\mistral_model\\model_checkpoints --output_dir .\\model\\mistral_model\\engine --gpt_attention_plugin float16 --gemm_plugin float16 --max_batch_size 1 --max_input_len 7168 --max_output_len 1024 --context_fmha=enable --paged_kv_cache=disable --remove_input_padding=disable\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\***\\AppData\\Local\\anaconda3\\envs\\chatrtx\\lib\\site-packages\\tensorrt_llm\\__init__.py\", line 39, in <module>\r\n    import tensorrt_llm.bindings  # NOQA\r\nImportError: DLL load failed while importing bindings: Не найден указанный модуль.\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\***\\AppData\\Local\\anaconda3\\envs\\chatrtx\\lib\\runpy.py\", line 196, in _run_module_as_main\r\n    return _run_code(code, main_globals, None,\r\n  File \"C:\\Users\\***\\AppData\\Local\\anaconda3\\envs\\chatrtx\\lib\\runpy.py\", line 86, in _run_code\r\n    exec(code, run_globals)\r\n  File \"C:\\Users\\***\\AppData\\Local\\anaconda3\\envs\\chatrtx\\Scripts\\trtllm-build.exe\\__main__.py\", line 4, in <module>\r\n  File \"C:\\Users\\***\\AppData\\Local\\anaconda3\\envs\\chatrtx\\lib\\site-packages\\tensorrt_llm\\__init__.py\", line 41, in <module>\r\n    raise ImportError(\r\nImportError: Import of the `bindings` module failed. Please check the package integrity. If you are attempting to use the pip development mode (editable installation), please execute `build_wheels.py` first, and then run `pip install -e .`\r\n",
+      "state": "open",
+      "author": "kzpromo",
+      "author_type": "User",
+      "created_at": "2024-06-24T11:31:54Z",
+      "updated_at": "2025-04-10T10:10:55Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/77/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/77",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/77",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:11.111669",
+      "comments": [
+        {
+          "author": "anujj",
+          "body": "This usually means that a dynamic dependency of the bindings library is missing on PATH. Can u please try with these command \r\n\r\n```\r\npython -m pip uninstall -y tensorrt\r\npip uninstall -y tensorrt tensorrt_libs tensorrt_bindings\r\npython -m pip install --pre --extra-index-url https://pypi.nvidia.com/",
+          "created_at": "2024-06-24T11:59:18Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "Please verify pre-requisites and move to newly released 0.5 version. There is no such known issue in 0.5 version. let us know if you are facing issue on 0.5 version.",
+          "created_at": "2025-04-10T10:10:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 79,
+      "title": "AssertionError: Config has to be initialized with question_encoder and generator config",
+      "body": "When I tried to launch ChatRTX with verifyinstall and app.py, there is always an assertion error:\r\nAssertionError: Config has to be initialized with question_encoder and generator config\r\n\r\nI've already check twice on all the things I've downloaded, as well as checking the website of Huggingface for help but to no avail.\r\nHere are the logs\r\n```\r\nTraceback (most recent call last):\r\n  File \"C:\\trt-llm-rag-windows\\app.py\", line 239, in <module>\r\n    embed_model = HuggingFaceEmbeddings(model_name=embedded_model)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\langchain_community\\embeddings\\huggingface.py\", line 72, in __init__\r\n    self.client = sentence_transformers.SentenceTransformer(\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\sentence_transformers\\SentenceTransformer.py\", line 95, in __init__\r\n    modules = self._load_sbert_model(model_path)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\sentence_transformers\\SentenceTransformer.py\", line 840, in _load_sbert_model\r\n    module = module_class.load(os.path.join(model_path, module_config['path']))\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\sentence_transformers\\models\\Transformer.py\", line 137, in load\r\n    return Transformer(model_name_or_path=input_path, **config)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\sentence_transformers\\models\\Transformer.py\", line 28, in __init__\r\n    config = AutoConfig.from_pretrained(model_name_or_path, **model_args, cache_dir=cache_dir)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\transformers\\models\\auto\\configuration_auto.py\", line 1141, in from_pretrained\r\n    return CONFIG_MAPPING[pattern].from_dict(config_dict, **unused_kwargs)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\transformers\\configuration_utils.py\", line 763, in from_dict\r\n    config = cls(**config_dict)\r\n  File \"C:\\Users\\username\\ChatRTX\\lib\\site-packages\\transformers\\models\\rag\\configuration_rag.py\", line 133, in __init__\r\n    \"question_encoder\" in kwargs and \"generator\" in kwargs\r\n\r\nAssertionError: Config has to be initialized with question_encoder and generator config\r\n```\r\n",
+      "state": "open",
+      "author": "itsnotjoe",
+      "author_type": "User",
+      "created_at": "2024-06-30T08:56:34Z",
+      "updated_at": "2025-04-10T10:09:33Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/79/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/79",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/79",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:11.333439",
+      "comments": [
+        {
+          "author": "akaanupkumar",
+          "body": "Please verify pre-requisites and move to newly released 0.5 version. There is no such known issue in 0.5 version. let us know if you are facing issue on 0.5 version.",
+          "created_at": "2025-04-10T10:09:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 74,
+      "title": "[BUG] Installing CLIP model breaks ChatRTX ",
+      "body": "After installing CLIP, I get this error\r\n\r\n  File \"C:\\Users\\sloom\\AppData\\Local\\NVIDIA\\ChatRTX\\env_nvd_rag\\lib\\site-packages\\transformers\\image_transforms.py\", line 386, in normalize\r\n    raise ValueError(f\"mean must have {num_channels} elements if it is an iterable, got {len(mean)}\")\r\nValueError: mean must have 1 elements if it is an iterable, got 3\r\n\r\namong many others. If I close ChatRTX after this I need to run a clean install to fix it.\r\n\r\nOtherwise, if I remove CLIP from my aimodels, once I restart it will start working again.",
+      "state": "open",
+      "author": "sloomingbla",
+      "author_type": "User",
+      "created_at": "2024-06-19T20:52:38Z",
+      "updated_at": "2025-04-10T10:08:04Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/74/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "anujj"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/74",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/74",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:11.562471",
+      "comments": [
+        {
+          "author": "anujj",
+          "body": "i will check this issue ",
+          "created_at": "2024-06-24T05:42:30Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "Please verify pre-requisites and move to newly released 0.5 version. There is no such known issue in 0.5 version. let us know if you are facing issue on 0.5 version.",
+          "created_at": "2025-04-10T10:07:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 91,
+      "title": "Reopen issue #90",
+      "body": "[#90](https://github.com/NVIDIA/ChatRTX/issues/90)\n\nIts not fixed on latest installation. you can follow the steps but on latest drivers its not working. I can provide a log, or a msinfo, whatever you need, just ask.",
+      "state": "open",
+      "author": "NextdoorPsycho",
+      "author_type": "User",
+      "created_at": "2024-09-02T02:25:28Z",
+      "updated_at": "2025-04-10T06:26:48Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/91/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/91",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/91",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:11.796867",
+      "comments": [
+        {
+          "author": "corang",
+          "body": "bump",
+          "created_at": "2024-09-03T20:04:32Z"
+        },
+        {
+          "author": "ETM500",
+          "body": "Same issue here. It's useless.",
+          "created_at": "2024-09-25T03:44:45Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "Please try out the new 0.5 version ( link in readme and also available on NVIDIA App). Please let me know if any issues seen.",
+          "created_at": "2025-04-10T06:26:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 98,
+      "title": "got an error  when run chatrtx windows 10",
+      "body": "Environment path found: C:\\Users\\jayme\\AppData\\Local\\NVIDIA\\ChatWithRTX\\env_nvd_rag\nApp running with config\n{\n“models”: {\n“supported”: [\n{\n“name”: “Mistral 7B int4”,\n“installed”: true,\n“metadata”: {\n“model_path”: “model\\mistral\\mistral7b_int4_engine”,\n“engine”: “llama_float16_tp1_rank0.engine”,\n“tokenizer_path”: “model\\mistral\\mistral7b_hf”,\n“max_new_tokens”: 1024,\n“max_input_token”: 7168,\n“temperature”: 0.1\n}\n},\n{\n“name”: “Llama 2 13B int4”,\n“installed”: true,\n“metadata”: {\n“model_path”: “model\\llama\\llama13_int4_engine”,\n“engine”: “llama_float16_tp1_rank0.engine”,\n“tokenizer_path”: “model\\llama\\llama13_hf”,\n“max_new_tokens”: 1024,\n“max_input_token”: 3900,\n“temperature”: 0.1\n}\n}\n],\n“selected”: “Mistral 7B int4”\n},\n“sample_questions”: [\n{\n“query”: “How does NVIDIA ACE generate emotional responses?”\n},\n{\n“query”: “What is Portal prelude RTX?”\n},\n{\n“query”: “What is important about Half Life 2 RTX?”\n},\n{\n“query”: “When is the launch date for Ratchet & Clank: Rift Apart on PC?”\n}\n],\n“dataset”: {\n“sources”: [\n“directory”,\n“youtube”,\n“nodataset”\n],\n“selected”: “directory”,\n“path”: “dataset”,\n“isRelative”: true\n},\n“strings”: {\n“directory”: “Folder Path”,\n“youtube”: “YouTube URL”,\n“nodataset”: “AI model default”\n}\n}\nTraceback (most recent call last):\nFile “C:\\Users\\jayme\\AppData\\Local\\NVIDIA\\ChatWithRTX\\env_nvd_rag\\lib\\site-packages\\langchain\\embeddings\\huggingface.py”, line 58, in init\nimport sentence_transformers\nModuleNotFoundError: No module named ‘sentence_transformers’\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\nFile “C:\\Users\\jayme\\AppData\\Local\\NVIDIA\\ChatWithRTX\\RAG\\trt-llm-rag-windows-main\\app.py”, line 114, in\nembed_model = HuggingFaceEmbeddings(model_name=embedded_model)\nFile “C:\\Users\\jayme\\AppData\\Local\\NVIDIA\\ChatWithRTX\\env_nvd_rag\\lib\\site-packages\\langchain\\embeddings\\huggingface.py”, line 61, in init\nraise ImportError(\nImportError: Could not import sentence_transformers python package. Please install it with pip install sentence-transformers.\nPress any key to continue . . .\n\nwhen run chatrtx on windows 10 got this error sow how to resolve of an issue\n\nSystem-specification:\nPlatform-windows 10\nnvidia driver version - 560\ncuda version - 12.5",
+      "state": "open",
+      "author": "thalapandi",
+      "author_type": "User",
+      "created_at": "2024-11-01T14:00:32Z",
+      "updated_at": "2025-04-10T05:59:36Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/98/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/98",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/98",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:12.062096",
+      "comments": [
+        {
+          "author": "DrJaymz",
+          "body": "Yes, it no longer works as supplied.  On installation it installs some packages which are incompatible and trying to resolve them would appear to not be possible.",
+          "created_at": "2024-11-28T15:38:47Z"
+        },
+        {
+          "author": "DrJaymz",
+          "body": "> Yes, it no longer works as supplied. On installation it installs some packages which are incompatible and trying to resolve them would appear to not be possible.\n\nI spent about 2 hours on this.  I haven't yet come across a package manager that actually doesn't get into circular dependency hell.  S",
+          "created_at": "2024-11-29T09:15:14Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "We have released new 0.5 version. We have not observed such issue in 0.5 version. Please verify the prerequisites and give that a try. ",
+          "created_at": "2025-04-10T05:59:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 106,
+      "title": "Error running ./example/rag.py - calling TrtLlmAPI",
+      "body": "Running the example rag.py the following error occurs:\n\n2024-12-04 16:52:35,904 - [ChatRTX] - ERROR - chatrtx_rag.py:126 - Failed to init Llama-index TRTLLM model object: Error 'TrtLlmAPI' object has no attribute '__pydantic_private__'\n[12/04/2024-16:52:35] Failed to init Llama-index TRTLLM model object: Error 'TrtLlmAPI' object has no attribute '__pydantic_private__'\n2024-12-04 16:52:35,981 - [ChatRTX] - ERROR - rag.py:82 - Failed to load the model: llama2_13b_AWQ_INT4_chat\n[12/04/2024-16:52:35] Failed to load the model: llama2_13b_AWQ_INT4_chat\n\n\n\nPydantic Version installed is 2.9.2\n\nError appears in submodule trtllm_api.py on assignment to self._model:\n\n        self._model = TrtLlm(\n            model_path=model_path,\n            tokenizer_dir=tokenizer_dir,\n            temperature=temperature,\n            max_new_tokens=max_new_tokens,\n            context_window=context_window,\n            vocab_file=vocab_file,  # Previously was set as None mistakenly.\n            use_py_session=use_py_session,\n            add_special_tokens=add_special_tokens,\n            trtLlm_debug_mode=trtLlm_debug_mode\n        )\n\nThe function itself in file tutllm.py is running correctly, and can be followed without error.",
+      "state": "open",
+      "author": "SMEAC",
+      "author_type": "User",
+      "created_at": "2024-12-04T16:06:26Z",
+      "updated_at": "2025-04-08T07:19:08Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/106/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/106",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/106",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:12.299779",
+      "comments": [
+        {
+          "author": "anujj",
+          "body": "Did the trt-llm wheel installed successfully ?",
+          "created_at": "2025-03-25T20:02:18Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "We have released 0.5 version which has updates. Please verify pre-requisites and try 0.5 version instructions.",
+          "created_at": "2025-04-08T07:19:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 112,
+      "title": "ERROR: Wheel 'tensorrt-llm' tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl is invalid.",
+      "body": "When I try to install TensorRT-LLM wheel (tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl), I get this error: ERROR: \nWheel 'tensorrt-llm' located at C:\\Users\\Desktop\\Folder\\ChatRTX-release-0.4.0\\ChatRTX_APIs\\dist\\tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl is invalid.",
+      "state": "open",
+      "author": "NottFoxy",
+      "author_type": "User",
+      "created_at": "2025-01-11T11:02:37Z",
+      "updated_at": "2025-04-08T06:54:19Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/112/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/112",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/112",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:12.536362",
+      "comments": [
+        {
+          "author": "anujj",
+          "body": "which python version you are using ? ",
+          "created_at": "2025-03-25T20:00:23Z"
+        },
+        {
+          "author": "NottFoxy",
+          "body": "> which python version you are using ?\n\nPython 3.10",
+          "created_at": "2025-03-28T06:48:19Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "Is the issue consistent even after re-downloading wheel?\n\nBTW we have also released new 0.5 version. I would recommend to update to 0.5. Please verify the pre-requisites.",
+          "created_at": "2025-04-08T06:41:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "Invalid TensorRT-LLM Wheel File During Installation  ERROR: Wheel 'tensorrt-llm' located at tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl is invalid.",
+      "body": "## Issue: Invalid TensorRT-LLM Wheel File During Installation\n\n### Environment\n- OS: Windows\n- Python Version: 3.10.11\n- Installation Path: D:\\roop_api\\rtx_service\\ChatRTX_APIs\\dist\n\n### Steps to Reproduce\n1. Downloaded `tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl` from the repository\n2. Navigated to the directory containing the wheel file\n3. Ran the installation command:\n```bash\npip install tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl --extra-index-url https://pypi.nvidia.com --extra-index-url https://download.pytorch.org/whl/cu121\n```\n\n### Error Message\n```\nLooking in indexes: https://pypi.org/simple, https://pypi.nvidia.com, https://download.pytorch.org/whl/cu121\nProcessing d:\\roop_api\\rtx_service\\chatrtx_apis\\dist\\tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl\nERROR: Wheel 'tensorrt-llm' located at D:\\roop_api\\rtx_service\\ChatRTX_APIs\\dist\\tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl is invalid.\n```\n\n### What I've Tried\n- Verified Python version is 3.10.11\n- Confirmed the wheel file exists in the specified path\n- Using the exact installation command from the README\n\n### Questions\n1. Is there a known issue with this wheel file?\n2. Are there any specific prerequisites I might be missing?\n3. Is there an alternative installation method available?\n\nAny help or guidance would be greatly appreciated.",
+      "state": "open",
+      "author": "wxn1229",
+      "author_type": "User",
+      "created_at": "2025-02-17T10:56:07Z",
+      "updated_at": "2025-04-08T06:53:56Z",
+      "closed_at": null,
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/116",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/116",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:12.744031",
+      "comments": [
+        {
+          "author": "anujj",
+          "body": "Please try with python 3.10 version \n",
+          "created_at": "2025-02-17T15:56:31Z"
+        },
+        {
+          "author": "wxn1229",
+          "body": "I'm currently using Anaconda environment and have tried with different Python 3.10 versions (3.10.0 and 3.10.16), but still getting the same error:\n\n```\npip install tensorrt_llm-0.9.0-cp310-cp310-win_amd64.whl --extra-index-url https://pypi.nvidia.com --extra-index-url https://download.pytorch.org/w",
+          "created_at": "2025-02-19T06:21:09Z"
+        },
+        {
+          "author": "anujj",
+          "body": "Wheel in the repo is correct.. I am able to use this wheel",
+          "created_at": "2025-03-25T19:40:38Z"
+        },
+        {
+          "author": "akaanupkumar",
+          "body": "We verify using venv.\n\nwe have released 0.5 version. Please go through the pre-requisites mentioned in readme and give this version a try.",
+          "created_at": "2025-04-08T06:53:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 28,
+      "title": "Enhancement: Support for reading PDFs with partial DRM (AES) - include PyCryptodome dependency",
+      "body": "Description\r\nWhen attempting to read PDF files that have partial DRM capabilities (e.g., Printing, Content Copying, and Content Copying for Accessibility allowed), the operation fails when reading local files with the following error message: \"Failed to load file <filename.pdf> with error: PyCryptodome is required for AES algorithm. Skipping...\" This issue arises due to the absence of the PyCryptodome library, which is necessary for handling AES encryption used by these DRM features.\r\n\r\nExpected Behavior\r\nThe expected behavior is that the project should be able to read PDF files, including those with partial DRM capabilities, without throwing errors related to the absence of cryptographic support. Users should be able to process such PDFs for legitimate use cases, such as reading text for accessibility purposes, where the use complies with the DRM's allowances.  Note if there is a restriction that would prevent reading the file, an error should still be thrown stating that the necessary DRM permissions do not allow reading of this document.\r\n\r\nActual Behavior\r\nThe actual behavior is that when attempting to read a PDF with partial DRM capabilities, the process is aborted due to the missing PyCryptodome dependency, and the file cannot be read or processed further.\r\n\r\nSteps to Reproduce\r\nAttempt to read a PDF file with partial DRM capabilities using the project.\r\nObserve the error message indicating the absence of PyCryptodome for AES algorithm support.\r\n\r\nSuggested Enhancement\r\nTo resolve this issue and enhance the capability to read a wider range of PDF files, suggest including PyCryptodome as a dependency/requirement within the project's Python implementation.\r\n\r\nAdditional Context\r\nThe ability to read PDFs with partial DRM is crucial for various legitimate use cases, including accessibility and content analysis, where the user is not infringing on the copyright or DRM protections but merely accessing the content in a manner that the DRM allows (e.g., reading for visually impaired users), or where legal and necessary references are provided in their document.",
+      "state": "open",
+      "author": "montge",
+      "author_type": "User",
+      "created_at": "2024-02-16T02:20:56Z",
+      "updated_at": "2024-02-27T23:23:21Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/28/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/NVIDIA/ChatRTX/issues/28",
+      "api_url": "https://api.github.com/repos/NVIDIA/ChatRTX/issues/28",
+      "repository": "NVIDIA/ChatRTX",
+      "extraction_date": "2025-06-22T00:44:14.494264",
+      "comments": [
+        {
+          "author": "Jason-XII",
+          "body": "I'm facing this problem too! ",
+          "created_at": "2024-02-16T04:10:50Z"
+        },
+        {
+          "author": "dayjobtitus",
+          "body": "Same situation and I agree with the statement in the \"Additional Context\" section above. ",
+          "created_at": "2024-02-19T21:41:25Z"
+        },
+        {
+          "author": "kedarpotdar-nv",
+          "body": "@montge thanks, we will consider this feature request. ",
+          "created_at": "2024-02-26T07:55:34Z"
+        },
+        {
+          "author": "sarsharoid",
+          "body": "@montge any ETA for this requirement?",
+          "created_at": "2024-02-27T23:23:20Z"
+        }
+      ]
+    }
+  ]
+}

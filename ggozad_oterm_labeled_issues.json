@@ -1,0 +1,2560 @@
+{
+  "repository": "ggozad/oterm",
+  "repository_info": {
+    "repo": "ggozad/oterm",
+    "stars": 2001,
+    "language": "Python",
+    "description": "the terminal client for Ollama",
+    "url": "https://github.com/ggozad/oterm",
+    "topics": [
+      "llm",
+      "llms",
+      "machine-learning",
+      "ollama",
+      "python",
+      "terminal"
+    ],
+    "created_at": "2023-10-10T07:29:26Z",
+    "updated_at": "2025-06-22T01:29:58Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 96,
+    "labeled_issues_estimate": 64,
+    "labeling_rate": 66.7,
+    "sample_labeled": 16,
+    "sample_total": 24,
+    "has_issues": true,
+    "repo_id": 702880644,
+    "default_branch": "main",
+    "size": 25001
+  },
+  "extraction_date": "2025-06-22T00:48:15.468027",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 51,
+  "issues": [
+    {
+      "issue_number": 255,
+      "title": "Follow XDG dirs if set on macos",
+      "body": "If XDG_CONFIG_HOME, or XDG_DATA_HOME are set, then use those dirs for config, and the sqlite db, just like on linux. The current dirs are technically correct for macos, but many command lines tools prefer these if set, and it keeps a nice separation between gui/ and cross platform cmd apps. Also tools like pearcleaner flag the files as 'orphaned' as they can't match it to an installed App/.",
+      "state": "open",
+      "author": "dmmalam",
+      "author_type": "User",
+      "created_at": "2025-06-20T16:31:28Z",
+      "updated_at": "2025-06-20T17:48:39Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/255/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/255",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/255",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:03.350283",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "A pull request would be most welcome!",
+          "created_at": "2025-06-20T17:48:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 254,
+      "title": "Thinking models forget thoughts after MCP tool use",
+      "body": "Have you read the [documentation](https://ggozad.github.io/oterm/)?\n\nYes. I have a nagging suspicion that this note from the documentation might have something to do with it, but I'm, not sure:\n\n> When thinking is enabled you will observe the model thinking while generating its response. \n> The thinking process is not persisted in the database in order to save context, so you will not see it on later sessions.\n\nIt certainly doesn't feel like the intended behavior.\n\nHave you checked [closed issues](https://github.com/ggozad/oterm/issues?q=is%3Aissue+is%3Aclosed)?\n\nYes\n\nAre you running the most [recent version of oterm](https://pypi.org/search/?q=oterm)?\n\nv0.14.0\n\n## The bug\n\nWhen I use a thinking enabled model with thinking turned on, and the model calls a MCP tool as part of it's thinking process, the in progress thought seems to disappear from the context. I'm fairly sure this isn't just a graphical bug. The behavior of the model seems to suggest it doesn't actually have the thoughts in it's context.\n\nThis is a problem when I've instructed the model to complete a task that requires multiple tool calls. It thinks, creates a plan about which tools to call and the order of operations, but then after the first tool call it's as if all it can see is my initial prompt and the result of the first call. At best this causes it to \"re-plan\", but usually it looses the plot completely. This is sometimes quite funny - but not particularly productive.\n\nI'm running:\n- OTerm 0.14.0 under WSL2 in Windows 10\n- Ollama 0.9.0. (running on a remote machine - Linux Mint)\n- Python 3.10.12\n- I'm maining testing with Qwen3:30b and Qwen3:32b.\n\nCheers, and thank you for your hard work.",
+      "state": "open",
+      "author": "jordan-hemming",
+      "author_type": "User",
+      "created_at": "2025-06-17T16:16:34Z",
+      "updated_at": "2025-06-19T05:29:33Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/254/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/254",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/254",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:03.577782",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey Jordan,\nI *think* you might be right.\nTo give a bit more context: I have tested quite a bit with qwen3 and a couple of mcp servers that give tools. Admittedly, these were easy tool calls to follow and there was really not that much thinking involved :) But it did work ok.\nWhat I see as a user in",
+          "created_at": "2025-06-17T20:53:27Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "I raised an issue with Ollama, it is a bit more clear there what happens: \nhttps://github.com/ollama/ollama-python/issues/533\n",
+          "created_at": "2025-06-19T05:29:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 247,
+      "title": "Homebrew: CLI hickup?",
+      "body": "```shell\n$ oterm -v    \nGi=727013569,s=1,v=1,a=q,t=d,f=24;AAAAoterm v0.13.1\n```",
+      "state": "closed",
+      "author": "reneleonhardt",
+      "author_type": "User",
+      "created_at": "2025-06-08T07:40:20Z",
+      "updated_at": "2025-06-12T08:37:54Z",
+      "closed_at": "2025-06-12T08:37:54Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/247/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/247",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/247",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:03.791585",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hm, this is weird :) I am guessing it has something to do with your terminal emulator, would you be able to debug and help me figure it out?\nOn my Mac I get `oterm v0.13.1`. What platform are you running? Can you try on a different terminal? ",
+          "created_at": "2025-06-08T07:48:58Z"
+        },
+        {
+          "author": "reneleonhardt",
+          "body": "Is there an easy way to disable this? 😅\n```shell\n# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes\nZSH_THEME=\"robbyrussell\"\n```\n",
+          "created_at": "2025-06-08T07:53:35Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "> Is there an easy way to disable this? 😅\n> \n> # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes\n> ZSH_THEME=\"robbyrussell\"\n\nNot sure I understand what you mean. Can you please explain a bit?\n\nMy first thought is that this happens when we try to detect Sixel support in the terminal. We have to se",
+          "created_at": "2025-06-08T07:57:28Z"
+        },
+        {
+          "author": "reneleonhardt",
+          "body": "I can't find an easy way to disable it temporarily, only\nhttps://github.com/ohmyzsh/ohmyzsh/wiki/FAQ#how-do-i-uninstall-oh-my-zsh\n\nEven after uncommenting everything and opening a new terminal the garbage remains, only the long number changed.\n\nThis was in the default macOS terminal. iTerm2 and warp",
+          "created_at": "2025-06-08T08:01:02Z"
+        },
+        {
+          "author": "reneleonhardt",
+          "body": "I tried other apps depending on python@3.13, they work without a problem...\n\nThe only thing I could find for now are three missing upgrades in pyproject.toml:\n\n| old | from | new | latest |\n|-|-|-|-|\n|textual>=3.2.0,<3.3.0|>=3.2.0,|<3.4.0|3.3.0|\n|typer>=0.15.2,<0.16|>=0.15.2,|<0.17|0.16.0|\n|fastmcp>",
+          "created_at": "2025-06-08T09:04:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 249,
+      "title": "Support Remote MCP Servers through Auth spec",
+      "body": "The [Auth spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) seems to be getting fully fleshed out this week, they added remote MCP tools to Claude Desktop (and the mobile rollout is coming soon) so I think they are getting close to locking down on what all this might look like.\n\nI started to add support to my own project. I like to use oterm for testing purposes (massively reduced Claude spend lol), it would be nice if we could have support for setting Bearer auth tokens for remote MCP tools (probably just through config?) and then eventually support full OAuth 2.0 client callback flows (we have some experience doing this via [Fief's client library](https://github.com/fief-dev/fief-python/blob/main/fief_client/integrations/cli.py#L180), which is now deprecated 🤕)\n\nWould be willing to help out testing, and can try my hand at implementing the OAuth 2.0 flows when I have time. ",
+      "state": "open",
+      "author": "fubuloubu",
+      "author_type": "User",
+      "created_at": "2025-06-11T00:37:15Z",
+      "updated_at": "2025-06-11T19:06:52Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/249/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/249",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/249",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:03.977244",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "This sounds great @fubuloubu ! Looking forward to it and will see what I can do to help.",
+          "created_at": "2025-06-11T06:20:37Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "`fastmcp` 2.8.0 adds support for authentication. I implemented bearer in #251 , think everyting is there of oauth as well @fubuloubu ",
+          "created_at": "2025-06-11T18:54:22Z"
+        },
+        {
+          "author": "fubuloubu",
+          "body": "> `fastmcp` 2.8.0 adds support for authentication. I implemented bearer in [#251](https://github.com/ggozad/oterm/pull/251) , think everyting is there of oauth as well [@fubuloubu](https://github.com/fubuloubu)\n\nAwesome! Will see about trying this out. We have some test instances that are normal API",
+          "created_at": "2025-06-11T19:06:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 157,
+      "title": "Prebuilt-packages for all platforms",
+      "body": null,
+      "state": "open",
+      "author": "purin-blog",
+      "author_type": "User",
+      "created_at": "2025-01-21T04:55:33Z",
+      "updated_at": "2025-06-08T07:39:52Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/157/reactions",
+        "total_count": 4,
+        "+1": 4,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/157",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/157",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:04.248695",
+      "comments": [
+        {
+          "author": "reneleonhardt",
+          "body": "@purin-blog I don't know if you can use Homebrew, there are packages for macOS and Linux.\n```shell\nbrew install oterm\n```",
+          "created_at": "2025-06-08T07:37:27Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "> [@purin-blog](https://github.com/purin-blog) I don't know if you can use Homebrew, there are packages for macOS and Linux.\n> \n> brew install oterm\n\nI am currently updating the docs, `oterm` was submitted to homebrew a few hours ago :)",
+          "created_at": "2025-06-08T07:39:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 234,
+      "title": "Can't get newline to work",
+      "body": "Have you read the [documentation](https://ggozad.github.io/oterm/)?\n\nYes, I even edited the newline key binding\n\nHave you checked [closed issues](https://github.com/ggozad/oterm/issues?q=is%3Aissue+is%3Aclosed)?\n\nI checked https://github.com/ggozad/oterm/issues/117, but it suggests changing the newline shortcut (which does not work for me).\n\nAre you running the most [recent version of oterm](https://pypi.org/search/?q=oterm)?\n\nYes, installed today\n\n## The bug\n\nThe default SHIFT+ENTER keybind to create a newline does not work in Windows Terminal nor Alacritty. I tried changing this to CTRL+ENTER but no luck either. Is there any way I can get the SHIFT+ENTER keybind to work in either terminal?\n\nI am running Windows 11 23H2 (OS Build 22631.5189)\n\nConfig file:\n```json\n{\n    \"theme\": \"gruvbox\",\n    \"splash-screen\": true,\n    \"keymap\": {\n        \"newline\": \"ctrl+enter\"\n    }\n}\n```\n",
+      "state": "closed",
+      "author": "Avenred",
+      "author_type": "User",
+      "created_at": "2025-05-05T03:55:24Z",
+      "updated_at": "2025-06-06T17:00:47Z",
+      "closed_at": "2025-05-30T13:58:39Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/234/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/234",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/234",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:04.449695",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Thanks for your submission and sorry it took so long to reply, I can verify the bug. Will work on fixing it as soon as I get some time :)",
+          "created_at": "2025-05-08T06:08:52Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Actually, I was wrong it's working fine for me... I was just already overriding the setting and forgot about it.\nCan you try something that is not likely to be bound like \n```\n    \"keymap\": {\n        \"newline\": \"ctrl+enter\"\n    }\n```\nI don't have access to a windows machine to test unfortunately, if",
+          "created_at": "2025-05-09T17:00:53Z"
+        },
+        {
+          "author": "Avenred",
+          "body": "I have already tried the keybind ctrl+enter to no success. Here's a copy of my current config that doesn't work:\n\n```json\n{\n    \"theme\": \"gruvbox\",\n    \"splash-screen\": true,\n    \"keymap\": {\n        \"newline\": \"ctrl+enter\"\n    }\n}\n```",
+          "created_at": "2025-05-09T20:58:39Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Could you try with some combo that is unlikely to be bound? Like `ctrl+n`?\nAlso do you see the key-binding at the bottom of the screen?",
+          "created_at": "2025-05-10T14:19:00Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Closing due to inactivity.",
+          "created_at": "2025-05-30T13:58:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 242,
+      "title": "Configure Thinking per Model and On/Off-Switch for Thinking",
+      "body": "Hi \n\nIt would be great, if we could configure/preset thinking per model, if a model has a thinking and a non-thinking mode.\n\nAs far as I understand: At the moment, I have to set thinking mode for each chat, via system prompt.\n\nAs example for \n- [Cogito](https://ollama.com/library/cogito)\n-  [Granite 3.3](https://ollama.com/library/granite3.3)\n\nAnd then have a on/off switch for thinking per chat, would also be great.\n\nThanks for this cool tool!\n",
+      "state": "closed",
+      "author": "KarmaMonk",
+      "author_type": "User",
+      "created_at": "2025-05-23T06:50:52Z",
+      "updated_at": "2025-06-03T11:17:38Z",
+      "closed_at": "2025-06-03T11:17:38Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/242/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/242",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/242",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:04.647823",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "thing is each model does it differently:\n* Qwen uses `/no_think` in the system prompt.\n* Cogito uses `Enable deep thinking subroutine.` in the system prompt.\n* Granite uses a different role just to complicate things further.\n* deepseek does not turn it off at all.\nI would accept a PR that does this,",
+          "created_at": "2025-05-24T10:35:38Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "There is some thinking support in `Ollama-python` now which should make this possible.",
+          "created_at": "2025-05-30T13:58:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 91,
+      "title": "Feature request: add llama.cpp and openai as backends",
+      "body": "This is an awesome project!\r\n\r\nOllama is based on llama.cpp and there are many openai compatible backends as long as the user can choose a different base url.",
+      "state": "closed",
+      "author": "sa-",
+      "author_type": "User",
+      "created_at": "2024-06-09T07:05:10Z",
+      "updated_at": "2025-05-30T14:01:04Z",
+      "closed_at": "2025-05-30T14:01:03Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/91/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/91",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/91",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:04.873642",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey Samay!\r\nThank you :)\r\nThis has been proposed in the past, but I am reluctant to go ahead and add as a feature, primarily as it would make maintenance harder. Using the backend would be trivial, it's mostly maintaining compatible configurations options that can be tricky... My time is very limite",
+          "created_at": "2024-06-10T14:22:57Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Our recent move to using the Chat API (thanks @yilmaz08 ) makes this a lot easier. I would prioritize open solutions to commercial ones, but if someone wants to put the effort I am happy to discuss and help.",
+          "created_at": "2024-08-20T21:22:21Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Closing and tracking through #243 ",
+          "created_at": "2025-05-30T14:01:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 243,
+      "title": "Support alternative providers (OpenAI, Anthropic, Mistral etc) through PydanticAI",
+      "body": null,
+      "state": "open",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2025-05-30T13:59:49Z",
+      "updated_at": "2025-05-30T13:59:49Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/243/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/243",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/243",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.035623",
+      "comments": []
+    },
+    {
+      "issue_number": 195,
+      "title": "update example in docs",
+      "body": "according to these findings\n\nhttps://github.com/ggozad/oterm/issues/188#issuecomment-2726734938\nhttps://github.com/ggozad/oterm/issues/171#issuecomment-2645731772\n\npeople are misusing your example with git\nmoreover docker could be missing from the system\n\nI propose to replace git mcp with simpler one\n\n```\n{\n  \"mcpServers\": {\n    \"filesystem\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-filesystem\",\n        \"~\"\n      ]\n    }\n  }\n}\n```",
+      "state": "closed",
+      "author": "EthBerryAdmin",
+      "author_type": "User",
+      "created_at": "2025-03-16T05:51:25Z",
+      "updated_at": "2025-05-30T13:59:02Z",
+      "closed_at": "2025-05-30T13:59:02Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/195/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/195",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/195",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.035645",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Would you have some time and create a PR? Perhaps have this example in addition? Or mention that you need `npx` or `docker` to run the tools.",
+          "created_at": "2025-03-16T08:17:07Z"
+        },
+        {
+          "author": "EthBerryAdmin",
+          "body": "I was about to add this change to the doc but it does not work https://github.com/modelcontextprotocol/servers/pull/877",
+          "created_at": "2025-03-16T12:42:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 240,
+      "title": "Support python-mcp 1.9 ?",
+      "body": "I see in pyproject.tml that mcp must be < 1.8. Is this a hard requirement or can I use 1.9 ? Skimming through the [python-mcp changelog](https://github.com/modelcontextprotocol/python-sdk/releases) I don't see any breaking changes.\n\nThis is related to [this NixOS PR](https://github.com/NixOS/nixpkgs/pull/409172#pullrequestreview-2856038927).\n\nThanks !",
+      "state": "closed",
+      "author": "gaelj",
+      "author_type": "User",
+      "created_at": "2025-05-21T09:08:21Z",
+      "updated_at": "2025-05-21T16:41:17Z",
+      "closed_at": "2025-05-21T16:41:17Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/240/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/240",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/240",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.245861",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Turns out it was breaking MCP prompts, but I fixed it :)",
+          "created_at": "2025-05-21T16:40:59Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 197,
+      "title": "group tools by mcp server",
+      "body": "It would be nice to group tools using a collapsible element, initially displaying only the MCP server's name that provides the toolset.\n\n<img width=\"1055\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/b0fbb371-3679-4a0e-956a-1791d4179e20\" />",
+      "state": "closed",
+      "author": "EthBerryAdmin",
+      "author_type": "User",
+      "created_at": "2025-03-16T12:48:52Z",
+      "updated_at": "2025-04-17T11:41:44Z",
+      "closed_at": "2025-04-17T11:41:44Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/197/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/197",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/197",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.400638",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "See also https://github.com/ggozad/oterm/issues/198",
+          "created_at": "2025-04-15T13:13:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 198,
+      "title": "better user experience for tools",
+      "body": "I would replace the grey \"✖️\" with a green \"✔️\" by default to indicate that all tools are included. \nNot sure why did you decide to exclude them all by default\nIf the user clicks to remove tool, green \"✔️\" should be replaced with a red \"✖️\" \n\nThe current grey \"✖️\" is confusing\n\n<img width=\"492\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/20a092e8-ff34-4fcd-aa54-b289c4460767\" />",
+      "state": "closed",
+      "author": "EthBerryAdmin",
+      "author_type": "User",
+      "created_at": "2025-03-16T12:55:09Z",
+      "updated_at": "2025-04-15T13:13:50Z",
+      "closed_at": "2025-04-15T13:13:50Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/198/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/198",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/198",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.574088",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I plan to change the tool selection screen and create a screen dedicated to MCP. ",
+          "created_at": "2025-03-17T07:31:25Z"
+        },
+        {
+          "author": "regismesquita",
+          "body": "Any easy way to enable all the tools?\n\nEdit: I have edited the source and add the feature, now everything is enabled by default and I can toggle all the tools with ctrl+e , because @ggozad has reported to be redesigning this I will refrain from pushing it upstream.\n\n<img width=\"1128\" alt=\"Image\" src",
+          "created_at": "2025-04-11T10:02:49Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "@regismesquita a PR is always welcome, please don't hesitate :)\nI am currently lacking time more than I would like so by any means go ahead.\nMy plan was to:\n1. change the tool definitions so that they are categorized with the mcp server they belong to, or oterm if they are built-in.\n2. Change the ui",
+          "created_at": "2025-04-11T15:41:38Z"
+        },
+        {
+          "author": "regismesquita",
+          "body": "I will open a PR for this then, it was AI generated I hope that it is not a problem (Just healing my own pain).\n\n> Change the ui so that you can toggle an entire mcp server (or all oterm tools).\n\nThat would be really nice indeed, selecting per tool is quite painful as some servers can have dozens of",
+          "created_at": "2025-04-11T16:34:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 185,
+      "title": "Support MCP Sampling",
+      "body": "See https://modelcontextprotocol.io/docs/concepts/sampling",
+      "state": "closed",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2025-03-15T11:27:13Z",
+      "updated_at": "2025-04-13T19:57:21Z",
+      "closed_at": "2025-04-13T19:57:21Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/185/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 1,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/185",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/185",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.752673",
+      "comments": []
+    },
+    {
+      "issue_number": 219,
+      "title": "not working on windows miniconda env or wsl",
+      "body": "hello, can someone help me\n\nfirst, i tried using miniconda env and use both 'pip install uv' and then 'uvx oterm' but got errors:\n\n```\n(oterm2) C:\\windows\\system32>uvx oterm\nInstalled 42 packages in 727ms\nGi=1275382190,s=1,v=1,a=q,t=d,f=24;AAAATraceback (most recent call last):\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\_terminal.py\", line 64, in get_cell_size\n    with capture_terminal_response(\"\\x1b[\", \"t\", 0.1) as response:\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\contextlib.py\", line 144, in __exit__\n    next(self.gen)\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\_terminal.py\", line 117, in capture_terminal_response\n    response.sequence += read(stdin, 1, timeout)\n                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\_win32.py\", line 27, in read\n    wait_for_object(fd, timeout)\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\_win32.py\", line 52, in wait_for_object\n    raise TimeoutError(\"Timeout waiting for data\")\nTimeoutError: Timeout waiting for data\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Scripts\\oterm.exe\\__main__.py\", line 4, in <module>\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\oterm\\cli\\oterm.py\", line 7, in <module>\n    from oterm.app.oterm import app\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\oterm\\app\\oterm.py\", line 15, in <module>\n    from oterm.app.widgets.chat import ChatContainer\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py\", line 26, in <module>\n    from oterm.app.widgets.prompt import FlexibleInput\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\oterm\\app\\widgets\\prompt.py\", line 14, in <module>\n    from oterm.app.image_browser import ImageSelect\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\oterm\\app\\image_browser.py\", line 12, in <module>\n    from textual_image.widget import Image\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\widget\\__init__.py\", line 16, in <module>\n    get_cell_size()\n  File \"C:\\Users\\admin\\AppData\\Local\\uv\\cache\\archive-v0\\2St7ebz0dS-97wJ_I4r1j\\Lib\\site-packages\\textual_image\\_terminal.py\", line 71, in get_cell_size\n    raise TerminalError(\"Failed to get cell size\") from e\ntextual_image._terminal.TerminalError: Failed to get cell size\n```\n\ni then tried 'pip install oterm' with no errors. but then when i try to open with command 'oterm' i get these similar errors as above:\n\n```\n(oterm2) C:\\windows\\system32>oterm\n←[c←_Gi=4171846303,s=1,v=1,a=q,t=d,f=24;AAAA←\\←[16tTraceback (most recent call last):\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 64, in get_cell_size\n    with capture_terminal_response(\"\\x1b[\", \"t\", 0.1) as response:\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\contextlib.py\", line 144, in __exit__\n    next(self.gen)\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 117, in capture_terminal_response\n    response.sequence += read(stdin, 1, timeout)\n                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_win32.py\", line 27, in read\n    wait_for_object(fd, timeout)\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_win32.py\", line 52, in wait_for_object\n    raise TimeoutError(\"Timeout waiting for data\")\nTimeoutError: Timeout waiting for data\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Scripts\\oterm.exe\\__main__.py\", line 4, in <module>\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\cli\\oterm.py\", line 7, in <module>\n    from oterm.app.oterm import app\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\oterm.py\", line 15, in <module>\n    from oterm.app.widgets.chat import ChatContainer\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py\", line 26, in <module>\n    from oterm.app.widgets.prompt import FlexibleInput\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\widgets\\prompt.py\", line 14, in <module>\n    from oterm.app.image_browser import ImageSelect\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\image_browser.py\", line 12, in <module>\n    from textual_image.widget import Image\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\widget\\__init__.py\", line 16, in <module>\n    get_cell_size()\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 71, in get_cell_size\n    raise TerminalError(\"Failed to get cell size\") from e\ntextual_image._terminal.TerminalError: Failed to get cell size\n\n(oterm2) C:\\windows\\system32>oterm hello\n←[c←_Gi=3832589613,s=1,v=1,a=q,t=d,f=24;AAAA←\\←[16tTraceback (most recent call last):\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 64, in get_cell_size\n    with capture_terminal_response(\"\\x1b[\", \"t\", 0.1) as response:\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\contextlib.py\", line 144, in __exit__\n    next(self.gen)\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 117, in capture_terminal_response\n    response.sequence += read(stdin, 1, timeout)\n                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_win32.py\", line 27, in read\n    wait_for_object(fd, timeout)\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_win32.py\", line 52, in wait_for_object\n    raise TimeoutError(\"Timeout waiting for data\")\nTimeoutError: Timeout waiting for data\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Scripts\\oterm.exe\\__main__.py\", line 4, in <module>\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\cli\\oterm.py\", line 7, in <module>\n    from oterm.app.oterm import app\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\oterm.py\", line 15, in <module>\n    from oterm.app.widgets.chat import ChatContainer\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py\", line 26, in <module>\n    from oterm.app.widgets.prompt import FlexibleInput\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\widgets\\prompt.py\", line 14, in <module>\n    from oterm.app.image_browser import ImageSelect\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\oterm\\app\\image_browser.py\", line 12, in <module>\n    from textual_image.widget import Image\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\widget\\__init__.py\", line 16, in <module>\n    get_cell_size()\n  File \"C:\\ProgramData\\miniconda3\\envs\\oterm2\\Lib\\site-packages\\textual_image\\_terminal.py\", line 71, in get_cell_size\n    raise TerminalError(\"Failed to get cell size\") from e\ntextual_image._terminal.TerminalError: Failed to get cell size\n```\n\ni then tried wsl \n\n'pip install uv' and then 'uvx oterm':\n\n```\n(oterm) linuxadmin@DESKTOP-12345a:~$ uvx oterm\nGi=2256101664,s=1,v=1,a=q,t=d,f=24;AAAATraceback (most recent call last):\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/textual_image/_terminal.py\", line 64, in get_cell_size\n    with capture_terminal_response(\"\\x1b[\", \"t\", 0.1) as response:\n         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/linuxadmin/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/contextlib.py\", line 148, in __exit__\n    next(self.gen)\n    ~~~~^^^^^^^^^^\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/textual_image/_terminal.py\", line 117, in capture_terminal_response\n    response.sequence += read(stdin, 1, timeout)\n                         ~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/textual_image/_posix.py\", line 34, in read\n    raise TimeoutError(\"Timeout waiting for data\")\nTimeoutError: Timeout waiting for data\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/bin/oterm\", line 6, in <module>\n    from oterm.cli.oterm import cli\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/oterm/cli/oterm.py\", line 7, in <module>\n    from oterm.app.oterm import app\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/oterm/app/oterm.py\", line 15, in <module>\n    from oterm.app.widgets.chat import ChatContainer\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/oterm/app/widgets/chat.py\", line 26, in <module>\n    from oterm.app.widgets.prompt import FlexibleInput\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/oterm/app/widgets/prompt.py\", line 14, in <module>\n    from oterm.app.image_browser import ImageSelect\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/oterm/app/image_browser.py\", line 12, in <module>\n    from textual_image.widget import Image\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/textual_image/widget/__init__.py\", line 16, in <module>\n    get_cell_size()\n    ~~~~~~~~~~~~~^^\n  File \"/home/linuxadmin/.cache/uv/archive-v0/eR8EyRVgt1kYmwcBPXrtt/lib/python3.13/site-packages/textual_image/_terminal.py\", line 71, in get_cell_size\n    raise TerminalError(\"Failed to get cell size\") from e\ntextual_image._terminal.TerminalError: Failed to get cell size\n```\n\nand then tried 'pip install oterm' and no errors occured but when i run 'oterm' i get these errors:\n\n```\n(oterm) linuxadmin@DESKTOP-12345a:~$ oterm\nGi=307329701,s=1,v=1,a=q,t=d,f=24;AAAATraceback (most recent call last):\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/textual_image/_terminal.py\", line 64, in get_cell_size\n    with capture_terminal_response(\"\\x1b[\", \"t\", 0.1) as response:\n         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/contextlib.py\", line 148, in __exit__\n    next(self.gen)\n    ~~~~^^^^^^^^^^\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/textual_image/_terminal.py\", line 117, in capture_terminal_response\n    response.sequence += read(stdin, 1, timeout)\n                         ~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/textual_image/_posix.py\", line 34, in read\n    raise TimeoutError(\"Timeout waiting for data\")\nTimeoutError: Timeout waiting for data\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/linuxadmin/miniconda3/envs/oterm/bin/oterm\", line 5, in <module>\n    from oterm.cli.oterm import cli\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/oterm/cli/oterm.py\", line 7, in <module>\n    from oterm.app.oterm import app\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/oterm/app/oterm.py\", line 15, in <module>\n    from oterm.app.widgets.chat import ChatContainer\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/oterm/app/widgets/chat.py\", line 26, in <module>\n    from oterm.app.widgets.prompt import FlexibleInput\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/oterm/app/widgets/prompt.py\", line 14, in <module>\n    from oterm.app.image_browser import ImageSelect\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/oterm/app/image_browser.py\", line 12, in <module>\n    from textual_image.widget import Image\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/textual_image/widget/__init__.py\", line 16, in <module>\n    get_cell_size()\n    ~~~~~~~~~~~~~^^\n  File \"/home/linuxadmin/miniconda3/envs/oterm/lib/python3.13/site-packages/textual_image/_terminal.py\", line 71, in get_cell_size\n    raise TerminalError(\"Failed to get cell size\") from e\ntextual_image._terminal.TerminalError: Failed to get cell size\n```\n\nOS: windows 10\nwsl: ubuntu-22.04\nminiconda env python version: 3.13.2\nwsl miniconda env python version: 3.13.2\n\nwhat am i missing and causing not working?",
+      "state": "closed",
+      "author": "OhBobb",
+      "author_type": "User",
+      "created_at": "2025-04-11T20:39:54Z",
+      "updated_at": "2025-04-13T07:40:22Z",
+      "closed_at": "2025-04-13T07:40:20Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/219/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/219",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/219",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.752696",
+      "comments": [
+        {
+          "author": "Rudomitori",
+          "body": "I have the same problem, when I try to execute `uvx oterm` in Windows Terminal and Rider's build-in terminal.\nBut it works in VS Code's terminal \n",
+          "created_at": "2025-04-12T05:34:16Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey there,\nI believe this is because your terminal does not support  sixel for displaying images in the terminal. This was added recently in https://github.com/ggozad/oterm/pull/166\nAccording to the PR you should be using windows terminal > v1.22.2702\nCould you please try upgrading and let me know? ",
+          "created_at": "2025-04-12T07:40:32Z"
+        },
+        {
+          "author": "OhBobb",
+          "body": "im not using 'windows terminal'. should i always use this for everything? i have always used miniconda 'terminal' window. anyways, i downloaded windows terminal v1.23.10732.0 and seems like it launched but then got a msg bottom right of screen that it didnt connect with ollama(i don have it running ",
+          "created_at": "2025-04-12T23:42:10Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Yes oterm requires a modern enough terminal emulator to work, I guess what ships with miniconda does not cut it.\nAnd yes, you need to run Ollama to use oterm.\nClosing this as we figured it out.",
+          "created_at": "2025-04-13T07:40:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 209,
+      "title": "Margins within the respone from LLM",
+      "body": "I'm  having some trouble finding the proper way to set the margins of the response to properly format the response\nto prevent fatigue. Currently, I have to scroll to the right to read all the response from the LLM. Is there a way around this?\n\nI'm taking about the boxes, where code is, can can extend. Is there a way to program the LLM to obey a max width or something?\n",
+      "state": "closed",
+      "author": "TunnelThruTime",
+      "author_type": "User",
+      "created_at": "2025-04-04T08:47:16Z",
+      "updated_at": "2025-04-12T07:41:11Z",
+      "closed_at": "2025-04-12T07:41:10Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/209/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/209",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/209",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:05.943664",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I am not sure I can do something about this, but will have a look. It is not straight forward to properly wrap Markdown code.",
+          "created_at": "2025-04-04T17:45:51Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Decided to close this as too hard to fix to be worth it... Sorry :(",
+          "created_at": "2025-04-12T07:41:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 106,
+      "title": "support sixel?",
+      "body": "for images if terminal like wezterm supports it. ",
+      "state": "closed",
+      "author": "Kreijstal",
+      "author_type": "User",
+      "created_at": "2024-08-29T14:38:56Z",
+      "updated_at": "2025-04-02T15:46:57Z",
+      "closed_at": "2025-04-02T15:46:57Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/106/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/106",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/106",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.140876",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey there,\r\nI was not aware of Sixel, thanks for that.\r\nFrom a quick [look](https://github.com/saitoha/libsixel) it seems there are quite a few terminals that lack support for this. Worked great on my Mac with iTerm but not with the default terminal or a gnome terminal I tried on a linux box.\r\nIs th",
+          "created_at": "2024-08-29T15:04:12Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "There might be better alternatives compatibility-wise for instance Chaf which also has excellent [python bindings](https://chafapy.mage.black).",
+          "created_at": "2024-08-29T15:19:17Z"
+        },
+        {
+          "author": "Kreijstal",
+          "body": "> Hey there, I was not aware of Sixel, thanks for that. From a quick [look](https://github.com/saitoha/libsixel) it seems there are quite a few terminals that lack support for this. Worked great on my Mac with iTerm but not with the default terminal or a gnome terminal I tried on a linux box. Is the",
+          "created_at": "2024-08-29T16:48:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 74,
+      "title": "Suggestion: Scroll history of current chat via keyboard",
+      "body": "This is a great UI, it's almost 100% what I want!\r\n\r\nIt's perfect for my requirements, but for one thing. It seems to be necessary to use the mouse to scroll up and down through a chat.\r\n\r\nI'd like to be able to use this program through the full-screen TTY Linux session (via Ctrl+Alt+F5) where using the mouse isn't an option.\r\n\r\nWould it be possible to make this 100% keyboard-only compatible, by perhaps allowing the use of the PageUp and PageDown keys to scroll through the chat history?\r\n\r\nThanks, and I hope you give this feature a thought!",
+      "state": "closed",
+      "author": "nossidge",
+      "author_type": "User",
+      "created_at": "2024-04-13T23:20:31Z",
+      "updated_at": "2025-04-02T15:43:05Z",
+      "closed_at": "2025-04-02T15:43:05Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/74/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/74",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/74",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.378835",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey thank you so much for the kind words :)\r\nThis has popped up before, it's something that I also miss.\r\nThe difficulty is that the underlying markdown widget does not get focus (it's only a view) and does not support afaik keyboard scrolling.  It is hard to capture keyboard events without messing ",
+          "created_at": "2024-04-14T06:54:12Z"
+        },
+        {
+          "author": "pekcheey",
+          "body": "As a workaround, it is possible to use an app call homerow allows for keyboard only scrolling of the chat history via a keyboard shortcut.  working on macos using iTerm. \r\n\r\nOn that note, I do have to remove in iTerm the default binding of ctrl-tab to switch tab. to allow the keypress to reach oTerm",
+          "created_at": "2024-08-26T01:26:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 191,
+      "title": "oterm crashes when ollama is down",
+      "body": "I guess it should display an error but not crash.\n\n<img width=\"1143\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a23e3528-4478-45f2-8da0-c2e85a4671d3\" />",
+      "state": "closed",
+      "author": "EthBerryAdmin",
+      "author_type": "User",
+      "created_at": "2025-03-16T04:14:00Z",
+      "updated_at": "2025-03-27T09:07:43Z",
+      "closed_at": "2025-03-27T09:07:43Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/191/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/191",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/191",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.586672",
+      "comments": []
+    },
+    {
+      "issue_number": 204,
+      "title": "Support new kitty protocol for terminal font sizing?",
+      "body": "              Side note @ggozad - as you seem to enjoy cool terminal effects at least as much as I do - I recently stumbled upon [presenterm](https://github.com/mfontanini/presenterm) which supports a brand-new Kitty protocol, that allows font sizing inside the terminal. That would be a pretty cool feature for oterm to have, in my opinion. No pressure of course - I'm just letting you know of the possibility in case you didn't already.\r\n\r\n_Originally posted by @gaelj in https://github.com/ggozad/oterm/issues/166#issuecomment-2754000271_\r\n            ",
+      "state": "open",
+      "author": "gaelj",
+      "author_type": "User",
+      "created_at": "2025-03-26T12:11:24Z",
+      "updated_at": "2025-03-26T15:46:29Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/204/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 2,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/204",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/204",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.586692",
+      "comments": []
+    },
+    {
+      "issue_number": 183,
+      "title": "Support MCP prompts",
+      "body": "See https://modelcontextprotocol.io/docs/concepts/prompts",
+      "state": "closed",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2025-03-15T11:26:08Z",
+      "updated_at": "2025-03-24T17:45:26Z",
+      "closed_at": "2025-03-24T17:45:26Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/183/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/183",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/183",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.586699",
+      "comments": []
+    },
+    {
+      "issue_number": 192,
+      "title": "ugly overlay when executing mcp command",
+      "body": "That would be nice to hide log or display it inside the interface\n\n<img width=\"1054\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a3e961d6-82f1-4784-b559-e139b7e9d8c2\" />",
+      "state": "open",
+      "author": "EthBerryAdmin",
+      "author_type": "User",
+      "created_at": "2025-03-16T04:23:54Z",
+      "updated_at": "2025-03-16T07:57:56Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/192/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/192",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/192",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.586707",
+      "comments": [
+        {
+          "author": "EthBerryAdmin",
+          "body": "<img width=\"1079\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/45acec21-47ee-4750-b65f-e9391b2f3736\" />",
+          "created_at": "2025-03-16T04:35:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 184,
+      "title": "Support MCP Resources",
+      "body": "See https://modelcontextprotocol.io/docs/concepts/resources",
+      "state": "open",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2025-03-15T11:26:21Z",
+      "updated_at": "2025-03-15T11:32:32Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/184/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/184",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/184",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.781722",
+      "comments": []
+    },
+    {
+      "issue_number": 182,
+      "title": "Support MCP Resources",
+      "body": "Was just trying this out and noticed that none of my MCP resources show up under config, but tools do\n\nNot sure if prompts are supported either, but would be nice to have full support (even if it's just temporarily converted into something else to work with ollama)",
+      "state": "closed",
+      "author": "fubuloubu",
+      "author_type": "User",
+      "created_at": "2025-03-11T19:06:33Z",
+      "updated_at": "2025-03-15T11:31:41Z",
+      "closed_at": "2025-03-15T11:31:40Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/182/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 1
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/182",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/182",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.781742",
+      "comments": [
+        {
+          "author": "fubuloubu",
+          "body": "p.s. using oterm to help me prototype an MCP server is super helpful (and saves bigly on Claude spend)",
+          "created_at": "2025-03-11T19:07:19Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey, glad you find oterm useful!\nResources & prompts have not (yet) been implemented, primarily, cause I am not decided on how to map them to Ollama which has only support for tools.\nI would be happy to consider ideas though, or a PR if you are up for that.\n\nResources could be mapped as a parameeter",
+          "created_at": "2025-03-11T19:45:31Z"
+        },
+        {
+          "author": "fubuloubu",
+          "body": "> The only way I see prompts being utilized would be as a predefined system prompts. \n\nWhat's the issue here? I think this seems like a useful idea, but I am just getting my feet wet\n\n> Did you have something else in mind?\n\nNot yet, still trying to understand how this all works (I also feel like MCP",
+          "created_at": "2025-03-11T20:01:45Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "I will try to come up with some drafts on this ideas, will post here once a PR is ok to look at.",
+          "created_at": "2025-03-15T09:33:11Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Closing this, will track progress in the three sub-issues created.",
+          "created_at": "2025-03-15T11:31:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 66,
+      "title": "Brew Installation Error",
+      "body": "Hi Oterm maintainer!\r\n\r\nThank you for the great software. I am trying to install this through brew but got an error\r\n\r\nHere is an error message when I run`brew install ggozad/formulas/oterm`\r\n```\r\nerror: command '/usr/local/Homebrew/Library/Homebrew/shims/mac/super/clang' failed with exit code 1\r\n  error: subprocess-exited-with-error\r\n  \r\n  × Building wheel for pillow (pyproject.toml) did not run successfully.\r\n  │ exit code: 1\r\n  ╰─> See above for output.\r\n  \r\n  note: This error originates from a subprocess, and is likely not a problem with pip.\r\n  full command: /usr/local/Cellar/oterm/0.2.3/libexec/bin/python /usr/local/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py build_wheel /private/tmp/tmp_xn4z4iz\r\n  cwd: /private/tmp/oterm--pillow-20240304-83518-iyy3ms/pillow-10.2.0\r\n  Building wheel for pillow (pyproject.toml): finished with status 'error'\r\n  ERROR: Failed building wheel for pillow\r\nFailed to build pillow\r\nERROR: Could not build wheels for pillow, which is required to install pyproject.toml-based projects\r\n```\r\n\r\nPlease help!",
+      "state": "closed",
+      "author": "pacozaa",
+      "author_type": "User",
+      "created_at": "2024-03-04T02:56:49Z",
+      "updated_at": "2025-03-08T08:26:40Z",
+      "closed_at": "2025-03-08T08:26:40Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 20,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/66/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/66",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/66",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:06.999726",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey @pacozaa, thanks for the kind words!\r\nIs there no other output in your logs that you did not include?\r\n\r\nCould you try creating a new virtual env and installing in there with pip? If this does not work perhaps we get something more meaningful.",
+          "created_at": "2024-03-04T08:56:18Z"
+        },
+        {
+          "author": "pacozaa",
+          "body": "@ggozad Let me try to add more info and do the pip today. Thanksss. Sorry for the late reply. I was diving in ollama rabbit hole.",
+          "created_at": "2024-03-13T23:42:09Z"
+        },
+        {
+          "author": "pacozaa",
+          "body": "@ggozad I suspect it might be because of my python version. What's the python version required?",
+          "created_at": "2024-03-14T02:03:00Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "It's python 3.10 we use. But I am not certain this is the problem, please try the venv and let me know the results.",
+          "created_at": "2024-03-14T07:07:38Z"
+        },
+        {
+          "author": "pacozaa",
+          "body": "@ggozad \r\n- `pip install oterm` works! Thanks!\r\n\r\n- In case you want to investigate the brew error\r\nHere is the more error\r\n```\r\nLast 15 lines from /Users/[username]/Library/Logs/Homebrew/oterm/21.python3:\r\n  clang -bundle -undefined dynamic_lookup -isysroot /Library/Developer/CommandLineTools/SDKs/",
+          "created_at": "2024-03-14T08:32:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 172,
+      "title": "Unable to get response from MCP server",
+      "body": "Hi I am experimenting with oterm for the first time. I have 2 MCP servers running locally. Upon sending a chat I get no response.I dont see anything wrong in the logs. Am i missing anything here?\n\nPlatform: Apple M4 Pro\nOterm Version: v0.8.3\nOllama Version: 0.5.7\n\nconfig.json\n```{\n    \"theme\": \"textual-dark\", \n    \"splash-screen\": true,\n    \"mcpServers\": {\n    \"weather\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\",\n        \"/AIProjects/weather\",\n        \"run\",\n        \"weather.py\"\n      ]\n    },\n        \"Demo\": {\n            \"command\": \"uv\",\n            \"args\": [\n              \"run\",\n              \"--with\",\n              \"mcp[cli]\",\n              \"mcp\",\n              \"run\",\n              \"/AIProjects/planner/server.py\"\n            ]\n          }\n    }\n}\n```\n\n[Ollama server.log](https://github.com/user-attachments/files/18721807/server.log)\n\n![Image](https://github.com/user-attachments/assets/2dd2b886-08c5-4055-8447-600527695da2)\n\nBoth the MCP servers work with Claude Desktop. Please let me know if I am missing any setup steps.",
+      "state": "closed",
+      "author": "hdattada",
+      "author_type": "User",
+      "created_at": "2025-02-08T18:43:03Z",
+      "updated_at": "2025-02-23T12:58:58Z",
+      "closed_at": "2025-02-23T12:58:57Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/172/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/172",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/172",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:07.246379",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey!\nI think this is related to what @sheffler discusses in #167 . It's a bug.\nI will fix asap, could you please confirm if each of the servers work if they are used independently? (try having one at a time), to verify the issue is the same?\n",
+          "created_at": "2025-02-08T20:10:26Z"
+        },
+        {
+          "author": "sheffler",
+          "body": "Hello Hdattada -\nhave you tried replacing \"uv\" with the full pathname of uv?  My config.json that I am testing with looks like this:\n\n```\n{\"theme\": \"textual-dark\",\n \"splash-screen\": false,\n \"mcpServers\": {\n\n    \"sqlite\": {\n      \"command\": \"/Users/sheffler/.local/bin/uvx\",\n      \"args\": [\n        \"m",
+          "created_at": "2025-02-08T22:09:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 140,
+      "title": "When creating a chat the parameters are not saved",
+      "body": "Whathever I put in parameter field does not stick, not being saved in database.\r\n![image](https://github.com/user-attachments/assets/5e42767a-d8fa-4c8a-b13a-add3f52fd27a)\r\n![image](https://github.com/user-attachments/assets/9b386dce-f5e0-42fe-b7ce-2c78cb8c5de6)\r\n",
+      "state": "closed",
+      "author": "mcDandy",
+      "author_type": "User",
+      "created_at": "2024-11-26T00:05:21Z",
+      "updated_at": "2025-02-06T20:59:37Z",
+      "closed_at": "2025-02-06T20:59:37Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 18,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/140/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/140",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/140",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:07.446549",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey @mcDandy!\r\nI can't seem to be able to reproduce this while creating or editing a chat.\r\nCan you reproduce with a stock model?",
+          "created_at": "2024-11-26T16:20:47Z"
+        },
+        {
+          "author": "mcDandy",
+          "body": "I can reproduce it with gemma I grabbed with ollama pull gemma2. I also had the same problem with 27b version from the same source before. \r\n![image](https://github.com/user-attachments/assets/e8801a58-be66-4eeb-8099-f27516bd64c8)\r\n",
+          "created_at": "2024-11-27T10:08:13Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "This is weird, it works great for me for gemma2, both for creation as well as editing.\r\nAre you certain you are using the latest version of oterm?\r\n\r\n<img width=\"1462\" alt=\"Screenshot 2024-11-28 at 07 42 41\" src=\"https://github.com/user-attachments/assets/994657f1-800b-4842-a311-7e4bfeae9099\">\r\n\r\n",
+          "created_at": "2024-11-28T05:43:08Z"
+        },
+        {
+          "author": "mcDandy",
+          "body": "Yes. \r\n```\r\n[path]> oterm --version\r\nquery <unknown> may not be a select, consider adding an operator, eg '!'\r\nquery <unknown> may not be a select, consider adding an operator, eg '!'\r\nquery <unknown> may not be a select, consider adding an operator, eg '!'\r\nquery <unknown> may not be a select, cons",
+          "created_at": "2024-11-28T09:16:24Z"
+        },
+        {
+          "author": "mcDandy",
+          "body": "Maybe? \r\n\r\nPython 3.12.4",
+          "created_at": "2024-11-28T09:19:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 103,
+      "title": "Distro package maintainers",
+      "body": "Currently `oterm` exists on PyPi, homebrew, Arch & NixOS.\r\nIt would be nice to get commitment from maintainers that they will be updating regularly their platforms.\r\nAFAIK \r\n@suhr maintains NixOS but we are stuck on 0.2.9\r\n@danielchesters maintains Arch. (up to date)\r\nI release on PyPi the canonical version as well as maintain the homebrew formula.\r\n\r\n* @suhr are you able to keep maintaining the package or should we try to find someone else?\r\n* Can we find maintainers for other popular distros such as Debian & friends etc?\r\n* Is it possible to automate some of this through GitHub actions?\r\n\r\nI am planning to move away from Poetry to uv (https://github.com/astral-sh/uv), this is done in #102 .\r\nThings missing from there is basically GitHub actions that publish the package to PyPi and potentially to distros.\r\n\r\n[EDIT]\r\n#102 has been merged, we now use uv.\r\n",
+      "state": "closed",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2024-08-21T08:04:53Z",
+      "updated_at": "2025-01-18T17:00:26Z",
+      "closed_at": "2025-01-18T17:00:26Z",
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/103/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/103",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/103",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:09.577550",
+      "comments": [
+        {
+          "author": "yilmaz08",
+          "body": "I currently have Arch Linux on my pc and NixOS on my server. Maybe I can try packaging for NixOS but I don't know much about that.",
+          "created_at": "2024-08-21T09:06:00Z"
+        },
+        {
+          "author": "suhr",
+          "body": "I would like if someone else maintained this package.\r\n\r\n> Maybe I can try packaging for NixOS but I don't know much about that.\r\n\r\nSince there's already a package, you only need to update it.",
+          "created_at": "2024-08-21T11:35:28Z"
+        },
+        {
+          "author": "suhr",
+          "body": "It seems like my involvement was not required to update the package: https://github.com/NixOS/nixpkgs/pull/336821",
+          "created_at": "2024-08-23T20:51:18Z"
+        },
+        {
+          "author": "yilmaz08",
+          "body": "It seems like only the hash and version was changed but actually there was a bigger change in #102 which switched to uv from poetry. I still don't know much about nix packaging but I don't think it is correct\r\n\r\nI don't know how this even passes tests",
+          "created_at": "2024-08-23T21:01:12Z"
+        },
+        {
+          "author": "suhr",
+          "body": "I was able to build it and run nonetheless.\r\n![2024-08-24-013224_3840x2160_scrot](https://github.com/user-attachments/assets/567a2eef-22c2-4736-be66-c8991531cd57)\r\n",
+          "created_at": "2024-08-23T22:33:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 16,
+      "title": "AUR/Nix package",
+      "body": "it'd be nice, since ollama is present on the AUR, to make an oterm AUR package. From what I understand, it shouldn't be too hard. In the future maybe nix would be nice, too? ",
+      "state": "closed",
+      "author": "Soliprem",
+      "author_type": "User",
+      "created_at": "2023-12-04T17:42:11Z",
+      "updated_at": "2025-01-07T07:23:56Z",
+      "closed_at": "2024-01-10T17:20:05Z",
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 13,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/16/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/16",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/16",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:09.787246",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I am not using either so would find it hard to keep maintaining those. But I would be more than happy to accept a PR if you feel like it.\r\n",
+          "created_at": "2023-12-05T08:57:15Z"
+        },
+        {
+          "author": "DanielChesters",
+          "body": "Hi, I'd just add an PKGBUILD on AUR : https://aur.archlinux.org/packages/oterm",
+          "created_at": "2023-12-05T20:16:58Z"
+        },
+        {
+          "author": "Soliprem",
+          "body": "That settles it for the AUR. For nix, I'm absolutely ignorant about it, so I can't do much with it",
+          "created_at": "2023-12-06T07:02:39Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "@DanielChesters Thank you that's awesome!\r\nI would guess that this would be best done as a GitHub action. I need to make one for `brew`, @DanielChesters would you be willing to do the work to automate creating the PKGBUILD on release?\r\n ",
+          "created_at": "2023-12-06T11:43:48Z"
+        },
+        {
+          "author": "DanielChesters",
+          "body": "@ggozad I could check that, I will do that when I have time",
+          "created_at": "2023-12-07T20:24:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 144,
+      "title": "Add palette command: Clear chat",
+      "body": "Would work like with Ollama /clear, to \"Clear session context\" (without resetting parameters or system prompt.) ",
+      "state": "closed",
+      "author": "pphuck",
+      "author_type": "User",
+      "created_at": "2024-12-10T17:18:22Z",
+      "updated_at": "2025-01-02T18:11:42Z",
+      "closed_at": "2025-01-02T18:11:41Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/144/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/144",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/144",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:10.000767",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I will implement as soon as I get to do a number of fixes I have planned. Thanks for the idea!",
+          "created_at": "2024-12-17T15:27:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 139,
+      "title": "Import errors with ollama-0.4.0",
+      "body": "Hi thank you for all your work on the great project.\r\n\r\nNew install using pip in a venv installs ollama-0.4.0 by default which gives the below errors.  Downgrading to ollama-0.3.3 resolves the problem.\r\n\r\nTraceback (most recent call last):\r\n  File \"/home/user/oterm_venv/bin/oterm\", line 5, in <module>\r\n    from oterm.cli.oterm import cli\r\n  File \"/home/user/oterm_venv/lib/python3.11/site-packages/oterm/cli/oterm.py\", line 7, in <module>\r\n    from oterm.app.oterm import app\r\n  File \"/home/user/oterm_venv/lib/python3.11/site-packages/oterm/app/oterm.py\", line 10, in <module>\r\n    from oterm.app.chat_edit import ChatEdit\r\n  File \"/home/user/oterm_venv/lib/python3.11/site-packages/oterm/app/chat_edit.py\", line 17, in <module>\r\n    from oterm.ollamaclient import OllamaLLM, parse_ollama_parameters\r\n  File \"/home/user/oterm_venv/lib/python3.11/site-packages/oterm/ollamaclient.py\", line 16, in <module>\r\n    from oterm.tools import ToolDefinition\r\n  File \"/home/user/oterm_venv/lib/python3.11/site-packages/oterm/tools/__init__.py\", line 3, in <module>\r\n    from ollama._types import (\r\nImportError: cannot import name 'Parameters' from 'ollama._types' (/home/user/oterm_venv/lib/python3.11/site-packages/ollama/_types.py)",
+      "state": "closed",
+      "author": "walcode",
+      "author_type": "User",
+      "created_at": "2024-11-23T07:35:35Z",
+      "updated_at": "2024-12-28T16:24:43Z",
+      "closed_at": "2024-12-28T16:24:43Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/139/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/139",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/139",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:10.206705",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey @walcode \r\nThanks for the heads up, seems like ollama-python changed the definition of tool-related classes. \r\nI will adapt and release asap.\r\nIn the meantime, downgrading to 0.3.3 is indeed the workaround.",
+          "created_at": "2024-11-23T08:48:02Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "I released for the meantime 0.6.9 pinning ollama to <0.4 as there are a number of breaking changes.\r\nWill keep this open till I release an update for 0.4.",
+          "created_at": "2024-11-23T09:13:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 117,
+      "title": "Newline does not work as expacted",
+      "body": "I opened a new windows terminal and made sure oterm is not running anywhere else before.\r\nI am running oterm 0.5.2\r\nProblems: \r\n1. Clicking newline in multiline mode places newline in the wrong place (from second line onwards)\r\n2. Pressing shift+enter sends data to ollama\r\n\r\n\r\n1. newline position problems\r\n     a. Happens only on and after second line. Did not find what are the rules of placement of newline\r\n     b. Does not matter if ascii or unicode is used.\r\n\r\n\r\nhttps://github.com/user-attachments/assets/6440fefc-01cb-48fa-8719-63f6ca25d0ba\r\n\r\n",
+      "state": "closed",
+      "author": "mcDandy",
+      "author_type": "User",
+      "created_at": "2024-09-15T13:07:36Z",
+      "updated_at": "2024-10-18T15:50:19Z",
+      "closed_at": "2024-10-12T08:59:19Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/117/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "ggozad"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/117",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/117",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:10.405828",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I am away for a short holiday, but I can confirm this is an issue. Will fix asap.",
+          "created_at": "2024-09-16T12:28:29Z"
+        },
+        {
+          "author": "danyalaytekin",
+          "body": "Shift enter is still submitting the message for me here on macOS with v0.6.4.  I don't think it did this until I upgraded to 0.6 recently.",
+          "created_at": "2024-09-30T02:19:53Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "@danyalaytekin Can you please let me know which terminal you use? It works fine for me on iTerm.\r\nAlso, are you in multi-line mode when you press shitft+enter?",
+          "created_at": "2024-09-30T07:47:31Z"
+        },
+        {
+          "author": "danyalaytekin",
+          "body": "Hi @ggozad, this was in the stock macOS 14.6.1 terminal. I've just tested in iTerm too. I should probably switch over entirely but it has never quite caught on... anyway, my results:\r\n\r\n| mode | Terminal | iTerm | Kitty\r\n|--|--|--|--|\r\n| normal | submits | nothing happens | nothing happens |\r\n| mult",
+          "created_at": "2024-09-30T14:46:49Z"
+        },
+        {
+          "author": "jim-at-jibba",
+          "body": "I found a similar issue. It works fine in Kitty with no multiplexer. \r\nBut in Kitty with tmux is submits and in Wezterm it also submits.\r\n\r\nThanks",
+          "created_at": "2024-10-04T04:11:49Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 118,
+      "title": "Application crashes if model is not available in ollama anymore but has open session",
+      "body": "If I start oterm which has already open sessions for a llama model which is not available anymore, oterm crashes.\r\n\r\n`➜  ~ OLLAMA_URL=http://127.0.0.1:11434 OTERM_VERIFY_SSL=False oterm \r\n╭─────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────╮\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/oterm/app/oterm.py:146 in on_mount                                                         │\r\n│                                                                                                                                                                  │\r\n│   143 │   │   await chat.action_regenerate_llm_message()                                       ╭────────────────────── locals ───────────────────────╮           │\r\n│   144 │                                                                                        │ self = OTerm(title='oTerm', classes={'-dark-mode'}) │           │\r\n│   145 │   async def on_mount(self) -> None:                                                    ╰─────────────────────────────────────────────────────╯           │\r\n│ ❱ 146 │   │   store = await Store.get_store()                                                                                                                    │\r\n│   147 │   │   self.dark = appConfig.get(\"theme\") == \"dark\"                                                                                                       │\r\n│   148 │   │   saved_chats = await store.get_chats()                                                                                                              │\r\n│   149 │   │   await self.push_screen(SplashScreen())                                                                                                             │\r\n│                                                                                                                                                                  │\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/oterm/store/store.py:47 in get_store                                                       │\r\n│                                                                                                                                                                  │\r\n│    44 │   │   │   │   │   db_version                                                                                                                             │\r\n│    45 │   │   │   │   ):                                                                                                                                         │\r\n│    46 │   │   │   │   │   for step in steps:                                                                                                                     │\r\n│ ❱  47 │   │   │   │   │   │   await step(self.db_path)                                                                                                           │\r\n│    48 │   │   │   await self.set_user_version(current_version)                                                                                                   │\r\n│    49 │   │   cls._store = self                                                                                                                                  │\r\n│    50 │   │   return self                                                                                                                                        │\r\n│                                                                                                                                                                  │\r\n│ ╭────────────────────────────────────── locals ──────────────────────────────────────╮                                                                           │\r\n│ │             cls = <class 'oterm.store.store.Store'>                                │                                                                           │\r\n│ │ current_version = '0.5.2'                                                          │                                                                           │\r\n│ │       data_path = PosixPath('/Users/neilschark/Library/Application Support/oterm') │                                                                           │\r\n│ │      db_version = '0.2.10'                                                         │                                                                           │\r\n│ │            self = <oterm.store.store.Store object at 0x1071678c0>                  │                                                                           │\r\n│ │            step = <function parameters at 0x10691a200>                             │                                                                           │\r\n│ │           steps = [<function parameters at 0x10691a200>]                           │                                                                           │\r\n│ │         version = '0.3.0'                                                          │                                                                           │\r\n│ ╰────────────────────────────────────────────────────────────────────────────────────╯                                                                           │\r\n│                                                                                                                                                                  │\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/oterm/store/upgrades/v0_3_0.py:24 in parameters                                            │\r\n│                                                                                                                                                                  │\r\n│   21 │   │   # Update with default parameters                                                                                                                    │\r\n│   22 │   │   chat_models = await connection.execute_fetchall(\"SELECT id, model FROM chat\")                                                                       │\r\n│   23 │   │   for chat_id, model in chat_models:                                                                                                                  │\r\n│ ❱ 24 │   │   │   info = OllamaLLM.show(model)                                                                                                                    │\r\n│   25 │   │   │   parameters = parse_ollama_parameters(info[\"parameters\"])                                                                                        │\r\n│   26 │   │   │   await connection.execute(                                                                                                                       │\r\n│   27 │   │   │   │   \"UPDATE chat SET parameters = ? WHERE id = ?\",                                                                                              │\r\n│                                                                                                                                                                  │\r\n│ ╭──────────────────────────────────────── locals ─────────────────────────────────────────╮                                                                      │\r\n│ │     chat_id = 1                                                                         │                                                                      │\r\n│ │ chat_models = [(1, 'llama3:latest'), (6, 'llama3:latest')]                              │                                                                      │\r\n│ │  connection = <Connection(Thread-4, stopped 6169243648)>                                │                                                                      │\r\n│ │     db_path = PosixPath('/Users/neilschark/Library/Application Support/oterm/store.db') │                                                                      │\r\n│ │       model = 'llama3:latest'                                                           │                                                                      │\r\n│ ╰─────────────────────────────────────────────────────────────────────────────────────────╯                                                                      │\r\n│                                                                                                                                                                  │\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/oterm/ollamaclient.py:92 in show                                                           │\r\n│                                                                                                                                                                  │\r\n│    89 │   @staticmethod                                                                        ╭──────────────────────── locals ────────────────────────╮        │\r\n│    90 │   def show(model: str) -> Mapping[str, Any]:                                           │ client = <ollama._client.Client object at 0x1070f8bf0> │        │\r\n│    91 │   │   client = Client(host=envConfig.OLLAMA_URL, verify=envConfig.OTERM_VERIFY_SSL)    │  model = 'llama3:latest'                               │        │\r\n│ ❱  92 │   │   return client.show(model)                                                        ╰────────────────────────────────────────────────────────╯        │\r\n│    93                                                                                                                                                            │\r\n│    94                                                                                                                                                            │\r\n│    95 def parse_ollama_parameters(parameter_text: str) -> Options:                                                                                               │\r\n│                                                                                                                                                                  │\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/ollama/_client.py:471 in show                                                              │\r\n│                                                                                                                                                                  │\r\n│    468 │   return {'status': 'success' if response.status_code == 200 else 'error'}             ╭─────────────────────── locals ────────────────────────╮        │\r\n│    469                                                                                          │ model = 'llama3:latest'                               │        │\r\n│    470   def show(self, model: str) -> Mapping[str, Any]:                                       │  self = <ollama._client.Client object at 0x1070f8bf0> │        │\r\n│ ❱  471 │   return self._request('POST', '/api/show', json={'name': model}).json()               ╰───────────────────────────────────────────────────────╯        │\r\n│    472                                                                                                                                                           │\r\n│    473   def ps(self) -> Mapping[str, Any]:                                                                                                                      │\r\n│    474 │   return self._request('GET', '/api/ps').json()                                                                                                         │\r\n│                                                                                                                                                                  │\r\n│ /opt/homebrew/Cellar/oterm/0.5.2/libexec/lib/python3.12/site-packages/ollama/_client.py:74 in _request                                                           │\r\n│                                                                                                                                                                  │\r\n│     71 │   try:                                                                                 ╭───────────────────────── locals ─────────────────────────╮     │\r\n│     72 │     response.raise_for_status()                                                        │   kwargs = {'json': {'name': 'llama3:latest'}}           │     │\r\n│     73 │   except httpx.HTTPStatusError as e:                                                   │   method = 'POST'                                        │     │\r\n│ ❱   74 │     raise ResponseError(e.response.text, e.response.status_code) from None             │ response = <Response [404 Not Found]>                    │     │\r\n│     75 │                                                                                        │     self = <ollama._client.Client object at 0x1070f8bf0> │     │\r\n│     76 │   return response                                                                      │      url = '/api/show'                                   │     │\r\n│     77                                                                                          ╰──────────────────────────────────────────────────────────╯     │\r\n╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\r\nResponseError: model 'llama3:latest' not found`",
+      "state": "closed",
+      "author": "neilschark",
+      "author_type": "User",
+      "created_at": "2024-09-16T15:16:09Z",
+      "updated_at": "2024-09-28T08:44:13Z",
+      "closed_at": "2024-09-28T08:44:13Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/118/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/118",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/118",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:10.608343",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey thanks! I am currently on a short vacation will fix asap.",
+          "created_at": "2024-09-16T16:25:05Z"
+        },
+        {
+          "author": "neilschark",
+          "body": "No worries, enjoy your vacation, that's more important. ",
+          "created_at": "2024-09-17T08:38:51Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey there! Sorry for the delay ;)\r\nI looked briefly into this. oterm indeed fails when a model is not present, but does not crash. I will fix this eventually, but would like to land support for a number of other things first. \r\nFor the time being and as a workaround the obvious thing is to download ",
+          "created_at": "2024-09-24T09:57:39Z"
+        },
+        {
+          "author": "neilschark",
+          "body": "Hello, I hope you had a nice vacation.\r\n\r\nThank you, cleaning up my history indeed works as a workaround!",
+          "created_at": "2024-09-24T22:13:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "Oterm doesn't start in FreeBSD",
+      "body": "Hi, the version 0.6.X fails to start in FreeBSD with the error:\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/local/bin/oterm\", line 5, in <module>\r\n    from oterm.cli.oterm import cli\r\n  File \"/usr/local/lib/python3.11/site-packages/oterm/cli/oterm.py\", line 7, in <module>\r\n    from oterm.app.oterm import app\r\n  File \"/usr/local/lib/python3.11/site-packages/oterm/app/oterm.py\", line 10, in <module>\r\n    from oterm.app.chat_edit import ChatEdit\r\n  File \"/usr/local/lib/python3.11/site-packages/oterm/app/chat_edit.py\", line 17, in <module>\r\n    from oterm.ollamaclient import OllamaLLM, parse_ollama_parameters\r\n  File \"/usr/local/lib/python3.11/site-packages/oterm/ollamaclient.py\", line 15, in <module>\r\n    from oterm.tools import ToolDefinition\r\n  File \"/usr/local/lib/python3.11/site-packages/oterm/tools/__init__.py\", line 3, in <module>\r\n    from ollama._types import (\r\nImportError: cannot import name Parameters from ollama._types (/home/nivit/.local/lib/python3.11/site-packages/ollama/_types.py)\r\n\r\nPython version: 3.11\r\nPython ollama version: 0.3.1.\r\n\r\n",
+      "state": "closed",
+      "author": "nivit",
+      "author_type": "User",
+      "created_at": "2024-09-25T14:03:32Z",
+      "updated_at": "2024-09-25T16:30:10Z",
+      "closed_at": "2024-09-25T16:22:27Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/123/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/123",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/123",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:10.783221",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey Nicola, thanks for this.\r\nI am not sure why this happens, can you please tell me how you installed oterm? pip? uv? Was it in a venv?\r\n\r\nCan you try installing with\r\n```bash\r\npython3 -m venv .venv\r\nsource ./.venv/bin/activate\r\npip install oterm\r\n``` \r\nin a fresh virtual environment?\r\n\r\nCan you al",
+          "created_at": "2024-09-25T15:14:17Z"
+        },
+        {
+          "author": "nivit",
+          "body": "Hi, I use the [FreeBSD ports](https://github.com/freebsd/freebsd-ports/tree/main/misc/py-oterm) to install oterm and its dependencies (`pkg install oterm`).  However installing it in a clean Python environment, as you suggested, all works fine (after applying this [patch](https://github.com/freebsd/",
+          "created_at": "2024-09-25T15:46:55Z"
+        },
+        {
+          "author": "nivit",
+          "body": "I don't know if this can help\r\n\r\n```\r\n# with Python system\r\nPython 3.11.10 (main, Sep 14 2024, 01:05:42) [Clang 16.0.6 (https://github.com/llvm/llvm-p\r\nroject.git llvmorg-16.0.6-0-g7cbf1a on freebsd14\r\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\r\n>>> import ollama._types\r\n",
+          "created_at": "2024-09-25T16:02:17Z"
+        },
+        {
+          "author": "nivit",
+          "body": "Mistery solved: there was an old version of `ollama` under my home directory `~/.local/lib/python3.11/site-packages`. I apologize for the background noise. We can close this issue.\r\n",
+          "created_at": "2024-09-25T16:22:07Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Oh good to know you are all set ;)\r\nAnd thanks for the splash I had so much fun adding this. You will also get different versions, it picks randomly among a few every time you start :)",
+          "created_at": "2024-09-25T16:30:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 92,
+      "title": "Unable to copy and paste large text (2000+ words)",
+      "body": "I've been able to copy and paste small amounts of text in Oterm, however, when it comes to copying and pasting large documents, I'm unable to paste large number of characters.\r\n\r\nIs there a character limit to how many characters can be messaged in Oterm?\r\n\r\nWhen I run ollama in Konsole `ollama run llama3`, I have no issue with copying and pasting thousands of words.",
+      "state": "closed",
+      "author": "nPrevail",
+      "author_type": "User",
+      "created_at": "2024-07-01T21:15:43Z",
+      "updated_at": "2024-09-25T09:41:06Z",
+      "closed_at": "2024-09-25T09:41:06Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/92/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/92",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/92",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:11.175950",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey thanks for the report! \nI am currently on vacation but will look into this as soon as I am back",
+          "created_at": "2024-07-03T09:36:30Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey there, could you please retry with the latest version?\r\nI tried with a document of ~8000 words and it works fine...",
+          "created_at": "2024-08-10T14:07:13Z"
+        },
+        {
+          "author": "nPrevail",
+          "body": "Is there a character limit to how much you can input? I'm able to go above\r\n10k characters via running ollana in terminal.\r\n\r\nBut in Oterm, it doesn't seem to allow me to paste more than 10k+\r\ncharacters.\r\n\r\nOn Sat, Aug 10, 2024 at 7:07 AM Yiorgis Gozadinos ***@***.***>\r\nwrote:\r\n\r\n> Hey there, could",
+          "created_at": "2024-08-10T16:27:31Z"
+        },
+        {
+          "author": "nPrevail",
+          "body": "I checked the versions I'm on and I have the following for Ollama and Oterm:\r\n\r\n```\r\n***@***.***:~]$ ollama --version\r\nollama version is 0.1.38\r\n\r\n***@***.***:~]$ oterm --version\r\noterm v0.2.8\r\n```\r\n\r\nI'm using Nixos stable, so perhaps that's why I'm on such older versions.\r\nWould this affect charac",
+          "created_at": "2024-08-13T14:51:17Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Potentially yes... There's been quite a few changes in the libraries oterm uses, so you should really try....",
+          "created_at": "2024-08-13T15:47:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "Regenerate last ollama message does not work as expacted",
+      "body": "It ignores last 3 messages, resulting in reply to previous message I send (I send A get B. I send C get D. I send E get F. Click regenerate message. Get variation of D).\r\n\r\n[chat-2-gemma227b-regenerate_broken.md](https://github.com/user-attachments/files/16985891/chat-2-gemma227b-regenerate_broken.md)\r\n\r\nThe regeneration is not even saved in the conversation or database:\r\n\r\nStella's fingers flew across the keyboard, desperately trying to make sense of the garbled data stream.  One moment there was a clear biological signature, faint but distinct, pulsing like a heartbeat from deep within the lunar surface. The next, silence. Nothing.\r\n\r\n\"Impossible,\" she muttered, her brow furrowed in concentration. \"It can't just vanish.\" \r\n\r\nShe ran diagnostics on the probe, checked for interference, anything that could explain the sudden disappearance. But everything was functioning perfectly. The probe was still transmitting, its camera lens clear, but the source of the signal - whatever it was - had simply ceased to exist.\r\n\r\nA chill crept down Stella's spine. This wasn't like a creature retreating into the shadows. It was as if it had never been there at all. A ghost in the machine, a phantom echo of life that left no trace.\r\n\r\nThe scientific part of her mind demanded logic, an explanation. But something deeper, primal and unsettling, whispered doubts. Had she glimpsed something beyond human comprehension? Something ancient and powerful, capable of existing outside the boundaries of time and space? \r\n\r\nStella stared at the blank screen, the cursor blinking mockingly. She had stumbled upon a mystery far greater than anything she could have imagined. And now it was gone, leaving her with more questions than answers.\r\n\r\nThe boredom was replaced by an unsettling unease. The sterile silence of the research station seemed to amplify the whispers in her mind. What had she awakened? And what would happen next?\r\n\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "mcDandy",
+      "author_type": "User",
+      "created_at": "2024-09-12T22:11:19Z",
+      "updated_at": "2024-09-13T15:58:26Z",
+      "closed_at": "2024-09-13T15:58:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/116",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/116",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:11.401279",
+      "comments": [
+        {
+          "author": "mcDandy",
+          "body": "Forgot ollama log if needed:\r\n\r\n```\r\n2024/09/12 23:54:07 routes.go:1125: INFO server config env=\"map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: OLLAMA_DEBUG:false OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAM",
+          "created_at": "2024-09-12T22:15:09Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "I am having trouble reproducing this, it seems to be working fine for me.\r\nIs it possible that for instance you interrupt inference and regenerate before the llm has completed its response? ",
+          "created_at": "2024-09-13T07:07:18Z"
+        },
+        {
+          "author": "mcDandy",
+          "body": "Not sure what happened yesterday... Probably aftermath of nvidia GPU driver problems. (ollama has problems with game ready 361.09). Also cannot replicate.\r\n\r\n>> Is it possible that for instance you interrupt inference and regenerate before the llm has completed its response?\r\nProbably? Sometimes I h",
+          "created_at": "2024-09-13T14:37:08Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Try to see if you can reproduce otherwise just close the ticket please",
+          "created_at": "2024-09-13T14:56:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 113,
+      "title": "Model options are not persisted when editing a chat",
+      "body": null,
+      "state": "closed",
+      "author": "ggozad",
+      "author_type": "User",
+      "created_at": "2024-09-06T07:07:34Z",
+      "updated_at": "2024-09-06T07:16:21Z",
+      "closed_at": "2024-09-06T07:16:21Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/113/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/113",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/113",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:11.599427",
+      "comments": []
+    },
+    {
+      "issue_number": 34,
+      "title": "Can't forget chat when the input field is not selected",
+      "body": "So if you click on a chat tab then you can't close the chat until you click on the message field.",
+      "state": "closed",
+      "author": "suhr",
+      "author_type": "User",
+      "created_at": "2023-12-19T19:57:57Z",
+      "updated_at": "2024-09-05T20:32:59Z",
+      "closed_at": "2024-09-05T20:32:58Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/34/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/34",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/34",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:11.599448",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "I spent some time looking at this. Tried to move the keyboard bindings to the Tab panes so that you could do rename or forget before focusing the chat container.\r\nUnfortunately it turns out Tab Panes do not support keyboard bindings. Will keep this open in case I find a different way of doing this p",
+          "created_at": "2024-01-05T08:41:09Z"
+        },
+        {
+          "author": "yilmaz08",
+          "body": "@ggozad I can add a auto-focus on the FlexibleInput if the activated tab changes. This doesn't solve the core problem but it would solve the need to click the input field.\r\n\r\nBut I am not sure maybe an auto-focus is not wanted.",
+          "created_at": "2024-08-12T16:05:28Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "@yilmaz08 I think autofocus makes sense here. Does it make navigation difficult if you have more than a couple chats?",
+          "created_at": "2024-08-12T18:01:24Z"
+        },
+        {
+          "author": "yilmaz08",
+          "body": "@ggozad If you were navigating with arrow keys, it would be so annoying. However when using something like ctrl+tab or clicking tabs, it is objectively better. That's why I wasn't sure if it is wanted",
+          "created_at": "2024-08-12T18:13:36Z"
+        },
+        {
+          "author": "yilmaz08",
+          "body": "After testing, it is not that annoying but still not good since you need to press shift+tab every time",
+          "created_at": "2024-08-12T18:29:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 104,
+      "title": "Crash when trying to export a chat.",
+      "body": "I made a story (a wierd one) but when trying to export it oterm crashed.\r\n\r\n```\r\n╭───────────────────────────────────────── Traceback (most recent call last) ──────────────────────────────────────────╮\r\n│ F:\\Program Files\\Python312\\Lib\\site-packages\\oterm\\app\\chat_export.py:48 in on_submit                                │\r\n│                                                                                                                      │\r\n│   45 │   │   │   for message in messages:                                                                            │\r\n│   46 │   │   │   │   author, text = message                                                                          │\r\n│   47 │   │   │   │   file.write(f\"*{author.value}*\\n\")                                                               │\r\n│ ❱ 48 │   │   │   │   file.write(f\"{text}\\n\")                                                                         │\r\n│   49 │   │   │   │   file.write(\"\\n---\\n\")                                                                           │\r\n│   50 │   │                                                                                                           │\r\n│   51 │   │   self.dismiss()                                                                                          │\r\n│                                                                                                                      │\r\n│ ╭────────────────────────────────────────────────── locals ──────────────────────────────────────────────────╮       │\r\n│ │   Author = <enum 'Author'>                                                                                 │       │\r\n│ │   author = <Author.OLLAMA: 'ollama'>                                                                       │       │\r\n│ │    event = Submitted()                                                                                     │       │\r\n│ │     file = <_io.TextIOWrapper name='story-sensory.md' mode='w' encoding='cp1250'>                          │       │\r\n│ │  message = (                                                                                               │       │\r\n│ │            │   <Author.OLLAMA: 'ollama'>,                                                                  │       │\r\n│ │            │   'As Elara lay on the soft bed of moss, a sense of déjà vu washed over her.  The s'+1096     │       │\r\n│ │            )                                                                                               │       │\r\n│ │ messages = [                                                                                               │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.USER: 'me'>,                                                                    │       │\r\n│ │            │   │   'Can you write me a beginning of a story about a female who decided to go on a jo'+36   │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.OLLAMA: 'ollama'>,                                                              │       │\r\n│ │            │   │   \"Elara wasn't content with the mundane symphony of touch her life offered. The ro\"+1598 │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.USER: 'me'>,                                                                    │       │\r\n│ │            │   │   'It was warm so she removed her clothes. She was far away from any civilisation. '+90   │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.OLLAMA: 'ollama'>,                                                              │       │\r\n│ │            │   │   'The warmth emanating from the trees pulsed invitingly, coaxing Elara out of her '+1388 │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.USER: 'me'>,                                                                    │       │\r\n│ │            │   │   'It was magical. The moss felt like clouds. She was giant among miniature twigs.'       │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.OLLAMA: 'ollama'>,                                                              │       │\r\n│ │            │   │   'Opening her eyes, Elara gasped. The familiar world had been transformed. Towerin'+1059 │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.USER: 'me'>,                                                                    │       │\r\n│ │            │   │   'Leaves started falling, covering her naked body. Fully in a few minutes. She did'+41   │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.OLLAMA: 'ollama'>,                                                              │       │\r\n│ │            │   │   \"As if responding to Elara's delight, the trees above began shedding their leaves\"+1192 │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   (<Author.USER: 'me'>, 'This is how having a partner must feel. She was in heaven.'),        │       │\r\n│ │            │   (                                                                                           │       │\r\n│ │            │   │   <Author.OLLAMA: 'ollama'>,                                                              │       │\r\n│ │            │   │   'The thought struck Elara with unexpected force: this feeling of complete surrend'+968  │       │\r\n│ │            │   ),                                                                                          │       │\r\n│ │            │   ... +158                                                                                    │       │\r\n│ │            ]                                                                                               │       │\r\n│ │     self = ChatExport()                                                                                    │       │\r\n│ │     text = 'As Elara lay on the soft bed of moss, a sense of déjà vu washed over her.  The s'+1096         │       │\r\n│ ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯       │\r\n│                                                                                                                      │\r\n│ F:\\Program Files\\Python312\\Lib\\encodings\\cp1250.py:19 in encode                                                      │\r\n│                                                                                                                      │\r\n│    16                                                                                                                │\r\n│    17 class IncrementalEncoder(codecs.IncrementalEncoder):                                                           │\r\n│    18 │   def encode(self, input, final=False):                                                                      │\r\n│ ❱  19 │   │   return codecs.charmap_encode(input,self.errors,encoding_table)[0]                                      │\r\n│    20                                                                                                                │\r\n│    21 class IncrementalDecoder(codecs.IncrementalDecoder):                                                           │\r\n│    22 │   def decode(self, input, final=False):                                                                      │\r\n│                                                                                                                      │\r\n│ ╭──────────────────────────────────────────── locals ─────────────────────────────────────────────╮                  │\r\n│ │ final = False                                                                                   │                  │\r\n│ │ input = 'As Elara lay on the soft bed of moss, a sense of déjà vu washed over her.  The s'+1112 │                  │\r\n│ │  self = <encodings.cp1250.IncrementalEncoder object at 0x000002335AD4B470>                      │                  │\r\n│ ╰─────────────────────────────────────────────────────────────────────────────────────────────────╯                  │\r\n╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\r\nUnicodeEncodeError: 'charmap' codec can't encode character '\\xe0' in position 52: character maps to <undefined>\r\nunhandled exception during asyncio.run() shutdown\r\ntask: <Task finished name='Task-213573' coro=<ChatContainer.on_submit.<locals>.response_task() done, defined at F:\\Program Files\\Python312\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py:126> exception=NoMatches(\"No nodes match <DOMQuery query='#promptInput'> on FlexibleInput(id='prompt')\")>\r\nTraceback (most recent call last):\r\n  File \"F:\\Program Files\\Python312\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py\", line 170, in response_task\r\n    input.focus()\r\n  File \"F:\\Program Files\\Python312\\Lib\\site-packages\\oterm\\app\\widgets\\prompt.py\", line 124, in focus\r\n    self.query_one(\"#promptInput\", PastableInput).focus()\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\Program Files\\Python312\\Lib\\site-packages\\textual\\dom.py\", line 1392, in query_one\r\n    return query.only_one() if expect_type is None else query.only_one(expect_type)\r\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\Program Files\\Python312\\Lib\\site-packages\\textual\\css\\query.py\", line 280, in only_one\r\n    self.first(expect_type) if expect_type is not None else self.first()\r\n    ^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\Program Files\\Python312\\Lib\\site-packages\\textual\\css\\query.py\", line 249, in first\r\n    raise NoMatches(f\"No nodes match {self!r} on {self.node!r}\")\r\ntextual.css.query.NoMatches: No nodes match <DOMQuery query='#promptInput'> on FlexibleInput(id='prompt')\r\n```",
+      "state": "closed",
+      "author": "mcDandy",
+      "author_type": "User",
+      "created_at": "2024-08-25T20:06:04Z",
+      "updated_at": "2024-08-28T11:09:34Z",
+      "closed_at": "2024-08-28T11:09:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/104/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "ggozad"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/104",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/104",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:11.762764",
+      "comments": [
+        {
+          "author": "mcDandy",
+          "body": "I do no see any way to adjust the encoding.",
+          "created_at": "2024-08-25T20:06:31Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "That's a funny one, will look into it asap.\r\n",
+          "created_at": "2024-08-27T19:06:24Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Is it possible that your terminal operates in Windows-1250 encoding? ",
+          "created_at": "2024-08-27T19:26:58Z"
+        },
+        {
+          "author": "mcDandy",
+          "body": "I don't know how to check . It has no problem with emojis so I think it\r\nshould be utf-8...\r\n\r\nI am using Windows terminál running PowerShell.\r\n\r\nDne út 27. 8. 2024 21:27 uživatel Yiorgis Gozadinos <\r\n***@***.***> napsal:\r\n\r\n> Is it possible that your terminal operates in Windows-1250 encoding?\r\n>\r\n",
+          "created_at": "2024-08-27T19:31:34Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Would you be so kind and tell me what the following reports in your python?\r\n```python\r\nimport locale\r\nlocale.getencoding()\r\n```\r\nIf it is not `UTF-8` would you be able to run from PR #105 which should fix it for you?",
+          "created_at": "2024-08-27T19:54:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 90,
+      "title": "feature request: auto-trim chatcontext to respect model context limit.",
+      "body": "great app btw. really nice simple chat app for the terminal.\r\n\r\none problem I have is even with 32k context, when I have the bot set to generate multi paragraph responses, then I'm hitting the context really quickly within 10 minutes of chat.\r\n\r\nwhat I'd like is  somehow to cut out the middle of that chat history, so only the earliest and then most recent messages are added to the context history for inference. then I can chat with the same character without forgetting or losing track of its place.\r\n\r\nThanks!~",
+      "state": "closed",
+      "author": "cognitivetech",
+      "author_type": "User",
+      "created_at": "2024-06-02T12:59:20Z",
+      "updated_at": "2024-08-19T17:37:41Z",
+      "closed_at": "2024-08-19T17:37:40Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/90/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/90",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/90",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.079706",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey there, \r\nThanks for the praise :) \r\nFor the time being `oterm` does not actually pass the previous messages to the chat completion. What we do instead is store the \"context\" Ollama returns, which is essentially an embedding of the entire conversation.\r\nI am planning to change that now that the o",
+          "created_at": "2024-06-02T13:13:47Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "This is now (from 0.4.0) in place 🎉\r\noterm now uses the chat API and passes all chat messages. Ollama automatically trims to match the context length.",
+          "created_at": "2024-08-19T17:37:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 73,
+      "title": "windows: strange crash when I select a model.",
+      "body": "Windows: strange crash when I select a model.\r\nThen once restarted oterm everything works correctly, including the window with the selected LLM is already ready to work.\r\n\r\n![image](https://github.com/ggozad/oterm/assets/884282/6f31ab82-4e7e-421a-a52f-396b81c83fc5)\r\n\r\n`╭───────────────────────────────────────── Traceback (most recent call last) ──────────────────────────────────────────╮\r\n│ C:\\Users\\noki\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\oterm\\app\\oterm.py:89 in on_tab_activated    │\r\n│                                                                                                                      │\r\n│   86 │   @on(TabbedContent.TabActivated)                                                                             │\r\n│   87 │   async def on_tab_activated(self, event: TabbedContent.TabActivated) -> None:                                │\r\n│   88 │   │   container = event.pane.query_one(ChatContainer)                                                         │\r\n│ ❱ 89 │   │   await container.load_messages()                                                                         │\r\n│   90 │                                                                                                               │\r\n│   91 │   def compose(self) -> ComposeResult:                                                                         │\r\n│   92 │   │   yield Header()                                                                                          │\r\n│                                                                                                                      │\r\n│ ╭───────────────────────── locals ─────────────────────────╮                                                         │\r\n│ │ container = ChatContainer()                              │                                                         │\r\n│ │     event = TabActivated(                                │                                                         │\r\n│ │             │   TabbedContent(id='tabs'),                │                                                         │\r\n│ │             │   ContentTab(id='--content-tab-chat-53'),  │                                                         │\r\n│ │             │   TabPane(id='chat-53')                    │                                                         │\r\n│ │             )                                            │                                                         │\r\n│ │      self = OTerm(title='oTerm', classes={'-dark-mode'}) │                                                         │\r\n│ ╰──────────────────────────────────────────────────────────╯                                                         │\r\n│                                                                                                                      │\r\n│ C:\\Users\\noki\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\oterm\\app\\widgets\\chat.py:87 in              │\r\n│ load_messages                                                                                                        │\r\n│                                                                                                                      │\r\n│    84 │   async def load_messages(self) -> None:                                                                     │\r\n│    85 │   │   if self.loaded:                                                                                        │\r\n│    86 │   │   │   return                                                                                             │\r\n│ ❱  87 │   │   message_container = self.query_one(\"#messageContainer\")                                                │\r\n│    88 │   │   for author, message in self.messages:                                                                  │\r\n│    89 │   │   │   chat_item = ChatItem()                                                                             │\r\n│    90 │   │   │   chat_item.text = message                                                                           │\r\n│                                                                                                                      │\r\n│ ╭──────── locals ────────╮                                                                                           │\r\n│ │ self = ChatContainer() │                                                                                           │\r\n│ ╰────────────────────────╯                                                                                           │\r\n╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\r\nNoMatches: No nodes match <DOMQuery query='#messageContainer'> on ChatContainer()\r\n\r\nNOTE: 1 of 2 errors shown. Run with textual run --dev to see all errors.`\r\n",
+      "state": "closed",
+      "author": "amonpaike",
+      "author_type": "User",
+      "created_at": "2024-04-05T17:53:33Z",
+      "updated_at": "2024-04-18T20:19:18Z",
+      "closed_at": "2024-04-18T20:19:18Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/73/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/73",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/73",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.287889",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Sorry for the delay I had completely forgotten about this :(\r\nI cannot reproduce on my machine and my guess is this is a timing issue. So we have to make some guesses and I will need your help to test.\r\nCould you please try out installing from the branch `73-windows-strange-crash-when-i-select-a-mod",
+          "created_at": "2024-04-14T07:03:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 67,
+      "title": "Enhancement: Refined selection capability",
+      "body": "## Human me disclaimer\r\nI want to see a refinement of clipboard copy operation. I wrote a general enhancement description, and refined it through GPT. I think the refined statement is clearer by far that what I wrote, and makes a lot of sense. It follows below:\r\n\r\n## Summary\r\nThe current user interface supports navigation through tabbing, mouse interactions, and scrolling to access conversation history. A gap exists when interacting with responses containing markdown quoted content, as users cannot selectively copy content within these quotes. This request aims to introduce a capability for users to choose specifically between copying only the content within markdown quotes or the entire response, enhancing interaction precision with the conversation history.\r\n\r\n## Description\r\nUsers navigate the user interface using tabbing, mouse clicks, and scrolling, enabling them to select items in the history for copying to the clipboard. In dialog sessions with a mix of responses, including markdown quoted content, the interface does not currently offer an option to copy just the content within these quotes. This limitation affects the process of retrieving specific information from extensive conversations, particularly when the information is embedded in quotes.\r\n\r\n## Enhancement Detail\r\nThe enhancement focuses on allowing users to make a \"sub-select\" or \"recursive select\" within a response that contains markdown quoted content. This added functionality will enable a more detailed level of interaction with the content, allowing users to copy only the content within the markdown quotes to the clipboard based on their selection point:\r\n\r\n- **When a user clicks on a markdown quoted item**, the system will copy only the content within the markdown quotes to the clipboard.\r\n- **When a user clicks outside the markdown quoted area of a response**, the system will copy the entire response, including the markdown quoted content, maintaining the current method of interaction for users needing to copy the response.\r\n\r\n## Assumptions\r\n\r\n- Dialog sessions may be lengthy and include a variety of responses.\r\n- Some responses will contain valuable information within markdown quotes.\r\n- Navigation through the application involves a combination of tabs, arrow keys, and mouse input.\r\n\r\n### Acceptance Criteria\r\n\r\n- **Selective Copy Functionality**\r\n  - The system must enable users to copy content within markdown quotes by clicking on the quoted text, ensuring only the selected quoted content is copied to the clipboard.\r\n- **Full Response Copy Functionality**\r\n  - When clicking outside the markdown quoted text, the system must copy the entire response, including the quoted content, thereby not altering the interaction for copying full responses.\r\n- **Consistency Across Conversations**\r\n  - This feature must work consistently in dialog sessions of any length and complexity, facilitating specific information retrieval without the conversation's extent impacting performance.\r\n- **Integration with Current Navigation Methods**\r\n  - The feature's introduction should not disrupt current navigation practices within the application, ensuring that it complements existing methods like tabbing, arrow keys, and mouse input.\r\n\r\nBy implementing this feature, the application will provide users with enhanced control over the content they wish to extract from the conversation history, particularly useful in dialog sessions rich in specific, quotable information.",
+      "state": "closed",
+      "author": "aaronsb",
+      "author_type": "User",
+      "created_at": "2024-03-13T16:11:58Z",
+      "updated_at": "2024-04-02T08:39:39Z",
+      "closed_at": "2024-04-02T08:39:39Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/67/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "ggozad"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/67",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/67",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.459240",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Oh wow my first ChatGPT PR 😆\r\nThis is an interesting one, not sure how complex it is, but will see if I can find some time to investigate.",
+          "created_at": "2024-03-14T07:08:57Z"
+        },
+        {
+          "author": "aaronsb",
+          "body": "Hey there's always got to be a first for describing this stuff!",
+          "created_at": "2024-03-14T19:09:28Z"
+        },
+        {
+          "author": "kion",
+          "body": "I think oterm is an amazing piece of software! And thus far this is probably the main feature I am missing in it. Would love to see this implemented.",
+          "created_at": "2024-03-27T16:07:20Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey!\r\nIn #70 I patch the widget that is responsible for displaying code blocks, so that if the user clicks inside a code block only the contents of the code block are copied. Clicking outside a code block copies the entire message.\r\n\r\nI think this is enough to cover the most common case. Feedback we",
+          "created_at": "2024-03-27T22:02:53Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Gonna take the lack of feedback as silent approval and release :)",
+          "created_at": "2024-04-02T08:38:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 63,
+      "title": "Idea suggestion: Press UP/DOWN to scroll through previous requests sent.",
+      "body": "I have found myself multiple times pressing 'Up' expecting to be able to get the previous request I sent appear in the request box so I can make a small edit and resubmit.\r\n\r\nIt would be an excellent improvement to be able to scroll through previous requests by pressing UP/DOWN. This is a common UI feature in tools such as Vim and many chat programs.\r\n\r\nWithout this facility it's often tiring to retype in a previous request in an otherwise excellent tool.",
+      "state": "closed",
+      "author": "olinorwell",
+      "author_type": "User",
+      "created_at": "2024-02-25T16:24:07Z",
+      "updated_at": "2024-02-28T13:51:07Z",
+      "closed_at": "2024-02-28T13:51:07Z",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/63/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/63",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/63",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.675748",
+      "comments": []
+    },
+    {
+      "issue_number": 54,
+      "title": "Suggestion: export option",
+      "body": "Hello,\r\n\r\nIt would be nice to be able to export the current chat in, for example, markdown format.\r\n\r\nP.S.: Very nice app, thank you! :)",
+      "state": "closed",
+      "author": "LudoPinelli",
+      "author_type": "User",
+      "created_at": "2024-01-28T10:17:01Z",
+      "updated_at": "2024-02-16T15:25:44Z",
+      "closed_at": "2024-02-16T15:25:44Z",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/54/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/54",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/54",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.675769",
+      "comments": []
+    },
+    {
+      "issue_number": 57,
+      "title": "suggestion: view or export model info/chat metadata",
+      "body": "The model selection screen makes it possible to set the model, the system prompt and the message template.\r\n\r\nOnce a chat is created it is no longer possible to view how the system prompt, the message template or other parameters are set.\r\n\r\nSince I often play around with different system prompts,\r\nI would like to be able to view those settings from the model selection screen later on in the UI or export them to the clipboard.",
+      "state": "closed",
+      "author": "mschwaig",
+      "author_type": "User",
+      "created_at": "2024-02-07T09:27:16Z",
+      "updated_at": "2024-02-14T20:45:02Z",
+      "closed_at": "2024-02-14T20:45:02Z",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/57/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/57",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/57",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.675777",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "You are right, I have been wanting to do this for a long while but never get the time.\r\nThat said, it IS a rather easy thing to do. Would really like someone stepping in and taking it (hint) 🤓",
+          "created_at": "2024-02-07T09:43:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 36,
+      "title": "A way to cancel the inference ",
+      "body": "Preferably with the ability to edit the last message.",
+      "state": "closed",
+      "author": "suhr",
+      "author_type": "User",
+      "created_at": "2023-12-19T20:04:57Z",
+      "updated_at": "2024-02-01T16:02:50Z",
+      "closed_at": "2024-02-01T16:02:50Z",
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/36/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/36",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/36",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:12.950625",
+      "comments": [
+        {
+          "author": "LeonardoGentile",
+          "body": "I was looking for away to stop the output generation. This is probably what @suhr was referring to? \r\nAnyway how can we stop it? 😬",
+          "created_at": "2024-01-30T19:52:47Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Seems nobody is going to do it, so I will once I get some time :)\r\n",
+          "created_at": "2024-01-31T09:15:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 51,
+      "title": "[BUG] ssh+tmux copy/paste problem",
+      "body": "Hi! It's good to have oterm which is such a good CLI ollama interface.\r\nWhen using oterm via ssh+tmux (on Windows Terminal 1.18.3181, target machine is Debian with ollama correctly installed), when I try to drag to select, the following error happens and oterm crashes:\r\n```\r\n╭────────────────────────────────────────────────── Traceback (most recent call last) ──────────────────────────────────────────────────╮\r\n│ /home/zmy/.local/lib/python3.11/site-packages/oterm/app/widgets/chat.py:173 in on_click                                               │\r\n│                                                                                                                                       │\r\n│   170 │                                                                                                                               │\r\n│   171 │   @on(Click)                                                                                                                  │\r\n│   172 │   async def on_click(self, event: Click) -> None:                                                                             │\r\n│ ❱ 173 │   │   pyperclip.copy(self.text)                                                                                               │\r\n│   174 │   │   widgets = self.query(\".text\")                                                                                           │\r\n│   175 │   │   for widget in widgets:                                                                                                  │\r\n│   176 │   │   │   widget.styles.animate(\"opacity\", 0.5, duration=0.1)                                                                 │\r\n│                                                                                                                                       │\r\n│ ╭─────────────────────────── locals ───────────────────────────╮                                                                      │\r\n│ │ event = Click(x=38, y=1, screen_x=54, screen_y=37, button=1) │                                                                      │\r\n│ │  self = ChatItem()                                           │                                                                      │\r\n│ ╰──────────────────────────────────────────────────────────────╯                                                                      │\r\n│                                                                                                                                       │\r\n│ /home/zmy/.local/lib/python3.11/site-packages/pyperclip/__init__.py:659 in lazy_load_stub_copy                                        │\r\n│                                                                                                                                       │\r\n│   656 │   '''                                                                                                                         │\r\n│   657 │   global copy, paste                                                                                                          │\r\n│   658 │   copy, paste = determine_clipboard()                                                                                         │\r\n│ ❱ 659 │   return copy(text)                                                                                                           │\r\n│   660                                                                                                                                 │\r\n│   661                                                                                                                                 │\r\n│   662 def lazy_load_stub_paste():                                                                                                     │\r\n│                                                                                                                                       │\r\n│ ╭─────────────────────────────────────────── locals ────────────────────────────────────────────╮                                     │\r\n│ │ text = ' I apologize for any confusion earlier. With the new information provided, the i'+180 │                                     │\r\n│ ╰───────────────────────────────────────────────────────────────────────────────────────────────╯                                     │\r\n│                                                                                                                                       │\r\n│ /home/zmy/.local/lib/python3.11/site-packages/pyperclip/__init__.py:336 in __call__                                                   │\r\n│                                                                                                                                       │\r\n│   333 │   class ClipboardUnavailable(object):                                                                                         │\r\n│   334 │   │                                                                                                                           │\r\n│   335 │   │   def __call__(self, *args, **kwargs):                                                                                    │\r\n│ ❱ 336 │   │   │   raise PyperclipException(EXCEPT_MSG)                                                                                │\r\n│   337 │   │                                                                                                                           │\r\n│   338 │   │   if PY2:                                                                                                                 │\r\n│   339 │   │   │   def __nonzero__(self):                                                                                              │\r\n│                                                                                                                                       │\r\n│ ╭────────────────────────────────────────────── locals ──────────────────────────────────────────────╮                                │\r\n│ │   args = (' I apologize for any confusion earlier. With the new information provided, the i'+180,) │                                │\r\n│ │ kwargs = {}                                                                                        │                                │\r\n│ │   self = <pyperclip.init_no_clipboard.<locals>.ClipboardUnavailable object at 0x7fbe01576f90>      │                                │\r\n│ ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯                                │\r\n╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\r\nPyperclipException:\r\n    Pyperclip could not find a copy/paste mechanism for your system.\r\n    For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error\r\n```\r\nI wonder if it is caused by the tmux on the target machine? Is it possible to fix it?\r\nThank you for reading and please contact me if you need more information :D",
+      "state": "closed",
+      "author": "TheStarAlight",
+      "author_type": "User",
+      "created_at": "2024-01-22T11:21:22Z",
+      "updated_at": "2024-01-24T13:36:32Z",
+      "closed_at": "2024-01-24T13:36:32Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/51/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/51",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/51",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:13.124819",
+      "comments": [
+        {
+          "author": "TheStarAlight",
+          "body": "What's more, in my tmux config I opened mouse support via adding this in `~/.tmux.conf`:\r\n```\r\nset -g mouse on\r\n```\r\nHowever, the exception still happens if I comment this line.",
+          "created_at": "2024-01-22T11:25:53Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Hey Mingyu, thanks for the submission. \r\nWhat happens is that oterm does not really support selecting to copy/paster. This is quite hard to do because some terminals try to do the same thing and then things get messy.\r\n\r\nInstead, what I chose to do is to copy when you click a \"cell\" in the conversat",
+          "created_at": "2024-01-22T12:57:26Z"
+        },
+        {
+          "author": "TheStarAlight",
+          "body": "Hi, thank you for your timely reply!\r\nI just asked the administrator to install the xclip on the server, however, the same error occurs when I click on the conversation cell :(\r\nCould there be any other solutions?\r\nIf it can't be fixed in the near future, I think maybe adding an option to disable co",
+          "created_at": "2024-01-23T06:32:37Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "I would still try all the other stuff in the link I posted above, just to make copy/paste work for you.\r\nIn any case, I will handle the crash for the next release of oterm.\r\n",
+          "created_at": "2024-01-23T18:02:19Z"
+        },
+        {
+          "author": "TheStarAlight",
+          "body": "Thank you for your help! Please contact me if you need more information 🥰",
+          "created_at": "2024-01-24T00:00:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 52,
+      "title": "a suggestion on historical chat selection",
+      "body": "Currently to look for earlier chats one can only select from the horizontal tabs above, which is difficult if one have a lot of chats.\r\nI wonder if it is possible to add a page which displays the history of chats and the chat tabs are displayed as vertical tabs (just like in ChatGPT), and I think it can make looking for history a lot more convenient.\r\n\r\nThank you for reading and I hope to receive your comments :)",
+      "state": "open",
+      "author": "TheStarAlight",
+      "author_type": "User",
+      "created_at": "2024-01-22T11:37:51Z",
+      "updated_at": "2024-01-23T06:37:57Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/52/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/52",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/52",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:13.334998",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "In my original implementation I had it exactly like that. I decided against it mostly cause it was taking a lot of space (instead of a couple of horizontal lines) so I decided to go for tabs instead.\r\n\r\nI am open to the idea though... Perhaps there could be yet another shortcut that opens the vertic",
+          "created_at": "2024-01-22T13:02:31Z"
+        },
+        {
+          "author": "TheStarAlight",
+          "body": "Thanks! I'm looking forward to that update and hope that this idea can help to make oterm better :D",
+          "created_at": "2024-01-23T06:37:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 50,
+      "title": "Image browser only shows the home directory",
+      "body": "My images are all over the filesystem.\r\n",
+      "state": "closed",
+      "author": "mslinn",
+      "author_type": "User",
+      "created_at": "2024-01-17T23:42:07Z",
+      "updated_at": "2024-01-22T16:11:15Z",
+      "closed_at": "2024-01-22T16:11:15Z",
+      "labels": [
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/50/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/50",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/50",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:13.570550",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Unfortunately the `DirectoryTree` from `textual` that I use here, has this limitation.\r\nThis could be solved in a few ways:\r\n\r\n1. The easiest would be to accept a directory as an optional argument for `oterm` and use that as root. This is not ideal, but would make it easier to set the root for image",
+          "created_at": "2024-01-22T13:07:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 40,
+      "title": "Scrolling Behavior Issue on macOS",
+      "body": "I am experiencing an issue with the scrolling behavior in `oTerm` where the content appears to bounce up and down when I try to scroll using the trackpad on my Macbook Air. Additionally,  the scrollbar will seem to get stuck and then bounce up and down when you try and move it.\r\n\r\nI've attached a screen recording that demonstrates the bouncing scrolling effect:\r\n![CleanShot 2023-12-26 at 19 25 42](https://github.com/ggozad/oterm/assets/21297100/898a86c1-03ab-40a4-a510-d709d1489be1)\r\n\r\n",
+      "state": "closed",
+      "author": "ecthelionvi",
+      "author_type": "User",
+      "created_at": "2023-12-27T01:34:00Z",
+      "updated_at": "2024-01-13T14:25:28Z",
+      "closed_at": "2024-01-13T14:25:27Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/40/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/40",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/40",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:15.307673",
+      "comments": [
+        {
+          "author": "ggozad",
+          "body": "Hey there, thanks :)\r\nI will look into it asap, not sure I can fix it though.",
+          "created_at": "2023-12-30T15:20:18Z"
+        },
+        {
+          "author": "ggozad",
+          "body": "Would you be able to comment on how to reproduce this? I've tried adding a few chats with code embedded and tried on iTerm as well as kitty (which I think is the one I see used in your video) but can't seem to be able to reproduce. Scrolling seems to work as expected for me.",
+          "created_at": "2023-12-30T21:10:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "Support the original OLLAMA_HOST env variable please!",
+      "body": "When using ollama itself it uses `OLLAMA_HOST` as the env variable for the ollama server to use. This can be either just an IP or a port or ip+port (e.g. `OLLAMA_HOST=192.168.1.10`, `OLLAMA_HOST=192.168.1.11:11434`). \r\n\r\nIt would be nice if oterm would just pick up this env variable which is most likely already set by ollama users that run servers on other systems or ports. Basically making it behaving the same as the `ollama` client command.",
+      "state": "closed",
+      "author": "oderwat",
+      "author_type": "User",
+      "created_at": "2023-12-19T21:01:05Z",
+      "updated_at": "2024-01-05T09:09:17Z",
+      "closed_at": "2024-01-05T09:09:17Z",
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/ggozad/oterm/issues/37/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/ggozad/oterm/issues/37",
+      "api_url": "https://api.github.com/repos/ggozad/oterm/issues/37",
+      "repository": "ggozad/oterm",
+      "extraction_date": "2025-06-22T00:48:15.467625",
+      "comments": []
+    }
+  ]
+}

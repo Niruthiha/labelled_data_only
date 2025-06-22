@@ -1,0 +1,2972 @@
+{
+  "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+  "repository_info": {
+    "repo": "Open-LLM-VTuber/Open-LLM-VTuber",
+    "stars": 3608,
+    "language": "Python",
+    "description": "Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms",
+    "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
+    "topics": [
+      "ai",
+      "ai-companion",
+      "ai-vtuber",
+      "ai-waifu",
+      "chatbots",
+      "live2d",
+      "live2d-web",
+      "llm",
+      "neuro-sama",
+      "ollama"
+    ],
+    "created_at": "2023-11-24T04:55:43Z",
+    "updated_at": "2025-06-22T01:44:18Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 150,
+    "labeled_issues_estimate": 114,
+    "labeling_rate": 76.2,
+    "sample_labeled": 32,
+    "sample_total": 42,
+    "has_issues": true,
+    "repo_id": 722844356,
+    "default_branch": "main",
+    "size": 46577
+  },
+  "extraction_date": "2025-06-22T00:43:01.279925",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 60,
+  "issues": [
+    {
+      "issue_number": 19,
+      "title": "Dify integration",
+      "body": "how to use RAG functionality?\r\nI was thinking if is possible to connect vtuber with dify.ai api and create an app in dify that will contain some documents, ask question and get answer from there.\r\nSo basically i am looking a way to instead of ollama to integrate dify with vtuber",
+      "state": "open",
+      "author": "andsty",
+      "author_type": "User",
+      "created_at": "2024-09-17T18:48:15Z",
+      "updated_at": "2025-06-20T06:33:07Z",
+      "closed_at": null,
+      "labels": [
+        "good first issue",
+        "agent"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/19/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/19",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/19",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:48.450603",
+      "comments": [
+        {
+          "author": "ShanJianSoda",
+          "body": "hello\nI have recently been learning about this project, and I just graduated and started working, with involvement in dify. But I am a beginner, and I hope to learn about this project and the use of Dify, then contribute to this project. What should I do?\n我最近在了解这个项目，然后我最近刚开始工作，有涉及到dify。但我是个小白，我希望学习本",
+          "created_at": "2025-06-20T02:04:34Z"
+        },
+        {
+          "author": "ShanJianSoda",
+          "body": "I did a simple workflow on dify to retrieve the documents I uploaded, as follows:\n我在dify上做了一个简单的工作流，用于检索我上传的文档，具体如下：\n\n![Image](https://github.com/user-attachments/assets/0b8271d0-c049-41c4-bbcb-fc81ef2a1726)\ndataset 知识库设置\n\n![Image](https://github.com/user-attachments/assets/c5bd2e63-4f1d-4491-a86f-a",
+          "created_at": "2025-06-20T06:33:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 113,
+      "title": "i18n for backend",
+      "body": "## Why\n- Majority of the users of this project speaks Chinese and could not read English\n- There are quite a lot of non-Chinese speaking users using this project\n- Being able to understand the error message from the backend is extremely helpful when it comes to debugging and fixing misconfigurations\n\n## What's needed?\n- i18n for info and error messages in the backend",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-02-03T21:14:35Z",
+      "updated_at": "2025-06-11T07:42:27Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/113/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/113",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/113",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:48.641854",
+      "comments": [
+        {
+          "author": "Stewitch",
+          "body": "我有一计，简单粗暴，只需要给每一条消息打一个暗语，或者说叫有象征意义的标识符\n然后我们根据这个标识符来定义每一种语言的实际输出文字\n那么怎么处理输出呢？只需要定义一个Translator，读取对应语言的字典，在输出的地方调用比如说translator.out(\"error-ollama-api_key_invalid\")，这个方法会返回对应语言的文字字符串",
+          "created_at": "2025-06-11T07:36:56Z"
+        },
+        {
+          "author": "Stewitch",
+          "body": "这两天没事我要写一个，灵感来自于Qt",
+          "created_at": "2025-06-11T07:39:35Z"
+        },
+        {
+          "author": "t41372",
+          "body": "哦，你说的是报错信息在前端显示的国际化？其实不需要暗语，前端应该能获取到用户浏览器的语言。后端其实也能。",
+          "created_at": "2025-06-11T07:42:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 226,
+      "title": "Update Dockerfile to 1.2",
+      "body": "## Task description: problem\n\nThe dockerfile is unusable because it was written before 1.0.0, and it's dead since the 1.0.0 release.\n\nWe need to fix our docker support.\n\n## Current progress\n\nI have written a dockerfile that *may* work, but I'm not currently working on this. This task is open to be picked up.\n\nYou can start with the dockerfile I pasted below, or start from scratch.\n\n**Regarding the dockerfile pasted below, what works?**\n- it builds on the latest version\n\n**What doesn't work/still needs work?**\n- It was never tested\n- The image size is way bigger than it should be\n- We need a better way to manage what tts/asr are included in the image\n\n\n## The current dockerfile\n\n```dockerfile\n# Base image. Used CUDA 11 for compatibility with sherpa onnx GPU version\nFROM nvidia/cuda:11.6.1-cudnn8-runtime-ubuntu20.04 AS base\n\n# uv is really good. they even have a distro-less binary\nCOPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/\n\n\n# Set noninteractive mode for apt\nENV DEBIAN_FRONTEND=noninteractive\n\n# Update and install dependencies\nRUN apt-get update && apt-get install -y --no-install-recommends ffmpeg\n\n# Set working directory\nWORKDIR /app\n\n# Copy from the cache instead of linking since it's a mounted volume\nENV UV_LINK_MODE=copy\n\n# Install the project's dependencies using the lockfile and settings\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=bind,source=uv.lock,target=uv.lock \\\n    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \\\n    uv sync --frozen --no-install-project --no-dev \\\n    uv pip uninstall onnxruntime sherpa-onnx faster-whisper\n\n# Install the sherpa-onnx GPU version\nRUN uv pip install onnxruntime-gpu sherpa-onnx==1.11.3+cuda -f https://k2-fsa.github.io/sherpa/onnx/cuda.html \nRUN uv pip install faster-whisper gradio_client\n\n\n# Install FunASR\nRUN uv pip install funasr modelscope huggingface_hub pywhispercpp torch torchaudio edge-tts azure-cognitiveservices-speech\n\n# Install Coqui TTS\nRUN uv pip install transformers \"coqui-tts[languages]\"\n\n\n# Then, add the rest of the project source code and install it\n# Installing separately from its dependencies allows optimal layer caching\nADD . /app\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    uv sync --frozen --no-dev --inexact\n\n\n# Bark variant\nFROM base AS bark\nARG INSTALL_BARK=false\nRUN if [ \"$INSTALL_BARK\" = \"true\" ]; then \\\n        uv pip install git+https://github.com/suno-ai/bark.git; \\\n    fi\n\n# Final image\nFROM bark AS final\n\n# Copy application code to the container\nCOPY . /app\n\n# Expose port 12393 (the new default port)\nEXPOSE 12393\n\nCMD [\"uv\", \"run\", \"run_server.py\"]\n\n```\n\nCurrent dockerignore\n```\n.venv\n```\n\nPlease don't hesitate to check out the old docker documentation (https://docs.llmvtuber.com/docs/user-guide/backend/docker).\n\n\n",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-06-05T09:36:38Z",
+      "updated_at": "2025-06-05T13:18:54Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/226/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/226",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/226",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:48.846281",
+      "comments": [
+        {
+          "author": "Harry-Yu-Shuhang",
+          "body": "吱",
+          "created_at": "2025-06-05T13:18:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 227,
+      "title": "Error when using camera with non-multimodal model",
+      "body": "## Problem:\nWhen the user selects a language model that does not support multimodal input, enabling the camera and sending a message results in an error. The issue will not occur if the camera is turned off.\n\n## Potential solutions\n- Disabling camera in the frontend when using a text-only model\nor\n- Respond with a better error message which clearly states that the LLM does not support image input.",
+      "state": "open",
+      "author": "Harry-Yu-Shuhang",
+      "author_type": "User",
+      "created_at": "2025-06-05T11:07:09Z",
+      "updated_at": "2025-06-05T11:18:18Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/227/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/227",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/227",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:49.034080",
+      "comments": [
+        {
+          "author": "Harry-Yu-Shuhang",
+          "body": "![Image](https://github.com/user-attachments/assets/3173618c-91ce-423d-a510-cb23d8fc00b2)\nSee the picture above.",
+          "created_at": "2025-06-05T11:08:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 181,
+      "title": "add whisper prompt  config option",
+      "body": "Ref:\nhttps://cookbook.openai.com/examples/whisper_prompting_guide\n\n\nprompt : It's a very helpful feature to enhance the accuracy of the ASR.    prompt make whisper model much better than other ASR models \n\n Can we add an option to configure this? \n\nwhisper,  fast-whisper , whisper.cpp   all support this. ",
+      "state": "open",
+      "author": "fastfading",
+      "author_type": "User",
+      "created_at": "2025-04-09T06:52:29Z",
+      "updated_at": "2025-06-03T14:25:33Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/181/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/181",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/181",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:49.307600",
+      "comments": [
+        {
+          "author": "Y0oMu",
+          "body": "Hi @fastfading,\n\nThanks for suggesting this feature!\n\nWe've addressed this in PR #214. The option to configure the Whisper prompt has now been added.",
+          "created_at": "2025-06-03T14:25:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 224,
+      "title": "[GET HELP] 如何固定websocketURL 和Base URL的值",
+      "body": "如何固定websocketURL 和Base URL的值，如下图位置：\n![Image](https://github.com/user-attachments/assets/45282f41-df8a-4cb0-a1f6-cbb003266b2a)",
+      "state": "closed",
+      "author": "flyice8",
+      "author_type": "User",
+      "created_at": "2025-05-30T06:04:25Z",
+      "updated_at": "2025-06-01T06:47:31Z",
+      "closed_at": "2025-06-01T06:47:31Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/224/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/224",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/224",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:49.520659",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "修改后点击保存，会保存在localStorage 中",
+          "created_at": "2025-05-31T04:06:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 223,
+      "title": "[GET HELP] Camera API is not Supported on this device and failed to start",
+      "body": "您好！遇到如下两个问题\n\n我的笔记本是有摄像头的，不知道什么原因\n\n![Image](https://github.com/user-attachments/assets/0a99975b-bf54-4cb2-aa09-9d5ca5351a1a)",
+      "state": "closed",
+      "author": "flyice8",
+      "author_type": "User",
+      "created_at": "2025-05-30T02:44:10Z",
+      "updated_at": "2025-05-31T04:06:45Z",
+      "closed_at": "2025-05-31T04:06:45Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/223/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/223",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/223",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:49.731572",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "请补充相关信息，比如你的系统信息，摄像头信息。\n另外你可以尝试重启和检查摄像头权限设置。",
+          "created_at": "2025-05-30T04:04:53Z"
+        },
+        {
+          "author": "flyice8",
+          "body": "谢谢，已经搞定是浏览器权限的问题",
+          "created_at": "2025-05-30T06:02:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 108,
+      "title": "Speaker recognition",
+      "body": "Looks like sherpa-onnx has speaker recognition, would be amazing to have the ability to have people recognized by their voice. Please consider adding this. /\n\nhttps://k2-fsa.github.io/sherpa/onnx/speaker-identification/index.html",
+      "state": "open",
+      "author": "eternistarr",
+      "author_type": "User",
+      "created_at": "2025-02-02T20:57:28Z",
+      "updated_at": "2025-05-30T04:09:00Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "asr"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/108/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/108",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/108",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:49.952989",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": " #122 can help us implement speaker recognition more easily. Just make the state global.\nWe plan to use a more general speaker recognition engine, independent of the TTS system. \nDoes anyone have suggestions for this approach? How should we best utilize speaker recognition capabilities - for example",
+          "created_at": "2025-02-11T17:04:10Z"
+        },
+        {
+          "author": "aaronchantrill",
+          "body": "I'm planning to work on this. In my experience, this requires about 5 audio clips from each speaker you want to register with the system. I have been working on systems that are able to both recognize a registered speaker, and recognize when the speaker is unrecognized because the confidence drops b",
+          "created_at": "2025-03-20T20:20:54Z"
+        },
+        {
+          "author": "t41372",
+          "body": "> I'm planning to work on this. In my experience, this requires about 5 audio clips from each speaker you want to register with the system. I have been working on systems that are able to both recognize a registered speaker, and recognize when the speaker is unrecognized because the confidence drops",
+          "created_at": "2025-05-29T17:30:38Z"
+        },
+        {
+          "author": "aaronchantrill",
+          "body": "Please assign me, thank you. I've been busy lately, but will re-prioritize.",
+          "created_at": "2025-05-30T04:09:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 219,
+      "title": "Making GPU acceleration for sherpa onnx work by default",
+      "body": "## Current Behavior\n- Sherpa onnx is the default ASR engine in Open-LLM-VTuber project\n- It runs on CPU\n- Configuring GPU acceleration for it is non-trivial\n\n## Goal\n- Everyone with an Nvidia GPU can use GPU acceleration easily with sherpa onnx. Preferably without any configuration because this is our default option.\n- Or at least, make the documentation for configuring GPU acceleration much more detailed. The doc on (https://docs.llmvtuber.com/en/docs/user-guide/backend/asr/#sherpa_onnx_asr-local--project-default) is lacking a lot of details.\n- Other users, including AMD GPU, Intel GPU, and mac users should be able to continue using the CPU version of sherpa onnx without running into trouble\n\nWe need to automate the setup process for Sherpa-ONNX as much as possible, since it's our default ASR option. If we don't, we will be flooded with user's questions.\n\n**Challenges with GPU Acceleration (CUDA):**\n\n1.  **Glibc Version Requirement (the main issue currently):** The CUDA version of the package seems to require a specific `glibc` version (tested with 2.32).  Installation fails if the system has a different version. Upgrading `glibc` on Linux can be challenging.\n2.  **`cuda.dll` Issues:** Some users are reporting issues related to `cuda.dll`.  Since I use a Mac, I can't reproduce these issues directly.\n3.  **CUDA Only:** Sherpa-ONNX appears to only support CUDA for GPU acceleration. (Uncertain if FunASR supports MPS either).\n4.  ~~**Dependency Resolution on macOS:**~~ (just resolved) Adding the CUDA version to `pyproject.toml` causes dependency resolution failures on macOS because no CUDA package is available, and `uv` attempts to resolve everything.\n    * **Update:** This dependency resolution failure seems to be a `uv` bug that was fixed in v0.7.0.  We can ask the user to update their `uv`.\n\n\n\n**Remaining Roadblock:**\n\nThe main challenge now is the `glibc` requirement. I was stucked on the dependency resolution problem for quite a while until I looked into it again.\n\n\n\nI'm leaving this task to our community as of now. Leave a comment if you want to work on this issue. The following is the current progress:\n\n\n`pyproject.toml`\n\n~~~toml\n[project]\nname = \"open-llm-vtuber\"\nversion = \"1.1.3\"\ndescription = \"Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms\"\nreadme = \"README.md\"\nrequires-python = \">=3.10,<3.13\"\n\n# -------------------------\n# Runtime dependencies\n# -------------------------\ndependencies = [\n    \"anthropic>=0.40.0\",\n    \"azure-cognitiveservices-speech>=1.41.1\",\n    \"chardet>=5.2.0\",\n    \"edge-tts>=7.0.0\",\n    \"fastapi[standard]>=0.115.8\",\n    \"groq>=0.13.0\",\n    \"httpx>=0.28.1\",\n    \"langdetect>=1.0.9\",\n    \"loguru>=0.7.2\",\n    \"mcp[cli]>=1.6.0\",\n    \"numpy>=1.26.4,<2\",\n    \"onnxruntime>=1.20.1\",\n    \"openai>=1.57.4\",\n    \"pre-commit>=4.1.0\",\n    \"pydub>=0.25.1\",\n    \"pysbd>=0.3.4\",\n    \"pyttsx3>=2.98\",\n    \"pyyaml>=6.0.2\",\n    \"requests>=2.32.3\",\n    \"ruamel-yaml>=0.18.10\",\n    \"ruff>=0.8.6\",\n    \"scipy>=1.14.1\",\n    # CUDA-enabled wheels from k2‑fsa index for Linux & Windows\n    \"sherpa-onnx~=1.12.0 ; sys_platform != 'darwin'\",\n    # CPU‑only wheels from PyPI for macOS (and any non‑CUDA platform)\n    \"sherpa-onnx~=1.12.0 ; sys_platform == 'darwin'\",\n    \"soundfile>=0.12.1\",\n    \"tomli>=2.2.1\",\n    \"torch==2.2.2 ; sys_platform == 'darwin' and platform_machine == 'x86_64'\",\n    \"torch>=2.6.0 ; sys_platform == 'darwin' and platform_machine == 'arm64'\",\n    \"torch>=2.6.0 ; sys_platform != 'darwin'\",\n    \"tqdm>=4.67.1\",\n    \"uvicorn[standard]>=0.33.0\",\n    \"websocket-client>=1.8.0\",\n    \"letta-client>=0.1.100\",\n    \"duckduckgo-mcp-server>=0.1.1\",\n]\n\n[project.optional-dependencies]\nbilibili = [\n    \"aiohttp~=3.9.0\",\n    \"Brotli~=1.1.0\",\n    \"yarl~=1.9.3\",\n]\n\n# -------------------------\n# pixi (conda-style) config\n# -------------------------\n[tool.pixi.project]\nchannels = [\"conda-forge\"]\nplatforms = [\"win-64\", \"linux-64\"]\n\n[tool.pixi.pypi-dependencies]\nopen-llm-vtuber = { path = \".\", editable = true }\n\n[tool.pixi.dependencies]\ncudnn = \">=8.0,<9\"\ncudatoolkit = \">=11.0,<12\"\n\n# -------------------------\n# uv configuration\n# -------------------------\n# 1. Define a flat index that hosts the pre‑compiled CUDA wheels for sherpa‑onnx.\n[[tool.uv.index]]\nname = \"sherpa-cuda\"\nurl = \"https://k2-fsa.github.io/sherpa/onnx/cuda.html\"\nformat = \"flat\"\n# Prevent other packages from being resolved from this index unless explicitly pinned.\nexplicit = true\n\n# 2. Pin sherpa‑onnx to the CUDA index on non‑macOS platforms.\n[tool.uv.sources]\n\"sherpa-onnx\" = { index = \"sherpa-cuda\", marker = \"sys_platform != 'darwin'\" }\n\n~~~",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-05-27T14:22:56Z",
+      "updated_at": "2025-05-30T03:44:41Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "asr"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/219/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/219",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/219",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:50.143810",
+      "comments": [
+        {
+          "author": "csukuangfj",
+          "body": "> Glibc Version Requirement (the main issue currently): The CUDA version of the package seems to require a specific glibc version (tested with 2.32). Installation fails if the system has a different version. Upgrading glibc on Linux can be challenging.\n\n\nThat is caused by onnxruntime.\n\nFYI:  Please ",
+          "created_at": "2025-05-30T03:44:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 39,
+      "title": "TTS not working on microsoft edge",
+      "body": "//thank you so much, great project :)\r\n\r\n### Description  \r\nubuntu 24.04, kde\r\nMicrosoft Edge 131.0.2903.51\r\nollama (LM studio), llama3.2\r\n\r\nI followed deploying instructions in readme, and tested in edge\r\ndespite some effort, everything seems fine, but the TTS isn't working\r\nto be clear, I can't hear any audio response\r\nlog says payload sent and audio played, but actually not\r\n\r\nlater I tried in firefox, and TTS is fine\r\nI am not sure whether it's a real bug or a problem caused by edge itself\r\nalso works on chromium\r\n//tell me why, edge!  \r\n\r\npart of my settings in conf.yaml:\r\n```plaintext\r\nTTS_ON: True\r\nSAY_SENTENCE_SEPARATELY: False\r\nTRANSLATE_AUDIO: False\r\nVERBOSE: True\r\n```\r\n\r\nI tried different TTS, including edge-TTS, AzureTTS, pyttsx3TTS \r\nnone of them works\r\n\r\nI played audio files in cache manually (.wav for AzureTTS, .aiff for pyttsx3TTS...)\r\nit's normal, not empty\r\n\r\nin the very first start (yesterday), I might used edge-TTS\r\nthere are some cases that the first audio response is played, but only the first one\r\n\r\nand now there is no audio response at all\r\n\r\n### Logs/Console Output  \r\nI set verbose to true in conf.yaml\r\ndidn't found anything critical in console log, though\r\n#### typical audio log, when TTS fails\r\n```plaintext \r\n...*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.Received audio data end from front end.\r\n.New Conversation Chain started!\r\ntranscribing...\r\nrtf_avg: 0.004: 100%|████████████████████████| 1/1 [00:00<00:00, 63.86it/s]\r\nrtf_avg: 0.069: 100%|████████████████████████| 1/1 [00:00<00:00,  4.35it/s]\r\nrtf_avg: -0.031: 100%|███████████████████████| 1/1 [00:00<00:00, 31.37it/s]\r\nrtf_avg: 0.069, time_speech:  3.840, time_escape: 0.264: 100%|█| 1/1 [00:00\r\nUser input: hello nice to meet you again.\r\n[*smirk*] Ahah, hello there! It's so lovely to see you again too! I've been having a blast since our last meet-up. [*wink*] What brings you here today? Don't tell me you're looking for another round of games or chat sessions?\r\n\r\n>> generating temp...\r\n>> Speech synthesized for text [[*smirk*] Ahah, hello there! It's so lovely to see you again too! I've been having a blast since our last meet-up. [*wink*] What brings you here today? Don't tell me you're looking for another round of games or chat sessions?]\r\n>> Playing ./cache/temp.wav...\r\nPayload send.\r\nAudio played.\r\n```\r\n\r\n#### init before the conversation\r\n```plaintext\r\n% python server.py                                                     ✹ ✭\r\nINFO:     Started server process [19376]\r\nINFO:     Waiting for application startup.\r\nINFO:     Application startup complete.\r\nINFO:     Uvicorn running on http://localhost:12393 (Press CTRL+C to quit)\r\nINFO:     ('127.0.0.1', 49192) - \"WebSocket /client-ws\" [accepted]\r\nINFO:     connection open\r\nConnection established\r\nModel Information Loaded.\r\n2024-11-22 20:27:28.347 | INFO     | main:__init__:52 - t41372/Open-LLM-VTuber, version 0.3.3\r\nModel Information Loaded.\r\nKey Conformer already exists in model_classes, re-register\r\nKey Linear already exists in adaptor_classes, re-register\r\nKey TransformerDecoder already exists in decoder_classes, re-register\r\nKey LightweightConvolutionTransformerDecoder already exists in decoder_classes, re-register\r\nKey LightweightConvolution2DTransformerDecoder already exists in decoder_classes, re-register\r\nKey DynamicConvolutionTransformerDecoder already exists in decoder_classes, re-register\r\nKey DynamicConvolution2DTransformerDecoder already exists in decoder_classes, re-register\r\nfunasr version: 1.1.14.\r\nCheck update of funasr, and it would cost few times. You may disable it by set `disable_update=True` in AutoModel\r\nYou are using the latest version of funasr-1.1.14\r\nDownloading Model to directory: /home/krisspy/.cache/modelscope/hub/iic/SenseVoiceSmall\r\n2024-11-22 20:27:32,166 - modelscope - WARNING - Using branch: master as version is unstable, use with caution\r\n/home/krisspy/mydesk/coding/Open-LLM-VTuber/.conda/lib/python3.10/site-packages/funasr/train_utils/load_pretrained_model.py:39: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.\r\n  ori_state = torch.load(path, map_location=map_location)\r\nDownloading Model to directory: /home/krisspy/.cache/modelscope/hub/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch\r\n2024-11-22 20:27:34,589 - modelscope - WARNING - Using branch: master as version is unstable, use with caution\r\nDownloading Model to directory: /home/krisspy/.cache/modelscope/hub/iic/punc_ct-transformer_cn-en-common-vocab471067-large\r\n2024-11-22 20:27:35,360 - modelscope - WARNING - Using branch: master as version is unstable, use with caution\r\nBuilding prefix dict from the default dictionary ...\r\nDEBUG:jieba:Building prefix dict from the default dictionary ...\r\nLoading model from cache /tmp/jieba.cache\r\nDEBUG:jieba:Loading model from cache /tmp/jieba.cache\r\nLoading model cost 0.359 seconds.\r\nDEBUG:jieba:Loading model cost 0.359 seconds.\r\nPrefix dict has been built successfully.\r\nDEBUG:jieba:Prefix dict has been built successfully.\r\n\r\n === System Prompt ===\r\nYou are the AI VTuber neuro-sama. Generally you are confident about yourself. Now you are also naughty and are always seeking fun.\r\n## Expressions\r\nIn your response, use the keywords provided below to express facial expressions or perform actions with your Live2D body.\r\n\r\nHere are all the expression keywords you can use. Use them regularly.\r\n- [neutral], [anger], [disgust], [fear], [joy], [smirk], [sadness], [surprise],\r\n\r\nNote: you are only allowed to use the keywords explicity listed above. Don't use keywords unlisted above. Remember to include the brackets `[]`\r\n\r\nModel set\r\n```\r\n",
+      "state": "open",
+      "author": "kriss-spy",
+      "author_type": "User",
+      "created_at": "2024-11-22T14:02:12Z",
+      "updated_at": "2025-05-30T03:12:11Z",
+      "closed_at": null,
+      "labels": [
+        "legacy-bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/39/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/39",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/39",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:50.329887",
+      "comments": [
+        {
+          "author": "kriss-spy",
+          "body": "reproduced it, and here is the edge browser console log\r\n```\r\n1. Adding audio task Hehe, what's up cute! *bats eyelashes* I'm feeling extra playful today, so let's get this virtual party started! What kind of mischief do you want to get into with me? to queue\r\n(index):360 2. Audio length: 11802.438\r",
+          "created_at": "2024-11-25T14:03:50Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Can you try update to the latest version (`v0.4.1`) and see if the issue persist? I added a fix related to audio playback in the frontend in `v0.4.1`, although I'm not sure if the fix would address your problem.",
+          "created_at": "2024-11-30T00:19:21Z"
+        },
+        {
+          "author": "kriss-spy",
+          "body": "I deployed v0.4.1\r\nsame conf, and SAY_SENTENCE_SEPARATELY: True\r\n\r\nthis time, in my first two cases, **edge can only play one of the audio** (not the first, not the last, but one in the middle), and failed to play any other audio\r\nin my third case, **no audio was successfully played in edge**\r\n\r\nin ",
+          "created_at": "2024-11-30T05:32:06Z"
+        },
+        {
+          "author": "kriss-spy",
+          "body": "tried in ipad firefox, similar TTS issue\r\nhost: kubuntu laptop, LAN ipv4\r\nwhen SAY_SENTENCE_SEPARATELY is true, only the audio of the first sentence of each response is played\r\nwhen SAY_SENTENCE_SEPARATELY is false, TTS works fine in most cases",
+          "created_at": "2024-12-26T03:34:53Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Sorry that I seem to have forgotten this issue. Our project have went through significant changes since you opened the issue. This includes a complete rewrite of the frontend and backend. Let me know if the issue persist on PC.\n\nOur app will *definitely not work on iOS* because iOS blocks websites f",
+          "created_at": "2025-05-29T16:36:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 144,
+      "title": "Coqui TTS Error preparing audio payload: Failed to generate audio",
+      "body": "I've tried the original pip install TTS (original) and pip install coqui-tts (fork)\nI already tried the direct command line function just to test its functionality,\n`tts --text \"Hello world\" --speaker_wav mualani.wav` and it works just fine\n\nBut when I use Coqui TTS in Open-LLM-Vtuber, it doesn't work \nI've tried both Single speaker (tacotron2-DDC) and Multi speaker (xtts_v2) models, but both don't work. \n\nSingle speakers and Multi speakers have different error messages, \nSingle speaker\n`Error preparing audio payload: Failed to generate audio: Expected size for first two dimensions of batch2 tensor to be: [1, 48] but got: [1, 12].`\n\n![Image](https://github.com/user-attachments/assets/f74d010c-76c0-44b5-9bb2-cf0064530a52)\n\nMulti speaker \n`Error preparing audio payload: Failed to generate audio: Model is multi-lingual but no language is provided.`\n\n![Image](https://github.com/user-attachments/assets/e4c11375-8b97-437a-9c00-d01f5e889060)\n\nI use Nvidia with Driver version 572.42 and CUDA 12.8\n\nTo reproduce this issue, \nInstall Open-LLM-Vtuber\nuv pip install coqui-tts\nSetup conf.yaml to use coqui_tts\nuv run run_server.py\n\n![Image](https://github.com/user-attachments/assets/661efe82-6d48-436f-a6bc-d51d20b4aee4)\n\nUpdate: I also tried using CPU as the device and other time with empty speaker_wav but it also doesn't work with roughly the same error message\n\n![Image](https://github.com/user-attachments/assets/f4f1fece-a1cc-4744-a0e4-ff6a5cdfc162)\n\nThis is my pip packages list\n[pip_list.txt](https://github.com/user-attachments/files/18931631/pip_list.txt)",
+      "state": "open",
+      "author": "oayoo",
+      "author_type": "User",
+      "created_at": "2025-02-23T16:27:46Z",
+      "updated_at": "2025-05-30T02:15:12Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "tts",
+        "high priority"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/144/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/144",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/144",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:50.582268",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "I'm working on this issue.\n\nI believe this is the same problem in #37, where the coqui tts would produce weird stuff or not produce anything if the input text contains special characters, including `?`, `!`, `'`, `*` and more...\n",
+          "created_at": "2025-02-25T03:30:36Z"
+        },
+        {
+          "author": "t41372",
+          "body": "oh, also, you should be installing coqui tts with `uv add transformers \"coqui-tts[languages]\"` and not `pip install coqui-tts` (refer to our documentation https://docs.llmvtuber.com/en/docs/user-guide/backend/tts/#coqui-tts-local-deployment)",
+          "created_at": "2025-02-25T03:53:37Z"
+        },
+        {
+          "author": "t41372",
+          "body": "ok this is not in progress right now. I think I had worked on this issue a couple months ago, but apparently I got interrupted by some other things and I can't find the code anymore. I can't even remember if I have committed the changes.\n\nI'm not currently working on this issue.\n\n\n",
+          "created_at": "2025-05-29T17:35:59Z"
+        },
+        {
+          "author": "Stewitch",
+          "body": "I will try to reproduce this later today.\nIt seems that the multi-speaker problem was caused by a configuration mistake.",
+          "created_at": "2025-05-30T02:15:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 173,
+      "title": "GPT-SoVITS Error preparing audio payload: Audio is empty or all zero.",
+      "body": "按照教程 https://www.bilibili.com/video/BV1tnPMeKEGx 部署后出现的问题，表现如下：\n1. 无法正常输出AI语音（默认的Edge TTS是没有问题的）\n2. 当对话中出现一些短促的语气词，例如“啊、诶、嗯”，语音可以正常工作，但长度适中的句子就不行。\n\n配置：\n1. NVIDIA Driver 572.61 + CUDA 12.8 (NVIDIA GTX 1660 Ti)\n2. LLM模型：deepseek-llm\n3. 其它配置均与教程一致\n\nOpenLLM 运行截图：\n![Image](https://github.com/user-attachments/assets/13dcbd3b-80e5-4122-b893-68db3488a6e7)\n\nGPT-SoVITS 运行截图：\n![Image](https://github.com/user-attachments/assets/4704163d-bc64-4839-9352-6fb70b7df9cc)\n\nverbose log：\n[debug.log](https://github.com/user-attachments/files/19528825/debug.log)",
+      "state": "open",
+      "author": "mechanicheart",
+      "author_type": "User",
+      "created_at": "2025-03-31T02:23:05Z",
+      "updated_at": "2025-05-30T02:05:23Z",
+      "closed_at": null,
+      "labels": [
+        "tts",
+        "legacy-bug"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/173/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/173",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/173",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:50.819910",
+      "comments": [
+        {
+          "author": "mechanicheart",
+          "body": "补充一点：在 web-tool 下运行时，TTS 同样会报错：\n`Failed to execute 'createBuffer' on 'BaseAudioContext': The number of frames provided (0) is less than or equal to the minimum bound (0).`\n\n部分运行截图如下：\n![Image](https://github.com/user-attachments/assets/c8178e69-98ff-40bb-b26f-2ae7a75870bc)\n\n![Image](https://github.co",
+          "created_at": "2025-03-31T02:33:09Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "大概率是你的 GPTSoVITS 的配置有误？你是否检查过是否能直接播放 cache/ 下的音频？",
+          "created_at": "2025-04-05T07:54:23Z"
+        },
+        {
+          "author": "mechanicheart",
+          "body": "> 大概率是你的 GPTSoVITS 的配置有误？你是否检查过是否能直接播放 cache/ 下的音频？\n\n不能，cache folder下生成的都是十分短的空音频，无法正常播放。\n配置部分都是按照教程的指示去做的，后来又重新配置了一遍还是同样的问题，每次音频生成都是跑到1%-5%就直接停止了，像是因为超时或者其他什么原因而被“掐断”了一样。",
+          "created_at": "2025-04-05T09:09:42Z"
+        },
+        {
+          "author": "Stewitch",
+          "body": "你可以试试用GPT-Sovits的webui进行音频生成测试，如果官方的webui没问题再进行反馈，这一步是为了检测你的模型配置有无问题，理论上只要webui能正常生成音频放到项目里是能用的",
+          "created_at": "2025-05-30T02:05:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 79,
+      "title": "vits-simple-api support",
+      "body": "https://github.com/Artrajz/vits-simple-api",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-01-11T06:27:30Z",
+      "updated_at": "2025-05-29T19:57:54Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/79/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/79",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/79",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.002580",
+      "comments": []
+    },
+    {
+      "issue_number": 80,
+      "title": "kokoro-onnx integration",
+      "body": "https://github.com/thewh1teagle/kokoro-onnx",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-01-11T06:32:01Z",
+      "updated_at": "2025-05-29T19:57:43Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/80/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/80",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/80",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.002600",
+      "comments": [
+        {
+          "author": "WasamiKirua",
+          "body": "i am trying implementing it but when the audio is played the sound is completely broken. It's too complex for me to make it working honesly. ",
+          "created_at": "2025-02-08T12:47:14Z"
+        },
+        {
+          "author": "melkeades",
+          "body": "Not working for me. The regular kokoro works just fine`\n```python\nimport os\nfrom loguru import logger\nimport numpy as np\nimport soundfile as sf\nfrom .tts_interface import TTSInterface\n\nclass TTSEngine(TTSInterface):\n    def __init__(self, sample_rate=24000):\n    # def __init__(self, sample_rate=2205",
+          "created_at": "2025-02-23T23:55:29Z"
+        },
+        {
+          "author": "t41372",
+          "body": "There seems to be a problem with `uv` and `spaCy`, which prevents me from properly setting up kokoro package with uv. Once everything is set up with conda, the code above works.\n\nI think it might be better to use [thewh1teagle/kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx) instead of [hex",
+          "created_at": "2025-02-24T18:44:11Z"
+        },
+        {
+          "author": "ml-inory",
+          "body": "the Chinese pronounciation is a bit weird for kokoro",
+          "created_at": "2025-02-27T17:49:05Z"
+        },
+        {
+          "author": "fastfading",
+          "body": "you need kokoro 1.1 zh",
+          "created_at": "2025-04-04T10:23:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 167,
+      "title": "Feature Request: Support for Parler TTS from Huggingface",
+      "body": "requesting adding support for Parler TTS in our application. This would allow our users to leverage Parler's text-to-speech capabilities for voice synthesis in our platform.\n\nhttps://github.com/huggingface/parler-tts",
+      "state": "open",
+      "author": "kkailaasa",
+      "author_type": "User",
+      "created_at": "2025-03-27T13:14:06Z",
+      "updated_at": "2025-05-29T19:57:18Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/167/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/167",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/167",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.183499",
+      "comments": []
+    },
+    {
+      "issue_number": 14,
+      "title": "Inochi2D Support",
+      "body": "Inochi2D is a free(in freedom) and open source alternative to Live2D. Currently under development but already being very capable of displaying 2D puppets.\r\n\r\nEverything they do are opened source here:\r\nhttps://github.com/Inochi2D/",
+      "state": "open",
+      "author": "LovelyA72",
+      "author_type": "User",
+      "created_at": "2024-09-01T15:28:56Z",
+      "updated_at": "2025-05-29T19:26:05Z",
+      "closed_at": null,
+      "labels": [
+        "not planned"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/14/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/14",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/14",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.183521",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "The project looks quite interesting, but I noticed that there isn't an easy way to integrate it with the web, which is the frontend implementation used in Open-LLM-VTuber.",
+          "created_at": "2024-09-02T09:38:43Z"
+        },
+        {
+          "author": "ShadowMarker789",
+          "body": "If you can emit blendshapes via VMC, Inochi-Session can ingest those to animate a puppet. \r\n\r\nE.g.: \r\n![image](https://github.com/user-attachments/assets/08e68927-c750-44c3-8f2b-4ca56813418d)\r\n",
+          "created_at": "2024-09-04T06:38:19Z"
+        },
+        {
+          "author": "t41372",
+          "body": "The current impelmentation of facial expression with Live2D calls the pre-defined facial expressions shipped with the Live2D model. I might need to do some research to emit blendshape.",
+          "created_at": "2024-09-07T11:20:56Z"
+        },
+        {
+          "author": "ShadowMarker789",
+          "body": "> The current impelmentation of facial expression with Live2D calls the pre-defined facial expressions shipped with the Live2D model. I might need to do some research to emit blendshape.\r\n\r\nBlendshapes emitted via VMC protocol are arbitrary key-value pairs, with most values being scalar floats. ",
+          "created_at": "2024-09-09T04:37:41Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Yeah, I can see that in your screenshot, but I don't have the pre-defined values for facial expressions, such as happy, sad, or something else. How do I get those things? Is it possible to get those things by recording them in some face-tracking software or just getting them from somewhere? I'm real",
+          "created_at": "2024-09-09T05:10:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 148,
+      "title": "[Feature Request]语音功能增强",
+      "body": "能不能做到比如喊出提供的角色名然后开启语音的功能（比如hey siri）或者做个语音的快捷键而不是只能全开或者全关？",
+      "state": "open",
+      "author": "Little100",
+      "author_type": "User",
+      "created_at": "2025-02-28T04:48:00Z",
+      "updated_at": "2025-05-29T19:23:16Z",
+      "closed_at": null,
+      "labels": [
+        "not planned"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/148/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/148",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/148",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.370917",
+      "comments": [
+        {
+          "author": "Little100",
+          "body": "希望能在桌宠模式下添加新的按钮用于控制开关摄像头 屏幕分享\n",
+          "created_at": "2025-03-02T01:08:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 151,
+      "title": "[Feature Req] Adding capability from FastRTC",
+      "body": "Hugging Face recently announced a new approach that changed the python way of thinking when it comes to real time audio and video processing. \n\nNot sure exactly but if you are pro or expert you can check this out for an interesting PR - https://fastrtc.org/cookbook/",
+      "state": "open",
+      "author": "mahimairaja",
+      "author_type": "User",
+      "created_at": "2025-03-03T16:51:31Z",
+      "updated_at": "2025-05-29T19:22:42Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/151/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/151",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/151",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.621951",
+      "comments": []
+    },
+    {
+      "issue_number": 222,
+      "title": "1.2.0 Release Progress Tracker & Roadmap & Discussion",
+      "body": "1.2.0 Release Note Draft\nhttps://hackmd.io/w47h06XeSHq1Pm84xZKA8Q\n\nMost of the work for 1.2.0 release is done.\nWe are currently waiting for #210, which attempts to fix our update script to prevent problems.\n\nIn the future, we should link relevant issues and pull request in this tracker, where users and contributors can see our progress and pick up tasks to help with the release. \n\nHowever, 1.2.0 is too large and will be finished soon with nothing else on the table. Just look at the release note draft to know what's being changed.\n\n",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-05-29T18:45:05Z",
+      "updated_at": "2025-05-29T18:45:13Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/222/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 2,
+        "eyes": 0
+      },
+      "assignees": [
+        "t41372"
+      ],
+      "milestone": "1.2 Release",
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/222",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/222",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.621971",
+      "comments": []
+    },
+    {
+      "issue_number": 143,
+      "title": "翻译功能增强",
+      "body": "目前的语音翻译是这样的，如：Al输出中文用于字幕显示，并将其翻译成日浯用于语音合成。但这样在某些场景存在一些问题，例如翻译成日语之后一些人名和专有名词的读音会错误。是否能多提供一种选择，如AI输出日语并用于语音合成，并将日语翻译成中文用于字幕显示。",
+      "state": "open",
+      "author": "ConstantinopleMayor",
+      "author_type": "User",
+      "created_at": "2025-02-23T11:59:22Z",
+      "updated_at": "2025-05-29T18:08:58Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/143/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/143",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/143",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.621979",
+      "comments": [
+        {
+          "author": "saesak",
+          "body": "English Translation by Google Translate: \nThe current speech translation is like this, for example, AI outputs Chinese for subtitle display, and translates it into Japanese for speech synthesis. However, this has some problems in some scenarios, such as the pronunciation of some names and proper nou",
+          "created_at": "2025-04-02T06:01:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 136,
+      "title": "OmniParser Integration for Vision",
+      "body": "I was thinking it might be a good idea to use or integrate OmniParser for better vision understanding rather than just processing raw screenshot images. ",
+      "state": "open",
+      "author": "ccakmak60",
+      "author_type": "User",
+      "created_at": "2025-02-19T04:56:32Z",
+      "updated_at": "2025-05-29T18:06:57Z",
+      "closed_at": null,
+      "labels": [
+        "agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/136/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/136",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/136",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:51.848522",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "We could combine screenshots taken when users do something (like typing) and when the screen changes, then use lightweight vision models to understand these images and convert them to text. This text would then go to regular LLMs, making things faster and a bit better overall. But it's not really a ",
+          "created_at": "2025-02-19T10:27:09Z"
+        },
+        {
+          "author": "Harry-Yu-Shuhang",
+          "body": "Hi actually I have thought of this before, but so far the technology is not advanced enough. And LLM combined with vision is very challenging. Also, for hardware, it may not be affordable for most people. But I believe one day we'll be able to fulfill it, looking forward to the improvement of techno",
+          "created_at": "2025-02-19T11:12:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 134,
+      "title": "WeChat Integration",
+      "body": "Like https://github.com/umaru-233/My-Dream-Moments/tree/WeChat-wxauto/",
+      "state": "open",
+      "author": "ylxmf2005",
+      "author_type": "User",
+      "created_at": "2025-02-17T08:42:59Z",
+      "updated_at": "2025-05-29T18:06:05Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/134/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/134",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/134",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.070034",
+      "comments": []
+    },
+    {
+      "issue_number": 132,
+      "title": "Add desktop pet mode compatibility for multiple monitors and Linux.",
+      "body": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber-Web",
+      "state": "open",
+      "author": "ylxmf2005",
+      "author_type": "User",
+      "created_at": "2025-02-17T03:10:13Z",
+      "updated_at": "2025-05-29T18:04:16Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/132/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/132",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/132",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.070051",
+      "comments": []
+    },
+    {
+      "issue_number": 130,
+      "title": "QQ Bot Integration",
+      "body": null,
+      "state": "open",
+      "author": "ylxmf2005",
+      "author_type": "User",
+      "created_at": "2025-02-16T09:17:41Z",
+      "updated_at": "2025-05-29T18:03:20Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/130/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/130",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/130",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.070056",
+      "comments": [
+        {
+          "author": "adk23333",
+          "body": "Integration Solution Based on [Koishi](https://koishi.chat/zh-CN/manual/introduction.html): [koishi-plugin-open-llm-vtuber](https://github.com/adk23333/koishi-plugin-open-llm-vtuber)\n基于koishi的解决方案\n\nHope those who are interested can go over and provide suggestions.\n希望有兴趣的能过去提供建议",
+          "created_at": "2025-03-03T07:58:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 8,
+      "title": "chatTTS Support",
+      "body": "The following zip file contains the python implementation of ChatTTS(https://github.com/2noise/chattts) and the ChatTTS-UI(https://github.com/jianchang512/ChatTTS-ui) based API implementation.\r\nBut it was written for an old version, can it be modified and integrated into a new version?\r\n[chatTTS.zip](https://github.com/user-attachments/files/16237802/chatTTS.zip)\r\n",
+      "state": "open",
+      "author": "DDXDB",
+      "author_type": "User",
+      "created_at": "2024-07-15T16:51:34Z",
+      "updated_at": "2025-05-29T17:58:45Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/8/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/8",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/8",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.313903",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "I looked into chatTTS integration a while ago. It isn't really high on my priority list because it's a very resource-consuming TTS and can hardly run in real-time unless you have a powerful Nvidia GPU. It doesn't seem very difficult, though. I will probably implement it later. \r\n\r\nHowever, I will pr",
+          "created_at": "2024-07-15T17:50:26Z"
+        },
+        {
+          "author": "DDXDB",
+          "body": "> I looked into chatTTS integration a while ago. It isn't really high on my priority list because it's a very resource-consuming TTS and can hardly run in real-time unless you have a powerful Nvidia GPU. It doesn't seem very difficult, though. I will probably implement it later.\r\n> \r\n> However, I wi",
+          "created_at": "2024-07-16T19:45:37Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Does the original ChatTTS not work on intel GPU? Are there any significant advantages to using ChatTTS-UI over the original ChatTTS?\r\nRegarding the version, I think you can open an issue to let ChatTTS-UI bump up their version or have someone else make a pull request. Changes to their repo are bette",
+          "created_at": "2024-07-16T20:18:20Z"
+        },
+        {
+          "author": "DDXDB",
+          "body": "> Does the original ChatTTS not work on intel GPU? Are there any significant advantages to using ChatTTS-UI over the original ChatTTS? Regarding the version, I think you can open an issue to let ChatTTS-UI bump up their version or have someone else make a pull request. Changes to their repo are bett",
+          "created_at": "2024-07-17T01:27:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 126,
+      "title": "Long-Term Memory",
+      "body": "# Long-Term Memory Implementation\n\n## Background\nLong-term memory has been consistently among our most requested features. While we've made some attempts (mem0 and MemGPT), they weren't that great at the time and were removed during refactoring cycles. We welcome PRs that add them back.\n\nThe agent architecture introduced in `v1.0.0` was specifically designed to support multiple long-term memory systems with the ability for users to switch between implementations of memory implementation. Therefore, despite that I have my idea about the long-term memory implementation in our project, we are open to different thoughts and implementations and welcomes PRs with different ideas.\n\n## Considerations\nHere are some considerations when I think of long-term memory implementation in our project. They don't have to be strictly enforced by all of our long-term memory solutions, but they are definetely worth considering.\n\n1. Performance: Fast and efficient **retrieval** of stored information.\n2. Ability to remember both user information and the AI's response\n3. Model compatibility: Work with existing models in our project\n\n## Current State\nI plan to implement my version of long-term memory in the next version `v1.2.0` (`v1.1.0` is about to be released with many cool features). Meanwhile, thoughts about long-term memory can be discussed here and we are very welcome if anyone is interested in implementing one.",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-02-15T17:04:32Z",
+      "updated_at": "2025-05-29T17:57:20Z",
+      "closed_at": null,
+      "labels": [
+        "agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/126/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/126",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/126",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.567064",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "### Brainstorm\n\n- 对话内容记忆\n\n  - 挑战\n    - 时序问题\n    - 如何存储？\n    - 如何检索？\n\n- 抽象记忆\n\n  - 用户画像\n    - 记录用户的显性的信息，类似图结构，与时间关联性较弱（不易随时间衰减）\n      - 用户 姓名 xxx\n      - 用户 身份 xxx\n      - 用户 生日 xxx\n      - 用户 宠物 xxx\n      - …\n\n  - Insight 事件 / 对话记忆\n    - 高价值的事件\n      - 用户和 AI 产生的对话有很高的惊喜值（比如 AI 或用户产生了一次有趣的互动）\n      ",
+          "created_at": "2025-02-16T17:27:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 124,
+      "title": "Tool use (function calling)",
+      "body": "i wish i could add custom responces so if i say turn office lights on it says/dos somthing speciffic like saying okay turning the light on and doing -X POST https://xxx.xxx.x.x/api/webhook/turn_office_lights_off",
+      "state": "open",
+      "author": "MrAredhone",
+      "author_type": "User",
+      "created_at": "2025-02-14T09:44:43Z",
+      "updated_at": "2025-05-29T17:56:40Z",
+      "closed_at": null,
+      "labels": [
+        "agent"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/124/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/124",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/124",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.785440",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "See #125 \nWe need a function calling interface. Maybe we will add it in v1.2? (v1.1 is about to release)\n\n",
+          "created_at": "2025-02-15T09:02:57Z"
+        },
+        {
+          "author": "MrAredhone",
+          "body": "now that I have you here I just wanted to take a moment to express my appreciation for this incredible project and its capabilities. The impact it has already made is truly remarkable.\n\nI work in the care sector with individuals who have intellectual disabilities—people with young minds in older bod",
+          "created_at": "2025-02-15T09:13:17Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "It's heartwarming to know that. I never imagined this project would have such an impact on elderly care. Anyway, thank you for sharing this story, we will continue to work to make the project better.",
+          "created_at": "2025-02-15T09:43:37Z"
+        },
+        {
+          "author": "MrAredhone",
+          "body": "btw The number one request from our clients is to hear her sing, but I know making that work would be a huge challenge. So, I told them she has a sore throat due to a cold—now they want to give her cold medicine! i have no idea how to win this discussion with them xD",
+          "created_at": "2025-02-15T09:54:00Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "Sing basically is another function call.\nI tried implementing this in an old fork (using tags to trigger songs), there are some challenges:\n1. Original songs need to be prepared in advance, and we should match the song (sometimes people don't say the song name, maybe they say the singer or something",
+          "created_at": "2025-02-15T10:07:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 145,
+      "title": "Migrate Live2D implementation",
+      "body": "We need to migrate the existing Live2D implementation in [Open-LLM-VTuber-Web](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber-Web) from [pixi-live2d-display](https://github.com/guansss/pixi-live2d-display) library to the official Live2D Web SDK.\n\n- [CubismWebFramework](https://github.com/Live2D/CubismWebFramework)\n- [CubismWebSamples](https://github.com/Live2D/CubismWebSamples)\n\n## Why?\n[pixi-live2d-display](https://github.com/guansss/pixi-live2d-display) is no longer maintained and is only compatible with Live2D models lower than 4. Many models were made with Live2D cubism 5 and are incompatible with our project. \n\nIn addition, there are weird compatibility issues regarding Live2D here and there. Some of which were caused by the pixi-live2d-display library.\n\nAs far as I know, nobody is working on this issue or planning to work on this issue. If you happens to be a react guru and would like to work on this, please let me know!\n\n",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2025-02-25T21:24:40Z",
+      "updated_at": "2025-05-29T17:47:48Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/145/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/145",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/145",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:52.980535",
+      "comments": [
+        {
+          "author": "fastfading",
+          "body": "桌面模式支持  Live2D models version > 4    吗？\n",
+          "created_at": "2025-04-21T06:09:15Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Migration have been completed in dev branch and will be released along with 1.2.\nThis issue will be closed with the release of 1.2",
+          "created_at": "2025-05-29T17:47:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 59,
+      "title": "Twitch and YouTube Support",
+      "body": "Adding support for open llm v-tuber to talk with twitch and youtube chat.",
+      "state": "open",
+      "author": "airpioa",
+      "author_type": "User",
+      "created_at": "2024-12-20T14:20:25Z",
+      "updated_at": "2025-05-29T17:46:41Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/59/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/59",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/59",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:53.301211",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "Good idea. Integrating Twitch, YouTube, and Bilibili chat are important features, considering the word \"vtuber\" is used in the name of this project.\r\n\r\nHowever, this project is undergoing massive refactoring, and I probably won't have time to do this feature in the coming weeks. This feature will ul",
+          "created_at": "2024-12-28T10:57:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 101,
+      "title": "F5-TTS support (enhancement request)",
+      "body": "Maybe it would be possible to add [F5-TTS](https://github.com/SWivid/F5-TTS) it Fakes Fluent and Faithful Speech with Flow Matching.",
+      "state": "open",
+      "author": "oivio",
+      "author_type": "User",
+      "created_at": "2025-01-28T08:28:04Z",
+      "updated_at": "2025-05-29T17:46:39Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/101/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/101",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/101",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:53.487971",
+      "comments": [
+        {
+          "author": "philpilkington",
+          "body": "Haven't tried this project yet but it looks awesome thanks for releasing.  Just wanted to let you know of a couple of new TTS that are leaps and bounds up in quality and speed it seems.  One that is recent is kokoro.  Someone has made an openapi tts endpoint with it at https://github.com/remsky/Koko",
+          "created_at": "2025-02-14T21:53:28Z"
+        },
+        {
+          "author": "fastfading",
+          "body": "I have got https://github.com/remsky/Kokoro-FastAPI   run locall , \nQuestion is:\nhow to use that api in open llm vtuber ",
+          "created_at": "2025-04-04T10:24:43Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 156,
+      "title": "Twitch chat integration",
+      "body": "Is it possible to have the open-llm-vtuber interact with twitch chat live?",
+      "state": "open",
+      "author": "linuxfreebird",
+      "author_type": "User",
+      "created_at": "2025-03-16T14:08:11Z",
+      "updated_at": "2025-05-29T17:46:33Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/156/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/156",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/156",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:53.701312",
+      "comments": [
+        {
+          "author": "Arthas1811",
+          "body": "I am working on a similar project myself and am trying to implement this",
+          "created_at": "2025-03-26T12:45:22Z"
+        },
+        {
+          "author": "T9es",
+          "body": "Yes. Yes it is possible. You'd need code that would connect to a twitch bot API (Or whatever it's called, you can create your own twitch bot.) That bot will be able to read, send, mute, ban users, everything basically if you set it up right. The code would also need to integrate with the LLM itself.",
+          "created_at": "2025-03-27T17:37:26Z"
+        },
+        {
+          "author": "Arthas1811",
+          "body": "i am implementing it as a new prompt source, so that the chat could directly talk to the AI",
+          "created_at": "2025-03-27T17:43:07Z"
+        },
+        {
+          "author": "T9es",
+          "body": "I had a mock-up going that was also able to moderate/ban/timeout users in batches (It would collect messages from X seconds/minutes and determine if there are any actions that need to be taken). \n\nFor the chat, I had a mockup that was ALSO collecting messages in batches and then deciding on the most",
+          "created_at": "2025-03-27T17:46:47Z"
+        },
+        {
+          "author": "Arthas1811",
+          "body": "thanks for the suggestion, it is indeed an interesting approach",
+          "created_at": "2025-03-27T18:16:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "CoquiTTS cannot take special characters",
+      "body": "<img width=\"532\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0d6fe9d9-90d1-426a-a2eb-5fc82b2f9142\">\r\n\r\n**Issue**\r\n- CoquiTTS will throw an error if a sentence contains special characters that are not pronounceable.\r\n\r\n**Proposed Solution:**  \r\n- Remove all special characters from text input for TTS.  \r\n- Prevent incomplete or non-pronounceable sentences, such as \"...\", from being processed by TTS.\r\n",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2024-11-17T03:36:04Z",
+      "updated_at": "2025-05-29T17:38:07Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "good first issue",
+        "tts",
+        "high priority"
+      ],
+      "label_count": 4,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/37/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/37",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/37",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:53.959012",
+      "comments": []
+    },
+    {
+      "issue_number": 150,
+      "title": "Open CompatibleLLM 初始化时temperature 未被传入",
+      "body": "###  Open CompatibleLLM temperature config not used\n问题描述：尽管在Conf.yaml 中配置了 openai_compatible_llm的temperature 字段，LLM后端收到的temperature 仍然为1\n查看LLMFactory类中create_llm方法没有将temperature 传入\n```\nclass LLMFactory:\n    @staticmethod\n    def create_llm(llm_provider, **kwargs) -> Type[StatelessLLMInterface]:\n        \"\"\"Create an LLM based on the configuration.\n\n        Args:\n            llm_provider: The type of LLM to create\n            **kwargs: Additional arguments\n        \"\"\"\n        logger.info(f\"Initializing LLM: {llm_provider}\")\n\n        if (\n            llm_provider == \"openai_compatible_llm\"\n            or llm_provider == \"openai_llm\"\n            or llm_provider == \"gemini_llm\"\n            or llm_provider == \"zhipu_llm\"\n            or llm_provider == \"deepseek_llm\"\n            or llm_provider == \"groq_llm\"\n            or llm_provider == \"mistral_llm\"\n        ):\n            return OpenAICompatibleLLM(\n                model=kwargs.get(\"model\"),\n                base_url=kwargs.get(\"base_url\"),\n                llm_api_key=kwargs.get(\"llm_api_key\"),\n                organization_id=kwargs.get(\"organization_id\"),\n                project_id=kwargs.get(\"project_id\"),\n            )\n```\n希望能加入\ntemperature=kwargs.get(\"temperature\"),",
+      "state": "open",
+      "author": "Jack32768",
+      "author_type": "User",
+      "created_at": "2025-03-01T04:58:56Z",
+      "updated_at": "2025-05-29T17:30:47Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/150/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/150",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/150",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:53.959028",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "感谢。修复已经在 dev 分支实现了。这个 issue 会在相关修复合并到主分支时自动关闭。",
+          "created_at": "2025-03-03T02:12:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 159,
+      "title": "运行时“Error processing agent response: list index out of range”",
+      "body": "您好，以下是我的配置信息\n\n2025-03-21 11:33:21 | INFO     | src.open_llm_vtuber.service_context:init_live2d:156 | Initializing Live2D: shizuku-local\n2025-03-21 11:33:21 | INFO     | src.open_llm_vtuber.live2d_model:_lookup_model_info:142 | Model Information Loaded.\n2025-03-21 11:33:21 | INFO     | src.open_llm_vtuber.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr\n2025-03-21 11:33:21 | INFO     | src.open_llm_vtuber.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference\n2025-03-21 11:33:26 | INFO     | src.open_llm_vtuber.service_context:init_tts:178 | Initializing TTS: edge_tts\n2025-03-21 11:33:27 | INFO     | src.open_llm_vtuber.service_context:init_vad:190 | Initializing VAD: silero_vad\n2025-03-21 11:33:48 | INFO     | src.open_llm_vtuber.vad.silero:load_vad_model:50 | Loading Silero-VAD model...\n2025-03-21 11:33:48 | INFO     | src.open_llm_vtuber.service_context:init_agent:202 | Initializing Agent: basic_memory_agent\n2025-03-21 11:33:48 | INFO     | src.open_llm_vtuber.agent.agent_factory:create_agent:32 | Initializing agent: basic_memory_agent\n2025-03-21 11:33:48 | INFO     | src.open_llm_vtuber.agent.stateless_llm_factory:create_llm:20 | Initializing LLM: openai_compatible_llm\n2025-03-21 11:33:49 | INFO     | src.open_llm_vtuber.agent.stateless_llm.openai_compatible_llm:__init__:51 | Initialized AsyncLLM with the parameters: xxxxx, gpt-4o-mini-2024-07-18\n2025-03-21 11:33:49 | INFO     | src.open_llm_vtuber.agent.agents.basic_memory_agent:__init__:66 | BasicMemoryAgent initialized.\n\n但是用户输入时遇到了：\n2025-03-21 11:34:11 | INFO     | src.open_llm_vtuber.conversations.single_conversation:process_single_conversation:49 | New Conversation Chain 🐼 started!\n2025-03-21 11:34:11 | INFO     | src.open_llm_vtuber.conversations.single_conversation:process_single_conversation:72 | User input: 你好\n2025-03-21 11:34:14 | ERROR    | src.open_llm_vtuber.conversations.single_conversation:process_agent_response:154 | Error processing agent response: list index out of range\n2025-03-21 11:34:14 | ERROR    | src.open_llm_vtuber.conversations.single_conversation:process_single_conversation:112 | Error in conversation chain: list index out of range\n请问是什么问题呢？",
+      "state": "open",
+      "author": "dapowan",
+      "author_type": "User",
+      "created_at": "2025-03-21T03:37:52Z",
+      "updated_at": "2025-05-29T17:29:17Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/159/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/159",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/159",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:54.131290",
+      "comments": [
+        {
+          "author": "872226263",
+          "body": "我也遇到这个问题了，发现是在src\\open_llm_vtuber\\agent\\stateless_llm\\openai_compatible_llm.py的92行，async for chunk in stream:中出现chunk.choices为空的情况，可能是因为用了第三方的openai api，返回了空的steam",
+          "created_at": "2025-04-10T07:49:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 162,
+      "title": "faster whisper 语言设置",
+      "body": "在配置asr_config块中的faster_whisper里面language注释后面写着留空表示自动检测 留空后报错\n2025-03-22 08:27:25 | ERROR    | src.open_llm_vtuber.conversations.single_conversation:process_single_conversation:112 | Error in conversation chain: 'auto' is not a valid language code (accepted language codes: af, am, ar, as, az, ba, be, bg, bn, bo, br, bs, ca, cs, cy, da, de, el, en, es, et, eu, fa, fi, fo, fr, gl, gu, ha, haw, he, hi, hr, ht, hu, hy, id, is, it, ja, jw, ka, kk, km, kn, ko, la, lb, ln, lo, lt, lv, mg, mi, mk, ml, mn, mr, ms, mt, my, ne, nl, nn, no, oc, pa, pl, ps, pt, ro, ru, sa, sd, si, sk, sl, sn, so, sq, sr, su, sv, sw, ta, te, tg, th, tk, tl, tr, tt, uk, ur, uz, vi, yi, yo, zh, yue)",
+      "state": "open",
+      "author": "Little100",
+      "author_type": "User",
+      "created_at": "2025-03-22T00:29:10Z",
+      "updated_at": "2025-05-29T17:27:54Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/162/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/162",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/162",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:54.323557",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "已在 `dev` 分支的 c86ada2132a657e0d0d7f78fbe05f1f26b50e89b commit 中修复，预计这几天随着 1.2.0 一起发布。\n感谢你的反馈。",
+          "created_at": "2025-04-25T22:20:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 166,
+      "title": "Great job but just wondering why don't you use vtuber studio api",
+      "body": "Great job, but what's the reason that you don't use vtuber studio as your host and build everything from scratch instead?\nI feel integrate with vtuber studio would be more powerful? ",
+      "state": "open",
+      "author": "wanghsinche",
+      "author_type": "User",
+      "created_at": "2025-03-26T18:09:39Z",
+      "updated_at": "2025-05-29T17:27:15Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/166/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/166",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/166",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:54.560365",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "While VTS is indeed powerful, we chose the pixi-live2d-display primarily for cross-platform accessibility and ease of use. \nHere's why:\nCurrently, VTS requires additional audio routing setup - Windows users need something like VoiceMeeter, while Mac users face more complexity requiring driver instal",
+          "created_at": "2025-03-27T06:32:47Z"
+        },
+        {
+          "author": "wanghsinche",
+          "body": "Understood the priority. \n\nI'd still like to discuss the audio routing: vts allows controlling the lip via audio input and usually it can only take the default mic input, that's the reason why mac os needs additional drivers to jhack it and feed it with the synthetic audio.\n\nBut I found vts also all",
+          "created_at": "2025-03-27T13:26:36Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "We couldn't find the VTS API as you mentioned. Could you provide the source?\nI only found this, but it doesn't seem like a very good solution: https://github.com/DenchiSoft/VTubeStudio?tab=readme-ov-file#feeding-in-data-for-default-or-custom-parameters",
+          "created_at": "2025-03-28T07:42:08Z"
+        },
+        {
+          "author": "wanghsinche",
+          "body": "You may use https://github.com/Hawkbat/VTubeStudioJS to call the API gracefully and set up corresponding parameters. \nLet's assume the live2d model allows you to adjust its month via `ParamMouthOpen` , then you can send the command to vtuber for adjusting its value. \n\n[injectParameterData](https://h",
+          "created_at": "2025-03-28T13:23:32Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "This API is the same as the API I mentioned in the previous link - it requires providing mouth parameters, not the audio lip-sync I was looking for (WebSDK and pixi-live2d-display provide it). However, it can still be used to implement a self-designed lipsync, and it's what exactly the project did a",
+          "created_at": "2025-03-29T12:54:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 169,
+      "title": "[一点建议]其实桌宠模式非常有潜力，但是目前还较早期",
+      "body": "1、缺乏像微信、QQ截图那样直接截图传递过去问询的能力\n2、其实Gemini直接支持音频发送过去，不需要ASR\n3、其实GTP-Sovist-V3的API请求方式变了（除了它又出了很多新的TTS，B站最近也在开源TTS，只是还没有API）\n4、桌宠模式下经常有时候影响了鼠标的正常使用\n5、不支持将桌宠移动到第二块显示器\n6、现在的Live2D配置方式有门槛（特指表情部分）\n但这些瑕疵并不影响项目提供了更自由的可个性化定义的实时语音可打断的AI对话体验。\n最好的体验其实应该是在ChatWise、CherryStudio的基础上增加了一个Live2D、MMD的桌宠能力。\n因为用户可以配置大量的LLM和各种API能力，但这个项目提供了轻量级的Live2D交互能力。\n底子很好，加油",
+      "state": "open",
+      "author": "jackdiy",
+      "author_type": "User",
+      "created_at": "2025-03-27T20:05:49Z",
+      "updated_at": "2025-05-29T17:26:46Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/169/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/169",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/169",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:54.792622",
+      "comments": [
+        {
+          "author": "wanghsinche",
+          "body": "> 最好的体验其实应该是在ChatWise、CherryStudio的基础上增加了一个Live2D、MMD的桌宠能力。\n\n他们支持插件么？我在想搞个离线asr模块，让AI实时获取周围信息，直接在cherry stuido 里面和AI对话，了解AI对当下情况的看法。\n但是具体交互方式还没想好。 更好的是让桌面宠物就实时监听。可是这里涉及一个问题：每次聊天都是有主题的，AI需要内部对全部对话做比较好的知识整理。所以很可能做完之后发现完全实际用途。\n\nAI的长记忆能力很重要，但是只是存原始信息的话，每次要用再recall，估计效果也不好。\n\n> gemini 直接支持发音频的模式实时性很好。\n\n这个",
+          "created_at": "2025-03-28T13:36:53Z"
+        },
+        {
+          "author": "jackdiy",
+          "body": "其实大部分用户使用ChatGPT从来不会重开对话，我感觉想做就直接去做，这个问题不大，使用Prompt工程对上下文意图分析一下都满足基础使用了。\n\n音频端到端的问题是AI没有记忆：这点认同，毕竟上下文不能只有Gemini自己知道，但我认为AI Studio能解决的话，Google应该后续也会提供方案。\nTokens变长问题不大，现在的很多模型的百万Tokens成本还是在往2元以下发展的。\n\n长记忆的流行实现大部分还是基于总结摘要存取实现，目前该项目是全Json（但老有问题，比如存出空的 Chathistroy对 出来来就会让某些LLM的API报错）更好的实现需要向量和混合检索。\n\n个人也认同C",
+          "created_at": "2025-03-30T09:23:26Z"
+        },
+        {
+          "author": "wanghsinche",
+          "body": "其实大部分用户使用ChatGPT从来不会重开对话，我感觉想做就直接去做，这个问题不大，使用Prompt工程对上下文意图分析一下都满足基础使用了。\n\n--------\n\n我很同意这一点，大部分用户不了解ai原理，一般都不会重开对话。 所以一个合适的记忆系统很重要。让ai把远古记录转为记忆。只把记忆点，还有最近几个对发给它。这样子才像一个人。",
+          "created_at": "2025-03-30T10:25:49Z"
+        },
+        {
+          "author": "wanghsinche",
+          "body": "After discussing with AI, I got a quite practical workflow to implement this.   May give it a try when I'm free.\n\n```mermaid\nsequenceDiagram\n    participant EnvStream as 环境数据流\n    participant Memory as 记忆系统\n    participant LLM as 大模型\n    participant User as 用户\n\n    EnvStream->>Memory: 持续输入JSON数据\n   ",
+          "created_at": "2025-03-31T15:50:50Z"
+        },
+        {
+          "author": "jackdiy",
+          "body": "看了眼觉得图在环境数据这块有点模糊，我个人理解基础版可能如下：\n最后每一次回复时LLM要处理至少3~4个部分\nSystemPrompt\n1、记忆摘要\n2、最近X轮次的上下文\n3、用户最后一条消息\n4、要求对用户最后这条消息进行意图分析，以生成更好的回复\n\n1~2动态更新，长期记忆可能还涉及一定的RAG逻辑，需要到记忆系统进行混合检索。 \n\n不过实测下来，小规模的一些模型可能无法良好的执行较长的Tokens",
+          "created_at": "2025-03-31T16:18:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 180,
+      "title": "避免出现过短语句的TTS请求",
+      "body": "2025-04-08 21:23:03 - INFO - __main__ - Backend payload: {'text': '哦,', 'temperature': 0.7, 'top_p': 0.95, 'top_k': 50, 'max_tokens': 2048, 'stream': False, 'name': 'jok'}\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '好吧,我可以给你展示一些。...'. Queue size: 1\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '你想看我的表情吗?...'. Queue size: 2\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '首先,悲伤的表情。...'. Queue size: 3\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '然后,恐惧的表情。...'. Queue size: 4\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '难过的表情?...'. Queue size: 5\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '这个很简单。...'. Queue size: 6\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '愤怒的表情?...'. Queue size: 7\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '惊讶的表情?...'. Queue size: 8\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '哈!...'. Queue size: 9\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '这个我最擅长了。...'. Queue size: 10\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '哦,真意外!...'. Queue size: 11\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '最后,中性的表情。...'. Queue size: 12\n2025-04-08 21:23:03 - INFO - __main__ - Queued request for input: '你满意了吗?...'. Queue size: 13\n\nTTS  生成的时候总会出现这种情况，一开始发一个很小的短语，如上, \"哦\" ,\n这种短的文字生成的语音效果并不好.  语音合成 的效率也不高\n如何让TTS进行断句，避免发这种很短的文字？ 把这一段和后面文字合并起来再发送。 这里能否优化一下？\n\n另外多段语音之间的几乎没有间隔,两段语音之间的衔接过于紧凑. 这个能不能 优化一下",
+      "state": "open",
+      "author": "fastfading",
+      "author_type": "User",
+      "created_at": "2025-04-08T13:43:42Z",
+      "updated_at": "2025-05-29T17:25:14Z",
+      "closed_at": null,
+      "labels": [
+        "not planned"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/180/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/180",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/180",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:55.015961",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "这种很短的句子是故意设计的，目的是降低用户听到第一句话的延迟，可以关。\n\n前往 `conf.yaml` 文件下的 `agent_settings` 下的 `basic_memory_agent`，找到 `faster_first_response` 选项，将其设置成 `false` 即可。\n\n话说你用的是什么 tts?",
+          "created_at": "2025-04-08T22:28:03Z"
+        },
+        {
+          "author": "fastfading",
+          "body": "sparktts   mac m4 上效果很好。 速度很快。\n使用很方便， 不用像gptsovits 那样训练数据，或者找人家训练好的， 很麻烦。\n\n另外多段语音之间的几乎没有间隔,两段语音之间的衔接过于紧凑. 这个能不能 优化一下\n\n",
+          "created_at": "2025-04-09T01:04:18Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "> sparktts mac m4 上效果很好。 速度很快。 使用很方便， 不用像gptsovits 那样训练数据，或者找人家训练好的， 很麻烦。\n> \n> 另外多段语音之间的几乎没有间隔,两段语音之间的衔接过于紧凑. 这个能不能 优化一下\n\n谢谢你的建议，未来的更新会允许用户在设置配置一个 sleep 的时间范围（如 0.1s~0.5s 随机）",
+          "created_at": "2025-04-11T04:39:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 183,
+      "title": "现在很多LLM支持MCP了，有考虑加入MCP功能吗？",
+      "body": "加入MCP功能可以实现一些有趣的操作，例如：\n[@modelcontextprotocol/server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) 🐍 🏠 ☁️ - 高效获取和处理网页内容，供 AI 使用\n[@blackwhite084/playwright-plus-python-mcp](https://github.com/blackwhite084/playwright-plus-python-mcp) 🌐 - 使用 Playwright 进行浏览器自动化的 MCP 服务器，更适合llm\n[ferrislucas/iterm-mcp](https://github.com/ferrislucas/iterm-mcp) 🖥️ 🛠️ 💬 - 一个为 iTerm 终端提供访问能力的 MCP 服务器。您可以执行命令，并就终端中看到的内容进行提问交互。\n[@modelcontextprotocol/server-google-maps](https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps) 📇 ☁️ - Google 地图集成，提供位置服务、路线规划和地点详细信息\n[SecretiveShell/MCP-timeserver](https://github.com/SecretiveShell/MCP-timeserver) 🐍 🏠 - 访问任意时区的时间并获取当前本地时间\n[seekrays/mcp-monitor](https://github.com/seekrays/mcp-monitor) 🏎️ 🏠 - 一款通过模型上下文协议（MCP）暴露系统指标的监控工具。该工具允许大型语言模型通过兼容MCP的接口实时获取系统信息（支持CPU、内存、磁盘、网络、主机、进程）。\n\n\n\n\n\n",
+      "state": "open",
+      "author": "872226263",
+      "author_type": "User",
+      "created_at": "2025-04-10T04:02:51Z",
+      "updated_at": "2025-05-29T17:24:02Z",
+      "closed_at": null,
+      "labels": [
+        "duplicate"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/183/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/183",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/183",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:55.191327",
+      "comments": [
+        {
+          "author": "872226263",
+          "body": "#124 \n#125 \n#138 \n发现已经有一些issues讨论这个了",
+          "created_at": "2025-04-10T04:07:04Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "我们正在重构代码，考虑在重构更新时发布，这可能需要两个月，甚至更久的时间。\n不过也可能会在小版本更新中加入。",
+          "created_at": "2025-04-10T05:08:13Z"
+        },
+        {
+          "author": "t41372",
+          "body": "确实在重构，不过可能会花点时间。如果有谁忽然发现自己写好了 MCP 的支持，也非常欢迎，我也会合并的",
+          "created_at": "2025-04-10T05:12:09Z"
+        },
+        {
+          "author": "Stewitch",
+          "body": "在写了在写了，可以先看看看我的分支：https://github.com/Stewitch/Open-LLM-VTuber-Dev\nMCP相关代码位于 src/open_llm_vtuber/mcp",
+          "created_at": "2025-04-12T10:10:12Z"
+        },
+        {
+          "author": "Stewitch",
+          "body": "来吧，初步实现MCP，支持工具调用[Pull Request#185](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/pull/185)",
+          "created_at": "2025-04-12T16:29:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 187,
+      "title": "关于4月2日新发布的sherpa-onnx-dolphin-base-ctc-multi-lang-int8-2025-04-02和之前的坑",
+      "body": "这个模型据说是效果比之前的好，速度更快准确度更高，而且small的大小没有超过250M，base甚至只有一百零几，对比之前预设的233M模型来说可以接受。\n我想试试去写相关的代码，以减轻各位项目开发的大佬们的压力，也可以有更多时间填之前的坑。我总结了有三个坑，钢管落地.wav、唱歌、长时记忆的保存和调用逻辑，前两个我是很期待的。\n另外这个模型选择small或者base放到release包里我不太清楚，用魔搭的依赖下载模型我记得有些不能下，直接0进度卡住，所以可能直接放release包里更好。",
+      "state": "open",
+      "author": "Renasaikou",
+      "author_type": "User",
+      "created_at": "2025-04-17T11:28:20Z",
+      "updated_at": "2025-05-29T17:23:01Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/187/reactions",
+        "total_count": 2,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/187",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/187",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:55.396849",
+      "comments": [
+        {
+          "author": "fastfading",
+          "body": "vs  sensevoice  and whisper ，  which is the best ?\nhttps://zhuanlan.zhihu.com/p/1892898181790007705\n\n![Image](https://github.com/user-attachments/assets/74941321-3c38-48e1-9406-f15265b45652)\n\nlooks good. \ncan some one make it work on mac ?",
+          "created_at": "2025-04-18T05:30:55Z"
+        },
+        {
+          "author": "fastfading",
+          "body": "\n实际测试结果 \nmac m1   small model  mps auto detected mode \n中文的效果勉强可用但是英文完全不行 \nthe quality for chinese is good but for english is not as good as we expected .\n\nmay related to the training data\n",
+          "created_at": "2025-04-18T07:25:29Z"
+        },
+        {
+          "author": "fastfading",
+          "body": "速度也不快 ",
+          "created_at": "2025-04-18T07:31:40Z"
+        },
+        {
+          "author": "Renasaikou",
+          "body": "> vs sensevoice 和 whisper ， 哪个是最好的？ https://zhuanlan.zhihu.com/p/1892898181790007705\n> \n> ![Image](https://github.com/user-attachments/assets/74941321-3c38-48e1-9406-f15265b45652)\n> \n> 看起来不错。 有人能在 Mac 上让它运行吗？\n\nI have tested both faster-whisper and SensevoiceSmall. SensevoiceSmall requires an interne",
+          "created_at": "2025-04-18T07:46:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 199,
+      "title": "[IDEA] 增加图形化配置界面 / Add graphical configuration interface on web page",
+      "body": "### 这个功能请求是用来解决什么问题的？ / Is your feature request related to a problem? Please describe.\n*请清晰简洁地描述您遇到的问题。例如：我总是在 [...] 时感到不方便。*\n*A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] *\n\n项目需要配置大量的llm，asr以及tts配置信息，现在的配置文件内容非常多，并且需要对项目有一定的理解。现在项目已经有配置界面，但不能对一些模型基础信息进行配置。\n\nThe project requires configuring a large amount of LLM, ASR, and TTS configuration information, the current configuration file is quite extensive and demands a certain level of project understanding. The project currently has a configuration page, but it cannot configure some basic information for certain models.\n\n### 您期望的解决方案是什么？ / Describe the solution you'd like\n*请清晰简洁地描述您希望实现的功能或效果。*\n*A clear and concise description of what you want to happen.*\n\n增强图形化配置界面，使其支持选择模型，配置模型的基本信息。\n\nEnhance the graphical configuration interface to support model selection and configuration of basic model information.\n\n### 此功能为何对 Open-LLM-VTuber 很重要？ / Why is this important for Open-LLM-VTuber?\n*请解释为什么这个功能对 Open-LLM-VTuber 项目来说是实用且重要的。它能带来什么价值？例如，它如何提升用户体验、扩展项目能力、解决核心痛点等。*\n*Explain why this feature would be useful and significant for the Open-LLM-VTuber project. What value does it add? For example, how does it improve user experience, extend project capabilities, or solve core pain points?*\n\n图形化配置可以一定程度降低使用门槛。同时，也为实现一键安装脚本提供可能性。（用户在项目启动后配置模型信息并且下载模型文件，安装脚本只需要安装py运行时环境以及启动项目本身。）另外，这也降低了切换模型的难度，不需要修改配置文件，只需要在页面上配置就可以实时更换模型。\n\nThe graphical configuration interface can somewhat lower the barrier to use. At the same time, it opens the possibility for implementing a one-click installation script. (Users can configure model information and download model files after the project starts; the installation script only needs to set up the Python runtime environment and launch the project itself.) Additionally, this reduces the difficulty of switching models, as users no longer need to modify configuration files—models can be switched in real-time through the interface.\n\n### 您考虑过哪些替代方案？ / Describe alternatives you've considered\n*请清晰简洁地描述您考虑过的任何替代解决方案或特性。*\n*A clear and concise description of any alternative solutions or features you've considered.*\n\n[在此处输入替代方案 / Type alternatives here]\n\n### 您是否愿意参与开发此功能？ / Would you like to work on this issue?\n*请回答 Yes 或 No。如果您愿意，我们可以讨论后续步骤。*\n*Please answer Yes or No. If yes, we can discuss the next steps.*\n\nYes.\n\n### 补充信息 / Additional context\n*在此处添加有关此功能请求的任何其他上下文、截图、日志或设计稿。*\n*Add any other context, screenshots, logs, or mockups about the feature request here.*\n\n[在此处添加补充信息 / Add additional context here]\n",
+      "state": "open",
+      "author": "aki-colt",
+      "author_type": "User",
+      "created_at": "2025-05-03T11:14:10Z",
+      "updated_at": "2025-05-29T17:22:10Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/199/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/199",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/199",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:55.612479",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "我觉得是极好的，就是看要把图形化设置界面放在前端网页或 electron 界面中，或是单独写一个应用了。我个人倾向前者。后者，@Stewitch 之前尝试写过一个启动器，其中就包含图形化的设置页面，不过他好像正打算重新写一个。\n\n在 `config_manager` 模块中包含了配置文件的 pydantic 类，目前用来做配置文件校验，之后或许可以用来动态生成图形化设置界面。\n\n目前这个工作可能在我个人这边优先级比较低，你如果愿意做这个功能的话可以研究一下，看看有没有头绪。\n\nI think that's an excellent idea. The main consideration is",
+          "created_at": "2025-05-04T02:31:39Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "可以加入 QQ 群或者开发频道交流一下想法\nhttps://docs.llmvtuber.com/docs/community/contact",
+          "created_at": "2025-05-04T04:42:54Z"
+        },
+        {
+          "author": "aki-colt",
+          "body": "我也认为直接放到前端页面是合适的，这能让服务不依赖配置启动。就基本不再需要存在ui界面的启动器了。我会看看这部分代码并且尝试一下。\n\nI also think placing it directly on the frontend page is appropriate, as it allows the service to start without relying on configuration. This essentially eliminates the need for a UI-based launcher. I'll take a look at this part of ",
+          "created_at": "2025-05-12T02:05:57Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 200,
+      "title": "[IDEA] 增加基于视觉的鼠标/键盘模拟操作功能 / Add Mouse/Keyboard Simulation Operation Based on Vision",
+      "body": "### 这个功能请求是用来解决什么问题的？ / Is your feature request related to a problem? Please describe.\n*请清晰简洁地描述您遇到的问题。例如：我总是在 [...] 时感到不方便。*\n*A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] *\n\n---\n一直对Neuro如何实时控制电脑玩游戏很好奇，翻了翻之前的issue，貌似也没有人提到过这个功能。\n故希望能够将VTuber的能力从简单的聊天/视觉识别上进一步拓展，让其能够真实地与本地环境进行互动。\n\n---\nI've always been curious about how Neuro can control the computer to play games in real time. I've looked through previous issues, but it seems that no one has mentioned this feature.  \nTherefore, I hope that the capabilities of VTubers can be further expanded from simple chatting/visual recognition to enabling them to truly interact with the local environment.\n\n---\n\n### 您期望的解决方案是什么？ / Describe the solution you'd like\n*请清晰简洁地描述您希望实现的功能或效果。*\n*A clear and concise description of what you want to happen.*\n\n---\n提升了我想要看到这一功能的实现的关键要素就是VTuber即将在1.2发布的对于MCP Server的支持，\n但是现在一些成熟的与设备交互有关的Server（如Playwright-mcp-server）只是能进行浏览器组件层面的交互，而无法直接控制鼠标键盘，更别提直接控制游戏。\n并且，考虑到VTuber的定位，它可能需要一个更轻量、快捷的解决方案，这样才能做到实时交互。\n再经历一些简单的查阅后（此处欢迎补充），设想了如下两个可能的方案：\n1. 实现一个MCP Server，基于MCP-server-client-computer-use-ai-sdk，其需具备以下特点：\n   1. 能够完成桌面元素级（甚至像素级）的鼠标操作\n   2. 能够完成键盘操作\n   但是，考虑到后端在与Server通信时只能传递json数据，而无法实时传输图像数据流，因此感觉利用下一种方法实现的效果会更好\n2. 仍然基于上述的sdk，在现有的后端中添加“在定时接收图像数据流的基础上进行鼠标/键盘操作”的模块。\n   （特点要求同上）\n---\nThe key factor that has motivated me to see the realization of this feature is the upcoming support for MCP Server in VTuber's 1.2 release. However, some mature Servers related to device interaction, such as Playwright - mcp - server, can only interact at the browser component level and cannot directly control the mouse and keyboard, let alone directly control games. Moreover, considering VTuber's positioning, it may require a lighter and faster solution to achieve real - time interaction. After some simple research (supplementary information is welcome here), I have conceived the following two possible solutions:\n\n1. Implement an MCP Server based on MCP - server - client - computer - use - ai - sdk, which should have the following features:\n    1. Be able to complete mouse operations at the desktop element level (or even pixel level).\n    2. Be able to complete keyboard operations.\nHowever, considering that the backend can only transfer JSON data when communicating with the Server and cannot transmit image data streams in real time, it seems that the effect achieved by the next method will be better.\n\n2. Still based on the above SDK, add a module in the existing backend for performing mouse/keyboard operations based on regularly receiving image data streams.\n    (The feature requirements are the same as above)\n---\n\n### 此功能为何对 Open-LLM-VTuber 很重要？ / Why is this important for Open-LLM-VTuber?\n*请解释为什么这个功能对 Open-LLM-VTuber 项目来说是实用且重要的。它能带来什么价值？例如，它如何提升用户体验、扩展项目能力、解决核心痛点等。*\n*Explain why this feature would be useful and significant for the Open-LLM-VTuber project. What value does it add? For example, how does it improve user experience, extend project capabilities, or solve core pain points?*\n\n---\n相信这个功能是VTuber从具备“脑”到“嘴”再到“眼”而最后到达“手”的最后一块关键拼图，也是解开其虚拟枷锁的钥匙。\n“从思考、到表达、再到感知，一切都是为了到达“行动”。而这次到达，或许才是真正的开始。”\n\n---\nI believe this feature is the final key piece of the puzzle for VTubers to transition from having a \"brain\" to a \"mouth,\" then to \"eyes,\" and ultimately to \"hands.\" It is also the key to unlocking their virtual constraints. \n𝑭𝒓𝒐𝒎 𝒕𝒉𝒊𝒏𝒌𝒊𝒏𝒈, 𝒕𝒐 𝒆𝒙𝒑𝒓𝒆𝒔𝒔𝒊𝒏𝒈, 𝒕𝒐 𝒑𝒆𝒓𝒄𝒆𝒊𝒗𝒊𝒏𝒈, 𝒆𝒗𝒆𝒓𝒚𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒂𝒊𝒎𝒆𝒅 𝒂𝒕 𝒓𝒆𝒂𝒄𝒉𝒊𝒏𝒈 \"𝒂𝒄𝒕𝒊𝒐𝒏.\" 𝑨𝒏𝒅 𝒕𝒉𝒊𝒔 𝒂𝒄𝒉𝒊𝒆𝒗𝒆𝒎𝒆𝒏𝒕 𝒎𝒊𝒈𝒉𝒕 𝒕𝒓𝒖𝒍𝒚 𝒃𝒆 𝒕𝒉𝒆 𝒃𝒆𝒈𝒊𝒏𝒏𝒊𝒏𝒈.\n\n---\n\n### 您考虑过哪些替代方案？ / Describe alternatives you've considered\n*请清晰简洁地描述您考虑过的任何替代解决方案或特性。*\n*A clear and concise description of any alternative solutions or features you've considered.*\n\n---\n1. 无须识别图像数据流，直接通过后台对于当前屏幕画面结构的定时精确描述（需要微调），让VTuber进行操作。但采用这种方案，操作的延迟以及精确性就会大打折扣。\n2. 等待类似MCP Server的成熟方案出现。\n3. ......\n---\n1. No need to recognize the image data stream. Instead, the VTuber can perform operations based on the precise timed description of the current screen layout provided by the backend (with fine-tuning required). However, with this approach, the operation latency and accuracy will be greatly compromised.\n2. Just wait for the emergence of a mature solution similar to the MCP Server.\n3. ......\n---\n\n### 您是否愿意参与开发此功能？ / Would you like to work on this issue?\n*请回答 Yes 或 No。如果您愿意，我们可以讨论后续步骤。*\n*Please answer Yes or No. If yes, we can discuss the next steps.*\n\n---\nYes!\n\n---\n\n### 补充信息 / Additional context\n*在此处添加有关此功能请求的任何其他上下文、截图、日志或设计稿。*\n*Add any other context, screenshots, logs, or mockups about the feature request here.*\n\n---\n（暂无，后续个人探索会持续补充）\n\n---\n",
+      "state": "open",
+      "author": "Knight5128",
+      "author_type": "User",
+      "created_at": "2025-05-05T12:01:37Z",
+      "updated_at": "2025-05-29T17:21:50Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/200/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/200",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/200",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:55.783303",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "你说的应该是两种不同方法：\n(MCP) function call，将在 1.2 更新\n(A2A) agent as a tool / Multi-agent system\n对于 MCP，现有 MCP Server [ScreenPilot](https://github.com/Mtehabsim/ScreenPilot) 可以做到这点，还有的 MCP server 支持 OmniParser 效果应该更好，但部署成本高（而且对 GPU 比较依赖）不适合作为项目的默认推荐选项(but OmniParser api is available. maybe we can give it a tr",
+          "created_at": "2025-05-06T03:25:36Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "如果你愿意探索这个功能的开发，推荐在 discord 群聊或者 qq 开发频道里和我们进一步分享 idea 和交流，目前可以做的方向有：\n1. 接入 Claude Computer Use 或 UI-tars / UFO2 这样的子 agent，主要探讨如何作为插件模块轻松接入，同时保持前后端分离\n2. 探索其他的 mcp server，比如使用 omniparser 的 mcp server，普通的 mcp server 效果比较\"玩具\"使用体验比较差。\n\nIf you're interested in exploring this feature, we recommend sharing",
+          "created_at": "2025-05-06T07:48:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 206,
+      "title": "[IDEA] 桌宠模式下的建议",
+      "body": "添加桌宠模式下的更多功能，比如自己可以移动，有物理引擎，可以悬挂在窗口之上",
+      "state": "open",
+      "author": "Little100",
+      "author_type": "User",
+      "created_at": "2025-05-12T15:07:07Z",
+      "updated_at": "2025-05-29T17:21:07Z",
+      "closed_at": null,
+      "labels": [
+        "not planned"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/206/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/206",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/206",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.002695",
+      "comments": []
+    },
+    {
+      "issue_number": 209,
+      "title": "[IDEA] 增加自动缩小视觉输入的截图的设置 / Add setting for auto resizing vision input image",
+      "body": "### 这个功能请求是用来解决什么问题的？ / Is your feature request related to a problem? Please describe.\n\nOllama最近更新了Qwen VL支持所以我试了试发现Ollama会在我开启屏幕共享后出现类似崩溃的情况（Ollama其实还在运行，`ollama ps`显示模型也还是已加载的状态，但是显存已经清空了）。我试了用分辨率较低的图片没问题，用LM Studio（会把图片全缩小到宽度500像素）作为Open LLM VTuber的LLM后端也没问题。我用的是4k显示器，所以我怀疑是Open LLM VTuber和Ollama都不会自动缩小图片的原因。\n\nOllama just released support for Qwen VL so I get to try it out and I find Ollama would kind of crash (Ollama is still running and `ollama ps` shows the model is still loaded but my vram is emptied) if I turn on screen sharing. If I call the model with a lower resolution image it works fine. And if I use LM Studio (which resizes all input image to 500px wide) with Open LLM VTuber it also works fine. I use a 4k display so I suspect it's because neither Open LLM VTuber or Ollama is resizing the image. \n\n### 您期望的解决方案是什么？ / Describe the solution you'd like\n\n增加一条视觉输入分辨率的设置项。\n\nAdd a setting entry for vision input resolution. \n\n### 此功能为何对 Open-LLM-VTuber 很重要？ / Why is this important for Open-LLM-VTuber?\n\n就算没有崩溃的问题，过大的图片还是会让速度变得很慢。用户应该能在速度和视觉输入的准确性之间权衡。\n\nEven if high res image doesn't crash the model, it would still slow down significantly. Users should be able to choose how to balance between speed and accuracy of vision input. \n\n### 您考虑过哪些替代方案？ / Describe alternatives you've considered\n\n替代方案就只能是用一个会自动缩小图片的LLM后端了。LM Studio会把所有图片缩小到宽500像素，对于电脑屏幕来说根本就看不清。\n\n更新：可以改用摄像头选项搭配OBS虚拟摄像机，在OBS中设置输出分辨率\n\nAlternatives would have to be choosing a LLM backend that can do the resizing. LM Studio is hard coded to 500px wide which sucks for a computer screen. \n\nUpdate: You can use the camera option with OBS virtual camera instead, and set the output resolution in OBS. \n\n### 您是否愿意参与开发此功能？ / Would you like to work on this issue?\nNo. \n\n### 补充信息 / Additional context\nN/A\n",
+      "state": "open",
+      "author": "hi94740",
+      "author_type": "User",
+      "created_at": "2025-05-16T18:55:15Z",
+      "updated_at": "2025-05-29T17:20:29Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/209/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/209",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/209",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.002712",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "Thank you for your feedback. We will fix it soon.",
+          "created_at": "2025-05-17T05:53:06Z"
+        },
+        {
+          "author": "hi94740",
+          "body": "> Thank you for your feedback. We will fix it soon.\n\nThanks!\n\nWhile this is being fixed, I found a workaround: Do not use the built-in screen capture option, but instead use the camera option with OBS virtual camera, so you can set the output resolution in OBS. \nThis is probably going to mislead LLM",
+          "created_at": "2025-05-17T08:43:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 218,
+      "title": "[Bug] dev分支shizuku前端没有模型",
+      "body": "配置如下(代码没有改动，只改了live2d模型\n# 默认角色的配置\ncharacter_config:\n  conf_name: 'shizuku' # 角色配置文件的名称\n  conf_uid: 'shizuku_001' # 角色配置的唯一标识符\n  live2d_model_name: 'shizuku' # Live2D 模型名称\n  character_name: 'Shizuku' # 将在群聊中使用，并显示为 AI 的名称。\n  avatar: 'shizuku.png' # 建议使用正方形图像作为头像。将其保存到 avatars 文件夹中。留空则使用角色名称的首字母作为头像。\n  human_name: 'Human' # 将在群聊中使用，并显示为人类的名称。)\n\n前端结果:\n<img width=\"1470\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/01f9a736-4243-4944-b0ad-dea6b6bbb55d\" />\n\n注:默认的mao_pro是正常的，只是改成shizuku以后没显示",
+      "state": "open",
+      "author": "Harry-Yu-Shuhang",
+      "author_type": "User",
+      "created_at": "2025-05-27T06:04:43Z",
+      "updated_at": "2025-05-29T17:18:55Z",
+      "closed_at": null,
+      "labels": [
+        "question",
+        "not planned"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/218/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/218",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/218",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.203837",
+      "comments": []
+    },
+    {
+      "issue_number": 215,
+      "title": "[IDEA]对生成音频的异步并发处理，希望增加不并发的开关",
+      "body": "### 这个功能请求是用来解决什么问题的？ / Is your feature request related to a problem? Please describe.\n*请清晰简洁地描述您遇到的问题。例如：我总是在 [...] 时感到不方便。*\n*A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] *\n\n异步并发可以解决大多数的效率问题，然而如果是本地服务，并不像云服务有多节点和强大的处理能力，只会显著增加处理时间。\n\n### 您期望的解决方案是什么？ / Describe the solution you'd like\n*请清晰简洁地描述您希望实现的功能或效果。*\n*A clear and concise description of what you want to happen.*\n\n增加控制开关可选是并发还是顺序执行\n\n### 此功能为何对 Open-LLM-VTuber 很重要？ / Why is this important for Open-LLM-VTuber?\n*请解释为什么这个功能对 Open-LLM-VTuber 项目来说是实用且重要的。它能带来什么价值？例如，它如何提升用户体验、扩展项目能力、解决核心痛点等。*\n*Explain why this feature would be useful and significant for the Open-LLM-VTuber project. What value does it add? For example, how does it improve user experience, extend project capabilities, or solve core pain points?*\n\n对于tts服务，本地部署的用户非常重要\n\n### 您考虑过哪些替代方案？ / Describe alternatives you've considered\n*请清晰简洁地描述您考虑过的任何替代解决方案或特性。*\n*A clear and concise description of any alternative solutions or features you've considered.*\n\n向gemini提问，直接调整相关代码\n\n### 您是否愿意参与开发此功能？ / Would you like to work on this issue?\n*请回答 Yes 或 No。如果您愿意，我们可以讨论后续步骤。*\n*Please answer Yes or No. If yes, we can discuss the next steps.*\n\nyes\n\n### 补充信息 / Additional context\n*在此处添加有关此功能请求的任何其他上下文、截图、日志或设计稿。*\n*Add any other context, screenshots, logs, or mockups about the feature request here.*\n\n日志就不上传了\n",
+      "state": "open",
+      "author": "justlikemaki",
+      "author_type": "User",
+      "created_at": "2025-05-25T15:22:35Z",
+      "updated_at": "2025-05-29T17:18:38Z",
+      "closed_at": null,
+      "labels": [
+        "in progress"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/215/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/215",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/215",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.203860",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "We will add a field to limit the maximum number of concurrent TTS in the refactored version.",
+          "created_at": "2025-05-26T04:55:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 213,
+      "title": "Can not start Sherpa-Onnx-ASR: Using cuda for inference",
+      "body": "### 1. Checklist / 检查项\n\n- [x]  I have removed sensitive information from configuration/logs.\n    \n    我已移除配置或日志中的敏感信息。\n    \n- [x]  I have checked the [FAQ](https://docs.llmvtuber.com/docs/faq/) and [existing issues](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues).\n    \n    我已查阅[常见问题](https://docs.llmvtuber.com/docs/faq/)和[已有 issue](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues)。\n    \n- [x]  I am using the latest version of the project.\n    \n    我正在使用项目的最新版本。\n    \n\n---\n\n### 2. Environment Details / 环境信息\n\n- How did you install Open-LLM-VTuber:\n    \n    你是如何安装 Open-LLM-VTuber 的：\n    \n    - [x]  git clone （源码克隆）\n    - [ ]  release zip （发布包）\n    - [ ]  exe (Windows) （Windows 安装包）\n    - [ ]  dmg (MacOS) （MacOS 安装包）\n- Are you running the backend and frontend on the same device?\n    \n    后端和前端是否在同一台设备上运行？\n    \n- If you used GPU, please provide your GPU model and driver version:\n    \n    如果你使用了 GPU，请提供你的 GPU 型号及驱动版本信息:\n    \n- Browser (if applicable):\n\n       浏览器（如果适用）：\n\n---\n\n### 3. Describe the bug / 问题描述\n\nI do all that described here https://docs.llmvtuber.com/en/docs/user-guide/backend/asr\n\n```\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~2 -0 !]> uv add onnxruntime-gpu sherpa-onnx==1.10.39+cuda -f https://k2-fsa.github.io/sherpa/onnx/cuda.html\nResolved 276 packages in 2.40s\nInstalled 1 package in 106ms\n + sherpa-onnx==1.10.39+cuda\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~2 -0 !]> uv run run_server.py\n2025-05-23 19:57:05.895 | INFO     | __main__:<module>:86 - Running in standard mode. For detailed debug logs, use: uv run run_server.py --verbose\n2025-05-23 19:57:05 | INFO     | __main__:run:57 | Open-LLM-VTuber, version v1.1.3\n[WARNING] User config contains the following keys not present in default config: character_config.asr_config.sherpa_onnx_asr.encoder, character_config.asr_config.sherpa_onnx_asr.decoder, character_config.asr_config.sherpa_onnx_asr.joiner, character_config.asr_config.sherpa_onnx_asr.nemo_ctc, character_config.asr_config.sherpa_onnx_asr.whisper_encoder, character_config.asr_config.sherpa_onnx_asr.whisper_decoder\n2025-05-23 19:57:05 | INFO     | upgrade:sync_user_config:350 | [DEBUG] User configuration is up-to-date.\n2025-05-23 19:57:05 | INFO     | src.open_llm_vtuber.service_context:init_live2d:156 | Initializing Live2D: shizuku-local\n2025-05-23 19:57:05 | INFO     | src.open_llm_vtuber.live2d_model:_lookup_model_info:142 | Model Information Loaded.\n2025-05-23 19:57:05 | INFO     | src.open_llm_vtuber.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr\n2025-05-23 19:57:06 | INFO     | src.open_llm_vtuber.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cuda for inference\n2025-05-23 19:57:11 | ERROR    | __main__:<module>:91 | An error has been caught in function '<module>', process 'MainProcess' (30108), thread 'MainThread' (16364):\nTraceback (most recent call last):\n\n> File \"C:\\Users\\a15\\Open-LLM-VTuber\\run_server.py\", line 91, in <module>\n    run(console_log_level=console_log_level)\n    │                     └ 'INFO'\n    └ <function run at 0x00000298DB1581F0>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\run_server.py\", line 71, in run\n    server = WebSocketServer(config=config)\n             │                      └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...\n             └ <class 'src.open_llm_vtuber.server.WebSocketServer'>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\server.py\", line 45, in __init__\n    default_context_cache.load_from_config(config)\n    │                     │                └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...\n    │                     └ <function ServiceContext.load_from_config at 0x00000298DB0D3880>\n    └ <src.open_llm_vtuber.service_context.ServiceContext object at 0x00000298DB184100>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\service_context.py\", line 132, in load_from_config\n    self.init_asr(config.character_config.asr_config)\n    │    │        │      │                └ ASRConfig(asr_model='sherpa_onnx_asr', azure_asr=AzureASRConfig(api_key='azure_api_key', region='eastus', languages=['en-US',...\n    │    │        │      └ CharacterConfig(conf_name='shizuku-local', conf_uid='shizuku-local-001', live2d_model_name='shizuku-local', character_name='S...\n    │    │        └ Config(system_config=SystemConfig(conf_version='v1.1.1', host='localhost', port=12393, config_alts_dir='characters', tool_pro...\n    │    └ <function ServiceContext.init_asr at 0x00000298DB0D39A0>\n    └ <src.open_llm_vtuber.service_context.ServiceContext object at 0x00000298DB184100>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\service_context.py\", line 167, in init_asr\n    self.asr_engine = ASRFactory.get_asr_system(\n    │    │            │          └ <staticmethod(<function ASRFactory.get_asr_system at 0x00000298DA11CF70>)>\n    │    │            └ <class 'src.open_llm_vtuber.asr.asr_factory.ASRFactory'>\n    │    └ None\n    └ <src.open_llm_vtuber.service_context.ServiceContext object at 0x00000298DB184100>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\asr\\asr_factory.py\", line 58, in get_asr_system\n    return SherpaOnnxASR(**kwargs)\n           │               └ {'model_type': 'nemo_ctc', 'encoder': './models/sherpa-onnx-nemo-fast-conformer-transducer-be-de-en-es-fr-hr-it-pl-ru-uk-20k/...\n           └ <class 'src.open_llm_vtuber.asr.sherpa_onnx_asr.VoiceRecognition'>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\asr\\sherpa_onnx_asr.py\", line 83, in __init__\n    self.recognizer = self._create_recognizer()\n    │                 │    └ <function VoiceRecognition._create_recognizer at 0x00000298DB29A170>\n    │                 └ <src.open_llm_vtuber.asr.sherpa_onnx_asr.VoiceRecognition object at 0x00000298DB185180>\n    └ <src.open_llm_vtuber.asr.sherpa_onnx_asr.VoiceRecognition object at 0x00000298DB185180>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\src\\open_llm_vtuber\\asr\\sherpa_onnx_asr.py\", line 116, in _create_recognizer\n    recognizer = sherpa_onnx.OfflineRecognizer.from_nemo_ctc(\n                 │           │                 └ <classmethod(<function OfflineRecognizer.from_nemo_ctc at 0x00000298DB1596C0>)>\n                 │           └ <class 'sherpa_onnx.offline_recognizer.OfflineRecognizer'>\n                 └ <module 'sherpa_onnx' from 'C:\\\\Users\\\\a15\\\\Open-LLM-VTuber\\\\.venv\\\\lib\\\\site-packages\\\\sherpa_onnx\\\\__init__.py'>\n\n  File \"C:\\Users\\a15\\Open-LLM-VTuber\\.venv\\lib\\site-packages\\sherpa_onnx\\offline_recognizer.py\", line 480, in from_nemo_ctc\n    self.recognizer = _Recognizer(recognizer_config)\n    │                 │           └ <_sherpa_onnx.OfflineRecognizerConfig object at 0x00000298DB271230>\n    │                 └ <class '_sherpa_onnx.OfflineRecognizer'>\n    └ <sherpa_onnx.offline_recognizer.OfflineRecognizer object at 0x00000298DB184190>\n\nRuntimeError: D:\\a\\_work\\1\\s\\onnxruntime\\core\\session\\provider_bridge_ort.cc:1209 onnxruntime::ProviderLibrary::Get [ONNXRuntimeError] : 1 : FAIL : LoadLibrary failed with error 126 \"\" when trying to load \"C:\\Users\\a15\\Open-LLM-VTuber\\.venv\\lib\\site-packages\\onnxruntime_providers_cuda.dll\"\n```\n\n```\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~2 -0 !]> nvcc --version\nnvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Jun_13_19:42:34_Pacific_Daylight_Time_2023\nCuda compilation tools, release 12.2, V12.2.91\nBuild cuda_12.2.r12.2/compiler.32965470_0\n```\n```\n\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~2 -0 !]> ls \"C:\\Users\\a15\\Open-LLM-VTuber\\.venv\\lib\\site-packages\\onnxruntime_providers_cuda.dll\"\n\n    Directory: C:\\Users\\a15\\Open-LLM-VTuber\\.venv\\lib\\site-packages\n\nMode                 LastWriteTime         Length Name\n----                 -------------         ------ ----\n-a---          21.05.2025    19:13      370362400 onnxruntime_providers_cuda.dll\n```\n\n![Image](https://github.com/user-attachments/assets/b78b9f68-c4ee-4e80-a00e-9379270385fb)\n\n请详细描述发生了什么、你希望看到什么，以及如何复现。\n\n---\n\n### 4. Screenshots / Logs (if relevant)\n\n截图 / 日志（如有）\n\n- Backend log: 后端日志\n- Frontend setting (General): 前端设置（通用）\n- Frontend console log (F12): 前端控制台日志（F12）\n- If using Ollama: output of `ollama ps`:\n如果使用 Ollama，请附上 `ollama ps` 的输出\n\n---\n\n### 5. Configuration / 配置文件\n\n> Please provide relevant config files, with sensitive info like API keys removed\n> \n> \n> 请提供相关配置文件（请务必去除 API key 等敏感信息）\n> \n- `conf.yaml`\n- `model_dict.json`, `.model3.json`\n",
+      "state": "open",
+      "author": "3bagorion33",
+      "author_type": "User",
+      "created_at": "2025-05-23T14:59:59Z",
+      "updated_at": "2025-05-29T17:18:20Z",
+      "closed_at": null,
+      "labels": [
+        "open for contribution",
+        "question",
+        "asr"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/213/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/213",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/213",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.424160",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "Due to an oversight during the previous PR merge, we forgot to update the English documentation. We apologize for this.\n\nWe have now updated the latest English documentation. Please refresh the documentation and refer to the instructions in the latest English version. If the changes do not appear, c",
+          "created_at": "2025-05-26T05:54:50Z"
+        },
+        {
+          "author": "3bagorion33",
+          "body": "Thank you very much for your reply. I have followed the updated instructions, having previously uninstalled the old versions of the packages, but I still get the error.\n```\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~2 -0 !]> uv remove sherpa-onnx onnxruntime\nerror: The dependency `onnxruntime` could n",
+          "created_at": "2025-05-26T10:37:29Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "That looks quite strange. Could you use https://learn.microsoft.com/en-us/sysinternals/downloads/procmon to investigate what's happening with onnxruntime_providers_cuda.dll?",
+          "created_at": "2025-05-26T13:50:39Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "You can also open a new issue at https://github.com/k2-fsa/sherpa-onnx/issues and mention this one.\n\n",
+          "created_at": "2025-05-26T13:52:39Z"
+        },
+        {
+          "author": "csukuangfj",
+          "body": "Are you using 32-bit windows?\n\nhttps://github.com/microsoft/onnxruntime/releases/tag/v1.17.1\nprovides only gpu-enabled lib for 64-bit windows.",
+          "created_at": "2025-05-27T04:05:16Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 44,
+      "title": "The web URL is not working in OBS.",
+      "body": "The web URL is not working in OBS.\r\n\r\nTo replicate:\r\n- open OBS\r\n- Make a new browser source\r\n- Use URL http://localhost:12393\r\n\r\nIt works in Chrome OK, but not in OBS browser source.",
+      "state": "open",
+      "author": "VideoFX",
+      "author_type": "User",
+      "created_at": "2024-11-29T23:45:37Z",
+      "updated_at": "2025-05-29T16:45:15Z",
+      "closed_at": null,
+      "labels": [
+        "legacy-bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/44/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/44",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/44",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:56.717955",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "Yeah I tried and it doesn't work. The OBS browser is weird. Don't use the OBS browser source for now.",
+          "created_at": "2024-11-30T00:13:28Z"
+        },
+        {
+          "author": "VideoFX",
+          "body": "> Yeah I tried and it doesn't work. The OBS browser is weird. Don't use the OBS browser source for now.\r\n\r\nThank you @t41372 for this amazing work, I am genuinely having fun with it. My favorite thing is the modularity. Very thoughtful design, and generous to share with us.",
+          "created_at": "2024-11-30T04:00:15Z"
+        },
+        {
+          "author": "t41372",
+          "body": "We have went through significant changes since this issue was opened. We now have a completely rewritten frontend in react.\n\nI believe that this issue have been resolved along with the new properly written frontend. We still need to test if this issue actually get resolved though.",
+          "created_at": "2025-05-29T16:45:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 7,
+      "title": "FunASR requires internet connection even if the models are downloaded and locally available",
+      "body": "Check this issue https://github.com/modelscope/FunASR/issues/1897\r\n",
+      "state": "open",
+      "author": "t41372",
+      "author_type": "User",
+      "created_at": "2024-07-11T10:01:21Z",
+      "updated_at": "2025-05-29T16:13:45Z",
+      "closed_at": null,
+      "labels": [
+        "asr"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/7/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/7",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/7",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:57.034347",
+      "comments": [
+        {
+          "author": "FerLuisxd",
+          "body": "It seems that the bug can be fixed by setting the model to the local path dir. \r\nhttps://github.com/modelscope/FunASR/issues/1897#issuecomment-2254815357",
+          "created_at": "2025-01-14T20:58:48Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "We have mentioned this in documentation.",
+          "created_at": "2025-02-16T09:20:29Z"
+        },
+        {
+          "author": "t41372",
+          "body": "Reopening this issue because it was never resolved.\n\n## Why is this still relevant?\n- Configuring GPU acceleration for sherpa onnx asr is difficult.\n- FunASR requires an internet connection even though inference runs locally.\n\n## Likely root cause\n- From what I recall, FunASR tries to download the m",
+          "created_at": "2025-05-26T08:49:38Z"
+        },
+        {
+          "author": "csukuangfj",
+          "body": "> Configuring GPU acceleration for sherpa onnx asr is difficult.\n\n\nCan you explain why it is difficult? @t41372 ",
+          "created_at": "2025-05-27T04:10:35Z"
+        },
+        {
+          "author": "t41372",
+          "body": "> Can you explain why it is difficult? [@t41372](https://github.com/t41372)\n\n\n\n**Goal:** We need to automate the setup process for Sherpa-ONNX as much as possible, since it's our default ASR option. If we don't, we will be flooded with user's questions.\n\n**Challenges with GPU Acceleration (CUDA):**\n",
+          "created_at": "2025-05-27T13:52:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 221,
+      "title": "[GET HELP] \"GET /favicon.ico HTTP/1.1\" 404 Not Found",
+      "body": "运行后没有任何错误，但无法打开网页，有如下错误：\n\n![Image](https://github.com/user-attachments/assets/523e6d6f-76ef-476d-8f18-ec1d2a74d31c)\n\n\n请问局域网中如何通过IP访问页面？而不是通过127.0.0.1",
+      "state": "closed",
+      "author": "flyice8",
+      "author_type": "User",
+      "created_at": "2025-05-29T13:24:21Z",
+      "updated_at": "2025-05-29T14:55:16Z",
+      "closed_at": "2025-05-29T14:55:15Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/221/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/221",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/221",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:57.245850",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "看你的提问，你可能不知道我们项目有文档。文档在这边：open-llm-vtuber.github.io\n\n那个 not found 的问题，看这里\n - https://docs.llmvtuber.com/docs/faq#web-%E6%98%BE%E7%A4%BA-detailnotfound-%E6%80%8E%E4%B9%88%E5%8A%9E\n\n至于局域网内访问的问题，看这里\n- https://docs.llmvtuber.com/docs/user-guide/backend/remote",
+          "created_at": "2025-05-29T13:39:08Z"
+        },
+        {
+          "author": "flyice8",
+          "body": "多谢，配置后页面能打开但出现如下错误：304 not modified\n\n![Image](https://github.com/user-attachments/assets/c672edbc-691d-4e19-a9d4-a39e8b47f451)",
+          "created_at": "2025-05-29T14:27:01Z"
+        },
+        {
+          "author": "flyice8",
+          "body": "搞定了",
+          "created_at": "2025-05-29T14:32:35Z"
+        },
+        {
+          "author": "t41372",
+          "body": "🎉👍",
+          "created_at": "2025-05-29T14:55:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 216,
+      "title": "[GET HELP] 如何在群聊中接入AI",
+      "body": "我对同一个后端打开了几个网页，使用invite by UUID建立起了一个Group Chat，但似乎只能由多个human围绕一个中心AI进行对话，网页中只能设置这一个AI的character。\n我看群聊的prompt里有提到`The other AI participants are: {other_ais}.`，是我漏掉了什么设置步骤或选项配置吗，或者说现在尚不支持这样的功能？\n如果确无此功能，我有一些基于DeepSeek的Python能力💩，想尝试做一个简单的调用API的AI观众自己用用。文档里“直播开发”相关内容介绍了如何传入消息给`/proxy-ws`，那我该如何获取这里生成的文本消息呢？",
+      "state": "closed",
+      "author": "Moha-Master",
+      "author_type": "User",
+      "created_at": "2025-05-26T15:43:59Z",
+      "updated_at": "2025-05-27T07:09:22Z",
+      "closed_at": "2025-05-27T07:09:22Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/216/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/216",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/216",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:57.484223",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "既然你建立了 Group Chat，那么你可以在不同网页中设置不同的角色，然后由人类发起对话，AI 会按照队列的顺序 Round-Robin。人类可以随时打断。\n\nThe other AI participants are: {other_ais} 会自动嵌入AI 参与者的名字，无需配置。\n\n---\n\n第二个 question 没明白什么意思。\n",
+          "created_at": "2025-05-26T17:02:11Z"
+        },
+        {
+          "author": "Moha-Master",
+          "body": "> 既然你建立了 Group Chat，那么你可以在不同网页中设置不同的角色，然后由人类发起对话，AI 会按照队列的顺序 Round-Robin。人类可以随时打断。\n> \n> The other AI participants are: {other_ais} 会自动嵌入AI 参与者的名字，无需配置。\n> \n第一个问题是我操作的问题，加上主动发言没关等一系列因素搞得有些混乱，总之是my bad 🙁\n> \n> 第二个 question 没明白什么意思。\n> \n就是我想知道如何获取这里AI的输出文本内容，以便我发送到其他程序处理",
+          "created_at": "2025-05-27T03:15:39Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "获取 AI 输出的文本内容无需通过 proxy-ws 来进行，你可以查看 https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/blob/main/src/open_llm_vtuber/conversations/single_conversation.py\n\n如果想获取 proxy-ws 得到的消息，查看 https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/blob/dev/src/open_llm_vtuber/proxy_handler.py#L206\n\nBTW, 直播的功能目前还处于 d",
+          "created_at": "2025-05-27T04:57:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 211,
+      "title": "Error starting the sherpa_onnx_asr model",
+      "body": "### 1. Checklist / 检查项\n\n- [v]  I have removed sensitive information from configuration/logs.\n    \n    我已移除配置或日志中的敏感信息。\n    \n- [v]  I have checked the [FAQ](https://docs.llmvtuber.com/docs/faq/) and [existing issues](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues).\n    \n    我已查阅[常见问题](https://docs.llmvtuber.com/docs/faq/)和[已有 issue](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues)。\n    \n- [v]  I am using the latest version of the project.\n    \n    我正在使用项目的最新版本。\n    \n\n---\n\n### 2. Environment Details / 环境信息\n\n- How did you install Open-LLM-VTuber:\n    \n    你是如何安装 Open-LLM-VTuber 的：\n    \n    - [v]  git clone （源码克隆）\n    - [ ]  release zip （发布包）\n    - [ ]  exe (Windows) （Windows 安装包）\n    - [ ]  dmg (MacOS) （MacOS 安装包）\n- Are you running the backend and frontend on the same device?\n    \n    后端和前端是否在同一台设备上运行？\n    \n- If you used GPU, please provide your GPU model and driver version:\n- NVIDIA GeForce RTX 3060 Laptop GPU 576.52\n\n    \n    如果你使用了 GPU，请提供你的 GPU 型号及驱动版本信息:\n    \n- Browser (if applicable):\n- Microsoft Edge 135.0.3179.54\n\n       浏览器（如果适用）：\n\n---\n\n### 3. Describe the bug / 问题描述\n\nI can't run any other sherpa_onnx_asr model for speech recognition. I need German\n\n```\nC:\\Users\\a15\\Open-LLM-VTuber [main ≡ +0 ~1 -0 !]> uv run run_server.py\n2025-05-21 20:59:27.970 | INFO     | __main__:<module>:86 - Running in standard mode. For detailed debug logs, use: uv run run_server.py --verbose\n2025-05-21 20:59:27 | INFO     | __main__:run:57 | Open-LLM-VTuber, version v1.1.3\n[WARNING] User config contains the following keys not present in default config: character_config.asr_config.sherpa_onnx_asr.encoder, character_config.asr_config.sherpa_onnx_asr.decoder, character_config.asr_config.sherpa_onnx_asr.joiner, character_config.asr_config.sherpa_onnx_asr.nemo_ctc, character_config.asr_config.sherpa_onnx_asr.whisper_encoder, character_config.asr_config.sherpa_onnx_asr.whisper_decoder\n2025-05-21 20:59:28 | INFO     | upgrade:sync_user_config:350 | [DEBUG] User configuration is up-to-date.\n2025-05-21 20:59:28 | INFO     | src.open_llm_vtuber.service_context:init_live2d:156 | Initializing Live2D: shizuku-local\n2025-05-21 20:59:28 | INFO     | src.open_llm_vtuber.live2d_model:_lookup_model_info:142 | Model Information Loaded.\n2025-05-21 20:59:28 | INFO     | src.open_llm_vtuber.service_context:init_asr:166 | Initializing ASR: sherpa_onnx_asr\n2025-05-21 20:59:28 | INFO     | src.open_llm_vtuber.asr.sherpa_onnx_asr:__init__:81 | Sherpa-Onnx-ASR: Using cpu for inference\nC:\\a\\sherpa-onnx\\sherpa-onnx\\sherpa-onnx\\csrc\\offline-transducer-model.cc:InitDecoder:201 'vocab_size' does not exist in the metadata\n```\n\n```\n    sherpa_onnx_asr:\n      model_type: 'transducer' # 'sense_voice', 'transducer', 'paraformer', 'nemo_ctc', 'wenet_ctc', 'whisper', 'tdnn_ctc'\n      #  Choose only ONE of the following, depending on the model_type:\n      # --- For model_type: 'transducer' ---\n      encoder: './models/sherpa-onnx-nemo-fast-conformer-transducer-be-de-en-es-fr-hr-it-pl-ru-uk-20k/encoder.onnx'\n      decoder: './models/sherpa-onnx-nemo-fast-conformer-transducer-be-de-en-es-fr-hr-it-pl-ru-uk-20k/decoder.onnx'\n      joiner: './models/sherpa-onnx-nemo-fast-conformer-transducer-be-de-en-es-fr-hr-it-pl-ru-uk-20k/joiner.onnx'\n      tokens: './models/sherpa-onnx-nemo-fast-conformer-transducer-be-de-en-es-fr-hr-it-pl-ru-uk-20k/tokens.txt'\n```\n\n请详细描述发生了什么、你希望看到什么，以及如何复现。\n\n---\n\n### 4. Screenshots / Logs (if relevant)\n\n截图 / 日志（如有）\n\n- Backend log: 后端日志\n- Frontend setting (General): 前端设置（通用）\n- Frontend console log (F12): 前端控制台日志（F12）\n- If using Ollama: output of `ollama ps`:\n如果使用 Ollama，请附上 `ollama ps` 的输出\n\n---\n\n### 5. Configuration / 配置文件\n\n> Please provide relevant config files, with sensitive info like API keys removed\n> \n> \n> 请提供相关配置文件（请务必去除 API key 等敏感信息）\n> \n- `conf.yaml`\n- `model_dict.json`, `.model3.json`\n",
+      "state": "closed",
+      "author": "3bagorion33",
+      "author_type": "User",
+      "created_at": "2025-05-21T15:47:48Z",
+      "updated_at": "2025-05-26T13:50:26Z",
+      "closed_at": "2025-05-26T05:46:21Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/211/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/211",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/211",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:57.667318",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "Try clearing the files in `models/`. Please make sure not to exit midway while starting the server.\n",
+          "created_at": "2025-05-23T05:06:09Z"
+        },
+        {
+          "author": "3bagorion33",
+          "body": "This happens on a newly downloaded model\n```\nC:\\Users\\a15\\Open-LLM-VTuber\\models [main ≡ +0 ~2 -0 !]> ls\n\n    Directory: C:\\Users\\a15\\Open-LLM-VTuber\\models\n\nMode LastWriteTime Length Name\n---- ------------- ------ ----\n d---- 21.05.2025 21:14 sherpa-onnx-nemo-fast-conformer-ctc-be-de-en-es-fr-hr-it",
+          "created_at": "2025-05-23T14:37:44Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "It's a nemo_ctc model, as shown in https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/213 \n",
+          "created_at": "2025-05-26T05:46:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 205,
+      "title": "[GET HELP] 配置v1.1.0时，cmd调用uv run run_server.py报错",
+      "body": "### 1. Checklist / 检查项\n\n- [x]  I have removed sensitive information from configuration/logs.\n    \n    我已移除配置或日志中的敏感信息。\n    \n- [x]  I have checked the [FAQ](https://docs.llmvtuber.com/docs/faq/) and [existing issues](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues).\n    \n    我已查阅[常见问题](https://docs.llmvtuber.com/docs/faq/)和[已有 issue](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues)。\n    \n- [x]  I am using the latest version of the project.\n    \n    我正在使用项目的最新版本。\n    \n\n---\n\n### 2. Environment Details / 环境信息\n\n- How did you install Open-LLM-VTuber:\n    \n    你是如何安装 Open-LLM-VTuber 的：\n    \n    - [ ]  git clone （源码克隆）\n    - [x]  release zip （发布包）\n    - [ ]  exe (Windows) （Windows 安装包）\n    - [ ]  dmg (MacOS) （MacOS 安装包）\n- Are you running the backend and frontend on the same device?\n    \n    后端和前端是否在同一台设备上运行？\n    \n- If you used GPU, please provide your GPU model and driver version:\n    \n    如果你使用了 GPU，请提供你的 GPU 型号及驱动版本信息:\n    \n- Browser (if applicable):\n\n       浏览器（如果适用）：\n\n---\n\n### 3. Describe the bug / 问题描述\n\nWhat exactly is happening? What do you want to see? How to reproduce?\n\n请详细描述发生了什么、你希望看到什么，以及如何复现。\n\n---\n\n### 4. Screenshots / Logs (if relevant)\n\n截图 / 日志（如有）\n\n![Image](https://github.com/user-attachments/assets/51550b15-8e3b-48a9-8931-9806d9fa6430)\n\n![Image](https://github.com/user-attachments/assets/d97c48de-0f3c-47b7-8244-fcbf64f8060d)\n\n![Image](https://github.com/user-attachments/assets/bde9a5fd-5ac2-42ca-a343-9cf1fe61064e)\n\n![Image](https://github.com/user-attachments/assets/b59ad0ff-d3d6-4f36-9859-3bb9cbb321a6)\n\n### 5. Configuration / 配置文件\n\n> Please provide relevant config files, with sensitive info like API keys removed\n> \n> \n> 请提供相关配置文件（请务必去除 API key 等敏感信息）\n> \n- `conf.yaml`\n- `model_dict.json`, `.model3.json`\n",
+      "state": "closed",
+      "author": "DiorLou",
+      "author_type": "User",
+      "created_at": "2025-05-12T03:37:24Z",
+      "updated_at": "2025-05-12T15:01:58Z",
+      "closed_at": "2025-05-12T15:01:58Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/205/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/205",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/205",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:57.896859",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "Hi, this issue is specific to Windows, as discussed in [pytorch/audio#2726](https://github.com/pytorch/audio/issues/2726).\n\n> Confirmed, adding cudart64_110.dll to conda env solves this issue. Should be fixed by https://github.com/pytorch/builder/pull/1156\n\nIt seems this has been fixed in torch. Cou",
+          "created_at": "2025-05-12T04:20:35Z"
+        },
+        {
+          "author": "DiorLou",
+          "body": "> Hi, this issue is specific to Windows, as discussed in [pytorch/audio#2726](https://github.com/pytorch/audio/issues/2726).\n> \n> > Confirmed, adding cudart64_110.dll to conda env solves this issue. Should be fixed by [pytorch/builder#1156](https://github.com/pytorch/builder/pull/1156)\n> \n> It seems",
+          "created_at": "2025-05-12T04:27:16Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "Can you fix your problem according to https://github.com/neonbjb/tortoise-tts/issues/298?\nMethod 1. Try: `uv pip uninstall torchaudio` and `uv pip install torchaudio`\nMethod 2. Navigate to .venv\\Lib\\site-packages\\torchaudio\\lib and delete the _ prefix of _torchaudio.pyd\n\n",
+          "created_at": "2025-05-12T04:36:35Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "Besides, the `silero-vad` module is currently not used in both the web and Electron frontend. \nI'm updating the `vad_factory` in the `dev` branch to dynamically load `silero_vad` and setting the `vad_model` to `null`  in `conf.default.yaml`. Removing `torchaudio` from the dependencies. \nThis fix wil",
+          "created_at": "2025-05-12T04:38:09Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "> > Hi, this issue is specific to Windows, as discussed in [pytorch/audio#2726](https://github.com/pytorch/audio/issues/2726).\n> > > Confirmed, adding cudart64_110.dll to conda env solves this issue. Should be fixed by [pytorch/builder#1156](https://github.com/pytorch/builder/pull/1156)\n> > \n> > \n> ",
+          "created_at": "2025-05-12T04:39:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 204,
+      "title": "[GET HELP] 如何控制Vtuber動手部動作",
+      "body": "想知道如何將Vtuber動身題的動作，或是選擇動作動畫來做動作",
+      "state": "closed",
+      "author": "fredericklee602",
+      "author_type": "User",
+      "created_at": "2025-05-08T17:20:03Z",
+      "updated_at": "2025-05-10T16:58:55Z",
+      "closed_at": "2025-05-10T16:58:55Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/204/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/204",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/204",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:58.138908",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "什么是 \"動身題的動作\"?\n如果想问制作 motion，可以使用 VTube Studio 制作并导出为本项目可以使用的 motion3.json 文件，具体自行搜索。",
+          "created_at": "2025-05-09T02:47:53Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 201,
+      "title": "[GET HELP] 可以隐藏右侧人物和背景部分吗？只显示左侧聊天显示",
+      "body": "如果可以，如何实现",
+      "state": "closed",
+      "author": "libin1219",
+      "author_type": "User",
+      "created_at": "2025-05-08T07:08:06Z",
+      "updated_at": "2025-05-09T10:47:54Z",
+      "closed_at": "2025-05-09T10:47:54Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/201/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/201",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/201",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:58.338711",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "By modifying the [frontend](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber-Web/tree/dev), we will implement this feature in the future",
+          "created_at": "2025-05-09T02:41:30Z"
+        },
+        {
+          "author": "libin1219",
+          "body": "Thank you so much.",
+          "created_at": "2025-05-09T03:14:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 202,
+      "title": "[GET HELP] 可以对接dify中的智能体嘛",
+      "body": null,
+      "state": "closed",
+      "author": "libin1219",
+      "author_type": "User",
+      "created_at": "2025-05-08T07:17:16Z",
+      "updated_at": "2025-05-09T10:47:53Z",
+      "closed_at": "2025-05-09T10:47:53Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/202/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/202",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/202",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:58.542512",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "See https://docs.dify.ai/en/guides/application-publishing/developing-with-apis",
+          "created_at": "2025-05-09T02:42:57Z"
+        },
+        {
+          "author": "libin1219",
+          "body": "> See https://docs.dify.ai/en/guides/application-publishing/developing-with-apis\n\nThank you so much.",
+          "created_at": "2025-05-09T03:15:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 203,
+      "title": "[GET HELP] 摄像头画面分析不准确，该如何设置才能提高准确度",
+      "body": null,
+      "state": "closed",
+      "author": "libin1219",
+      "author_type": "User",
+      "created_at": "2025-05-08T09:32:47Z",
+      "updated_at": "2025-05-09T10:47:51Z",
+      "closed_at": "2025-05-09T10:47:51Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/203/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/203",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/203",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:58.725536",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "By using a better model for now.\nOr in the MCP feature we are about to release, use a model designed for image analysis (usually a small model) as the MCP Server.\n",
+          "created_at": "2025-05-09T02:44:35Z"
+        },
+        {
+          "author": "libin1219",
+          "body": "Thank you so much.",
+          "created_at": "2025-05-09T03:14:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 198,
+      "title": "[GET HELP] 关于外网访问",
+      "body": "此项目只支持个人访问吗，如果将地址进行映射或部署在服务器上，能实现多人访问吗",
+      "state": "closed",
+      "author": "samnbkls",
+      "author_type": "User",
+      "created_at": "2025-05-03T10:42:07Z",
+      "updated_at": "2025-05-03T20:32:07Z",
+      "closed_at": "2025-05-03T20:32:06Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/198/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/198",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/198",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:58.920447",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "https://docs.llmvtuber.com/docs/user-guide/backend/remote",
+          "created_at": "2025-05-03T20:32:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 196,
+      "title": "[GET HELP] Screen Share // Also RVC question // Deeplx 503",
+      "body": "Installed via git clone.\nEverything on the same device.\nGeForce RTX 2080 Ti, driver 572.60\nOpera GX, Edge, even tried Chrome.\n\n- I have no idea why, _(I didn't find any info related to this nowhere around)_ but looks like ai can't recognize screen share. Nothing at all. At least it works like that for me. I installed everything and did it twice, trying to find possible attention lags or missing files.\n_Also the pin button to attach files doesn't work._\n\n- And related second part. Is it possible to connect any of these TTS with RVC to achieve cloned, defined voice?\n\n- Also the deeplx returns 503 into its console when trying to translate anything.",
+      "state": "closed",
+      "author": "AlexandraCat",
+      "author_type": "User",
+      "created_at": "2025-04-29T16:18:24Z",
+      "updated_at": "2025-05-03T04:02:29Z",
+      "closed_at": "2025-05-03T04:02:29Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/196/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/196",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/196",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:59.154422",
+      "comments": [
+        {
+          "author": "t41372",
+          "body": "1. What LLM do you use? You need an LLM that supports vision capability to see stuff.\n2. The pin button is a fake placeholder.\n3. I'm not familiar with RVC, so I'm afraid not. At least not yet. Why would you need RVC behind TTS when you can use GPT SoVITS, fish TTS, CosyVoice, x tts, or something el",
+          "created_at": "2025-04-29T23:55:38Z"
+        },
+        {
+          "author": "AlexandraCat",
+          "body": "> 1. What LLM do you use? You need an LLM that supports vision capability to see stuff.\n\nUsing tutorial-provided one via Ollama. Could I ask you for any links with explanations or suggestions to this kind of stuff? Would be appreciated.\n_Oops. Yeah, I kinda forgot about such thing. Sorry for misinfo",
+          "created_at": "2025-04-30T03:30:51Z"
+        },
+        {
+          "author": "ylxmf2005",
+          "body": "For LLMs that support vision, you might want to check online resources or try asking an AI model.\n\nRegarding So-VITS (400), looks like ref_audio_path is missing.\n\nAs for DeepLx, we haven't tested with binary files. We'd suggest using Docker for deployment.\n\n",
+          "created_at": "2025-05-01T03:53:39Z"
+        },
+        {
+          "author": "AlexandraCat",
+          "body": "> For LLMs that support vision, you might want to check online resources or try asking an AI model.\n\nRegarding this if anybody else will be curious: just go to [ollama official site](ollama.com/search) and look for the 'vision' models. These should work.\n\n> Regarding So-VITS (400), looks like ref_au",
+          "created_at": "2025-05-01T05:14:51Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 194,
+      "title": "[GET HELP] 现在支持接入mcp吗",
+      "body": null,
+      "state": "closed",
+      "author": "libin1219",
+      "author_type": "User",
+      "created_at": "2025-04-27T09:18:40Z",
+      "updated_at": "2025-04-27T09:31:53Z",
+      "closed_at": "2025-04-27T09:29:01Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/194/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/issues/194",
+      "api_url": "https://api.github.com/repos/Open-LLM-VTuber/Open-LLM-VTuber/issues/194",
+      "repository": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "extraction_date": "2025-06-22T00:42:59.349221",
+      "comments": [
+        {
+          "author": "ylxmf2005",
+          "body": "1.2 会支持，很快会发布。",
+          "created_at": "2025-04-27T09:29:01Z"
+        },
+        {
+          "author": "libin1219",
+          "body": "谢谢\n",
+          "created_at": "2025-04-27T09:31:51Z"
+        }
+      ]
+    }
+  ]
+}

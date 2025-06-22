@@ -1,0 +1,2085 @@
+{
+  "repository": "Fosowl/agenticSeek",
+  "repository_info": {
+    "repo": "Fosowl/agenticSeek",
+    "stars": 19045,
+    "language": "Python",
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin9938",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "autonomous-agents",
+      "deepseek-r1",
+      "llm",
+      "llm-agents",
+      "voice-assistant"
+    ],
+    "created_at": "2025-02-19T18:03:06Z",
+    "updated_at": "2025-06-22T02:17:51Z",
+    "search_query": "api cost language:python stars:>1",
+    "total_issues_estimate": 96,
+    "labeled_issues_estimate": 10,
+    "labeling_rate": 11.1,
+    "sample_labeled": 3,
+    "sample_total": 27,
+    "has_issues": true,
+    "repo_id": 935604638,
+    "default_branch": "main",
+    "size": 24358
+  },
+  "extraction_date": "2025-06-21T23:33:59.224169",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 43,
+  "issues": [
+    {
+      "issue_number": 315,
+      "title": "Frontend doesn`t see backend",
+      "body": "**Describe the bug**\nFrontend doesn`t see backend. Docker start container successfully but on the \"http://localhost:3000/\" page I see \"System offline. Deploy backend first.\" message.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Follow instruction from README file\n2. Finnaly run command \"start ./start_services.cmd full\"\n3. Open in web browser \"http://localhost:3000/\"\n\n**Expected behavior**\nI can send requests on the \"http://localhost:3000/\" page.\n\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/bab463ac-e8c2-4be9-8881-777de13c3d48)\n\n![Image](https://github.com/user-attachments/assets/c5d2278a-5686-43f3-b83a-6c8e0301c4e5)\n\n**LLM Model used**\ndeepseek-r1:32b\n\n**Desktop (please complete the following information):**\n - OS: Windows 11\n - Browser chrome, safari\n\n**Additional context**\n```\nIn backend log I see some errors like:\nbackend   | {\"timestamp\":\"2025-06-11T14:21:31.338102Z\",\"level\":\"WARN\",\"fields\":{\"message\":\"Reqwest(reqwest::Error { kind: Request, url: \\\"https://transfer.xethub.hf.co/xorbs/default/eedc81f774e36ce1e8b9153775c28675fe77d1192f36c1f27e22b280f751d189?X-Xet-Signed-Range=bytes%3D30396343-33192036&Expires=1749653815&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly90cmFuc2Zlci54ZXRodWIuaGYuY28veG9yYnMvZGVmYXVsdC9lZWRjODFmNzc0ZTM2Y2UxZThiOTE1Mzc3NWMyODY3NWZlNzdkMTE5MmYzNmMxZjI3ZTIyYjI4MGY3NTFkMTg5P1gtWGV0LVNpZ25lZC1SYW5nZT1ieXRlcyUzRDMwMzk2MzQzLTMzMTkyMDM2IiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzQ5NjUzODE1fX19XX0_&Signature=lX3b16PK84oIwSywwjZn6zDgCICRBkwldxUPwCslCycMn4-8iP4jHr1b41UTM1I5PGgibiYPPNDtwWNqm5T1bNb8m4AnzrHasGx9Tfzx0JyU~A0dgs2GOdBLa69GG0W2ZNJcroYHDu7wp1qrJ0VCfNuDbhZTbeGetRq323-Oq6n1LdwehhSEQZ8fXGaaYAijuQjbbfmC8y9qhg4wXN9l5bCs3tcBT-FKxcBaWuB9cJRCeP-4PASaI1pyEvf4G35VfwuLRErkBy91Z3F-Y6I2cg-7p0VvCsZMT4G1jgFBsYOQtGa7gQNsBp9tfKbwe17L9f-e1XLd9lZvRgYUkykqwg__&Key-Pair-Id=K2L8F4GPSG1IFC\\\", source: hyper_util::client::legacy::Error(SendRequest, hyper::Error(IncompleteMessage)) }). Retrying...\"},\"filename\":\"/home/runner/work/xet-core/xet-core/cas_client/src/http_client.rs\",\"line_number\":200}\nbackend   | {\"timestamp\":\"2025-06-11T14:21:31.338144Z\",\"level\":\"WARN\",\"fields\":{\"message\":\"Retry attempt #1. Sleeping 1.329058395s before the next attempt\"},\"filename\":\"/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-retry-0.7.0/src/middleware.rs\",\"line_number\":171}\n```\n",
+      "state": "closed",
+      "author": "fakiras",
+      "author_type": "User",
+      "created_at": "2025-06-11T14:24:59Z",
+      "updated_at": "2025-06-21T13:17:19Z",
+      "closed_at": "2025-06-21T13:17:19Z",
+      "labels": [
+        "windows"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 14,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/315/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/315",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/315",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:48.417148",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "This seem like a networking or firewall issue. Can you check your internet connection and possibly retry with a VPN ?",
+          "created_at": "2025-06-11T17:47:35Z"
+        },
+        {
+          "author": "JamesD-git",
+          "body": "I've also encountered this issue with both lm-studio and ollama backends\n\nNetwork settings all correct, api running and can be queried with other applications. It seems like it's the connection between docker and the api",
+          "created_at": "2025-06-12T03:05:37Z"
+        },
+        {
+          "author": "roshit-bonafide",
+          "body": "I have the same issue with ollama, was anyone able to resolve it?",
+          "created_at": "2025-06-12T05:04:38Z"
+        },
+        {
+          "author": "Georg1986",
+          "body": "das Problem habe ich auch. Ich versuche mit google und gemini-1.5-flash zu arbeiten. Aber mein Frontend und mein Backend kommunizieren einfach nicht.",
+          "created_at": "2025-06-12T10:42:47Z"
+        },
+        {
+          "author": "wjsxgd",
+          "body": "I have the same issue with ollama and run backend with \"python cli.py\", because there is a error when running start_services.cmd ",
+          "created_at": "2025-06-12T13:23:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 52,
+      "title": "Add tests",
+      "body": "Add as many unit test as possible, especially for parsing function and tools.\nAvoid unit test that require request to the LLM.\n\nsee https://github.com/Fosowl/agenticSeek/blob/main/tests/test_searx_search.py for a good example\n\nAny collaborators can pick up the task, just add a comment to this issue and I will assign you.",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-18T07:42:48Z",
+      "updated_at": "2025-06-20T19:16:47Z",
+      "closed_at": null,
+      "labels": [
+        "low priority"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/52/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/52",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/52",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:48.650966",
+      "comments": [
+        {
+          "author": "jennyluciav",
+          "body": "I'd like to contribute with some tests @Fosowl!",
+          "created_at": "2025-05-28T10:17:18Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "sure! what tests would you like to add ? Feel free to do pull request",
+          "created_at": "2025-06-20T19:16:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 104,
+      "title": "Tools for arbitrary MCPs",
+      "body": "This task is about integration of a special MCP agent that could find and use arbitrary MCPs.\n \nThe MCP agent would be optional.",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-07T17:58:56Z",
+      "updated_at": "2025-06-20T17:29:02Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "medium priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/104/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/104",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/104",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:48.824051",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "https://smithery.ai/docs/registry -> list MCPs",
+          "created_at": "2025-04-14T20:46:43Z"
+        },
+        {
+          "author": "tobegit3hub",
+          "body": "Looks forward to this feature and MCP Server would be the first-class tool in agentic-seek.",
+          "created_at": "2025-05-29T01:54:05Z"
+        },
+        {
+          "author": "Jboner-Corvus",
+          "body": "1. The Remote Server Approach: The Authentication Wall\nThe Problem: In practice, my analysis showed that all the useful servers we tested are protected. They respond with 401 Unauthorized because they require an API key (Bearer Token) to function.\nThe Economic Constraint: No one hosts powerful servi",
+          "created_at": "2025-06-20T17:00:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 200,
+      "title": "Use uv or conda to manage python environment",
+      "body": "Consider using **uv** or **conda** to manage Python environments, making it easier for users to configure their setups.  \n\nFor reference, similar projects using **uv** and **conda** can be found in **OpenManus**.",
+      "state": "closed",
+      "author": "miaooo0000OOOO",
+      "author_type": "User",
+      "created_at": "2025-05-25T16:59:26Z",
+      "updated_at": "2025-06-06T16:32:25Z",
+      "closed_at": "2025-06-06T16:32:24Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/200/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/200",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/200",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:48.996635",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "will look into it",
+          "created_at": "2025-05-26T16:54:13Z"
+        },
+        {
+          "author": "KriZa96",
+          "body": "Poetry is valid as well.",
+          "created_at": "2025-05-26T21:03:59Z"
+        },
+        {
+          "author": "gregnwosu",
+          "body": "please use uv rather than conda",
+          "created_at": "2025-05-29T09:53:43Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "done, full docker contairization as been merged as well so it's only an options for those who still which to run backend on host",
+          "created_at": "2025-06-06T16:32:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 252,
+      "title": "feat: Make API base‑URL configurable for front‑end",
+      "body": "## What problem does this solve?\nRight now the React front‑end hard‑codes `http://localhost:8000` when it calls the FastAPI back‑end.  \nIf the app is hosted on another machine (e.g., `http://raspberrypi.local:8000`) the UI still points to `localhost`, so requests fail when opened from a different device on the same network.\n\n\n## Proposed solution\nAllow the front‑end to read the base URL from configuration so users can:\n\n1. Deploy the back‑end on any LAN host / Docker container, and  \n2. Access the UI from multiple devices without recompiling or editing source.\n\n### Implementation Plan\n\n| Approach | Pros | Cons |\n|--------|------|------|\n| **`.env` file inside `/frontend/agentic-seek-front`** (e.g., `VITE_API_BASE_URL=http://raspberrypi.local:8000`) | • Follows typical Vite/React pattern<br>• No code change on the back‑end | • Adds a second config surface separate from existing `config.ini` |\n\n```js\n// frontend/agentic-seek-front/src/App.js\nconst api = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';\n```\n\n## Acceptance criteria\n- [ ] Local dev (`npm run dev`) still defaults to `http://localhost:8000` when no env var is set  \n- [ ] Production build (`npm run build`) reads `VITE_API_BASE_URL` (or equivalent) and fetches from that host  \n- [ ] README updated with a one‑liner on how to set the variable for remote deployments, perhaps with a .env.example like in the repo root\n\n## Next steps\nIf this direction looks good I’ll:\n1. open a branch `feat/configurable-base-url-<issue#>`  \n2. update the front‑end config (+ docs)  \n3. submit a PR referencing this issue (`Closes #XYZ`)\n\nLet me know which config path you’d prefer, or if there’s an existing pattern I missed. Thanks!",
+      "state": "closed",
+      "author": "strnadchristopher",
+      "author_type": "User",
+      "created_at": "2025-05-29T18:38:46Z",
+      "updated_at": "2025-06-06T16:31:51Z",
+      "closed_at": "2025-06-06T16:31:49Z",
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/252/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/252",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/252",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.201547",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Thank you for the well structured issue! This is already done on the docker_deployement branch as it was a necessity. You can still submit a pull request tho, just have a look at the frontend on the docker_deployement branch first ",
+          "created_at": "2025-05-29T20:50:27Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "done in #298 ",
+          "created_at": "2025-06-06T16:31:49Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 155,
+      "title": "Full docker-compose deployment",
+      "body": "This is the issue for integration of a full docker-compose deployment of AgenticSeek.\n\nGoal -> Deploy all agenticSeek services:\n- redis\n- searxng\n- frontend\n- backend\n\nCurrently the start_services.sh (which use docker-compose) allow to deploy all services beside **backend**. The backend service is currently commented out in docker-compose.yml.\n\nPR #154 by **tcsenpai** is a preview of current attempt to fix and include backend service in deployment.\n\nInternal ports:\n- 6379 -> redis\n- 8080 -> searxng\n- 3000 -> frontend\n- 8000 -> backend\nhost ports (host.docker.internal extra hosts):\n- 11434 -> ollama\n- 1234 -> lm-studio\n\nSome consideration:\n\n- We would have to have other \"standard\" port to support other llm provider. For example if someone use llama.cpp server they would need to know what port is supported.\n\n- Backend should have outbound internet access needed for remote APIs provider and \"server\" provider.\n\n- The work_dir will need to be an environment variable. The config.ini would have `work_dir = ${WORK_DIR}`.\n\n- The docker for backend would need to mount the work_dir folder from the host. We need  a way to ensure that work_dir is not a root folder or overly large folder (should not mount `/`, `C:\\system32` or similar). Perhaps the ./start_services.sh script could check the work_dir path and size before running docker-compose\n\n- All readme would need to be updated according to change. For example having WORK_DIR as an environment variable instead of defined in config.ini would need to be explained.\n\n- How to make text to speech work if running inside docker ?\n\n\n",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-05-03T13:22:55Z",
+      "updated_at": "2025-06-06T16:29:11Z",
+      "closed_at": "2025-06-06T16:29:10Z",
+      "labels": [
+        "enhancement",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 10,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/155/reactions",
+        "total_count": 9,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 2,
+        "confused": 0,
+        "heart": 2,
+        "rocket": 1,
+        "eyes": 1
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/155",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/155",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.403997",
+      "comments": [
+        {
+          "author": "sammcj",
+          "body": "This is exciting to see, keep up the great work! 🚀 ",
+          "created_at": "2025-05-03T23:35:33Z"
+        },
+        {
+          "author": "itJunky",
+          "body": "I already have worked version with backend and addition nginx proxy containers.\nProxy need to correct routing requests between api.py and searxnd and frontend\n\nhttps://github.com/itJunky/agenticSeek/tree/devops",
+          "created_at": "2025-05-12T12:47:23Z"
+        },
+        {
+          "author": "eyshoteam",
+          "body": "I have a full working version and some extra ikle admin ui etc   \n\n![Image](https://github.com/user-attachments/assets/2d0acb03-0855-445d-9212-2b531c73e606)",
+          "created_at": "2025-05-15T00:00:10Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "@eyshoteam @itJunky You will have to coordinate on discord with TCsenpai in #containerization channel, putting the backend on docker is easy, the hard part is not having a service  randomly crash, not relying on chrome bundle which can get deprecated, and having the work folder mounted with safety m",
+          "created_at": "2025-05-15T11:22:23Z"
+        },
+        {
+          "author": "itJunky",
+          "body": "i'm already ccordinate with TCsenpai and he have no time for continue developing agenticseek. @Fosowl  You need to choose one of us to continue.\nI'm not using discord(blocked in our country), only telegram.\n\nIt's doesn't crash and correct mounts of working dir and other files like config.",
+          "created_at": "2025-05-21T01:51:33Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 262,
+      "title": "UI and back end loads but unable to interact with UI - \"Failed to process query\"",
+      "body": "UI chat does not process the query\n\nI followed the readme, and installed all of the dependencies, and used the correct python and chromedriver versions. I was able to successfully load the chat interface and the status on the bottom says the Agent is ready.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Desktop (please complete the following information):**\n - OS: Mac\n - Browser: Chrome\n\n\n<img width=\"1487\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/6c7e5773-d809-4b59-9aa5-95e518dc1f8f\" />",
+      "state": "closed",
+      "author": "cmaticrRLU",
+      "author_type": "User",
+      "created_at": "2025-05-30T16:24:51Z",
+      "updated_at": "2025-06-03T05:26:59Z",
+      "closed_at": "2025-06-03T03:02:19Z",
+      "labels": [
+        "need futher testing"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/262/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/262",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/262",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.629807",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "how did you start it ? are you sure you run api.py ? are you connecting over some network ?",
+          "created_at": "2025-05-30T18:12:58Z"
+        },
+        {
+          "author": "cmaticrRLU",
+          "body": "Hi, I was able to figure things out. \n\nI'm using Deepseek R1 free on openrouter, and asked the chat to pull the top fortune 200 companies. The first try took over 15 minutes and then I just stopped the process. Apparently there was an issue pulling information due to fortune.com having a paywall.\n\nI",
+          "created_at": "2025-06-02T21:45:09Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "try to formulate differently, it should have routed to the planner agent for the task. you could insist on the task complexity or divide into multiple clear step.",
+          "created_at": "2025-06-03T03:02:19Z"
+        },
+        {
+          "author": "cmaticrRLU",
+          "body": "based on the prompt that i provided, can you share with me how you would formulate the request in order to achieve a favorable result?",
+          "created_at": "2025-06-03T05:26:58Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 264,
+      "title": "ModuleNotFoundError: No module named 'undetected_chromedriver.cdp'",
+      "body": "Environment:\nPython 3.10.1\nwindows\nchromedriver added to the PATH\n\nI haved runned the start_services.cmd,and the docker run normally,when i just what to run python cli.py and api.py, have error  ModuleNotFoundError: No module named 'undetected_chromedriver.cdp'\n\n![Image](https://github.com/user-attachments/assets/aca43a5e-3a0d-484e-af4f-8c6478852878)\n\n![Image](https://github.com/user-attachments/assets/04abf01a-c2e6-4e72-97db-768a30d6f086)\n\n![Image](https://github.com/user-attachments/assets/47a383e1-2ace-479e-b6cb-43b37c1b5644)\n\n![Image](https://github.com/user-attachments/assets/191403b3-4b38-41ec-b7f9-b2acc98fb178)\n\nhere is the requirements and the undetected_chromedriver-3.5.5 i have installed in the venv\n\n![Image](https://github.com/user-attachments/assets/7e86aa80-de30-4730-8062-c86174822be5)\n\n![Image](https://github.com/user-attachments/assets/cdff2be1-7260-4552-a155-364edf8b75bb)",
+      "state": "closed",
+      "author": "Huu1j",
+      "author_type": "User",
+      "created_at": "2025-05-31T12:26:10Z",
+      "updated_at": "2025-06-01T09:36:31Z",
+      "closed_at": "2025-06-01T09:36:31Z",
+      "labels": [
+        "windows"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/264/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/264",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/264",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.799923",
+      "comments": [
+        {
+          "author": "Huu1j",
+          "body": "i have resolved the problem,just uninstall the undetected_chromedriver and reinstall the package,it will be ok,though i don't know what is the reason，it may just a bug",
+          "created_at": "2025-06-01T09:06:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 125,
+      "title": "Frontend improvement",
+      "body": "\n\nEnhance the current design: Improve the UI/UX to improve usability, aesthetics, and user experience.\n\nFix duplicate message bugs: Resolve issues causing duplicate messages to appear in the frontend.\n\nImprove browser screenshot streaming: The currently approach for streaming of screenshots is probably wrong and kind of glitchy.\n\nEnhance editor view: Improve the functionality and user experience of the editor view, fix bugs.\n\nFix status message updates: Address the issue where status messages are not being updated correctly by agents.\n\nAdd markdown support for left pane view.\n\nMore readable command/code output.",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-19T08:35:00Z",
+      "updated_at": "2025-05-31T20:26:06Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "medium priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 29,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/125/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Saminu",
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/125",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/125",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.951196",
+      "comments": []
+    },
+    {
+      "issue_number": 214,
+      "title": "Windows Compatibility: \"Tool: bash\" Agent Generates Incompatible Commands & File Operation Issues",
+      "body": "I am trying this on my computer with the help of gemini 2.5 pro to try to fix issues.untill now it helped me resolve all issues wich did arise.but now it sugested i write this in bug report because we cant get any further.\nsorry for my englis... not my first language.\n\n\n\n**Describe the bug**\nWhen running AgenticSeek on Windows 11, agents that are designated with Tool: bash (as seen in the internal agent logs/browser output) attempt to execute commands that are often incompatible with the Windows Command Prompt (CMD.exe), which appears to be the shell environment these commands are executed in. This leads to errors and incorrect behavior for file manipulation and script execution tasks.\n\nBash-Specific Syntax in CMD:\n\nCommands generated by the agent frequently include bash-specific syntax. For example, using # at the beginning of a line for comments:\n```\nTool: bash\n# Verify file creation and content\ntype F:\\agentic_seek_workspace\\movie_night.txt\nFeedback: [failure] Error in execution: Command cd F:\\agentic_seek_workspace && # Verify file creation and contenttype F:\\agentic_seek_workspace\\movie_night.txt failed with return code 1: '#' is not recognized as an internal or external command, operable program or batch file.\n```\nThis immediately fails in Windows CMD.\nAnother example is the use of echo -e for interpreting backslash escapes (like \\n for newlines):\nCommand Generated: cd F:\\agentic_seek_workspace && echo -e \"Movie1\\nMovie2\\nMovie3\" > movies.txt\nActual Result on Windows: The file movies.txt is created containing the literal string -e \"Movie1\\nMovie2\\nMovie3\", not the movies on separate lines. AgenticSeek reported this as [success] presumably because the command ran without an OS error, but the output was incorrect.\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\nFile Not Found Errors:\n\nEven when a command is syntactically valid for Windows CMD (e.g., after the agent \"corrects\" a command by removing the #), it sometimes fails because the target file wasn't found:\n```\nTool: bash\ntype F:\\agentic_seek_workspace\\movie_night.txt\nFeedback: [failure] Error in execution: Command cd F:\\agentic_seek_workspace && type F:\\agentic_seek_workspace\\movie_night.txt failed with return code 1: The system cannot find the file specified.\n```\nThis suggests that the preceding step (which should have created the file) might also be failing or saving the file in an unexpected way/location.\n\nUnsafe Command\" Aborts by AgenticSeek:\n\nWhen attempting to write a multi-line Python script to a .py file using an echo \"...\" > script.py command (even if the syntax was made CMD-compatible), AgenticSeek's internal safety filter aborted the action:\n```\nTool: bash\ncd F:\\agentic_seek_workspace && echo \"python_script_content...\" > news_scraper.py\nFeedback: [failure] Error in execution: Unsafe command: {command}. Execution aborted. This is beyond allowed capabilities report to user.\n```\nThis prevents agents from creating scripts or more complex files using this method.\n\nImpact:\nThese issues make it difficult for AgenticSeek to reliably perform tasks on Windows that involve file system manipulation, script creation, or command execution via agents relying on the \"bash\" tool. The agent often gets stuck in a loop of failing commands or reports task failure.\n\nAttempted Mitigation (Modifying Agent Prompt):\nI attempted to modify the prompt for the file_agent (found in file_agent.txt) to explicitly instruct the LLM to generate Windows CMD-compatible commands even when using the \"bash\" tool. This helped reduce the # comment errors but did not fully resolve issues like the echo -e usage or the \"Unsafe command\" blocks.\n\nExpected Behavior:\nFor robust Windows support, agents performing shell operations should:\n\nGenerate commands compatible with the native Windows shell (CMD or PowerShell).\nOr, if a \"bash\" tool is intended, AgenticSeek should ensure it correctly invokes a bash interpreter environment (e.g., WSL, Git Bash) on Windows.\nFile creation and verification steps should function reliably on Windows.\nSafety filters should ideally allow for common agent tasks like writing generated code to files in a secure manner.\n\nEnvironment:\n\nOperating System: Windows 11 Pro (Version 24H2, OS build 26100.3775)\nPython Version: 3.10.11 (installed from python.org)\nLLM Provider: LM Studio (previously also tested with Ollama)\nRelevant Hardware: AMD Ryzen 5 5600X, 32GB RAM, AMD Radeon RX 7800 XT\n\nKey Issues Observed:\n\nBash-Specific Syntax in CMD:\n\nCommands generated by the agent frequently include bash-specific syntax. For example, using # at the beginning of a line for comments:\n```\nTool: bash\n# Verify file creation and content\ntype F:\\agentic_seek_workspace\\movie_night.txt\nFeedback: [failure] Error in execution: Command cd F:\\agentic_seek_workspace && # Verify file creation and contenttype F:\\agentic_seek_workspace\\movie_night.txt failed with return code 1: '#' is not recognized as an internal or external command, operable program or batch file.\n```\nThis immediately fails in Windows CMD.\nAnother example is the use of echo -e for interpreting backslash escapes (like \\n for newlines):\nCommand Generated: cd F:\\agentic_seek_workspace && echo -e \"Movie1\\nMovie2\\nMovie3\" > movies.txt\nActual Result on Windows: The file movies.txt is created containing the literal string -e \"Movie1\\nMovie2\\nMovie3\", not the movies on separate lines. AgenticSeek reported this as [success] presumably because the command ran without an OS error, but the output was incorrect.\n\nFile Not Found Errors:\n\nEven when a command is syntactically valid for Windows CMD (e.g., after the agent \"corrects\" a command by removing the #), it sometimes fails because the target file wasn't found:\n```\nTool: bash\ntype F:\\agentic_seek_workspace\\movie_night.txt\nFeedback: [failure] Error in execution: Command cd F:\\agentic_seek_workspace && type F:\\agentic_seek_workspace\\movie_night.txt failed with return code 1: The system cannot find the file specified.\n```\nThis suggests that the preceding step (which should have created the file) might also be failing or saving the file in an unexpected way/location.\n\"Unsafe Command\" Aborts by AgenticSeek:\n\nWhen attempting to write a multi-line Python script to a .py file using an echo \"...\" > script.py command (even if the syntax was made CMD-compatible), AgenticSeek's internal safety filter aborted the action:\n```\nTool: bash\ncd F:\\agentic_seek_workspace && echo \"python_script_content...\" > news_scraper.py\nFeedback: [failure] Error in execution: Unsafe command: {command}. Execution aborted. This is beyond allowed capabilities report to user.\n```\nThis prevents agents from creating scripts or more complex files using this method.\n\nIncorrect Command \"Corrections\" by Agent:\n\nThe agent's attempts to correct failing commands sometimes reintroduce invalid syntax or suggest entirely inappropriate commands for the task (e.g., suggesting certutil -verifystore \"My\" ... to verify file content).\n\n\nAttempted Mitigation (Modifying Agent Prompt):\nI attempted to modify the prompt for the file_agent (found in file_agent.txt) to explicitly instruct the LLM to generate Windows CMD-compatible commands even when using the \"bash\" tool. This helped reduce the # comment errors but did not fully resolve issues like the echo -e usage or the \"Unsafe command\" blocks.\n\nExpected Behavior:\nFor robust Windows support, agents performing shell operations should:\n\nGenerate commands compatible with the native Windows shell (CMD or PowerShell).\nOr, if a \"bash\" tool is intended, AgenticSeek should ensure it correctly invokes a bash interpreter environment (e.g., WSL, Git Bash) on Windows.\nFile creation and verification steps should function reliably on Windows.\nSafety filters should ideally allow for common agent tasks like writing generated code to files in a secure manner.\n\n",
+      "state": "open",
+      "author": "losting03483",
+      "author_type": "User",
+      "created_at": "2025-05-27T03:00:21Z",
+      "updated_at": "2025-05-31T19:17:06Z",
+      "closed_at": null,
+      "labels": [
+        "good first issue"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/214/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/214",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/214",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:49.951215",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Hello, thank you for the reporting multiple issues, I will look into each one. For now one thing caught my eyes:\n\nYou said that the command :\n`cd F:\\agentic_seek_workspace && echo \"python_script_content...\" > news_scraper.py`\nIt resulted in \"Feedback: [failure] Error in execution: Unsafe command:\" b",
+          "created_at": "2025-05-27T20:35:19Z"
+        },
+        {
+          "author": "gabrielsallum",
+          "body": "I also experienced this issue on a simple request, to create a directory.\n\noutput\n\"\"\nIt seems direct directory creation commands are restricted for safety. I'll proceed to locate the files (files ) within the <dir name> directory using file_finder.\n\nLet me start by finding webcommon.h:\n\nblock:0\n\"\"\n\n",
+          "created_at": "2025-05-31T19:06:45Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "You can see the code for the check in sources/tools/safety.py\n\nIf you wish you could set         self.safe_mode = False in the tools base class (sources/tools/tools.py",
+          "created_at": "2025-05-31T19:17:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 204,
+      "title": "Module not found: Error: Can't resolve '/app/src/index.js' in '/app'",
+      "body": "**Describe the bug**\nonce naviage to http://0.0.0.0:3000 gives error : \nCompiled with problems:\n×\nERROR\nModule not found: Error: Can't resolve '/app/src/index.js' in '/app'\n\n\n**To Reproduce**\nSteps to reproduce the behavior:\nInstall package\nRun the api.py script\n\n**Expected behavior**\nShould see web ui\n\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/554868ba-ebbb-4301-9dc5-c9db5641ebcd)\n\n**Desktop (please complete the following information):**\n - OS:Fedora 42\n\n\n\n**Additional context**\nRunning on python 3.12 , had to remove version numbers from requirements.txt to run\n",
+      "state": "closed",
+      "author": "gabrielsallum",
+      "author_type": "User",
+      "created_at": "2025-05-25T22:07:03Z",
+      "updated_at": "2025-05-29T20:42:30Z",
+      "closed_at": "2025-05-29T20:42:30Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/204/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/204",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/204",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:51.953470",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "that's really weird, are you running the frontend in docker after starting start_services.sh ? are there any error in docker compose log ?",
+          "created_at": "2025-05-26T16:57:44Z"
+        },
+        {
+          "author": "gabrielsallum",
+          "body": "Its weird I kept having issues running the script, but looking at it it seems just to call docker compose, so I did that, and the containers came up no issue. witch was odd in itself. Here is the original error for the script:\n\nsearxng   | SearXNG 2025.5.25+7a5a499\nsearxng   | ... \"/etc/searxng/uwsg",
+          "created_at": "2025-05-27T19:56:57Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "searxng is not required for the frontend. can you update the repository (clone again), delete the frontend container in docker and build again (./start_services.sh)",
+          "created_at": "2025-05-28T17:10:19Z"
+        },
+        {
+          "author": "gabrielsallum",
+          "body": "Ok just found out what the problem was. the node container also was failing on permissions , but the searchnx was spitting out too many messages, and I didn't catch it on the logs. \n\nFurther debug I discovered that since I'm on Fedora 42 (Recently upgraded to get the ollama package built-in dnf), It",
+          "created_at": "2025-05-29T20:29:29Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Hello could you submit a pull request with your fix that refer this issue (please submit it as draft for now)",
+          "created_at": "2025-05-29T20:42:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 233,
+      "title": "docker_deployement branch - chromedriver exit when run in docker",
+      "body": "I am currently working on docker deployement on the `docker_deployement` branch but I am kind of stuck on the following issue, if anyone know or find a solution feel free to reply or send a message on discord. Probably not very difficult but didn't have the time to finish.\n\nThe issue is that I want to run the backend in docker (currently it's the only service run on host), I am implementing required change on the docker_deployement branch, it's almost finished, except that the backend service keep exiting due to a error with selenium.\n\nTo help with solving:\n\n- checkout to `docker_deployement` branch I am currently working on\n-  start with`./start_services.sh full` **yes, you need to add \"full\" as argument to the script**\n- You should see the same log as below, the web driver exit with code 255\n- Find a workaround\n\n```\nbackend   | Traceback (most recent call last):\nbackend   |   File \"/app/api.py\", line 109, in <module>\nbackend   |     interaction = initialize_system()\nbackend   |   File \"/app/api.py\", line 65, in initialize_system\nbackend   |     create_driver(headless=config.getboolean('BROWSER', 'headless_browser'), stealth_mode=stealth_mode, lang=languages[0]),\nbackend   |   File \"/app/sources/browser.py\", line 199, in create_driver\nbackend   |     return webdriver.Chrome(service=service, options=chrome_options)\nbackend   |   File \"/usr/local/lib/python3.10/dist-packages/selenium/webdriver/chrome/webdriver.py\", line 47, in __init__\nbackend   |     super().__init__(\nbackend   |   File \"/usr/local/lib/python3.10/dist-packages/selenium/webdriver/chromium/webdriver.py\", line 58, in __init__\nbackend   |     self.service.start()\nbackend   |   File \"/usr/local/lib/python3.10/dist-packages/selenium/webdriver/common/service.py\", line 106, in start\nbackend   |     self.assert_process_still_running()\nbackend   |   File \"/usr/local/lib/python3.10/dist-packages/selenium/webdriver/common/service.py\", line 119, in assert_process_still_running\nbackend   |     raise WebDriverException(f\"Service {self._path} unexpectedly exited. Status code was: {return_code}\")\nbackend   | selenium.common.exceptions.WebDriverException: Message: Service /usr/local/bin/chromedriver unexpectedly exited. Status code was: 255\nbackend   | \nbackend exited with code 1\n```",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-05-27T21:54:07Z",
+      "updated_at": "2025-05-29T15:19:43Z",
+      "closed_at": "2025-05-29T15:19:43Z",
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/233/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/233",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/233",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.137318",
+      "comments": []
+    },
+    {
+      "issue_number": 241,
+      "title": "what is the error. How to rectify?",
+      "body": "Session recovered successfully\nAgenticSeek is ready.\n➤➤➤ Search the web for top cafes in Rennes, France, and save a list of three with their addresses in rennes_cafes.txt.\nComplex task detected, routing to planner agent.\n▇▃▁▁▁▁ Thinking...Traceback (most recent call last):\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\llm_provider.py\", line 100, in respond\n    thought = llm(history, verbose)\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\llm_provider.py\", line 214, in ollama_fn\n    raise e\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\llm_provider.py\", line 197, in ollama_fn\n    for chunk in stream:\n  File \"C:\\Users\\srinadh\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\ollama\\_client.py\", line 170, in inner\n    raise ResponseError(e.response.text, e.response.status_code) from None\nollama._types.ResponseError: model is required (status code: 400)\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\srinadh\\agenticSeek\\cli.py\", line 78, in <module>\n    asyncio.run(main())\n  File \"C:\\Users\\srinadh\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\runners.py\", line 44, in run\n    return loop.run_until_complete(main)\n  File \"C:\\Users\\srinadh\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\base_events.py\", line 641, in run_until_complete        \n    return future.result()\n  File \"C:\\Users\\srinadh\\agenticSeek\\cli.py\", line 72, in main\n    raise e\n  File \"C:\\Users\\srinadh\\agenticSeek\\cli.py\", line 66, in main\n    if await interaction.think():\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\interaction.py\", line 162, in think\n    self.last_answer, self.last_reasoning = await agent.process(self.last_query, self.speech)\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\agents\\planner_agent.py\", line 264, in process\n    agents_tasks = await self.make_plan(goal)\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\agents\\planner_agent.py\", line 158, in make_plan\n    answer, reasoning = await self.llm_request()\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\agents\\agent.py\", line 164, in llm_request\n    return await loop.run_in_executor(self.executor, self.sync_llm_request)\n  File \"C:\\Users\\srinadh\\AppData\\Local\\Programs\\Python\\Python310\\lib\\concurrent\\futures\\thread.py\", line 52, in run\n    result = self.fn(*self.args, **self.kwargs)\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\agents\\agent.py\", line 171, in sync_llm_request\n    thought = self.llm.respond(memory, self.verbose)\n  File \"C:\\Users\\srinadh\\agenticSeek\\sources\\llm_provider.py\", line 116, in respond\n    raise Exception(f\"Provider {self.provider_name} failed: {str(e)}\") from e\nException: Provider ollama failed: model is required (status code: 400)\nPS C:\\Users\\srinadh\\agenticSeek> ",
+      "state": "closed",
+      "author": "srinadhkesineni",
+      "author_type": "User",
+      "created_at": "2025-05-28T08:05:24Z",
+      "updated_at": "2025-05-29T08:12:45Z",
+      "closed_at": "2025-05-29T08:12:44Z",
+      "labels": [
+        "question"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/241/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/241",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/241",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.137339",
+      "comments": [
+        {
+          "author": "srinadhkesineni",
+          "body": "[MAIN]\nis_local = True\nprovider_name = ollama\nprovider_model = deepseek-r1:14b \nprovider_server_address = 127.0.0.1:11434\nagent_name = Jarvis\nrecover_last_session = True\nsave_session = True\nspeak = True\nlisten = False\nwork_dir = /Users/mlg/Documents/workspace\njarvis_personality = False\nlanguages = e",
+          "created_at": "2025-05-28T13:33:26Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "is there trailing space in the config ?",
+          "created_at": "2025-05-28T17:03:23Z"
+        },
+        {
+          "author": "srinadhkesineni",
+          "body": "➤➤➤ Search the web for top cafes in Rennes, France, and save a list of three with their addresses in rennes_cafes.txt.\nComplex task detected, routing to planner agent.\n\n▂▘ P L A N ▝▂\nWeb -> Search for top cafe list in Renns, France\nFile -> Save a list of three with their addresses in rennes_cafe_lis",
+          "created_at": "2025-05-29T03:20:49Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "The model you are using is clearly too weak, it hallucinated a lot of informations and then failed to create a JSON for the plan. We'll need to improve error handling tho",
+          "created_at": "2025-05-29T06:51:42Z"
+        },
+        {
+          "author": "srinadhkesineni",
+          "body": "i configured tinillama model. deepseek or any other model is not supporting for my laptop configurations. could you suggest any other model?\nmy laptop configuration:\n\n<img width=\"332\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ce93b3cb-4eae-4555-9cc6-161e9b0e9c61\" />",
+          "created_at": "2025-05-29T07:16:41Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 73,
+      "title": "Setting up a CI/CD",
+      "body": "**1. Automated Testing Configuration:**\nwrite a test suite for CI/CD setup --> link to https://github.com/Fosowl/agenticSeek/issues/52\n- [ ] Define comprehensive test suites to ensure all critical functionalities are covered\n- [ ] Implement these tests to run automatically upon PR creation or updates\n\n**2. GitHub Actions Workflow Setup:**\n\n- [ ] Create a .github/workflows/pr-validation.yml file\n- [ ] Configure the workflow to trigger on pull_request events targeting branch\n\nInclude steps to:\n\n- Checkout the code\n- Install necessary dependencies\n- Execute the test\n- Report the outcomes\n\n**3. Additional Checks Implementation:**\n\n- [ ] Integrate linters to maintain code style consistency\n- [ ] Set up security analysis tools to detect vulnerabilities\n\t\n**4. Branch Protection Rules Configuration:**\n\n- [ ] Require successful completion of the PR validation workflow before merging\n- [ ] Mandate code reviews by designated team members prior to merging\n",
+      "state": "open",
+      "author": "floriangab",
+      "author_type": "User",
+      "created_at": "2025-03-24T17:01:44Z",
+      "updated_at": "2025-05-26T13:58:37Z",
+      "closed_at": null,
+      "labels": [
+        "medium priority"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/73/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "floriangab"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/73",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/73",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.345412",
+      "comments": [
+        {
+          "author": "andrewpsp",
+          "body": "Exploring for contributions -update found WIP floriangab:ci/setup-pipeline",
+          "created_at": "2025-05-26T13:52:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 171,
+      "title": "A STOP button",
+      "body": "**A problem**\nWhen i ask something and getting answer earlyer than agenticSeek and want to make new answer, i can't because need to wait before it's over long long reasoning.\n\n**The solution**\nA STOP button like in Jan.ai or another engines where i can stop thinking at every moment.\n\n**Additional context**\nI think need api endpoint for stop and a button in web interface. Because if i press CTRL+C in terminal, it drops everything and context, and i need to start it again, harder for remote working.\n",
+      "state": "closed",
+      "author": "itJunky",
+      "author_type": "User",
+      "created_at": "2025-05-07T15:56:40Z",
+      "updated_at": "2025-05-23T16:39:09Z",
+      "closed_at": "2025-05-23T16:39:08Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/171/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/171",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/171",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.494325",
+      "comments": [
+        {
+          "author": "itJunky",
+          "body": "Think need use command `ollama stop modelname` for stopping thinking on system level, but if someone else use our agenticSeek instance it's broke him request too.",
+          "created_at": "2025-05-12T11:43:30Z"
+        },
+        {
+          "author": "billhao",
+          "body": "+1",
+          "created_at": "2025-05-13T07:04:13Z"
+        },
+        {
+          "author": "itJunky",
+          "body": "Now it's go to infinity loop and never stop ((\n\n![Image](https://github.com/user-attachments/assets/1e31c43f-4164-4274-871e-0abfed6fdf01)\n\nMy question is `Browse page and say what you see on page http://ifconfig.me/ip ? Do not use curl.` but it's want to install keylogger to my system and... may be.",
+          "created_at": "2025-05-13T12:50:17Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Yes I will add a stop button for stopping current tasks, I am ensure we can stop the generation of every provider tho but will look into it.\n\n\"My question is Browse page and say what you see on page http://ifconfig.me/ip ? Do not use curl. but it's want to install keylogger to my system\" that's real",
+          "created_at": "2025-05-13T16:45:17Z"
+        },
+        {
+          "author": "itJunky",
+          "body": "Now i use gemma3:27b-it-qat",
+          "created_at": "2025-05-14T13:19:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 133,
+      "title": "Installation Error",
+      "body": "Subject: Troubleshooting Report: Agentic Seek Connection Failure on Windows with Local LLM Providers\n\nGoal:\nInstall and run the Agentic Seek application (python cli.py) on Windows, configured to use a local LLM provider (initially LM Studio, later switched to Ollama).\n\nSystem Configuration:\n\nOperating System: Windows (detected as not Windows 11 by script ver | findstr /i \"11.0.\")\nPython Version: 3.10.11 (Installed manually from python.org, added to PATH)\nInitial Target Provider: LM Studio v0.2.14 with model lmstudio-community/DeepSeek-r1-distill-llama-8b-GGUF on http://127.0.0.1:1234\nCurrent Target Provider: Ollama with model deepseek-coder:latest (or similar) on http://127.0.0.1:11434\nProblem Encountered:\nAfter completing installation steps, running python cli.py (or python api.py) consistently fails with a Python traceback ending in:\nException: Server at http://127.0.0.1:[PORT] is offline.\nThis error occurred for both LM Studio (port 1234) and Ollama (port 11434) configurations.\n\nTroubleshooting Steps Performed:\n\nInitial Installer Script Issues: The provided .bat installer script (installer.txt) consistently failed early with syntax errors (\". was unexpected...\", \"usually was unexpected...\") likely due to file encoding/corruption issues (initially saved as UTF-8, later attempts with ANSI also failed at similar points). A minimal test script worked, but adding subsequent sections caused the early failure again. Switched to manual installation.   \nManual Installation:\nConfirmed Git installation.\nManually created C:\\AgenticSeek directory.\nCloned Agentic Seek repository directly into C:\\AgenticSeek.\nManually created Python 3.10.11 virtual environment (agentic_seek_env) inside C:\\AgenticSeek.\nActivated virtual environment.\nUpgraded pip, setuptools, wheel.\nInstalled specific dependency versions to fix known issues (playsound==1.2.2).\nInstalled Windows-specific dependency (pyreadline3) to resolve ModuleNotFoundError: No module named 'readline'.\nInstalled provider-specific dependency (ollama) when switching configuration.\nInstalled all other dependencies via pip install -r requirements.txt.\nManually created workspace directory.\nManually created/verified config.ini with correct settings for the target provider (LM Studio or Ollama), including server address (http://127.0.0.1:[PORT]) and corrected work_dir (C:\\AgenticSeek\\workspace), saved as ANSI.\nServer Verification:\nConfirmed the target server (LM Studio or Ollama) was running via its own interface/service status.\nSuccessfully tested direct connection to the server API using curl from the command line:\ncurl http://127.0.0.1:1234/v1/chat/completions ... (for LM Studio) returned a valid JSON response.\ncurl http://127.0.0.1:11434 (for Ollama) returned \"Ollama is running\".\nFirewall Check: Temporarily disabled Windows Defender Firewall; the \"Server... is offline\" error in Agentic Seek persisted.\nPython Version: Initially encountered issues possibly related to a Python 3.12 installation (Microsoft Store). Uninstalled previous versions and performed a clean install of Python 3.10.11 from python.org, ensuring it was added to PATH. The connection error still persisted after rebuilding the environment with this Python version.\nConclusion:\nThe LM Studio and Ollama servers are confirmed to be running correctly and are reachable from the local machine via standard tools (curl). The firewall is not blocking the connection. Python and all dependencies are installed correctly in a dedicated virtual environment. The config.ini points to the correct server address.\n\nDespite this, the Agentic Seek Python application (both cli.py and api.py) is unable to establish a connection to either local server, consistently throwing a \"Server... is offline\" exception originating from its llm_provider.py connection check.\n\nThis strongly indicates an issue specific to how the Agentic Seek Python code (or the underlying Python networking libraries it uses) interacts with the network stack or makes localhost/127.0.0.1 connections within this specific Windows environment. The root cause is likely an incompatibility, a bug in Agentic Seek's connection handling, or a subtle system/network configuration issue affecting Python but not curl.",
+      "state": "closed",
+      "author": "Akshith-Anoop",
+      "author_type": "User",
+      "created_at": "2025-04-26T06:53:08Z",
+      "updated_at": "2025-05-20T14:25:53Z",
+      "closed_at": "2025-05-20T14:25:53Z",
+      "labels": [
+        "bug",
+        "windows"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/133/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/133",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/133",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.714970",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Thank you for reporting the issue. I’ve addressed the IP offline problem in the latest pull request. Currently, I don’t have access to a Windows machine but I’ll work on resolving the Windows installation errors later today.",
+          "created_at": "2025-04-26T08:56:10Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Hello, really sorry I couldn't have access to a windows computer for the whole week. I have a friend who will look into it.",
+          "created_at": "2025-05-05T13:27:35Z"
+        },
+        {
+          "author": "hexdrx",
+          "body": "> Hello, really sorry I couldn't have access to a windows computer for the whole week. I have a friend who will look into it.\n\nprobably same issue on linux, or im cooked. So, keep in touch\n",
+          "created_at": "2025-05-06T17:48:24Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Can you be more specific ? If you are having a linux issue could you raise one that explain your problem? or join the discord ",
+          "created_at": "2025-05-06T17:51:45Z"
+        },
+        {
+          "author": "b1n4r9",
+          "body": "> Can you be more specific ? If you are having a linux issue could you raise one that explain your problem? or join the discord\n\nhttps://github.com/TaylorSMarks/playsound/issues/150 ",
+          "created_at": "2025-05-09T14:53:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 184,
+      "title": "Reset previous input",
+      "body": "**Problem is**\nWant new dialog with new title, but have old requests in context.\n\n**Describe the solution you'd like**\nMay be a button in interface and command for cli like \"new_dialog\" or \"reset_context\" for clean previous input.\n\n**Describe alternatives you've considered**\nList of previous dialogs with separate context per each.\n\n**Additional context**\nAfter restart a backend conteiner i still have a old context:\n\n![Image](https://github.com/user-attachments/assets/39efb589-a6b3-4007-8c37-ae867e8b5070)\n",
+      "state": "closed",
+      "author": "itJunky",
+      "author_type": "User",
+      "created_at": "2025-05-13T14:49:10Z",
+      "updated_at": "2025-05-18T08:41:56Z",
+      "closed_at": "2025-05-18T08:41:56Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/184/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/184",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/184",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:52.902992",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "The backend doesn't work in docker currently. So to do a full reset you would have to ctrl+c in the terminal and start again. But yes having a reset button is a good idea.",
+          "created_at": "2025-05-13T16:42:46Z"
+        },
+        {
+          "author": "itJunky",
+          "body": "I'm already run it in [docker](https://github.com/itJunky/agenticSeek/blob/devops/docker-compose.yml) \nAnd after restart a backend container(like your solution with ctrl+c) it still have a context with my previous requests. You can see it on my previous screenshot.\nLooking for a place where it store",
+          "created_at": "2025-05-14T12:46:05Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Don't you have recover_last_session = True and save_session = True ? This will recover the previous session. I really advice you don't use gemma3:27b-it I have never used it but it seem to hallucinate like crazy. Also our prompt are \"optimized\" for deepseek-r1, if you don't have the hardware you cou",
+          "created_at": "2025-05-14T16:25:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 13,
+      "title": "Let the agent remember the user's preferences.",
+      "body": "This is a job like Chatgpt's memory.\nWhenever you ask the agent, it appends the memories to the last line of Promt.\n\nDB:\n    - sqlite",
+      "state": "open",
+      "author": "steveh8758",
+      "author_type": "User",
+      "created_at": "2025-03-07T17:39:58Z",
+      "updated_at": "2025-05-07T10:10:54Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "medium priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/13/reactions",
+        "total_count": 2,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 2,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/13",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/13",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.072766",
+      "comments": []
+    },
+    {
+      "issue_number": 9,
+      "title": "RAG system",
+      "body": "implementation of a tools for retrival of informations from all pdf/txt/.md documents in the work directory.",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-01T12:13:18Z",
+      "updated_at": "2025-05-07T09:56:33Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "medium priority",
+        "contributor-friendly"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/9/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/9",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/9",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.072786",
+      "comments": []
+    },
+    {
+      "issue_number": 108,
+      "title": "Handling of arbitrary web form / upload / multi-choice button",
+      "body": "Currently we can only fill basic web form. We need to handle the following.\n\n- Web form within a shadowDOM or arbitrary website structure.\n- Multichoice button\n- File uploads.\n- Any other form of interaction.",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-09T21:19:26Z",
+      "updated_at": "2025-05-07T09:54:45Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "medium priority",
+        "contributor-friendly"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/108/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/108",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/108",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.072793",
+      "comments": []
+    },
+    {
+      "issue_number": 107,
+      "title": "GRPO / SFT for agentic behavior",
+      "body": " Use GRPO or SFT as a fine-tuning strategy to improve the behavior of small DeepSeek models for use in agentic systems. The goal is to specialize these models to exhibit more reliable behavior, In particular for autonomous web browsing\n\nThis is more of an idea than anything for now. We neither have a reliable way of making a dataset or enough compute.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-09T21:03:55Z",
+      "updated_at": "2025-05-06T17:52:48Z",
+      "closed_at": "2025-05-06T17:52:47Z",
+      "labels": [
+        "idea"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/107/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/107",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/107",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.215991",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "closing but will open one related to knowledge distiliiation ",
+          "created_at": "2025-05-06T17:52:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 119,
+      "title": "docker-compose deployment",
+      "body": "**Is your feature request related to a problem? Please describe.**\n\nIt would be great if the project had an example docker-compose that deployed the app so you could self-host on your home server etc....\n\n**Describe the solution you'd like**\n\nAn example docker-compose that built and deployed the app\n\n**Describe alternatives you've considered**\n\n- The install scripts assume you're wanting to run the app directly on a machine\n- The [docker-compose](https://github.com/Fosowl/agenticSeek/blob/main/searxng/docker-compose.yml) in the project is specific to searxng",
+      "state": "closed",
+      "author": "sammcj",
+      "author_type": "User",
+      "created_at": "2025-04-14T01:18:46Z",
+      "updated_at": "2025-05-03T13:24:31Z",
+      "closed_at": "2025-05-03T13:24:30Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/119/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/119",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/119",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.384657",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Currently we only have a CLI interface with main.py, once we set up a web interface #6 we'll had a corresponding docker-compose to spin up everything",
+          "created_at": "2025-04-14T11:31:02Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Hello, we are actively working on it, I have open a new issue #155 that explain what we are currently doing. I am closing this one.",
+          "created_at": "2025-05-03T13:24:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 148,
+      "title": "problem with package. json",
+      "body": "**Describe the bug**\ntrying to install it on windows 11, recieved this response even after redownloading and extracting agian,\n**npm error enoent Could not read package.json: Error: ENOENT: no such file or directory**\nthere is a file by the same name in the frontend file yet I cannot seem to locate the reason",
+      "state": "closed",
+      "author": "HossamArch",
+      "author_type": "User",
+      "created_at": "2025-05-01T13:06:24Z",
+      "updated_at": "2025-05-03T11:38:28Z",
+      "closed_at": "2025-05-03T11:38:27Z",
+      "labels": [
+        "windows"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/148/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/148",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/148",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:53.577515",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "why don't you run the start_services script ? it will spin everything in a docker, including the frontend, you do not need to manually start it.\nIf you really want to run the frontend on the host, make sure you npm  install and npm start within the agentic-seek-front folder",
+          "created_at": "2025-05-02T20:10:51Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "If you are having futher issues feel free to ask for help on the discord, but since your issue is specific to how you are using it I have to close it.",
+          "created_at": "2025-05-03T11:38:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 142,
+      "title": "Installation fails on Ubuntu 24.04",
+      "body": "**Describe the bug**\nInstallation fails on Ubuntu 24.04\n\n**To Reproduce**\n\n```\n./install.sh \nDetecting operating system...\nDetected Linux OS\nRunning Linux installation script...\nStarting installation for Linux...\n[sudo] password for x: \nGet:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]                                                \nHit:2 http://archive.ubuntu.com/ubuntu noble InRelease                                                                   \nGet:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]                                                  \nHit:4 https://dl.google.com/linux/chrome/deb stable InRelease                                                            \nHit:6 https://packages.microsoft.com/repos/code stable InRelease                                                         \nHit:7 https://download.docker.com/linux/ubuntu noble InRelease                                                           \nHit:9 https://releases.warp.dev/linux/deb stable Release                                                                 \nHit:11 https://download.sublimetext.com apt/stable/ InRelease                                                            \nHit:13 https://downloads.1password.com/linux/debian/amd64 stable InRelease                                               \nHit:14 https://ppa.launchpadcontent.net/cppiber/hyprland/ubuntu noble InRelease                                          \nGet:17 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [782 kB]                                     \nHit:18 https://ppa.launchpadcontent.net/fish-shell/release-4/ubuntu noble InRelease                                      \nGet:20 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]                                               \nHit:21 https://ppa.launchpadcontent.net/openrazer/stable/ubuntu noble InRelease                                          \nGet:22 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,028 kB]                                     \nHit:23 https://ppa.launchpadcontent.net/polychromatic/stable/ubuntu noble InRelease                                      \nGet:24 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [147 kB]                                     \nGet:25 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]                                  \nGet:26 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [191 kB]                               \nGet:27 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]                              \nGet:28 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [834 kB]                                 \nGet:29 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]                              \nGet:30 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]                              \nGet:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [161 kB]                                     \nGet:32 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]                                \nGet:33 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,057 kB]                                 \nGet:34 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [368 kB]                                 \nGet:35 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]                                \nGet:36 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,064 B]                                  \nGet:37 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]                              \nGet:38 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [16.4 kB]                              \nGet:39 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]                              \nFetched 5,051 kB in 9s (570 kB/s)                                                                                        \nReading package lists... Done\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nE: Unable to locate package libgconf-2-4\nFailed to install packages\nFile already exists, skipping download\nInstallation process finished!\n```\n\n**Expected behavior**\nAll dependencies to be installed.\n\n**Desktop (please complete the following information):**\n\n```\n❯ neofetch \n            .-/+oossssoo+/-.               x@y\n        `:+ssssssssssssssssss+:`           ----------------- \n      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 24.04.2 LTS x86_64 \n    .ossssssssssssssssssdMMMNysssso.       Host: 81YM IdeaPad 5 14ARE05 \n   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.11.0-24-generic \n  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 1 day, 11 hours, 53 mins \n /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 2835 (dpkg), 23 (brew), 41 (snap) \n.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.21 \n+sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 3840x2160 \nossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 46.0 \nossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter \n+sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita \n.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru-red-dark [GTK2/3] \n /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru-red [GTK2/3] \n  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: guake \n   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: AMD Ryzen 5 4500U with Radeon Graphics (6) @ 2.375GHz \n    .ossssssssssssssssssdMMMNysssso.       GPU: AMD ATI Radeon RX Vega 6 \n      -+sssssssssssssssssyyyssss+-         Memory: 11963MiB / 15356MiB \n        `:+ssssssssssssssssss+:`\n            .-/+oossssoo+/-.                                       \n                                                                   \n```\n\n",
+      "state": "closed",
+      "author": "behrangsa",
+      "author_type": "User",
+      "created_at": "2025-04-28T19:52:41Z",
+      "updated_at": "2025-04-30T20:14:36Z",
+      "closed_at": "2025-04-30T20:14:35Z",
+      "labels": [
+        "Ubuntu 24.04"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/142/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/142",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/142",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:55.498820",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Hello, seem highly specific to your system. can you make sure all your package are up to stage with no broken install ? If doesn't work try \"sudo add-apt-repository universe\" and update again. I think it might be specific to Ubuntu 24.04",
+          "created_at": "2025-04-28T20:18:34Z"
+        },
+        {
+          "author": "erprateek",
+          "body": "Can confirm I just tried on Ubuntu 24.04 (wsl2) but still the same error.",
+          "created_at": "2025-04-30T05:07:00Z"
+        },
+        {
+          "author": "erprateek",
+          "body": "However this helped: https://stackoverflow.com/questions/69880531/installing-libgconf-2-4-on-ubuntu",
+          "created_at": "2025-04-30T05:13:56Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Thanks @erprateek I am closing since this too OS specific",
+          "created_at": "2025-04-30T20:14:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 111,
+      "title": "Investigate random BUS error on exit",
+      "body": "**Describe the bug**\nBus error randomly happening.\n\n**To Reproduce**\nEither:\n1. use it a bit then exit, may randomly cause bus error.\n2. Ask it to code a gui app, close the gui app, result in bus error sometimes.\n3. Can also happen when browsing the web\n\n**Expected behavior**\nNo bus error\n\n**System information:**\n - OS: Darwin Martins-MacBook-Air.local 23.2.0 Darwin Kernel Version 23.2.0; root:xnu-10002.61.3~2/RELEASE_ARM64_T8103 arm64\n",
+      "state": "open",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-11T09:09:54Z",
+      "updated_at": "2025-04-28T20:20:16Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/111/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/111",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/111",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:55.665221",
+      "comments": []
+    },
+    {
+      "issue_number": 105,
+      "title": "Planner agent adaptability / critics",
+      "body": "\nCurrently planner agent will make a plan and execute in one shot, if something fail along the way it will not adapt and successive task will fail. Adapting to agent failure, having a critic for current current plan trajectory and changing plan over time is necessary",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-04-07T18:00:47Z",
+      "updated_at": "2025-04-27T09:29:09Z",
+      "closed_at": "2025-04-27T09:29:09Z",
+      "labels": [
+        "enhancement",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/105/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/105",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/105",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:55.847143",
+      "comments": []
+    },
+    {
+      "issue_number": 6,
+      "title": "web GUI",
+      "body": "add a graphical interface\n\n- Not boring: Move away from plain chat bubbles, make it feel immersive and interactive.\n- Unique (Sci-fi inspired?) design: Take cues from futuristic UIs in movies while maintaining usability.\n- Despite a unique design, the interface should remain intuitive.\n- Preferably built in React Native, but open to other frameworks if justified.\n\nThis would need futher discussion as the current file structure does not allow for backend integration yet.\n\nAny collaborators can pick up the task, just add a comment to this issue and I will assign you.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-02-27T17:55:26Z",
+      "updated_at": "2025-04-19T08:25:07Z",
+      "closed_at": "2025-04-19T08:25:06Z",
+      "labels": [
+        "help wanted",
+        "medium priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/6/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/6",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/6",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.069725",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "also add docker compose as asked in #119 ",
+          "created_at": "2025-04-14T11:32:12Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "frontend implemented, opening other issue related to futher improvements",
+          "created_at": "2025-04-19T08:25:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 41,
+      "title": "Proper logging system",
+      "body": "\nThe current server script lacks a proper logging system, making debugging harder. We should replace the existing debug prints with Python’s logging module and ensure logs are written to a file while keeping user-facing messages clean.\n\n\n-  Integrate Python’s logging module.\n-  Log to a dedicated file instead of stdout.\n - Replace all debug/useless print() statements with appropriate logging levels (debug, info, warning, error).\n - Ensure pretty_print messages intended for users remain on stdout.\n-  Clean up redundant or unnecessary debug prints.\n\nAny collaborators can pick up the task, just add a comment to this issue and I will assign you.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-16T20:46:54Z",
+      "updated_at": "2025-04-05T14:49:46Z",
+      "closed_at": "2025-04-05T14:49:46Z",
+      "labels": [
+        "enhancement",
+        "low priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/41/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/41",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/41",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.263886",
+      "comments": []
+    },
+    {
+      "issue_number": 20,
+      "title": "Web OCR implementation",
+      "body": "implement OCR, especially useful for web browser agent future improvement, maybe use mistral OCR ??\n\nuseful because currently we remove anything that's not a sentence from the text page we send to the agent, so if there are numerical value, ai will miss them.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-14T18:56:33Z",
+      "updated_at": "2025-04-03T13:03:39Z",
+      "closed_at": "2025-04-03T13:03:38Z",
+      "labels": [
+        "enhancement",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/20/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/20",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/20",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.263908",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "no needed for now, browser  handle numerical value better",
+          "created_at": "2025-04-03T13:03:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 63,
+      "title": "Make agent router multilingual | 代理选择不支持中文",
+      "body": "Find and implement a better routing system for prompt.\n\nmake router support prompt in multiple language.\n\nCurrently, the router one-shot classification only work in english, other language will result in a random agent being selected for the task.\n\nExample:\nWhen asking \"search the web for what agenticSeek is\" in chinese it select the coder agent\n\n\n你能在网上搜索一下吗告诉我agenticseek是什么\nSelected agent: coder (roles: coding and programming)\n\n\nTranslation for chinese speakers:\n当前的问题是，路由器的一次性分类系统仅支持英文提示，其他语言的提示会导致随机选择一个代理来执行任务。\n\n例如：\n当用中文询问“请在网上搜索一下告诉我agenticSeek是什么”时，系统选择了程序员代理。\n\n具体例子：\n提示：“你能在网上搜索一下吗告诉我agenticSeek是什么”\n\n选择的代理：程序员（角色：编码和编程）\n",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-20T10:00:42Z",
+      "updated_at": "2025-04-02T20:07:45Z",
+      "closed_at": "2025-04-02T20:07:44Z",
+      "labels": [
+        "enhancement",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/63/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/63",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/63",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.437681",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "done",
+          "created_at": "2025-04-02T20:07:44Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 51,
+      "title": "Better server script",
+      "body": "The current server script (server/server_ollama.py) needs improvements:\n\n- Configurable arguments: Allow users to specify port, model, temperature, etc.\n- Multiple LLM providers: Add support for vLLM and GGUF, while maintaining flexibility for future integrations.\n- Refactoring: The script should be renamed or split into multiple files for better organization.\n\nTasks:\n - Add command-line arguments (e.g., --port, --model, --temperature).\n-  Implement support for vLLM, hugging face and GGUF as local LLM backends.\n - Refactor the script (rename or split into multiple files as needed).\n - add documentation.\n\nAny collaborators can pick up the task, just add a comment to this issue and I will assign you.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-18T07:31:46Z",
+      "updated_at": "2025-03-29T20:29:29Z",
+      "closed_at": "2025-03-29T20:29:29Z",
+      "labels": [
+        "medium priority"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/51/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/51",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/51",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.616079",
+      "comments": []
+    },
+    {
+      "issue_number": 82,
+      "title": "Fix display problem",
+      "body": "Fix display overlapping / cut output problem and duplicate message.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-28T12:40:12Z",
+      "updated_at": "2025-03-29T20:29:13Z",
+      "closed_at": "2025-03-29T20:29:13Z",
+      "labels": [
+        "bug",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/82/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/82",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/82",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.616099",
+      "comments": []
+    },
+    {
+      "issue_number": 62,
+      "title": "The cost of getting started is a bit high.",
+      "body": "Hello,I'm really attracted by the functions of AgenticSeek.However,after deploying it locally,I found that I don't know how to use it.I also couldn't find any detailed operation documents or videos.This has caused me a lot of trouble.I really hope that more complete usage examples can be provided.Thank you very much.",
+      "state": "closed",
+      "author": "msyJY",
+      "author_type": "User",
+      "created_at": "2025-03-20T06:35:10Z",
+      "updated_at": "2025-03-27T17:40:08Z",
+      "closed_at": "2025-03-27T17:40:08Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/62/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/62",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/62",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.616110",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "Thank you for the feedback, we will add a section in the readme to explain how to use it. could you tell what confused you and how did you try to use it ?",
+          "created_at": "2025-03-20T09:30:16Z"
+        },
+        {
+          "author": "msyJY",
+          "body": "Since I couldn't find any detailed usage instructions for AgenticSeek,I tried the following:\n\n\n• Terminal Q&A:I was able to have normal conversations in English.The voice function also worked when the project was launched.\n\n\n• Voice Interaction:After the project was launched,there was no response wh",
+          "created_at": "2025-03-20T09:56:51Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "@msyJY I have updated the README on the dev branch, could you tell if you understand better the usage now ? what kind of messages did you send to the AI ?",
+          "created_at": "2025-03-20T16:17:23Z"
+        },
+        {
+          "author": "msyJY",
+          "body": "I asked the AI questions in Chinese and also tried to interact with it using voice,but there was no response.I haven't tried the latest version yet,but I still want to express my gratitude to you.",
+          "created_at": "2025-03-21T00:51:43Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "We currently don't support language other than english, you could type in chinese but the router will work poorly in choosing the right agent.\nHave a look at readme there is a section related to speech to text that explain how to use it.",
+          "created_at": "2025-03-21T06:47:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 37,
+      "title": "Lm studio addition",
+      "body": "Please add lm studio for llm provider, I tried openai as lm studio also provides same endpoint but isn't working ",
+      "state": "closed",
+      "author": "legendtharun",
+      "author_type": "User",
+      "created_at": "2025-03-16T17:20:13Z",
+      "updated_at": "2025-03-27T17:36:24Z",
+      "closed_at": "2025-03-27T17:35:31Z",
+      "labels": [
+        "low priority"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/37/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/37",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/37",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.785357",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "okay will look into it",
+          "created_at": "2025-03-17T09:24:31Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "Hello LM studio has now been implemented",
+          "created_at": "2025-03-27T17:35:31Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "this is a config example:\n\n[MAIN]\nis_local = True\nprovider_name = lm-studio\nprovider_model = lmstudio-community/gemma-2-2b-it-GGUF # dont use this one, was just for testing\nprovider_server_address = http://127.0.0.1:1234\nagent_name = Friday\nrecover_last_session = True\nsave_session = True\nspeak = Fal",
+          "created_at": "2025-03-27T17:36:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 34,
+      "title": "Web agent youtube navigation",
+      "body": "Find the way to prevent the web agent from going to youtube instead use https://summarize.tech/ (is there api for this ?) with the link to give the agent the video summary instead of the youtube page text.\nOtherwise the agent will get stuck watching youtube video forever\n",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-15T19:13:52Z",
+      "updated_at": "2025-03-24T17:35:32Z",
+      "closed_at": "2025-03-24T17:35:32Z",
+      "labels": [
+        "medium priority"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/34/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/34",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/34",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.949196",
+      "comments": []
+    },
+    {
+      "issue_number": 60,
+      "title": "Agent router does not support multilingual prompt",
+      "body": "The router one-shot classification only work in english, other language will result in a random agent being selected for the task\n\nExample:\nWhen asking \"search the web for what agenticSeek is\" in chinese it select the coder agent\n\n你能在网上搜索一下吗告诉我agenticseek是什么\n Selected agent: coder (roles: coding and programming) ",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-19T12:09:33Z",
+      "updated_at": "2025-03-20T10:08:18Z",
+      "closed_at": "2025-03-20T10:08:18Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/60/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/60",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/60",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.949220",
+      "comments": []
+    },
+    {
+      "issue_number": 57,
+      "title": "Chinese input does not work | 无法输入中文",
+      "body": "Typing chinese text does not work, it simply ignore it and goes back to the shell prompt >>>\n\n输入中文文本不起作用，它只是忽略它并返回到 shell 提示符 >>>",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-18T15:47:29Z",
+      "updated_at": "2025-03-19T11:43:33Z",
+      "closed_at": "2025-03-19T11:43:32Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/57/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/57",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/57",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:56.949228",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "fixed on dev, merge soon",
+          "created_at": "2025-03-19T11:43:32Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 55,
+      "title": "self.driver = webdriver.Chrome(service=service, options=chrome_options) [ERROR]",
+      "body": "**Describe the bug**\nAfter running 'python main.py' the following error occurs.\n\n```\nTraceback (most recent call last):\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\browser.py\", line 44, in __init__\n    self.driver = webdriver.Chrome(service=service, options=chrome_options)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\chrome\\webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\chromium\\webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\agentic_seek_env\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\nselenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 113\nCurrent browser version is 134.0.6998.89 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\nStacktrace:\nBacktrace:\n        GetHandleVerifier [0x002F8893+48451]\n        (No symbol) [0x0028B8A1]\n        (No symbol) [0x00195058]\n        (No symbol) [0x001B5D9C]\n        (No symbol) [0x001B1AA3]\n        (No symbol) [0x001B0019]\n        (No symbol) [0x001E0798]\n        (No symbol) [0x001E047C]\n        (No symbol) [0x001DA0B6]\n        (No symbol) [0x001B7E08]\n        (No symbol) [0x001B8F2D]\n        GetHandleVerifier [0x00558E3A+2540266]\n        GetHandleVerifier [0x00598959+2801161]\n        GetHandleVerifier [0x0059295C+2776588]\n        GetHandleVerifier [0x00382280+612144]\n        (No symbol) [0x00294F6C]\n        (No symbol) [0x002911D8]\n        (No symbol) [0x002912BB]\n        (No symbol) [0x00284857]\n        BaseThreadInitThunk [0x76635D49+25]\n        RtlInitializeExceptionChain [0x778BCF0B+107]\n        RtlGetAppContainerNamedObjectPath [0x778BCE91+561]\n        (No symbol) [0x00000000]\n\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\main.py\", line 72, in <module>\n    main()\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\main.py\", line 48, in main\n    BrowserAgent(model=config[\"MAIN\"][\"provider_model\"],\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\agents\\browser_agent.py\", line 19, in __init__\n    self.browser = Browser()\n                   ^^^^^^^^^\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\browser.py\", line 49, in __init__\n    raise Exception(f\"Failed to initialize browser: {str(e)}\")\nException: Failed to initialize browser: Message: session not created: This version of ChromeDriver only supports Chrome version 113\nCurrent browser version is 134.0.6998.89 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\nStacktrace:\nBacktrace:\n        GetHandleVerifier [0x002F8893+48451]\n        (No symbol) [0x0028B8A1]\n        (No symbol) [0x00195058]\n        (No symbol) [0x001B5D9C]\n        (No symbol) [0x001B1AA3]\n        (No symbol) [0x001B0019]\n        (No symbol) [0x001E0798]\n        (No symbol) [0x001E047C]\n        (No symbol) [0x001DA0B6]\n        (No symbol) [0x001B7E08]\n        (No symbol) [0x001B8F2D]\n        GetHandleVerifier [0x00558E3A+2540266]\n        GetHandleVerifier [0x00598959+2801161]\n        GetHandleVerifier [0x0059295C+2776588]\n        GetHandleVerifier [0x00382280+612144]\n        (No symbol) [0x00294F6C]\n        (No symbol) [0x002911D8]\n        (No symbol) [0x002912BB]\n        (No symbol) [0x00284857]\n        BaseThreadInitThunk [0x76635D49+25]\n        RtlInitializeExceptionChain [0x778BCF0B+107]\n        RtlGetAppContainerNamedObjectPath [0x778BCE91+561]\n        (No symbol) [0x00000000]\n\nException ignored in: <function Browser.__del__ at 0x00000211A93CB600>\nTraceback (most recent call last):\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\browser.py\", line 205, in __del__\n    self.close()\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\browser.py\", line 201, in close\n    raise e\n  File \"C:\\Users\\%USERNAME%\\agenticSeek\\sources\\browser.py\", line 198, in close\n    self.driver.quit()\n    ^^^^^^^^^^^\nAttributeError: 'Browser' object has no attribute 'driver'\n```\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1.  Install as instructed\n2.  Run 'Python main.py'\n\n**Desktop (please complete the following information):**\n - OS: Windows 11\n - Browser: Chrome \n - Version:  134.0.6998.89\n\nIf I made any mistakes please advise, thank you",
+      "state": "closed",
+      "author": "kairushinjuu",
+      "author_type": "User",
+      "created_at": "2025-03-18T12:01:58Z",
+      "updated_at": "2025-03-19T11:43:14Z",
+      "closed_at": "2025-03-19T11:43:13Z",
+      "labels": [
+        "bug",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/55/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/55",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/55",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:57.144051",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "this seem like a version mismatch between your browser and chromedriver. could you update the latest chromedriver:\n\nbecause you are using a very recent chrome version you need to check out : https://googlechromelabs.github.io/chrome-for-testing/\n\nand download : https://storage.googleapis.com/chrome-",
+          "created_at": "2025-03-18T12:13:35Z"
+        },
+        {
+          "author": "ganeshnikhil",
+          "body": "I have made chages to autoinstall chromedriver and version update.",
+          "created_at": "2025-03-18T15:14:31Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "please @kairushinjuu confirm this work so i can close the issue",
+          "created_at": "2025-03-19T09:48:25Z"
+        },
+        {
+          "author": "kairushinjuu",
+          "body": "@Fosowl Yes thank you, I updated the chromedriver now.\n\n I am now dealing with a different issue though I am afraid.",
+          "created_at": "2025-03-19T11:41:32Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "can you raise another issue then  @kairushinjuu ?",
+          "created_at": "2025-03-19T11:43:13Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 43,
+      "title": "Find serpApi alternative: Error during web search: 429 Client Error: Too Many Requests",
+      "body": "This error can happen when the serpapi key expire.\n\n\n Error during web search: 429 Client Error: Too Many Requests for url: https://serpapi.com/search?q=search+the+web+for+the+weather+in+barcelona&api_key=xxxxxxxxx&num=50&output=json\n\n Is there a api we could use with no limit ?\nRaising an issue in high priority as this will quickly happen to some users and i am open to suggestion for alternative.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-03-17T09:20:13Z",
+      "updated_at": "2025-03-17T12:46:07Z",
+      "closed_at": "2025-03-17T12:46:05Z",
+      "labels": [
+        "help wanted",
+        "high priority"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/43/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/43",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/43",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:57.332977",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "implementing searxng as an alternative : https://github.com/Fosowl/searxng-agentic",
+          "created_at": "2025-03-17T11:11:06Z"
+        },
+        {
+          "author": "Fosowl",
+          "body": "done, see dev branch",
+          "created_at": "2025-03-17T12:46:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 29,
+      "title": "Error after selecting agent for prompt",
+      "body": "I am sure you guys know me by now lol, so I'll cut to the chase, after inputting the prompt, this new error shows up:\n\n![Image](https://github.com/user-attachments/assets/06c1d088-b837-4864-82ec-7e98ec67b60a)\n\nThank you guys once again for the hard work!",
+      "state": "closed",
+      "author": "InfernalDread",
+      "author_type": "User",
+      "created_at": "2025-03-15T17:58:49Z",
+      "updated_at": "2025-03-15T19:02:15Z",
+      "closed_at": "2025-03-15T19:02:15Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/29/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/29",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/29",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:58.878557",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "hey really weird i can't reproduce, but the server does not return json? can you pull again for the latest server_ollama.py and if persist show me the result of these print :\n           print(response)\n           print(response.json())\n            thought = response.json()[\"sentence\"]",
+          "created_at": "2025-03-15T18:34:11Z"
+        },
+        {
+          "author": "InfernalDread",
+          "body": "Hey, my bad, I forgot to change the provider back to ollama from server, everything works now. Thank you!",
+          "created_at": "2025-03-15T19:02:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 1,
+      "title": "Add conversation history system.",
+      "body": "It would be good to have a memory system automatically save conversation and restore conversations.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-02-23T14:19:25Z",
+      "updated_at": "2025-02-28T11:14:18Z",
+      "closed_at": "2025-02-28T11:14:18Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/1/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/1",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/1",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:59.050960",
+      "comments": []
+    },
+    {
+      "issue_number": 2,
+      "title": "Better memory system",
+      "body": "Add a better memory system, retain only useful information, perhaps use small model to compress old message.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-02-23T14:20:59Z",
+      "updated_at": "2025-02-27T17:54:48Z",
+      "closed_at": "2025-02-27T17:54:47Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/2/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/2",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/2",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:59.050984",
+      "comments": [
+        {
+          "author": "Fosowl",
+          "body": "done",
+          "created_at": "2025-02-27T17:54:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 3,
+      "title": "Add more code execution to support C, Golang, etc..",
+      "body": "Add support for executing C code within the agent's environment.\nAdd support for executing Golang code within the agent's environment.\nAdd support for more language....\nEnsure the agent can handle compilation, runtime errors, and output generation for these languages.",
+      "state": "closed",
+      "author": "Fosowl",
+      "author_type": "User",
+      "created_at": "2025-02-23T18:03:38Z",
+      "updated_at": "2025-02-25T13:22:30Z",
+      "closed_at": "2025-02-25T13:22:30Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/3/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Fosowl"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Fosowl/agenticSeek/issues/3",
+      "api_url": "https://api.github.com/repos/Fosowl/agenticSeek/issues/3",
+      "repository": "Fosowl/agenticSeek",
+      "extraction_date": "2025-06-21T23:33:59.223700",
+      "comments": []
+    }
+  ]
+}

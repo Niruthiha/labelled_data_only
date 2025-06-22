@@ -1,0 +1,1436 @@
+{
+  "repository": "aipotheosis-labs/aci",
+  "repository_info": {
+    "repo": "aipotheosis-labs/aci",
+    "stars": 4063,
+    "language": "Python",
+    "description": "ACI.dev is the open source platform for VibeOps and infrastructure that connects your AI agents to 600+ tool integrations with multi-tenant auth, granular permissions, and access through direct functi",
+    "url": "https://github.com/aipotheosis-labs/aci",
+    "topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "api",
+      "developer-tools",
+      "function-calling",
+      "integration",
+      "llm",
+      "mcp",
+      "oauth2",
+      "open-source",
+      "permissions",
+      "tools"
+    ],
+    "created_at": "2024-09-19T15:06:53Z",
+    "updated_at": "2025-06-22T02:21:46Z",
+    "search_query": "llm integration language:python stars:>2 created:>2023-01-01",
+    "total_issues_estimate": 50,
+    "labeled_issues_estimate": 20,
+    "labeling_rate": 40.0,
+    "sample_labeled": 2,
+    "sample_total": 5,
+    "has_issues": true,
+    "repo_id": 859956307,
+    "default_branch": "main",
+    "size": 19935
+  },
+  "extraction_date": "2025-06-22T00:40:37.546752",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 31,
+  "issues": [
+    {
+      "issue_number": 258,
+      "title": "Typescript SDK",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nAs we know most of the web application development used to happen in JS/TS so it will be great to have a TS sdk enabling so many more developers to integrate this library. I see other libraries like composio also does that.\n\nAlso nowadays so many good agent frameworks are coming in TS also, one such example is [mastra.ai](https://mastra.ai), similarly another one under works by inngest and few more are there. So it makes even more sense. \n\nJust for selfish interest I am already using mastra and building out a prod app which could use these tools in future 😄 \n\n### Proposed Solution\n\nBuilding out a TS sdk similar to python",
+      "state": "closed",
+      "author": "bhupesh-sf",
+      "author_type": "User",
+      "created_at": "2025-04-22T10:35:03Z",
+      "updated_at": "2025-06-16T16:10:50Z",
+      "closed_at": "2025-06-16T16:10:50Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/258/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/258",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/258",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:27.750771",
+      "comments": [
+        {
+          "author": "thisisfixer",
+          "body": "Hi, thanks for taking the time to write this up!\nYeah, this has been on our radar, but we haven’t had a chance to prioritize it yet. We’ll likely put it back on the table soon, though we can’t promise an ETA.\nOn a side note, if you’re open to contributing, feel free to reach out to us on Discord! An",
+          "created_at": "2025-04-22T11:03:56Z"
+        },
+        {
+          "author": "bhupesh-sf",
+          "body": "Sure, will join Discord now. And surely can try to contribute for TS sdk as I am seasoned js/ts dev 👍🏻 ",
+          "created_at": "2025-04-22T11:05:27Z"
+        },
+        {
+          "author": "jiwei-aipolabs",
+          "body": "@bhupesh-sf We've support TS SDK now https://github.com/aipotheosis-labs/aci-typescript-sdk",
+          "created_at": "2025-06-16T16:10:48Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 482,
+      "title": "Addition of Firebase Integration",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nFirebase\n\n### Function Name\n\nFirestore Tools, Storage Tools, Authentication Tools\n\n### API Docs Link\n\nhttps://firebase.google.com/docs/cli/mcp-server\n\n### Additional Context\n\nAdd Firebase Server, it'll be lit\n\ninspiration : https://firebase.google.com/docs/cli/mcp-server\nhttps://github.com/gannonh/firebase-mcp",
+      "state": "open",
+      "author": "MohamedKamran",
+      "author_type": "User",
+      "created_at": "2025-06-14T14:59:23Z",
+      "updated_at": "2025-06-14T14:59:23Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/482/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/482",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/482",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:27.996203",
+      "comments": []
+    },
+    {
+      "issue_number": 471,
+      "title": "Support retrieving Notion page content (block-level data)",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nNotion\n\n### Function Name\n\nget_page_content\n\n### API Docs Link\n\nhttps://developers.notion.com/docs/getting-started\n\n### Additional Context\n\nCurrently, the NOTION__GET_PAGE function only returns metadata about a Notion page and does not provide access to the actual content.\n\nWe are considering two potential approaches for implementation:\n\n`NOTION__GET_BLOCK`\nA function that directly fetches block data from a given block ID or page ID. This gives users access to the full Notion block structure (including nested blocks, formatting, etc.), but may be verbose, especially for large pages.\n\n`NOTION__GET_PAGE_CONTENT`\nA higher-level function that returns just the text content and key metadata from all blocks in a given page. Need implement it through connector function.",
+      "state": "open",
+      "author": "jiwei-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-06-09T15:48:04Z",
+      "updated_at": "2025-06-09T15:48:04Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/471/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/471",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/471",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:27.996226",
+      "comments": []
+    },
+    {
+      "issue_number": 331,
+      "title": "Create dataset for function search",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nFor more details look at #330. \n\n### Proposed Solution\n\nThe idea is given the function definitions to generate intents using an llm. ",
+      "state": "closed",
+      "author": "alex-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-07T09:09:33Z",
+      "updated_at": "2025-06-02T17:10:11Z",
+      "closed_at": "2025-06-02T17:10:11Z",
+      "labels": [
+        "backend",
+        "ai/ml"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/331/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/331",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/331",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:27.996241",
+      "comments": [
+        {
+          "author": "irmadong",
+          "body": "Do we have a list of taxonomy to generate intent? ",
+          "created_at": "2025-05-07T14:19:43Z"
+        },
+        {
+          "author": "alex-aipolabs",
+          "body": "Hi @irmadong, thank you for commenting. The only taxonomy we have is on the name of the functions where the app name is prepended. For example the `/repos/{owner}/{repo}/stargazers` endpoint from github is GITHUB__LIST_STARGAZERS. Correct me if im wrong but you are thinking of a taxonomy of utteranc",
+          "created_at": "2025-05-07T15:14:25Z"
+        },
+        {
+          "author": "irmadong",
+          "body": "Yes, i am thinking of have the taxonomy and definition and then llm would definitely benefit from such information. ",
+          "created_at": "2025-05-07T17:25:10Z"
+        },
+        {
+          "author": "irmadong",
+          "body": "done, pushed to hugging face ",
+          "created_at": "2025-05-12T02:21:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 302,
+      "title": "Persist state on Agent Playground",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nPersist conversation history across tab switches and refresh. Persist the playground settings across refreshes.\n\n### Proposed Solution\n\nSave conversation history and playground settings in local storage.",
+      "state": "closed",
+      "author": "alex-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-02T13:59:38Z",
+      "updated_at": "2025-06-02T17:09:19Z",
+      "closed_at": "2025-06-02T17:09:19Z",
+      "labels": [
+        "good first issue",
+        "ui/ux"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/302/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/302",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/302",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:28.212659",
+      "comments": [
+        {
+          "author": "keshav-nischal",
+          "body": "Hey, I’d like to help out with this issue. Could you please clarify the requirements for this task? I’m a bit unsure whether the chat is meant to persist only for the current session, or if we need to store it long-term — since you mentioned it should survive a page refresh as well.\n\nIf we're aiming",
+          "created_at": "2025-05-07T01:59:47Z"
+        },
+        {
+          "author": "keshav-nischal",
+          "body": "Just realized—we probably don’t need to store every session. We can just keep the current one active until the “New/Clear Chat” button gets clicked. I’m gonna go ahead and work on this for now, but lmk if you think otherwise.",
+          "created_at": "2025-05-07T02:10:12Z"
+        },
+        {
+          "author": "thisisfixer",
+          "body": "@alex-aipolabs @jiwei-aipolabs  what do you think",
+          "created_at": "2025-05-09T18:10:08Z"
+        },
+        {
+          "author": "alex-aipolabs",
+          "body": "> Hey, I’d like to help out with this issue. Could you please clarify the requirements for this task? I’m a bit unsure whether the chat is meant to persist only for the current session, or if we need to store it long-term — since you mentioned it should survive a page refresh as well.\n> \n> If we're ",
+          "created_at": "2025-05-10T12:53:26Z"
+        },
+        {
+          "author": "alex-aipolabs",
+          "body": "> Just realized—we probably don’t need to store every session. We can just keep the current one active until the “New/Clear Chat” button gets clicked. I’m gonna go ahead and work on this for now, but lmk if you think otherwise.\n\nI think this could be a nice extension where you can clear the current ",
+          "created_at": "2025-05-10T12:56:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 307,
+      "title": "Move agent management to its own tab on the side bar",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nCurrently all the management of the agents is done under manage projects. This feels quite hidden from the user.\n\n### Proposed Solution\n\nProvide an **agents** tab above **agent playground** which consists of the agent content from the manage projects tab.",
+      "state": "closed",
+      "author": "alex-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-02T18:04:12Z",
+      "updated_at": "2025-06-02T17:09:01Z",
+      "closed_at": "2025-06-02T17:09:01Z",
+      "labels": [
+        "good first issue",
+        "ui/ux"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/307/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/307",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/307",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:28.434918",
+      "comments": [
+        {
+          "author": "jananiarunachalam",
+          "body": "I can see that \"Manage Projects\" has a few things in it which of these need to be moved to the \"Agents\" tab?\n\n<img width=\"1688\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/146522a2-bee7-4801-bcd8-1d143f14a9ce\" />",
+          "created_at": "2025-05-26T16:08:41Z"
+        },
+        {
+          "author": "alex-aipolabs",
+          "body": "> I can see that \"Manage Projects\" has a few things in it which of these need to be moved to the \"Agents\" tab?\n> \n> <img alt=\"Image\" width=\"1688\" src=\"https://private-user-images.githubusercontent.com/16276999/447633566-146522a2-bee7-4801-bcd8-1d143f14a9ce.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ",
+          "created_at": "2025-05-27T09:50:50Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 430,
+      "title": "Unnecessary intermediate state projectSelectOptions - could derive directly from projects",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Description\n\nhttps://github.com/aipotheosis-labs/aci/blob/4c6902d64c5e1cdc917bcb879ac077dd599f0ef6/frontend/src/components/layout/project-selector.tsx#L38-L45\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-29T09:57:19Z",
+      "updated_at": "2025-05-29T09:57:19Z",
+      "closed_at": null,
+      "labels": [
+        "ui/ux"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/430/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/430",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/430",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:30.572834",
+      "comments": []
+    },
+    {
+      "issue_number": 429,
+      "title": "Dev Portal sidebar disappears when the window size decreases",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Description\n\nDev Portal sidebar disappears when the window size decreases.\n\nhttps://github.com/user-attachments/assets/51187760-cfde-4191-94b0-8c39e8aaf746\n\nWe need to fix this so that when the window size decreases, the sidebar just collapses instead of disappear.\n\n### Additional context\n\n_No response_",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-29T09:52:40Z",
+      "updated_at": "2025-05-29T09:52:40Z",
+      "closed_at": null,
+      "labels": [
+        "ui/ux"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/429/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/429",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/429",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:30.572856",
+      "comments": []
+    },
+    {
+      "issue_number": 346,
+      "title": "Enable Sentry Bug Report Widget on the Dev Portal",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nSome bugs are hard to detect automatically and would be nice if users have a way to report them on our website.\n\n### Proposed Solution\n\nSentry has good error reporting support: https://docs.sentry.io/platforms/javascript/guides/nextjs/user-feedback/\nWe can just configure Sentry here to enable this feature:\nhttps://github.com/aipotheosis-labs/aci/blob/7c05b876eaaaab28323adbc53e4c17de0780a663/frontend/sentry.client.config.ts#L12-L13",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-09T22:14:34Z",
+      "updated_at": "2025-05-29T08:07:03Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/346/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/346",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/346",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:30.572864",
+      "comments": [
+        {
+          "author": "jananiarunachalam",
+          "body": "<img width=\"1696\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/0052b3f8-c342-4834-bc22-7a24884ad057\" />\n\nIt by default adds a button to the bottom right, does this work? ",
+          "created_at": "2025-05-26T17:23:46Z"
+        },
+        {
+          "author": "dev-aipolabs",
+          "body": "> <img alt=\"Image\" width=\"1696\" src=\"https://private-user-images.githubusercontent.com/16276999/447648891-0052b3f8-c342-4834-bc22-7a24884ad057.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0NzE0MDQs",
+          "created_at": "2025-05-28T22:25:45Z"
+        },
+        {
+          "author": "dev-aipolabs",
+          "body": "@jananiarunachalam Could you try clicking the button and submit something?",
+          "created_at": "2025-05-28T22:26:09Z"
+        },
+        {
+          "author": "jananiarunachalam",
+          "body": "Yep, submitted something",
+          "created_at": "2025-05-29T08:07:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 353,
+      "title": "Include description in Configure App page",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nCurrently the configure app page doesn't have the description and if users need details about the app they need to navigate to the home page. \n\n### Proposed Solution\n\nInclude description in the configure app page. \n<img width=\"530\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/b88a8869-fb45-4952-b010-e92beca2e2cd\" />\n\nI propose to place the description under the app name\n<img width=\"1658\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/f4ad9a6d-1464-4df4-a15d-8be49aeeb23a\" />",
+      "state": "closed",
+      "author": "alex-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-12T13:37:28Z",
+      "updated_at": "2025-05-27T23:00:02Z",
+      "closed_at": "2025-05-27T23:00:02Z",
+      "labels": [
+        "good first issue",
+        "ui/ux"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/353/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/353",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/353",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:30.917079",
+      "comments": []
+    },
+    {
+      "issue_number": 289,
+      "title": "Integration Request: Google Meet Support",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nGoogle Meet\n\n### Function Name\n\nschedule_meeting, get_meeting_record\n\n### API Docs Link\n\nhttps://developers.google.com/workspace/meet/api/reference/rest/v2\n\n### Additional Context\n\nPlease add integration support for Google Meet, Google's widely-used video communication service. Integrating Google Meet would enable AI agents built with ACI.dev to manage and interact with video meetings programmatically, streamlining scheduling and coordination tasks in a structured, secure, and scalable way within the ACI framework.\n\n\nIntegrating Google Meet would allow AI agents to:\n\n* Schedule new Google Meet meetings, generating unique meeting links.\n* Retrieve details about scheduled meetings (e.g., time, participants, join link).\n* Retrieve meeting note of scheduled meeting",
+      "state": "open",
+      "author": "jiwei-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-01T12:21:57Z",
+      "updated_at": "2025-05-26T21:05:09Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/289/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/289",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/289",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:30.917100",
+      "comments": [
+        {
+          "author": "ysabrina141",
+          "body": "> Schedule new Google Meet meetings, generating unique meeting links.\n\n- It seems that the meet native apis don't support creating meetings. Instead, we need to use apis provided by google calendar.\n\n> Retrieve details about scheduled meetings (e.g., time, participants, join link).\n\n- start.dateTime",
+          "created_at": "2025-05-26T21:01:28Z"
+        },
+        {
+          "author": "ysabrina141",
+          "body": "PR: https://github.com/aipotheosis-labs/aci/pull/419\nAlso need authorization for Vercel according to the bot, thanks!",
+          "created_at": "2025-05-26T21:03:52Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 417,
+      "title": "UX Improvement for Selecting Existing Linked Account Owner IDs",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nMotivation:\n\nCurrently, when configuring a linked account and associating it with an existing Linked Account Owner ID, users are required to manually input the identifier.\n\nThis manual input process presents two challenges:\n\n- Users must remember or locate the exact identifier they previously created.\n- As the number of Linked Account Owner IDs grows, management becomes increasingly complex and error-prone (e.g., typos, misidentification).\n\n![Image](https://github.com/user-attachments/assets/9b943a44-aef1-474a-8975-cbabfaa34ffb)\n\n\n### Proposed Solution\n\nProposed solution:\n\nIntroduce a dropdown selection UI that:\n\n- Displays all existing Linked Account Owner IDs.\n- Allows users to select an ID from a list instead of typing.\n",
+      "state": "open",
+      "author": "JamieOgun",
+      "author_type": "User",
+      "created_at": "2025-05-26T15:50:09Z",
+      "updated_at": "2025-05-26T15:50:09Z",
+      "closed_at": null,
+      "labels": [
+        "ui/ux"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/417/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/417",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/417",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.221199",
+      "comments": []
+    },
+    {
+      "issue_number": 396,
+      "title": "integration request: add instagram developer API",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nInstagram\n\n### Function Name\n\ninstagram_business_basic instagram_business_content_publish instagram_business_manage_messages instagram_business_manage_comments\n\n### API Docs Link\n\nhttps://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login\n\n### Additional Context\n\nHey guys, \n\nI think adding instagram OAUTH with its functions will be a major integration for social Media category. In the mean time i am also working on it.",
+      "state": "open",
+      "author": "temprlbusiness",
+      "author_type": "User",
+      "created_at": "2025-05-22T09:09:57Z",
+      "updated_at": "2025-05-22T09:09:57Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/396/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/396",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/396",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.221224",
+      "comments": []
+    },
+    {
+      "issue_number": 324,
+      "title": "Replace react-json-view due to React 19 compatibility issues",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Description\n\n\n\n### **Description:**\n\nIn the current setup, the project uses `react-json-view` version 1.21.3. However, this library is not fully compatible with React 19, leading to potential issues in the application.\n\n---\n\n### **Expected behavior:**\n\n* Identify and integrate an alternative JSON viewer component that is compatible with React 19.\n* Ensure the new component provides similar or improved functionality (e.g., expand/collapse, formatting, optional editing).\n\n---\n\n### **Actual behavior:**\n\n* `react-json-view`  does not support react 19\n\n---\n\n\n### Additional context\n\n_No response_",
+      "state": "closed",
+      "author": "tianlilei-c",
+      "author_type": "User",
+      "created_at": "2025-05-06T08:39:38Z",
+      "updated_at": "2025-05-20T20:06:04Z",
+      "closed_at": "2025-05-20T20:06:04Z",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/324/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/324",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/324",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.221231",
+      "comments": []
+    },
+    {
+      "issue_number": 382,
+      "title": "integration: add support for create_page for notion",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nNotion\n\n### Function Name\n\ncreate_page\n\n### API Docs Link\n\nhttps://developers.notion.com/reference/post-page\n\n### Additional Context\n\nPlease add write function support for Notion within the ACI.dev connector\n\nCurrently, the integration only supports read operations, which limits the ability of AI agents to fully interact with Notion workspaces. Adding support for write functions, especially CREATE_PAGE, is essential to unlock dynamic content creation capabilities.\n\nPurpose: Allow AI agents to create new pages in a specified Notion database.\n\nMarkdown Support: The function should support Markdown-formatted input, which will be saved into the Notion page content (children blocks).",
+      "state": "open",
+      "author": "jiwei-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-18T21:31:00Z",
+      "updated_at": "2025-05-18T21:31:00Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/382/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "TooonyChen"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/382",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/382",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.221240",
+      "comments": []
+    },
+    {
+      "issue_number": 361,
+      "title": "Add a script in aci-mcp to easily install our MCP servers in Cursor, Claude desktop, etc",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nRight now if users want to use our MCP server, they have to edit the JSON configs for each client (Cursor, Claude, etc), which can be tedious, especially the users will also need to replace the API key place holder with their actual API key.\n\n### Proposed Solution\n\nMany MCP servers today just provides a convenient command that can be run on the terminal to install those MCP server. We should do the same. \n\n![Image](https://github.com/user-attachments/assets/0df8f46f-6738-4a5e-8168-8cfd51210e1a)",
+      "state": "open",
+      "author": "zixuan-x",
+      "author_type": "User",
+      "created_at": "2025-05-14T10:20:33Z",
+      "updated_at": "2025-05-14T14:21:10Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/361/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/361",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/361",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.221251",
+      "comments": [
+        {
+          "author": "mukundkumarjha",
+          "body": "https://github.com/aipotheosis-labs/aci-mcp/pull/11\n\nI have raised a pr @zixuan-x @dev-aipolabs please review \n\nand would also like to mention I have taken help from ai.",
+          "created_at": "2025-05-14T14:21:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 274,
+      "title": "Add cursor rules files",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nThis may improve Cursor performance when working with our codebase.\n\n### Proposed Solution\n\nAdd cursor rules files. Consider if it's better to just add a file at the root level or two individual files in the frontend and backend folder respectively.",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-04-28T11:36:33Z",
+      "updated_at": "2025-05-13T05:34:26Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/274/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/274",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/274",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.436155",
+      "comments": [
+        {
+          "author": "fak111",
+          "body": "# Project Integration and API Management Guidelines\nalways cd backend .\n## Directory structue\n-aci/backend                              ─\n    ├── Dockerfile.runner\n    ├── Dockerfile.server\n    ├── README.md\n    ├── aci\n    │   ├── __init__.py\n    │   ├── __pycache__\n    │   ├── alembic\n    │   ├── ",
+          "created_at": "2025-05-13T05:32:17Z"
+        },
+        {
+          "author": "fak111",
+          "body": "This is my rule for guiding the cursor to work on backend code.",
+          "created_at": "2025-05-13T05:34:25Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 306,
+      "title": "Include stepper in configure app",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nCurrently its not clear to the user when they configure an app that they also have to link an account before they can use the app\n\n### Proposed Solution\n\nInclude a stepper when the user clicks to configure the app. I propose 3 steps, 1. Choose the auth type, 2. Add to agents, 3. Link accounts.\n\n<img width=\"1074\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/513f8551-76c1-4140-968b-a3b00794ed35\" />\n<img width=\"1067\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1abb500c-1d2d-4f7c-9583-2039245efaaa\" />\n<img width=\"1067\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7dc50d11-fb18-4973-8aa9-630386b09a7b\" />",
+      "state": "closed",
+      "author": "alex-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-02T18:01:09Z",
+      "updated_at": "2025-05-09T17:06:02Z",
+      "closed_at": "2025-05-09T17:06:02Z",
+      "labels": [
+        "enhancement",
+        "ui/ux"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/306/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "tianlilei-c"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/306",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/306",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:31.673671",
+      "comments": [
+        {
+          "author": "tianlilei-c",
+          "body": "Hi @dev-aipolabs , I'm currently working on this issue and have encountered a few design decisions I’d like to clarify or get feedback on:\n\n1. **Step 2 – “Next” button behavior**\n   Should clicking “Next” on step 2 directly take the user to the *Configured Apps* page, or should it proceed to step 3 ",
+          "created_at": "2025-05-06T14:44:57Z"
+        },
+        {
+          "author": "dev-aipolabs",
+          "body": "> Hi [@dev-aipolabs](https://github.com/dev-aipolabs) , I'm currently working on this issue and have encountered a few design decisions I’d like to clarify or get feedback on:\n> \n> 1. **Step 2 – “Next” button behavior**\n>    Should clicking “Next” on step 2 directly take the user to the _Configured ",
+          "created_at": "2025-05-07T03:12:02Z"
+        },
+        {
+          "author": "tianlilei-c",
+          "body": "![Image](https://github.com/user-attachments/assets/8ae346b7-f0b2-443e-a907-74e474c18e35)\n\n![Image](https://github.com/user-attachments/assets/4a666725-dddf-4b65-909f-68d9b27fd966)\n\n![Image](https://github.com/user-attachments/assets/475bd738-8b9d-4b12-bae2-cf0debcb31ca)\n\n![Image](https://github.com",
+          "created_at": "2025-05-07T11:08:28Z"
+        },
+        {
+          "author": "alex-aipolabs",
+          "body": "@dev-aipolabs I think it makes sense to have the back button as it could be annoying when you are in the second step to cancel and start the process again",
+          "created_at": "2025-05-07T17:00:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 317,
+      "title": "Log instruction filter related info for analytics",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nThe custom instructions feature allows users to define in natural language what actions are allowed/prohibited for LLM calling a function on our platform.\n\nFor example, an user can create a \"Work Assistant\" agent that can use the app \"Gmail\". They can specify in the agent custom instruction for Gmail that this agent can only read any work related emails (e.g. by specifying a list of allowed email senders or a list of disallowed ones).\n\nThis feature allows more granular level of access control than the one provided by OAuth apps. For example, when you allow the scope of read email for Gmail, then the access token can read any email without restriction. With custom instructions, you can specify more granular levels of access control like the example I mentioned above.\n\nIn this issue, we want to add more logging for this feature so we can analyze and further enhance this feature.\n\n\n\n### Proposed Solution\n\nAdd more logging around the custom instructions feature. Please discuss in the issue first before implementing it.",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-04T15:45:41Z",
+      "updated_at": "2025-05-09T13:27:24Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "backend",
+        "ai/ml"
+      ],
+      "label_count": 5,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/317/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/317",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/317",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:33.698534",
+      "comments": [
+        {
+          "author": "irmadong",
+          "body": "I want to claim this issue and think about the solution. @dev-aipolabs ",
+          "created_at": "2025-05-05T02:58:01Z"
+        },
+        {
+          "author": "Sophie8",
+          "body": "Checked this issue with the code and have some thoughts. \nregarding the description here \"They can specify in the agent custom instruction for Gmail that this agent can only read any work related emails (e.g. by specifying a list of allowed email senders or a list of disallowed ones).\"\n\nthere are tw",
+          "created_at": "2025-05-07T13:35:33Z"
+        },
+        {
+          "author": "thisisfixer",
+          "body": "hi @Sophie8 , love your thoughts, would love to continue the discussion on that front\nbut to clarify this issue is only for logging, not the actual implementation or to extend the current implementation",
+          "created_at": "2025-05-07T21:57:09Z"
+        },
+        {
+          "author": "Sophie8",
+          "body": "Thanks @thisisfixer in this case it should be totally engineering work needed. \nBy checking the current setup, steps can be:\n1. logging function call specific info at https://github.com/aipotheosis-labs/aci/blob/8da150021348a3cc41f4a370a1470f8168e470a2/backend/aci/server/function_executors/base_exec",
+          "created_at": "2025-05-09T13:27:23Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 272,
+      "title": "Migrate the frontend from Tailwind CSS v3 to v4",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nStay up to date with our dependencies.\n\n### Proposed Solution\n\nFollow the shadcn/ui and tailwind CSS upgrade guide.\n\nhttps://ui.shadcn.com/docs/tailwind-v4\nhttps://tailwindcss.com/docs/upgrade-guide",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-04-28T11:29:54Z",
+      "updated_at": "2025-05-06T08:53:32Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 4,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/272/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "tianlilei-c"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/272",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/272",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:33.925011",
+      "comments": [
+        {
+          "author": "tianlilei-c",
+          "body": "\n\n### ⚠️ Tailwind CSS v4 Upgrade Status\n\n1. The official upgrade script `npx @tailwindcss/upgrade` is not applicable to our repository due to a dependency conflict: `react-json-view → flux@4.0.4` requires React ≤17, whereas our project uses React 19. This results in an `ERESOLVE` error during the up",
+          "created_at": "2025-05-06T08:53:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 293,
+      "title": "Integration Request: Daytona.io API Support",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nDaytona.io\n\n### Function Name\n\nstart_workspace, execute_command\n\n### API Docs Link\n\nhttps://www.daytona.io/docs/tools/api/\n\n### Additional Context\n\n### Motivation\nPlease add integration support for [Daytona.io](https://www.daytona.io/), a secure and elastic infrastructure platform designed for running AI-generated code. Daytona provides containerized, reproducible, and scalable environments, making it an ideal backend for AI agent systems that need to execute code safely and consistently.\n\n### Proposed Solution\nIntegrating Daytona.io’s API would enable AI agents to:\n\n- Create, start, stop, and manage secure code execution environments (workspaces).\n- Upload, edit, and execute files or shell commands in isolated containers.\n- Automate organization tasks like user roles, invitations, and quotas.\n\nThis would support safe, scalable AI-generated code execution, which is ideal for dev assistants, code agents, and sandboxed testing workflows.",
+      "state": "open",
+      "author": "TooonyChen",
+      "author_type": "User",
+      "created_at": "2025-05-01T16:44:05Z",
+      "updated_at": "2025-05-06T08:51:57Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/293/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/293",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/293",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:34.137539",
+      "comments": [
+        {
+          "author": "Saedbhati",
+          "body": "Can i give it a try ?\n",
+          "created_at": "2025-05-06T07:21:53Z"
+        },
+        {
+          "author": "TooonyChen",
+          "body": "> Can i give it a try ?\n\nOh hi! Sorry, I'm actually doing it right now (https://github.com/aipotheosis-labs/aci/pull/325), but still thanks for asking! Really appreciate it!!",
+          "created_at": "2025-05-06T08:51:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 301,
+      "title": "Use TanStack Query to cache requests",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nRight now, a lot of duplicate requests are made in different pages of the dev portal. Users have to wait for things to load all the time.\n\n### Proposed Solution\n\nUse TanStack query to manage all the API requests and cache them.",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-02T09:42:31Z",
+      "updated_at": "2025-05-04T15:38:04Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/301/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/301",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/301",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:34.352070",
+      "comments": [
+        {
+          "author": "dev-aipolabs",
+          "body": "When using TanStack queries, we can create custom hooks for each data type that we retrieve, more specifically:\n\n- [ ] apps (@dev-aipolabs )\n- [ ] functions\n- [ ] app configuration\n- [ ] linked accounts\n\nI'm gonna set up the TanStack query for apps soon, but there are other data types that needs to ",
+          "created_at": "2025-05-04T15:38:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 308,
+      "title": "App configuration page, replace the app link with a \"Go to App\" button",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nOn the app configuration page for a specific app, the app title is currently a link to the app details page. This UX is quite confusing as app titles on other pages are not links. \n\n<img width=\"1626\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ee724f3f-251a-4103-b412-4e8aa91a96c0\" />\n\n### Proposed Solution\n\nRemove the link from the title. Instead, create a button next to it called something like \"Go to App\".",
+      "state": "open",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-05-03T10:41:50Z",
+      "updated_at": "2025-05-04T15:13:59Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 4,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/308/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/308",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/308",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:34.589665",
+      "comments": [
+        {
+          "author": "SumirSeth",
+          "body": "hi!\n\njust for clarification, when you say app title, do you mean the breadcrumb navigation?\nsince the app title isn't a link on any of the pages i have checked.",
+          "created_at": "2025-05-03T12:38:13Z"
+        },
+        {
+          "author": "BRama10",
+          "body": "I'd like to work on this, thanks! cc @dev-aipolabs ",
+          "created_at": "2025-05-03T15:57:27Z"
+        },
+        {
+          "author": "dev-aipolabs",
+          "body": "> hi!\n> \n> just for clarification, when you say app title, do you mean the breadcrumb navigation? since the app title isn't a link on any of the pages i have checked.\n\nNo, I mean the app title. It's here:\n\nhttps://github.com/aipotheosis-labs/aci/blob/0b43e81ee139e1866646fdd7123836cd2de4aa67/frontend",
+          "created_at": "2025-05-03T16:03:39Z"
+        },
+        {
+          "author": "SumirSeth",
+          "body": "> > hi!\n> > just for clarification, when you say app title, do you mean the breadcrumb navigation? since the app title isn't a link on any of the pages i have checked.\n> \n> No, I mean the app title. It's here:\n> \n> [aci/frontend/src/app/appconfigs/[appName]/page.tsx](https://github.com/aipotheosis-l",
+          "created_at": "2025-05-03T20:53:58Z"
+        },
+        {
+          "author": "Shahanwaz2025",
+          "body": "thank for your effort",
+          "created_at": "2025-05-04T09:51:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 299,
+      "title": "Support OAuth2 authentication scheme for Figma",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nFigma\n\n### Function Name\n\nN/A\n\n### API Docs Link\n\nhttps://www.figma.com/developers/api#oauth2\n\n### Additional Context\n\nThe current integrated Figma app on aci.dev only supports `api_key` based authentication scheme.\nBut some users want to automate the end-user onboarding process (without asking end user to get Figma api key as many of them are not very technical).\nIn this case `OAuth2` seems like a better authentication flow which Figma happen to also support.",
+      "state": "closed",
+      "author": "thisisfixer",
+      "author_type": "User",
+      "created_at": "2025-05-01T23:22:53Z",
+      "updated_at": "2025-05-02T00:06:27Z",
+      "closed_at": "2025-05-02T00:06:26Z",
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/299/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/299",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/299",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.023055",
+      "comments": [
+        {
+          "author": "thisisfixer",
+          "body": "https://github.com/aipotheosis-labs/aci/pull/298",
+          "created_at": "2025-05-02T00:06:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 273,
+      "title": " Show app icon in the Add Linked Account form",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nThe Add Linked Account form only shows the app name in the dropdown, which can be hard to see once there are many apps.\n\n![Image](https://github.com/user-attachments/assets/0d2250f4-8990-40b4-96f0-7cd8d776f9bd)\n\n### Proposed Solution\n\nLet's display the app icons in front of each app name to improve UI/UX.",
+      "state": "closed",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-04-28T11:32:35Z",
+      "updated_at": "2025-05-01T23:18:02Z",
+      "closed_at": "2025-05-01T23:18:02Z",
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 4,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/273/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "tianlilei-c"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/273",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/273",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.212468",
+      "comments": []
+    },
+    {
+      "issue_number": 296,
+      "title": "Integration Request: More functions for Figma",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nFigma\n\n### Function Name\n\nGET_COMMENTS_IN_A_FILE, GET_STYLE, GET_VERSIONS_OF_A_FILE, GET_ACTIVITY_LOGS, GET_IMAGE_FILLS, GET_COMPONENT, GET_FILE_COMPONENT_SETS\n\n### API Docs Link\n\nhttps://www.figma.com/developers/api\n\n### Additional Context\n\nThe listed functions would make Figma app integration even more useful, as it would allow access to a more complete set of data, including user interactions with files and importantly the progression/versioning of the data. ",
+      "state": "open",
+      "author": "getsadzeg",
+      "author_type": "User",
+      "created_at": "2025-05-01T19:01:14Z",
+      "updated_at": "2025-05-01T19:01:14Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/296/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/296",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/296",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.212489",
+      "comments": []
+    },
+    {
+      "issue_number": 286,
+      "title": "Integration Request: Trello Support",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nPlease add integration support for Trello, the widely used project and task management tool. This will enable AI agents built with ACI.dev to interact with Trello boards, cards, and lists in a structured, secure, and scalable way.\n\n\n\n### Proposed Solution\n\nIntegrating Trello would allow AI agents to:\n\nCreate, update, archive, or delete Trello cards and lists.\n\nFetch and summarize board content.\n\nAutomate project workflows and task assignments.\n\nSync tasks between Trello and other tools like Notion, Slack, or Google Sheets.\n\nThis is especially useful for personal assistant bots, team productivity agents, and task-syncing applications.",
+      "state": "open",
+      "author": "rayyush",
+      "author_type": "User",
+      "created_at": "2025-04-30T17:00:33Z",
+      "updated_at": "2025-05-01T12:22:18Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/286/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/286",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/286",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.212497",
+      "comments": []
+    },
+    {
+      "issue_number": 271,
+      "title": " Improve the UI/UX for modifying the allowed apps for an agent",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nRight now the UI is a bit difficult to use. The area showing allowed apps is very small and hard to see. The color is also not obvious. \n\n![Image](https://github.com/user-attachments/assets/43f5b3f2-349c-4a3f-8fc2-cefea2acd6ad)\n\n### Proposed Solution\n\nI propose we use a data table to show all the apps, with a checkbox for each app. Kinda like the following:\n\n![Image](https://github.com/user-attachments/assets/d46fd375-c7f9-42b0-95dd-5bd5fb4591aa)\n\nThis table should support:\n\n- [ ] Using the checkboxes to select individual apps to allow\n- [ ] One click to select or deselect all apps\n- [ ] A search bar to search for apps\n- [ ] Sort apps by name\n- [ ] Sort apps by checkbox status",
+      "state": "closed",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-04-28T11:26:21Z",
+      "updated_at": "2025-04-30T14:55:09Z",
+      "closed_at": "2025-04-30T14:55:09Z",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 3,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/271/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "tianlilei-c"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/271",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/271",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.212505",
+      "comments": [
+        {
+          "author": "dev-aipolabs",
+          "body": "@tianlilei-c Could you help with this?",
+          "created_at": "2025-04-28T11:27:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 270,
+      "title": "Create Agent form should let users selected what apps to enable",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [ ] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nRight now when users create an agent, they can only specify the name and description of that agent. And then they need to find that agent in the agent list, click `Edit Allowed Apps` to configure what apps are allowed to be used by this agent, which is inconvenient.\n\n### Proposed Solution\n\nI propose that, in the create agent form, we add a table of apps configured for the current project, and then users can just easily check off the apps they want to use this agent when creating the agent. No more extra configuration.",
+      "state": "closed",
+      "author": "dev-aipolabs",
+      "author_type": "User",
+      "created_at": "2025-04-28T11:17:31Z",
+      "updated_at": "2025-04-30T14:31:45Z",
+      "closed_at": "2025-04-30T14:31:45Z",
+      "labels": [
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "ui/ux"
+      ],
+      "label_count": 4,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/270/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "tianlilei-c"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/270",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/270",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.423132",
+      "comments": []
+    },
+    {
+      "issue_number": 284,
+      "title": "integrate searxng",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues)\n- [x] I have searched the [apps directory](https://github.com/aipotheosis-labs/aci/tree/main/backend/apps) to see if this integration already exists\n\n### App Name\n\nsearxng\n\n### Function Name\n\nsearxng\n\n### API Docs Link\n\nhttps://github.com/searxng/searxng/tree/master/docs\n\n### Additional Context\n\nbetter search for free",
+      "state": "open",
+      "author": "CALMCRAZY",
+      "author_type": "User",
+      "created_at": "2025-04-30T08:11:37Z",
+      "updated_at": "2025-04-30T08:11:37Z",
+      "closed_at": null,
+      "labels": [
+        "integration request"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/284/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/284",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/284",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.423153",
+      "comments": []
+    },
+    {
+      "issue_number": 275,
+      "title": "Multi-tenant Support in Unified MCP Server",
+      "body": "### Required Pre-requisites\n\n- [x] I have read the [Documentation](https://www.aci.dev/docs)\n- [x] I have searched the [Issue Tracker](https://github.com/aipotheosis-labs/aci/issues) and [Discussions](https://github.com/aipotheosis-labs/aci/discussions) that this hasn't been reported yet.\n- [x] Consider asking in [Discussions](https://github.com/aipotheosis-labs/aci/discussions) first\n\n### Motivation\n\nThe current MCP servers (both Unified and App) require `--linked-account-owner-id` during startup. \nEven tho ACI.dev is designed to support multi-tenant/multi-user, this compromise was made due to the native support of multi-tenant of MCP (and due to the fact that most mainstream MCP clients like Cursor is not very flexible on what you can pass on to MCP servers).\n\n### Proposed Solution\n\nThere are a few workaround we can take to solve this problem, without causing issues to existing users and mainstream MCP clients.\n\n1. (Preferred) We just allow MCP clients/users to pass additional parameters for ACI_EXECUTE_FUNCTION. Currently the schema only has \"intent\" property and that's what the LLM will generate. But MCP clients/users can do some post processing after getting the tool call decision from LLM and inject \"linked_account_owner_id\" \n\n2. We provide a non standard interface \"set_owner_id(id)\"  (in additional to list_tools(), call_tool()), which your MCP client can call to set the owner id before calling ACI_EXECUTE_FUNCTION.\n\n3. We provide another meta function ACI_SET_OWNER_ID, which your MCP client can call with the standard call_tool().  But note that your probably want to call this statically/deterministically instead of relying on LLM to generate the function call and it's argument (the owner_id).",
+      "state": "closed",
+      "author": "thisisfixer",
+      "author_type": "User",
+      "created_at": "2025-04-28T12:18:05Z",
+      "updated_at": "2025-04-30T07:43:30Z",
+      "closed_at": "2025-04-30T07:43:29Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/275/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/aipotheosis-labs/aci/issues/275",
+      "api_url": "https://api.github.com/repos/aipotheosis-labs/aci/issues/275",
+      "repository": "aipotheosis-labs/aci",
+      "extraction_date": "2025-06-22T00:40:35.423159",
+      "comments": [
+        {
+          "author": "thisisfixer",
+          "body": "solved with a temporary solution: https://github.com/aipotheosis-labs/aci-mcp/pull/7",
+          "created_at": "2025-04-30T07:43:29Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2836 @@
+{
+  "repository": "yuruotong1/autoMate",
+  "repository_info": {
+    "repo": "yuruotong1/autoMate",
+    "stars": 3494,
+    "language": "Python",
+    "description": "Like Manus, Computer Use Agent(CUA) and Omniparser, we are computer-using agents.AI-driven local automation assistant that uses natural language to make computers work by themselves",
+    "url": "https://github.com/yuruotong1/autoMate",
+    "topics": [
+      "agent",
+      "ai",
+      "computeruse",
+      "deepseek",
+      "manus",
+      "ollama",
+      "omniparser",
+      "openai",
+      "openmanus",
+      "response",
+      "rpa"
+    ],
+    "created_at": "2024-01-20T03:04:09Z",
+    "updated_at": "2025-06-21T17:31:15Z",
+    "search_query": "ai assistant openai language:python stars:>2",
+    "total_issues_estimate": 150,
+    "labeled_issues_estimate": 104,
+    "labeling_rate": 69.4,
+    "sample_labeled": 34,
+    "sample_total": 49,
+    "has_issues": true,
+    "repo_id": 745749489,
+    "default_branch": "master",
+    "size": 89500
+  },
+  "extraction_date": "2025-06-22T00:43:57.790975",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 64,
+  "issues": [
+    {
+      "issue_number": 124,
+      "title": "mac启动报错",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\npython main.py\nzsh: bus error  python main.py\n\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "open",
+      "author": "sontianye",
+      "author_type": "User",
+      "created_at": "2025-03-31T09:40:37Z",
+      "updated_at": "2025-06-12T04:04:07Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/124/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/124",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/124",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:48.610331",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "能展示下所有问题吗？这个信息太少了",
+          "created_at": "2025-03-31T23:06:44Z"
+        },
+        {
+          "author": "sontianye",
+          "body": "import keyboard\n还是这个的问题",
+          "created_at": "2025-04-01T01:55:12Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "这个问题已经有人在修复了，应该是mac下需要管理员权限",
+          "created_at": "2025-04-03T00:26:50Z"
+        },
+        {
+          "author": "BrettHuang2019",
+          "body": "M3 macbook 遇到同样问题zsh: bus error  python main.py\n",
+          "created_at": "2025-05-08T12:40:06Z"
+        },
+        {
+          "author": "sunjiajie",
+          "body": "目前有什么解决办法吗",
+          "created_at": "2025-06-12T04:04:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 128,
+      "title": "运行python main py打不开软件",
+      "body": "(base) PS C:\\Users\\路飞> python main.py\nD:\\miniconda\\python.exe: can't open file 'C:\\\\Users\\\\路飞\\\\main.py': [Errno 2] No such file or directory",
+      "state": "open",
+      "author": "luffuy69",
+      "author_type": "User",
+      "created_at": "2025-04-08T14:35:53Z",
+      "updated_at": "2025-06-06T03:01:14Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/128/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/128",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/128",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:48.838764",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "这个应该不是代码问题吧🤔",
+          "created_at": "2025-04-11T12:50:43Z"
+        },
+        {
+          "author": "qingyuan0o0",
+          "body": "![Image](https://github.com/user-attachments/assets/a89536ea-f0b4-4800-ab42-22f4c5db61b2)",
+          "created_at": "2025-04-14T08:38:52Z"
+        },
+        {
+          "author": "Livermorest",
+          "body": "\n\n> (base) PS C:\\Users\\路飞> python main.py D:\\miniconda\\python.exe: can't open file 'C:\\Users\\路飞\\main.py': [Errno 2] No such file or directory\n\n看看你的C:\\Users\\路飞\\  目录下有没有 main.py",
+          "created_at": "2025-04-15T02:31:25Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> ![Image](https://github.com/user-attachments/assets/a89536ea-f0b4-4800-ab42-22f4c5db61b2)\n\n你这个是什么操作系统，我目前仅在 windows 上测试跑通过，其他操作系统还没有进行兼容。",
+          "created_at": "2025-04-18T12:46:08Z"
+        },
+        {
+          "author": "qingyuan0o0",
+          "body": "> > ![Image](https://github.com/user-attachments/assets/a89536ea-f0b4-4800-ab42-22f4c5db61b2)\n> \n> 你这个是什么操作系统，我目前仅在 windows 上测试跑通过，其他操作系统还没有进行兼容。\n\n麒麟v10",
+          "created_at": "2025-04-18T12:48:02Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 133,
+      "title": "支持DeepSeek模型吗？为啥必须是Gpt4o",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "fxcfxc",
+      "author_type": "User",
+      "created_at": "2025-04-17T07:26:44Z",
+      "updated_at": "2025-06-06T03:00:26Z",
+      "closed_at": "2025-06-06T03:00:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/133/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/133",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/133",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:49.041631",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "因为自动化控制电脑，强依赖于多模态能力，DeepSeek不是多模态模型，所以无法完成这个工作。另外，GPT4o 提供了多模态能力、结构化输出的完整能力，这个能力在项目前期能够帮我省下大量的工作量，我还没有在国内找到同时支持这两者的模型。",
+          "created_at": "2025-04-17T09:40:21Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "现在最重要的问题是，目前市面上的多模态模型对于 computer-use 的支持都不好，需要自已训练一个专用场景的“小模型”，我已经有了大概的思路，但是对工程、算法能力上有较强的要求，我需要小的团队或者资金支持才能搞下去，现在一方面在找资源，另一方面在海外找业务 。",
+          "created_at": "2025-04-17T09:55:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 134,
+      "title": "无法打开localhost:7888",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n![Image](https://github.com/user-attachments/assets/d2fea85f-d2e4-4b33-89de-42184aaa6954)\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "open",
+      "author": "printfInc",
+      "author_type": "User",
+      "created_at": "2025-04-26T10:18:03Z",
+      "updated_at": "2025-06-06T03:00:15Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/134/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/134",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/134",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:49.281732",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "新版本已经不用 localhost:7888 了，运行后就是可操作的界面",
+          "created_at": "2025-06-06T03:00:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 136,
+      "title": "是否考虑加入一下Qwen2.5-VL",
+      "body": "调用国外的api还是会担心数据安全的问题，希望能接入国内的模型吧\n",
+      "state": "open",
+      "author": "whisper-yev",
+      "author_type": "User",
+      "created_at": "2025-05-08T08:08:05Z",
+      "updated_at": "2025-06-06T02:59:39Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/136/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/136",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/136",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:49.480390",
+      "comments": [
+        {
+          "author": "greenflute",
+          "body": "being able to call local model would be the final solution.",
+          "created_at": "2025-05-08T09:14:47Z"
+        },
+        {
+          "author": "zz6zz666",
+          "body": "可以啊，我试过了，请求是没任何问题，毕竟千问是兼容openAI的API的\n\n![Image](https://github.com/user-attachments/assets/2638cbf5-d8c6-4b9b-9113-d6c12bc625cf)",
+          "created_at": "2025-05-30T04:32:45Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "最近我在考虑兼容一下",
+          "created_at": "2025-06-06T02:59:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 137,
+      "title": "TypeError: the JSON object must be str, bytes or bytearray, not list",
+      "body": "![Image](https://github.com/user-attachments/assets/f9c4070a-bb83-40df-9e4f-7e12db4426fd)\n为什么在这一步之后出错了\n\n![Image](https://github.com/user-attachments/assets/2cd64137-71b4-46ad-bbfe-ed394674821e)\n\n![Image](https://github.com/user-attachments/assets/097c6646-6d66-45d0-8131-399c8e2f6934)\n\n定位到是这一行",
+      "state": "open",
+      "author": "zz6zz666",
+      "author_type": "User",
+      "created_at": "2025-05-30T04:37:13Z",
+      "updated_at": "2025-06-06T02:59:07Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/137/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/137",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/137",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:49.710980",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "在模型执行的中间，用户不能主动提问",
+          "created_at": "2025-06-06T02:59:06Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 138,
+      "title": "输入格式错误",
+      "body": "![Image](https://github.com/user-attachments/assets/f856ce3d-6289-4277-a2b7-21436f2c7d86)",
+      "state": "open",
+      "author": "zz6zz666",
+      "author_type": "User",
+      "created_at": "2025-05-30T04:46:36Z",
+      "updated_at": "2025-06-06T02:58:27Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/138/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/138",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/138",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:49.901491",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "感觉像是模型地址不太对",
+          "created_at": "2025-06-06T02:58:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 135,
+      "title": "是否考虑增加一下gemma3-tools:27b",
+      "body": "ollama部署了gemma3-tools:27b，它是多模态也支持tools，是否考虑这个大模型选项。",
+      "state": "open",
+      "author": "doutianye",
+      "author_type": "User",
+      "created_at": "2025-04-28T05:44:44Z",
+      "updated_at": "2025-04-28T05:44:44Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/135/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/135",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/135",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.120109",
+      "comments": []
+    },
+    {
+      "issue_number": 131,
+      "title": "可以使用本地大模型吗？",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "Dou-Z",
+      "author_type": "User",
+      "created_at": "2025-04-14T07:34:33Z",
+      "updated_at": "2025-04-17T10:03:20Z",
+      "closed_at": "2025-04-17T10:03:20Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/131/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/131",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/131",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.120130",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "暂时还不能用，只能用 openai-gpt4o",
+          "created_at": "2025-04-17T02:38:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 132,
+      "title": "mac m4启动失败",
+      "body": "python main.py\nzsh: bus error  python main.py\n\n",
+      "state": "closed",
+      "author": "AmarisWhite",
+      "author_type": "User",
+      "created_at": "2025-04-14T08:45:24Z",
+      "updated_at": "2025-04-17T02:39:03Z",
+      "closed_at": "2025-04-17T02:39:03Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/132/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/132",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/132",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.337099",
+      "comments": []
+    },
+    {
+      "issue_number": 126,
+      "title": "在高分辨率下，屏幕元素识别不准确",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n \"QHD\": Resolution(width=2560, height=1440),   # 16:9     \n \"3K\": Resolution(width=2880, height=1620),   # 16:9     \n \"4K\": Resolution(width=3840, height=2160),    # 16:9\n```\n\n## Description\n能否适以上分辨率\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "open",
+      "author": "freedomxie",
+      "author_type": "User",
+      "created_at": "2025-04-04T00:14:59Z",
+      "updated_at": "2025-04-15T13:28:11Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/126/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/126",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/126",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.337119",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "我感觉可能需要对图片进行缩放！",
+          "created_at": "2025-04-04T00:43:39Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "我手头确实没有这个分辨率的电脑，这个问题可能稍晚才能解决。",
+          "created_at": "2025-04-04T15:03:54Z"
+        },
+        {
+          "author": "greenflute",
+          "body": "1. image scaling, in higher resolution, mac just need the origin image not the 2x, so i don’t think it will cause scaling issue \n2. tested under 2014x1280, prompt is „open terminal then cd to root and ls -lha“, with previous executed ls in terminal, automate can correctly recognise the results thus ",
+          "created_at": "2025-04-05T11:33:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 129,
+      "title": "希望得到多显示器的支持",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n你好!\n我通过最新版main.exe运行后, 选择场景目前只能选择主屏幕, 无法选择副屏幕的内容, 可能因为主屏幕分辨率是2560*1440的原因, 自动操作也不准确\n感谢\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "open",
+      "author": "xaviershl",
+      "author_type": "User",
+      "created_at": "2025-04-11T08:45:43Z",
+      "updated_at": "2025-04-15T13:27:21Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/129/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/129",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/129",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.518065",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "奈何我只有一台小笔记本，还没有双屏(~_~💧)",
+          "created_at": "2025-04-11T13:22:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "Must be Administrator?",
+      "body": "## Version Information\n- Commit Hash: 0f9b9954b71d51123189de2c9c03705981868882\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n% python main.py\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/Users/~/Library/Application Support/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\nDownloading Model from https://www.modelscope.cn to directory: weights/AI-ModelScope/OmniParser-v2.0\n2025-03-28 01:40:40,613 - modelscope - INFO - Target directory already exists, skipping creation.\nException in thread Thread-1 (listen):\nTraceback (most recent call last):\n  File \"/usr/local/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py\", line 1075, in _bootstrap_inner\nRegistered stop hotkey: alt+f3\n\n\n🚀 PyQt6 application launched\n    self.run()\n  File \"/usr/local/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py\", line 1012, in run\n    self._target(*self._args, **self._kwargs)\n  File \"/Users/~/Sources/github.com_greenflute/yuruotong-autoMate/.venv/lib/python3.12/site-packages/keyboard/__init__.py\", line 294, in listen\n    _os_keyboard.listen(self.direct_callback)\n  File \"/Users/~/Sources/github.com_greenflute/yuruotong-autoMate/.venv/lib/python3.12/site-packages/keyboard/_darwinkeyboard.py\", line 430, in listen\n    raise OSError(\"Error 13 - Must be run as administrator\")\nOSError: Error 13 - Must be run as administrator\n```\n\n## Description\n\n\n### Current Behavior\nRunning „python main.py“ under mac, as typical local main user (which does have admin right)\n\n### Expected Behavior\ntypical local main users are in group 80 (admin), this should not be an error\n",
+      "state": "closed",
+      "author": "greenflute",
+      "author_type": "User",
+      "created_at": "2025-03-28T00:44:51Z",
+      "updated_at": "2025-04-07T01:31:56Z",
+      "closed_at": "2025-04-07T01:31:56Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/123/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1",
+        "Gushroom"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/123",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/123",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.743979",
+      "comments": [
+        {
+          "author": "greenflute",
+          "body": "so are we listening to the keyboard globally or just in our gui window? if not globally, we can switch to pynput or PyQt6’s keyPressEvent",
+          "created_at": "2025-03-28T12:31:01Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> so are we listening to the keyboard globally or just in our gui window? if not globally, we can switch to pynput or PyQt6’s\n\n I don't have a Mac computer at hand. Do I need administrator privileges to use pynput?\n\n",
+          "created_at": "2025-03-29T23:43:30Z"
+        },
+        {
+          "author": "greenflute",
+          "body": "> > so are we listening to the keyboard globally or just in our gui window? if not globally, we can switch to pynput or PyQt6’s\n> \n> I don't have a Mac computer at hand. Do I need administrator privileges to use pynput?\n\nwell the keyboard needs it, but pynput seems not, i’ll give it a try.",
+          "created_at": "2025-03-30T13:10:25Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "Thank for you pr!",
+          "created_at": "2025-03-31T23:07:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 119,
+      "title": "[BUG]",
+      "body": "使用mac启动项目，点击 `Select Screen Region` 按钮后，系统会报错，报错信息如下，然后系统自动退出。请问是什么原因呢，如解决。\n\n\n*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'NSWindow should only be instantiated on the main thread!'\n*** First throw call stack:\n(\n\t0   CoreFoundation                      0x00000001903ec300 __exceptionPreprocess + 176\n\t1   libobjc.A.dylib                     0x000000018fed2cd8 objc_exception_throw + 88\n\t2   CoreFoundation                      0x0000000190410994 _CFBundleGetValueForInfoKey + 0\n\t3   AppKit                              0x0000000193eb556c -[NSWindow _initContent:styleMask:backing:defer:contentView:] + 260\n\t4   AppKit                              0x0000000193eb545c -[NSWindow initWithContentRect:styleMask:backing:defer:] + 48\n\t5   libtk8.6.dylib                      0x000000030cf71ba4 TkMacOSXMakeRealWindowExist + 564\n\t6   libtk8.6.dylib                      0x000000030cf717f0 TkWmMapWindow + 76\n\t7   libtk8.6.dylib                      0x000000030cece588 MapFrame + 76\n\t8   libtcl8.6.dylib                     0x000000030d29b1a0 TclServiceIdle + 88\n\t9   libtcl8.6.dylib                     0x000000030d27b09c Tcl_DoOneEvent + 120\n\t10  libtk8.6.dylib                      0x000000030cf629c8 TkpInit + 800\n\t11  libtk8.6.dylib                      0x000000030cec6f20 Initialize + 2500\n\t12  _tkinter.cpython-312-darwin.so      0x000000016fdfe34c Tcl_AppInit + 92\n\t13  _tkinter.cpython-312-darwin.so      0x000000016fdfdfe0 Tkapp_New + 548\n\t14  _tkinter.cpython-312-darwin.so      0x000000016fdfddb8 _tkinter_create_impl + 268\n\t15  _tkinter.cpython-312-darwin.so      0x000000016fdfda38 _tkinter_create + 276\n\t16  python3.12                          0x0000000100acf3c0 cfunction_vectorcall_FASTCALL + 96\n\t17  python3.12                          0x0000000100bc1380 _PyEval_EvalFrameDefault + 189840\n\t18  python3.12                          0x0000000100b01654 slot_tp_init + 328\n\t19  python3.12                          0x0000000100af55e4 type_call + 148\n\t20  python3.12                          0x0000000100bc171c _PyEval_EvalFrameDefault + 190764\n\t21  python3.12                          0x0000000100b01654 slot_tp_init + 328\n\t22  python3.12                          0x0000000100af55e4 type_call + 148\n\t23  python3.12                          0x0000000100bc171c _PyEval_EvalFrameDefault + 190764\n\t24  python3.12                          0x0000000100be96a4 _PyObject_VectorcallTstate.4867 + 88\n\t25  python3.12                          0x0000000100be955c context_run + 104\n\t26  python3.12                          0x0000000100acf30c cfunction_vectorcall_FASTCALL_KEYWORDS + 92\n\t27  python3.12                          0x0000000100bc561c _PyEval_EvalFrameDefault + 206892\n\t28  python3.12                          0x0000000100a6c078 method_vectorcall + 368\n\t29  python3.12                          0x0000000100ccc1a0 thread_run + 80\n\t30  python3.12                          0x0000000100c4bc50 pythread_wrapper + 48\n\t31  libsystem_pthread.dylib             0x00000001902932e4 _pthread_start + 136\n\t32  libsystem_pthread.dylib             0x000000019028e0fc thread_start + 8\n)\nlibc++abi: terminating due to uncaught exception of type NSException\nzsh: abort      python main.py\n",
+      "state": "closed",
+      "author": "Xavier-777",
+      "author_type": "User",
+      "created_at": "2025-03-24T08:01:13Z",
+      "updated_at": "2025-04-07T01:31:41Z",
+      "closed_at": "2025-04-07T01:31:41Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/119/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/119",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/119",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:50.942276",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "这块代码正在修改",
+          "created_at": "2025-03-24T14:19:08Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 125,
+      "title": "OSWorld Benchmark?",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\nWould like to see this to be compared against Agent S2 and the others, since they are the FOSS SOTA https://github.com/simular-ai/Agent-S https://os-world.github.io/\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "BradKML",
+      "author_type": "User",
+      "created_at": "2025-04-03T03:44:10Z",
+      "updated_at": "2025-04-07T01:31:23Z",
+      "closed_at": "2025-04-07T01:31:23Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/125/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/125",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/125",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.162603",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "Your suggestion is very good!",
+          "created_at": "2025-04-04T00:43:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 127,
+      "title": "on Mac M1 chip",
+      "body": "\n## Error Message\nFatal Python error: Bus error\n\nCurrent thread 0x00000001f8ecb240 (most recent call first):\n  File \"/Users/pieman/enter/envs/automate/lib/python3.12/site-packages/keyboard/_darwinkeyboard.py\", line 134 in __init__\n  File \"/Users/pieman/enter/envs/automate/lib/python3.12/site-packages/keyboard/_darwinkeyboard.py\", line 204 in __init__\n  File \"/Users/pieman/enter/envs/automate/lib/python3.12/site-packages/keyboard/_darwinkeyboard.py\", line 404 in <module>\n  …  \n  File \"/Users/pieman/autoMate/main.py\", line 1 in <module>\nBus error: 10\n## Description\n\n\n### Current Behavior\nWhen running python3 main.py in the automate conda environment, the application immediately crashes with a Bus error: 10. The stack trace shows the fault occurs inside the macOS-specific portion of the keyboard package (_darwinkeyboard.py).\n### Expected Behavior\n\n",
+      "state": "closed",
+      "author": "Awesomepieman69",
+      "author_type": "User",
+      "created_at": "2025-04-06T13:12:10Z",
+      "updated_at": "2025-04-07T01:31:13Z",
+      "closed_at": "2025-04-07T01:31:13Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/127/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/127",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/127",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.370722",
+      "comments": []
+    },
+    {
+      "issue_number": 121,
+      "title": "这个软件是不是必须在线？",
+      "body": "这个软件运行时，是不是必须有互联网？在局域网中是不可以运行的吧。",
+      "state": "closed",
+      "author": "xiaoxiongwn",
+      "author_type": "User",
+      "created_at": "2025-03-27T14:32:47Z",
+      "updated_at": "2025-03-31T23:07:04Z",
+      "closed_at": "2025-03-31T23:07:04Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/121/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/121",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/121",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.370745",
+      "comments": [
+        {
+          "author": "greenflute",
+          "body": "如果有本地部署大模型，应该就可以不用",
+          "created_at": "2025-03-27T15:07:47Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "目前是需要联网的，现在这个版本只支持 openai 模型",
+          "created_at": "2025-03-28T02:26:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 122,
+      "title": "Packaging Version?",
+      "body": "## Version Information\n- Commit Hash: 0f9b9954b71d51123189de2c9c03705981868882\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\nERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\nlangchain-core 0.1.23 requires packaging<24.0,>=23.2, but you have packaging 24.1 which is incompatible.\n```\n\n## Description\n\n\n### Current Behavior\nreport this error while running \"python install.py\"\n\n\n### Expected Behavior\nshould report no error\n",
+      "state": "closed",
+      "author": "greenflute",
+      "author_type": "User",
+      "created_at": "2025-03-28T00:31:51Z",
+      "updated_at": "2025-03-28T12:11:40Z",
+      "closed_at": "2025-03-28T12:11:40Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/122/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/122",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/122",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.544339",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "我们没有用到 langChain，你可以用 conda 创建一个虚拟环境",
+          "created_at": "2025-03-28T02:28:37Z"
+        },
+        {
+          "author": "greenflute",
+          "body": "great thanks, maybe it comes from the previous revision, i’ll clean the venv and test again",
+          "created_at": "2025-03-28T11:51:50Z"
+        },
+        {
+          "author": "greenflute",
+          "body": "after cleaning up .venv, now there is no error messages any more, issue closed :)",
+          "created_at": "2025-03-28T12:11:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 120,
+      "title": "[BUG]",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2025-03-24T15:33:11Z",
+      "updated_at": "2025-03-24T15:33:21Z",
+      "closed_at": "2025-03-24T15:33:21Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/120/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/120",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/120",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.728606",
+      "comments": []
+    },
+    {
+      "issue_number": 114,
+      "title": "[BUG] 我看OmniParser定位似乎是没问题的，不知道是鼠标移动有问题导致点错了地方？",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "Rosejacka",
+      "author_type": "User",
+      "created_at": "2025-03-19T03:11:28Z",
+      "updated_at": "2025-03-24T03:14:14Z",
+      "closed_at": "2025-03-23T22:56:40Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 7,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/114/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/114",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/114",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.728631",
+      "comments": [
+        {
+          "author": "Rosejacka",
+          "body": "并且感觉耗时很长这是正常的吗",
+          "created_at": "2025-03-19T03:18:12Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "耗时长，有两部分原因：1）omniparser 打标时间长，这个可能显卡不适配 2）大模型返回时间长，这个没特别好的解决思路，除非我们自己训练一个大模型",
+          "created_at": "2025-03-19T04:14:35Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "你看下Gradio界面AI的输出内容，它会告诉你点哪个BoxId，这个BoxId在图片中的位置是否正确？",
+          "created_at": "2025-03-19T04:15:20Z"
+        },
+        {
+          "author": "Rosejacka",
+          "body": "> 你看下Gradio界面AI的输出内容，它会告诉你点哪个BoxId，这个BoxId在图片中的位置是否正确？\n\n不正确的",
+          "created_at": "2025-03-19T06:23:47Z"
+        },
+        {
+          "author": "Rosejacka",
+          "body": "> 你看下Gradio界面AI的输出内容，它会告诉你点哪个BoxId，这个BoxId在图片中的位置是否正确？\n\n什么原因导致的呢？",
+          "created_at": "2025-03-19T06:24:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 118,
+      "title": "[BUG]",
+      "body": "![Image](https://github.com/user-attachments/assets/f6b20755-0216-4fe9-85a0-a528d5ccd0b8)\n这使用main.exe文件，无法使用，是否是vpn的问题",
+      "state": "closed",
+      "author": "pigq",
+      "author_type": "User",
+      "created_at": "2025-03-21T03:47:20Z",
+      "updated_at": "2025-03-23T22:56:33Z",
+      "closed_at": "2025-03-23T22:56:33Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/118/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/118",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/118",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:51.923878",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "是的，请关闭代理工具！",
+          "created_at": "2025-03-21T04:14:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 117,
+      "title": "这个最后一步的报错快把我搞崩溃了",
+      "body": "![Image](https://github.com/user-attachments/assets/8536cbd0-1d5b-4481-9c3f-2a325f6133eb)",
+      "state": "closed",
+      "author": "hainiumoumou",
+      "author_type": "User",
+      "created_at": "2025-03-20T17:39:38Z",
+      "updated_at": "2025-03-22T04:20:28Z",
+      "closed_at": "2025-03-22T04:20:27Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/117/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "Gushroom"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/117",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/117",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:52.081286",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "看下命令行？",
+          "created_at": "2025-03-20T22:50:37Z"
+        },
+        {
+          "author": "hainiumoumou",
+          "body": "> 看下命令行？\n*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'NSWindow should only be instantiated on the main thread!'\n*** First throw call stack:\n(\n 0   CoreFoundation                      0x00007ff80c346b8e __exceptionPreprocess + 242\n 1   libobjc.A.dylib    ",
+          "created_at": "2025-03-21T05:18:25Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "好像存在 mac 适配问题 @Gushroom ",
+          "created_at": "2025-03-21T23:55:27Z"
+        },
+        {
+          "author": "Gushroom",
+          "body": "是mac上GUI不在主线程的经典问题，我在修了",
+          "created_at": "2025-03-22T03:46:51Z"
+        },
+        {
+          "author": "Gushroom",
+          "body": "@yuruotong1 简单处理了一下 能跑起来了 不过效果挺奇怪的 在fix117 branch 我最近可能没精力再去找更完美的修法了",
+          "created_at": "2025-03-22T04:20:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "Mac MPS (Metal) Support?",
+      "body": "\nHi I saw an earlier message about Mac.\n\nCould you tell me what LLM Models this project uses and reference the files I can edit to enable MPS support?\n\nIf Omniparser, here is a fix which worked for me to enable MPS support:\nhttps://github.com/microsoft/OmniParser/issues/224\n\nAnd any specific libraries that wouldn't work on Mac?\n\nI'm a Doctor and don't know much about coding. This software will help me significantly with document handling tasks.\n\nThanks.\n\n\n\n\n\n",
+      "state": "closed",
+      "author": "GaleiqTesting",
+      "author_type": "User",
+      "created_at": "2025-03-19T20:48:26Z",
+      "updated_at": "2025-03-21T23:54:43Z",
+      "closed_at": "2025-03-21T23:54:43Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/116",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/116",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:52.260784",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "hi, you could try  it now!  i'd update the logic, so it can run on Mac.",
+          "created_at": "2025-03-19T23:33:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 109,
+      "title": "[Feature Request]",
+      "body": " i serve local running VLM that provide openai api capability \nhow i can set local network endpoint , port , access key , model name...",
+      "state": "closed",
+      "author": "devops724",
+      "author_type": "User",
+      "created_at": "2025-03-18T06:45:17Z",
+      "updated_at": "2025-03-20T18:05:04Z",
+      "closed_at": "2025-03-19T04:18:05Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/109/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/109",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/109",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:52.469890",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "Local large models are not yet supported, so it is recommended to look at the list of large models listed in readme.",
+          "created_at": "2025-03-18T11:18:07Z"
+        },
+        {
+          "author": "devops724",
+          "body": "but it can be as simply as add custom url token to openai capability urls \nmost engine like vllm support text/completion and same as openai api ",
+          "created_at": "2025-03-20T18:05:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 107,
+      "title": "autoMate Liinux Mint 22.1 Cinnamon - API ratelimit",
+      "body": "## Version Information\n- Commit Hash: Current\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\nFile \"/home/name/Downloads/opt/anaconda3/envs/automate/lib/python3.12/site-packages/openai/_base_client.py\", line 1061, in _request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-1EdAY23eggNgX4Ej0UPb3d8c on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'requests', 'param': None, 'code': 'rate_limit_exceeded'}}\n\n```\n\n## Description\ngetting an api rate limit, maybe add a field that lets us delay the script or add api rate limit throttling so it continues to complete the task it just performs 1 entry per 20 seconds as the api entry mentions.\n\n### Current Behavior\nBroken\n\n### Expected Behavior\nThe thing to work without needing openai pro for chatgpt access\n\nOther:\n\nCan I just get this to use a local copy of ollama using a multimodel output model like gemma3 or llava or something? I tried sending the default URL to my ollama URL but couldn't get it working. \n\nMy goal is to get AutoMate and use ollama to be the eyes and hands of AutoMate which I will then use to operate LocalAI for me and it will pass the generated contents back to me via autoMate.",
+      "state": "closed",
+      "author": "Luci-Manus",
+      "author_type": "User",
+      "created_at": "2025-03-18T02:35:51Z",
+      "updated_at": "2025-03-19T17:52:08Z",
+      "closed_at": "2025-03-19T14:11:16Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/107/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/107",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/107",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:52.675003",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "First issue: I believe the current execution speed is already very slow, which is likely caused by your API being throttled due to speed limits from other usage scenarios. Many users have been widely reporting that autoMate's performance is significantly degraded.\n\nSecond issue: This concern has bee",
+          "created_at": "2025-03-18T03:19:37Z"
+        },
+        {
+          "author": "Luci-Manus",
+          "body": "I'm trying to get openManus or autoMate working so i can use it to troubleshoot eachother and other ai models idk if that's dumb but i'm dumber than these ai lol i cannot get anything working beyond ollama interminal and localai (which i can't figure out how to shut off)\n",
+          "created_at": "2025-03-18T05:07:27Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "Your idea is exceptional and has unlocked a fresh direction for our product’s application! We deeply value innovative efforts like yours—please don’t hesitate to reach out anytime challenges arise. We’re here to support you every step of the way!\n",
+          "created_at": "2025-03-18T07:05:28Z"
+        },
+        {
+          "author": "Luci-Manus",
+          "body": "a config to get ollama working would be cool and i know it's already on your radar..\n\nI'm getting AI smart glasses and i want the audio and visual feeds to be sent through to some RP oriented text LLM's that I want to use to make a specific personality type, so all the information i'm getting throug",
+          "created_at": "2025-03-19T00:31:11Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "That sounds very cool, i‘d very happy to to support you.So, are you trying out a really cutting-edge direction all on your own?",
+          "created_at": "2025-03-19T04:25:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 105,
+      "title": "Does it support Apple Silicon M series?",
+      "body": "Does it support Apple Silicon M series?",
+      "state": "closed",
+      "author": "fylm",
+      "author_type": "User",
+      "created_at": "2025-03-17T09:15:06Z",
+      "updated_at": "2025-03-19T14:11:28Z",
+      "closed_at": "2025-03-19T14:11:28Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/105/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/105",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/105",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:52.923639",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "Sorry, i doesn't have an M-series coMputer, but we use pure visual technology, which in theory can run on any device.",
+          "created_at": "2025-03-17T23:45:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 113,
+      "title": "调用openai 返回结果 json解析失败",
+      "body": "感谢开源~\n遇到一个问题，项目成功启动，api也通了。但是通了之后的返回值会报json解析失败，请问是不是和哪个的版本导致的问题。感谢回复\n\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\queueing.py\", line 712, in process_events\n    response = await route_utils.call_process_api(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\route_utils.py\", line 323, in call_process_api\n    output = await app.get_blocks().process_api(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\blocks.py\", line 2015, in process_api\n    result = await self.call_function(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\blocks.py\", line 1574, in call_function\n    prediction = await utils.async_iteration(iterator)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\utils.py\", line 710, in async_iteration\n    return await anext(iterator)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\utils.py\", line 704, in __anext__\n    return await anyio.to_thread.run_sync(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\anyio\\to_thread.py\", line 56, in run_sync\n    return await get_async_backend().run_sync_in_worker_thread(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\anyio\\_backends\\_asyncio.py\", line 2177, in run_sync_in_worker_thread\n    return await future\n           ^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\anyio\\_backends\\_asyncio.py\", line 859, in run\n    result = context.run(func, *args)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\utils.py\", line 687, in run_sync_iterator_async\n    return next(iterator)\n           ^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\gradio\\utils.py\", line 848, in gen_wrapper\n    response = next(iterator)\n               ^^^^^^^^^^^^^^\n  File \"D:\\Demo\\autoMate\\autoMate\\gradio_ui\\app.py\", line 137, in process_input\n    for _ in sampling_loop_sync(\n             ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Demo\\autoMate\\autoMate\\gradio_ui\\loop.py\", line 33, in sampling_loop_sync\n    task_plan_agent(messages=messages, parsed_screen_result=parsed_screen_result)\n  File \"D:\\Demo\\autoMate\\autoMate\\gradio_ui\\agent\\task_plan_agent.py\", line 20, in __call__\n    response = run(messages, user_prompt=system_prompt.format(screen_info=screen_info, action_list=str(Action)), response_format=TaskPlanResponse)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\xbrain\\core\\chat.py\", line 30, in run\n    chat_response = prepare_openai_tools(messages, user_prompt, response_format)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\xbrain\\core\\chat.py\", line 8, in prepare_openai_tools\n    chat_response = chat(messages, tools=[i[\"model\"] for i in xbrain_tool.tools], user_prompt=user_prompt, response_format=response_format)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\xbrain\\utils\\openai_utils.py\", line 16, in chat\n    response = client.beta.chat.completions.parse(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\resources\\beta\\chat\\completions.py\", line 156, in parse\n    return self._post(\n           ^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_base_client.py\", line 1280, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_base_client.py\", line 957, in request\n    return self._request(\n           ^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_base_client.py\", line 1063, in _request\n    return self._process_response(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_base_client.py\", line 1162, in _process_response\n    return api_response.parse()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_response.py\", line 319, in parse\n    parsed = self._options.post_parser(parsed)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\resources\\beta\\chat\\completions.py\", line 150, in parser\n    return _parse_chat_completion(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\lib\\_parsing\\_completions.py\", line 110, in parse_chat_completion\n    \"parsed\": maybe_parse_content(\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\lib\\_parsing\\_completions.py\", line 161, in maybe_parse_content\n    return _parse_content(response_format, message.content)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\lib\\_parsing\\_completions.py\", line 221, in _parse_content\n    return cast(ResponseFormatT, model_parse_json(response_format, content))\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\openai\\_compat.py\", line 169, in model_parse_json\n    return model.model_validate_json(data)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\Tools\\Python\\Python312\\Lib\\site-packages\\pydantic\\main.py\", line 597, in model_validate_json\n    return cls.__pydantic_validator__.validate_json(json_data, strict=strict, context=context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npydantic_core._pydantic_core.ValidationError: 1 validation error for TaskPlanResponse\n  Input should be an object [type=model_type, input_value=[{'reasoning': \"用户希...输入'horldworld'\"]}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.8/v/model_type",
+      "state": "closed",
+      "author": "ljtth",
+      "author_type": "User",
+      "created_at": "2025-03-19T02:46:23Z",
+      "updated_at": "2025-03-19T11:17:58Z",
+      "closed_at": "2025-03-19T11:17:58Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/113/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/113",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/113",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:53.088038",
+      "comments": [
+        {
+          "author": "ljtth",
+          "body": "pydantic                  2.8.2\npydantic_core             2.20.1\nopenai                    1.55.3\n\napi：https://api.openai-next.com/v1/  \nmodel: gpt-4o",
+          "created_at": "2025-03-19T02:47:59Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "可能 openai-next 有问题，可以尝试用一下野卡",
+          "created_at": "2025-03-19T04:16:02Z"
+        },
+        {
+          "author": "ljtth",
+          "body": "确实是 openai-next 是有问题了，换了另外一个就好了。openai-next白充值了，没法用。您能联系那边给退款不。他那网站里面连个客服都没有，感谢",
+          "created_at": "2025-03-19T07:14:35Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> 确实是 openai-next 是有问题了，换了另外一个就好了。openai-next白充值了，没法用。您能联系那边给退款不。他那网站里面连个客服都没有，感谢\n\n之前推荐大家中转时我的账号确实能用，可能是我的账号开通了特别的权限，我已经在联系厂商了，他们预计这周五会优化好，如果等不了的话，我直接转钱给你，把 token 都买下来吧。",
+          "created_at": "2025-03-19T08:43:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 115,
+      "title": "找不到openai的包",
+      "body": "\n## Error Message\n启动Omniserver服务中，因为加载模型真的超级慢，请耐心等待！\n[SERVER-ERR] Traceback (most recent call last):\n[SERVER-ERR]   File \"E:\\secert_data\\automate\\autoMate\\omniserver.py\", line 14, in <module>\n[SERVER-ERR]     from util.omniparser import Omniparser\n[SERVER-ERR]   File \"E:\\secert_data\\automate\\autoMate\\util\\omniparser.py\", line 1, in <module>\n[SERVER-ERR]     from util.utils import get_som_labeled_img, get_caption_model_processor, get_yolo_model, check_ocr_box\n[SERVER-ERR]   File \"E:\\secert_data\\automate\\autoMate\\util\\utils.py\", line 11, in <module>\n[SERVER-ERR]     from openai import AzureOpenAI\n[SERVER-ERR] ModuleNotFoundError: No module named 'openai'\nTraceback (most recent call last):\n  File \"E:\\secert_data\\automate\\autoMate\\main.py\", line 78, in <module>\n    run()\n  File \"E:\\secert_data\\automate\\autoMate\\main.py\", line 55, in run\n    raise RuntimeError(f\"服务器进程报错退出：{server_process.returncode}\")\nRuntimeError: 服务器进程报错退出：1\n\n\n\n## Description\n我已经在虚拟环境中安装了openai，但是还是无法找到这个包，但是我单独utils.py是可以运行的，但是如果我运行main.py就会报错\n",
+      "state": "closed",
+      "author": "A97139012",
+      "author_type": "User",
+      "created_at": "2025-03-19T06:28:29Z",
+      "updated_at": "2025-03-19T08:28:24Z",
+      "closed_at": "2025-03-19T08:28:24Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/115/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/115",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/115",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:53.275027",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "你这个版本的代码非常旧了，可以拉一下最新代码！",
+          "created_at": "2025-03-19T07:11:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 108,
+      "title": "[BUG] vlm_agent.py报了个错",
+      "body": "\\gradio_ui\\agent\\vlm_agent.py\", line 76, in __call__     vlm_response, token_usage = run_oai_interleaved(，运行后在网页中输入apikey再输入问题，出现如上报错",
+      "state": "closed",
+      "author": "skydragron",
+      "author_type": "User",
+      "created_at": "2025-03-18T05:50:47Z",
+      "updated_at": "2025-03-19T07:12:16Z",
+      "closed_at": "2025-03-19T07:12:16Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/108/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/108",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/108",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:53.497138",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "这个是很早的代码了，辛苦更新一下",
+          "created_at": "2025-03-18T07:02:01Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 110,
+      "title": "[BUG]",
+      "body": "运行python main后报错\nModuleNotFoundError: No module named 'xbrain'，但是我安装了该模块，\n执行pip show xbrain后：\nName: xbrain\nVersion: 0.0.1\nSummary: Python library of standardized neural data analysis pipelines\nHome-page: https://github.com/doerlbh/xbrain\nAuthor: Baihan Lin\nAuthor-email: doerlbh@gmail.com\nLicense: GPLv3\nLocation: ...\\lib\\site-packages\\xbrain-0.0.1-py3.12.egg\nRequires: numpy, pandas\nRequired-by:\n\n\n",
+      "state": "closed",
+      "author": "skydragron",
+      "author_type": "User",
+      "created_at": "2025-03-18T10:37:19Z",
+      "updated_at": "2025-03-19T04:17:56Z",
+      "closed_at": "2025-03-19T04:17:56Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/110/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/110",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/110",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:53.723431",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "建议按照 readme 安装 requirements，是 pyxbrain 而不是 xbrain",
+          "created_at": "2025-03-18T11:16:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 111,
+      "title": "[BUG] 硅基流动的api是用不了吗",
+      "body": "如题",
+      "state": "closed",
+      "author": "webwww123",
+      "author_type": "User",
+      "created_at": "2025-03-18T12:53:55Z",
+      "updated_at": "2025-03-19T04:17:50Z",
+      "closed_at": "2025-03-19T04:17:50Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/111/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/111",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/111",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:53.904318",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "支持的大模型已经在 readme 中介绍了",
+          "created_at": "2025-03-18T13:34:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 112,
+      "title": "--",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\n\n```\n\n## Description\n\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "skydragron",
+      "author_type": "User",
+      "created_at": "2025-03-19T01:59:33Z",
+      "updated_at": "2025-03-19T03:20:48Z",
+      "closed_at": "2025-03-19T03:20:38Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/112/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/112",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/112",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.103329",
+      "comments": []
+    },
+    {
+      "issue_number": 106,
+      "title": "运行之后不报错，localhost7888也无法访问",
+      "body": "## Version Information\n- Commit Hash: <!-- e.g. abc123def456 -->\n\n## Error Message\n<!-- Paste your error message in markdown -->\n```\nPS G:\\autoMate> python main.py\ncuda is_available:  True\nMPS is_available:  False\ncuda device_count 1\ncuda device_name NVIDIA GeForce RTX 2070 SUPER\nModel files already detected!\n```\n\n## Description\n运行到这里就没反应了，http://localhost:7888/ 也无法访问\n\n### Current Behavior\n<!-- Describe what actually happened -->\n\n### Expected Behavior\n<!-- Describe what you expected to happen -->\n",
+      "state": "closed",
+      "author": "qzltianxing",
+      "author_type": "User",
+      "created_at": "2025-03-17T16:48:46Z",
+      "updated_at": "2025-03-19T01:37:21Z",
+      "closed_at": "2025-03-19T01:37:21Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/106/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/106",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/106",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.103351",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "稍等我来看看！",
+          "created_at": "2025-03-18T00:13:57Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "可以拉一下最新的代码，试试还有问题吗？",
+          "created_at": "2025-03-18T02:18:17Z"
+        },
+        {
+          "author": "SkalaFrost",
+          "body": "i got the same problem with lastest code base\n",
+          "created_at": "2025-03-18T02:33:36Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "Note: Do not access `0.0.0.0:7888`, but use `http://localhost:7888` instead.",
+          "created_at": "2025-03-18T03:22:01Z"
+        },
+        {
+          "author": "qzltianxing",
+          "body": "通过拉取最新代码已解决！NICE！",
+          "created_at": "2025-03-19T01:37:14Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 104,
+      "title": "OSError: We couldn't connect to 'https://huggingface.co' to load this file",
+      "body": "已经是最新的程序包，还是出现这个。\n(automate) D:\\autoMate\\autoMate>python main.py\ncuda is_available:  False\nMPS is_available:  False\ncuda device_count 0\nGPU driver is not compatible, please install the appropriate version of torch according to the readme!\nModel files already detected!\nTraceback (most recent call last):\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connection.py\", line 198, in _new_conn\n    sock = connection.create_connection(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\util\\connection.py\", line 85, in create_connection\n    raise err\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\util\\connection.py\", line 73, in create_connection\n    sock.connect(sa)\nTimeoutError: timed out\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 787, in urlopen\n    response = self._make_request(\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 488, in _make_request\n    raise new_e\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 464, in _make_request\n    self._validate_conn(conn)\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 1093, in _validate_conn\n    conn.connect()\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connection.py\", line 704, in connect\n    self.sock = sock = self._new_conn()\n                       ^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connection.py\", line 207, in _new_conn\n    raise ConnectTimeoutError(\nurllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001CC9089DC40>, 'Connection to huggingface.co timed out. (connect timeout=10)')\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\requests\\adapters.py\", line 667, in send\n    resp = conn.urlopen(\n           ^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 841, in urlopen\n    retries = retries.increment(\n              ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\urllib3\\util\\retry.py\", line 519, in increment\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Florence-2-base/resolve/main/config.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CC9089DC40>, 'Connection to huggingface.co timed out. (connect timeout=10)'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 1376, in _get_metadata_or_catch_error\n    metadata = get_hf_file_metadata(\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\utils\\_validators.py\", line 114, in _inner_fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 1296, in get_hf_file_metadata\n    r = _request_wrapper(\n        ^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 280, in _request_wrapper\n    response = _request_wrapper(\n               ^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 303, in _request_wrapper\n    response = get_session().request(method=method, url=url, **params)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\requests\\sessions.py\", line 589, in request\n    resp = self.send(prep, **send_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\requests\\sessions.py\", line 703, in send\n    r = adapter.send(request, **kwargs)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\utils\\_http.py\", line 96, in send\n    return super().send(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\requests\\adapters.py\", line 688, in send\n    raise ConnectTimeout(e, request=request)\nrequests.exceptions.ConnectTimeout: (MaxRetryError(\"HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Florence-2-base/resolve/main/config.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CC9089DC40>, 'Connection to huggingface.co timed out. (connect timeout=10)'))\"), '(Request ID: e11b73d6-9a22-41bb-aa19-2f12053c7470)')\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\utils\\hub.py\", line 342, in cached_file\n    resolved_file = hf_hub_download(\n                    ^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\utils\\_validators.py\", line 114, in _inner_fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 862, in hf_hub_download\n    return _hf_hub_download_to_cache_dir(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 969, in _hf_hub_download_to_cache_dir\n    _raise_on_head_call_error(head_call_error, force_download, local_files_only)\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\huggingface_hub\\file_download.py\", line 1489, in _raise_on_head_call_error\n    raise LocalEntryNotFoundError(\nhuggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\autoMate\\autoMate\\main.py\", line 19, in <module>\n    run()\n  File \"D:\\autoMate\\autoMate\\main.py\", line 15, in run\n    app.run()\n  File \"D:\\autoMate\\autoMate\\gradio_ui\\app.py\", line 320, in run\n    vision_agent = VisionAgent(yolo_model_path=os.path.join(MODEL_DIR, \"icon_detect\", \"model.pt\"),\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\autoMate\\autoMate\\gradio_ui\\agent\\vision_agent.py\", line 35, in __init__\n    self.caption_processor = AutoProcessor.from_pretrained(\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\models\\auto\\processing_auto.py\", line 305, in from_pretrained\n    config = AutoConfig.from_pretrained(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\models\\auto\\configuration_auto.py\", line 1075, in from_pretrained\n    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\configuration_utils.py\", line 594, in get_config_dict\n    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\configuration_utils.py\", line 653, in _get_config_dict\n    resolved_config_file = cached_file(\n                           ^^^^^^^^^^^^\n  File \"D:\\Users\\admin\\anaconda3\\envs\\automate\\Lib\\site-packages\\transformers\\utils\\hub.py\", line 385, in cached_file\n    raise EnvironmentError(\nOSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like microsoft/Florence-2-base is not the path to a directory containing a file named config.json.\nCheckout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",
+      "state": "closed",
+      "author": "damaomaom",
+      "author_type": "User",
+      "created_at": "2025-03-17T06:40:20Z",
+      "updated_at": "2025-03-18T02:17:46Z",
+      "closed_at": "2025-03-18T02:17:45Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/104/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/104",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/104",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.308682",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "我们已经找到原因，了正在修改代码",
+          "created_at": "2025-03-17T12:27:51Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "这个问题已经解决了，可以看最新代码",
+          "created_at": "2025-03-18T02:17:31Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 63,
+      "title": "求大佬做个一键包~",
+      "body": "免去部署的麻烦，谢谢",
+      "state": "closed",
+      "author": "aimarxjg",
+      "author_type": "User",
+      "created_at": "2025-03-08T02:07:11Z",
+      "updated_at": "2025-03-09T01:16:07Z",
+      "closed_at": "2025-03-09T01:16:07Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/63/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/63",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/63",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.468797",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "收到，我们暂时先专注于 bug fix，后面会考虑推出一键部署包",
+          "created_at": "2025-03-08T06:13:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 10,
+      "title": "👑 [需求]加入连接不同代码块的功能。",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T23:35:19Z",
+      "updated_at": "2025-03-03T09:41:25Z",
+      "closed_at": "2025-03-03T09:41:25Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/10/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/10",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/10",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651245",
+      "comments": []
+    },
+    {
+      "issue_number": 11,
+      "title": "👑 [需求]建立共享代码功能，可搜索、下载、更新其他人共享的代码块",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T23:36:55Z",
+      "updated_at": "2025-03-03T09:41:19Z",
+      "closed_at": "2025-03-03T09:41:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/11/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/11",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/11",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651266",
+      "comments": []
+    },
+    {
+      "issue_number": 12,
+      "title": "👑 [需求]除第一次生成的代码外，无法自动更新代码块，在智子对话框中加入更新按钮或者自动更新！",
+      "body": "软件第一次是自动把代码放入代码区，后面修改的代码它不会自动更新到代码区，所以能自动更新，或能手动更新修改后的代码到代码区，效率会高好多。",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T23:46:53Z",
+      "updated_at": "2025-03-03T09:41:13Z",
+      "closed_at": "2025-03-03T09:41:13Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/12/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/12",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/12",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651273",
+      "comments": []
+    },
+    {
+      "issue_number": 15,
+      "title": "👑 [需求]python执行器支持用户主动扩展第三方依赖",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-09T13:35:25Z",
+      "updated_at": "2025-03-03T09:41:08Z",
+      "closed_at": "2025-03-03T09:41:08Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/15/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/15",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/15",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651279",
+      "comments": []
+    },
+    {
+      "issue_number": 17,
+      "title": "👑 [需求]文档中增加国产大模型的使用示范",
+      "body": "<img width=\"582\" alt=\"68097a4d60a2c96b0bfe7d535cf6560c_\" src=\"https://github.com/yuruotong1/autoMate/assets/31992251/52a0e89e-edd8-4ab0-b670-dfc303c72574\">",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T10:20:58Z",
+      "updated_at": "2025-03-03T09:41:03Z",
+      "closed_at": "2025-03-03T09:41:03Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/17/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/17",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/17",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651285",
+      "comments": []
+    },
+    {
+      "issue_number": 16,
+      "title": "👑 [需求]搜索界面“点击配置“修改为“点击配置 AI API”",
+      "body": "<img width=\"626\" alt=\"cf7c320eb7523bea0b2b7fc4291d842f_\" src=\"https://github.com/yuruotong1/autoMate/assets/31992251/e65f51d8-74a1-4e47-84a1-7b0aec6f68e3\">",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T10:20:04Z",
+      "updated_at": "2025-03-03T09:40:58Z",
+      "closed_at": "2025-03-03T09:40:58Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/16/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/16",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/16",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.651291",
+      "comments": [
+        {
+          "author": "HelloBojack",
+          "body": "@yuruotong1 https://github.com/yuruotong1/autoMate/pull/39 Thank you for merge! This issue can close~",
+          "created_at": "2024-07-16T09:28:54Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 21,
+      "title": "👑 [需求]飞书文档中增加Ollama的使用指南",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T11:37:58Z",
+      "updated_at": "2025-03-03T09:40:50Z",
+      "closed_at": "2025-03-03T09:40:50Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/21/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/21",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/21",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:54.896197",
+      "comments": [
+        {
+          "author": "Lvan826199",
+          "body": "文档已添加：https://o0h3vqpeoxs.feishu.cn/docx/QMmYdhjvood5wpxDWcscGVWYnCQ",
+          "created_at": "2024-07-17T02:30:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 22,
+      "title": "👑 [需求]加入日志体系，可以在页面导出日志，方便排查错误",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T13:30:39Z",
+      "updated_at": "2025-03-03T09:40:39Z",
+      "closed_at": "2025-03-03T09:40:39Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/22/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/22",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/22",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.096549",
+      "comments": []
+    },
+    {
+      "issue_number": 23,
+      "title": "👑 [需求]自动更新的包使用github不稳定，改到gitee或者其他仓库 ",
+      "body": "![947f5d911b63c31788aa33fc9795fd8](https://github.com/yuruotong1/autoMate/assets/31992251/992772a5-1cc3-4ac6-ae0c-8fa9d4367c6d)",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T15:09:52Z",
+      "updated_at": "2025-03-03T09:40:34Z",
+      "closed_at": "2025-03-03T09:40:34Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/23/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/23",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/23",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.096569",
+      "comments": []
+    },
+    {
+      "issue_number": 26,
+      "title": "👑 [Feature Request]从 Flask 迁移到 FastAPI",
+      "body": "\r\n\r\n### 🥰 需求描述\r\n\r\n将现有的 Flask 后端迁移到 FastAPI 框架。这个变更的目的是利用 FastAPI 的优势,如:\r\n- 更快的性能\r\n- 自动 API 文档生成\r\n- 更强大的类型提示和验证\r\n- 异步支持\r\n- 现代化的 Python 语法\r\n\r\n### 🧐 解决方案\r\n\r\n1. 评估当前 Flask 应用结构\r\n2. 设计 FastAPI 迁移计划\r\n3. 逐步将 Flask 路由转换为 FastAPI 路径操作\r\n4. 利用 Pydantic 模型进行数据验证\r\n5. 实现依赖注入系统\r\n6. 配置 FastAPI 的异步特性(如果需要)\r\n7. 更新数据库连接(如果适用)\r\n8. 迁移测试套件\r\n9. 更新部署流程\r\n10. 进行性能测试和优化\r\n11. 团队协作：利用您提供的帮助，分配任务并定期同步进度\r\n\r\n```mermaid\r\ngraph TD\r\n    A[评估当前Flask应用] --> B[设计FastAPI迁移计划]\r\n    B --> C[任务分配和团队协作]\r\n    C --> D[转换路由]\r\n    D --> E[实现Pydantic模型]\r\n    E --> F[配置依赖注入]\r\n    F --> G[启用异步特性]\r\n    G --> H[更新数据库连接]\r\n    H --> I[迁移测试]\r\n    I --> J[更新部署流程]\r\n    J --> K[性能测试和优化]\r\n    K --> L[最终审查和上线]\r\n    C -.-> M[定期进度同步]\r\n    M -.-> C\r\n```\r\n\r\n### 🚑 其他信息\r\n\r\n在进行迁移时,需要注意以下几点:\r\n\r\n1. 确保团队成员熟悉 FastAPI 的概念和最佳实践。\r\n2. 考虑是否需要保持向后兼容性,或者是否可以完全重写 API。\r\n3. 评估现有的第三方扩展是否有 FastAPI 等效替代品。\r\n4. 更新 API 文档,利用 FastAPI 的自动文档生成功能。\r\n> PS: 如果maintainer需要，我可以提供帮助， 我对fastapi比较熟悉",
+      "state": "closed",
+      "author": "linkedlist771",
+      "author_type": "User",
+      "created_at": "2024-07-11T05:18:33Z",
+      "updated_at": "2025-03-03T09:40:27Z",
+      "closed_at": "2025-03-03T09:40:27Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/26/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "linkedlist771"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/26",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/26",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.096577",
+      "comments": [
+        {
+          "author": "yuruotong1",
+          "body": "但感觉迁移的话对用户影响不大",
+          "created_at": "2024-07-11T06:16:50Z"
+        },
+        {
+          "author": "phil616",
+          "body": "如果这个迁移到FastAPI的方案通过，我也可加入",
+          "created_at": "2024-07-11T16:56:55Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> 如果这个迁移到FastAPI的方案通过，我也可加入\r\n\r\n有几个问题需要给出答案：\r\n\r\n1. 这么做能为用户带来什么更好的体验？\r\n2. 团队成员是否更熟悉fastapi？相比于flask来说？ \r\n3. 对已有项目变更是否会引入更大的风险？\r\n",
+          "created_at": "2024-07-12T06:18:19Z"
+        },
+        {
+          "author": "phil616",
+          "body": "> 如果这个迁移到FastAPI的方案通过，我也可加入\r\n\r\n\r\n\r\n> > 如果这个迁移到FastAPI的方案通过，我也可加入\r\n> \r\n> 有几个问题需要给出答案：\r\n> \r\n> 1. 这么做能为用户带来什么更好的体验？\r\n> 2. 团队成员是否更熟悉fastapi？相比于flask来说？\r\n> 3. 对已有项目变更是否会引入更大的风险？\r\n\r\n1. 首先对于用户的体验而言是无感的，用户感知不到后端的处理过程。\r\n2. flask框架更加侧重于Web服务，大模型领域开发者使用FastAPI更加常见。\r\n3. flask与FastAPI均属于Python Web比较成熟的应用，风险暂时无法评",
+          "created_at": "2024-07-12T11:05:42Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> > 如果这个迁移到FastAPI的方案通过，我也可加入\r\n> \r\n> > > 如果这个迁移到FastAPI的方案通过，我也可加入\r\n> > \r\n> > \r\n> > 有几个问题需要给出答案：\r\n> > \r\n> > 1. 这么做能为用户带来什么更好的体验？\r\n> > 2. 团队成员是否更熟悉fastapi？相比于flask来说？\r\n> > 3. 对已有项目变更是否会引入更大的风险？\r\n> \r\n> 1. 首先对于用户的体验而言是无感的，用户感知不到后端的处理过程。\r\n> 2. flask框架更加侧重于Web服务，大模型领域开发者使用FastAPI更加常见。\r\n> 3. flask与FastAPI",
+          "created_at": "2024-07-12T14:55:25Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 30,
+      "title": "👑 [需求] autoMate 内置 ollama",
+      "body": "1. 用户打开后走默认的本地模型；\r\n2. 点击配置可更换其他模型；",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-13T23:37:07Z",
+      "updated_at": "2025-03-03T09:40:19Z",
+      "closed_at": "2025-03-03T09:40:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/30/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "mbt1909432"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/30",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/30",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.281801",
+      "comments": [
+        {
+          "author": "mbt1909432",
+          "body": "在这",
+          "created_at": "2024-07-13T23:39:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 31,
+      "title": "👑 [需求]自动学习api接口信息，完成对该api接口的自动化",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-13T23:38:17Z",
+      "updated_at": "2025-03-03T09:40:13Z",
+      "closed_at": "2025-03-03T09:40:13Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/31/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/31",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/31",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.470739",
+      "comments": [
+        {
+          "author": "phil616",
+          "body": "如果API符合某个规范，可以直接调用规范提出者提供的生成器，以FastAPI为例，app启动参数提供了一个生成符合OpenAPI规范的域以生成端点ID，可以用来生成[TS客户端代码](https://fastapi.tiangolo.com/advanced/generate-clients/?h=gene#generate-a-typescript-client-with-the-preprocessed-openapi)，一般都包含在文档的SDK中，只要把常见平台的SDK文档包含到项目里就可以实现自动学习API的接口信息。",
+          "created_at": "2024-07-14T04:36:09Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> 如果API符合某个规范，可以直接调用规范提出者提供的生成器，以FastAPI为例，app启动参数提供了一个生成符合OpenAPI规范的域以生成端点ID，可以用来生成[TS客户端代码](https://fastapi.tiangolo.com/advanced/generate-clients/?h=gene#generate-a-typescript-client-with-the-preprocessed-openapi)，一般都包含在文档的SDK中，只要把常见平台的SDK文档包含到项目里就可以实现自动学习API的接口信息。\n\n有办法集成到咱们的项目中吗？",
+          "created_at": "2024-07-14T14:55:16Z"
+        },
+        {
+          "author": "phil616",
+          "body": "FastAPI毕竟只是单一应用，各个厂家采用的标准不同，集成到该项目里面需要项目开发者团队尽可能多的去主动适配模型提供商提供的SDK及相关规范，目前团队规模无力逐个适配，建议先搁置",
+          "created_at": "2024-07-14T15:34:24Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 32,
+      "title": "👑 [需求]界面中增加客户反馈渠道，能够在界面直接提问题和需求",
+      "body": "可以考虑和已有的提问工具结合，比如“我来”",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-13T23:39:54Z",
+      "updated_at": "2025-03-03T09:40:03Z",
+      "closed_at": "2025-03-03T09:40:02Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/32/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/32",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/32",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:55.680023",
+      "comments": []
+    },
+    {
+      "issue_number": 33,
+      "title": "👑 [需求]对于在线模型，只需要添加一个token",
+      "body": "提供一个支持的模型供应商的列表供人选择    对于在线模型，只需要添加一个token就好，token的申请肯定各家都有详细的文档，而具体的和模型的交互，完全可以后端负责去处理转换 。",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-14T00:04:36Z",
+      "updated_at": "2025-03-03T09:39:55Z",
+      "closed_at": "2025-03-03T09:39:55Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/33/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/33",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/33",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.140978",
+      "comments": [
+        {
+          "author": "fjklqq",
+          "body": "可以在后端添加一个获取支持的模型入口列表的接口，返回如下信息，前端依据此信息展示配置页面的选项。\r\n同时在和后端交互（`/llm`接口）时传递`msg`、 `enter_id` 及 `parameters`的配置内容(或存入数据库，后端由数据库直接读取)，由后端自读判断使用哪一个入口完成会话。\r\n```json\r\n[\r\n    {\r\n        \"enter_id\": \"OpenaiEnterPoint\",\r\n        \"name\": \"OpenAI\",\r\n        \"parameters\": {\r\n            \"api_key\": {\r\n             ",
+          "created_at": "2024-07-16T05:29:29Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 35,
+      "title": "👑 [需求]走向国际化，github首页及文档增加英文",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-15T01:20:51Z",
+      "updated_at": "2025-03-03T09:39:48Z",
+      "closed_at": "2025-03-03T09:39:48Z",
+      "labels": [
+        "documentation"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/35/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/35",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/35",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.366956",
+      "comments": [
+        {
+          "author": "FredaZero",
+          "body": "我明天搞一版出来",
+          "created_at": "2024-07-15T16:42:43Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> 我明天搞一版出来\n\n感谢 pr",
+          "created_at": "2024-07-16T12:43:49Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 7,
+      "title": "👑 [需求]在搜索框检索到代码标题后输入回车，直接执行代码而不是跳转到代码编辑页面",
+      "body": null,
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:21:16Z",
+      "updated_at": "2024-07-24T02:08:19Z",
+      "closed_at": "2024-07-24T02:08:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/7/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/7",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/7",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585088",
+      "comments": []
+    },
+    {
+      "issue_number": 19,
+      "title": "👑 [需求] 智子助手图标下方增加文字",
+      "body": "<img width=\"251\" alt=\"5debe07bda6b8b9c7fa302633c9b2cbf_\" src=\"https://github.com/yuruotong1/autoMate/assets/31992251/701676a8-ab27-4ce2-bf42-9641b8ab6f6b\">",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T10:22:34Z",
+      "updated_at": "2024-07-16T03:14:26Z",
+      "closed_at": "2024-07-16T03:14:26Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/19/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/19",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/19",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585106",
+      "comments": []
+    },
+    {
+      "issue_number": 18,
+      "title": "👑 [需求]增加悬浮显示“编辑代码”",
+      "body": "<img width=\"597\" alt=\"1ba925961ebeb98388218c739811f6c3_\" src=\"https://github.com/yuruotong1/autoMate/assets/31992251/21390713-553c-4417-91b3-17db74d8db7e\">",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T10:21:44Z",
+      "updated_at": "2024-07-16T03:03:31Z",
+      "closed_at": "2024-07-16T03:03:31Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/18/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/18",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/18",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585113",
+      "comments": []
+    },
+    {
+      "issue_number": 5,
+      "title": "👑 [需求]与智子对话，能够对已有代码进行修改，而不是重新生成代码",
+      "body": null,
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:18:47Z",
+      "updated_at": "2024-07-15T02:01:38Z",
+      "closed_at": "2024-07-15T02:01:38Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/5/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/5",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/5",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585120",
+      "comments": []
+    },
+    {
+      "issue_number": 14,
+      "title": "👑 [需求]自动更新时，加入加载进度界面",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-09T12:50:03Z",
+      "updated_at": "2024-07-15T02:01:36Z",
+      "closed_at": "2024-07-15T02:01:36Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/14/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/14",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/14",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585124",
+      "comments": []
+    },
+    {
+      "issue_number": 24,
+      "title": "👑 [需求]右下角托盘右键增加“关于”，可查看当前软件版本",
+      "body": "![image](https://github.com/yuruotong1/autoMate/assets/31992251/1970522d-8f08-4575-a290-cfb609659cde)",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T15:16:56Z",
+      "updated_at": "2024-07-15T02:01:19Z",
+      "closed_at": "2024-07-15T02:01:19Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/24/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/24",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/24",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585129",
+      "comments": []
+    },
+    {
+      "issue_number": 9,
+      "title": "👑 [需求]智子生成代码后，在其右上角加入运行按钮",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T23:33:58Z",
+      "updated_at": "2024-07-15T01:51:08Z",
+      "closed_at": "2024-07-15T01:51:08Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/9/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "yuruotong1"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/9",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/9",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585135",
+      "comments": []
+    },
+    {
+      "issue_number": 25,
+      "title": "👑 [需求]搞清楚启动时为什么会出现5个autoMate.exe和2个autoMateServer.exe进程",
+      "body": "![f86ebb6f25594b7ed639255587300c2](https://github.com/yuruotong1/autoMate/assets/31992251/c04ab471-4fb4-49f6-a47c-9f88385e69b1)",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T15:40:21Z",
+      "updated_at": "2024-07-13T23:29:12Z",
+      "closed_at": "2024-07-13T23:29:12Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/25/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/25",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/25",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.585139",
+      "comments": [
+        {
+          "author": "xujiajiadexiaokeai",
+          "body": "![automate-screenshot](https://github.com/yuruotong1/autoMate/assets/30225423/e4d124fa-4584-4661-91a2-73e198bf973c)\r\n这边看下来应该是通过Electron框架引入的,类似Chromium,有`gpu-process`、`utility`、`renderer`这些进程.\r\n可以通过[process-explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)这个工具来看到进程",
+          "created_at": "2024-07-11T14:45:10Z"
+        },
+        {
+          "author": "yuruotong1",
+          "body": "> ![automate-screenshot](https://private-user-images.githubusercontent.com/30225423/347862398-e4d124fa-4584-4661-91a2-73e198bf973c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjA3OTY0MzMsIm5iZiI6MTcy",
+          "created_at": "2024-07-12T14:56:46Z"
+        },
+        {
+          "author": "xujiajiadexiaokeai",
+          "body": "> > ![automate-screenshot](https://private-user-images.githubusercontent.com/30225423/347862398-e4d124fa-4584-4661-91a2-73e198bf973c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjA3OTY0MzMsIm5iZiI6MT",
+          "created_at": "2024-07-12T15:49:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 20,
+      "title": "👑 [需求]配置大模型的报错信息更详细",
+      "body": "目前只有一个TypeError，期望加入更多的报错信息：\r\n\r\n![83d0144eb6540c03a70aff64099dff1](https://github.com/yuruotong1/autoMate/assets/31992251/b3f2799a-3c2e-4ea9-98be-ac4e437d34e5)\r\n",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-10T11:33:24Z",
+      "updated_at": "2024-07-10T14:42:45Z",
+      "closed_at": "2024-07-10T14:42:45Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/20/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/20",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/20",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790506",
+      "comments": []
+    },
+    {
+      "issue_number": 8,
+      "title": "👑 [需求]检测更新后自动更新，无需重新下载exe",
+      "body": "rt",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:33:31Z",
+      "updated_at": "2024-07-09T12:36:55Z",
+      "closed_at": "2024-07-09T12:36:55Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/8/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/8",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/8",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790527",
+      "comments": []
+    },
+    {
+      "issue_number": 13,
+      "title": "👑 [需求]把通义千问设置为默认模型",
+      "body": "![e576ed963c90fdab23cf179ba03cac1](https://github.com/yuruotong1/autoMate/assets/31992251/c15632d5-f074-418a-899e-6f6bd1c5b97a)",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-08T04:45:46Z",
+      "updated_at": "2024-07-08T08:43:36Z",
+      "closed_at": "2024-07-08T08:43:35Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/13/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/13",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/13",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790534",
+      "comments": []
+    },
+    {
+      "issue_number": 6,
+      "title": "👑 [需求]在搜索框输入内容，按下回车可直接与智子对话",
+      "body": null,
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:20:02Z",
+      "updated_at": "2024-07-05T10:59:15Z",
+      "closed_at": "2024-07-05T10:59:15Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/6/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/6",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/6",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790539",
+      "comments": []
+    },
+    {
+      "issue_number": 4,
+      "title": "👑 [需求]配置LLM由json输入改为输入框，加入取消保存按钮",
+      "body": "RT",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:17:41Z",
+      "updated_at": "2024-07-05T10:59:15Z",
+      "closed_at": "2024-07-05T10:59:15Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/4/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/4",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/4",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790544",
+      "comments": []
+    },
+    {
+      "issue_number": 3,
+      "title": "👑 [需求]配置LLM的地方增加校验",
+      "body": "RT",
+      "state": "closed",
+      "author": "yuruotong1",
+      "author_type": "User",
+      "created_at": "2024-07-05T02:16:53Z",
+      "updated_at": "2024-07-05T10:59:14Z",
+      "closed_at": "2024-07-05T10:59:14Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/yuruotong1/autoMate/issues/3/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/yuruotong1/autoMate/issues/3",
+      "api_url": "https://api.github.com/repos/yuruotong1/autoMate/issues/3",
+      "repository": "yuruotong1/autoMate",
+      "extraction_date": "2025-06-22T00:43:57.790550",
+      "comments": []
+    }
+  ]
+}

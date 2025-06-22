@@ -1,0 +1,262 @@
+{
+  "repository": "muellerberndt/mini-agi",
+  "repository_info": {
+    "repo": "muellerberndt/mini-agi",
+    "stars": 2873,
+    "language": "Python",
+    "description": "MiniAGI is a simple general-purpose AI agent based on the OpenAI API.",
+    "url": "https://github.com/muellerberndt/mini-agi",
+    "topics": [
+      "agent",
+      "agi",
+      "artificial-intelligence",
+      "gpt-3",
+      "gpt-4"
+    ],
+    "created_at": "2023-04-14T05:33:58Z",
+    "updated_at": "2025-06-21T15:21:56Z",
+    "search_query": "openai api language:python stars:>1 created:>2023-01-01",
+    "total_issues_estimate": 45,
+    "labeled_issues_estimate": 5,
+    "labeling_rate": 12.8,
+    "sample_labeled": 5,
+    "sample_total": 39,
+    "has_issues": true,
+    "repo_id": 627744002,
+    "default_branch": "main",
+    "size": 5013
+  },
+  "extraction_date": "2025-06-22T00:44:53.140759",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 5,
+  "issues": [
+    {
+      "issue_number": 47,
+      "title": "Getting stuck in repeating loops",
+      "body": "This could be a reflection of the fact that 3.5 is a weaker model, but the agent is getting stuck in essentially repeating loops, some examples:\r\n\r\nTrying to install the same package over and over across multiple prompts\r\n\r\nTrying to create the same file or folder over and over again, succeeding the first time and then failing ever after that (already exists)\r\n\r\nDo you think this is a problem with how I am prompting, is this a micro-gpt issue, a 3.5 issue, or a ThinkGPT issue?",
+      "state": "closed",
+      "author": "jwestonmoss",
+      "author_type": "User",
+      "created_at": "2023-04-25T15:50:18Z",
+      "updated_at": "2023-05-19T16:01:48Z",
+      "closed_at": "2023-05-19T16:01:47Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/47/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/muellerberndt/mini-agi/issues/47",
+      "api_url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/47",
+      "repository": "muellerberndt/mini-agi",
+      "extraction_date": "2025-06-22T00:44:52.598375",
+      "comments": [
+        {
+          "author": "jwestonmoss",
+          "body": "Thanks for your help, this is very exciting stuff",
+          "created_at": "2023-04-25T15:51:26Z"
+        },
+        {
+          "author": "muellerberndt",
+          "body": "> Do you think this is a problem with how I am prompting, is this a micro-gpt issue, a 3.5 issue, or a ThinkGPT issue?\r\n\r\nIt's less of an issue with GPT-4. But we could still try to address it on the ThinkGPT level. One option would be adding a critic that checks the actions of the agent for loops a",
+          "created_at": "2023-04-25T15:55:51Z"
+        },
+        {
+          "author": "muellerberndt",
+          "body": "Added a critic that should detect loops (although they sometimes still don't get detected when using GPT-3.5-Turbo).",
+          "created_at": "2023-05-19T16:01:47Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 27,
+      "title": "[Feature] Data augmentation via vector databases",
+      "body": "Add a new command named `retrieve` (or similar) that allows the agent to query an index in an external vector database specified in the environment.\r\n\r\n## Rationale\r\n\r\nIt would be useful to allow the agent to process data that has been ingested into a vector database in advance, such as user documents or codebases. For example, a security auditor might want to task the agent to analyze a particular function or part of the logic of some codebase. If the code was indexed in a database, the agent can first query the relevant parts of the code and store them in its context, and reason about them in subsequent steps.\r\n\r\n## Implementation details\r\n\r\nOne option would be to add new .env variables called `EXTERNAL_VECTORSTORE_TYPE` and `EXTERNAL_VECTORSTORE_INDEX` or similar. The same types that are already implemented for short-term memory could be supported. If these environment keys are set, (conditionally) add information about the `retrieval_query` and index name to the prompt.\r\n\r\nThe tricky part is to incorporate the query results into the context without running into size limits. Some refactoring of the code that manages the context might be required.\r\n\r\n## Docs & testing\r\n\r\nIf this feature is implemented, we should also provide a full tutorial for using the feature.\r\n\r\nThis feature should be tested extensively with several use-cases before being merged into the main codebase.\r\n",
+      "state": "open",
+      "author": "muellerberndt",
+      "author_type": "User",
+      "created_at": "2023-04-19T11:56:24Z",
+      "updated_at": "2023-05-19T15:57:46Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/27/reactions",
+        "total_count": 3,
+        "+1": 3,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/muellerberndt/mini-agi/issues/27",
+      "api_url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/27",
+      "repository": "muellerberndt/mini-agi",
+      "extraction_date": "2025-06-22T00:44:52.771871",
+      "comments": []
+    },
+    {
+      "issue_number": 54,
+      "title": "repeatedly tries to read URLs with `read_file`",
+      "body": "Prompt: write a book about escaping iran\r\n\r\nThe following is copied directly from miniagi.py output.\r\n\r\nMiniAGI: Read \"Out of Iran : One Woman's Escape from the Ayatollahs\" to gather information for the book.\r\nCmd: read_file, Arg: \"https://www.amazon.com/Out-Iran-Womans-Escape-Ayatollahs/dp/0751...\"\r\n\r\nSee screenshot below.\r\n![Screenshot 2023-05-04 at 1 48 56 PM](https://user-images.githubusercontent.com/24992577/236287918-16f2fb07-eeb9-425a-ac86-791bf21c744d.png)\r\n",
+      "state": "closed",
+      "author": "bythefire",
+      "author_type": "User",
+      "created_at": "2023-05-04T17:51:04Z",
+      "updated_at": "2023-05-19T15:55:34Z",
+      "closed_at": "2023-05-19T15:55:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/54/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/muellerberndt/mini-agi/issues/54",
+      "api_url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/54",
+      "repository": "muellerberndt/mini-agi",
+      "extraction_date": "2025-06-22T00:44:52.771905",
+      "comments": [
+        {
+          "author": "muellerberndt",
+          "body": "That latest commit adds examples for `read_file` and `web_scrape` as well as an internal monologue function that should help with tasks like writing books. Should hopefully fix this issue.",
+          "created_at": "2023-05-13T14:37:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 28,
+      "title": "Refactor memory management",
+      "body": "The current memory code is pretty ad-hoc and unoptimized. It's unclear whether the query method and values used lead to optimal results in long-running tasks. Some questions:\r\n\r\n- Is it better to summarize memory during storage or during retrieval (at the moment we use a mix of both)?\r\n- Can the [query](https://github.com/muellerberndt/micro-gpt/blob/de27634021378a489b20c7d9254691e3cdc700e4/microgpt.py#L89) be improved?\r\n- Is [5 items](https://github.com/muellerberndt/micro-gpt/blob/de27634021378a489b20c7d9254691e3cdc700e4/memory.py#L82) a sensible number?\r\n- What are the optimal settings for `MAX_CONTEXT_SIZE` and `MEMORY_ITEM_SIZE` for GPT-3.5 and GPT-4?\r\n- Are there other ways to improve the memory system?\r\n\r\nIdeally, several variants and tweaks should be debugged & tested on long-running tasks that require lots of memory, such as summarizing multiple websites or similar.",
+      "state": "closed",
+      "author": "muellerberndt",
+      "author_type": "User",
+      "created_at": "2023-04-19T12:06:29Z",
+      "updated_at": "2023-04-24T01:58:17Z",
+      "closed_at": "2023-04-24T01:58:17Z",
+      "labels": [
+        "enhancement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/28/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/muellerberndt/mini-agi/issues/28",
+      "api_url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/28",
+      "repository": "muellerberndt/mini-agi",
+      "extraction_date": "2025-06-22T00:44:52.936279",
+      "comments": [
+        {
+          "author": "Koalamanx",
+          "body": "I have been trying to get Micro-GPT working for 2 days. I cant sign up for Pinecone as is doesnt take sign ups atm. \r\nI can install Chromeadb as it crashes whilst installing on my Raspi 4. \r\n\r\nKind of bummed. What can I do?",
+          "created_at": "2023-04-19T22:35:04Z"
+        },
+        {
+          "author": "ismaelc",
+          "body": "From what I observed:\r\n- Pulling the last X results  ([sliding window](https://github.com/ismaelc/micro-gpt/blob/add-sliding-window-chromadb/memory.py#L206)) - works great for objectives that require sequential actions like writing code projects into a folder\r\n- Summarization - Didn't do that many t",
+          "created_at": "2023-04-20T03:54:53Z"
+        },
+        {
+          "author": "ismaelc",
+          "body": "> I have been trying to get Micro-GPT working for 2 days. I cant sign up for Pinecone as is doesnt take sign ups atm. I can install Chromeadb as it crashes whilst installing on my Raspi 4.\r\n> \r\n> Kind of bummed. What can I do?\r\n\r\nCan you create an issue so we can track. Also paste the error you're g",
+          "created_at": "2023-04-20T14:09:30Z"
+        },
+        {
+          "author": "muellerberndt",
+          "body": "PR #37 should address this issue but still needs some work. Feel free to give your feedback on that PR. @ibrarzahoor @ismaelc ",
+          "created_at": "2023-04-21T08:59:29Z"
+        },
+        {
+          "author": "muellerberndt",
+          "body": "I found a good prompt for testing the memory implementation:\r\n\r\n```\r\npython microgpt.py \"Come up with an original idea for an online job that you can do autonomously. It is important that you can do this job with minimal support by the user. You must handle sourcing of clients, communication with cl",
+          "created_at": "2023-04-21T09:28:39Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 42,
+      "title": "Summarizing a large text file fails",
+      "body": "MicroGPT fails to summarize a text file of about 2x context length (GPT4). It gets stuck in a loop repeatedly reading the file.\r\n\r\n```\r\n% python microgpt.py \"Summarize the bill in the file 686.txt located in your working directory into 1000 words or less and save the result in bill_summary.txt\"\r\nWorking directory is /Users/bernhardmueller/microgpt\r\nMicroGPT: Reading the content of the bill in the file 686.txt.\r\nCmd: read_file, Arg: \"686.txt\"\r\nPress enter to perform this action or abort by typing feedback: \r\nSummarizing memory, 2 chunks.\r\nMicroGPT: Reading the content of the bill in the file 686.txt.\r\nCmd: read_file, Arg: \"686.txt\"\r\nPress enter to perform this action or abort by typing feedback: \r\nSummarizing memory, 2 chunks.\r\nMicroGPT: Reading the content of the bill in sections to handle the context length limitation.\r\nCmd: read_file, Arg: \"686.txt 0 4096\"\r\n```\r\n\r\n## Expected behavior\r\n\r\nMicroGPT's memory manager should automatically summarize the text upon reading the file.\r\n\r\n## How to reproduce\r\n\r\nPut [this text file](https://gist.github.com/muellerberndt/8da61cc3e5407276622e60799d9eaee0#file-686-txt) into your working dir as `686.txt` and run:\r\n\r\n```\r\npython microgpt.py \"Summarize the bill in the file 686.txt located in your working directory into 1000 words or less and save the result in bill_summary.txt\"\r\n```\r\n\r\n\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "muellerberndt",
+      "author_type": "User",
+      "created_at": "2023-04-22T09:18:18Z",
+      "updated_at": "2023-04-23T10:27:40Z",
+      "closed_at": "2023-04-23T10:27:40Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/42/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/muellerberndt/mini-agi/issues/42",
+      "api_url": "https://api.github.com/repos/muellerberndt/mini-agi/issues/42",
+      "repository": "muellerberndt/mini-agi",
+      "extraction_date": "2025-06-22T00:44:53.140244",
+      "comments": []
+    }
+  ]
+}

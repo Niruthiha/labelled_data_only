@@ -1,0 +1,273 @@
+{
+  "repository": "itsOwen/CyberScraper-2077",
+  "repository_info": {
+    "repo": "itsOwen/CyberScraper-2077",
+    "stars": 1716,
+    "language": "Python",
+    "description": "A Powerful web scraper powered by LLM | OpenAI, Gemini & Ollama",
+    "url": "https://github.com/itsOwen/CyberScraper-2077",
+    "topics": [
+      "ai-scraping",
+      "gemini-api",
+      "llm",
+      "llm-scraper",
+      "openai",
+      "scraper",
+      "web-scraper",
+      "webscraping"
+    ],
+    "created_at": "2024-08-17T22:37:42Z",
+    "updated_at": "2025-06-21T00:25:11Z",
+    "search_query": "ollama language:python stars:>2",
+    "total_issues_estimate": 26,
+    "labeled_issues_estimate": 4,
+    "labeling_rate": 15.4,
+    "sample_labeled": 4,
+    "sample_total": 26,
+    "has_issues": true,
+    "repo_id": 843946121,
+    "default_branch": "main",
+    "size": 364
+  },
+  "extraction_date": "2025-06-22T00:51:07.684219",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 4,
+  "issues": [
+    {
+      "issue_number": 25,
+      "title": "Ollama usage issues",
+      "body": "Hey everyone, just needed a little clarity on the usage with ollama. I was trying to use local model using ollama (llama3.1 8b) but on querying about the website it always throws the error \"An unexpected error occurred: HTTPSConnectionPool(host='openaipublic.blob.core.windows.net', port=443): Max retries exceeded with url: /encodings/o200k_base.tiktoken (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9628608f20>: Failed to establish a new connection: Error connecting to SOCKS5 proxy 127.0.0.1:9050: [Errno 111] Connection refused')). Please try again or contact support if the issue persists.\". Observing the logs , i see that my GPU keeps crashing. I have a RTX 2060S with 8 GB Vram. Was wondering what is the min requirement of Vram to run this locally, also is there a way to run this using Groq??Any help would be appreciated.",
+      "state": "closed",
+      "author": "kunwar-vikrant",
+      "author_type": "User",
+      "created_at": "2024-11-07T15:25:12Z",
+      "updated_at": "2024-11-09T07:37:11Z",
+      "closed_at": "2024-11-09T07:37:11Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 12,
+      "reactions": {
+        "url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/25/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/itsOwen/CyberScraper-2077/issues/25",
+      "api_url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/25",
+      "repository": "itsOwen/CyberScraper-2077",
+      "extraction_date": "2025-06-22T00:51:06.971107",
+      "comments": [
+        {
+          "author": "itsOwen",
+          "body": "Are you using it on Docker, right? Let me reproduce the error on Docker. I have only tested this natively. Also, are you trying to scrape from the Tor network, I suppose?",
+          "created_at": "2024-11-07T16:43:46Z"
+        },
+        {
+          "author": "kunwar-vikrant",
+          "body": "Nope , not using docker, using normal installation within a virtual environment on linux wsl. Also wasn't trying to scrape from TOR, just tried few news sites.",
+          "created_at": "2024-11-07T18:42:14Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "> Nope , not using docker, using normal installation within a virtual environment on linux wsl. Also wasn't trying to scrape from TOR, just tried few news sites.\r\n\r\nHmm, WSL, I see. If you have access to a native Linux system, can you try that instead of WSL? Or, you could try Docker.",
+          "created_at": "2024-11-07T19:06:16Z"
+        },
+        {
+          "author": "332plim",
+          "body": "same issue reproduced on macos 15.1  M2 processor\r\nnot in docker. failed with both \"current browser\" on or off.  Observed program using the browser to visits the website\r\n\r\nAn unexpected error occurred: HTTPSConnectionPool(host='openaipublic.blob.core.windows.net', port=443): Max retries exceeded wi",
+          "created_at": "2024-11-08T10:29:17Z"
+        },
+        {
+          "author": "kunwar-vikrant",
+          "body": "@itsOwen Tried on native linux as well, same error is thrown. :(",
+          "created_at": "2024-11-08T11:00:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 12,
+      "title": " The webpage content seems to be a notice asking users to enable JavaScript and disable ad blockers.",
+      "body": "Hello, \r\n     Everything is ok.Only has one problem \"The webpage content seems to be a notice asking users to enable JavaScript and disable ad blockers.\" Seems the crawler can't support JavaScirpt and it's disabled to Scraped.How to solve it?\r\n\r\nKindly regards\r\n\r\nJames",
+      "state": "closed",
+      "author": "raintears2",
+      "author_type": "User",
+      "created_at": "2024-08-27T18:41:55Z",
+      "updated_at": "2024-08-29T21:50:47Z",
+      "closed_at": "2024-08-29T21:50:47Z",
+      "labels": [
+        "bug",
+        "enhancement"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/12/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/itsOwen/CyberScraper-2077/issues/12",
+      "api_url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/12",
+      "repository": "itsOwen/CyberScraper-2077",
+      "extraction_date": "2025-06-22T00:51:07.159626",
+      "comments": [
+        {
+          "author": "itsOwen",
+          "body": "Can you send the website you are trying to scrape and the prompt, so I can replicate the issue?",
+          "created_at": "2024-08-27T22:05:50Z"
+        },
+        {
+          "author": "raintears2",
+          "body": "I tried to  scrape multi-Page https://www.idealista.com/en/alquiler-viviendas/valencia-provincia/pagina-{page}.htm 2-165\r\nI used llama3.1:8b.\r\nThen I asked \"What are the prices below 800 euros?\"\r\nIt replied as follows:\r\n\r\n[ { \"Price\": \"N/A\", \"Address\": \"N/A\", \"Description\": \"N/A\" } ]\r\n\r\nHowever, I c",
+          "created_at": "2024-08-27T22:14:18Z"
+        },
+        {
+          "author": "raintears2",
+          "body": "user avatar\r\nhttps://www.idealista.com/en/alquiler-viviendas/valencia-provincia/pagina-2.htm\r\n\r\nassistant avatar\r\nI've fetched and preprocessed the content from https://www.idealista.com/en/alquiler-viviendas/valencia-provincia/pagina-2.htm. What would you like to know about it?\r\n\r\nuser avatar\r\nshow",
+          "created_at": "2024-08-28T00:03:02Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "Okay, so I managed to fix the JavaScript issue. It was my fault. I added another feature for websites that have CAPTCHAs. You can use the URL here -captcha and add \"captcha\" at the end. The browser window will pop up. Complete the CAPTCHA, and the bot will do the rest. However, the website you gave ",
+          "created_at": "2024-08-28T01:01:22Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 5,
+      "title": "input url but got a NotImplementedError exception?",
+      "body": "install as the instruction and run `streamlit run main.py` will get a error message after input url in chat box.\r\n\r\nhere is my log:\r\n\r\n2024-08-21 10:50:18,365 - __main__ - DEBUG - Initializing web_scraper_chat\r\n2024-08-21 10:50:18,367 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False\r\n2024-08-21 10:50:18,367 - httpx - DEBUG - load_verify_locations cafile='D:\\\\MyProjects\\\\CyberScraper-2077\\\\venv\\\\lib\\\\site-packages\\\\certifi\\\\cacert.pem'\r\n2024-08-21 10:50:18,381 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False\r\n2024-08-21 10:50:18,381 - httpx - DEBUG - load_verify_locations cafile='D:\\\\MyProjects\\\\CyberScraper-2077\\\\venv\\\\lib\\\\site-packages\\\\certifi\\\\cacert.pem'\r\n2024-08-21 10:50:18,394 - __main__ - DEBUG - Processing message with web_scraper_chat\r\n2024-08-21 10:50:18,395 - asyncio - DEBUG - Using selector: SelectSelector\r\n2024-08-21 10:50:18,397 - __main__ - DEBUG - Received response (first 500 chars): Please provide a URL first before asking for information....\r\n2024-08-21 10:50:18,475 - __main__ - DEBUG - Starting CyberScraper 2077\r\n2024-08-21 10:50:49,066 - __main__ - DEBUG - Starting CyberScraper 2077\r\n2024-08-21 10:50:49,086 - __main__ - DEBUG - Received prompt: https://news.ycombinator.com/\r\n2024-08-21 10:50:49,090 - __main__ - DEBUG - Processing message with web_scraper_chat\r\n2024-08-21 10:50:49,091 - asyncio - DEBUG - Using selector: SelectSelector\r\n2024-08-21 10:50:49,094 - asyncio - ERROR - Task exception was never retrieved\r\nfuture: <Task finished name='Task-1096' coro=<Connection.run() done, defined at D:\\MyProjects\\CyberScraper-2077\\venv\\lib\\site-packages\\playwright\\_impl\\_connection.py:265> exception=NotImplementedError()>\r\nTraceback (most recent call last):\r\n  File \"D:\\MyProjects\\CyberScraper-2077\\venv\\lib\\site-packages\\playwright\\_impl\\_connection.py\", line 272, in run\r\n    await self._transport.connect()\r\n  File \"D:\\MyProjects\\CyberScraper-2077\\venv\\lib\\site-packages\\playwright\\_impl\\_transport.py\", line 133, in connect\r\n    raise exc\r\n  File \"D:\\MyProjects\\CyberScraper-2077\\venv\\lib\\site-packages\\playwright\\_impl\\_transport.py\", line 120, in connect\r\n    self._proc = await asyncio.create_subprocess_exec(\r\n  File \"C:\\Users\\u8621\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\subprocess.py\", line 218, in create_subprocess_exec\r\n    transport, protocol = await loop.subprocess_exec(\r\n  File \"C:\\Users\\u8621\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\base_events.py\", line 1681, in subprocess_exec\r\n    transport = await self._make_subprocess_transport(\r\n  File \"C:\\Users\\u8621\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\base_events.py\", line 498, in _make_subprocess_transport\r\n    raise NotImplementedError\r\nNotImplementedError\r\n2024-08-21 10:50:49,096 - __main__ - DEBUG - Received response (first 500 chars): An unexpected error occurred: . Please try again or contact support if the issue persists....",
+      "state": "closed",
+      "author": "u8621011",
+      "author_type": "User",
+      "created_at": "2024-08-21T02:55:38Z",
+      "updated_at": "2024-08-22T21:48:25Z",
+      "closed_at": "2024-08-22T16:02:46Z",
+      "labels": [
+        "bug",
+        "working"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 6,
+      "reactions": {
+        "url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/5/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/itsOwen/CyberScraper-2077/issues/5",
+      "api_url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/5",
+      "repository": "itsOwen/CyberScraper-2077",
+      "extraction_date": "2025-06-22T00:51:07.343139",
+      "comments": [
+        {
+          "author": "itsOwen",
+          "body": "Since I don't have a Windows machine, the program only works with Mac or Linux. I will try to push an update to fix it on Windows machines and check what the issue could be. Thanks for letting me know.",
+          "created_at": "2024-08-21T03:25:23Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "@u8621011 Windows Hotfix added, Can you test it for me please, There may be bugs but it will work.",
+          "created_at": "2024-08-21T04:46:25Z"
+        },
+        {
+          "author": "u8621011",
+          "body": "Awesome!!  I checked out the windows-hotfix branch ,it works now and support chinese chat !!  Thanks for your quick fixing！\r\n\r\n![image](https://github.com/user-attachments/assets/a390f717-cf5a-4fe6-9359-913ab613375e)\r\n",
+          "created_at": "2024-08-21T05:40:38Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "> Awesome!! I checked out the windows-hotfix branch ,it works now and support chinese chat !! Thanks for your quick fixing！\r\n> \r\n> ![image](https://private-user-images.githubusercontent.com/271116/359760680-a390f717-cf5a-4fe6-9359-913ab613375e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ",
+          "created_at": "2024-08-21T14:55:07Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "Docker container added, windows hotfix removed.\r\n\r\nNow you can use a docker container on your windows machine to run the app.",
+          "created_at": "2024-08-22T16:02:46Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 1,
+      "title": "Please add support for more models - Ollama and Openrouter",
+      "body": "It would be great to have support for more models - especially Ollama and Openrouter.",
+      "state": "closed",
+      "author": "pathikb",
+      "author_type": "User",
+      "created_at": "2024-08-19T10:58:07Z",
+      "updated_at": "2024-08-20T17:30:20Z",
+      "closed_at": "2024-08-20T17:30:20Z",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/1/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 1
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/itsOwen/CyberScraper-2077/issues/1",
+      "api_url": "https://api.github.com/repos/itsOwen/CyberScraper-2077/issues/1",
+      "repository": "itsOwen/CyberScraper-2077",
+      "extraction_date": "2025-06-22T00:51:07.518835",
+      "comments": [
+        {
+          "author": "itsOwen",
+          "body": "Hey @pathikb I am currently working on adding local llms, I will look into it :)",
+          "created_at": "2024-08-19T11:36:38Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "- Implemented Ollama successfully. (Will be released soon)\r\n- Currently formatting the responses of ollama responses to present in interactive way.",
+          "created_at": "2024-08-19T17:59:37Z"
+        },
+        {
+          "author": "itsOwen",
+          "body": "An experimental Branch was added for Ollama, which is currently under development!\r\n\r\n- Ollama successfully added and working as intended\r\n- Need testers",
+          "created_at": "2024-08-20T03:38:32Z"
+        }
+      ]
+    }
+  ]
+}

